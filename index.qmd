@@ -2,8 +2,7 @@
 title: "Professor Howald's Teaching Portal"
 listing:
   contents: 
-    - "Math125/slides/*.qmd"
-    - "Math340/slides/*.qmd"
+    - "*/index.qmd"
   type: table
   fields: [title, description]
 ---

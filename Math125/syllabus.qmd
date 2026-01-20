@@ -1,4 +1,6 @@
 ---
+title: "Syllabus"
+description: "Syllabus and course policies for Jason Howald's Math 125"
 format:
   html:
     toc: true
