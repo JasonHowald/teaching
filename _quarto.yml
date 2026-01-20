@@ -1,0 +1,22 @@
+project:
+  title: "Teaching"
+  type: website 
+  output-dir: docs/
+  preview:
+    port: 4200
+    browser: false  # This stops it from auto-opening a NEW tab every time
+
+#jupyter: authoring-env #Fails to load pandas
+
+jupyter:
+  kernelspec:
+    name: "python3"
+    language: "python"
+    display_name: "Math 125 Master Lab"
+    argv:
+      - "/Users/howaldja/Authoring/.venv/bin/python"
+      - "-m"
+      - "ipykernel_launcher"
+      - "-f"
+      - "{connection_file}"
+

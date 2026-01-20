@@ -9,7 +9,7 @@
 # Ignore the local copy of the openintro data repository
 **/openintro.csv/
 
-# Ignore the "rendered" output in source folders 
+# Ignore the "rendered" output in source folders
 # (since we are sending it to /docs instead)
 **/_site/
 
@@ -18,3 +18,6 @@
 
 # DO NOT ignore the docs folder
 !docs/
+
+/.quarto/
+**/*.quarto_ipynb

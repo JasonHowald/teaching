@@ -1,0 +1,11 @@
+---
+title: "Professor Howald's Teaching Portal"
+listing:
+  contents: 
+    - "Math125/slides/*.qmd"
+    - "Math340/slides/*.qmd"
+  type: table
+  fields: [title, description]
+---
+
+Welcome to my course materials. Below you will find the latest slides for all active courses.

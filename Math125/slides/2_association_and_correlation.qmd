@@ -19,6 +19,7 @@ description: "Correlation, correlation coefficients, and scatter plots of data."
 
 ## Using vocabulary / testing understanding
 Based on your best understanding or best guess…
+
 1. Among students, weekly study time and GPA are likely _____
 2. Among mammal species, heart rate and mass are likely _____
 3. Among American football players, #tackles and #rushing yards are likely _____
@@ -35,7 +36,7 @@ Use df.corr(numeric_only=True) to calculate.
 
 $\rho$ nearly 1: x and y are strongly positively correlated.
 
-$\rho$ nearly 0: x and y are independent*, at least not linearly correlated.
+$\rho$ nearly 0: x and y are independent, at least not linearly correlated.
 
 $\rho$ nearly -1: x and y are strongly negatively correlated.
 
@@ -50,7 +51,6 @@ A **scatterplot** is 2D graph depicting each data case as a point positioned on 
 #| fig-alt: "A scatterplot showing a strong, positive, linear correlation between weight (x-axis) and desired weight (y-axis). Most data points cluster tightly along a diagonal line."
 #| fig-width: 6
 #| fig-height: 4
-#| output-location: fragment
 
 import seaborn as sns
 import pandas as pd
@@ -65,8 +65,6 @@ plt.xlabel("Actual Weight (lbs)")
 plt.ylabel("Desired Weight (lbs)")
 plt.title(r"Actual vs. Desired Weight ($\rho = 0.74$)")
 plt.show()
-print("\n") #Separate sections for tabset.
-
 
 ```
 
@@ -80,7 +78,6 @@ A **scatterplot** is 2D graph depicting each data case as a point positioned on 
 #| fig-alt: "A scatterplot showing no significant correlation between age (x-axis) and weight (y-axis). Data points are broadly scattered in cloud with non trend lines."
 #| fig-width: 6
 #| fig-height: 4
-#| output-location: fragment
 
 import seaborn as sns
 import pandas as pd
@@ -95,8 +92,6 @@ plt.xlabel("Age (years)")
 plt.ylabel("Weight (lbs)")
 plt.title(r"Age vs. Weight ($\rho = 0.09$)")
 plt.show()
-print("\n") #Separate sections for tabset.
-
 
 ```
 
@@ -110,7 +105,6 @@ A **scatterplot** is 2D graph depicting each data case as a point positioned on 
 #| fig-alt: "A scatterplot showing a weak negative correlation between age (x-axis) and height (y-axis). Data points are broadly scattered with a slight downward trend."
 #| fig-width: 6
 #| fig-height: 4
-#| output-location: fragment
 
 import seaborn as sns
 import pandas as pd
@@ -125,7 +119,6 @@ plt.xlabel("Age (years)")
 plt.ylabel("Height (lbs)")
 plt.title(r"Age vs. Height ($\rho = -0.30$)")
 plt.show()
-print("\n") #Separate sections for tabset.
 
 ```
 
@@ -133,12 +126,15 @@ print("\n") #Separate sections for tabset.
 
 ## Fisher’s Irises
 Sir Ronald Fisher, British statistician and geneticist, introduced his now famous Iris data in 1936, with 150 cases involving three very similar species:
-::: {layout-ncol=3}
+
+::: {layout-ncol="3"}
+
 ![*Iris setosa* [Radomil, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg){fig-alt="Close up of a purple Iris setosa flower with small, pointed petals."}
 
 ![*Iris versicolor* [D. Langlois, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg){fig-alt="Close up of a blue-violet Iris versicolor with prominent yellow markings on the petals."}
 
 ![*Iris virginica* [Frank Mayfield, CC BY-SA 2.0](https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg)](https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg){fig-alt="A bright purple Iris virginica flower in full bloom with slender petals."}
+
 :::
 
 His dataset is often used as the "hello world" of data exploration. 
@@ -148,9 +144,11 @@ His dataset is often used as the "hello world" of data exploration.
 :::: {.columns}
 
 ::: {.column width="50%"}
+
 ### A negative Correlation
+
 ```{python}
-#| label: iris correlation, ungrouped
+#| label: iris-ungrouped
 #| fig-cap: "Scatterplot showing weak negative correlation between petal width and sepal width"
 #| fig-alt: "A scatterplot showing a weak negative correlation between age (x-axis) and height (y-axis). Data points are broadly scattered with a slight downward trend."
 #| fig-width: 3
@@ -163,12 +161,15 @@ iris = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-page
 sns.lmplot(data = iris, x='petal_width', y='sepal_width')
 plt.show()
 ```
+
 :::
 
 ::: {.column width="50%"}
-### Three positive correlations. 
+
+### 3 positive correlations 
+
 ```{python}
-#| label: iris correlation, grouped
+#| label: iris-grouped
 #| fig-cap: "Scatterplot showing three strong positive correlations between petal width and sepal width"
 #| fig-alt: "A scatterplot showing a weak negative correlation between age (x-axis) and height (y-axis). Data points are broadly scattered with a slight downward trend."
 #| fig-width: 3
@@ -178,9 +179,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 iris = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv")
 
-sns.lmplot(data = iris, x='petal_width', y='sepal_width')
+sns.lmplot(data = iris, x='petal_width', y='sepal_width', hue="species")
 plt.show()
 ```
+
 :::
 
 ::::
