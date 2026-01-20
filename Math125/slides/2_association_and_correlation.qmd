@@ -1,0 +1,197 @@
+---
+title: "2. Association and Correlation"
+subtitle: "Interrelationships between variables"
+description: "Correlation, correlation coefficients, and scatter plots of data."
+---
+
+## Preparatory work
+* Read: OpenIntro Statistics Sections 1.2.3, 1.2.4, and 1.2.5
+* Review Vocabulary: (next slide)
+
+## Vocabulary for relationships
+* Dependent / Associated / Correlated: Some statistical relationship exists
+* Positive Correlation: Higher x values linked to higher y values
+* Negative Correlation: Higher x values linked to lower y values
+* Independent: The variables are unrelated. No relationship exists.
+* Explanatory and Response variables: Variables causing an effect, or being effected, or expected to.
+* Correlation Coefficient $\rho$: A numerical measurement of correlation. The output of df.corr()
+
+
+## Using vocabulary / testing understanding
+Based on your best understanding or best guess…
+1. Among students, weekly study time and GPA are likely _____
+2. Among mammal species, heart rate and mass are likely _____
+3. Among American football players, #tackles and #rushing yards are likely _____
+4. Among people, eye color and ice cream preference are likely _____
+5. Among Americans, income and political party affiliation are likely _____
+6. Year by year, global average temperatures and the Dow Jones Industrial Average are likely _____
+
+## Correlation Coefficient
+Just how correlated are two numerical variables? 
+
+The correlation coefficient $\rho$ measures strength and direction of correlation.
+
+Use df.corr(numeric_only=True) to calculate.
+
+$\rho$ nearly 1: x and y are strongly positively correlated.
+
+$\rho$ nearly 0: x and y are independent*, at least not linearly correlated.
+
+$\rho$ nearly -1: x and y are strongly negatively correlated.
+
+Correlations quickly flag trends and interrelationships for further study.
+
+## Scatterplots and correlations
+A **scatterplot** is 2D graph depicting each data case as a point positioned on an $x$-axis according to one variable and on the $y$-axis according to another. Like most graphs, they primarily target sighted users. 
+
+```{python}
+#| label: fig-weight-correlation
+#| fig-cap: "Scatterplot (weight vs desired weight) showing strong positive correlation ($\\rho = 0.74$)"
+#| fig-alt: "A scatterplot showing a strong, positive, linear correlation between weight (x-axis) and desired weight (y-axis). Most data points cluster tightly along a diagonal line."
+#| fig-width: 6
+#| fig-height: 4
+#| output-location: fragment
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/cdc.samp.csv")
+
+# Create plot with clear labels
+sns.regplot(data=df, x='weight', y='wtdesire')
+plt.xlabel("Actual Weight (lbs)")
+plt.ylabel("Desired Weight (lbs)")
+plt.title(r"Actual vs. Desired Weight ($\rho = 0.74$)")
+plt.show()
+print("\n") #Separate sections for tabset.
+
+
+```
+
+
+## Scatterplots and correlations
+A **scatterplot** is 2D graph depicting each data case as a point positioned on an $x$-axis according to one variable and on the $y$-axis according to another. Like most graphs, they primarily target sighted users. 
+
+```{python}
+#| label: fig-age-weight-correlation
+#| fig-cap: "Scatterplot (age vs weight) showing no significant correlation ($\\rho = 0.09$)"
+#| fig-alt: "A scatterplot showing no significant correlation between age (x-axis) and weight (y-axis). Data points are broadly scattered in cloud with non trend lines."
+#| fig-width: 6
+#| fig-height: 4
+#| output-location: fragment
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/cdc.samp.csv")
+
+# Create plot with clear labels
+sns.scatterplot(data=df, x='age', y='weight')
+plt.xlabel("Age (years)")
+plt.ylabel("Weight (lbs)")
+plt.title(r"Age vs. Weight ($\rho = 0.09$)")
+plt.show()
+print("\n") #Separate sections for tabset.
+
+
+```
+
+
+## Scatterplots and correlations
+A **scatterplot** is 2D graph depicting each data case as a point positioned on an $x$-axis according to one variable and on the $y$-axis according to another. Like most graphs, they primarily target sighted users. 
+
+```{python}
+#| label: fig-age-height-correlation
+#| fig-cap: "Scatterplot (age vs height) showing weak negative correlation  ($\\rho = -0.30$)"
+#| fig-alt: "A scatterplot showing a weak negative correlation between age (x-axis) and height (y-axis). Data points are broadly scattered with a slight downward trend."
+#| fig-width: 6
+#| fig-height: 4
+#| output-location: fragment
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/cdc.samp.csv")
+
+# Create plot with clear labels
+sns.regplot(data=df, x='age', y='height')
+plt.xlabel("Age (years)")
+plt.ylabel("Height (lbs)")
+plt.title(r"Age vs. Height ($\rho = -0.30$)")
+plt.show()
+print("\n") #Separate sections for tabset.
+
+```
+
+
+
+## Fisher’s Irises
+Sir Ronald Fisher, British statistician and geneticist, introduced his now famous Iris data in 1936, with 150 cases involving three very similar species:
+::: {layout-ncol=3}
+![*Iris setosa* [Radomil, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg){fig-alt="Close up of a purple Iris setosa flower with small, pointed petals."}
+
+![*Iris versicolor* [D. Langlois, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg){fig-alt="Close up of a blue-violet Iris versicolor with prominent yellow markings on the petals."}
+
+![*Iris virginica* [Frank Mayfield, CC BY-SA 2.0](https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg)](https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg){fig-alt="A bright purple Iris virginica flower in full bloom with slender petals."}
+:::
+
+His dataset is often used as the "hello world" of data exploration. 
+
+## Correlations can change when data is regrouped.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### A negative Correlation
+```{python}
+#| label: iris correlation, ungrouped
+#| fig-cap: "Scatterplot showing weak negative correlation between petal width and sepal width"
+#| fig-alt: "A scatterplot showing a weak negative correlation between age (x-axis) and height (y-axis). Data points are broadly scattered with a slight downward trend."
+#| fig-width: 3
+#| fig-height: 3
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+iris = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv")
+
+sns.lmplot(data = iris, x='petal_width', y='sepal_width')
+plt.show()
+```
+:::
+
+::: {.column width="50%"}
+### Three positive correlations. 
+```{python}
+#| label: iris correlation, grouped
+#| fig-cap: "Scatterplot showing three strong positive correlations between petal width and sepal width"
+#| fig-alt: "A scatterplot showing a weak negative correlation between age (x-axis) and height (y-axis). Data points are broadly scattered with a slight downward trend."
+#| fig-width: 3
+#| fig-height: 3
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+iris = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv")
+
+sns.lmplot(data = iris, x='petal_width', y='sepal_width')
+plt.show()
+```
+:::
+
+::::
+
+## Types of statistical association
+
+Matt says “Education level and political party association are positively associated.” Explain why Matt must be wrong, regardless of politics.
+
+Fiona says “Learning piano has no bearing on hair color, and hair color does not influence piano interest or ability. Therefore hair color and piano skill are statistically independent.” Find the flaw in her logic.
+
+## Individual work
+Solve five problems on webwork under “2. Association and Correlation.”
+
+As always, find the preparatory work for the next slide deck and do it before class. 

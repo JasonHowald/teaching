@@ -1,0 +1,169 @@
+---
+title: "1. The Shape of Data"
+subtitle: "No escaping the spreadsheet"
+description: "Understanding two dimension data and using Jupyter to manipulate it."
+---
+
+## Preparatory work 
+Read: OpenIntro Statistics Section 1.1 and 1.2.1, 1.2.2
+ 
+Vocabulary: Data matrix (=dataframe), summary statistic, case, variable, numerical (=quantitative) variable, categorical variable, discrete vs. continuous.
+
+## Examples using data vocabulary
+
+:::: {.columns}
+
+::: {.column width="40%"}
+### Data Discussion
+* Describe a case in this context.
+* Describe a data matrix (aka dataframe) in this context.
+:::
+
+::: {.column width="60%"}
+### Data Table 
+
+```{python}
+import pandas as pd
+from great_tables import GT
+df = pd.read_csv("../openintro.csv/earthquakes.csv")
+# 1. Create the table object
+table = GT(df.head(8))
+
+# 2. Add Accessibility & Styling
+(
+    table
+    .tab_header(title="Earthquake Data", subtitle="Earthquake Strength and Severity from 1902")
+    .tab_options(
+#        table_font_size="16px",        # Shrink font slightly (default is usually 20px+)
+        container_width="100%"         # Ensure it fills the slide width
+    )
+    .tab_source_note(source_note="Source: OpenIntro Earthquakes Dataset")
+)
+
+```
+:::
+
+::::
+
+## Examples using data vocabulary
+
+:::: {.columns}
+
+::: {.column width="40%"}
+### Data Discussion
+* Give a quantitative variable.
+* Give a categorical variable.
+:::
+
+::: {.column width="60%"}
+### Data Table 
+
+```{python}
+import pandas as pd
+from great_tables import GT
+df = pd.read_csv("../openintro.csv/earthquakes.csv")
+# 1. Create the table object
+table = GT(df.head(8))
+
+# 2. Add Accessibility & Styling
+(
+    table
+    .tab_header(title="Earthquake Data", subtitle="Earthquake Strength and Severity from 1902")
+    .tab_options(
+#        table_font_size="16px",        # Shrink font slightly (default is usually 20px+)
+        container_width="100%"         # Ensure it fills the slide width
+    )
+    .tab_source_note(source_note="Source: OpenIntro Earthquakes Dataset")
+)
+
+```
+:::
+
+::::
+
+
+## The humble .csv file
+:::: {.columns}
+
+::: {.column width="40%"}
+### CSV (Comma Separated Value)
+- Text-based
+- Simple!
+- Compatible
+- Ugly -- bad for eyeballs, bad for screenreaders, unaligned
+- Perfect for export/share/import.
+:::
+
+::: {.column width="60%"}
+### Example data in .csv format:
+Year,month,day,richter,area,region,deaths
+1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000
+1902,December,16,6.4,Uzbekistan,Russia,4700
+1903,April,28,7,Malazgirt,Turkey,3500
+1903,May,28,5.8,Gole,Turkey,1000
+:::
+::::
+
+## Fetching and viewing data with Jupyter
+
+* Make a Jupyter notebook using URL [colab.new](https://colab.new)
+* Find OpenIntro Earthquake data CSV link on [openintro.org/data](https://www.openintro.org/data/)
+* Fetch data in a code cell:
+```{python}
+#| eval: false
+#| echo: true
+!wget [url to .csv file]
+```
+* Import pandas:
+```{python}
+#| eval: false
+#| echo: true
+import pandas as pd
+```
+* Read and display data:
+```{python}
+#| eval: false
+#| echo: true
+df = pd.read_csv("earthquakes.csv")
+df.head()
+```
+* Analysis:
+```{python}
+#| eval: false
+#| echo: true
+df.describe()
+df.corr(numeric_only=True)
+```
+* Use embedded menus and maybe AI-gen code.
+
+
+## Team practice – data into Jupyter
+1. Find the openintro data repository
+2. Locate “acs12” data source. Copy link location to the .csv format.
+3. Create a new jupyter notebook on colab, using URL shortcut “colab.new.”
+4. If you’re blind, change the Colab option in Tools, Settings, Editor to turn off the option called “Show context-powered code completions.”
+5. Name your notebook. 
+6. Use wget to download the dataset at that url.
+7. Use pandas to read the dataframe.
+8. Display the dataframe.
+9. Use describe() and corr() for analysis.
+
+## Practice – data into Jupyter – summary
+```{python}
+#| eval: false
+#| echo: true
+!wget https://www.openintro.org/data/csv/acs12.csv
+import pandas as pd
+df = pd.read_csv("acs12.csv")
+df.head()
+df.describe()
+df.corr(numeric_only=True)
+```
+
+## Individually -- Homework
+1. Complete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will: 
+    - Use a colab notebook to download and manipulate data.
+    - Calculate basic descriptive statistics including correlation coefficients.
+    - Answer questions about data.
+2. As always, find the next slide deck and do preparatory work (usually reading)
+

@@ -1,0 +1,20 @@
+#System files
+.DS_Store
+**/.DS_Store
+
+# Ignore the hidden Quarto work folders everywhere
+**/.quarto/
+**/_freeze/
+
+# Ignore the local copy of the openintro data repository
+**/openintro.csv/
+
+# Ignore the "rendered" output in source folders 
+# (since we are sending it to /docs instead)
+**/_site/
+
+# Only ignore folders that end in _files
+**/*_files/
+
+# DO NOT ignore the docs folder
+!docs/

@@ -1,0 +1,92 @@
+---
+title: "0. Course Welcome"
+description: "Welcome, orientation, course tools and policies"
+
+---
+
+## Hello professor 
+
+I'm Professor jason a howald. (hō - wald, not how - ald)
+
+Hobbies: baking, juggling, woodworking, programming, gaming, etc.
+
+I like learning and teaching.
+
+I am cautious, curious, empathetic, sincere, literal, and precise.
+ 
+## Hello team
+
+We'll work together in class. 
+
+Meet your neighbors. Learn their names. Learn why they are here. 
+
+With all of our neighbors, we have *something to learn* and *something to teach*
+
+## Hello modern technology
+
+Learning a craft means learning its tools.
+
+We will use a professional data analysis platform for everyday work. It’s called “Colab”, “Jupyter”, or “Python”, depending on your point of view.
+
+We have access to AI-assisted code generation.
+
+## Hello support
+
+Deaf or hard of hearing? Blind or visually impaired? Medical problem? Other? 
+
+Let me know what support you need from me. I’m committed to inclusion and equity and happy to help.
+
+Choose work habits that work. Success requires pattern and dedication.
+
+We’re all in this together. Look out for your neighbors. Be kind.
+
+Contact me by email (howaldja) or by office hours. 
+
+There is a Math Lab in LLC. When open they have free walk-in tutoring.
+
+## Course pattern
+Before class: Find prep work in lecture slides, and do it.
+
+During class: Work hard, ask questions, support your team. Avoid distractions.
+
+After class: Find homework obligation and do it. 
+
+## “Supplies”
+
+Computer access. Laptop is recommended. Smartphone works. (Survey: Who has laptop access?).
+
+Textbook:  [Openintro Statistics](https://www.openintro.org/book/os/). (A free open source text).
+
+Syllabus (on Brightspace)
+
+Course website on Brightspace
+
+Homework is on Webwork. Find through brightspace.
+
+Google [Colab](https://colab.research.google.com/)
+
+## Jupyter as a calculator
+
+1. Make a new Jupyter notebook.
+2. Make a text cell and enter some text.
+3. Make a code cell. Type 3+5 and press enter. [Nothing happened!]
+4. Try shift-enter instead. You should see an answer. 
+5. What does the green checkmark mean?
+6. Change 3+5 to x=3+5. This is a variable assignment. Now what happens?
+
+## Jupyter as a calculator (more)
+7. Using [enter] instead of [shift-enter], place separate calculations on several lines in a code cell. Evaluate.
+8. From the menus, select [Runtime > Run all]. What happens?
+9. Find the Share button and notice the Access settings.
+10. Find the Gemini button. Open the window for context-aware chatbot support.
+11. Rename the file. Find the [File > Open] command, for later.
+
+## Individually – homework
+Obtain the book in .pdf or paper form.
+
+Do the preparatory work for the next slide deck “1. The Shape of Data.” 
+
+Notify Professor Howald of any special needs.
+
+Do something nice for someone you care about.
+

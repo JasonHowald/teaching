@@ -1,0 +1,3 @@
+### AI Policy: 
+
+Students are encouraged to leverage AI tools, such as Jupyter with code completion features or chatbots for learning help, to enhance their understanding of mathematical concepts and streamline computational tasks. All interactions with AI systems are consultations with an external source, just like a book or another person. Copying the work of an AI system and submitting it as ones own, even with some changes, is a form of plagiarism. Calling on AI for solutions to assigned problems is cheating, for the same reason that hiring your Mom to do your homework is cheating.

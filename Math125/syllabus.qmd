@@ -1,0 +1,95 @@
+---
+format:
+  html:
+    toc: true
+    html-math-method: mathjax
+    theme: cosmo
+---
+
+{{< include ../_syllabus_objects/instructor.qmd >}}
+
+## Course Information
+Credit Hours: 3
+
+Schedule: MWF 12:00-12:50, Carson 0208
+
+Prerequisites: none
+
+Required textbooks/materials: [Openintro Statistics, Fourth Edition](https://www.openintro.org/book/os/) (An open textbook.) 
+
+Course Description:  Elementary probabilistic and descriptive statistical concepts as applied to practical problems from other disciplines and an introduction to methods of statistical inference. Prerequisite: high school algebra or equivalent. Topics will include interpretation and analysis of data, calculation probabilities, calculation of mean, median, mode, standard deviation, and variance, fundamental counting principle, Central Limit Theorem, normal and binomial distributions, confidence intervals, and hypothesis testing.
+
+## Student Learning Objectives
+
+Upon completion of this course, a student will
+
+1. be able to distinguish between and a sample and population and then determine whether a numerical value is a statistic or parameter.
+2. be able to calculate the mean, median, and mode for a data and decide which best represents the data set.
+3. be able to calculate standard deviation and understand that the larger the standard deviation, the more varied the data values.
+4. be able to determine whether or not two events are mutually exclusive.
+5. know the Fundamental Counting Principle and whether or not an arrangement of objects is a permutation or combination and be able to count them.
+6. know what a discrete and continuous random variables are.
+7. recognize a normal distribution and be able to calculate probabilities using z-scores and tables or technology.
+8. know the Central Limit Theorem and how to apply it and understand the standard deviation for the sampling distribution of sample means is less than that for the original distribution.
+9. be able to construct confidence intervals for means and proportions and be able to interpret them.
+10. be able to perform an hypothesis test for a mean using a normal or t-distribution and understand how to interpret the decision in the context of the problem. 
+
+
+## Grading 
+
+Assessments: We will have about seven unit tests (100 points each) and a final exam (200 points). We will have about eighteen homework assignments, averaging about 15 points each. Most homework uses the Webwork online homework system. Attendance is expected for all students, but not graded. Please inform your instructor if you have to miss class.
+
+Grade weighting: About 700 points are determined by proctored in-class unit tests. About 250 points are determined by homework. About 200 are determined by a final exam. Final grades by percentage will be assigned as follows: 90-100: 4.0, 87-89: 3.7, 83-86: 3.3, 80-82: 3.0, 77-79: 2.7, 73-76: 2.3, 70-72: 2.0, 67-69: 1.7, 63-66: 1.3, 60-62: 1.0, 0-59: 0.0. No grades will be dropped.
+
+Late Work Policy: Students have limited opportunities to submit late work, and need permission to do so. 
+
+Calendar of Topics and Assignments: See lecture slides (also shared) for details. 
+
+## Appendices
+
+{{< include ../_syllabus_objects/AI.qmd >}}
+
+### Thinking Mathematically: 
+
+Thinking Mathematically courses build proficiency with fundamental tools of mathematics, such as arithmetic, algebra, geometry, functions, graphs, and statistics. They teach students precise quantitative logical reasoning and applications of mathematical problem-solving skills in abstract and real-world problems. They engage students in oral and written communication of mathematical ideas.  
+
+Math 125 fulfills the Thinking Mathematically requirement of the Pathways Core Curriculum.
+
+#### Thinking Mathematically Student Learning Outcomes: 
+At the conclusion of this course, students...
+
+1. Use the fundamental tools of mathematics, such as arithmetic, algebra, geometry, functions, graphs, and statistics. (Applying)
+2. Apply precise, logical quantitative reasoning to mathematical hypotheses and conditions. (Applying)
+3. Identify mathematical structure and pattern. (Applying)
+4. Engage in mathematical abstractions. (Applying)
+5. Communicate effectively with oral and written skills appropriate to the discipline. (Understanding)
+
+#### Methods of Instruction in relation to SLOs: 
+
+SLO #1: Students use boxplots, histograms, scatterplots, and other visualizations to analyze data sets. Students use arithmetic and algebra to construct confidence intervals and perform hypothesis testing. Students use functions and arithmetic to calculate descriptive statistics (mean, median, etc) of datasets. Students use statistics throughout the course.
+
+SLO #2: Students solve verbal problems distinguishing between correlation and causation on homework and exams. They verify conditions such as near-normality and sample size for hypothesis tests. They answer homework questions on experiment design which require that they attend to the experimental conditions necessary to draw various conclusions.
+
+SLO #3: Students learn to use basic data analysis techniques to discover patterns in data. The central limit theorem provides a recurring pattern which students use to solve problems involving p-values, including hypothesis testing, on homework and exams.
+
+SLO #4: Students use the empirical rule to produce confidence intervals for individual data points and later for parameters based on inference. To understand the general formulations of these rules, students must think of datasets generically and abstractly. On most homeworks, students use formulas for statistics, tests, and inferences which are expressed abstractly to perform concrete computations. The notions of statistic and parameter are themselves abstractions of data computations.
+
+SLO #5: Students discuss Statistics problems and their solutions in collaborative group work. They present solutions to their peers in the classroom. They also submit individual written work in the form of homework, quizzes, and exams. 
+
+SLO’s #1-#5 will be assessed on various homework problems. 
+
+
+{{< include ../_syllabus_objects/oas.qmd >}}
+
+{{< include ../_syllabus_objects/counseling.qmd >}}
+
+{{< include ../_syllabus_objects/disruptive.qmd >}}
+
+{{< include ../_syllabus_objects/food.qmd >}}
+
+{{< include ../_syllabus_objects/land.qmd >}}
+
+{{< include ../_syllabus_objects/success.qmd >}}
+
+{{< include ../_syllabus_objects/support.qmd >}}
+

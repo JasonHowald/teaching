@@ -1,0 +1,10 @@
+---
+title: "Math 125 Inventory"
+
+listing:
+  contents: slides
+  type: table
+  fields: [title, description]
+  sort: "title"
+---
+
