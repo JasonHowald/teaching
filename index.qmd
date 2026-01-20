@@ -2,9 +2,14 @@
 title: "Professor Howald's Teaching Portal"
 listing:
   contents: 
-    - "*/index.qmd"
+    - path: Math125/index.qmd
+      title: "Math 125"
+      description: "Probability and Statistics"
+    - path: Math340/index.qmd
+      title: "Math 340"
+      description: "Set Theory and Logic"
   type: table
   fields: [title, description]
 ---
 
-Welcome to my course materials. Below you will find the latest slides for all active courses.
+Please select a course.

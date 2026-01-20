@@ -1,0 +1,12 @@
+---
+title: "Math 125"
+description: "Probability and Statistics"
+listing:
+  contents: 
+    - "syllabus.qmd"
+    - "slides/*.qmd"
+  type: table
+  fields: [title, description]
+---
+
+Welcome to Math 125 with Professor Jason Howald

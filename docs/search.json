@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Professor Howald’s Teaching Portal",
     "section": "",
-    "text": "Welcome to my course materials. Below you will find the latest slides for all active courses.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Please select a course.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nMath 125\n\n\nProbability and Statistics\n\n\n\n\n\n\nMath 340\n\n\nSet Theory and Logic\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#preparatory-work",
@@ -138,6 +138,13 @@
     "title": "1. The Shape of Data",
     "section": "Individually – Homework",
     "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
+  },
+  {
+    "objectID": "Math125/index.html",
+    "href": "Math125/index.html",
+    "title": "Math 125",
+    "section": "",
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\nSyllabus\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-professor",
