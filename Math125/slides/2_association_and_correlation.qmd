@@ -129,11 +129,11 @@ Sir Ronald Fisher, British statistician and geneticist, introduced his now famou
 
 ::: {layout-ncol="3"}
 
-![*Iris setosa* [Radomil, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg){fig-alt="Close up of a purple Iris setosa flower with small, pointed petals."}
+![*Iris setosa* [Radomil, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)](Kosaciec_szczecinkowaty_Iris_setosa.jpg){fig-alt="Close up of a purple Iris setosa flower with small, pointed petals."}
 
-![*Iris versicolor* [D. Langlois, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg){fig-alt="Close up of a blue-violet Iris versicolor with prominent yellow markings on the petals."}
+![*Iris versicolor* [D. Langlois, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg)](Iris_versicolor_3.jpg){fig-alt="Close up of a blue-violet Iris versicolor with prominent yellow markings on the petals."}
 
-![*Iris virginica* [Frank Mayfield, CC BY-SA 2.0](https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg)](https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg){fig-alt="A bright purple Iris virginica flower in full bloom with slender petals."}
+![*Iris virginica* [Frank Mayfield, CC BY-SA 2.0](https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg)](Iris_virginica.jpg){fig-alt="A bright purple Iris virginica flower in full bloom with slender petals."}
 
 :::
 
