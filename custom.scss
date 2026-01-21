@@ -1,0 +1,25 @@
+/*-- scss:rules --*/
+
+.reveal h1, 
+.reveal h2, 
+.reveal h3, 
+.reveal h4,
+.reveal .slides section > h1 {
+  letter-spacing: normal !important; // Fixes the squished letters
+  font-kerning: normal;
+}
+
+section.activity::before {
+  content: "ACTIVITY";
+  position: absolute;
+  top: -20px;          // Adjust this to sit just above your title
+  right: 0;
+  font-size: 0.4em;    // Small and professional
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #1b281a;      // A muted slate that complements the Sky blue
+  padding: 5px 12px;
+  border: 1px solid #78909c;
+  border-radius: 4px;
+  text-transform: uppercase;
+}

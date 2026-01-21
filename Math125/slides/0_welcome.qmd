@@ -12,9 +12,10 @@ Hobbies: baking, juggling, woodworking, programming, gaming, etc.
 
 I like learning and teaching.
 
-I am cautious, curious, empathetic, sincere, literal, and precise.
+I am cautious, curious, empathetic, sincere, literal, and precise. 
+But I'll teach you about self-assessment bias later!
  
-## Hello team
+## Hello team {.activity}
 
 We'll work together in class. 
 
