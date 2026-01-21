@@ -1,11 +1,9 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/Math672/index.html",
     "items": [
-      "/Math125/index.html",
-      "/Math340/index.html",
-      "/Math672/index.html",
-      "/Math681/index.html"
+      "/Math672/Introduction_to_Ring_Theory.html",
+      "/Math672/syllabus.html"
     ]
   },
   {
@@ -18,9 +16,12 @@
     ]
   },
   {
-    "listing": "/Math672/index.html",
+    "listing": "/index.html",
     "items": [
-      "/Math672/syllabus.html"
+      "/Math125/index.html",
+      "/Math340/index.html",
+      "/Math672/index.html",
+      "/Math681/index.html"
     ]
   },
   {

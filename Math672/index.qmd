@@ -4,7 +4,7 @@ description: "Abstract Algebra II"
 listing:
   contents: 
     - "syllabus.qmd"
-    - "lectures.qmd"
+    - "Introduction_to_Ring_Theory.qmd"
   type: table
   fields: [title, description]
 ---

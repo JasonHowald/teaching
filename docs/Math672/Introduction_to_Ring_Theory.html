@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Lecture notes for the semester">
+
+<title>Introduction to Ring Theory – Teaching</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basics-of-rings" id="toc-basics-of-rings" class="nav-link active" data-scroll-target="#basics-of-rings"><span class="header-section-number">1</span> Basics of Rings</a>
+  <ul class="collapse">
+  <li><a href="#relation-to-group-theory" id="toc-relation-to-group-theory" class="nav-link" data-scroll-target="#relation-to-group-theory"><span class="header-section-number">1.1</span> Relation to Group Theory</a></li>
+  <li><a href="#basic-definitions" id="toc-basic-definitions" class="nav-link" data-scroll-target="#basic-definitions"><span class="header-section-number">1.2</span> Basic Definitions</a></li>
+  <li><a href="#basic-examples" id="toc-basic-examples" class="nav-link" data-scroll-target="#basic-examples"><span class="header-section-number">1.3</span> Basic Examples</a></li>
+  <li><a href="#first-properties-of-elements" id="toc-first-properties-of-elements" class="nav-link" data-scroll-target="#first-properties-of-elements"><span class="header-section-number">1.4</span> First Properties of elements</a></li>
+  <li><a href="#homomorphisms" id="toc-homomorphisms" class="nav-link" data-scroll-target="#homomorphisms"><span class="header-section-number">1.5</span> Homomorphisms</a>
+  <ul class="collapse">
+  <li><a href="#first-properties-of-homomorphisms" id="toc-first-properties-of-homomorphisms" class="nav-link" data-scroll-target="#first-properties-of-homomorphisms"><span class="header-section-number">1.5.1</span> First Properties of Homomorphisms</a></li>
+  <li><a href="#all-rings-have-integers" id="toc-all-rings-have-integers" class="nav-link" data-scroll-target="#all-rings-have-integers"><span class="header-section-number">1.5.2</span> All rings have “integers”</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#types-of-elements-of-rings" id="toc-types-of-elements-of-rings" class="nav-link" data-scroll-target="#types-of-elements-of-rings"><span class="header-section-number">2</span> Types of Elements of Rings</a>
+  <ul class="collapse">
+  <li><a href="#units" id="toc-units" class="nav-link" data-scroll-target="#units"><span class="header-section-number">2.1</span> Units</a></li>
+  <li><a href="#zero-divisors" id="toc-zero-divisors" class="nav-link" data-scroll-target="#zero-divisors"><span class="header-section-number">2.2</span> Zero-divisors</a></li>
+  <li><a href="#nilpotent-elements" id="toc-nilpotent-elements" class="nav-link" data-scroll-target="#nilpotent-elements"><span class="header-section-number">2.3</span> Nilpotent elements</a></li>
+  <li><a href="#irreducibles" id="toc-irreducibles" class="nav-link" data-scroll-target="#irreducibles"><span class="header-section-number">2.4</span> Irreducibles</a></li>
+  <li><a href="#prime-elements" id="toc-prime-elements" class="nav-link" data-scroll-target="#prime-elements"><span class="header-section-number">2.5</span> Prime elements</a></li>
+  </ul></li>
+  <li><a href="#kernels-ideals-and-quotients" id="toc-kernels-ideals-and-quotients" class="nav-link" data-scroll-target="#kernels-ideals-and-quotients"><span class="header-section-number">3</span> Kernels, Ideals, and Quotients</a>
+  <ul class="collapse">
+  <li><a href="#properties-of-kernels-definition-of-ideal" id="toc-properties-of-kernels-definition-of-ideal" class="nav-link" data-scroll-target="#properties-of-kernels-definition-of-ideal"><span class="header-section-number">3.1</span> Properties of Kernels, Definition of Ideal</a></li>
+  <li><a href="#you-can-mod-out-by-an-ideal" id="toc-you-can-mod-out-by-an-ideal" class="nav-link" data-scroll-target="#you-can-mod-out-by-an-ideal"><span class="header-section-number">3.2</span> You can mod out by an ideal</a></li>
+  <li><a href="#canonical-quotient-homomorphism" id="toc-canonical-quotient-homomorphism" class="nav-link" data-scroll-target="#canonical-quotient-homomorphism"><span class="header-section-number">3.3</span> Canonical quotient homomorphism</a></li>
+  <li><a href="#universal-property-of-the-quotient-map" id="toc-universal-property-of-the-quotient-map" class="nav-link" data-scroll-target="#universal-property-of-the-quotient-map"><span class="header-section-number">3.4</span> Universal property of the quotient map</a></li>
+  <li><a href="#principal-ideals" id="toc-principal-ideals" class="nav-link" data-scroll-target="#principal-ideals"><span class="header-section-number">3.5</span> Principal Ideals</a></li>
+  <li><a href="#combining-ideals" id="toc-combining-ideals" class="nav-link" data-scroll-target="#combining-ideals"><span class="header-section-number">3.6</span> Combining Ideals</a></li>
+  <li><a href="#generating-ideals" id="toc-generating-ideals" class="nav-link" data-scroll-target="#generating-ideals"><span class="header-section-number">3.7</span> Generating ideals</a></li>
+  </ul></li>
+  <li><a href="#maximal-and-prime-ideals" id="toc-maximal-and-prime-ideals" class="nav-link" data-scroll-target="#maximal-and-prime-ideals"><span class="header-section-number">4</span> Maximal and Prime ideals</a>
+  <ul class="collapse">
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="header-section-number">4.1</span> Definitions</a></li>
+  <li><a href="#quotient-by-prime-or-maximal" id="toc-quotient-by-prime-or-maximal" class="nav-link" data-scroll-target="#quotient-by-prime-or-maximal"><span class="header-section-number">4.2</span> Quotient by prime or maximal</a></li>
+  <li><a href="#existence-of-maximal-ideals" id="toc-existence-of-maximal-ideals" class="nav-link" data-scroll-target="#existence-of-maximal-ideals"><span class="header-section-number">4.3</span> Existence of Maximal Ideals</a></li>
+  </ul></li>
+  <li><a href="#image-preimages-and-correspondence-of-ideals" id="toc-image-preimages-and-correspondence-of-ideals" class="nav-link" data-scroll-target="#image-preimages-and-correspondence-of-ideals"><span class="header-section-number">5</span> Image, Preimages, and Correspondence of Ideals</a>
+  <ul class="collapse">
+  <li><a href="#images-and-extensions" id="toc-images-and-extensions" class="nav-link" data-scroll-target="#images-and-extensions"><span class="header-section-number">5.1</span> Images and Extensions</a></li>
+  <li><a href="#preimages-contractions" id="toc-preimages-contractions" class="nav-link" data-scroll-target="#preimages-contractions"><span class="header-section-number">5.2</span> Preimages (Contractions)</a></li>
+  <li><a href="#extension-and-contractions-of-primes-and-maximals" id="toc-extension-and-contractions-of-primes-and-maximals" class="nav-link" data-scroll-target="#extension-and-contractions-of-primes-and-maximals"><span class="header-section-number">5.3</span> Extension and contractions of primes and maximals</a></li>
+  <li><a href="#ideal-correspondence-for-quotients" id="toc-ideal-correspondence-for-quotients" class="nav-link" data-scroll-target="#ideal-correspondence-for-quotients"><span class="header-section-number">5.4</span> Ideal Correspondence for Quotients</a></li>
+  </ul></li>
+  <li><a href="#polynomial-rings" id="toc-polynomial-rings" class="nav-link" data-scroll-target="#polynomial-rings"><span class="header-section-number">6</span> Polynomial Rings</a>
+  <ul class="collapse">
+  <li><a href="#basic-definitions-1" id="toc-basic-definitions-1" class="nav-link" data-scroll-target="#basic-definitions-1"><span class="header-section-number">6.1</span> Basic Definitions</a></li>
+  <li><a href="#universal-property" id="toc-universal-property" class="nav-link" data-scroll-target="#universal-property"><span class="header-section-number">6.2</span> Universal Property</a></li>
+  <li><a href="#multiple-variables" id="toc-multiple-variables" class="nav-link" data-scroll-target="#multiple-variables"><span class="header-section-number">6.3</span> Multiple variables</a></li>
+  <li><a href="#taylor-made-elements" id="toc-taylor-made-elements" class="nav-link" data-scroll-target="#taylor-made-elements"><span class="header-section-number">6.4</span> Taylor Made Elements</a></li>
+  </ul></li>
+  <li><a href="#unique-factorization-ed-to-pid-to-ufd" id="toc-unique-factorization-ed-to-pid-to-ufd" class="nav-link" data-scroll-target="#unique-factorization-ed-to-pid-to-ufd"><span class="header-section-number">7</span> Unique Factorization: ED <span class="math inline">\(\to\)</span> PID <span class="math inline">\(\to\)</span> UFD</a>
+  <ul class="collapse">
+  <li><a href="#definitions-1" id="toc-definitions-1" class="nav-link" data-scroll-target="#definitions-1"><span class="header-section-number">7.1</span> Definitions</a></li>
+  <li><a href="#ed-to-pid" id="toc-ed-to-pid" class="nav-link" data-scroll-target="#ed-to-pid"><span class="header-section-number">7.2</span> ED <span class="math inline">\(\to\)</span> PID</a></li>
+  <li><a href="#pid-to-ufd" id="toc-pid-to-ufd" class="nav-link" data-scroll-target="#pid-to-ufd"><span class="header-section-number">7.3</span> PID <span class="math inline">\(\to\)</span> UFD</a></li>
+  <li><a href="#ufdx-is-ufd" id="toc-ufdx-is-ufd" class="nav-link" data-scroll-target="#ufdx-is-ufd"><span class="header-section-number">7.4</span> UFD[x] is UFD</a>
+  <ul class="collapse">
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">7.4.1</span> Discussion</a></li>
+  <li><a href="#proof-of-theorem" id="toc-proof-of-theorem" class="nav-link" data-scroll-target="#proof-of-theorem"><span class="header-section-number">7.4.2</span> Proof of Theorem</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#fields-of-fractions-and-localization" id="toc-fields-of-fractions-and-localization" class="nav-link" data-scroll-target="#fields-of-fractions-and-localization"><span class="header-section-number">8</span> Fields of Fractions and Localization</a>
+  <ul class="collapse">
+  <li><a href="#fields-of-fractions-definition" id="toc-fields-of-fractions-definition" class="nav-link" data-scroll-target="#fields-of-fractions-definition"><span class="header-section-number">8.1</span> Fields of Fractions, definition</a></li>
+  <li><a href="#localization" id="toc-localization" class="nav-link" data-scroll-target="#localization"><span class="header-section-number">8.2</span> Localization</a>
+  <ul class="collapse">
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation"><span class="header-section-number">8.2.1</span> Motivation</a></li>
+  <li><a href="#many-many-checks" id="toc-many-many-checks" class="nav-link" data-scroll-target="#many-many-checks"><span class="header-section-number">8.2.2</span> Many, many checks</a></li>
+  <li><a href="#basic-properties-of-s-1r" id="toc-basic-properties-of-s-1r" class="nav-link" data-scroll-target="#basic-properties-of-s-1r"><span class="header-section-number">8.2.3</span> Basic properties of <span class="math inline">\(S^{-1}R\)</span></a></li>
+  <li><a href="#universal-property-1" id="toc-universal-property-1" class="nav-link" data-scroll-target="#universal-property-1"><span class="header-section-number">8.2.4</span> Universal Property</a></li>
+  </ul></li>
+  <li><a href="#ideal-correspondence-for-localization" id="toc-ideal-correspondence-for-localization" class="nav-link" data-scroll-target="#ideal-correspondence-for-localization"><span class="header-section-number">8.3</span> Ideal Correspondence for Localization</a></li>
+  <li><a href="#quotient-ring-and-localization" id="toc-quotient-ring-and-localization" class="nav-link" data-scroll-target="#quotient-ring-and-localization"><span class="header-section-number">8.4</span> Quotient Ring and Localization</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction to Ring Theory</h1>
+</div>
+
+<div>
+  <div class="description">
+    Lecture notes for the semester
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="basics-of-rings" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Basics of Rings</h1>
+<section id="relation-to-group-theory" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="relation-to-group-theory"><span class="header-section-number">1.1</span> Relation to Group Theory</h2>
+<p>Group theory is the theory of algebraic structures with one operation. The axioms of identity, inverse, and associativity are the minimal assumptions which empower the solution of equations, and describe a huge variety of systems.</p>
+<p>Many important mathematical structures have not one operation but four: Addition, subtraction, multiplication, and division, and satisfy various other axioms, such as distribution. There is some variability in these structures. In some (e.g., <span class="math inline">\({\mathbb Z}\)</span>) we lack closure under division. In others we lack a multiplicative identity. In others (e.g.&nbsp;matrix rings) we lack multiplicative commutativity. Our definition of a <strong>ring</strong> reflects a minimally useful behavior of addition and multiplication. Division is excluded because we often genuinely lose access to division. Subtraction is excluded because addition and additive inverse accomplish the same thing.</p>
+</section>
+<section id="basic-definitions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="basic-definitions"><span class="header-section-number">1.2</span> Basic Definitions</h2>
+<p><strong>Definition:</strong> A (unital) <strong>ring</strong> is a set <span class="math inline">\(R\)</span> together with four structural elements: A chosen element called <span class="math inline">\(0_R\)</span>, a chosen element called <span class="math inline">\(1_R\)</span>, an operation called addition, written <span class="math inline">\(+_R\)</span>, and an operation called multiplication, written <span class="math inline">\(\cdot_R\)</span> or <span class="math inline">\(\times_R\)</span> (usually unwritten, expressed as implied product), satisfying the following <strong>ring axioms</strong>:</p>
+<ol type="1">
+<li>(Additive associativity) <span class="math inline">\(x+(y+z) = (x+y)+z\)</span></li>
+<li>(Additive identity) <span class="math inline">\(0+x = x = x+0\)</span></li>
+<li>(Additive inverse) <span class="math inline">\(\forall x \, \exists y \, x+y = 0 = y+x\)</span></li>
+<li>(Additive commutativity) <span class="math inline">\(x+y = y+x\)</span></li>
+<li>(Multiplicative associativity) <span class="math inline">\(x(yz) = (xy)z\)</span></li>
+<li>(Multiplicative identity) <span class="math inline">\(1x = x = x1\)</span></li>
+<li>(Distribution I) x(y+z) = xy + xz</li>
+<li>(Distribution II) (x+y)z = xz + yz</li>
+</ol>
+<p>Notes on the definition:</p>
+<ol type="1">
+<li><p>Axioms with free variables are understood to be universally quantified. For example <span class="math inline">\(\forall x \,\forall y \,\forall z  \enspace  x+(y+z) = (x+y)+z\)</span></p></li>
+<li><p>The first four axioms tell us that <span class="math inline">\((R,0,+)\)</span> is an abelian group. This means that all of group theory applies to ring theory, and is the main reason for doing group theory first.</p></li>
+<li><p>Note that there is no multiplicative inverse axiom, so <span class="math inline">\((R,1,\cdot)\)</span> is not a group. Even if we want to include such an axiom, we must at least make exception for <span class="math inline">\(0_R\)</span>.</p></li>
+<li><p>It is not necessary to include <span class="math inline">\(0_R\)</span> and <span class="math inline">\(1_R\)</span> in the defining structure of a group. One can instead rephrase axioms 2 and 6 to state the existence of an identity, which can later be proven unique and labeled. This has no real effect on the theory. Many authors prefer to minimize the number of structures in the definition. This author prefers, within reason, to minimize the number of not-purely-universal axioms. The effect is not only cosmetic, but influences future definitions of “homomorphism” and “subring.”</p></li>
+<li><p>Note that there is no commutativity axiom for multiplication. Many structures satisfy such an axiom, and it’s almost always important.</p></li>
+<li><p>Axiom #6 can be omitted, in which case we will not call the ring “unital.” <span class="math inline">\(2{\mathbb Z}\)</span> is an easy example meeting all other axioms. Such a structure is sometimes called a “rng”.</p></li>
+</ol>
+<p><strong>Additional Axioms of interest</strong></p>
+<ol start="9" type="1">
+<li>(Multiplicative Commutativity) xy = yx</li>
+<li>(No zerodivisors) <span class="math inline">\((xy=0) \to (x=0 \lor y=0)\)</span></li>
+<li>(Multiplicative inverse) <span class="math inline">\(\forall x \enspace (x \neq 0) \to (\exists y \enspace xy = 1 = yx)\)</span></li>
+</ol>
+<p>A ring satisfying 1-9 is called a <strong>commutative ring</strong> (or in some contexts, a “<strong>ring</strong>”!). A ring satisfying 1-10 is called an <strong>integral domain</strong> or simply a <strong>domain</strong>. A ring satisfying 1-11 (but 11 implies 10) is called a <strong>field</strong>.</p>
+<p>The reader may expect that besides <span class="math inline">\({\mathbb R}\)</span>, fields are hard to come by. On the contrary, there are many interesting and exotic fields.</p>
+</section>
+<section id="basic-examples" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">1.3</span> Basic Examples</h2>
+<p>Natural mathematical structures with elements which can be added and multiplied are generally rings.</p>
+<ol type="1">
+<li><p><span class="math inline">\({\mathbb Z}\)</span> and <span class="math inline">\({\mathbb R}\)</span> are the original rings. Of course they satisfy axioms 1-10 so they are both domains. <span class="math inline">\({\mathbb R}\)</span> is a field but <span class="math inline">\({\mathbb Z}\)</span> is not.</p></li>
+<li><p>We have already seen that the integers modulo <span class="math inline">\(n\)</span>, <span class="math inline">\({\mathbb Z}/(n)\)</span>, form an abelian group under addition. But these integers can be multiplied too, and satisfy axioms 1-9. If <span class="math inline">\(n\)</span> is prime, then <span class="math inline">\({\mathbb Z}/(n)\)</span> is a field.</p></li>
+<li><p><strong>Function Rings</strong> Let <span class="math inline">\(X\)</span> be a set, topological space, geometric object, etc, and consider the set <span class="math inline">\(C(X)\)</span> of all continuous functions <span class="math inline">\(f:X \to {\mathbb R}\)</span>. Since the sum or product of continuous functions is continuous, <span class="math inline">\(C(X)\)</span> is closed under <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>. Since the functions take values in <span class="math inline">\({\mathbb R}\)</span>, they satisfy axioms 1-9. Generally axioms 10 and 11 fail.</p></li>
+<li><p>More generally, in the previous example, “continuous” can be replaced with “differentiable”, “measurable”, “analytic”, “polynomial”, “rational”, etc. As long as the function category is closed under <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>, we generally get a ring of functions.</p></li>
+<li><p>The <strong>polynomial rings</strong> <span class="math inline">\({\mathbb Z}[x]\)</span>, <span class="math inline">\({\mathbb R}[x,y]\)</span>, <span class="math inline">\({\mathbb C}[x,y,z]\)</span>, <span class="math inline">\(({\mathbb Z}_7)[w,x,y,z]\)</span>, etc. consist of polynomial functions in the prescribed variables with coefficients from the prescribed ring. They are added and multiplied not as functions but abstractly by manipulating coefficients. So for example in <span class="math inline">\(({\mathbb Z}_7)[x]\)</span>, the elements <span class="math inline">\(x\)</span> and <span class="math inline">\(x^7\)</span> are considered different, even though they act identically as functions on <span class="math inline">\({\mathbb Z}_7\)</span></p></li>
+<li><p>For any given size <span class="math inline">\(n\)</span>, the set of all <span class="math inline">\(n \times n\)</span> matrices with real entries, written <span class="math inline">\(M_n({\mathbb R})\)</span> is a noncommutative ring. The coefficient field <span class="math inline">\({\mathbb R}\)</span> can be replaced with any field and linear algebra works more or less the same way. It can be replaced with any ring and <span class="math inline">\(M_n({\mathbb R})\)</span> remains a ring. This ring has many interesting subrings known variously as “matrix rings.” Most are noncommutative.</p></li>
+</ol>
+</section>
+<section id="first-properties-of-elements" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="first-properties-of-elements"><span class="header-section-number">1.4</span> First Properties of elements</h2>
+<p><strong>Theorem</strong> Let <span class="math inline">\(R\)</span> be a ring.</p>
+<ol type="1">
+<li>The additive identity is unique</li>
+<li>The multiplicative identity is unique</li>
+<li>The additive inverse is unique.</li>
+<li><span class="math inline">\(-(a+b) = -a + -b\)</span></li>
+<li>Additive cancellation</li>
+<li><span class="math inline">\(\forall x \enspace 0x=0\)</span></li>
+<li><span class="math inline">\(\forall x \enspace (-1)x = -x\)</span></li>
+<li><span class="math inline">\((-a)*b = -(ab)\)</span>.</li>
+<li><span class="math inline">\((-a)(-b) = ab\)</span>.</li>
+<li>Multidistribution: <span class="math inline">\(\displaystyle a \sum_{i} x_i = \sum_{i} a x_i\)</span></li>
+<li>Two-sided multiplicative inverse is unique if it exists.</li>
+<li>Multiplicative cancellation is valid <strong>in a domain</strong>.</li>
+</ol>
+<p><strong>Classroom group exercise:</strong> Construct proofs of all twelve.</p>
+<p><strong>Binomial Theorem:</strong> <span class="math display">\[(x+y)^n = \sum_{i=0}^n \binom{n}{i} x^iy^{n-i}\]</span></p>
+<p><strong>proof:</strong> The usual proof,</p>
+</section>
+<section id="homomorphisms" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="homomorphisms"><span class="header-section-number">1.5</span> Homomorphisms</h2>
+<p><strong>Definition:</strong> A ring homomorphism is a function <span class="math inline">\(f:R \to S\)</span> from one ring to another satisfying:</p>
+<ol type="1">
+<li><span class="math inline">\(f(0_R) = 0_S\)</span></li>
+<li><span class="math inline">\(f(1_R) = 1_S\)</span></li>
+<li><span class="math inline">\(f(x+y) = f(x)+f(y)\)</span></li>
+<li><span class="math inline">\(f(xy) = f(x)f(y)\)</span></li>
+</ol>
+<p><strong>Note:</strong> The first requirement <span class="math inline">\(f(0)=0\)</span> is implied by the third. In general, homomorphisms must preserve whatever structure is imposed. Since we blessed <span class="math inline">\(0_R\)</span> as structural, it makes the list here.</p>
+<p><strong>Definition:</strong> The <strong>kernel</strong> <span class="math inline">\(\ker(f)\)</span> of a homomorphism is the preimage of zero: <span class="math display">\[\ker(f) = \{x \in \operatorname{Dom}(f) \,|\, f(x) = 0_S\}\]</span></p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a ring. A <strong>subring</strong> of <span class="math inline">\(R\)</span> is a subset of <span class="math inline">\(R\)</span> which is a ring under the same interpretation of <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(+\)</span>, and <span class="math inline">\(\times\)</span>. That is, it must be a ring under the same operations using the same identities.</p>
+<p><strong>Caution:</strong> It is not enough to check <span class="math inline">\(+\)</span> and <span class="math inline">\(\times\)</span>. For example, the ring <span class="math inline">\({\mathbb Z} \times {\mathbb Z}\)</span> with coordinatewise addition and multiplication has identities <span class="math inline">\((0,0)\)</span> and <span class="math inline">\((1,1)\)</span>. The subset <span class="math inline">\({\mathbb Z} \times \{0\}\)</span> is a ring under coordinatewise <span class="math inline">\(+\)</span> and <span class="math inline">\(\times\)</span> and is isomorphic to <span class="math inline">\({\mathbb Z}\)</span>. Its identities are <span class="math inline">\((0,0)\)</span> and <span class="math inline">\((1,0)\)</span>, so <span class="math inline">\({\mathbb Z} \times \{0\}\)</span> is not a subring of <span class="math inline">\({\mathbb Z} \times {\mathbb Z}\)</span>, and the inclusion map is not a homomorphism. Authors for whom rings don’t necessarily include multiplicative identity would likely disagree on both conclusions, because for them <span class="math inline">\(1_R\)</span> is not a component of the ring structure.</p>
+<section id="first-properties-of-homomorphisms" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="first-properties-of-homomorphisms"><span class="header-section-number">1.5.1</span> First Properties of Homomorphisms</h3>
+<ol type="1">
+<li><p>The composition of two ring homomorphisms is a homomorphism.</p></li>
+<li><p>The image of a homomorphism is a subring of <span class="math inline">\(S\)</span>.</p></li>
+<li><p><span class="math inline">\(f(-x) = -f(x)\)</span></p></li>
+<li><p><span class="math inline">\(f(x^{-1}) = f(x)^{-1}\)</span> <strong>provided</strong> <span class="math inline">\(x\)</span> has a two-sided inverse <span class="math inline">\(x^{-1}\)</span>.</p></li>
+</ol>
+</section>
+<section id="all-rings-have-integers" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="all-rings-have-integers"><span class="header-section-number">1.5.2</span> All rings have “integers”</h3>
+<p>Step 1. [<span class="math inline">\({\mathbb Z}\)</span> is the initial ring] Let <span class="math inline">\(R\)</span> be a ring. Then there is exactly one homomorphism <span class="math inline">\(f:{\mathbb Z} \to R\)</span>.</p>
+<p><strong>proof:</strong> Suppose <span class="math inline">\(f\)</span> were a homomorphism from <span class="math inline">\({\mathbb Z}\)</span> to <span class="math inline">\(R\)</span>. Then <span class="math inline">\(f\)</span> must satisfy <span class="math inline">\(f(0)=0_R\)</span> and <span class="math inline">\(f(1)=1_R\)</span>. It follows from additivity (for <span class="math inline">\(n&gt;1\)</span>) that <span class="math inline">\(f(n) = f(1+1+\ldots+1) = f(1)+f(1)+ \ldots + f(1) =  1_R + 1_R + \ldots + 1_R\)</span>. Finally it follows for the negative integers that <span class="math inline">\(f(-n) = - (1_R + 1_R + \ldots + 1_R)\)</span>. This determines the function <span class="math inline">\(f\)</span> completely. It obviously satisfies axioms 1-3 of a ring homomorphism, and axiom 4 follows from properties 7-10 above. So there is exactly one such homomorphism.</p>
+<p>Step 2. [Notation] Let <span class="math inline">\(R\)</span> be a ring. We write <span class="math inline">\(n \in R\)</span> to mean the image of <span class="math inline">\(n\)</span> via the unique homomorphism above.</p>
+<p>We will prove later that the image of <span class="math inline">\(f\)</span> is isomorphic to <span class="math inline">\({\mathbb Z}\)</span> or a quotient of <span class="math inline">\({\mathbb Z}\)</span>. For any ring <span class="math inline">\(R\)</span>, we can be confident to write <span class="math inline">\(18 \in R\)</span>, but we can’t be sure that <span class="math inline">\(18\)</span> is nonzero!</p>
+</section>
+</section>
+</section>
+<section id="types-of-elements-of-rings" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Types of Elements of Rings</h1>
+<section id="units" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="units"><span class="header-section-number">2.1</span> Units</h2>
+<p>Even if <span class="math inline">\(R\)</span> is not a field, an <span class="math inline">\(x \in R\)</span> may have a two sided multiplicative inverse. In this case we call <span class="math inline">\(x\)</span> a <strong>unit</strong>, and permit ourselves the notation <span class="math inline">\(x^{-1}\)</span> for the two-sided multiplicative inverse of <span class="math inline">\(x\)</span>, which is unique if it exists. If <span class="math inline">\(R\)</span> is commutative we even write natural division notation <span class="math inline">\(a/x\)</span> or <span class="math inline">\(\frac{a}{x}\)</span>, if <span class="math inline">\(x\)</span> is a unit.</p>
+<p><strong>Examples:</strong> - The ring <span class="math inline">\({\mathbb Z}\)</span> has two units, namely <span class="math inline">\(\pm 1\)</span>. - The “Gaussian Integers” <span class="math inline">\({\mathbb Z}[i]\)</span> has four units, <span class="math inline">\(\pm 1\)</span> and <span class="math inline">\(\pm i\)</span>. - Every nonzero element of a field is a unit, so for example <span class="math inline">\(3 \in {\mathbb R}\)</span> is a unit. - In the polynomial ring <span class="math inline">\({\mathbb R}[x]\)</span>, the units are the nonzero constant polynomials. - In the continuous function ring <span class="math inline">\(C(X)\)</span> of functions on a space <span class="math inline">\(X\)</span>, the units are the functions <span class="math inline">\(f:X \to {\mathbb R}\)</span> which never take the value <span class="math inline">\(0\)</span>. - In <span class="math inline">\(Z/n\)</span>, the units are the elements <span class="math inline">\(x\)</span> relatively prime to <span class="math inline">\(n\)</span>, and their inverses can be found via the extended Euclidean algorithm.</p>
+</section>
+<section id="zero-divisors" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="zero-divisors"><span class="header-section-number">2.2</span> Zero-divisors</h2>
+<p>If <span class="math inline">\(x \in R\)</span> and <span class="math inline">\(y \in R\)</span> are nonzero elements for which <span class="math inline">\(xy=0\)</span>, then we call <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> <strong>zero divisors</strong> (sometimes one word “zerodivisor”). This behavior never occurs in the familiar rings <span class="math inline">\({\mathbb Z}\)</span>, <span class="math inline">\({\mathbb Q}\)</span>, <span class="math inline">\({\mathbb R}\)</span>, and <span class="math inline">\({\mathbb C}\)</span>, and doesn’t need to be discussed in high school algebra. Many students find it counterintuitive and it can be a source of errors.</p>
+<p>If <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x\)</span> is not a zero divisor, we call <span class="math inline">\(x\)</span> a non-zero-divisor (sometimes “nonzerodivisor” or NZD).</p>
+<p><strong>Proposition:</strong> If <span class="math inline">\(x\)</span> is a nonzerodivisor, then multiplication by <span class="math inline">\(x\)</span> is cancellable: Whenever <span class="math inline">\(xa=xb\)</span> then <span class="math inline">\(a=b\)</span>.</p>
+<p><strong>proof:</strong> If <span class="math inline">\(xa=xb\)</span> then <span class="math inline">\(x(a-b)=0\)</span>, so <span class="math inline">\(a-b=0\)</span>, so <span class="math inline">\(a=b\)</span>.</p>
+<p><strong>Examples:</strong> - The rings <span class="math inline">\({\mathbb Z}\)</span>, <span class="math inline">\({\mathbb Q}\)</span>, <span class="math inline">\({\mathbb R}\)</span>, and <span class="math inline">\({\mathbb C}\)</span> are domains and have no zerodivisors. - The polynomial rings <span class="math inline">\({\mathbb Z}[x]\)</span>, <span class="math inline">\({\mathbb R}[x,y]\)</span>, and <span class="math inline">\({\mathbb C}[x,y,z]\)</span>, etc. are also domains and have no zerodivisors. - In <span class="math inline">\({\mathbb Z}/n\)</span>, the elements <span class="math inline">\(x\)</span> which are not relatively prime to <span class="math inline">\(n\)</span> are zerodivisors. For example, in <span class="math inline">\({\mathbb Z}/60\)</span>, the element <span class="math inline">\(16\)</span> is a zerodivisor as <span class="math inline">\(16 \cdot 15 = 240 = 0\)</span>. - In <span class="math inline">\(C(X)\)</span>, if <span class="math inline">\(X\)</span> is the union of two closed sets <span class="math inline">\(X = A \cup B\)</span> (not necessarily disjoint) and if <span class="math inline">\(f|_A=0\)</span> and <span class="math inline">\(g|_B=0\)</span>, then <span class="math inline">\(fg=0\)</span>. Typically this is easy to accomplish and <span class="math inline">\(C(X)\)</span> has many zerodivisors. - In <span class="math inline">\({\mathbb Z} \times {\mathbb Z}\)</span> with coordinatewise operations, <span class="math inline">\((a,0)\times (0,b) = 0\)</span>.</p>
+</section>
+<section id="nilpotent-elements" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="nilpotent-elements"><span class="header-section-number">2.3</span> Nilpotent elements</h2>
+<p>Nilpotency is an extreme variant of the zerodivisor.</p>
+<p>If <span class="math inline">\(x\)</span> is a nonzero element of a ring and <span class="math inline">\(x^n=0\)</span>, we call <span class="math inline">\(x\)</span> <strong>nilpotent.</strong></p>
+<p><strong>Examples:</strong> Nilpotent elements are fairly rare.</p>
+<ul>
+<li><p>In <span class="math inline">\(R = {\mathbb Z}/n\)</span>, if <span class="math inline">\(x\)</span> is divisible by <strong>all</strong> of the factors of <span class="math inline">\(n\)</span>, then a sufficiently high power of <span class="math inline">\(x\)</span> will be divisible by <span class="math inline">\(n\)</span>, so <span class="math inline">\(x\)</span> is nilpotent. To be more specific in <span class="math inline">\({\mathbb Z}/2400\)</span> (Note <span class="math inline">\(2400 = 2^5 \cdot 3 \cdot 5^2\)</span>) the multiples of <span class="math inline">\(30 = 2 \cdot 3 \cdot 5\)</span> are nilpotent.</p></li>
+<li><p>In any matrix ring <span class="math inline">\(M\)</span>, a <strong>strictly upper triangular</strong> matrix (whose entries on and below the main diagonal are all zero) is nilpotent.</p></li>
+</ul>
+<p><strong>Proposition:</strong> If <span class="math inline">\(x\)</span> is nilpotent, then <span class="math inline">\(1-x\)</span> is a unit.</p>
+<p><strong>proof:</strong> <span class="math display">\[(1-x^n) = (1-x)(1+x+x^2+ \ldots +x^{n-1})\]</span></p>
+</section>
+<section id="irreducibles" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="irreducibles"><span class="header-section-number">2.4</span> Irreducibles</h2>
+<p>Since rings have multiplication, they have factorization as well. The roots of the factor tree are called irreducible elements. We need to be careful to exclude factoring out a unit. We usually confine these definitions to domains, because factoring in nondomains is already pretty bad.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a domain and let <span class="math inline">\(x \in R\)</span>.</p>
+<p>If <span class="math inline">\(x\)</span> is a nonunit and <span class="math inline">\(x\)</span> factors <span class="math inline">\(x=ab\)</span> into nonunits <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we call <span class="math inline">\(x\)</span> <strong>reducible</strong>.</p>
+<p>If <span class="math inline">\(x\)</span> is a nonunit and <span class="math inline">\(x\)</span> cannot be factored in the form <span class="math inline">\(x=ab\)</span>, with nonunits <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we call <span class="math inline">\(x\)</span> <strong>irreducible</strong>.</p>
+<p>Naturally we are often interested in factoring ring elements into finite products of irreducible elements. This is “usually” possible but there are exceptions.</p>
+<p><strong>Examples:</strong> 1. In <span class="math inline">\({\mathbb Z}\)</span> naturally the irreducible elements are the (positive and negative) prime numbers. 2. In <span class="math inline">\({\mathbb Z}[i]\)</span> we get a slightly different set of irreducible elements. For example here <span class="math inline">\(5\)</span> factors <span class="math inline">\(5 = (2+i)(2-i)\)</span>, but both <span class="math inline">\(2+i\)</span> and <span class="math inline">\(2-i\)</span> are irreducible. 3. In <span class="math inline">\({\mathbb R}[x]\)</span>, every polynomial can be factored into linear factors <span class="math inline">\((x-r)\)</span> and rootless quadratic irreducible factors <span class="math inline">\(ax^2+bx + c\)</span> where <span class="math inline">\(b^2-4ac &lt; 0\)</span>. These factors are the irreducible polynomials. 4. In <span class="math inline">\({\mathbb C}[x]\)</span>, every polynomial can be factored into linear factors <span class="math inline">\((x-r)\)</span>, and these linear factors are the irreducible polynomials.</p>
+</section>
+<section id="prime-elements" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="prime-elements"><span class="header-section-number">2.5</span> Prime elements</h2>
+<p>Let <span class="math inline">\(R\)</span> be a commutative ring.</p>
+<p>We write <span class="math inline">\(x|y\)</span> (“<span class="math inline">\(x\)</span> divides <span class="math inline">\(y\)</span>”) to mean that $xz=y for some <span class="math inline">\(z\)</span>.</p>
+<p>An element <span class="math inline">\(a \in R\)</span> is called <strong>prime</strong> if whenever <span class="math inline">\(a|bc\)</span> then <span class="math inline">\(a|b\)</span> or <span class="math inline">\(a|c\)</span>.</p>
+<p>This notion also generalizes the idea of prime numbers in <span class="math inline">\({\mathbb Z}\)</span>, but for general rings is not equivalent to irreducibility.</p>
+<p><strong>Prop:</strong> Let <span class="math inline">\(R\)</span> be a domain. Then any prime element is irreducible.</p>
+<p><strong>proof:</strong> Let <span class="math inline">\(a\)</span> be prime. If <span class="math inline">\(a\)</span> can be factored <span class="math inline">\(a=bc\)</span>, then <span class="math inline">\(a\)</span> divides one of the factors. WLOG say <span class="math inline">\(a|c\)</span>. Then <span class="math inline">\(c=za\)</span> and <span class="math inline">\(a = bza\)</span>. Since <span class="math inline">\(R\)</span> is a domain we may cancel to obtain <span class="math inline">\(1=bz\)</span>, so <span class="math inline">\(b\)</span> is a unit. It follows that <span class="math inline">\(a\)</span> is irreducible.</p>
+<p>If we wish to prove that irreducibles are prime, we would likely compare the factor trees of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>. To make this work, we would need to depend on some consistency between those factorizations. This would require <span class="math inline">\(R\)</span> to be a Unique Factorization Domain (UFD. see below). If <span class="math inline">\(R\)</span> is not a UFD, irreducibles need not be prime.</p>
+<p><strong>Examples</strong> - All the irreducible elements in the previous examples are also prime. - Let <span class="math inline">\(R = {\mathbb Z}[\sqrt{-5}] \subseteq {\mathbb C}\)</span> be the ring whose elements are of the form <span class="math inline">\(a+\sqrt{-5}\)</span> for <span class="math inline">\(a, b \in {\mathbb Z}\)</span>, with structure inherited from <span class="math inline">\({\mathbb C}\)</span>. Then <span class="math inline">\(R\)</span> is a ring (everyone’s first non-UFD domain) and <span class="math display">\[2 \cdot 3 = (1-\sqrt{-5}) \cdot (1+\sqrt{-5})\]</span> Now in <span class="math inline">\(R\)</span> all four multiplicands above are irreducible, none of them is a factor of another, and so none of them is prime.</p>
+</section>
+</section>
+<section id="kernels-ideals-and-quotients" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Kernels, Ideals, and Quotients</h1>
+<section id="properties-of-kernels-definition-of-ideal" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="properties-of-kernels-definition-of-ideal"><span class="header-section-number">3.1</span> Properties of Kernels, Definition of Ideal</h2>
+<p>In group theory, we defined a quotient group <span class="math inline">\(G/N\)</span>, not for any subgroup <span class="math inline">\(N\)</span>, but for any <strong>normal</strong> subgroup <span class="math inline">\(N\)</span>. Why normal? Because the kernel of a group homomorphism is always normal.</p>
+<p>In ring theory, we again allow the properties of kernels to motivate the definitions analogous to the normal subgroup.</p>
+<p>Therefore, let <span class="math inline">\(f:R \to S\)</span> be a ring homomorphism. What can we say about <span class="math inline">\(\ker(f)\)</span>? 1. <span class="math inline">\(\ker(f)\)</span> contains <span class="math inline">\(0_R\)</span> 2. <span class="math inline">\(\ker(f)\)</span> is closed under addition and additive inverse. The proofs are unsurprising. 3. Because <span class="math inline">\(\ker(f)\)</span> does <strong>not</strong> normally contain <span class="math inline">\(1_R\)</span>, it’s not normally a subring. (Warning: This verdict changes in “rng theory.”) 4. <span class="math inline">\(\ker(f)\)</span> has multiplicative closure. Let’s look closely at the proof:</p>
+<p><strong>proof of 4:</strong> Let <span class="math inline">\(x, y \in \ker(f)\)</span>, and consider their product <span class="math inline">\(xy\)</span>. Then <span class="math inline">\(f(xy) = f(x)f(y) = 0 \cdot 0 = 0\)</span>, so <span class="math inline">\(xy \in \ker(f)\)</span>.</p>
+<p>The proof above is correct, but suspicious. Since anything times zero is zero, we don’t need to assume that <em>both</em> <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are in the kernel. We only need one of them! This brings us to a modification of closure, called <strong>capture</strong></p>
+<ol start="5" type="1">
+<li><span class="math inline">\(\ker(f)\)</span> has multiplicative <strong>capture</strong>: If <strong>either one of</strong> <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> is in <span class="math inline">\(\ker(f)\)</span> (and the other is at least in <span class="math inline">\(R\)</span>) then <span class="math inline">\(xy \in \ker(f)\)</span>.</li>
+</ol>
+<p>All kernels have this capture property. Something meeting all three observed properties is called an <strong>ideal</strong>:</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a ring and let <span class="math inline">\(I \subseteq R\)</span>. We call <span class="math inline">\(I\)</span> an <strong>ideal</strong> if: 1. <span class="math inline">\(0 \in I\)</span> 2. <span class="math inline">\(I\)</span> has additive <strong>closure</strong>. 3. <span class="math inline">\(I\)</span> has multiplicative <strong>capture</strong>: If <span class="math inline">\(x \in I\)</span> or <span class="math inline">\(y \in I\)</span> then <span class="math inline">\(xy = I\)</span>.</p>
+<p><strong>Notes:</strong> - In a commutative ring we would call this an “ideal”. In a noncommutative ring we would normally call this a “two sided ideal”, and could go on to define “left ideal” and “right ideal”. - Most authors assert “<span class="math inline">\(I\)</span> is nonempty” instead of <span class="math inline">\(0 \in I\)</span>, but the assertion <span class="math inline">\(0 \in I\)</span> is always true and feels more direct to me.</p>
+<p>There are no empty ideals, but there are some trivial cases with special names: The ideal <span class="math inline">\(\{0\}\)</span> is called the <strong>zero ideal.</strong> The ideal <span class="math inline">\(R \subseteq R\)</span> is called the <strong>unit ideal</strong>. Together they are called <strong>trivial</strong> ideals.</p>
+<p><strong>Theorem:</strong> If <span class="math inline">\(f:R \to S\)</span> is a homomorphism, then <span class="math inline">\(\ker(f)\)</span> is an ideal.</p>
+<p><strong>proof:</strong> follows from previous discussion.</p>
+</section>
+<section id="you-can-mod-out-by-an-ideal" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="you-can-mod-out-by-an-ideal"><span class="header-section-number">3.2</span> You can mod out by an ideal</h2>
+<p>This section describes the quotient <span class="math inline">\(R/I\)</span> of a ring by an ideal. This establishes that all ideals are kernels.</p>
+<p><strong>Definition / Theorem:</strong> Let <span class="math inline">\(R\)</span> be a ring and let <span class="math inline">\(I\)</span> be an ideal. The set of cosets: <span class="math display">\[R/I \equiv_{def} \{a+I \,|\, a \in R \}\]</span> with structures: 1. <span class="math inline">\(0_{R/I} \equiv I\)</span> 2. <span class="math inline">\(1_{R/I} \equiv 1+I\)</span> 3. <span class="math inline">\((x+I)+(y+I) \equiv (x+y)+I\)</span> 4. <span class="math inline">\((x+I)(y+I) \equiv (xy)+I\)</span></p>
+<p><span class="math inline">\(\ldots\)</span> is called a <strong>quotient ring</strong> and pronounced “R mod I”</p>
+<p><strong>Recall</strong>: <span class="math inline">\(a+I = b+I\)</span> iff <span class="math inline">\(a-b \in I\)</span>. This was true in group theory, and ring theory is an extension because <span class="math inline">\((R,0,+)\)</span> is an abelian group.</p>
+<p><strong>Proof:</strong> The proof is a great deal of checking. The student is encouraged to figure out for themselves what must be checked.</p>
+<ol type="1">
+<li><p>Addition is well defined: Suppose <span class="math inline">\(x_1 +I = x_2+I\)</span> and <span class="math inline">\(y_1+I = y_2+I\)</span>. Then <span class="math inline">\(x_2-x_1 \in I\)</span> and <span class="math inline">\(y_2-y_1 \in I\)</span>. By additive closure, <span class="math inline">\((x_2+y_2) - (x_1+y_1) \in I\)</span>, so <span class="math inline">\(x_1+y_1 +I = x_2+y_2+I\)</span> and addition is well defined.</p></li>
+<li><p>Multiplication is well defined: As before suppose <span class="math inline">\(x_1 +I = x_2+I\)</span> and <span class="math inline">\(y_1+I = y_2+I\)</span>, so that <span class="math inline">\(x_2-x_1 \in I\)</span> and <span class="math inline">\(y_2-y_1 \in I\)</span>. Notice the product of these differences is <em>not</em> equal to <span class="math inline">\(x_2y_2 - x_1y_1\)</span>. However, we have <span class="math display">\[x_2y_2 - x_1y_1 = x_2y_2 - x_2y_1 + x_2y_1 - x_1y_1 = x_2(y_2-y_1) + (x_2-x_1)y_2\]</span> <span class="math inline">\(\ldots\)</span> which is in <span class="math inline">\(I\)</span> by both multiplicative capture and additive closure.</p></li>
+</ol>
+<p>Next, all eight ring axioms must be checked. It’s a great deal of equation pushing but not really interesting. For example, to prove the first distribution property we have</p>
+<p><span class="math display">\[\begin{align*}
+(a+I)((b+I) + (c+I)) &amp;= (a+I)((b+c)+I)\\
+&amp;= (a(b+c))+I \\
+&amp;= (ab+ac)+I \\
+&amp;= (ab + I) + (ac +I) \\
+&amp;= (a+I)(b+I) + (a+I)(c+I)
+\end{align*}\]</span></p>
+</section>
+<section id="canonical-quotient-homomorphism" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="canonical-quotient-homomorphism"><span class="header-section-number">3.3</span> Canonical quotient homomorphism</h2>
+<p>Given any ideal <span class="math inline">\(I\)</span> of a ring <span class="math inline">\(R\)</span>, we have an “obvious” map <span class="math inline">\(f:R \to R/I\)</span> called the canonical quotient homomorphism, or quotient map, defined by <span class="math inline">\(f(x) = x+I\)</span>. Naturally, its kernel is <span class="math inline">\(I\)</span> and its image is all of <span class="math inline">\(R/I\)</span>.</p>
+</section>
+<section id="universal-property-of-the-quotient-map" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="universal-property-of-the-quotient-map"><span class="header-section-number">3.4</span> Universal property of the quotient map</h2>
+<p><strong>Theorem:</strong> The quotient map <span class="math inline">\(\phi:R \to R/I\)</span> sends <span class="math inline">\(I\)</span> to <span class="math inline">\(0\)</span>. For any ring homomorphism <span class="math inline">\(g: R \to S\)</span> for which <span class="math inline">\(g(I) = 0\)</span>, there is a unique map <span class="math inline">\(G: R/I \to S\)</span> so that <span class="math inline">\(G \phi = g\)</span></p>
+<p><strong>proof:</strong> Let <span class="math inline">\(G: R/I \to S\)</span> by <span class="math inline">\(G(a+I) = g(a)\)</span>.</p>
+<p><strong>shorthand:</strong> To define a map on <span class="math inline">\(R/I\)</span>, just define it on <span class="math inline">\(R\)</span> and check <span class="math inline">\(I\)</span> maps to zero.</p>
+<ul>
+<li>The condition <span class="math inline">\(G \phi = g\)</span> forces <span class="math inline">\(G(a+I) = g(a)\)</span>, so <span class="math inline">\(G\)</span> is unique if it exists. We take this to be the definition of <span class="math inline">\(G\)</span>.</li>
+<li><span class="math inline">\(G\)</span> is well defined</li>
+<li><span class="math inline">\(G\)</span> is a homomorphism</li>
+<li><span class="math inline">\(G\phi = g\)</span>.</li>
+</ul>
+<p><strong>Theorem:</strong> If <span class="math inline">\(\mu: R \to T\)</span> is another map for which the previous theorem is true (with <span class="math inline">\(\mu\)</span> for <span class="math inline">\(\phi\)</span> and <span class="math inline">\(T\)</span> for <span class="math inline">\(R/I\)</span>, then there is an isomorphism <span class="math inline">\(G:R/I \to T\)</span> and <span class="math inline">\(G\phi = \mu\)</span>.</p>
+<p><strong>proof:</strong> Construct both commutative triangles and compare their compositions to the identity.</p>
+</section>
+<section id="principal-ideals" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="principal-ideals"><span class="header-section-number">3.5</span> Principal Ideals</h2>
+<p><strong>Definition:</strong> Let <span class="math inline">\(a \in R\)</span>. (<span class="math inline">\(R\)</span> commutative.) The <strong>principal ideal generated by <span class="math inline">\(a\)</span></strong>, written <span class="math inline">\((a)\)</span>, is the set <span class="math inline">\(aR\)</span>. If an ideal <span class="math inline">\(I\)</span> equals <span class="math inline">\((a)\)</span> for some <span class="math inline">\(a\)</span>, then <span class="math inline">\(I\)</span> is <strong>principal.</strong></p>
+<p><strong>Examples:</strong> 1. The principal ideal <span class="math inline">\((4) \subseteq {\mathbb Z}\)</span> consists of the multiples of <span class="math inline">\(4\)</span>.</p>
+<ol start="2" type="1">
+<li><p>In the polynomial ring <span class="math inline">\({\mathbb R}[x]\)</span>, the ideal of polynomials <span class="math inline">\(p\)</span> with <span class="math inline">\(p(2)=0\)</span> is equal to <span class="math inline">\((x-2)\)</span>, because every such polynomial must have <span class="math inline">\(x-2\)</span> as a factor.</p></li>
+<li><p>In the ring <span class="math inline">\(R = C({\mathbb R})\)</span> of continuous functions on <span class="math inline">\({\mathbb R}\)</span>, the ideal of functions <span class="math inline">\(f\)</span> with <span class="math inline">\(f(2)=0\)</span> is not principal. There is no single function like <span class="math inline">\(x-2\)</span> which is a factor of all other functions vanishing at <span class="math inline">\(2\)</span>. Worse, in this ring any function <span class="math inline">\(f(x)\)</span> with a root at all is divisible by, but does not divide, the function <span class="math inline">\(\sqrt{|f(x)|}\)</span>, which has the same roots.</p></li>
+</ol>
+<p><strong>Proposition:</strong> <span class="math inline">\((a) = R\)</span> iff <span class="math inline">\(a\)</span> is a unit.</p>
+<p><strong>Proposition:</strong> Every ideal of <span class="math inline">\({\mathbb Z}\)</span> is principal.</p>
+<p><strong>proof:</strong> The trivial ideals are generated by <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>. If <span class="math inline">\(I\)</span> is a nontrivial ideal, then it must have a positive element, so it must have a smallest positive element <span class="math inline">\(n \in I\)</span>. Then every other element <span class="math inline">\(x \in I\)</span> can be written <span class="math inline">\(x=nq+r\)</span> by long division, where <span class="math inline">\(0 \leq r &lt; n\)</span>. It follows that <span class="math inline">\(r \in I\)</span> so <span class="math inline">\(r=0\)</span>, so <span class="math inline">\(x\)</span> is a multiple of <span class="math inline">\(a\)</span>. Therefore <span class="math inline">\(I = (n)\)</span>.</p>
+<p><strong>Corollary:</strong> The quotient rings of <span class="math inline">\({\mathbb Z}\)</span> are <span class="math inline">\({\mathbb Z}\)</span> itself, the zero ring, and the various finite rings <span class="math inline">\({\mathbb Z}/(n)\)</span>.</p>
+<p><strong>Example:</strong> This is probably the easiest “natural” example of a nonprincipal ideal. Let <span class="math inline">\(R = {\mathbb Z}[x]\)</span> be the polynomial ring with integer coefficients, and let <span class="math inline">\(I = \{f \in R \,|\, f(0) \text{ is even } \}\)</span>. Then <span class="math inline">\(I\)</span> contains both <span class="math inline">\(2\)</span> and <span class="math inline">\(x\)</span>. Because no polynomial is a factor of both <span class="math inline">\(2\)</span> and <span class="math inline">\(x\)</span>, the ideal <span class="math inline">\(I\)</span> is not principal.</p>
+</section>
+<section id="combining-ideals" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="combining-ideals"><span class="header-section-number">3.6</span> Combining Ideals</h2>
+<p>Since ideals are subsets, it’s natural to ask whether the union or intersection of ideals yields another.</p>
+<p><strong>Theorem:</strong> The intersection two ideals, or indeed any family ideals, is an ideal.</p>
+<p><strong>proof:</strong> Let <span class="math inline">\(\mathscr I\)</span> be a family of ideals, and write <span class="math inline">\(J = \bigcap \mathscr I\)</span> for their intersection. Certainly <span class="math inline">\(0 \in J\)</span>. For any <span class="math inline">\(a, b \in J\)</span>, <span class="math inline">\(a+b\)</span> is in every member of <span class="math inline">\(\mathscr I\)</span>, so <span class="math inline">\(a+b \in J\)</span>. Similarly, if <span class="math inline">\(a \in J\)</span>, then <span class="math inline">\(ra\)</span> is in every member of <span class="math inline">\(\mathscr I\)</span>, so <span class="math inline">\(ra \in J\)</span>. It follows that <span class="math inline">\(J\)</span> is an ideal.</p>
+<p>This theorem is often used to create a unique smallest ideal having some desired properties, by intersecting all ideals having that property. Sort of like shrink-wrap. For example, the principal ideal <span class="math inline">\((a)\)</span> could have been defined as the intersection of the family of all ideals which contains <span class="math inline">\(a\)</span>. As long as the property (here “contains <span class="math inline">\(a\)</span>”) is preserved by intersection, this trick will work.</p>
+<p><strong>Unions:</strong> The union of ideals is almost never an ideal, because if <span class="math inline">\(a \in I_1\)</span> and <span class="math inline">\(b \in I_2\)</span>, then <span class="math inline">\(a+b\)</span> is likely in neither ideal, so the union is not closed under summation. An exception is a union of a <strong>chain</strong> of ideals:</p>
+<p><strong>Definition:</strong> A <strong>chain</strong> <span class="math inline">\(\mathscr C\)</span> of ideals is a family which is totally ordered by the subset relation <span class="math inline">\(\subseteq\)</span>.</p>
+<p>Note that this is more general than an increasing or decreasing sequence of ideals. A chain may be uncountable and the order structure may be far more complicated than <span class="math inline">\({\mathbb N}\)</span> or <span class="math inline">\({\mathbb Z}\)</span>.</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(\mathscr C\)</span> be a (nonempty) chain of ideals. Then their union <span class="math inline">\(U = \bigcup C\)</span> is an ideal.</p>
+<p><strong>proof:</strong> We proceed in three steps 1. Since <span class="math inline">\(0 \in I \in \mathscr C\)</span> for some <span class="math inline">\(I\)</span>, <span class="math inline">\(0 \in U\)</span>. 2. Let <span class="math inline">\(a \in U\)</span>. Then <span class="math inline">\(a \in I \in \mathscr C\)</span>, so <span class="math inline">\(ra \in I \subseteq U\)</span>, as desired. 3. Let <span class="math inline">\(a, b \in U\)</span>. Then <span class="math inline">\(a \in I in \mathscr C\)</span> and <span class="math inline">\(b \in J \in mathscr C\)</span>. In this step alone it matters that <span class="math inline">\(\mathscr C\)</span> is a chain. Since it is, <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> have a containment relation and WLOG (by symmetry of the assumption) <span class="math inline">\(I \subseteq J\)</span>. Then <span class="math inline">\(a+b \in J \subseteq U\)</span> as desired.</p>
+<p>What if we really really extra want to find the union of several ideals? Then we construct their <strong>sum</strong></p>
+<p><strong>Definition:</strong> The sum of two ideals <span class="math inline">\(I+J\)</span> is <span class="math inline">\(\ldots\)</span> 1. the set of linear combinations <span class="math display">\[\{ra+sb \,|\, a \in I, b \in J, r,s \in R\}\]</span> 2. the intersection of all ideals of <span class="math inline">\(R\)</span> containing both <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span>.</p>
+<p><strong>correctness checks</strong></p>
+<p><strong>Claim:</strong> The description in (1) is indeed an ideal. <strong>proof</strong> The set obviously contains <span class="math inline">\(0\)</span>. It’s easy to check that it has additive closure and multiplicative capture.</p>
+<p><strong>Claim:</strong> The ideals in (1) and in (2) are the same. <strong>Proof:</strong> Any ideal containing both <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> must contain all such linear combinations, by closure and capture. This shows (1) (2), if you will. But the ideal of (1) is one of the ideals intersected in (2), and this yields the other containment.</p>
+<p>Sums of even infinite families are also possible:</p>
+<p><strong>Definition:</strong> The sum of any family <span class="math inline">\(\mathscr F\)</span> of ideals is <span class="math inline">\(\ldots\)</span> 1. the set of <strong>finite</strong> linear combinations <span class="math display">\[\left \{\sum_{i} r_ia_i \,|\, r_i \in R, a_i \in F_i \in \mathscr F\right \}\]</span> 2. the intersection of all ideals in <span class="math inline">\(R\)</span> containing every <span class="math inline">\(F \in \mathscr F\)</span>.</p>
+<p><strong>Note:</strong> The proof that (1) is an ideal and that (1) and (2) describe the same set are essentially the same but slightly more fiddly.</p>
+</section>
+<section id="generating-ideals" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="generating-ideals"><span class="header-section-number">3.7</span> Generating ideals</h2>
+<p><strong>Definition:</strong> More generally, if <span class="math inline">\(A\)</span> is any sub<strong>set</strong> of a ring <span class="math inline">\(R\)</span>, the <strong>ideal generated by <span class="math inline">\(A\)</span></strong> is the intersection of all ideals containing <span class="math inline">\(A\)</span>. It is the unique minimal ideal containing <span class="math inline">\(A\)</span>.</p>
+</section>
+</section>
+<section id="maximal-and-prime-ideals" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Maximal and Prime ideals</h1>
+<section id="definitions" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">4.1</span> Definitions</h2>
+<p>Five is a prime number of course. One interpretation is that for any product <span class="math inline">\(ab\)</span> divisible by <span class="math inline">\(5\)</span>, one of the factors <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span> is divisible by <span class="math inline">\(5\)</span>. Notice that this condition is as much about the class of numbers divisible by <span class="math inline">\(5\)</span>, an ideal, as it is about <span class="math inline">\(5\)</span> itself. This motivates our next definition.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(I \subseteq R\)</span> be an ideal. We call <span class="math inline">\(I\)</span> <strong>prime</strong> if <span class="math inline">\(I\)</span> is not the unit ideal and whenever <span class="math inline">\(ab \in I\)</span>, then <span class="math inline">\(a\)</span> I$ or <span class="math inline">\(b \in I\)</span>.</p>
+<p>This is sort of a converse of the multiplicative capture property.</p>
+<p>** Examples: ** - The prime ideal of <span class="math inline">\({\mathbb Z}\)</span> are exactly the ideals <span class="math inline">\((p)\)</span> generated by prime numbers, and the zero ideal. - The field <span class="math inline">\({\mathbb R}\)</span> has only two ideals, and the small one, <span class="math inline">\((0)\)</span>, is prime. - A ring <span class="math inline">\(R\)</span> is a domain if and only if then the zero ideal is prime.</p>
+<p>Next we define maximal ideals. The absolute largest ideal in any ring <span class="math inline">\(R\)</span> is the unit ideal, <span class="math inline">\(R\)</span> itself. By “maximal ideal” we mean not quite that large, but otherwise as large as can be:</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(I \subseteq R\)</span> be an ideal. We call <span class="math inline">\(I\)</span> <strong>maximal</strong> if the only ideal which properly contains it is the unit ideal.</p>
+<p><strong>Caution:</strong> This is one of those cases when there can be many “maximal” objects. A ring often has many maximal ideals which of course do not have any subset relationships between one another.</p>
+<p><strong>Examples:</strong> - The maximal ideals of <span class="math inline">\({\mathbb Z}\)</span> are, once again, exactly the ideals <span class="math inline">\((p)\)</span> generated by prime numbers. The zero ideal is not maximal. - In function rings, it’s common to construct the ideal of all functions <span class="math inline">\(f\)</span> which take the value <span class="math inline">\(0\)</span> at a given fixed point <span class="math inline">\(x \in X\)</span>. Often, such an ideal is maximal. Except in some very strange circumstances, this sort of ideal will be maximal.</p>
+</section>
+<section id="quotient-by-prime-or-maximal" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="quotient-by-prime-or-maximal"><span class="header-section-number">4.2</span> Quotient by prime or maximal</h2>
+<p>If we look closely a the definitions of “domain” and “prime ideal”, it’s clear that a ring in which the zero ideal is prime is a domain. This is also true “after modding out”, in the following sense:</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(I\)</span> be an ideal of a commutative ring <span class="math inline">\(R\)</span>. Then <span class="math inline">\(I\)</span> is prime if and only if <span class="math inline">\(R/I\)</span> is a domain.</p>
+<p><strong>proof:</strong> Recall that <span class="math inline">\(a+I=0_{R/I}\)</span> if and only if <span class="math inline">\(a \in I\)</span>. The following statements are all equivalent.</p>
+<ol type="1">
+<li><span class="math inline">\(I\)</span> is prime</li>
+<li><span class="math inline">\(\forall a, b \in R \enspace ab \in I \to a \in I \lor b \in I\)</span></li>
+<li><span class="math inline">\(\forall a+I, b+I \in R/I \enspace ab+I =0  \to a+I=0 \lor b \in I\)</span></li>
+<li><span class="math inline">\(\forall a+I, b+I \in R/I \enspace (a+I)(b+I) = 0_{R/I} \to a+I=0 \lor b \in I\)</span></li>
+<li><span class="math inline">\(R/I\)</span> is a domain.</li>
+</ol>
+<p>There is a related theorem for maximal ideals:</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(I\)</span> be an ideal of a commutative ring <span class="math inline">\(R\)</span>. Then <span class="math inline">\(I\)</span> is maximal if and only if <span class="math inline">\(R/I\)</span> is a field.</p>
+<p><strong>proof:</strong></p>
+<p>Suppose <span class="math inline">\(I\)</span> is maximal, and let <span class="math inline">\(a+I\)</span> be a nonzero element of <span class="math inline">\(R/I\)</span>. Construct the ideal <span class="math display">\[J = I+(a) = \{i+ar \,|\, i \in I, r \in R\}\]</span> The reader should check that this is an ideal. Since <span class="math inline">\(a+I \neq 0\)</span>, <span class="math inline">\(a \notin I\)</span>, and <span class="math inline">\(I \subsetneq J\)</span>. By maximality, <span class="math inline">\(J=(1)\)</span>, so <span class="math inline">\(1 \in J\)</span>, so <span class="math inline">\(1 = i+ab\)</span> for some <span class="math inline">\(b \in R\)</span>. It follows that <span class="math inline">\((a+I)(b+I) = (1+I)\)</span>.</p>
+<p>Conversely suppose <span class="math inline">\(R/I\)</span> is a field. Let <span class="math inline">\(I \subseteq J\)</span>. Let <span class="math inline">\(a \in J - I\)</span>. Since <span class="math inline">\(R/I\)</span> is a field and <span class="math inline">\(a+I \neq 0\)</span>, we have <span class="math inline">\((a+I)(b+I) =1+I\)</span> for some <span class="math inline">\(b\)</span>. But then <span class="math inline">\(1 - ab \in I\)</span>. By the additive closure (and capture) of <span class="math inline">\(J\)</span> we deduce that <span class="math inline">\(1 = (1-ab) + ab \in J\)</span>, so <span class="math inline">\(J=(1)\)</span>. We’ve shown that <span class="math inline">\(I\)</span> is maximal. This completes the proof.</p>
+<p><strong>Note:</strong> Fields are domains, because a unit cannot be a zerodivisor.</p>
+<p><strong>Corollary:</strong> Maximal ideals are prime ideals.</p>
+<p><strong>Note:</strong> But there is certainly a more direct proof without quotients, and the reader is encouraged to find it.</p>
+</section>
+<section id="existence-of-maximal-ideals" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="existence-of-maximal-ideals"><span class="header-section-number">4.3</span> Existence of Maximal Ideals</h2>
+<p>Often we have some condition on ideals, such “ideals of <span class="math inline">\({\mathbb Z}[x]\)</span> which do not contain some element”, or “ideals of <span class="math inline">\(R\)</span> which are not the unit ideal”, and we wish to choose one as large as possible under that restraint. Depending on the condition, an ideal “maximal among desired ideals” may or may not be maximal, but it will often be useful or interesting.</p>
+<p>Imagine we have a complicated ring <span class="math inline">\(R\)</span> and a strange condition <span class="math inline">\(P\)</span> on ideals of <span class="math inline">\(R\)</span>. We wish to find an ideal <span class="math inline">\(I\)</span> maximal with the condition. Choose any ideal with property <span class="math inline">\(P\)</span>. If it’s maximal, great. If not, choose a strictly larger one. If it’s maximal great. If not, continue. Maybe we continue forever. Even then, we produce a chain. Take the union of the chain. Irritatingly, even this is not necessarily maximal. Choose a larger. And larger. And maybe union again. Maybe use the union step infinitely many times and eventually do some sort of super-union. Does this process end?</p>
+<p>This scenario is taylor made for Zorn’s Lemma:</p>
+<p><strong>Zorn’s Lemma:</strong> Let <span class="math inline">\(P\)</span> be a poset, ordered by <span class="math inline">\(\preccurlyeq\)</span>. Assume that for every chain <span class="math inline">\(\mathscr C\)</span> in <span class="math inline">\(P\)</span>, there is upper bound <span class="math inline">\(z\)</span> in the sense that <span class="math inline">\(x \preccurlyeq z\)</span> for all <span class="math inline">\(x \in \mathscr C\)</span>. Then <span class="math inline">\(P\)</span> has a maximal element.</p>
+<p><a href="https://colab.research.google.com/drive/17gpaRMu_bMyHb4HTrHiU_7j9u3r9UXw5?usp=sharing">Proof of Zorn’s Lemma</a></p>
+<p>How does this help? As long as the property of interest on ideals <span class="math inline">\(I \subseteq R\)</span> is preserved by unions of chains of ideals, Zorn’s Lemma can be applied to the poset of ideals having the property, and it produces an ideal maximal among them. (But again, not necessarily “maximal” in the prior sense.)</p>
+<p><strong>Example Applications:</strong></p>
+<ol type="1">
+<li><p>We apply Zorn’s Lemma to the poset of all ideals of <span class="math inline">\(R\)</span>. This produces a maximal element of the poset, which of course is the unit ideal, <span class="math inline">\(R\)</span> itself. What a waste of a Lemma!</p></li>
+<li><p>We apply Zorn’s Lemma to the poset of all proper ideals of <span class="math inline">\(R\)</span>. (That is, excluding the unit ideal.) Any maximal element of this poset is a maximal ideal in the normal sense. This demonstrates that every commutative ring has a maximal ideal.</p></li>
+<li><p>We fix <span class="math inline">\(f \in R\)</span> (not nilpotent) and apply Zorn’s Lemma to the poset of ideals which contain neither <span class="math inline">\(f\)</span> nor or any power of <span class="math inline">\(f\)</span>. Notice this condition is preserved under chain unions. The result is an ideal <span class="math inline">\(I\)</span> which may not be a maximal ideal, but will always be prime.</p></li>
+</ol>
+</section>
+</section>
+<section id="image-preimages-and-correspondence-of-ideals" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Image, Preimages, and Correspondence of Ideals</h1>
+<p>Let <span class="math inline">\(f:R \to S\)</span> be a ring homomorphism. An ideal in <span class="math inline">\(R\)</span> or in <span class="math inline">\(S\)</span> can be transported to the other by calculating its preimage or image. Will this result in an ideal?</p>
+<section id="images-and-extensions" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="images-and-extensions"><span class="header-section-number">5.1</span> Images and Extensions</h2>
+<p>Let <span class="math inline">\(f:R \to S\)</span> and let <span class="math inline">\(I \subseteq R\)</span> be an ideal. The image <span class="math inline">\(f(I)\)</span> contains <span class="math inline">\(0\)</span> and is closed under addition. But <span class="math inline">\(f(I)\)</span> may fail to be an ideal because it fails multiplicative capture using the “new” constants from <span class="math inline">\(S\)</span>.</p>
+<p><strong>Examples</strong></p>
+<ol type="1">
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Q}\)</span> be the inclusion and let <span class="math inline">\(I = (3) = 3{\mathbb Z}\)</span>. Then <span class="math inline">\(f(I)\)</span> is not an ideal of <span class="math inline">\({\mathbb Q}\)</span></p></li>
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z}/(10)\)</span> and let <span class="math inline">\(I = (8)\)</span>. Then the image <span class="math inline">\(f(I)\)</span> is <span class="math inline">\(\{0,8,6,4,2\}\)</span>. It is the ideal generated by or <span class="math inline">\(2 + (10)\)</span> in {Z}/(10)$.</p></li>
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z} [x]\)</span> be the inclusion. Let <span class="math inline">\(I\)</span> be the ideal <span class="math inline">\((3) = 3{\mathbb Z} \subseteq {\mathbb Z}\)</span>. Then <span class="math inline">\(f(I)\)</span> fails the capture property in <span class="math inline">\({\mathbb Z}[x]\)</span>. For example <span class="math inline">\(3x \notin f(I)\)</span>.</p></li>
+</ol>
+<p>In any event, the set <span class="math inline">\(f(I)\)</span> generates some ideal of <span class="math inline">\(S\)</span>.</p>
+<p><strong>Definition:</strong> The <strong>extension</strong> of the ideal <span class="math inline">\(I\)</span> across <span class="math inline">\(f\)</span> is the ideal generated by the image <span class="math inline">\(f(I)\)</span>. It is written <span class="math inline">\(I^e\)</span> where the homomorphism intended is obvious.</p>
+</section>
+<section id="preimages-contractions" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="preimages-contractions"><span class="header-section-number">5.2</span> Preimages (Contractions)</h2>
+<p>Again let <span class="math inline">\(f:R \to S\)</span> but now let <span class="math inline">\(J \subseteq S\)</span> be an ideal.</p>
+<p><strong>Theorem:</strong> If <span class="math inline">\(f:R \to S\)</span> is a ring homomorphism and <span class="math inline">\(J \subseteq S\)</span> an ideal, then the preimage <span class="math inline">\(f^{-1}(J)\)</span> is an ideal of <span class="math inline">\(R\)</span>.</p>
+<p><strong>Proof:</strong> The proof is elementary. Since <span class="math inline">\(f(0)=0\)</span>, <span class="math inline">\(0 \in f^{-1}(J)\)</span>. For any <span class="math inline">\(x, y \in f^{-1}(J)\)</span>, we have <span class="math inline">\(f(x+y) = f(x)+f(y) \in J\)</span>, so <span class="math inline">\(x+y \in f^{-1}(J)\)</span>. Finally for <span class="math inline">\(x \in f^{-1}(J)\)</span> and <span class="math inline">\(r \in R\)</span>, <span class="math inline">\(f(rx) = f(r)f(x) \in J\)</span> by the capture property of <span class="math inline">\(J\)</span>, so <span class="math inline">\(rx \in f^{-1}(J)\)</span> and thus <span class="math inline">\(f^{-1}(J)\)</span> has capture.</p>
+<p><strong>Definition:</strong> In the above context the ideal <span class="math inline">\(f^{-1}(J)\)</span> is called the <strong>contraction</strong> of <span class="math inline">\(J\)</span> across the homomorphism <span class="math inline">\(f\)</span>, often written <span class="math inline">\(J^c\)</span> when the homomorphism is understood.</p>
+<p><strong>Examples:</strong></p>
+<ol type="1">
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Q}\)</span> be the inclusion. The field <span class="math inline">\({\mathbb Q}\)</span> has only two ideals, namely <span class="math inline">\((0)\)</span> and <span class="math inline">\((1)\)</span>. Clearly <span class="math inline">\((0)^c = (0)\)</span> and <span class="math inline">\((1)^c = (1)\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z}/(10)\)</span> and let <span class="math inline">\(J = (2)\subseteq {\mathbb Z}/(10)\)</span>. Then <span class="math inline">\(J^c\)</span> = (2)</p></li>
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z} [x]\)</span> be the inclusion. Let <span class="math inline">\(J\)</span> be the ideal <span class="math inline">\((x^2+3) = \subseteq {\mathbb Z}[x]\)</span>. Then <span class="math inline">\(f^{-1}(J) = J^c = (0) \subseteq {\mathbb Z}\)</span>, because <span class="math inline">\(J\)</span> contains no constant polynomial other than <span class="math inline">\(0\)</span>.</p></li>
+</ol>
+<p><strong>Caution:</strong> Extension and contraction are not inverse operations, as the next examples illustrate.</p>
+<ol type="1">
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Q}\)</span> be the inclusion. Let <span class="math inline">\(I = (2) = 2{\mathbb Z}\)</span> Then <span class="math inline">\(I^{ec} = (1) \neq I\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z}/(10)\)</span> and let <span class="math inline">\(I = (8) = 8 {\mathbb Z}\)</span>. Then <span class="math inline">\(I^{ec} = (2) \neq I\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z} [x]\)</span> be the inclusion. Let <span class="math inline">\(J\)</span> be the ideal <span class="math inline">\((x^2+3) \subseteq {\mathbb Z}[x]\)</span>. Then <span class="math inline">\(J^{ce} = (0) \neq J\)</span>.</p></li>
+</ol>
+<p>However…</p>
+<p><strong>Proposition:</strong> Let <span class="math inline">\(f:R \to S\)</span> be a ring homomorphism. Let <span class="math inline">\(I\)</span> be an ideal of <span class="math inline">\(R\)</span> and let <span class="math inline">\(J\)</span> be an ideal of <span class="math inline">\(S\)</span>. Then</p>
+<ol type="1">
+<li><span class="math inline">\(I \subseteq I^{ec}\)</span>.</li>
+<li><span class="math inline">\(J^{ce} \subseteq J\)</span>.</li>
+<li><span class="math inline">\(I^{ece} = I^{e}\)</span>.</li>
+<li><span class="math inline">\(J^{cec} = J^c\)</span>.</li>
+</ol>
+<p><strong>Proofs:</strong> 1 and 2 are elementary. 3 and 4 follow from them. Notice <span class="math inline">\(I^{ece}\)</span> can be rewritten <span class="math inline">\((I^e)^{ce}\)</span> or <span class="math inline">\((I^{ec})^e\)</span> as needed.</p>
+</section>
+<section id="extension-and-contractions-of-primes-and-maximals" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="extension-and-contractions-of-primes-and-maximals"><span class="header-section-number">5.3</span> Extension and contractions of primes and maximals</h2>
+<p>Recall that <span class="math inline">\(5\)</span> is a prime number but <span class="math inline">\(5 = (2+i)(2-i)\)</span> is not irreducible in <span class="math inline">\({\mathbb Z}[i]\)</span>. If <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z}[i]\)</span> is the inclusion, then <span class="math inline">\(I=(5) = 5{\mathbb Z}\)</span> is both prime and maximal, but <span class="math inline">\((5)^e\)</span> is neither prime nor maximal. So we should not expect extensions to preserve primality or maximality, in general.</p>
+<p>Contractions, however, behave much better.</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(f:R \to S\)</span> be a homomorphism and let <span class="math inline">\(J \subseteq S\)</span> be an ideal. If <span class="math inline">\(J\)</span> is prime, then <span class="math inline">\(J^c\)</span> is prime.</p>
+<p><strong>Proof:</strong> If <span class="math inline">\(ab \in J^c\)</span> then <span class="math inline">\(f(a)f(b) = f(ab) \in J\)</span>, so <span class="math inline">\(f(a) \in J\)</span> or <span class="math inline">\(f(b) \in J\)</span>, so one of <span class="math inline">\(a, b\)</span> is in <span class="math inline">\(J^c\)</span>.</p>
+<p>The contraction of a maximal ideal need not be maximal. For example, if <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Q}\)</span>, <span class="math inline">\((0) \subseteq {\mathbb Q}\)</span> is maximal, but its contraction <span class="math inline">\((0) \subseteq {\mathbb Z}\)</span> is not.</p>
+</section>
+<section id="ideal-correspondence-for-quotients" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="ideal-correspondence-for-quotients"><span class="header-section-number">5.4</span> Ideal Correspondence for Quotients</h2>
+<p>In the special case of a quotient map <span class="math inline">\(R \to R/A\)</span>, contraction and extension of ideals is much better behaved.</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(f:R \to R/A\)</span> be the quotient map. Then the image <span class="math inline">\(f(I)\)</span> and extension <span class="math inline">\(I^e\)</span> of any ideal <span class="math inline">\(I \subseteq R\)</span> are the same. Moreover extension and contraction form a one-to-one order-preserving correspondence between the ideals of <span class="math inline">\(R\)</span> which contain <span class="math inline">\(A\)</span> and all ideals of <span class="math inline">\(R/A\)</span>. Relative to this correspondence,</p>
+<ol type="1">
+<li><span class="math inline">\(J \subseteq R/A\)</span> is prime iff <span class="math inline">\(J^c \subseteq R\)</span> is prime.</li>
+<li><span class="math inline">\(J \subseteq R/A\)</span> is maximal iff <span class="math inline">\(J^c \subseteq R\)</span> is maximal.</li>
+<li><span class="math inline">\(R/J^c \cong (R/A)/J\)</span> by the isomorphism <span class="math inline">\(\phi_J(r+J^c) = (r+A)+J\)</span>.</li>
+</ol>
+<p><strong>Proof:</strong></p>
+<ol type="1">
+<li>Order: Obviously extension and contraction are order-preserving.</li>
+<li>Extension=image: Let <span class="math inline">\(I \subseteq R\)</span> be an ideal. We’ll prove <span class="math inline">\(f(I)\)</span> is an ideal. Certainly <span class="math inline">\(0 \in f(I)\)</span> and <span class="math inline">\(I\)</span> is closed under addition. As for multiplication, let <span class="math inline">\(i+A \in f(I)\)</span> and let <span class="math inline">\(r+A \in R/A\)</span>. Then <span class="math inline">\((r+A)(i+A) = ra+A = f(ra) \in f(I)\)</span> since <span class="math inline">\(I\)</span> itself has capture. It follows that <span class="math inline">\(f(I)\)</span> has capture. Since it’s an ideal, the ideal that it generates is itself, so image and extension agree.</li>
+<li>Correspondence. Irrespective of algebra, any surjective map satisfies <span class="math inline">\(f(f^{-1}(J))=J\)</span>, so <span class="math inline">\(J^{ce}=J\)</span>. Now if <span class="math inline">\(I\)</span> is an ideal of <span class="math inline">\(R\)</span> containing <span class="math inline">\(A\)</span>, then <span class="math inline">\(I \subseteq I^{ec}\)</span> automatically. For the reverse, let <span class="math inline">\(r \in I^{ec}\)</span>. Then <span class="math inline">\(f(r) \in f(I)\)</span>, so <span class="math inline">\(r+A = i+A\)</span> for some <span class="math inline">\(i\)</span>, and <span class="math inline">\(r-i \in A\)</span>. If <span class="math inline">\(A \subseteq I\)</span>, it follows that <span class="math inline">\(r \in I\)</span> as desired. This proves that <span class="math inline">\(I^{ec} = I\)</span> whenever <span class="math inline">\(I \supseteq A\)</span>.</li>
+<li>Next we’ll prove <span class="math inline">\(R/J^c \cong (R/A)/J\)</span>. Consider the composition of quotient maps: <span class="math display">\[\alpha:R \to^{f} (R/A) \to^{g} (R/A)/J\]</span> And consider also the direct quotient map <span class="math display">\[\beta: R \to R/J^c\]</span> We claim <span class="math inline">\(\ker(\alpha) = \ker(\beta)\)</span>, for <span class="math inline">\(\ker(\beta) =\{r \in R \,|\, f(r) \in J\}\)</span> and <span class="math inline">\(\ker(\alpha) = \{r \in R\,|\, f(r) \in \ker(g)\}\)</span>. By the universal property of the quotient map, there is a unique isomorphism making everything commute. The commutativity is the definition of <span class="math inline">\(\phi\)</span>.</li>
+<li>Prime correspondence: Based on the quotient correspondence, we have: <span class="math inline">\(J\)</span> is prime iff <span class="math inline">\((R/A)/J\)</span> is a domain iff <span class="math inline">\(R/J^c\)</span> is a domain iff <span class="math inline">\(J^c\)</span> is prime.</li>
+<li>Maximal correspondence: As for primes but <span class="math inline">\(R/J^c\)</span> is a field.</li>
+</ol>
+</section>
+</section>
+<section id="polynomial-rings" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Polynomial Rings</h1>
+<section id="basic-definitions-1" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="basic-definitions-1"><span class="header-section-number">6.1</span> Basic Definitions</h2>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a commutative ring. The <strong>polynomial ring over <span class="math inline">\(R\)</span> in the variable <span class="math inline">\(x\)</span></strong>, pronounced “R adjoin x”, and written <span class="math inline">\(R[x]\)</span>, is <span class="math inline">\(\ldots\)</span> 1. The set of all finite sequences <span class="math inline">\(a = (a_0, a_1, \ldots, a_n, \ldots)\)</span>, where each <span class="math inline">\(a_i \in R\)</span> and all but finitely many are zero, with 2. Distinguished zero: <span class="math inline">\((0,0,0,\ldots)\)</span> 3. Distinguished one: <span class="math inline">\((1,0,0,\ldots)\)</span> 4. Coordinatewise addition: <span class="math inline">\((a+b)_i = a_i+b_i\)</span> 5. Convolutional multiplication: <span class="math display">\[ (ab)_k = \sum_{i+j=k} a_ib_j\]</span></p>
+<p><strong>Notation:</strong> As long as the polynomial ring over <span class="math inline">\(R\)</span> is denoted <span class="math inline">\(R[x]\)</span>, the special element <span class="math inline">\((0,1,0,0,\ldots)\)</span> is denoted <span class="math inline">\(x\)</span>.</p>
+<p><strong>Notation:</strong> We often regard <span class="math inline">\(R[x]\)</span> as an extension of <span class="math inline">\(R\)</span> via the identification <span class="math inline">\(r = (r,0,0,\ldots)\)</span>. More precisely we have an natural homomorphism <span class="math inline">\(f:R \to R[x]\)</span> by <span class="math inline">\(f(r) = (r,0,0,\ldots)\)</span>.</p>
+<p>It’s rather a slog to prove that <span class="math inline">\(R[x]\)</span> satisfies the ring axioms. It’s a good activity for a student.</p>
+<p><strong>Theorem:</strong> <span class="math inline">\(R[x]\)</span> is a ring under the given operations.</p>
+<p>Once this theorem is proved, we usually wish to switch to the “normal” polynomial notation <span class="math inline">\(a_nx^n + \ldots a_1x + a_0\)</span>. This is not an abbreviation but a literalism. The reader may calculate that <span class="math inline">\(x^2 = (0,0,1,0, \ldots)\)</span>, <span class="math inline">\(x^3 = (0,0,0,1,0,\ldots)\)</span>, etc., and that the recombination <span class="math inline">\(a_nx^n + \ldots a_1x + a_0\)</span> does yield <span class="math inline">\((a_0, a_1, \ldots, a_n,0,0,0,\ldots)\)</span>.</p>
+<p><strong>Vocabulary:</strong> Let <span class="math inline">\(f\)</span> be the polynomial <span class="math inline">\(a_nx^n + \ldots a_1x + a_0\)</span>. We mimic the ordinary vocabulary of algebra: 1. The <strong>coefficients</strong> of <span class="math inline">\(f\)</span> are the value <span class="math inline">\(a_i\)</span>. 2. The <strong>constant term</strong> of <span class="math inline">\(f\)</span> is <span class="math inline">\(a_0\)</span>. 3. The <strong>leading term</strong> of <span class="math inline">\(f\)</span> is <span class="math inline">\(a_nx^n\)</span>. 4. The <strong>leading coefficient</strong> of <span class="math inline">\(f\)</span> is <span class="math inline">\(a_n\)</span>. 5. We call <span class="math inline">\(f\)</span> <strong>monic</strong> if the leading coefficient is <span class="math inline">\(1\)</span>. 6. The <strong>degree</strong> of <span class="math inline">\(f\)</span> is <span class="math inline">\(n\)</span> (assuming <span class="math inline">\(a_n \neq 0\)</span>) 7. We call <span class="math inline">\(f\)</span> <strong>linear</strong> if its degree is <span class="math inline">\(1\)</span>. 8. We call <span class="math inline">\(f\)</span> <strong>quadratic</strong> if its degree is <span class="math inline">\(2\)</span>. 9. The <strong>value of <span class="math inline">\(f\)</span> at <span class="math inline">\(r\)</span></strong> is <span class="math inline">\(a_nr^n + \ldots a_1r + a_0\)</span></p>
+<p><strong>Caution:</strong> For polynomials <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>, we normally expect <span class="math inline">\(\deg(fg) = \deg(f)+ \deg(g)\)</span>. Although this is true when <span class="math inline">\(R\)</span> is a domain, it fails when <span class="math inline">\(R\)</span> is not, because the leading terms of <span class="math inline">\(f\)</span> and of <span class="math inline">\(g\)</span> can multiply to zero. Indeed with zerodivisor coefficients it can happen that <span class="math inline">\(fg\)</span> is simply <span class="math inline">\(0\)</span>.</p>
+</section>
+<section id="universal-property" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="universal-property"><span class="header-section-number">6.2</span> Universal Property</h2>
+<p>We like to think of the polynomial ring <span class="math inline">\(R[x]\)</span> as a modification of <span class="math inline">\(R\)</span> by adding a single element <span class="math inline">\(x\)</span>. Unlike <span class="math inline">\(Z[i]\)</span> or <span class="math inline">\(Q[\sqrt{-5}]\)</span> however, the element <span class="math inline">\(x\)</span> has “no algebraic properties” other than what is demanded by ring theory. It can therefore be mapped via a homomorphism onto anything at all. To make this precise we state the universal property of <span class="math inline">\(R[x]\)</span>.</p>
+<p><strong>Theorem:</strong> Given the structure of <span class="math inline">\(R[x]\)</span>, we have a canonical homomorphism <span class="math inline">\(f:R \to R[x]\)</span>, and a single element <span class="math inline">\(x \in R[x]\)</span>. Given any other homomorphism <span class="math inline">\(g:R \to S\)</span> and chosen element <span class="math inline">\(s \in S\)</span>, there is a unique homomorphism <span class="math inline">\(G:R[x] \to S\)</span> making the diagram commute and sending <span class="math inline">\(x\)</span> to <span class="math inline">\(s\)</span>.</p>
+<p><strong>proof:</strong> As for uniqueness, if <span class="math inline">\(Gf = g\)</span>, <span class="math inline">\(G(x)=s\)</span>, and <span class="math inline">\(G\)</span> is a ring homomorphism, then the equation for <span class="math inline">\(G\)</span> is forced: <span class="math display">\[G(\sum_i a_ix^i) = \sum_i g(a_i)s^i\]</span> The reader may check that <span class="math inline">\(G\)</span> defined by this formula is indeed a homomorphism, and that it satisfies <span class="math inline">\(Gf = g\)</span>.</p>
+<p><strong>shorthand:</strong> To define a map on <span class="math inline">\(R[x]\)</span>, define it on <span class="math inline">\(R\)</span> and choose an arbitrary target for <span class="math inline">\(x\)</span>.</p>
+</section>
+<section id="multiple-variables" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="multiple-variables"><span class="header-section-number">6.3</span> Multiple variables</h2>
+<p>We have not yet defined <span class="math inline">\(R[x,y]\)</span>, the polynomial ring in more than one variable. One may imagine that we need an even more complicated definition involving coefficient sets <span class="math inline">\(a_{ij}\)</span> and some messy convolutional multiplication which handles two variables. Fortunately none of this is necessary. Any polynomial in two variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be sorted into powers of <span class="math inline">\(y\)</span>. For example</p>
+<p><span class="math display">\[1+2x+2y+3x^2 + 3xy+3y^2+4x^3+4x^2y+4xy^2+4y^3\]</span> <span class="math display">\[=
+(1+2x+3x^2+4x^3) + (2 + 3x + 4x^2)y + (3 + 4x) y^2 + 4y^3\]</span></p>
+<p>In this way a polynomial in both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be regarded as a polynomial in <span class="math inline">\(y\)</span> with coefficients which are themselves polynomials in <span class="math inline">\(x\)</span>. In other words, it can be treated as an element of <span class="math inline">\(R[x][y]\)</span>. This motivates the definition:</p>
+<p><strong>Definition:</strong> The polynomial ring in variables <span class="math inline">\(x_1,\ldots,x_n\)</span> is defined to be <span class="math display">\[R[x_1, \ldots, x_n] = R[x_1][x_2]\ldots[x_n]\]</span></p>
+</section>
+<section id="taylor-made-elements" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="taylor-made-elements"><span class="header-section-number">6.4</span> Taylor Made Elements</h2>
+<p>Polynomial rings are often used in constructed examples because they give us the freedom to append new elements to known rings. By modding out by an appropriate ideal, those new elements can be endowed with desired algebraic properties.</p>
+<p><strong>Examples</strong></p>
+<ol type="1">
+<li><p>Suppose we want a ring <span class="math inline">\(R\)</span> which contains an isomorphic copy of <span class="math inline">\({\mathbb Q}\)</span> but also contains some zerodivisors. There are lots of ways to do this, including the direct product of rings <span class="math inline">\({\mathbb Q} \times {\mathbb Q}\)</span>. Another trick is to manufacture two new elements and impose the condition that they multiply to zero. Thus <span class="math inline">\(R = {\mathbb Q}[x,y] / (xy)\)</span>. Now neither <span class="math inline">\(x\)</span> nor <span class="math inline">\(y\)</span> is in the ideal, so they form nonzero cosets in the quotient, but their product becomes zero.</p></li>
+<li><p>Suppose we want a ring with a nilpotent element which must be raised to the power <span class="math inline">\(10\)</span> before it yields zero. Of course <span class="math inline">\({\mathbb Z}/(2^{10})\)</span> would work. Another idea is to start with any base ring <span class="math inline">\(R\)</span> and construct <span class="math inline">\(R[x]/(x^10)\)</span>.</p></li>
+<li><p>Suppose we want a finite field in which <span class="math inline">\(2=0\)</span> but we also want an element of high multiplicative order. The ring <span class="math inline">\({\mathbb Z}/(2)[x]\)</span> has <span class="math inline">\(2=0\)</span> and an element <span class="math inline">\(x\)</span> of infinite order, but it’s not a field. We can make it one by modding out by a maximal ideal, so the challenge is to find a maximal ideal <span class="math inline">\(I \subseteq {\mathbb Z}/(2)[x]\)</span>. All ideals in the ring <span class="math inline">\({\mathbb Z}/(2)[x]\)</span> are principal (we’ll see why later), so this boils down to finding a suitable polynomial <span class="math inline">\(p(x)\in {\mathbb Z}/(2)[x]\)</span>, and constructing the ring <span class="math inline">\({\mathbb Z}/(2)[x]/(p(x))\)</span>. This construction is surprisingly common in computer science.</p></li>
+<li><p>Suppose we are used to working with <span class="math inline">\({\mathbb R}\)</span> but wish to add an element whose square is <span class="math inline">\(-1\)</span> without creating a philosophical argument. We construct the ring <span class="math inline">\({\mathbb R}[x]/(x^2+1)\)</span>, which contains a new element called “<span class="math inline">\(x\)</span>” for which <span class="math inline">\(x^2+1=0\)</span>. We may choose to use the symbol <span class="math inline">\(i\)</span> for <span class="math inline">\(x\)</span>. This is a great way to construct the ring <span class="math inline">\({\mathbb C}\)</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="unique-factorization-ed-to-pid-to-ufd" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Unique Factorization: ED <span class="math inline">\(\to\)</span> PID <span class="math inline">\(\to\)</span> UFD</h1>
+<section id="definitions-1" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="definitions-1"><span class="header-section-number">7.1</span> Definitions</h2>
+<p>Unique factorization of integers can be established using the Euclidean Algorithm. It’s a key algorithm which not only calculates the GCD of two integers <span class="math inline">\(x, y\)</span> but also solves the equation <span class="math inline">\(ax + by = GCD\)</span>. It’s based fundamentally on long division with remainder, a process not supported in an arbitrary ring. Here we define an added structure sufficient to support long division.</p>
+<p><strong>Definition:</strong> A <strong>Euclidean Function</strong> on a ring <span class="math inline">\(R\)</span> is a function <span class="math inline">\(f:R-\{0\} \to {\mathbb N}-\{0\}\)</span> satisfying 1. <span class="math inline">\(\forall a, b\in R-\{0\} \enspace f(a) \leq f(ab)\)</span> 2. <span class="math inline">\(\forall a \in R \enspace \forall b \in R-\{0\} \enspace \exists q, r \in R \enspace\)</span> so that <span class="math inline">\(a = bq + r\)</span> and either <span class="math inline">\(r = 0\)</span> or <span class="math inline">\(f(r) &lt; f(b)\)</span>.</p>
+<p>The Euclidean function <span class="math inline">\(f\)</span> is meant to generalize the absolute value function on <span class="math inline">\({\mathbb Z}\)</span>, which is the basis for saying that upon long division of <span class="math inline">\(b\)</span> by <span class="math inline">\(a\)</span>, the remainder <span class="math inline">\(r\)</span> is <strong>smaller</strong> than <span class="math inline">\(a\)</span>. Since <span class="math inline">\(f\)</span> takes values in <span class="math inline">\({\mathbb N}\)</span>, any process of reduction like the Euclidean Algorithm is bound to end because <span class="math inline">\({\mathbb N}\)</span> is well ordered.</p>
+<p><strong>Definition:</strong> A Euclidean Domain is an integral domain for which a Euclidean Function exists.</p>
+<p><strong>Examples:</strong> 1. Of course <span class="math inline">\({\mathbb Z}\)</span> itself with <span class="math inline">\(f(n) = |n|\)</span> 2. <span class="math inline">\({\mathbb Z}[i]\)</span> with <span class="math inline">\(f(a+bi) = |a+bi|^2 = a^2+b^2\)</span> 3. <span class="math inline">\({\mathbb R}[x]\)</span> with <span class="math inline">\(f(p(x)) = \deg(p(x))+1\)</span>. 4. More generally if <span class="math inline">\(K\)</span> is a field then <span class="math inline">\(K[x]\)</span> is a Euclidean Domain. 4. The <strong>Eisenstein Integers</strong> <span class="math inline">\(Z[\omega]\)</span> where <span class="math inline">\(\omega = \frac{\sqrt{-3}+1}{2}\)</span> (Note <span class="math inline">\(\omega^3=-1\)</span>) form a triangular lattice in <span class="math inline">\({\mathbb C}\)</span>. The complex square norm is again a Euclidean function. In this case it satisfies <span class="math display">\[|a+bw|^2 = (a+bw)(a+b\overline{w}) = (a+bw)(a+b\overline{w}) = a^2 + b^2 + ab\overline{w}+abw = a^2+b^2 +ab 2\Re(\omega) = a^2+b^2-ab \]</span></p>
+<p>To prove unique factorization in <span class="math inline">\({\mathbb Z}\)</span>, we first prove that every ideal is principal, then use that fact to prove uniqueness of factorizations. The sames strategy works for rings. Of course even in <span class="math inline">\({\mathbb Z}\)</span> factorizations differ cosmetically in their ordering and unit multiplication. So for example <span class="math inline">\(30 = 2 \cdot 3 \cdot 5 = 3 \cdot (-5) \cdot (-2)\)</span>. Our definition of “unique” needs to allow for such silliness.</p>
+<p><strong>Definition:</strong> A <strong>Principal Ideal Domain</strong> is an integral domain in which every ideal is principal.</p>
+<p><strong>Definition:</strong> A <strong>Unique Factorization Domain</strong> is a domain in which 1. Every element of <span class="math inline">\(R\)</span> is zero, a unit, or a product of one or more irreducible elements. 2. Factorizations are unique in the sense that if <span class="math display">\[ua_1a_2 \ldots a_m = vb_1b_2\ldots b_n\]</span> where <span class="math inline">\(u, v\)</span> are units and <span class="math inline">\(a_i, b_j\)</span> are irreducibles, then <span class="math inline">\(m=n\)</span> and (after possible rearrangement of the order of the product) each <span class="math inline">\(a_i\)</span> is some unit multiple of each <span class="math inline">\(b_i\)</span>.</p>
+</section>
+<section id="ed-to-pid" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="ed-to-pid"><span class="header-section-number">7.2</span> ED <span class="math inline">\(\to\)</span> PID</h2>
+<p><strong>Theorem:</strong> (ED <span class="math inline">\(\to\)</span> PID) Every Euclidean Domain is a Principal Ideal Domain</p>
+<p><strong>Proof:</strong> We need only rewrite the proof for <span class="math inline">\({\mathbb Z}\)</span> in the new context. Let <span class="math inline">\(R\)</span> be a Euclidean domain with function <span class="math inline">\(f\)</span>. Let <span class="math inline">\(I\)</span> be an ideal. If <span class="math inline">\(I=(0)\)</span> there’s nothing to do. Choose <span class="math inline">\(a \in I\)</span>, nonzero, to minimize <span class="math inline">\(f(a)\)</span>. Let <span class="math inline">\(b \in I\)</span>. Apply long division, so that <span class="math inline">\(b = qa+r\)</span>. Now <span class="math inline">\(r = b-qa \in I\)</span>. This will contradicts the minimality of <span class="math inline">\(a\)</span> if <span class="math inline">\(r\)</span> is nonzero, so <span class="math inline">\(r=0\)</span>. It follows that <span class="math inline">\(b\)</span> is divisible by <span class="math inline">\(a\)</span>, and since <span class="math inline">\(b\)</span> was arbitrary <span class="math inline">\(I = (a)\)</span>.</p>
+<p>We also wish to show that</p>
+</section>
+<section id="pid-to-ufd" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="pid-to-ufd"><span class="header-section-number">7.3</span> PID <span class="math inline">\(\to\)</span> UFD</h2>
+<p><strong>Theorem:</strong> (PID <span class="math inline">\(\to\)</span> UFD) Every Principal Ideal Domain is a Unique Factorization Domain.</p>
+<p><strong>Proof of Theorem:</strong></p>
+<p>Let <span class="math inline">\(R\)</span> be a PID.</p>
+<p>Step 1. (Existence) Let <span class="math inline">\(r \in R\)</span> be a nonzero nonunit. If <span class="math inline">\(r\)</span> is irreducible, we’re done. If not, we may factor it into two nonzero nonunits, factor those if necessary, and continue. When this process ends we have a factor tree for <span class="math inline">\(r\)</span> and the factorization is implied. The problem is proving that this process ends instead of continuing forever. Consider <span class="math inline">\(C({\mathbb R})\)</span>, in which the function <span class="math inline">\(|x|\)</span> factors into <span class="math inline">\(|x|^{1/2}|x|^{1/2}\)</span>, then further into <span class="math inline">\(|x|^{1/4}|x|^{1/4}|x|^{1/4}|x|^{1/4}\)</span>, and so on.</p>
+<p>Suppose to the contrary that a factor tree of <span class="math inline">\(r \in R\)</span> continues to infinity. Following an infinite sequence of factors downward we can create a sequence of factors <span class="math inline">\(r=r_0\)</span>, <span class="math inline">\(r_1\)</span>, <span class="math inline">\(r_2\)</span>, etc, each divisible by the next, but not dividing it. This corresponds to an infinite chain of ideals <span class="math display">\[(r_0) \subsetneq (r_1)\subsetneq (r_2) \subsetneq \ldots\]</span></p>
+<p>The containments are strict because each factorization does not just factor out a unit. Now the union of this chain is an ideal <span class="math inline">\(I \subseteq R\)</span>. Since <span class="math inline">\(R\)</span> is a PID, <span class="math inline">\(I\)</span> is principal, generated by, say, <span class="math inline">\(a\)</span>. Since <span class="math inline">\(a\)</span> is in the union, it’s in one of the ideals, and <span class="math inline">\(a\)</span> is divisible by some <span class="math inline">\(r_k\)</span>. But as a generator, <span class="math inline">\(a\)</span> also divides <span class="math inline">\(r_k\)</span>, so <span class="math inline">\((r_k) = (a)\)</span>. It follows that <span class="math inline">\((r_{k+1}) = (r_k)\)</span>, a contradiction.</p>
+<p>This shows that every element of a PID can be factored into irreducibles.</p>
+<p><strong>Lemma:</strong> Let <span class="math inline">\(R\)</span> be a PID, and let <span class="math inline">\(a\)</span> be irreducible. Then <span class="math inline">\((a)\)</span> is maximal (and prime).</p>
+<p><strong>Proof of Lemma:</strong> Suppose <span class="math inline">\((a) \subsetneq I \subsetneq R\)</span>. Then <span class="math inline">\(I\)</span> is also principal, so <span class="math inline">\((a) \subsetneq (b) \subsetneq R\)</span>. It follows that <span class="math inline">\(b|a\)</span> but <span class="math inline">\(a \nmid b\)</span>. But then <span class="math inline">\(bc=a\)</span> and neither <span class="math inline">\(b\)</span> nor <span class="math inline">\(c\)</span> is a unit, contradicting the irreducibility of <span class="math inline">\(a\)</span>.</p>
+<p>Step 2. (Uniqueness) We wish to show that any two factorizations of an element <span class="math inline">\(r \in R\)</span> are “the same” except for rearrangement and unit multiplication of factors. For simplicity, suppose there are two truly distinct factorizations of <span class="math inline">\(r\)</span>, and let us consider the smallest possible counterexample in <span class="math inline">\(R\)</span>: <span class="math display">\[ua_1a_2 \ldots a_m = r = vb_1b_2\ldots b_n\]</span> Here “small” just means that we have minimized <span class="math inline">\(\max(m,n)\)</span>.</p>
+<p>Now <span class="math inline">\(a_m\)</span> is irreducible and <span class="math inline">\(vb_1b_2\ldots b_n \in (a_m)\)</span>. By the Lemma, <span class="math inline">\((a_m)\)</span> is prime, so one of the factors must be in <span class="math inline">\((a_m)\)</span>. It can’t be the unit <span class="math inline">\(v\)</span>. Since we are free to rearrange the factors, WLOG <span class="math inline">\(b_n \in (a_m)\)</span>, so <span class="math inline">\(b_n = a_m \cdot x\)</span>. Since <span class="math inline">\(b_n\)</span> is irreducible and <span class="math inline">\(a_m\)</span> is not a unit, <span class="math inline">\(x\)</span> is a unit. It follows that <span class="math inline">\(b_n\)</span> is a unit multiple of <span class="math inline">\(a_m\)</span>, as desired. But this is only one factor. It also follows that <span class="math display">\[ua_1a_2 \ldots a_m = r = vb_1b_2\ldots b_{n-1} x a_m\]</span> Now <span class="math inline">\(R\)</span> is a domain, so we may cancel <span class="math display">\[ua_1a_2 \ldots a_{m-1} = r = (vx)b_1b_2\ldots b_{n-1}\]</span> obtaining, impossibly, a smaller nonunique factorization. This concludes the proof.</p>
+<p><strong>Examples:</strong> Naturally it follows that <span class="math inline">\({\mathbb Z}\)</span>, <span class="math inline">\({\mathbb Z}[i]\)</span>, <span class="math inline">\({\mathbb Z}[\frac{\sqrt{-3}+1}{2}]\)</span>, and <span class="math inline">\({\mathbb R}[x]\)</span> all have unique factorization into irreducible elements.</p>
+</section>
+<section id="ufdx-is-ufd" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="ufdx-is-ufd"><span class="header-section-number">7.4</span> UFD[x] is UFD</h2>
+<section id="discussion" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="discussion"><span class="header-section-number">7.4.1</span> Discussion</h3>
+<p>This would be a strange place to conclude, because it stands to reason that larger polynomial rings like <span class="math inline">\({\mathbb R}[x,y,z]\)</span> or ${Z}[x] also have unique factorization. Since they are not principal ideal domains, some other proof method is needed. We intend to prove:</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(R\)</span> be a UFD. Then <span class="math inline">\(R[x]\)</span> is a UFD.</p>
+<p>The first interesting case is <span class="math inline">\({\mathbb Z}[x]\)</span>. In that case, we need to consider a delicate interplay between polynomials of <span class="math inline">\({\mathbb Z}[x]\)</span> and those of <span class="math inline">\({\mathbb Q}[x]\)</span>. In the more general case, we must find a tool to compare a domain <span class="math inline">\(R\)</span> to a field containing it. This brings us to the ideal of a <strong>fraction field</strong>, which is the next section. Please read the next section and return.</p>
+<p>Let <span class="math inline">\(R\)</span> be a UFD, and let <span class="math inline">\(K\)</span> be its fraction field. Our strategy is to compare polynomials factorizations of <span class="math inline">\(f \in R[x]\)</span> to similar factorizations of <span class="math inline">\(f \in K[x]\)</span>. This is fraught and requires great care, because conversation will center on which polynomials are “units” and which are “irreducible”, but these notions are relative to the ring under discussion. For example, the constant polynomial <span class="math inline">\(f(x) = 2\)</span> is an irreducible nonunit in <span class="math inline">\({\mathbb Z}[x]\)</span>, because <span class="math inline">\(2\)</span> is prime and has no reciprocal there. But the same polynomial in <span class="math inline">\({\mathbb Q}[x]\)</span> is a unit, because an inverse <span class="math inline">\(1/2\)</span> exists. The polynomial <span class="math inline">\(f(x) = 4x^2+4 = 4(x^2+1)\)</span> is reducible in <span class="math inline">\({\mathbb Z}[x]\)</span> with factorization <span class="math inline">\(2 \cdot 2 \cdot (1+x^2)\)</span>. But in <span class="math inline">\({\mathbb Q}[x]\)</span> it’s irreducible, because <span class="math inline">\(4\)</span> is merely a unit factor. (As an aside, over <span class="math inline">\({\mathbb C}[x]\)</span> it’s reducible for a new reason: Although <span class="math inline">\(4\)</span> is a unit, the polynomial is now <span class="math inline">\(4(x-i)(i+i)\)</span>.)</p>
+<p>To navigate these hazards, we must be in the habit of saying “unit in <span class="math inline">\(R\)</span>” or “irreducible in <span class="math inline">\(K[x]\)</span>” or “reducible over <span class="math inline">\(R[x]\)</span>”, etc.</p>
+</section>
+<section id="proof-of-theorem" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="proof-of-theorem"><span class="header-section-number">7.4.2</span> Proof of Theorem</h3>
+<p><strong>Proposition:</strong> Let <span class="math inline">\(R\)</span> be a domain. The units of <span class="math inline">\(R[x]\)</span> are exactly the units of <span class="math inline">\(R\)</span>.</p>
+<p><strong>Proof:</strong> Certainly the units of <span class="math inline">\(R\)</span> have the same reciprocals as elements of <span class="math inline">\(R[x]\)</span>. Conversely if <span class="math inline">\(f(x)\)</span> is a unit in <span class="math inline">\(R[x]\)</span>, then <span class="math inline">\(f(x)g(x)=1\)</span> for some <span class="math inline">\(g(x)\)</span>. Since <span class="math inline">\(\deg(fg) = \deg(f)+\deg(g)\)</span> (in a domain!) both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> must be constants in <span class="math inline">\(R\)</span>.</p>
+<p><strong>Proposition:</strong> Let <span class="math inline">\(p\in R\)</span> be irreducible. Then the ideal <span class="math inline">\((p)  = pR[x] \subseteq R[x]\)</span> generated by <span class="math inline">\(p\)</span> in the polynomial ring is prime.</p>
+<p><strong>proof:</strong> Let <span class="math inline">\(f, g \in R[x]\)</span>, and suppose <span class="math inline">\(p | fg\)</span>. Then every coefficient of <span class="math inline">\(fg\)</span> is divisible by <span class="math inline">\(p\)</span>. For contradiction, if neither <span class="math inline">\(f\)</span> nor <span class="math inline">\(g\)</span> is divisible by <span class="math inline">\(p\)</span>, then each has a highest-degree term not divisible by <span class="math inline">\(p\)</span>. Say <span class="math inline">\(f(x) = p*(h.o.t.)+ a_ix^i + (l.o.t.)\)</span>, and <span class="math inline">\(g(x) = p*(h.o.t.)+ b_jx^j + (l.o.t.)\)</span>, with <span class="math inline">\(p \nmid a_i\)</span> and <span class="math inline">\(p \nmid b_j\)</span>. Then the coefficient of <span class="math inline">\(x^{i+j}\)</span> is a sum of terms, all divisible by <span class="math inline">\(p\)</span> except exactly one. It follows that <span class="math inline">\(fg\)</span> will not be divisible by <span class="math inline">\(p\)</span>. It follows that <span class="math inline">\(pR[x]\)</span> is a prime ideal.</p>
+<p><strong>Proposition:</strong> Let <span class="math inline">\(R\)</span> be a UFD and let <span class="math inline">\(K\)</span> be its field of fractions. Let <span class="math inline">\(f(x) \in R[x]\)</span>. If <span class="math inline">\(f(x)\)</span> factors <span class="math inline">\(f(x) = G(x)H(x)\)</span> over <span class="math inline">\(K[x]\)</span> (so <span class="math inline">\(G, H \in K[x]\)</span>), then <span class="math inline">\(f\)</span> also factors <span class="math inline">\(f(x) = g(x)h(x)\)</span> over <span class="math inline">\(R[x]\)</span> (so <span class="math inline">\(g,h \in R[x]\)</span>), and <span class="math inline">\(g = k_1G\)</span> and <span class="math inline">\(h = k_2H\)</span> for some <span class="math inline">\(k_1, k_2 \in K\)</span>.</p>
+<p><strong>Proof: </strong> In the factorization <span class="math inline">\(f(x) = G(x)H(x)\)</span>, both <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> have coefficients which are fractions with denominators from <span class="math inline">\(R\)</span>. We multiply both sides of the equation by the product of these denominators to clear them, obtaining <span class="math inline">\(bf = g_1(x)h_1(x)\)</span>. Notice that <span class="math inline">\(g_1 = rG\)</span> and <span class="math inline">\(h_1 = sH\)</span> for some <span class="math inline">\(r, s\in R\)</span>. Note <span class="math inline">\(b \in R\)</span>. By presumption <span class="math inline">\(bR\)</span> can be factored into irreducibles <span class="math inline">\(b_1\ldots b_n\)</span>. We wish to “cancel” <span class="math inline">\(b_n\)</span> from both sides (and continue), but it doesn’t seem to appear on the right. Now <span class="math inline">\(b_nR[x]\)</span> is a prime ideal, and the product <span class="math inline">\(g_1h_1\)</span> is in it, so one of <span class="math inline">\(g_1\)</span> or <span class="math inline">\(h_1\)</span> coefficients all divisible by <span class="math inline">\(b_n\)</span>. Therefore we may divide it by <span class="math inline">\(b_n\)</span> and still have a polynomial in <span class="math inline">\(R[x]\)</span>. Continuing this process, we cancel every factor <span class="math inline">\(b_i\)</span> from either <span class="math inline">\(g_1\)</span> or <span class="math inline">\(h_1\)</span>, to obtain finally <span class="math inline">\(f(x) = g(x)h(x)\)</span>. Now <span class="math inline">\(g_1\)</span> was originally an <span class="math inline">\(R\)</span>-multiple of <span class="math inline">\(G\)</span>, and is likewise an <span class="math inline">\(R\)</span>-multiple of <span class="math inline">\(g\)</span>, so <span class="math inline">\(g = k_1G\)</span> for some <span class="math inline">\(k_1 \in K\)</span>, and similarly for <span class="math inline">\(h\)</span>.</p>
+<p><strong>Note:</strong> The previous theorem is strongly connected to the Rational Roots Theorem, which limits the possible rational roots an integer polynomial might have. If a polynomial <span class="math inline">\(f \in {\mathbb Z}[x]\)</span> has a rational root, then it has a factor <span class="math inline">\((x-\frac{a}{b})\)</span>. (Assume lowest terms) By the previous theorem, it must also be factorable <span class="math inline">\(f(x) = (bx-a)h(x)\)</span> where not only <span class="math inline">\(bx-a\)</span> but also <span class="math inline">\(h(x)\)</span> are integer polynomials.</p>
+<p><strong>Lemma</strong>: Let <span class="math inline">\(R\)</span> be a UFD and <span class="math inline">\(K\)</span> its fraction field. Let <span class="math inline">\(f(x)\)</span> be irreducible of positive degree in <span class="math inline">\(R[x]\)</span>. Then <span class="math inline">\(f(x)\)</span> is also irreducible in <span class="math inline">\(K[x]\)</span> and <span class="math inline">\((f(x))\)</span> is prime in <span class="math inline">\(R[x]\)</span>.</p>
+<p><strong>proof</strong>: Let <span class="math inline">\(f(x)\)</span> is irreducible in <span class="math inline">\(R[x]\)</span>, this means in any product <span class="math inline">\(f(x) = g(x)h(x)\)</span> with <span class="math inline">\(g, h \in R[x]\)</span>, one must be a <span class="math inline">\(R[x]\)</span> unit.</p>
+<p>Suppose <span class="math inline">\(f(x) = G(x)H(x)\)</span> for <span class="math inline">\(G, H \in K[x]\)</span>. Then we get an alternate factorization <span class="math inline">\(f(x) = g(x)h(x)\)</span> in <span class="math inline">\(R[x]\)</span>, as above (and <span class="math inline">\(g=k_1G\)</span>, <span class="math inline">\(h=k_2H\)</span>). Since <span class="math inline">\(f\)</span> is <span class="math inline">\(R[x]\)</span>-irreducible, one of <span class="math inline">\(g\)</span> or <span class="math inline">\(h\)</span> is an <span class="math inline">\(R[x]\)</span> unit, and therefore a <span class="math inline">\(K[x]\)</span>-unit. It follows that the corresponding <span class="math inline">\(G\)</span> or <span class="math inline">\(H\)</span> is also a <span class="math inline">\(K[x]\)</span>-unit. Thus f is irreducible in <span class="math inline">\(K[x]\)</span>.</p>
+<p>It follows immediately that the ideal <span class="math inline">\(f(x)K[x]\)</span> a prime ideal of <span class="math inline">\(K[x]\)</span>, since <span class="math inline">\(K[x]\)</span> is an ED (so PID). What about the ideal <span class="math inline">\(f(x)R[x]\)</span>? If <span class="math inline">\(g(x)h(x) \in f(x)R[x]\)</span>, then this is still true in the larger ring <span class="math inline">\(K[x]\)</span>, so one of g or h is in the ideal <span class="math inline">\(f(x)R[x]\)</span>. WLOG <span class="math inline">\(g(x) = f(x)L(x)\)</span>, where <span class="math inline">\(L \in K[x]\)</span>.</p>
+<p>As before, <span class="math inline">\(g(x) = f_2(x)l(x)\)</span>, where <span class="math inline">\(f_2 = Uf\)</span> and Thus <span class="math inline">\(g = Uf(x)l(x)\)</span>. Clearing denominators, <span class="math inline">\(bg=af(x)l(x)\)</span>. For each prime factor of <span class="math inline">\(b\)</span>, <span class="math inline">\(f\)</span> cannot be divisible (because <span class="math inline">\(f\)</span> is irreducible of positive degree), so <span class="math inline">\(l\)</span> is divisible, so we may cancel it, leaving finally <span class="math inline">\(g=f(x)(l(x)/b)\)</span> where <span class="math inline">\(l(x)/b \in Z[x]\)</span>. Thus <span class="math inline">\(g \in f(x)R[x]\)</span> and finally <span class="math inline">\(f(x)R[x]\)</span> is a prime ideal.</p>
+<p>And finally…</p>
+<p><strong>Proof that UFD[x] is a UFD</strong></p>
+<p>Let’s first prove existence of irreducible factorization in <span class="math inline">\(R[x]\)</span>. Suppose there were a perpetual factorization: <span class="math inline">\(f_1(x)\)</span> is divisible by <span class="math inline">\(f_2(x)\)</span>, which is divisible by <span class="math inline">\(f_3(x)\)</span>, etc. Since <span class="math inline">\(R\)</span> is a domain, these polynomials’ degrees would be nonincreasing, so the degrees are eventually constant. After this point, the factors removed are all elements of <span class="math inline">\(R\)</span>, and effectively create an infinite factorization of each individual coefficient of <span class="math inline">\(f_n\)</span></p>
+<p><strong>proof</strong>:<br>
+Now suppose <span class="math inline">\(up_1\cdots p_m = vq_1\cdots q_n\)</span>, where <span class="math inline">\(u, v\)</span> are units of <span class="math inline">\(R[x]\)</span> and <span class="math inline">\(p_i, q_j\)</span> are irreducible in <span class="math inline">\(R[x]\)</span>. As before suppose that this is the shortest nonunique factorization. Then <span class="math inline">\(vq_1\cdots q_n \in (p_m)\)</span>, a prime ideal of <span class="math inline">\(R[x]\)</span>, so one of <span class="math inline">\(v, q_1, \ldots, q_n\)</span> is divisible by <span class="math inline">\(p_m\)</span>. Not the unit of course, so for some <span class="math inline">\(j\)</span> we have <span class="math inline">\(p_m | q_j\)</span>. Since <span class="math inline">\(q_j\)</span> is irreducible, <span class="math inline">\(p_m = wq_j\)</span> for a unit <span class="math inline">\(w\)</span>. Then we may write <span class="math inline">\(up_1\cdots p_{m-1}wq_j = vq_1\cdots q_n\)</span> and cancel <span class="math inline">\(q_j\)</span>: <span class="math inline">\(uwp_2\cdots p_m = vq_1\cdots \hat{q_j}\cdots q_n\)</span>. This is shorter, so unique factorization applies, so the original factorizations are compatible.</p>
+<p>We have proven that <span class="math inline">\(R[x]\)</span> is a UFD.</p>
+<p>Of course we can induct on the theorem, to conclude, for example that <span class="math inline">\({\mathbb Z}[x,y,z]\)</span> is a UFD.</p>
+</section>
+</section>
+</section>
+<section id="fields-of-fractions-and-localization" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Fields of Fractions and Localization</h1>
+<section id="fields-of-fractions-definition" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="fields-of-fractions-definition"><span class="header-section-number">8.1</span> Fields of Fractions, definition</h2>
+<p>Let <span class="math inline">\(R\)</span> be a domain. We wish to construct a field which contains <span class="math inline">\(R\)</span> as a subring, called the <strong>field of fraction</strong>, or <strong>fraction field</strong> of <span class="math inline">\(R\)</span>. If <span class="math inline">\(R={\mathbb Z}\)</span>, the fraction field will be <span class="math inline">\({\mathbb Q}\)</span>. If <span class="math inline">\(R = {\mathbb R}[x]\)</span>, the fraction field will be the field of rational functions <span class="math inline">\(\frac{p(x)}{q(x)}\)</span>.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a domain. The <strong>fraction field</strong> of <span class="math inline">\(R\)</span> is <span class="math inline">\(\ldots\)</span> 1. The set of ordered pairs <span class="math inline">\((a,b)\)</span> (thought of as formal fractions <span class="math inline">\(\frac{a}{b}\)</span>) where <span class="math inline">\(a,b \in R\)</span>, <span class="math inline">\(b \neq 0\)</span>, modulo the equivalence relation <span class="math inline">\((a,b) \sim (c,d)\)</span> iff <span class="math inline">\(ad-bc=0\)</span>, 2. The zero <span class="math inline">\((0_R,1_R)\)</span> 3. The one <span class="math inline">\((1_R,1_R)\)</span> 4. The addition rule <span class="math inline">\((a,b)+(c,d) = (ad+bc,bd)\)</span> 5. The multiplication rule <span class="math inline">\((a,b)(c,d) = (ac,bd)\)</span></p>
+<p>There is so much to check: the equivalence relation claim, the well definedness of addition and multiplication, and of course the ring axioms. It’s no good to do the work twice, but this construction is too specialized. There is a more general tool called localization which we’ll also need. We’ll bite the bullet and do the proper generality first.</p>
+</section>
+<section id="localization" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="localization"><span class="header-section-number">8.2</span> Localization</h2>
+<section id="motivation" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">8.2.1</span> Motivation</h3>
+<p>The field of fractions makes denominators out of all the nonzero elements of <span class="math inline">\(R\)</span>. Sometimes we wish to make denominators out of only <em>some</em> of the ring elements. Of course we must exclude <span class="math inline">\(0\)</span>. Considering that the fraction addition and multiplication rules introduce the denominator <span class="math inline">\(bd\)</span>, the set of elements scheduled to become denominators must be closed under multiplication. In fact this is the only reason why <span class="math inline">\(R\)</span> must be a domain, above. Otherwise the product <span class="math inline">\(bd\)</span> could create a <span class="math inline">\(0\)</span> denominator.</p>
+<p>The more general construction is to set up a collection <span class="math inline">\(S\)</span> of elements <span class="math inline">\(s \in S\)</span> which we want to invert, and then use them as the denominators.</p>
+<p><strong>Definition:</strong> A <strong>Multiplicatively closed set</strong> (mcs) in a commutative ring <span class="math inline">\(R\)</span> is a set which includes <span class="math inline">\(1\)</span>, excludes <span class="math inline">\(0\)</span>, and is closed under multiplication.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a commutative ring and let <span class="math inline">\(S\)</span> be an mcs. The <strong>localization</strong> of <span class="math inline">\(R\)</span> by <span class="math inline">\(S\)</span>, written <span class="math inline">\(S^{-1}R\)</span>, is <span class="math inline">\(\ldots\)</span> 1. The set of ordered pairs <span class="math inline">\((a,b)\)</span> (thought of as formal fractions <span class="math inline">\(\frac{a}{b}\)</span>) where <span class="math inline">\(a \in R\)</span>, <span class="math inline">\(b \in S\)</span>, modulo the equivalence relation <span class="math inline">\((a,b) \sim (c,d)\)</span> iff <span class="math inline">\(\exists s \enspace s(ad-bc)=0\)</span>, 2. The zero <span class="math inline">\((0_R,1_R)\)</span> 3. The one <span class="math inline">\((1_R,1_R)\)</span> 4. The addition rule <span class="math inline">\((a,b)+(c,d) = (ad+bc,bd)\)</span> 5. The multiplication rule <span class="math inline">\((a,b)(c,d) = (ac,bd)\)</span></p>
+<p>The equivalence relation needs some justification. We identify <span class="math inline">\((a,b) \sim (c,d)\)</span> when the fractions <span class="math inline">\(\frac{a}{b}\)</span> and <span class="math inline">\(\frac{c}{d}\)</span> “should” be treated as equal. Considering that their difference “should be” <span class="math inline">\(\frac{ad-bc}{bd}\)</span>, it makes sense to regard them as equal when <span class="math inline">\(ad-bc=0\)</span>. Why worry if <span class="math inline">\(s(ad-bc)=0\)</span>? Aren’t nonzero zero-divisors tolerated anymore? In that case, once <span class="math inline">\(s\)</span> becomes a valid denominator, the difference will also be equal to <span class="math inline">\(\frac{s(ad-bc)}{sbd}\)</span>, which <em>must</em> be zero because its numerator is zero. This is only happens when a zerodivisor in <span class="math inline">\(S\)</span> gets contorted by the process into a unit.</p>
+</section>
+<section id="many-many-checks" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="many-many-checks"><span class="header-section-number">8.2.2</span> Many, many checks</h3>
+<section id="equivalence" class="level4" data-number="8.2.2.1">
+<h4 data-number="8.2.2.1" class="anchored" data-anchor-id="equivalence"><span class="header-section-number">8.2.2.1</span> “Equivalence”</h4>
+<p>We start with the claim that <span class="math inline">\(\sim\)</span> is an equivalence relation.</p>
+<ul>
+<li>Reflexivity: Note <span class="math inline">\(1 \in S\)</span>, and <span class="math inline">\(1(ab-ab)=0\)</span>, so <span class="math inline">\((a,b) \sim (a,b)\)</span></li>
+<li>Symmetry: If <span class="math inline">\((a,b) \sim (c,d)\)</span> then for some <span class="math inline">\(s\)</span>, <span class="math inline">\(s(ad-bc)=0\)</span>. Negating, <span class="math inline">\(s(cb-da)=0\)</span>, so <span class="math inline">\((c,d) \sim (a,b)\)</span>.</li>
+<li>Transitivity: Assume <span class="math inline">\((a,b) \sim (c,d) \sim (e,f)\)</span>. Then we have <span class="math inline">\(s, t\)</span> so that <span class="math inline">\(s(ad-bc)=t(cf-de)=0\)</span>. Multiplying the first equation by <span class="math inline">\(ft\)</span> yields <span class="math inline">\(adfst = bcfst\)</span>. Multiplying the second by <span class="math inline">\(bs\)</span> yields <span class="math inline">\(bcfst = bdest\)</span>. We conclude <span class="math inline">\(adfst = bdest\)</span>, so <span class="math inline">\(dst(af-be)\)</span> as desired. (Note <span class="math inline">\(d, s, t \in S\)</span> and <span class="math inline">\(S\)</span> is mcs.)<br>
+</li>
+</ul>
+</section>
+<section id="well-definedness" class="level4" data-number="8.2.2.2">
+<h4 data-number="8.2.2.2" class="anchored" data-anchor-id="well-definedness"><span class="header-section-number">8.2.2.2</span> Well definedness…</h4>
+<p>Assume <span class="math inline">\((a_1, b_1) \sim (a_2, b_2)\)</span> and <span class="math inline">\((c_1, d_1) \sim (c_2, d_2)\)</span>. This means there are <span class="math inline">\(s, t \in S\)</span> so that</p>
+<p>E1: <span class="math inline">\(\,\,\)</span> <span class="math inline">\(sa_1b_2 = sa_2b_1\)</span> and</p>
+<p>E2: <span class="math inline">\(\,\,\)</span> <span class="math inline">\(tc_1d_2= tc_2d_1\)</span></p>
+<p><strong>…of addition:</strong></p>
+<p>Let’s compare <span class="math inline">\((a_1d_1+b_1c_1,b_1d_1)\)</span> to <span class="math inline">\((a_2d_2+b_2c_2,b_2d_2)\)</span>. The goal is to prove, for some <span class="math inline">\(q \in S\)</span>: <span class="math display">\[q (a_1d_1 + b_1c_1) b_2d_2 = q (a_2d_2+b_2c_2)b_1d_1\]</span> If we try <span class="math inline">\(q=st\)</span> we get <span class="math display">\[\begin{align}
+st (a_1d_1 + b_1c_1) b_2d_2 =&amp;  sta_1d_1b_2d_2 + stb_1c_1b_2d_2 &amp; \text{(Distribution)}\\
+=&amp; sta_2d_1b_1d_2 + stb_1c_1b_2d_2 &amp;\text{ Using E1}\\
+=&amp; sta_2d_1b_1d_2 + stb_1c_2b_2d_1 &amp;\text{ Using E2}\\
+=&amp; st(a_2d_2 + c_2b_2)b_1d_1 &amp;\text{ Factoring}\\
+\end{align}\]</span> as desired</p>
+<p><strong>…of multiplication:</strong></p>
+<p>Rarely is multiplication easier to treat than addition. Let’s compare <span class="math inline">\((a_1c_1,b_1d_1)\)</span> to <span class="math inline">\((a_2c_2,b_2d_2)\)</span>. We must find <span class="math inline">\(q\)</span> so that <span class="math display">\[qa_1c_1b_2d_2 = b_1d_1a_2c_2.\]</span> Again we try <span class="math inline">\(q=st\)</span>: <span class="math display">\[\begin{align}
+sta_1c_1b_2d_2 &amp;= sta_2c_1b_1d_2 &amp; \text{ (Using E1)}\\
+&amp;= st a_2c_2b_1d_1 &amp; \text{ (Using E2)} \\
+\end{align}\]</span> as desired</p>
+</section>
+<section id="ring-axioms" class="level4" data-number="8.2.2.3">
+<h4 data-number="8.2.2.3" class="anchored" data-anchor-id="ring-axioms"><span class="header-section-number">8.2.2.3</span> Ring Axioms</h4>
+<p>We can now trust in well defined operations on equivalence classes, it’s safe to introduce the notation <span class="math inline">\(\frac{a}{b}\)</span> for the pair <span class="math inline">\((a,b)\)</span>. For sanity, we will use this notation to check the ring axioms.</p>
+<p>First note that <span class="math inline">\(\frac{a}{d} \sim \frac{as}{ds}\)</span> whenever <span class="math inline">\(s \in S\)</span>.</p>
+<ol type="1">
+<li><strong>Additive Associativity:</strong></li>
+</ol>
+<p><span class="math display">\[\begin{align}
+&amp;\frac{a}{b} + (\frac{c}{d} + \frac{e}{f}) \\
+=&amp; \frac{a}{b} + (\frac{cf+ed}{df}) \\
+=&amp; \frac{adf + b(cf+ed)}{bdf} \\
+=&amp; \frac{adf+bcf+bed}{bdf}\\
+=&amp; \frac{(ad+bc)f+bed}{bdf}\\
+=&amp; \frac{ad+bc}{bd} +\frac{e}{f}\\
+=&amp; (\frac{a}{b} + \frac{c}{d}) +  \frac{e}{f} \\
+\end{align}\]</span></p>
+<ol start="2" type="1">
+<li><p><strong>Additive Identity:</strong> <span class="math inline">\(\frac{a}{b}+ \frac{0}{1} = \frac{a1+b0}{b1} = \frac{a}{b}\)</span></p></li>
+<li><p><strong>Additive Inverse:</strong> <span class="math inline">\(\frac{a}{b} + \frac{-a}{b} = \frac{ab-ab}{b^2} = \frac{0}{b^2}\)</span>, which is equivalent to <span class="math inline">\(\frac{0}{1}\)</span> because <span class="math inline">\(b^2 \in S\)</span>.</p></li>
+<li><p><strong>Additive Commutativity:</strong> Obvious, but note it depends on multiplicative commutativity in <span class="math inline">\(R\)</span>.</p></li>
+<li><p><strong>Multiplicative Associativity:</strong> Obvious.</p></li>
+<li><p><strong>Multiplicative Identity:</strong> Obvious.</p></li>
+<li><p><strong>Distribution 1</strong> <span class="math display">\[\begin{align}
+&amp;\frac{a}{b} (\frac{c}{d} + \frac{e}{f}) \\
+&amp;= \frac{a}{b} (\frac{cf+de}{df}) \\
+&amp;= (\frac{acf+ade}{bdf}) \\
+&amp;\sim (\frac{abcf+abde}{bbdf}) \\
+&amp;= \frac{ac}{bd} + \frac{ae}{bf}\\
+&amp;= \frac{a}{b}\frac{c}{d} + \frac{a}{b}\frac{e}{f}\\
+\end{align}\]</span> as desired.</p></li>
+<li><p><strong>Multiplicative Commutativity</strong>: Obvious.</p></li>
+<li><p><strong>Distribution 2:</strong> Follows from 7,9</p></li>
+</ol>
+<p>This concludes the proof that <span class="math inline">\(S^{-1}R\)</span> is a commutative ring.</p>
+</section>
+</section>
+<section id="basic-properties-of-s-1r" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="basic-properties-of-s-1r"><span class="header-section-number">8.2.3</span> Basic properties of <span class="math inline">\(S^{-1}R\)</span></h3>
+<p>As always, we have a canonical map to the newly constructed ring:</p>
+<p><strong>Definition:</strong> A canonical localization map is a function <span class="math inline">\(f:R \to S^{-1}R\)</span> given by <span class="math inline">\(f(r) = \frac{r}{1}\)</span>.</p>
+<p><strong>Note:</strong> If <span class="math inline">\(S\)</span> contains no zerodivisors, then <span class="math inline">\(f\)</span> above is injective, and we regard <span class="math inline">\(R\)</span> to be a subring of <span class="math inline">\(S\)</span></p>
+<p>If <span class="math inline">\(s \in S\)</span> then <span class="math inline">\(f(s) = \frac{s}{1}\)</span> is a unit in <span class="math inline">\(S^{-1}R\)</span> with reciprocal <span class="math inline">\(\frac{1}{s}\)</span>. It’s safe to treat the fraction <span class="math inline">\(\frac{a}{s}\)</span> as not a “formal fraction” but literally <span class="math inline">\(a\)</span> times the multiplicative inverse of <span class="math inline">\(s\)</span>, as long as we remember that the operations occur not in <span class="math inline">\(R\)</span> but in <span class="math inline">\(S^{-1}R\)</span>.</p>
+<p><strong>Fraction fields:</strong> If <span class="math inline">\(R\)</span> is a domain and <span class="math inline">\(S = R-\{0\}\)</span>, then <span class="math inline">\(S\)</span> is multiplicatively closed. <span class="math inline">\(S^{-1}R\)</span> is a field because every nonzero fraction <span class="math inline">\(\frac{a}{b}\)</span> has reciprocal <span class="math inline">\(\frac{b}{a}\)</span> (because <span class="math inline">\(a \in S\)</span>). Since <span class="math inline">\(S\)</span> has no zerodivisors, the canonical map <span class="math inline">\(f:R \to S^{-1}R\)</span> is injective, so we may safely regard <span class="math inline">\(R\)</span> to be a subring of this field. Thus every domain is a subring of its field of fractions.</p>
+</section>
+<section id="universal-property-1" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="universal-property-1"><span class="header-section-number">8.2.4</span> Universal Property</h3>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(R\)</span> be a commutative ring and <span class="math inline">\(S\)</span> a multiplicatively closed set. Let <span class="math inline">\(f:R \to S^{-1}R\)</span> be the canonical map. Then for every <span class="math inline">\(s \in S\)</span>, <span class="math inline">\(f(s)\)</span> is a unit. Moreover for any map <span class="math inline">\(g:R \to T\)</span> with the property that for every <span class="math inline">\(s \in S\)</span>, <span class="math inline">\(g(s)\)</span> is a unit (in <span class="math inline">\(T\)</span>), there is a unique map <span class="math inline">\(G:S^{-1}R \to T\)</span> so that <span class="math inline">\(Gf = g\)</span></p>
+<p><strong>proof:</strong> The map is <span class="math inline">\(G(\frac{a}{b}) = g(a)g(b)^{-1}\)</span>. Everything else (including well definedness) is left to the reader.</p>
+<p>Shorthand: To define a map from <span class="math inline">\(S^{-1}R\)</span>, just define it on <span class="math inline">\(R\)</span> and check <span class="math inline">\(S\)</span> elements go to units.</p>
+</section>
+</section>
+<section id="ideal-correspondence-for-localization" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="ideal-correspondence-for-localization"><span class="header-section-number">8.3</span> Ideal Correspondence for Localization</h2>
+<p>We’ve seen that the ideals of <span class="math inline">\(R\)</span> and any quotient ring are closely related. In this section we’ll describe how the ideals of <span class="math inline">\(R\)</span> relate to those of <span class="math inline">\(S^{-1}R\)</span>. The key concept is that the elements of <span class="math inline">\(S\)</span> are transformed into units, so any ideal, no matter how small, that intersects <span class="math inline">\(S\)</span> changes into the unit ideal.</p>
+<p><strong>Theorem:</strong> Ideal Correspondence for Localization Let <span class="math inline">\(f:R \to S^{-1}R\)</span> be a canonical localization map. Then extension and contraction across <span class="math inline">\(f\)</span> form a one-to-one order-preserving correspondence between the <strong>prime</strong> ideals of <span class="math inline">\(S^{-1}R\)</span> and the <strong>prime</strong> ideals of <span class="math inline">\(R\)</span> which are <strong>disjoint from <span class="math inline">\(S\)</span></strong>.</p>
+<p><strong>Proof:</strong> 1. Order-preserving: Extension and contraction always preserve order.</p>
+<ol start="2" type="1">
+<li><p><span class="math inline">\(J^{ce}= J\)</span>: Let <span class="math inline">\(J \subseteq S^{-1}R\)</span> be a proper ideal. Then <span class="math inline">\(J^c = \{r \in R \,|\, \frac{r}{1} \in J\}\)</span> is known to be an ideal and must be disjoint from <span class="math inline">\(S\)</span> because otherwise <span class="math inline">\(J\)</span> would be a unit ideal. As always <span class="math inline">\(J^{ce} \subseteq J\)</span>. For the reverse, if <span class="math inline">\(\frac{r}{s} \in J\)</span> then <span class="math inline">\(\frac{r}{1}\in J\)</span> by capture, so <span class="math inline">\(r \in J^c\)</span>. It follows that <span class="math inline">\(\frac{r}{1} \in J^{ce}\)</span> and finally <span class="math inline">\(\frac{r}{s} \in J^{ce}\)</span> again by capture. Note this portion does not depend on primality of <span class="math inline">\(J\)</span>.</p></li>
+<li><p><span class="math inline">\(I^{ec}=I\)</span>: Let <span class="math inline">\(I \subseteq R\)</span> be disjoint from <span class="math inline">\(S\)</span>. Notice that the set <span class="math inline">\(\{\frac{i}{s} \,|\, i \in I, s \in S\}\)</span> is an ideal and is a subset of any ideal containing <span class="math inline">\(f(I)\)</span>. It follows that <span class="math inline">\(I^e = \{\frac{i}{s} \,|\, i \in I, s \in S\}\)</span>. If <span class="math inline">\(r \in I^{ec}\)</span> then <span class="math inline">\(\frac{r}{1} \in I^e\)</span>, so <span class="math inline">\(\frac{r}{1} = \frac{i}{s}\)</span>. This means <span class="math inline">\(t(rs-i)=0\)</span> for some <span class="math inline">\(t\)</span>. Now if <span class="math inline">\(I\)</span> is a prime ideal disjoint from <span class="math inline">\(S\)</span>, then since <span class="math inline">\(t \notin I\)</span>, <span class="math inline">\(rs-i \in I\)</span>, so <span class="math inline">\(rs \in I\)</span>. Again by primality <span class="math inline">\(s \notin I\)</span> so <span class="math inline">\(r \in I\)</span>. This proves <span class="math inline">\(I^{ec} \subseteq I\)</span>. The other direction is guaranteed, so <span class="math inline">\(I^{ec} = I\)</span>.</p></li>
+<li><p>We have established the correspondence. It remains to show it preserves primality. Contraction always preserves primality, so consider extension. If <span class="math inline">\(\frac{a}{b}\frac{c}{d} \in I^e = \{\frac{i}{s} \,|\, i \in I, s \in S\}\)</span> then <span class="math inline">\(ac \in I\)</span>. If <span class="math inline">\(I\)</span> is prime then one of <span class="math inline">\(a, c\)</span> is in <span class="math inline">\(I\)</span>, so one of the fractions is in <span class="math inline">\(I^e\)</span>. Thus <span class="math inline">\(I^e\)</span> is prime.</p></li>
+</ol>
+</section>
+<section id="quotient-ring-and-localization" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="quotient-ring-and-localization"><span class="header-section-number">8.4</span> Quotient Ring and Localization</h2>
+<p>Is it possible to both mod out by <span class="math inline">\(I\)</span> and also localize at <span class="math inline">\(S\)</span>? Does it matter which of these operations comes first?</p>
+<p><strong>Theorem:</strong> (Localization and Quotient Commute) Let <span class="math inline">\(R\)</span> be a ring with multiplicatively closed set <span class="math inline">\(S\)</span> and ideal <span class="math inline">\(I\)</span> disjoint from <span class="math inline">\(S\)</span>. Let <span class="math inline">\(S^{-1}I\)</span> denote the extension of <span class="math inline">\(I\)</span> to <span class="math inline">\(S^{-1}R\)</span> and let <span class="math inline">\(S/I\)</span> denote <span class="math inline">\(\{s+I \,|\, s \in S\}\)</span>. Then 1. <span class="math inline">\(S^{-1}I\)</span> is an ideal of <span class="math inline">\(S^{-1}R\)</span> 2. <span class="math inline">\(S/I\)</span> is a multiplicatively closed set of <span class="math inline">\(R/I\)</span> 3. <span class="math inline">\((S/I)^{-1}(R/I) \cong (S^{-1}R) / (S^{-1}I)\)</span> via a homomorphism <span class="math inline">\(\frac{r+I}{s+I} \mapsto \frac{r}{s} + (S^{-1}I)\)</span></p>
+<p><strong>Proof:</strong> We’ve established that <span class="math inline">\(S^{-1}I = I^e\)</span> is an ideal, and it’s elementary that <span class="math inline">\(S/I\)</span> is multiplicatively closed.</p>
+<p>Consider two different compositions of canonical quotient and localization maps:</p>
+<p><span class="math display">\[\alpha: R \to R/I \to (S/I)^{-1}(R/I) \]</span></p>
+<p>and</p>
+<p><span class="math display">\[\beta: R \to S^{-1}R \to (S^{-1}R) / (S^{-1}I)\]</span> Clearly <span class="math inline">\(\alpha\)</span> sends <span class="math inline">\(I\)</span> to <span class="math inline">\(0\)</span>. So does <span class="math inline">\(\beta\)</span>: <span class="math inline">\(\beta(i) = \frac{i}{1} + I^e = 0\)</span>,</p>
+<p>What do <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> do to elements of <span class="math inline">\(S\)</span>? <span class="math inline">\(\alpha(s) = \frac{s+I}{1_{R/I}}\)</span>, a unit in <span class="math inline">\((S/I)^{-1}(R/I)\)</span>. Likewise <span class="math inline">\(\beta(s) = \frac{s}{1} + (S^{-1}I)\)</span>, a unit.</p>
+<p>The rest of the work can be done with diagrams and universal properties.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

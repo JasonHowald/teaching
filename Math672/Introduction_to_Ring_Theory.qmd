@@ -1,0 +1,1007 @@
+---
+title: "Introduction to Ring Theory"
+description: "Lecture notes for the semester"
+toc: true
+toc-depth: 3
+toc-expand: 1    # Shows the main sections, but hides sub-sections until clicked
+number-sections: true
+format:
+  html:
+    smooth-scroll: true # Makes jumping to sections feel less jarring
+---
+
+# Basics of Rings
+
+## Relation to Group Theory
+
+Group theory is the theory of algebraic structures with one operation. The axioms of identity, inverse, and associativity are the minimal assumptions which empower the solution of equations, and describe a huge variety of systems.
+
+Many important mathematical structures have not one operation but four: Addition, subtraction, multiplication, and division, and satisfy various other axioms, such as distribution. There is some variability in these structures. In some (e.g., ${\mathbb Z}$) we lack closure under division. In others we lack a multiplicative identity. In others (e.g. matrix rings) we lack multiplicative commutativity. Our definition of a **ring** reflects a minimally useful behavior of addition and multiplication. Division is excluded because we often genuinely lose access to division. Subtraction is excluded because addition and additive inverse accomplish the same thing.
+
+## Basic Definitions
+
+
+
+**Definition:** A (unital) **ring** is a set $R$ together with four structural elements: A chosen element called $0_R$, a chosen element called $1_R$, an operation called addition, written $+_R$, and an operation called multiplication, written $\cdot_R$ or $\times_R$ (usually unwritten, expressed as implied product), satisfying the following **ring axioms**:
+
+1. (Additive associativity) $x+(y+z) = (x+y)+z$
+2. (Additive identity) $0+x = x = x+0$
+3. (Additive inverse) $\forall x \, \exists y \, x+y = 0 = y+x$
+4. (Additive commutativity) $x+y = y+x$
+5. (Multiplicative associativity) $x(yz) = (xy)z$
+6. (Multiplicative identity) $1x = x = x1$
+7. (Distribution I) x(y+z) = xy + xz
+8. (Distribution II) (x+y)z = xz + yz
+
+Notes on the definition:
+
+1. Axioms with free variables are understood to be universally quantified. For example $\forall x \,\forall y \,\forall z  \enspace  x+(y+z) = (x+y)+z$
+
+2. The first four axioms tell us that $(R,0,+)$ is an abelian group. This means that all of group theory applies to ring theory, and is the main reason for doing group theory first.
+
+3. Note that there is no multiplicative inverse axiom, so $(R,1,\cdot)$ is not a group. Even if we want to include such an axiom, we must at least make exception for $0_R$.
+
+4. It is not necessary to include $0_R$ and $1_R$ in the defining structure of a group. One can instead rephrase axioms 2 and 6 to state the existence of an identity, which can later be proven unique and labeled. This has no real effect on the theory. Many authors prefer to minimize the number of structures in the definition. This author prefers, within reason, to minimize the number of not-purely-universal axioms. The effect is not only cosmetic, but influences future definitions of "homomorphism" and "subring."
+
+5. Note that there is no commutativity axiom for multiplication. Many structures satisfy such an axiom, and it's almost always important.
+
+6. Axiom #6 can be omitted, in which case we will not call the ring "unital." $2{\mathbb Z}$ is an easy example meeting all other axioms. Such a structure is sometimes called a "rng".
+
+
+**Additional Axioms of interest**
+
+9. (Multiplicative Commutativity) xy = yx
+10. (No zerodivisors) $(xy=0) \to (x=0 \lor y=0)$
+11. (Multiplicative inverse) $\forall x \enspace (x \neq 0) \to (\exists y \enspace xy = 1 = yx)$
+
+A ring satisfying 1-9 is called a **commutative ring** (or in some contexts, a "**ring**"!). A ring satisfying 1-10 is called an **integral domain** or simply a **domain**. A ring satisfying 1-11 (but 11 implies 10) is called a **field**.
+
+The reader may expect that besides ${\mathbb R}$, fields are hard to come by. On the contrary, there are many interesting and exotic fields.
+
+
+## Basic Examples
+
+
+Natural mathematical structures with elements which can be added and multiplied are generally rings.
+
+1. ${\mathbb Z}$ and ${\mathbb R}$ are the original rings. Of course they satisfy axioms 1-10 so they are both domains. ${\mathbb R}$ is a field but ${\mathbb Z}$ is not.
+
+2. We have already seen that the integers modulo $n$, ${\mathbb Z}/(n)$, form an abelian group under addition. But these integers can be multiplied too, and satisfy axioms 1-9. If $n$ is prime, then ${\mathbb Z}/(n)$ is a field.
+
+3. **Function Rings** Let $X$ be a set, topological space, geometric object, etc, and consider the set $C(X)$ of all continuous functions $f:X \to {\mathbb R}$. Since the sum or product of continuous functions is continuous, $C(X)$ is closed under $+$ and $\cdot$. Since the functions take values in ${\mathbb R}$, they satisfy axioms 1-9. Generally axioms 10 and 11 fail.
+
+4. More generally, in the previous example, "continuous" can be replaced with "differentiable", "measurable", "analytic", "polynomial", "rational", etc. As long as the function category is closed under $+$ and $\cdot$, we generally get a ring of functions.
+
+5. The **polynomial rings** ${\mathbb Z}[x]$, ${\mathbb R}[x,y]$, ${\mathbb C}[x,y,z]$, $({\mathbb Z}_7)[w,x,y,z]$, etc. consist of polynomial functions in the prescribed variables with coefficients from the prescribed ring. They are added and multiplied not as functions but abstractly by manipulating coefficients. So for example in $({\mathbb Z}_7)[x]$, the elements $x$ and $x^7$ are considered different, even though they act identically as functions on ${\mathbb Z}_7$
+
+6. For any given size $n$, the set of all $n \times n$ matrices with real entries, written $M_n({\mathbb R})$ is a noncommutative ring. The coefficient field ${\mathbb R}$ can be replaced with any field and linear algebra works more or less the same way. It can be replaced with any ring and $M_n({\mathbb R})$ remains a ring. This ring has many interesting subrings known variously as "matrix rings." Most are noncommutative.
+
+## First Properties of elements
+
+**Theorem** Let $R$ be a ring.
+
+1. The additive identity is unique
+2. The multiplicative identity is unique
+3. The additive inverse is unique.
+4. $-(a+b) = -a + -b$
+5. Additive cancellation
+6. $\forall x \enspace 0x=0$
+7. $\forall x \enspace (-1)x = -x$
+8. $(-a)*b = -(ab)$.
+9. $(-a)(-b) = ab$.
+10. Multidistribution: $\displaystyle a \sum_{i} x_i = \sum_{i} a x_i$
+11. Two-sided multiplicative inverse is unique if it exists.
+12. Multiplicative cancellation is valid **in a domain**.
+
+**Classroom group exercise:** Construct proofs of all twelve.
+
+**Binomial Theorem:** $$(x+y)^n = \sum_{i=0}^n \binom{n}{i} x^iy^{n-i}$$
+
+**proof:** The usual proof,
+
+## Homomorphisms
+
+**Definition:** A ring homomorphism is a function $f:R \to S$ from one ring to another satisfying:
+
+1. $f(0_R) = 0_S$
+2. $f(1_R) = 1_S$
+3. $f(x+y) = f(x)+f(y)$
+4. $f(xy) = f(x)f(y)$
+
+**Note:** The first requirement $f(0)=0$ is implied by the third. In general, homomorphisms must preserve whatever structure is imposed. Since we blessed $0_R$ as structural, it makes the list here.
+
+**Definition:** The **kernel** $\ker(f)$ of a homomorphism is the preimage of zero:
+$$\ker(f) = \{x \in \operatorname{Dom}(f) \,|\, f(x) = 0_S\}$$
+
+**Definition:** Let $R$ be a ring. A **subring** of $R$ is a subset of $R$ which is a ring under the same interpretation of $0$, $1$, $+$, and $\times$. That is, it must be a ring under the same operations using the same identities.
+
+**Caution:** It is not enough to check $+$ and $\times$. For example, the ring ${\mathbb Z} \times {\mathbb Z}$ with coordinatewise addition and multiplication has identities $(0,0)$ and $(1,1)$. The subset ${\mathbb Z} \times \{0\}$ is a ring under coordinatewise $+$ and $\times$ and is isomorphic to ${\mathbb Z}$. Its identities are $(0,0)$ and $(1,0)$, so ${\mathbb Z} \times \{0\}$ is not a subring of ${\mathbb Z} \times {\mathbb Z}$, and the inclusion map is not a homomorphism. Authors for whom rings don't necessarily include multiplicative identity would likely disagree on both conclusions, because for them $1_R$ is not a component of the ring structure.
+
+### First Properties of Homomorphisms
+
+1. The composition of two ring homomorphisms is a homomorphism.
+
+2. The image of a homomorphism is a subring of $S$.
+
+3. $f(-x) = -f(x)$
+
+4. $f(x^{-1}) = f(x)^{-1}$ **provided** $x$ has a two-sided inverse $x^{-1}$.
+
+### All rings have "integers"
+
+
+Step 1. [${\mathbb Z}$ is the initial ring] Let $R$ be a ring. Then there is exactly one homomorphism $f:{\mathbb Z} \to R$.
+
+**proof:** Suppose $f$ were a homomorphism from ${\mathbb Z}$ to $R$. Then $f$ must satisfy $f(0)=0_R$ and $f(1)=1_R$. It follows from additivity (for $n>1$) that $f(n) = f(1+1+\ldots+1) = f(1)+f(1)+ \ldots + f(1) =  1_R + 1_R + \ldots + 1_R$. Finally it follows for the negative integers that $f(-n) = - (1_R + 1_R + \ldots + 1_R)$. This determines the function $f$ completely. It obviously satisfies axioms 1-3 of a ring homomorphism, and axiom 4 follows from properties 7-10 above. So there is exactly one such homomorphism.
+
+Step 2. [Notation] Let $R$ be a ring. We write $n \in R$ to mean the image of $n$ via the unique homomorphism above.
+
+We will prove later that the image of $f$ is isomorphic to ${\mathbb Z}$ or a quotient of ${\mathbb Z}$. For any ring $R$, we can be confident to write $18 \in R$, but we can't be sure that $18$ is nonzero!
+
+
+# Types of Elements of Rings
+
+## Units
+
+Even if $R$ is not a field, an $x \in R$ may have a two sided multiplicative inverse. In this case we call $x$ a **unit**, and permit ourselves the notation $x^{-1}$ for the two-sided multiplicative inverse of $x$, which is unique if it exists.  If $R$ is commutative we even write natural division notation $a/x$ or $\frac{a}{x}$, if $x$ is a unit.
+
+**Examples:**
+  - The ring ${\mathbb Z}$ has two units, namely $\pm 1$.
+  - The "Gaussian Integers" ${\mathbb Z}[i]$ has four units, $\pm 1$ and $\pm i$.
+  - Every nonzero element of a field is a unit, so for example $3 \in {\mathbb R}$ is a unit.
+  - In the polynomial ring ${\mathbb R}[x]$, the units are the nonzero constant polynomials.
+  - In the continuous function ring $C(X)$ of functions on a space $X$, the units are the functions $f:X \to {\mathbb R}$ which never take the value $0$.
+  - In $Z/n$, the units are the elements $x$ relatively prime to $n$, and their inverses can be found via the extended Euclidean algorithm.
+
+
+## Zero-divisors
+
+
+If $x \in R$ and $y \in R$ are nonzero elements for which $xy=0$, then we call $x$ and $y$ **zero divisors** (sometimes one word "zerodivisor"). This behavior never occurs in the familiar rings ${\mathbb Z}$, ${\mathbb Q}$, ${\mathbb R}$, and ${\mathbb C}$, and doesn't need to be discussed in high school algebra. Many students find it counterintuitive and it can be a source of errors.
+
+If $x=0$ and $x$ is not a zero divisor, we call $x$ a non-zero-divisor (sometimes "nonzerodivisor" or NZD).
+
+**Proposition:** If $x$ is a nonzerodivisor, then multiplication by $x$ is cancellable:  Whenever $xa=xb$ then $a=b$.
+
+**proof:** If $xa=xb$ then $x(a-b)=0$, so $a-b=0$, so $a=b$.
+
+**Examples:**
+- The rings ${\mathbb Z}$, ${\mathbb Q}$, ${\mathbb R}$, and ${\mathbb C}$ are domains and have no zerodivisors.
+- The polynomial rings ${\mathbb Z}[x]$, ${\mathbb R}[x,y]$, and ${\mathbb C}[x,y,z]$, etc. are also domains and have no zerodivisors.
+- In ${\mathbb Z}/n$, the elements $x$ which are not relatively prime to $n$ are zerodivisors. For example, in ${\mathbb Z}/60$, the element $16$ is a zerodivisor as $16 \cdot 15 = 240 = 0$.
+- In $C(X)$, if $X$ is the union of two closed sets $X = A \cup B$ (not necessarily disjoint) and if $f|_A=0$ and $g|_B=0$, then $fg=0$. Typically this is easy to accomplish and $C(X)$ has many zerodivisors.
+- In ${\mathbb Z} \times {\mathbb Z}$ with coordinatewise operations, $(a,0)\times (0,b) = 0$.
+
+## Nilpotent elements
+
+
+Nilpotency is an extreme variant of the zerodivisor.
+
+If $x$ is a nonzero element of a ring and $x^n=0$, we call $x$ **nilpotent.**
+
+**Examples:** Nilpotent elements are fairly rare.
+
+- In $R = {\mathbb Z}/n$, if $x$ is divisible by **all** of the factors of $n$, then a sufficiently high power of $x$ will be divisible by $n$, so $x$ is nilpotent. To be more specific in ${\mathbb Z}/2400$ (Note $2400 = 2^5 \cdot 3 \cdot 5^2$) the multiples of $30 = 2 \cdot 3 \cdot 5$ are nilpotent.
+
+- In any matrix ring $M$, a **strictly upper triangular** matrix (whose entries on and below the main diagonal are all zero) is nilpotent.
+
+
+**Proposition:** If $x$ is nilpotent, then $1-x$ is a unit.
+
+**proof:** $$(1-x^n) = (1-x)(1+x+x^2+ \ldots +x^{n-1})$$
+
+## Irreducibles
+
+Since rings have multiplication, they have factorization as well. The roots of the factor tree are called irreducible elements. We need to be careful to exclude factoring out a unit. We usually confine these definitions to domains, because factoring in nondomains is already pretty bad.
+
+**Definition:** Let $R$ be a domain and let $x \in R$.
+
+If $x$ is a nonunit and $x$ factors $x=ab$ into nonunits $a$ and $b$, we call $x$ **reducible**.
+
+If $x$ is a nonunit and $x$ cannot be factored in the form $x=ab$, with nonunits $a$ and $b$, we call $x$ **irreducible**.
+
+Naturally we are often interested in factoring ring elements into finite products of irreducible elements. This is "usually" possible but there are exceptions.
+
+**Examples:**
+1. In ${\mathbb Z}$ naturally the irreducible elements are the (positive and negative) prime numbers.
+2. In ${\mathbb Z}[i]$ we get a slightly different set of irreducible elements. For example here $5$ factors $5 = (2+i)(2-i)$, but both $2+i$ and $2-i$ are irreducible.
+3. In ${\mathbb R}[x]$, every polynomial can be factored into linear factors $(x-r)$ and rootless quadratic irreducible factors $ax^2+bx + c$ where $b^2-4ac < 0$. These factors are the irreducible polynomials.
+4. In ${\mathbb C}[x]$, every polynomial can be factored into linear factors $(x-r)$, and these linear factors are the irreducible polynomials.
+
+
+## Prime elements
+
+Let $R$ be a commutative ring.
+
+We write $x|y$ ("$x$ divides $y$") to mean that $xz=y for some $z$.
+
+An element $a \in R$ is called **prime** if whenever $a|bc$ then $a|b$ or $a|c$.
+
+This notion also generalizes the idea of prime numbers in ${\mathbb Z}$, but for general rings is not equivalent to irreducibility.
+
+**Prop:** Let $R$ be a domain. Then any prime element is irreducible.
+
+**proof:** Let $a$ be prime. If $a$ can be factored $a=bc$, then $a$ divides one of the factors. WLOG say $a|c$. Then $c=za$ and $a = bza$. Since $R$ is a domain we may cancel to obtain $1=bz$, so $b$ is a unit. It follows that $a$ is irreducible.
+
+If we wish to prove that irreducibles are prime, we would likely compare the factor trees of $a$, $b$, and $c$. To make this work, we would need to depend on some consistency between those factorizations. This would require $R$ to be a Unique Factorization Domain (UFD. see below). If $R$ is not a UFD, irreducibles need not be prime.
+
+**Examples**
+- All the irreducible elements in the previous examples are also prime.
+- Let $R = {\mathbb Z}[\sqrt{-5}] \subseteq {\mathbb C}$ be the ring whose elements are of the form $a+\sqrt{-5}$ for $a, b \in {\mathbb Z}$, with structure inherited from ${\mathbb C}$. Then $R$ is a ring (everyone's first non-UFD domain) and $$2 \cdot 3 = (1-\sqrt{-5}) \cdot (1+\sqrt{-5})$$
+Now in $R$ all four multiplicands above are irreducible, none of them is a factor of another, and so none of them is prime.
+
+
+
+
+
+# Kernels, Ideals, and Quotients
+
+## Properties of Kernels, Definition of Ideal
+
+In group theory, we defined a quotient group $G/N$, not for any subgroup $N$, but for any **normal** subgroup $N$. Why normal? Because the kernel of a group homomorphism is always normal.
+
+In ring theory, we again allow the properties of kernels to motivate the definitions analogous to the normal subgroup.
+
+Therefore, let $f:R \to S$ be a ring homomorphism. What can we say about $\ker(f)$?
+1. $\ker(f)$ contains $0_R$
+2. $\ker(f)$ is closed under addition and additive inverse. The proofs are unsurprising.
+3. Because $\ker(f)$ does **not** normally contain $1_R$, it's not normally a subring. (Warning: This verdict changes in "rng theory.")
+4. $\ker(f)$ has multiplicative closure. Let's look closely at the proof:
+
+**proof of 4:** Let $x, y \in \ker(f)$, and consider their product $xy$. Then $f(xy) = f(x)f(y) = 0 \cdot 0 = 0$, so $xy \in \ker(f)$.
+
+The proof above is correct, but suspicious. Since anything times zero is zero, we don't need to assume that *both* $x$ and $y$ are in the kernel. We only need one of them! This brings us to a modification of  closure, called **capture**
+
+5. $\ker(f)$ has multiplicative **capture**: If **either one of** $x$ or $y$ is in $\ker(f)$ (and the other is at least in $R$) then $xy \in \ker(f)$.
+
+All kernels have this capture property. Something meeting all three observed properties is called an **ideal**:
+
+**Definition:** Let $R$ be a ring and let $I \subseteq R$. We call $I$ an **ideal** if:
+1. $0 \in I$
+2. $I$ has additive **closure**.
+3. $I$ has multiplicative **capture**: If $x \in I$ or $y \in I$ then $xy = I$.
+
+**Notes:**
+  - In a commutative ring we would call this an "ideal". In a noncommutative ring we would normally call this a "two sided ideal", and could go on to  define "left ideal" and "right ideal".
+  - Most authors assert "$I$ is nonempty" instead of $0 \in I$, but the assertion $0 \in I$ is always true and feels more direct to me.
+
+There are no empty ideals, but there are some trivial cases with special names: The ideal $\{0\}$ is called the **zero ideal.** The ideal $R \subseteq R$ is called the **unit ideal**. Together they are called **trivial** ideals.
+
+**Theorem:** If $f:R \to S$ is a homomorphism, then $\ker(f)$ is an ideal.
+
+**proof:** follows from previous discussion.
+
+## You can mod out by an ideal
+
+
+
+
+This section describes the quotient $R/I$ of a ring by an ideal. This establishes that all ideals are kernels.
+
+**Definition / Theorem:** Let $R$ be a ring and let $I$ be an ideal. The set of cosets:
+$$R/I \equiv_{def} \{a+I \,|\, a \in R \}$$
+with structures:
+1. $0_{R/I} \equiv I$
+2. $1_{R/I} \equiv 1+I$
+3. $(x+I)+(y+I) \equiv (x+y)+I$
+4. $(x+I)(y+I) \equiv (xy)+I$
+
+$\ldots$ is called a **quotient ring** and pronounced "R mod I"
+
+**Recall**: $a+I = b+I$ iff $a-b \in I$. This was true in group theory, and ring theory is an extension because $(R,0,+)$ is an abelian group.
+
+**Proof:** The proof is a great deal of checking. The student is encouraged to figure out for themselves what must be checked.
+
+1. Addition is well defined: Suppose $x_1 +I = x_2+I$ and $y_1+I = y_2+I$. Then $x_2-x_1 \in I$ and $y_2-y_1 \in I$. By additive closure, $(x_2+y_2) - (x_1+y_1) \in I$, so $x_1+y_1 +I = x_2+y_2+I$ and addition is well defined.
+
+2. Multiplication is well defined: As before suppose $x_1 +I = x_2+I$ and $y_1+I = y_2+I$, so that $x_2-x_1 \in I$ and $y_2-y_1 \in I$. Notice the product of these differences is *not* equal to $x_2y_2 - x_1y_1$. However, we have
+$$x_2y_2 - x_1y_1 = x_2y_2 - x_2y_1 + x_2y_1 - x_1y_1 = x_2(y_2-y_1) + (x_2-x_1)y_2$$
+ $\ldots$ which is in $I$ by both multiplicative capture and additive closure.
+
+Next, all eight ring axioms must be checked. It's a great deal of equation pushing but not really interesting. For example, to prove the first distribution property we have
+
+\begin{align*}
+(a+I)((b+I) + (c+I)) &= (a+I)((b+c)+I)\\
+&= (a(b+c))+I \\
+&= (ab+ac)+I \\
+&= (ab + I) + (ac +I) \\
+&= (a+I)(b+I) + (a+I)(c+I)
+\end{align*}
+
+## Canonical quotient homomorphism
+
+Given any ideal $I$ of a ring $R$, we have an "obvious" map $f:R \to R/I$ called the canonical quotient homomorphism, or quotient map, defined by
+$f(x) = x+I$. Naturally, its kernel is $I$ and its image is all of $R/I$.
+
+## Universal property of the quotient map
+
+**Theorem:** The quotient map $\phi:R \to R/I$ sends $I$ to $0$. For any ring homomorphism $g: R \to S$ for which $g(I) = 0$, there is a unique map $G: R/I \to S$ so that $G \phi = g$
+
+**proof:** Let $G: R/I \to S$ by $G(a+I) = g(a)$.
+
+**shorthand:** To define a map on $R/I$, just define it on $R$ and check $I$ maps to zero.
+
+- The condition $G \phi = g$ forces $G(a+I) = g(a)$, so $G$ is unique if it exists. We take this to be the definition of $G$.
+- $G$ is well defined
+- $G$ is a homomorphism
+- $G\phi = g$.
+
+**Theorem:** If $\mu: R \to T$ is another map for which the previous theorem is true (with $\mu$ for $\phi$ and $T$ for $R/I$, then there is an isomorphism $G:R/I \to T$ and $G\phi = \mu$.
+
+**proof:** Construct both commutative triangles and compare their compositions to the identity.
+
+
+
+## Principal Ideals
+
+**Definition:** Let $a \in R$. ($R$ commutative.) The **principal ideal generated by $a$**, written $(a)$, is the set $aR$. If an ideal $I$ equals $(a)$ for some $a$, then $I$ is **principal.**
+
+**Examples:**
+1. The principal ideal $(4) \subseteq {\mathbb Z}$ consists of the multiples of $4$.
+
+2. In the polynomial ring ${\mathbb R}[x]$, the ideal of polynomials $p$ with $p(2)=0$ is equal to $(x-2)$, because every such polynomial must have $x-2$ as a factor.
+
+3. In the ring $R = C({\mathbb R})$ of continuous functions on ${\mathbb R}$, the ideal of functions $f$ with $f(2)=0$ is not principal. There is no single function like $x-2$ which is a factor of all other functions vanishing at $2$. Worse, in this ring any function $f(x)$ with a root at all is divisible by, but does not divide, the function $\sqrt{|f(x)|}$, which has the same roots.
+
+**Proposition:** $(a) = R$ iff $a$ is a unit.
+
+**Proposition:** Every ideal of ${\mathbb Z}$ is principal.
+
+**proof:** The trivial ideals are generated by $0$ and $1$. If $I$ is a nontrivial ideal, then it must have a positive element, so it must have a smallest positive element $n \in I$. Then every other element $x \in I$ can be written $x=nq+r$ by long division, where $0 \leq r < n$. It follows that $r \in I$ so $r=0$, so $x$ is a multiple of $a$. Therefore $I = (n)$.
+
+**Corollary:** The quotient rings of ${\mathbb Z}$ are ${\mathbb Z}$ itself, the zero ring, and the various finite rings ${\mathbb Z}/(n)$.
+
+**Example:** This is probably the easiest "natural" example of a nonprincipal ideal. Let $R = {\mathbb Z}[x]$ be the polynomial ring with integer coefficients, and let $I = \{f \in R \,|\, f(0) \text{ is even } \}$. Then $I$ contains both $2$ and $x$. Because no polynomial is a factor of both $2$ and $x$, the ideal $I$ is not principal.
+
+## Combining Ideals
+
+Since ideals are subsets, it's natural to ask whether the union or intersection of ideals yields another.
+
+**Theorem:** The intersection two ideals, or indeed any family ideals, is an ideal.
+
+**proof:** Let $\mathscr I$ be a family of ideals, and write $J = \bigcap \mathscr I$ for their intersection. Certainly $0 \in J$. For any $a, b \in J$, $a+b$ is in every member of $\mathscr I$, so $a+b \in J$. Similarly, if $a \in J$, then $ra$ is in every member of $\mathscr I$, so $ra \in J$. It follows that $J$ is an ideal.
+
+This theorem is often used to create a unique smallest ideal having some desired properties, by intersecting all ideals having that property. Sort of like shrink-wrap. For example, the principal ideal $(a)$ could have been defined as the intersection of the family of all ideals which contains $a$. As long as the property (here "contains $a$") is preserved by intersection, this trick will work.
+
+**Unions:** The union of ideals is almost never an ideal, because if $a \in I_1$ and $b \in I_2$, then $a+b$ is likely in neither ideal, so the union is not closed under summation. An exception is a union of a **chain** of ideals:
+
+**Definition:** A **chain** $\mathscr C$ of ideals is a family which is totally ordered by the subset relation $\subseteq$.
+
+Note that this is more general than an increasing or decreasing sequence of ideals. A chain may be uncountable and the order structure may be far more complicated than ${\mathbb N}$ or ${\mathbb Z}$.
+
+**Theorem:** Let $\mathscr C$ be a (nonempty) chain of ideals. Then their union $U = \bigcup C$ is an ideal.
+
+**proof:** We proceed in three steps
+1. Since $0 \in I \in \mathscr C$ for some $I$, $0 \in U$.
+2. Let $a \in U$. Then $a \in I \in \mathscr C$, so $ra \in I \subseteq U$, as desired.
+3. Let $a, b \in U$. Then $a \in I in \mathscr C$ and $b \in J \in mathscr C$. In this step alone it matters that $\mathscr C$ is a chain. Since it is, $I$ and $J$ have a containment relation and WLOG (by symmetry of the assumption) $I \subseteq J$. Then $a+b \in J \subseteq U$ as desired.
+
+What if we really really extra want to find the union of several ideals? Then we construct their **sum**
+
+**Definition:** The sum of two ideals $I+J$ is $\ldots$
+1. the set of linear combinations
+$$\{ra+sb \,|\, a \in I, b \in J, r,s \in R\}$$
+2. the intersection of all ideals of $R$ containing both $I$ and $J$.
+
+**correctness checks**
+
+**Claim:** The description in (1) is indeed an ideal. **proof** The set obviously contains $0$. It's easy to check that it has additive closure and multiplicative capture.
+
+**Claim:** The ideals in (1) and in (2) are the same. **Proof:** Any ideal containing both $I$ and $J$ must contain all such linear combinations, by closure and capture. This shows (1) \subseteq (2), if you will. But the ideal of (1) is one of the ideals intersected in (2), and this yields the other containment.
+
+Sums of even infinite families are also possible:
+
+**Definition:** The sum of any family $\mathscr F$ of ideals is $\ldots$
+1. the set of **finite** linear combinations
+$$\left \{\sum_{i} r_ia_i \,|\, r_i \in R, a_i \in F_i \in \mathscr F\right \}$$
+2. the intersection of all ideals in $R$ containing every $F \in \mathscr F$.
+
+**Note:** The proof that (1) is an ideal and that (1) and (2) describe the same set are essentially the same but slightly more fiddly.
+
+
+
+## Generating ideals
+
+**Definition:** More generally, if $A$ is any sub**set** of a ring $R$, the **ideal generated by $A$** is the intersection of all ideals containing $A$. It is the unique minimal ideal containing $A$.
+
+# Maximal and Prime ideals
+
+
+## Definitions
+
+
+
+Five is a prime number of course. One interpretation is that for any product $ab$ divisible by $5$, one of the factors $a$ or $b$ is divisible by $5$. Notice that this condition is as much about the class of numbers divisible by $5$, an ideal, as it is about $5$ itself. This motivates our next definition.
+
+**Definition:** Let $I \subseteq R$ be an ideal. We call $I$ **prime** if $I$ is not the unit ideal and whenever $ab \in I$, then $a$ \in I$ or $b \in I$.
+
+This is sort of a converse of the multiplicative capture property.
+
+** Examples:  **
+  - The prime ideal of ${\mathbb Z}$ are exactly the ideals $(p)$ generated by prime numbers, and the zero ideal.
+  - The field ${\mathbb R}$ has only two ideals, and the small one, $(0)$, is prime.
+  - A ring $R$ is a domain if and only if then the zero ideal is prime.
+
+Next we define maximal ideals. The absolute largest ideal in any ring $R$ is the unit ideal, $R$ itself. By "maximal ideal" we mean not quite that large, but otherwise as large as can be:
+
+**Definition:** Let $I \subseteq R$ be an ideal. We call $I$ **maximal** if the only ideal which properly contains it is the unit ideal.
+
+**Caution:** This is one of those cases when there can be many "maximal" objects. A ring often has many maximal ideals which of course do not have any subset relationships between one another.
+
+**Examples:**
+  - The maximal ideals of ${\mathbb Z}$ are, once again, exactly the ideals $(p)$ generated by prime numbers. The zero ideal is not maximal.
+  - In function rings, it's common to construct the ideal of all functions $f$ which take the value $0$ at a given fixed point $x \in X$. Often, such an ideal is maximal. Except in some very strange circumstances, this sort of ideal will be maximal.
+
+
+
+## Quotient by prime or maximal
+
+If we look closely a the definitions of "domain" and "prime ideal", it's clear that a ring in which the zero ideal is prime is a domain. This is also true "after modding out", in the following sense:
+
+**Theorem:** Let $I$ be an ideal of a commutative ring $R$. Then $I$ is prime if and only if $R/I$ is a domain.
+
+**proof:** Recall that $a+I=0_{R/I}$ if and only if $a \in I$. The following statements are all equivalent.
+
+1. $I$ is prime
+2. $\forall a, b \in R \enspace ab \in I \to a \in I \lor b \in I$
+3. $\forall a+I, b+I \in R/I \enspace ab+I =0  \to a+I=0 \lor b \in I$
+4. $\forall a+I, b+I \in R/I \enspace (a+I)(b+I) = 0_{R/I} \to a+I=0 \lor b \in I$
+5. $R/I$ is a domain.
+
+
+There is a related theorem for maximal ideals:
+
+**Theorem:** Let $I$ be an ideal of a commutative ring $R$. Then $I$ is maximal if and only if $R/I$ is a field.
+
+**proof:**
+
+Suppose $I$ is maximal, and let $a+I$ be a nonzero element of $R/I$. Construct the ideal
+$$J = I+(a) = \{i+ar \,|\, i \in I, r \in R\}$$
+The reader should check that this is an ideal. Since $a+I \neq 0$, $a \notin I$, and $I \subsetneq J$. By maximality, $J=(1)$, so $1 \in J$, so $1 = i+ab$ for some $b \in R$. It follows that $(a+I)(b+I) = (1+I)$.
+
+Conversely suppose $R/I$ is a field. Let $I \subseteq J$. Let $a \in J - I$. Since $R/I$ is a field and $a+I \neq 0$, we have $(a+I)(b+I) =1+I$ for some $b$. But then $1 - ab \in I$. By the additive closure (and capture) of $J$ we deduce that $1 = (1-ab) + ab \in J$, so $J=(1)$. We've shown that $I$ is maximal. This completes the proof.
+
+**Note:** Fields are domains, because a unit cannot be a zerodivisor.
+
+**Corollary:** Maximal ideals are prime ideals.
+
+**Note:** But there is certainly a more direct proof without quotients, and the reader is encouraged to find it.
+
+
+## Existence of Maximal Ideals
+
+Often we have some condition on ideals, such "ideals of ${\mathbb Z}[x]$ which do not contain some element", or "ideals of $R$ which are not the unit ideal", and we wish to choose one as large as possible under that restraint. Depending on the condition, an ideal "maximal among desired ideals" may or may not be maximal, but it will often be useful or interesting.
+
+Imagine we have a complicated ring $R$ and a strange condition $P$ on ideals of $R$. We wish to find an ideal $I$ maximal with the condition. Choose any ideal with property $P$. If it's maximal, great. If not, choose a strictly larger one. If it's maximal great. If not, continue. Maybe we continue forever. Even then, we produce a chain. Take the union of the chain. Irritatingly, even this is not necessarily maximal. Choose a larger. And larger. And maybe union again. Maybe use the union step infinitely many times and eventually do some sort of super-union. Does this process end?
+
+This scenario is taylor made for Zorn's Lemma:
+
+**Zorn's Lemma:** Let $P$ be a poset, ordered by $\preccurlyeq$. Assume that for every chain $\mathscr C$ in $P$, there is upper bound $z$ in the sense that $x \preccurlyeq z$ for all $x \in \mathscr C$. Then $P$ has a maximal element.
+
+<a href="https://colab.research.google.com/drive/17gpaRMu_bMyHb4HTrHiU_7j9u3r9UXw5?usp=sharing">Proof of Zorn's Lemma</a>
+
+How does this help? As long as the property of interest on ideals $I \subseteq R$ is preserved by  unions of chains of ideals, Zorn's Lemma can be applied to the poset of ideals having the property, and it produces an ideal maximal among them. (But again, not necessarily "maximal" in the prior sense.)
+
+**Example Applications:**
+
+1. We apply Zorn's Lemma to the poset of all ideals of $R$. This produces a maximal element of the poset, which of course is the unit ideal, $R$ itself. What a waste of a Lemma!
+
+2. We apply Zorn's Lemma to the poset of all proper ideals of $R$. (That is, excluding the unit ideal.) Any maximal element of this poset is a maximal ideal in the normal sense. This demonstrates that every commutative ring has a maximal ideal.
+
+3. We fix $f \in R$ (not nilpotent) and apply Zorn's Lemma to the poset of ideals which contain neither $f$ nor or any power of $f$. Notice this condition is preserved under chain unions. The result is an ideal $I$ which may not be a maximal ideal, but will always be prime.
+
+# Image, Preimages, and Correspondence of Ideals
+
+Let $f:R \to S$ be a ring homomorphism. An ideal in $R$ or in $S$ can be transported to the other by calculating its preimage or image. Will this result in an ideal?
+
+
+## Images and Extensions
+
+
+Let $f:R \to S$ and let $I \subseteq R$ be an ideal. The image $f(I)$ contains $0$ and is closed under addition. But $f(I)$ may fail to be an ideal because it fails multiplicative capture using the "new" constants from $S$.
+
+**Examples**
+
+1. Let $f:{\mathbb Z} \to {\mathbb Q}$ be the inclusion and let $I = (3) = 3{\mathbb Z}$. Then $f(I)$ is not an ideal of ${\mathbb Q}$
+
+2. Let $f:{\mathbb Z} \to {\mathbb Z}/(10)$ and let $I = (8)$. Then the image $f(I)$ is $\{0,8,6,4,2\}$. It is the ideal generated by or $2 + (10)$ in {\mathbb Z}/(10)$.
+
+3. Let $f:{\mathbb Z} \to {\mathbb Z} [x]$ be the inclusion. Let $I$ be the ideal $(3) = 3{\mathbb Z} \subseteq {\mathbb Z}$. Then $f(I)$ fails the capture property in ${\mathbb Z}[x]$. For example $3x \notin f(I)$.
+
+In any event, the set $f(I)$ generates some ideal of $S$.
+
+**Definition:** The **extension** of the ideal $I$ across $f$ is the ideal generated by the image $f(I)$. It is written $I^e$ where the homomorphism intended is obvious.
+
+
+## Preimages (Contractions)
+
+Again let $f:R \to S$ but now let $J \subseteq S$ be an ideal.
+
+**Theorem:** If $f:R \to S$ is a ring homomorphism and $J \subseteq S$ an ideal, then the preimage $f^{-1}(J)$ is an ideal of $R$.
+
+**Proof:** The proof is elementary. Since $f(0)=0$, $0 \in f^{-1}(J)$. For any $x, y \in f^{-1}(J)$, we have $f(x+y) = f(x)+f(y) \in J$, so $x+y \in f^{-1}(J)$. Finally for $x \in f^{-1}(J)$ and $r \in R$, $f(rx) = f(r)f(x) \in J$ by the capture property of $J$, so $rx \in f^{-1}(J)$ and thus $f^{-1}(J)$ has capture.
+
+**Definition:** In the above context the ideal $f^{-1}(J)$ is called the **contraction** of $J$ across the homomorphism $f$, often written $J^c$ when the homomorphism is understood.
+
+**Examples:**
+
+1. Let $f:{\mathbb Z} \to {\mathbb Q}$ be the inclusion. The field ${\mathbb Q}$ has only two ideals, namely $(0)$ and $(1)$. Clearly $(0)^c = (0)$ and $(1)^c = (1)$.
+
+2. Let $f:{\mathbb Z} \to {\mathbb Z}/(10)$ and let $J = (2)\subseteq {\mathbb Z}/(10)$. Then $J^c$ = (2)
+
+3. Let $f:{\mathbb Z} \to {\mathbb Z} [x]$ be the inclusion. Let $J$ be the ideal $(x^2+3) = \subseteq {\mathbb Z}[x]$. Then $f^{-1}(J) = J^c = (0) \subseteq {\mathbb Z}$, because $J$ contains no constant polynomial other than $0$.
+
+**Caution:** Extension and contraction are not inverse operations, as the next examples illustrate.
+
+1. Let $f:{\mathbb Z} \to {\mathbb Q}$ be the inclusion. Let $I = (2) = 2{\mathbb Z}$ Then $I^{ec} = (1) \neq I$.
+
+2. Let $f:{\mathbb Z} \to {\mathbb Z}/(10)$ and let $I = (8) = 8 {\mathbb Z}$. Then $I^{ec} = (2) \neq I$.
+
+3. Let $f:{\mathbb Z} \to {\mathbb Z} [x]$ be the inclusion. Let $J$ be the ideal $(x^2+3) \subseteq {\mathbb Z}[x]$. Then $J^{ce} = (0) \neq J$.
+
+However...
+
+**Proposition:** Let $f:R \to S$ be a ring homomorphism. Let $I$ be an ideal of $R$ and let $J$ be an ideal of $S$. Then
+
+1. $I \subseteq I^{ec}$.
+2. $J^{ce} \subseteq J$.
+3. $I^{ece} = I^{e}$.
+4. $J^{cec} = J^c$.
+
+**Proofs:** 1 and 2 are elementary. 3 and 4 follow from them. Notice $I^{ece}$ can be rewritten $(I^e)^{ce}$ or $(I^{ec})^e$ as needed.
+
+
+## Extension and contractions of primes and maximals
+
+Recall that $5$ is a prime number but $5 = (2+i)(2-i)$ is not irreducible in ${\mathbb Z}[i]$. If $f:{\mathbb Z} \to {\mathbb Z}[i]$ is the inclusion, then $I=(5) = 5{\mathbb Z}$ is both prime and maximal, but $(5)^e$ is neither prime nor maximal. So we should not expect extensions to preserve primality or maximality, in general.
+
+Contractions, however, behave much better.
+
+**Theorem:** Let $f:R \to S$ be a homomorphism and let $J \subseteq S$ be an ideal. If $J$ is prime, then $J^c$ is prime.
+
+**Proof:** If $ab \in J^c$ then $f(a)f(b) = f(ab) \in J$, so $f(a) \in J$ or $f(b) \in J$, so one of $a, b$ is in $J^c$.
+
+The contraction of a maximal ideal need not be maximal. For example, if $f:{\mathbb Z} \to {\mathbb Q}$, $(0) \subseteq {\mathbb Q}$ is maximal, but its contraction $(0) \subseteq {\mathbb Z}$ is not.
+
+## Ideal Correspondence for Quotients
+
+In the special case of a quotient map $R \to R/A$, contraction and extension of ideals is much better behaved.
+
+**Theorem:** Let $f:R \to R/A$ be the quotient map. Then the image $f(I)$ and extension $I^e$ of any ideal $I \subseteq R$ are the same. Moreover extension and contraction form a one-to-one order-preserving correspondence between the ideals of $R$ which contain $A$ and all ideals of $R/A$. Relative to this correspondence,
+
+1. $J \subseteq R/A$ is prime iff $J^c \subseteq R$ is prime.
+2. $J \subseteq R/A$ is maximal iff $J^c \subseteq R$ is maximal.
+3. $R/J^c \cong (R/A)/J$ by the isomorphism $\phi_J(r+J^c) = (r+A)+J$.
+
+**Proof:**
+
+1. Order: Obviously extension and contraction are order-preserving.
+2. Extension=image: Let $I \subseteq R$ be an ideal. We'll prove $f(I)$ is an ideal. Certainly $0 \in f(I)$ and $I$ is closed under addition. As for multiplication, let $i+A \in f(I)$ and let $r+A \in R/A$. Then $(r+A)(i+A) = ra+A = f(ra) \in f(I)$ since $I$ itself has capture. It follows that $f(I)$ has capture. Since it's an ideal, the ideal that it generates is itself, so image and extension agree.
+3. Correspondence. Irrespective of algebra, any surjective map satisfies $f(f^{-1}(J))=J$, so $J^{ce}=J$. Now if $I$ is an ideal of $R$ containing $A$, then $I \subseteq I^{ec}$ automatically. For the reverse, let $r \in I^{ec}$. Then $f(r) \in f(I)$, so $r+A = i+A$ for some $i$, and $r-i \in A$. If $A \subseteq I$, it follows that $r \in I$ as desired. This proves that $I^{ec} = I$ whenever $I \supseteq A$.
+4. Next we'll prove $R/J^c \cong (R/A)/J$. Consider the composition of quotient maps:
+$$\alpha:R \to^{f} (R/A) \to^{g} (R/A)/J$$
+And consider also the direct quotient map
+$$\beta: R \to R/J^c$$
+We claim $\ker(\alpha) = \ker(\beta)$, for $\ker(\beta) =\{r \in R \,|\, f(r) \in J\}$
+and $\ker(\alpha) = \{r \in R\,|\, f(r) \in \ker(g)\}$.
+By the universal property of the quotient map, there is a unique isomorphism making everything commute. The commutativity is the definition of $\phi$.
+5. Prime correspondence: Based on the quotient correspondence, we have: $J$ is prime iff $(R/A)/J$ is a domain iff $R/J^c$ is a domain iff $J^c$ is prime.
+6. Maximal correspondence: As for primes but $R/J^c$ is a field.
+
+# Polynomial Rings
+
+
+## Basic Definitions
+
+**Definition:** Let $R$ be a commutative ring. The **polynomial ring over $R$ in the variable $x$**, pronounced "R adjoin x", and written $R[x]$, is $\ldots$
+1. The set of all finite sequences $a = (a_0, a_1, \ldots, a_n, \ldots)$, where each $a_i \in R$ and all but finitely many are zero, with
+2. Distinguished zero: $(0,0,0,\ldots)$
+3. Distinguished one: $(1,0,0,\ldots)$
+4. Coordinatewise addition: $(a+b)_i = a_i+b_i$
+5. Convolutional multiplication:
+$$ (ab)_k = \sum_{i+j=k} a_ib_j$$
+
+
+**Notation:** As long as the polynomial ring over $R$ is denoted $R[x]$, the special element $(0,1,0,0,\ldots)$ is denoted $x$.
+
+**Notation:** We often regard $R[x]$ as an extension of $R$ via the identification $r = (r,0,0,\ldots)$. More precisely we have an natural homomorphism $f:R \to R[x]$ by $f(r) = (r,0,0,\ldots)$.
+
+It's rather a slog to prove that $R[x]$ satisfies the ring axioms. It's a good activity for a student.
+
+**Theorem:** $R[x]$ is a ring under the given operations.
+
+Once this theorem is proved, we usually wish to switch to the "normal" polynomial notation $a_nx^n + \ldots a_1x + a_0$. This is not an abbreviation but a literalism. The reader may calculate that $x^2 = (0,0,1,0, \ldots)$, $x^3 = (0,0,0,1,0,\ldots)$, etc., and that the recombination $a_nx^n + \ldots a_1x + a_0$ does yield $(a_0, a_1, \ldots, a_n,0,0,0,\ldots)$.
+
+**Vocabulary:** Let $f$ be the polynomial $a_nx^n + \ldots a_1x + a_0$. We mimic the ordinary vocabulary of algebra:
+  1. The **coefficients** of $f$ are the value $a_i$.
+  2. The **constant term** of $f$ is $a_0$.
+  3. The **leading term** of $f$ is $a_nx^n$.
+  4. The **leading coefficient** of $f$ is $a_n$.
+  5. We call $f$ **monic** if the leading coefficient is $1$.
+  6. The **degree** of $f$ is $n$ (assuming $a_n \neq 0$)
+  7. We call $f$ **linear** if its degree is $1$.
+  8. We call $f$ **quadratic** if its degree is $2$.
+  9. The **value of $f$ at $r$** is $a_nr^n + \ldots a_1r + a_0$
+
+**Caution:** For polynomials $f$ and $g$, we normally expect $\deg(fg) = \deg(f)+ \deg(g)$. Although this is true when $R$ is a domain, it fails when $R$ is not, because the leading terms of $f$ and of $g$ can multiply to zero. Indeed with zerodivisor coefficients it can happen that $fg$ is simply $0$.
+
+
+## Universal Property
+
+
+We like to think of the polynomial ring $R[x]$ as a modification of $R$ by adding a single element $x$. Unlike $Z[i]$ or $Q[\sqrt{-5}]$ however, the element $x$ has "no algebraic properties" other than what is demanded by ring theory. It can therefore be mapped via a homomorphism onto anything at all. To make this precise we state the universal property of $R[x]$.
+
+**Theorem:** Given the structure of $R[x]$, we have a canonical homomorphism $f:R \to R[x]$, and a single element $x \in R[x]$. Given any other homomorphism $g:R \to S$ and chosen element $s \in S$, there is a unique homomorphism $G:R[x] \to S$ making the diagram commute and sending $x$ to $s$.
+
+**proof:** As for uniqueness, if $Gf = g$, $G(x)=s$, and $G$ is a ring homomorphism, then the equation for $G$ is forced:
+$$G(\sum_i a_ix^i) = \sum_i g(a_i)s^i$$
+The reader may check that $G$ defined by this formula is indeed a homomorphism, and that it satisfies $Gf = g$.
+
+**shorthand:** To define a map on $R[x]$, define it on $R$ and choose an arbitrary target for $x$.
+
+## Multiple variables
+
+We have not yet defined $R[x,y]$, the polynomial ring in more than one variable. One may imagine that we need an even more complicated definition involving coefficient sets $a_{ij}$ and some messy convolutional multiplication which handles two variables. Fortunately none of this is necessary. Any polynomial in two variables $x$ and $y$ can be sorted into powers of $y$. For example
+
+$$1+2x+2y+3x^2 + 3xy+3y^2+4x^3+4x^2y+4xy^2+4y^3$$
+$$=
+(1+2x+3x^2+4x^3) + (2 + 3x + 4x^2)y + (3 + 4x) y^2 + 4y^3$$
+
+In this way a polynomial in both $x$ and $y$ can be regarded as a polynomial in $y$ with coefficients which are themselves polynomials in $x$. In other words, it can be treated as an element of $R[x][y]$. This motivates the definition:
+
+**Definition:** The polynomial ring in variables $x_1,\ldots,x_n$ is defined to be
+$$R[x_1, \ldots, x_n] = R[x_1][x_2]\ldots[x_n]$$
+
+## Taylor Made Elements
+
+Polynomial rings are often used in constructed examples because they give us the freedom to append new elements to known rings. By modding out by an appropriate ideal, those new elements can be endowed with desired algebraic properties.  
+
+**Examples**
+
+1. Suppose we want a ring $R$ which contains an isomorphic copy of ${\mathbb Q}$ but also contains some zerodivisors. There are lots of ways to do this, including the direct product of rings ${\mathbb Q} \times {\mathbb Q}$. Another trick is to manufacture two new elements and impose the condition that they multiply to zero. Thus $R = {\mathbb Q}[x,y] / (xy)$. Now neither $x$ nor $y$ is in the ideal, so they form nonzero cosets in the quotient, but their product becomes zero.
+
+2. Suppose we want a ring with a nilpotent element which must be raised to the power $10$ before it yields zero. Of course ${\mathbb Z}/(2^{10})$ would work. Another idea is to start with any base ring $R$ and construct $R[x]/(x^10)$.
+
+3. Suppose we want a finite field in which $2=0$ but we also want an element of high multiplicative order. The ring ${\mathbb Z}/(2)[x]$ has $2=0$ and an element $x$ of infinite order, but it's not a field. We can make it one by modding out by a maximal ideal, so the challenge is to find a maximal ideal $I \subseteq {\mathbb Z}/(2)[x]$. All ideals in the ring ${\mathbb Z}/(2)[x]$ are principal (we'll see why later), so this boils down to finding a suitable polynomial $p(x)\in {\mathbb Z}/(2)[x]$, and constructing the ring ${\mathbb Z}/(2)[x]/(p(x))$. This construction is surprisingly common in computer science.
+
+4. Suppose we are used to working with ${\mathbb R}$ but wish to add an element whose square is $-1$ without creating a philosophical argument. We construct the ring ${\mathbb R}[x]/(x^2+1)$, which contains a new element called "$x$" for which $x^2+1=0$. We may choose to use the symbol $i$ for $x$. This is a great way to construct the ring ${\mathbb C}$.
+
+# Unique Factorization: ED $\to$ PID $\to$ UFD
+
+## Definitions
+
+Unique factorization of integers can be established using the Euclidean Algorithm. It's a key algorithm which not only calculates the GCD of two integers $x, y$ but also solves the equation $ax + by = GCD$. It's based fundamentally on long division with remainder, a process not supported in an arbitrary ring. Here we define an added structure sufficient to support long division.
+
+**Definition:**
+A **Euclidean Function** on a ring $R$ is a function $f:R-\{0\} \to {\mathbb N}-\{0\}$ satisfying
+1. $\forall a, b\in R-\{0\} \enspace f(a) \leq f(ab)$
+2.  $\forall a \in R \enspace \forall b \in R-\{0\} \enspace \exists q, r \in R \enspace$ so that $a = bq + r$ and either $r = 0$ or $f(r) < f(b)$.
+
+The Euclidean function $f$ is meant to generalize the absolute value function on ${\mathbb Z}$, which is the basis for saying that upon long division of $b$ by $a$, the remainder $r$ is **smaller** than $a$. Since $f$ takes values in ${\mathbb N}$, any process of reduction like the Euclidean Algorithm is bound to end because ${\mathbb N}$ is well ordered.
+
+**Definition:** A Euclidean Domain is an integral domain for which a Euclidean Function exists.
+
+**Examples:**
+1. Of course ${\mathbb Z}$ itself with $f(n) = |n|$
+2. ${\mathbb Z}[i]$ with $f(a+bi) = |a+bi|^2 = a^2+b^2$
+3. ${\mathbb R}[x]$ with $f(p(x)) = \deg(p(x))+1$.
+4. More generally if $K$ is a field then $K[x]$ is a Euclidean Domain.
+4. The **Eisenstein Integers** $Z[\omega]$ where $\omega = \frac{\sqrt{-3}+1}{2}$ (Note $\omega^3=-1$) form a triangular lattice in ${\mathbb C}$. The complex square norm is again a Euclidean function. In this case it satisfies $$|a+bw|^2 = (a+bw)(a+b\overline{w}) = (a+bw)(a+b\overline{w}) = a^2 + b^2 + ab\overline{w}+abw = a^2+b^2 +ab 2\Re(\omega) = a^2+b^2-ab $$
+
+
+
+To prove unique factorization in ${\mathbb Z}$, we first prove that every ideal is principal, then use that fact to prove uniqueness of factorizations. The sames strategy works for rings. Of course even in ${\mathbb Z}$ factorizations differ cosmetically in their ordering and unit multiplication. So for example $30 = 2 \cdot 3 \cdot 5 = 3 \cdot (-5) \cdot (-2)$. Our definition of "unique" needs to allow for such silliness.
+
+**Definition:** A **Principal Ideal Domain** is an integral domain in which every ideal is principal.
+
+**Definition:** A **Unique Factorization Domain** is a domain in which
+1. Every element of $R$ is zero, a unit, or a product of one or more irreducible elements.
+2. Factorizations are unique in the sense that if
+$$ua_1a_2 \ldots a_m = vb_1b_2\ldots b_n$$
+where $u, v$ are units and $a_i, b_j$ are irreducibles, then $m=n$ and (after possible rearrangement of the order of the product) each $a_i$ is some unit multiple of each $b_i$.
+
+## ED $\to$ PID
+
+**Theorem:** (ED $\to$ PID) Every Euclidean Domain is a Principal Ideal Domain
+
+**Proof:** We need only rewrite the proof for ${\mathbb Z}$ in the new context. Let $R$ be a Euclidean domain with function $f$. Let $I$ be an ideal. If $I=(0)$ there's nothing to do. Choose $a \in I$, nonzero, to minimize $f(a)$. Let $b \in I$. Apply long division, so that $b = qa+r$. Now $r = b-qa \in I$. This will contradicts the minimality of $a$ if $r$ is nonzero, so $r=0$. It follows that $b$ is divisible by $a$, and since $b$ was arbitrary $I = (a)$.
+
+We also wish to show that
+
+## PID $\to$ UFD
+
+
+**Theorem:** (PID $\to$ UFD) Every Principal Ideal Domain is a Unique Factorization Domain.
+
+
+**Proof of Theorem:**
+
+Let $R$ be a PID.
+
+Step 1. (Existence) Let $r \in R$ be a nonzero nonunit. If $r$ is irreducible, we're done. If not, we may factor it into two nonzero nonunits, factor those if necessary, and continue. When this process ends we have a factor tree for $r$ and the factorization is implied. The problem is proving that this process ends instead of continuing forever. Consider $C({\mathbb R})$, in which the function $|x|$ factors into $|x|^{1/2}|x|^{1/2}$, then further into $|x|^{1/4}|x|^{1/4}|x|^{1/4}|x|^{1/4}$, and so on.
+
+Suppose to the contrary that a factor tree of $r \in R$ continues to infinity. Following an infinite sequence of factors downward we can create a sequence of factors $r=r_0$, $r_1$, $r_2$, etc, each divisible by the next, but not dividing it. This corresponds to an infinite chain of ideals
+$$(r_0) \subsetneq (r_1)\subsetneq (r_2) \subsetneq \ldots$$
+
+The containments are strict because each factorization does not just factor out a unit. Now the union of this chain is an ideal $I \subseteq R$. Since $R$ is a PID, $I$ is principal, generated by, say, $a$. Since $a$ is in the union, it's in one of the ideals, and $a$ is divisible by some $r_k$. But as a generator, $a$ also divides $r_k$, so $(r_k) = (a)$. It follows that $(r_{k+1}) = (r_k)$, a contradiction.
+
+This shows that every element of a PID can be factored into irreducibles.
+
+**Lemma:** Let $R$ be a PID, and let $a$ be irreducible. Then $(a)$ is maximal (and prime).
+
+**Proof of Lemma:** Suppose $(a) \subsetneq I \subsetneq R$. Then $I$ is also principal, so $(a) \subsetneq (b) \subsetneq R$. It follows that $b|a$ but $a \nmid b$. But then $bc=a$ and neither $b$ nor $c$ is a unit, contradicting the irreducibility of $a$.
+
+Step 2. (Uniqueness) We wish to show that any two factorizations
+of an element $r \in R$ are "the same" except for rearrangement and unit multiplication of factors. For simplicity, suppose there are two truly distinct factorizations of $r$, and let us consider the smallest possible counterexample in $R$:
+$$ua_1a_2 \ldots a_m = r = vb_1b_2\ldots b_n$$
+Here "small" just means that we have minimized $\max(m,n)$.
+
+Now $a_m$ is irreducible and $vb_1b_2\ldots b_n \in (a_m)$. By the Lemma, $(a_m)$ is prime, so one of the factors must be in $(a_m)$. It can't be the unit $v$. Since we are free to rearrange the factors, WLOG $b_n \in (a_m)$, so $b_n = a_m \cdot x$. Since $b_n$ is irreducible and $a_m$ is not a unit, $x$ is a unit. It follows that $b_n$ is a unit multiple of $a_m$, as desired. But this is only one factor. It also follows that
+$$ua_1a_2 \ldots a_m = r = vb_1b_2\ldots b_{n-1} x a_m$$
+Now $R$ is a domain, so we may cancel
+$$ua_1a_2 \ldots a_{m-1} = r = (vx)b_1b_2\ldots b_{n-1}$$
+obtaining, impossibly, a smaller nonunique factorization. This concludes the proof.
+
+
+**Examples:** Naturally it follows that ${\mathbb Z}$, ${\mathbb Z}[i]$, ${\mathbb Z}[\frac{\sqrt{-3}+1}{2}]$, and ${\mathbb R}[x]$ all have unique factorization into irreducible elements.
+
+
+## UFD[x] is UFD
+
+### Discussion
+
+This would be a strange place to conclude, because it stands to reason that larger polynomial rings like ${\mathbb R}[x,y,z]$ or ${\mathbb Z}[x] also have unique factorization. Since they are not principal ideal domains, some other proof method is needed. We intend to prove:
+
+**Theorem:** Let $R$ be a UFD. Then $R[x]$ is a UFD.
+
+The first interesting case is ${\mathbb Z}[x]$. In that case, we need to consider a delicate interplay between polynomials of ${\mathbb Z}[x]$ and those of ${\mathbb Q}[x]$. In the more general case, we must find a tool to compare a domain $R$ to a field containing it. This brings us to the ideal of a **fraction field**, which is the next section. Please read the next section and return.
+
+Let $R$ be a UFD, and let $K$ be its fraction field. Our strategy is to compare polynomials factorizations of $f \in R[x]$ to similar factorizations of $f \in K[x]$. This is fraught and requires great care, because conversation will center on which polynomials are "units" and which are "irreducible", but these notions are relative to the ring under discussion. For example, the constant polynomial $f(x) = 2$ is an irreducible nonunit in ${\mathbb Z}[x]$, because $2$ is prime and has no reciprocal there. But the same polynomial in ${\mathbb Q}[x]$ is a unit, because an inverse $1/2$ exists. The polynomial $f(x) = 4x^2+4 = 4(x^2+1)$ is reducible in ${\mathbb Z}[x]$ with factorization $2 \cdot 2 \cdot (1+x^2)$. But in ${\mathbb Q}[x]$ it's irreducible, because $4$ is merely a unit factor. (As an aside, over ${\mathbb C}[x]$ it's reducible for a new reason: Although $4$ is a unit, the polynomial is now $4(x-i)(i+i)$.)
+
+To navigate these hazards, we must be in the habit of saying "unit in $R$" or "irreducible in $K[x]$" or "reducible over $R[x]$", etc.
+
+
+
+### Proof of Theorem
+
+
+
+**Proposition:** Let $R$ be a domain. The units of $R[x]$ are exactly the units of $R$.
+
+**Proof:** Certainly the units of $R$ have the same reciprocals as elements of $R[x]$. Conversely if $f(x)$ is a unit in $R[x]$, then $f(x)g(x)=1$ for some $g(x)$. Since $\deg(fg) = \deg(f)+\deg(g)$ (in a domain!) both $f$ and $g$ must be constants in $R$.
+
+**Proposition:** Let $p\in R$ be irreducible. Then the ideal $(p)  = pR[x] \subseteq R[x]$ generated by $p$ in the polynomial ring is prime.
+
+**proof:** Let $f, g \in R[x]$, and suppose $p | fg$. Then every coefficient of $fg$ is divisible by $p$. For contradiction, if neither $f$ nor $g$ is divisible by $p$, then each has a highest-degree term not divisible by $p$. Say $f(x) = p*(h.o.t.)+ a_ix^i + (l.o.t.)$, and $g(x) = p*(h.o.t.)+ b_jx^j + (l.o.t.)$, with $p \nmid a_i$ and $p \nmid b_j$. Then the coefficient of $x^{i+j}$ is a sum of terms, all divisible by $p$ except exactly one. It follows that $fg$ will not be divisible by $p$. It follows that $pR[x]$ is a prime ideal.
+
+**Proposition:** Let $R$ be a UFD and let $K$ be its field of fractions. Let $f(x) \in R[x]$. If $f(x)$ factors $f(x) = G(x)H(x)$ over $K[x]$ (so $G, H \in K[x]$), then $f$ also factors $f(x) = g(x)h(x)$ over $R[x]$ (so $g,h \in R[x]$), and $g = k_1G$ and $h = k_2H$ for some $k_1, k_2 \in K$.
+
+**Proof: ** In the factorization $f(x) = G(x)H(x)$, both $G$ and $H$ have coefficients which are fractions with denominators from $R$. We multiply both sides of the equation by the product of these denominators to clear them, obtaining $bf = g_1(x)h_1(x)$. Notice that $g_1 = rG$ and $h_1 = sH$ for some $r, s\in R$. Note $b \in R$. By presumption $bR$ can be factored into irreducibles $b_1\ldots b_n$. We wish to "cancel" $b_n$ from both sides (and continue), but it doesn't seem to appear on the right. Now $b_nR[x]$ is a prime ideal, and the product $g_1h_1$ is in it, so one of $g_1$ or $h_1$ coefficients all divisible by $b_n$. Therefore we may divide it by $b_n$ and still have a polynomial in $R[x]$. Continuing this process, we cancel every factor $b_i$ from either $g_1$ or $h_1$, to obtain finally $f(x) = g(x)h(x)$. Now $g_1$ was originally an $R$-multiple of $G$, and is likewise an $R$-multiple of $g$, so $g = k_1G$ for some $k_1 \in K$, and similarly for $h$.
+
+**Note:** The previous theorem is strongly connected to the Rational Roots Theorem, which limits the possible rational roots an integer polynomial might have. If a polynomial $f \in {\mathbb Z}[x]$ has a rational root, then it has a factor $(x-\frac{a}{b})$. (Assume lowest terms) By the previous theorem, it must also be factorable $f(x) = (bx-a)h(x)$ where not only $bx-a$ but also $h(x)$ are integer polynomials.
+
+**Lemma**:  Let $R$ be a UFD and $K$ its fraction field. Let $f(x)$ be irreducible of positive degree in $R[x]$.  Then $f(x)$ is also irreducible in $K[x]$ and $(f(x))$ is prime in $R[x]$.
+
+**proof**:  Let $f(x)$ is irreducible in $R[x]$, this means in any product $f(x) = g(x)h(x)$ with $g, h \in R[x]$, one must be a $R[x]$ unit.  
+
+Suppose $f(x) = G(x)H(x)$ for $G, H \in K[x]$. Then we get an alternate factorization $f(x) = g(x)h(x)$ in $R[x]$, as above (and $g=k_1G$, $h=k_2H$).  Since $f$ is $R[x]$-irreducible, one of $g$ or $h$ is an $R[x]$ unit, and therefore a $K[x]$-unit.  It follows that the corresponding $G$ or $H$ is also a $K[x]$-unit.  Thus f is irreducible in $K[x]$.
+
+It follows immediately that the ideal $f(x)K[x]$ a prime ideal of $K[x]$, since $K[x]$ is an ED (so PID).  What about the ideal $f(x)R[x]$?  If $g(x)h(x) \in f(x)R[x]$, then this is still true in the larger ring $K[x]$, so one of g or h is in the ideal $f(x)R[x]$.  WLOG $g(x) = f(x)L(x)$, where $L \in K[x]$.
+
+As before, $g(x) = f_2(x)l(x)$, where $f_2 = Uf$ and  Thus
+$g = Uf(x)l(x)$.  Clearing denominators, $bg=af(x)l(x)$. For each prime factor of $b$, $f$ cannot be divisible (because $f$ is irreducible of positive degree), so $l$ is divisible, so we may cancel it, leaving finally $g=f(x)(l(x)/b)$ where $l(x)/b \in Z[x]$. Thus $g \in f(x)R[x]$ and finally $f(x)R[x]$ is a prime ideal.
+
+
+And finally...
+
+**Proof that UFD[x] is a UFD**
+
+Let's first prove existence of irreducible factorization in $R[x]$.  Suppose there were a perpetual factorization:  $f_1(x)$ is divisible by $f_2(x)$, which is divisible by $f_3(x)$, etc.
+Since $R$ is a domain, these polynomials' degrees would be nonincreasing, so the degrees are eventually constant.  After this point, the factors removed are all elements of $R$, and effectively create an infinite factorization of each individual coefficient of $f_n$
+
+**proof**:  
+Now suppose $up_1\cdots p_m = vq_1\cdots q_n$, where $u, v$ are units of $R[x]$ and $p_i, q_j$ are irreducible in $R[x]$. As before suppose that this is the shortest nonunique factorization.  Then $vq_1\cdots q_n \in (p_m)$, a prime ideal of $R[x]$, so one of $v, q_1, \ldots, q_n$ is divisible by $p_m$.  Not the unit of course, so for some $j$ we have $p_m | q_j$.  Since $q_j$ is irreducible, $p_m = wq_j$ for a unit $w$. Then we may write $up_1\cdots p_{m-1}wq_j = vq_1\cdots q_n$ and cancel $q_j$: $uwp_2\cdots p_m = vq_1\cdots \hat{q_j}\cdots q_n$.  This is shorter, so unique factorization applies, so the original factorizations are compatible.
+
+We have proven that $R[x]$ is a UFD.
+
+Of course we can induct on the theorem, to conclude, for example that ${\mathbb Z}[x,y,z]$ is a UFD.
+
+# Fields of Fractions and Localization
+
+
+
+## Fields of Fractions, definition
+
+
+Let $R$ be a domain. We wish to construct a field which contains $R$ as a subring, called the **field of fraction**, or **fraction field** of $R$. If $R={\mathbb Z}$, the fraction field will be ${\mathbb Q}$. If $R = {\mathbb R}[x]$, the fraction field will be the field of rational functions $\frac{p(x)}{q(x)}$.
+
+**Definition:** Let $R$ be a domain. The **fraction field** of $R$ is $\ldots$
+1. The set of ordered pairs $(a,b)$ (thought of as formal fractions $\frac{a}{b}$) where $a,b \in R$, $b \neq 0$, modulo the equivalence relation $(a,b) \sim (c,d)$ iff $ad-bc=0$,
+2. The zero $(0_R,1_R)$
+3. The one $(1_R,1_R)$
+4. The addition rule $(a,b)+(c,d) = (ad+bc,bd)$
+5. The multiplication rule $(a,b)(c,d) = (ac,bd)$
+
+There is so much to check: the equivalence relation claim, the well definedness of addition and multiplication, and of course the ring axioms. It's no good to do the work twice, but this construction is too specialized. There is a more general tool called localization which we'll also need. We'll bite the bullet and do the proper generality first.
+
+
+## Localization
+
+### Motivation
+
+The field of fractions makes denominators out of all the nonzero elements of $R$. Sometimes we wish to make denominators out of only *some* of the ring elements. Of course we must exclude $0$. Considering that the fraction addition and multiplication rules introduce the denominator $bd$, the set of elements scheduled to become denominators must be closed under multiplication.
+In fact this is the only reason why $R$ must be a domain, above. Otherwise the product $bd$ could create a $0$ denominator.
+
+The more general construction is to set up a collection $S$ of elements $s \in S$ which we want to invert, and then use them as the denominators.
+
+**Definition:** A **Multiplicatively closed set** (mcs) in a commutative ring $R$ is a set which includes $1$, excludes $0$, and is closed under multiplication.
+
+**Definition:** Let $R$ be a commutative ring and let $S$ be an mcs. The **localization** of $R$ by $S$, written $S^{-1}R$, is $\ldots$
+1. The set of ordered pairs $(a,b)$ (thought of as formal fractions $\frac{a}{b}$) where $a \in R$, $b \in S$, modulo the equivalence relation $(a,b) \sim (c,d)$ iff $\exists s \enspace s(ad-bc)=0$,
+2. The zero $(0_R,1_R)$
+3. The one $(1_R,1_R)$
+4. The addition rule $(a,b)+(c,d) = (ad+bc,bd)$
+5. The multiplication rule $(a,b)(c,d) = (ac,bd)$
+
+The equivalence relation needs some justification. We identify $(a,b) \sim (c,d)$ when the fractions
+$\frac{a}{b}$ and $\frac{c}{d}$ "should" be treated as equal. Considering that their difference "should be"
+$\frac{ad-bc}{bd}$, it makes sense to regard them as equal when $ad-bc=0$. Why worry if $s(ad-bc)=0$? Aren't nonzero zero-divisors tolerated anymore? In that case, once $s$ becomes a valid denominator, the difference will also be equal to $\frac{s(ad-bc)}{sbd}$, which *must* be zero because its numerator is zero. This is only happens when a zerodivisor in $S$ gets contorted by the process into a unit.
+
+### Many, many checks
+
+#### "Equivalence"
+
+We start with the claim that $\sim$ is an equivalence relation.
+
+- Reflexivity:  Note $1 \in S$, and $1(ab-ab)=0$, so $(a,b) \sim (a,b)$
+- Symmetry: If $(a,b) \sim (c,d)$ then for some $s$, $s(ad-bc)=0$. Negating, $s(cb-da)=0$, so $(c,d) \sim (a,b)$.
+- Transitivity: Assume $(a,b) \sim (c,d) \sim (e,f)$. Then we have $s, t$ so that $s(ad-bc)=t(cf-de)=0$. Multiplying the first equation by $ft$ yields
+$adfst = bcfst$. Multiplying the second by $bs$ yields
+$bcfst = bdest$. We conclude $adfst = bdest$, so $dst(af-be)$ as desired. (Note $d, s, t \in S$ and $S$ is mcs.)
+\
+
+
+#### Well definedness...
+
+Assume $(a_1, b_1) \sim (a_2, b_2)$ and
+$(c_1, d_1) \sim (c_2, d_2)$. This means there are $s, t \in S$ so that
+
+E1: $\,\,$ $sa_1b_2 = sa_2b_1$   and
+
+E2: $\,\,$ $tc_1d_2= tc_2d_1$
+
+**...of addition:**
+
+Let's compare $(a_1d_1+b_1c_1,b_1d_1)$ to $(a_2d_2+b_2c_2,b_2d_2)$. The goal is to prove, for some $q \in S$:
+$$q (a_1d_1 + b_1c_1) b_2d_2 = q (a_2d_2+b_2c_2)b_1d_1$$
+If we try $q=st$ we get
+\begin{align}
+st (a_1d_1 + b_1c_1) b_2d_2 =&  sta_1d_1b_2d_2 + stb_1c_1b_2d_2 & \text{(Distribution)}\\
+=& sta_2d_1b_1d_2 + stb_1c_1b_2d_2 &\text{ Using E1}\\
+=& sta_2d_1b_1d_2 + stb_1c_2b_2d_1 &\text{ Using E2}\\
+=& st(a_2d_2 + c_2b_2)b_1d_1 &\text{ Factoring}\\
+\end{align}
+as desired
+
+**...of multiplication:**
+
+Rarely is multiplication easier to treat than addition. Let's compare $(a_1c_1,b_1d_1)$ to $(a_2c_2,b_2d_2)$.
+We must find $q$ so that $$qa_1c_1b_2d_2 = b_1d_1a_2c_2.$$ Again we try $q=st$:
+\begin{align}
+sta_1c_1b_2d_2 &= sta_2c_1b_1d_2 & \text{ (Using E1)}\\
+&= st a_2c_2b_1d_1 & \text{ (Using E2)} \\
+\end{align}
+as desired
+
+
+#### Ring Axioms
+
+We can now trust in well defined operations on equivalence classes, it's safe to introduce the notation $\frac{a}{b}$ for the pair $(a,b)$. For sanity, we will use this notation to check the ring axioms.
+
+First note that $\frac{a}{d} \sim \frac{as}{ds}$ whenever $s \in S$.
+
+1. **Additive Associativity:**
+
+\begin{align}
+&\frac{a}{b} + (\frac{c}{d} + \frac{e}{f}) \\
+=& \frac{a}{b} + (\frac{cf+ed}{df}) \\
+=& \frac{adf + b(cf+ed)}{bdf} \\
+=& \frac{adf+bcf+bed}{bdf}\\
+=& \frac{(ad+bc)f+bed}{bdf}\\
+=& \frac{ad+bc}{bd} +\frac{e}{f}\\
+=& (\frac{a}{b} + \frac{c}{d}) +  \frac{e}{f} \\
+\end{align}
+
+2. **Additive Identity:**
+$\frac{a}{b}+ \frac{0}{1} = \frac{a1+b0}{b1} = \frac{a}{b}$
+
+3. **Additive Inverse:**
+$\frac{a}{b} + \frac{-a}{b} = \frac{ab-ab}{b^2} = \frac{0}{b^2}$, which is equivalent to $\frac{0}{1}$ because $b^2 \in S$.
+4. **Additive Commutativity:** Obvious, but note it depends on multiplicative commutativity in $R$.
+
+5. **Multiplicative Associativity:** Obvious.
+
+6. **Multiplicative Identity:** Obvious.
+
+7. **Distribution 1**
+\begin{align}
+&\frac{a}{b} (\frac{c}{d} + \frac{e}{f}) \\
+&= \frac{a}{b} (\frac{cf+de}{df}) \\
+&= (\frac{acf+ade}{bdf}) \\
+&\sim (\frac{abcf+abde}{bbdf}) \\
+&= \frac{ac}{bd} + \frac{ae}{bf}\\
+&= \frac{a}{b}\frac{c}{d} + \frac{a}{b}\frac{e}{f}\\
+\end{align}
+as desired.
+
+9. **Multiplicative Commutativity**: Obvious.
+
+8. **Distribution 2:** Follows from 7,9
+
+This concludes the proof that $S^{-1}R$ is a commutative ring.
+
+### Basic properties of $S^{-1}R$
+
+As always, we have a canonical map to the newly constructed ring:
+
+**Definition:** A canonical localization map is a function $f:R \to S^{-1}R$ given by $f(r) = \frac{r}{1}$.
+
+**Note:** If $S$ contains no zerodivisors, then $f$ above is injective, and we regard $R$ to be a subring of $S$
+
+If $s \in S$ then $f(s) = \frac{s}{1}$ is a unit in $S^{-1}R$ with reciprocal $\frac{1}{s}$. It's safe to treat the fraction $\frac{a}{s}$ as not a "formal fraction" but literally $a$ times the multiplicative inverse of $s$, as long as we remember that the operations occur not in $R$ but in $S^{-1}R$.
+
+**Fraction fields:** If $R$ is a domain and $S = R-\{0\}$, then $S$ is multiplicatively closed. $S^{-1}R$ is a field because every nonzero fraction $\frac{a}{b}$ has reciprocal $\frac{b}{a}$ (because $a \in S$). Since $S$ has no zerodivisors, the canonical map $f:R \to S^{-1}R$ is injective, so we may safely regard $R$ to be a subring of this field. Thus every domain is a subring of its field of fractions.
+
+### Universal Property
+
+**Theorem:** Let $R$ be a commutative ring and $S$ a multiplicatively closed set. Let $f:R \to S^{-1}R$ be the canonical map. Then for every $s \in S$, $f(s)$ is a unit. Moreover for any map $g:R \to T$ with the property that for every $s \in S$, $g(s)$ is a unit (in $T$), there is a unique map $G:S^{-1}R \to T$ so that $Gf = g$
+
+**proof:** The map is $G(\frac{a}{b}) = g(a)g(b)^{-1}$. Everything else (including well definedness) is left to the reader.
+
+Shorthand: To define a map from $S^{-1}R$, just define it on $R$ and check $S$ elements go to units.  
+
+## Ideal Correspondence for Localization
+
+We've seen that the ideals of $R$ and any quotient ring are closely related. In this section we'll describe how the ideals of $R$ relate to those of $S^{-1}R$. The key concept is that the elements of $S$ are transformed into units, so any ideal, no matter how small, that intersects $S$ changes into the unit ideal.
+
+**Theorem:** Ideal Correspondence for Localization
+Let $f:R \to S^{-1}R$ be a canonical localization map. Then extension and contraction across $f$ form a one-to-one order-preserving correspondence between the **prime** ideals of $S^{-1}R$ and the **prime** ideals of $R$ which are **disjoint from $S$**.
+
+**Proof:**
+1. Order-preserving: Extension and contraction always preserve order.
+
+2. $J^{ce}= J$: Let $J \subseteq S^{-1}R$ be a proper ideal. Then $J^c = \{r \in R \,|\, \frac{r}{1} \in J\}$ is known to be an ideal and must be disjoint from $S$ because otherwise $J$ would be a unit ideal. As always $J^{ce} \subseteq J$. For the reverse, if $\frac{r}{s} \in J$ then $\frac{r}{1}\in J$ by capture, so $r \in J^c$. It follows that $\frac{r}{1} \in J^{ce}$ and finally $\frac{r}{s} \in J^{ce}$ again by capture. Note this portion does not depend on primality of $J$.
+
+3. $I^{ec}=I$: Let $I \subseteq R$ be disjoint from $S$. Notice that the set $\{\frac{i}{s} \,|\, i \in I, s \in S\}$ is an ideal and is a subset of any ideal containing $f(I)$. It follows that $I^e = \{\frac{i}{s} \,|\, i \in I, s \in S\}$. If $r \in I^{ec}$ then $\frac{r}{1} \in I^e$, so
+$\frac{r}{1} = \frac{i}{s}$. This means $t(rs-i)=0$ for some $t$. Now if $I$ is a prime ideal disjoint from $S$, then since $t \notin I$, $rs-i \in I$, so $rs \in I$. Again by primality $s \notin I$ so $r \in I$. This proves $I^{ec} \subseteq I$. The other direction is guaranteed, so $I^{ec} = I$.
+
+4. We have established the correspondence. It remains to show it preserves primality. Contraction always preserves primality, so consider extension. If $\frac{a}{b}\frac{c}{d} \in I^e = \{\frac{i}{s} \,|\, i \in I, s \in S\}$ then $ac \in I$. If $I$ is prime then one of $a, c$ is in $I$, so one of the fractions is in $I^e$. Thus $I^e$ is prime.
+
+
+## Quotient Ring and Localization
+
+Is it possible to both mod out by $I$ and also localize at $S$? Does it matter which of these operations comes first?
+
+**Theorem:** (Localization and Quotient Commute)
+Let $R$ be a ring with multiplicatively closed set $S$ and ideal $I$ disjoint from $S$. Let $S^{-1}I$ denote the extension of $I$ to $S^{-1}R$ and let $S/I$ denote $\{s+I \,|\, s \in S\}$. Then
+1. $S^{-1}I$ is an ideal of $S^{-1}R$
+2. $S/I$ is a multiplicatively closed set of $R/I$
+3. $(S/I)^{-1}(R/I) \cong (S^{-1}R) / (S^{-1}I)$ via a homomorphism $\frac{r+I}{s+I} \mapsto \frac{r}{s} + (S^{-1}I)$
+
+
+**Proof:** We've established that $S^{-1}I = I^e$ is an ideal, and it's elementary that $S/I$ is multiplicatively closed.
+
+Consider two different compositions of canonical quotient and localization maps:
+
+$$\alpha: R \to R/I \to (S/I)^{-1}(R/I) $$
+
+and
+
+$$\beta: R \to S^{-1}R \to (S^{-1}R) / (S^{-1}I)$$
+Clearly $\alpha$ sends $I$ to $0$. So does $\beta$: $\beta(i) = \frac{i}{1} + I^e = 0$,
+
+What do $\alpha$ and $\beta$ do to elements of $S$? $\alpha(s) = \frac{s+I}{1_{R/I}}$, a unit in $(S/I)^{-1}(R/I)$. Likewise $\beta(s) = \frac{s}{1} + (S^{-1}I)$, a unit.
+
+The rest of the work can be done with diagrams and universal properties.
+
+
