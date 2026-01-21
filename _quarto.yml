@@ -22,3 +22,5 @@ jupyter:
       - "-f"
       - "{connection_file}"
 
+execute:
+  freeze: auto

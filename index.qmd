@@ -8,6 +8,12 @@ listing:
     - path: Math340/index.qmd
       title: "Math 340"
       description: "Set Theory and Logic"
+    - path: Math672/index.qmd
+      title: "Math 672"
+      description: "Abstract Algebra II"
+    - path: Math681/index.qmd
+      title: "Math 681"
+      description: "Complex Analysis"
   type: table
   fields: [title, description]
 ---
