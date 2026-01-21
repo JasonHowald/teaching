@@ -1,10 +1,248 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Professor Howald’s Teaching Portal",
+    "objectID": "Math340/syllabus.html",
+    "href": "Math340/syllabus.html",
+    "title": "Syllabus – 340",
     "section": "",
-    "text": "Please select a course.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nMath 125\n\n\nProbability and Statistics\n\n\n\n\n\n\nMath 340\n\n\nSet Theory and Logic\n\n\n\n\n\n\nNo matching items"
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
+  },
+  {
+    "objectID": "Math340/syllabus.html#instructor-information",
+    "href": "Math340/syllabus.html#instructor-information",
+    "title": "Syllabus – 340",
+    "section": "",
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
+  },
+  {
+    "objectID": "Math340/syllabus.html#course-information",
+    "href": "Math340/syllabus.html#course-information",
+    "title": "Syllabus – 340",
+    "section": "Course Information",
+    "text": "Course Information\nCredit Hours: 3\nSchedule: MWF 1:00-1:50, Carson 0204\nPrerequisites: Calculus II with a minimal grade of 2.0\nRequired textbooks/materials: Write Your Own Proofs, by Babich and Person. Copies available from the department.\nCourse Description: Elementary logic, including sentential calculus and mathematical induction. Basic properties of sets, relations and functions. Denumerable and non-denumerable sets. Designed as an introduction to the nature of mathematical proof. Required for Mathematics majors."
+  },
+  {
+    "objectID": "Math340/syllabus.html#student-learning-objectives",
+    "href": "Math340/syllabus.html#student-learning-objectives",
+    "title": "Syllabus – 340",
+    "section": "Student Learning Objectives",
+    "text": "Student Learning Objectives\nThe main objective of the course is to learn to write clear, rigorous mathematical proofs. This course partially satisfies the Connecting Clearly: Communication in the Major requirement for the Pathways program. It adopts a “communicating in the disciplines” model that transmits the skills required to both learn and create knowledge within the chosen academic field, and to develop a professional voice through opportunities to write and speak on substantive issues arising from the major. This course will focus on writing.\nAt the conclusion of the course the students will…\n\nIdentify at least two types of written communication specific to their discipline. (Applying)\nExplain what sorts of rhetoric are generally considered effective within the types of discipline specific communication they are studying. (Evaluating)\n\nExplain what sorts of evidence are generally considered valid within the types of discipline specific communication they are studying. (Evaluating)\nProduce (and accept feedback on) substantive written and oral work of their own that applies the understanding they have gained through analysis of models of the types of discipline-specific communication. (Creating)\n\nThese learning outcomes will be assessed throughout the course using homework assignments, in-class tests, and the final exam. Specifically, SLO #1 will be assessed on most homework assignments; SLO #2 on homework assignments and exam questions; SLO #3 on the final exam; and SLO #4 on various homework assignments.\nIn addition to the above outcomes, this course will provide students with an opportunity to develop proficiency in the following areas:\n\nBecome independent learners, capable of doing and learning advanced mathematics on their own and in conjunction with others.\nKnow and use basic proof methods.\nRecognize a correct mathematical proof.\nWrite correct mathematical proofs.\nUnderstand and appreciate the role of mathematical language, notation in the development of mathematical concepts."
+  },
+  {
+    "objectID": "Math340/syllabus.html#grading",
+    "href": "Math340/syllabus.html#grading",
+    "title": "Syllabus – 340",
+    "section": "Grading",
+    "text": "Grading\nWe’ll have three midterms (date and time TBA) and one final exam (date and time TBA). Homework will be written weekly paper work, submitted via Brightspace. Grade weighting: Homework: 35%, Exams: 15%, 15%, 15%, 20%. Final grades will be assigned as follows: 90-100: 4.0, 87-89: 3.7, 83-86: 3.3, 80-82: 3.0, 77-79: 2.7, 73-76: 2.3, 70-72: 2.0, 67-69: 1.7, 63-66: 1.3, 60-62: 1.0, 0-59: 0.0. No grades will be dropped.\nAttendance policy: Attendance is expected for all students, but not graded. Please inform your instructor if you have to miss class for any reason.\nLate Work Policy: Students have limited opportunities to submit late work, and need permission to do so.\nCalendar of Topics and Assignments: See lecture notes (also shared) for details."
+  },
+  {
+    "objectID": "Math340/syllabus.html#appendices",
+    "href": "Math340/syllabus.html#appendices",
+    "title": "Syllabus – 340",
+    "section": "Appendices",
+    "text": "Appendices\n\nAI Policy:\nStudents are encouraged to leverage AI tools, such as Jupyter with code completion features or chatbots for learning help, to enhance their understanding of mathematical concepts and streamline computational tasks. All interactions with AI systems are consultations with an external source, just like a book or another person. Copying the work of an AI system and submitting it as ones own, even with some changes, is a form of plagiarism. Calling on AI for solutions to assigned problems is cheating, for the same reason that hiring your Mom to do your homework is cheating.\n\n\nAccommodative Services\nStudents who need accommodations to complete the requirements and expectations of this course because of a disability should contact the Office of Accommodative Services (136 Sisson Hall, (315) 267-2590, oas@potsdam.edu) or complete their request by filling out the New Student Accommodation Request Form. Please note that accommodations are generally not provided retroactively so timely contact with the Office of Accommodative Services is important. Students registered with the Office of Accommodative Services (OAS) should use the Accommodate Portal to submit their “Semester Request” (Letter of Accommodation) every semester. This letter informs faculty of potential course access and accommodations that might be necessary and reasonable. Further conversation with OAS, faculty, and the student may be warranted to ensure reasonable accommodations.\n\n\nCounseling Services\nAs a student at SUNY Potsdam, you may encounter various stressors that can affect your learning and academic performance. The College Counseling Center (CCC) offers a range of resources to support students in their mental health, social well-being, and overall academic experience. Students seeking to speak with a licensed mental health professional can access free services through the SUNY Potsdam Counseling Center. To connect with our services, please call 315-267-2330, email counseling@potsdam.edu, or visit us at Van Housen 131.\n\n\nDisruptive Student Policy\nIn order to maintain a fair, just, and safe College community environment, students are subject to SUNY Potsdam College regulations and are expected to abide by the Potsdam Pledge, the SUNY Potsdam Academic Catalog, and the Student Community Rights and Responsibilities (the Student Code of Conduct). Anyone who disrupts the academic learning environment (e.g., classrooms, labs, office hours, online platforms, emails, or other virtual communications) will be asked to leave for the day. Disruptions may include, but are not limited to, interrupting/speaking over other people, excessive use of foul or abusive or derogatory language, and repeated getting up/leaving/returning behavior. Students who exhibit aggressive/violent behavior in or out of classrooms will be asked to immediately leave. Disruptive students may be subject to disciplinary action, potentially including administrative removal from the course.\n\n\nFood Insecurity\nThe Prometheus Alumni Food Pantry is in 119 Barrington Student Union. The hours of operation can be found on their Facebook page or Get Involved. An Initial Intake is required 3 of all visitors. Additionally, if you are living off campus and in need of supplemental food assistance, you may be eligible for SNAP (Supplemental Nutrition Assistance Program) benefits. To determine eligibility and to enroll, you can visit mybenefits.ny.gov or call Maximizing Independent Living Choices (MILC) at 315-764-9442 x405. The campus has a registered dietician to assist you; you can contact them through the Student Health Services student portal on BearPaws. If you have questions on any of these services or need further assistance, reach out to the Bear CARE Program.\n\n\nLand Acknowledgement\nWe acknowledge with respect the Mohawk Nation, the Indigenous people on whose ancestral lands SUNY Potsdam now stands. We are reminded by our presence here that we have the duty to live in harmony with one another and with all of creation. We are deeply grateful to the families and communities who care for this beautiful place. Beginning with colonization and continuing for centuries the Haudenosaunee Peoples have been dispossessed of most of their ancestral lands by the actions of individuals and institutions. We acknowledge our responsibility to understand and respond to those actions and to commit to working together to honor our past and build our future with truth. For more information on Land Acknowledgements, see Land_Acknowledgement at illuminative.org\n\n\nSuccess Statement\nSuccess in this course depends heavily on your personal health and wellbeing. Recognize that stress is an expected part of the college experience, and it often can be compounded by unexpected setbacks or life changes outside the classroom. I strongly encourage you to reframe challenges as an unavoidable pathway to success. Reflect on your role in taking care of yourself throughout the term, before the demands of exams and projects reach their peak. Please feel free to reach out to me about any difficulty you may be having that may impact your performance in your courses or campus life as soon as it occurs and before it becomes too overwhelming. In addition, I strongly encourage you to contact the many other support services on campus that stand ready to assist you including the Counseling Center & the Case Manager, Student Health Services, Accommodative Services, and your academic advisor.\n\n\nStudent Support\nEvery student in this class is a valued individual. If you are struggling with issues outside of the classroom, please know that there are professionals both on and off campus who can assist you. If you need immediate assistance, please contact our campus Counseling Center (with free counseling) at (315) 267-2330 or visit their website. Links to other resources are provided below: • Title IX Coordinator, Van Housen Extension 392, (315) 267-2516, • Bias Incident Reporting • Center for Diversity, 223 Sisson Hall, (315) 267-2184 • University Police, Van Housen Extension, (315) 267-2222 (number for non-emergencies; for an emergency please dial 911) • Student Conduct and Community Standards, 208 Barrington Student Union, • Reachout (24-hour crisis hotline), (315) 265-2422 • Renewal House (for victims of domestic violence), SUNY Potsdam Campus Office: Van Housen Extension 390 (open Wednesdays, 9-5:00), (315) 379-9845 (24-hour crisis hotline), Renewalhouse_campus@Verizon.net • Career Services, Lougheed Learning Commons\nAnd please: if you see something, say something. If you see that someone that you care about is struggling, please encourage them to seek help. If they are unwilling to do so, Care Enough to Call has guidelines on whom to contact. Everyone has the responsibility of creating a college climate of compassion."
+  },
+  {
+    "objectID": "Math672/syllabus.html",
+    "href": "Math672/syllabus.html",
+    "title": "Syllabus – 672",
+    "section": "",
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
+  },
+  {
+    "objectID": "Math672/syllabus.html#instructor-information",
+    "href": "Math672/syllabus.html#instructor-information",
+    "title": "Syllabus – 672",
+    "section": "",
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
+  },
+  {
+    "objectID": "Math672/syllabus.html#course-information",
+    "href": "Math672/syllabus.html#course-information",
+    "title": "Syllabus – 672",
+    "section": "Course Information",
+    "text": "Course Information\nCredit Hours: 3\nSchedule: Tuesday and Thursday, 11:30-12:45\nPrerequisites: Math 671\nRequired textbooks/materials: No official text, but Abstract Algebra, by Dummit and Foote may be a useful resource.\nCourse Description: We will concentrate on theory of rings, modules, and fields this semester. Topics include field theory, ideal theory, factorization, localization, and constructions in the category of rings."
+  },
+  {
+    "objectID": "Math672/syllabus.html#grading",
+    "href": "Math672/syllabus.html#grading",
+    "title": "Syllabus – 672",
+    "section": "Grading",
+    "text": "Grading\nStudents will submit weekly homework via Brightspace. It can be handwritten and scanned, but typed is preferred. We will have two in-class proctored midterm exams and a final exam. Grade weighting are: Homework: 40%. Exams: 20%, 20%, and 20%. Final grades will be assigned as follows: 90-100: 4.0, 87-89: 3.7, 83-86: 3.3, 80-82: 3.0, 77-79: 2.7, 73-76: 2.3, 70-72: 2.0, 67-69: 1.7, 63-66: 1.3, 60-62: 1.0, 0-59: 0.0. No grades will be dropped."
+  },
+  {
+    "objectID": "Math672/syllabus.html#appendices",
+    "href": "Math672/syllabus.html#appendices",
+    "title": "Syllabus – 672",
+    "section": "Appendices",
+    "text": "Appendices\n\nAI Policy:\nStudents are encouraged to leverage AI tools, such as Jupyter with code completion features or chatbots for learning help, to enhance their understanding of mathematical concepts and streamline computational tasks. All interactions with AI systems are consultations with an external source, just like a book or another person. Copying the work of an AI system and submitting it as ones own, even with some changes, is a form of plagiarism. Calling on AI for solutions to assigned problems is cheating, for the same reason that hiring your Mom to do your homework is cheating.\n\n\nAccommodative Services\nStudents who need accommodations to complete the requirements and expectations of this course because of a disability should contact the Office of Accommodative Services (136 Sisson Hall, (315) 267-2590, oas@potsdam.edu) or complete their request by filling out the New Student Accommodation Request Form. Please note that accommodations are generally not provided retroactively so timely contact with the Office of Accommodative Services is important. Students registered with the Office of Accommodative Services (OAS) should use the Accommodate Portal to submit their “Semester Request” (Letter of Accommodation) every semester. This letter informs faculty of potential course access and accommodations that might be necessary and reasonable. Further conversation with OAS, faculty, and the student may be warranted to ensure reasonable accommodations.\n\n\nCounseling Services\nAs a student at SUNY Potsdam, you may encounter various stressors that can affect your learning and academic performance. The College Counseling Center (CCC) offers a range of resources to support students in their mental health, social well-being, and overall academic experience. Students seeking to speak with a licensed mental health professional can access free services through the SUNY Potsdam Counseling Center. To connect with our services, please call 315-267-2330, email counseling@potsdam.edu, or visit us at Van Housen 131.\n\n\nDisruptive Student Policy\nIn order to maintain a fair, just, and safe College community environment, students are subject to SUNY Potsdam College regulations and are expected to abide by the Potsdam Pledge, the SUNY Potsdam Academic Catalog, and the Student Community Rights and Responsibilities (the Student Code of Conduct). Anyone who disrupts the academic learning environment (e.g., classrooms, labs, office hours, online platforms, emails, or other virtual communications) will be asked to leave for the day. Disruptions may include, but are not limited to, interrupting/speaking over other people, excessive use of foul or abusive or derogatory language, and repeated getting up/leaving/returning behavior. Students who exhibit aggressive/violent behavior in or out of classrooms will be asked to immediately leave. Disruptive students may be subject to disciplinary action, potentially including administrative removal from the course.\n\n\nFood Insecurity\nThe Prometheus Alumni Food Pantry is in 119 Barrington Student Union. The hours of operation can be found on their Facebook page or Get Involved. An Initial Intake is required 3 of all visitors. Additionally, if you are living off campus and in need of supplemental food assistance, you may be eligible for SNAP (Supplemental Nutrition Assistance Program) benefits. To determine eligibility and to enroll, you can visit mybenefits.ny.gov or call Maximizing Independent Living Choices (MILC) at 315-764-9442 x405. The campus has a registered dietician to assist you; you can contact them through the Student Health Services student portal on BearPaws. If you have questions on any of these services or need further assistance, reach out to the Bear CARE Program.\n\n\nLand Acknowledgement\nWe acknowledge with respect the Mohawk Nation, the Indigenous people on whose ancestral lands SUNY Potsdam now stands. We are reminded by our presence here that we have the duty to live in harmony with one another and with all of creation. We are deeply grateful to the families and communities who care for this beautiful place. Beginning with colonization and continuing for centuries the Haudenosaunee Peoples have been dispossessed of most of their ancestral lands by the actions of individuals and institutions. We acknowledge our responsibility to understand and respond to those actions and to commit to working together to honor our past and build our future with truth. For more information on Land Acknowledgements, see Land_Acknowledgement at illuminative.org\n\n\nSuccess Statement\nSuccess in this course depends heavily on your personal health and wellbeing. Recognize that stress is an expected part of the college experience, and it often can be compounded by unexpected setbacks or life changes outside the classroom. I strongly encourage you to reframe challenges as an unavoidable pathway to success. Reflect on your role in taking care of yourself throughout the term, before the demands of exams and projects reach their peak. Please feel free to reach out to me about any difficulty you may be having that may impact your performance in your courses or campus life as soon as it occurs and before it becomes too overwhelming. In addition, I strongly encourage you to contact the many other support services on campus that stand ready to assist you including the Counseling Center & the Case Manager, Student Health Services, Accommodative Services, and your academic advisor.\n\n\nStudent Support\nEvery student in this class is a valued individual. If you are struggling with issues outside of the classroom, please know that there are professionals both on and off campus who can assist you. If you need immediate assistance, please contact our campus Counseling Center (with free counseling) at (315) 267-2330 or visit their website. Links to other resources are provided below: • Title IX Coordinator, Van Housen Extension 392, (315) 267-2516, • Bias Incident Reporting • Center for Diversity, 223 Sisson Hall, (315) 267-2184 • University Police, Van Housen Extension, (315) 267-2222 (number for non-emergencies; for an emergency please dial 911) • Student Conduct and Community Standards, 208 Barrington Student Union, • Reachout (24-hour crisis hotline), (315) 265-2422 • Renewal House (for victims of domestic violence), SUNY Potsdam Campus Office: Van Housen Extension 390 (open Wednesdays, 9-5:00), (315) 379-9845 (24-hour crisis hotline), Renewalhouse_campus@Verizon.net • Career Services, Lougheed Learning Commons\nAnd please: if you see something, say something. If you see that someone that you care about is struggling, please encourage them to seek help. If they are unwilling to do so, Care Enough to Call has guidelines on whom to contact. Everyone has the responsibility of creating a college climate of compassion."
+  },
+  {
+    "objectID": "Math125/syllabus.html",
+    "href": "Math125/syllabus.html",
+    "title": "Syllabus – 125",
+    "section": "",
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
+  },
+  {
+    "objectID": "Math125/syllabus.html#instructor-information",
+    "href": "Math125/syllabus.html#instructor-information",
+    "title": "Syllabus – 125",
+    "section": "",
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
+  },
+  {
+    "objectID": "Math125/syllabus.html#course-information",
+    "href": "Math125/syllabus.html#course-information",
+    "title": "Syllabus – 125",
+    "section": "Course Information",
+    "text": "Course Information\nCredit Hours: 3\nSchedule: MWF 12:00-12:50, Carson 0208\nPrerequisites: none\nRequired textbooks/materials: Openintro Statistics, Fourth Edition (An open textbook.)\nCourse Description: Elementary probabilistic and descriptive statistical concepts as applied to practical problems from other disciplines and an introduction to methods of statistical inference. Prerequisite: high school algebra or equivalent. Topics will include interpretation and analysis of data, calculation probabilities, calculation of mean, median, mode, standard deviation, and variance, fundamental counting principle, Central Limit Theorem, normal and binomial distributions, confidence intervals, and hypothesis testing."
+  },
+  {
+    "objectID": "Math125/syllabus.html#student-learning-objectives",
+    "href": "Math125/syllabus.html#student-learning-objectives",
+    "title": "Syllabus – 125",
+    "section": "Student Learning Objectives",
+    "text": "Student Learning Objectives\nUpon completion of this course, a student will\n\nbe able to distinguish between and a sample and population and then determine whether a numerical value is a statistic or parameter.\nbe able to calculate the mean, median, and mode for a data and decide which best represents the data set.\nbe able to calculate standard deviation and understand that the larger the standard deviation, the more varied the data values.\nbe able to determine whether or not two events are mutually exclusive.\nknow the Fundamental Counting Principle and whether or not an arrangement of objects is a permutation or combination and be able to count them.\nknow what a discrete and continuous random variables are.\nrecognize a normal distribution and be able to calculate probabilities using z-scores and tables or technology.\nknow the Central Limit Theorem and how to apply it and understand the standard deviation for the sampling distribution of sample means is less than that for the original distribution.\nbe able to construct confidence intervals for means and proportions and be able to interpret them.\nbe able to perform an hypothesis test for a mean using a normal or t-distribution and understand how to interpret the decision in the context of the problem."
+  },
+  {
+    "objectID": "Math125/syllabus.html#grading",
+    "href": "Math125/syllabus.html#grading",
+    "title": "Syllabus – 125",
+    "section": "Grading",
+    "text": "Grading\nAssessments: We will have about seven unit tests (100 points each) and a final exam (200 points). We will have about eighteen homework assignments, averaging about 15 points each. Most homework uses the Webwork online homework system. Attendance is expected for all students, but not graded. Please inform your instructor if you have to miss class.\nGrade weighting: About 700 points are determined by proctored in-class unit tests. About 250 points are determined by homework. About 200 are determined by a final exam. Final grades by percentage will be assigned as follows: 90-100: 4.0, 87-89: 3.7, 83-86: 3.3, 80-82: 3.0, 77-79: 2.7, 73-76: 2.3, 70-72: 2.0, 67-69: 1.7, 63-66: 1.3, 60-62: 1.0, 0-59: 0.0. No grades will be dropped.\nLate Work Policy: Students have limited opportunities to submit late work, and need permission to do so.\nCalendar of Topics and Assignments: See lecture slides (also shared) for details."
+  },
+  {
+    "objectID": "Math125/syllabus.html#appendices",
+    "href": "Math125/syllabus.html#appendices",
+    "title": "Syllabus – 125",
+    "section": "Appendices",
+    "text": "Appendices\n\nAI Policy:\nStudents are encouraged to leverage AI tools, such as Jupyter with code completion features or chatbots for learning help, to enhance their understanding of mathematical concepts and streamline computational tasks. All interactions with AI systems are consultations with an external source, just like a book or another person. Copying the work of an AI system and submitting it as ones own, even with some changes, is a form of plagiarism. Calling on AI for solutions to assigned problems is cheating, for the same reason that hiring your Mom to do your homework is cheating.\n\n\nThinking Mathematically:\nThinking Mathematically courses build proficiency with fundamental tools of mathematics, such as arithmetic, algebra, geometry, functions, graphs, and statistics. They teach students precise quantitative logical reasoning and applications of mathematical problem-solving skills in abstract and real-world problems. They engage students in oral and written communication of mathematical ideas.\nMath 125 fulfills the Thinking Mathematically requirement of the Pathways Core Curriculum.\n\nThinking Mathematically Student Learning Outcomes:\nAt the conclusion of this course, students…\n\nUse the fundamental tools of mathematics, such as arithmetic, algebra, geometry, functions, graphs, and statistics. (Applying)\nApply precise, logical quantitative reasoning to mathematical hypotheses and conditions. (Applying)\nIdentify mathematical structure and pattern. (Applying)\nEngage in mathematical abstractions. (Applying)\nCommunicate effectively with oral and written skills appropriate to the discipline. (Understanding)\n\n\n\nMethods of Instruction in relation to SLOs:\nSLO #1: Students use boxplots, histograms, scatterplots, and other visualizations to analyze data sets. Students use arithmetic and algebra to construct confidence intervals and perform hypothesis testing. Students use functions and arithmetic to calculate descriptive statistics (mean, median, etc) of datasets. Students use statistics throughout the course.\nSLO #2: Students solve verbal problems distinguishing between correlation and causation on homework and exams. They verify conditions such as near-normality and sample size for hypothesis tests. They answer homework questions on experiment design which require that they attend to the experimental conditions necessary to draw various conclusions.\nSLO #3: Students learn to use basic data analysis techniques to discover patterns in data. The central limit theorem provides a recurring pattern which students use to solve problems involving p-values, including hypothesis testing, on homework and exams.\nSLO #4: Students use the empirical rule to produce confidence intervals for individual data points and later for parameters based on inference. To understand the general formulations of these rules, students must think of datasets generically and abstractly. On most homeworks, students use formulas for statistics, tests, and inferences which are expressed abstractly to perform concrete computations. The notions of statistic and parameter are themselves abstractions of data computations.\nSLO #5: Students discuss Statistics problems and their solutions in collaborative group work. They present solutions to their peers in the classroom. They also submit individual written work in the form of homework, quizzes, and exams.\nSLO’s #1-#5 will be assessed on various homework problems.\n\n\n\nAccommodative Services\nStudents who need accommodations to complete the requirements and expectations of this course because of a disability should contact the Office of Accommodative Services (136 Sisson Hall, (315) 267-2590, oas@potsdam.edu) or complete their request by filling out the New Student Accommodation Request Form. Please note that accommodations are generally not provided retroactively so timely contact with the Office of Accommodative Services is important. Students registered with the Office of Accommodative Services (OAS) should use the Accommodate Portal to submit their “Semester Request” (Letter of Accommodation) every semester. This letter informs faculty of potential course access and accommodations that might be necessary and reasonable. Further conversation with OAS, faculty, and the student may be warranted to ensure reasonable accommodations.\n\n\nCounseling Services\nAs a student at SUNY Potsdam, you may encounter various stressors that can affect your learning and academic performance. The College Counseling Center (CCC) offers a range of resources to support students in their mental health, social well-being, and overall academic experience. Students seeking to speak with a licensed mental health professional can access free services through the SUNY Potsdam Counseling Center. To connect with our services, please call 315-267-2330, email counseling@potsdam.edu, or visit us at Van Housen 131.\n\n\nDisruptive Student Policy\nIn order to maintain a fair, just, and safe College community environment, students are subject to SUNY Potsdam College regulations and are expected to abide by the Potsdam Pledge, the SUNY Potsdam Academic Catalog, and the Student Community Rights and Responsibilities (the Student Code of Conduct). Anyone who disrupts the academic learning environment (e.g., classrooms, labs, office hours, online platforms, emails, or other virtual communications) will be asked to leave for the day. Disruptions may include, but are not limited to, interrupting/speaking over other people, excessive use of foul or abusive or derogatory language, and repeated getting up/leaving/returning behavior. Students who exhibit aggressive/violent behavior in or out of classrooms will be asked to immediately leave. Disruptive students may be subject to disciplinary action, potentially including administrative removal from the course.\n\n\nFood Insecurity\nThe Prometheus Alumni Food Pantry is in 119 Barrington Student Union. The hours of operation can be found on their Facebook page or Get Involved. An Initial Intake is required 3 of all visitors. Additionally, if you are living off campus and in need of supplemental food assistance, you may be eligible for SNAP (Supplemental Nutrition Assistance Program) benefits. To determine eligibility and to enroll, you can visit mybenefits.ny.gov or call Maximizing Independent Living Choices (MILC) at 315-764-9442 x405. The campus has a registered dietician to assist you; you can contact them through the Student Health Services student portal on BearPaws. If you have questions on any of these services or need further assistance, reach out to the Bear CARE Program.\n\n\nLand Acknowledgement\nWe acknowledge with respect the Mohawk Nation, the Indigenous people on whose ancestral lands SUNY Potsdam now stands. We are reminded by our presence here that we have the duty to live in harmony with one another and with all of creation. We are deeply grateful to the families and communities who care for this beautiful place. Beginning with colonization and continuing for centuries the Haudenosaunee Peoples have been dispossessed of most of their ancestral lands by the actions of individuals and institutions. We acknowledge our responsibility to understand and respond to those actions and to commit to working together to honor our past and build our future with truth. For more information on Land Acknowledgements, see Land_Acknowledgement at illuminative.org\n\n\nSuccess Statement\nSuccess in this course depends heavily on your personal health and wellbeing. Recognize that stress is an expected part of the college experience, and it often can be compounded by unexpected setbacks or life changes outside the classroom. I strongly encourage you to reframe challenges as an unavoidable pathway to success. Reflect on your role in taking care of yourself throughout the term, before the demands of exams and projects reach their peak. Please feel free to reach out to me about any difficulty you may be having that may impact your performance in your courses or campus life as soon as it occurs and before it becomes too overwhelming. In addition, I strongly encourage you to contact the many other support services on campus that stand ready to assist you including the Counseling Center & the Case Manager, Student Health Services, Accommodative Services, and your academic advisor.\n\n\nStudent Support\nEvery student in this class is a valued individual. If you are struggling with issues outside of the classroom, please know that there are professionals both on and off campus who can assist you. If you need immediate assistance, please contact our campus Counseling Center (with free counseling) at (315) 267-2330 or visit their website. Links to other resources are provided below: • Title IX Coordinator, Van Housen Extension 392, (315) 267-2516, • Bias Incident Reporting • Center for Diversity, 223 Sisson Hall, (315) 267-2184 • University Police, Van Housen Extension, (315) 267-2222 (number for non-emergencies; for an emergency please dial 911) • Student Conduct and Community Standards, 208 Barrington Student Union, • Reachout (24-hour crisis hotline), (315) 265-2422 • Renewal House (for victims of domestic violence), SUNY Potsdam Campus Office: Van Housen Extension 390 (open Wednesdays, 9-5:00), (315) 379-9845 (24-hour crisis hotline), Renewalhouse_campus@Verizon.net • Career Services, Lougheed Learning Commons\nAnd please: if you see something, say something. If you see that someone that you care about is struggling, please encourage them to seek help. If they are unwilling to do so, Care Enough to Call has guidelines on whom to contact. Everyone has the responsibility of creating a college climate of compassion."
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#hello-professor",
+    "href": "Math125/slides/0_welcome.html#hello-professor",
+    "title": "0. Course Welcome",
+    "section": "Hello professor",
+    "text": "Hello professor\nI’m Professor jason a howald. (hō - wald, not how - ald)\nHobbies: baking, juggling, woodworking, programming, gaming, etc.\nI like learning and teaching.\nI am cautious, curious, empathetic, sincere, literal, and precise. But I’ll teach you about self-assessment bias later!"
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#hello-team",
+    "href": "Math125/slides/0_welcome.html#hello-team",
+    "title": "0. Course Welcome",
+    "section": "Hello team",
+    "text": "Hello team\nWe’ll work together in class.\nMeet your neighbors. Learn their names. Learn why they are here.\nWith all of our neighbors, we have something to learn and something to teach"
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#hello-modern-technology",
+    "href": "Math125/slides/0_welcome.html#hello-modern-technology",
+    "title": "0. Course Welcome",
+    "section": "Hello modern technology",
+    "text": "Hello modern technology\nLearning a craft means learning its tools.\nWe will use a professional data analysis platform for everyday work. It’s called “Colab”, “Jupyter”, or “Python”, depending on your point of view.\nWe have access to AI-assisted code generation."
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#hello-support",
+    "href": "Math125/slides/0_welcome.html#hello-support",
+    "title": "0. Course Welcome",
+    "section": "Hello support",
+    "text": "Hello support\nDeaf or hard of hearing? Blind or visually impaired? Medical problem? Other?\nLet me know what support you need from me. I’m committed to inclusion and equity and happy to help.\nChoose work habits that work. Success requires pattern and dedication.\nWe’re all in this together. Look out for your neighbors. Be kind.\nContact me by email (howaldja) or by office hours.\nThere is a Math Lab in LLC. When open they have free walk-in tutoring."
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#course-pattern",
+    "href": "Math125/slides/0_welcome.html#course-pattern",
+    "title": "0. Course Welcome",
+    "section": "Course pattern",
+    "text": "Course pattern\nBefore class: Find prep work in lecture slides, and do it.\nDuring class: Work hard, ask questions, support your team. Avoid distractions.\nAfter class: Find homework obligation and do it."
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#supplies",
+    "href": "Math125/slides/0_welcome.html#supplies",
+    "title": "0. Course Welcome",
+    "section": "“Supplies”",
+    "text": "“Supplies”\nComputer access. Laptop is recommended. Smartphone works. (Survey: Who has laptop access?).\nTextbook: Openintro Statistics. (A free open source text).\nSyllabus (on Brightspace)\nCourse website on Brightspace\nHomework is on Webwork. Find through brightspace.\nGoogle Colab"
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#jupyter-as-a-calculator",
+    "href": "Math125/slides/0_welcome.html#jupyter-as-a-calculator",
+    "title": "0. Course Welcome",
+    "section": "Jupyter as a calculator",
+    "text": "Jupyter as a calculator\n\nMake a new Jupyter notebook.\nMake a text cell and enter some text.\nMake a code cell. Type 3+5 and press enter. [Nothing happened!]\nTry shift-enter instead. You should see an answer.\nWhat does the green checkmark mean?\nChange 3+5 to x=3+5. This is a variable assignment. Now what happens?"
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#jupyter-as-a-calculator-more",
+    "href": "Math125/slides/0_welcome.html#jupyter-as-a-calculator-more",
+    "title": "0. Course Welcome",
+    "section": "Jupyter as a calculator (more)",
+    "text": "Jupyter as a calculator (more)\n\nUsing [enter] instead of [shift-enter], place separate calculations on several lines in a code cell. Evaluate.\nFrom the menus, select [Runtime &gt; Run all]. What happens?\nFind the Share button and notice the Access settings.\nFind the Gemini button. Open the window for context-aware chatbot support.\nRename the file. Find the [File &gt; Open] command, for later."
+  },
+  {
+    "objectID": "Math125/slides/0_welcome.html#individually-homework",
+    "href": "Math125/slides/0_welcome.html#individually-homework",
+    "title": "0. Course Welcome",
+    "section": "Individually – homework",
+    "text": "Individually – homework\nObtain the book in .pdf or paper form.\nDo the preparatory work for the next slide deck “1. The Shape of Data.”\nNotify Professor Howald of any special needs.\nDo something nice for someone you care about."
+  },
+  {
+    "objectID": "Math125/index.html",
+    "href": "Math125/index.html",
+    "title": "Math 125",
+    "section": "",
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#preparatory-work",
+    "href": "Math125/slides/1_the_shape_of_data.html#preparatory-work",
+    "title": "1. The Shape of Data",
+    "section": "Preparatory work",
+    "text": "Preparatory work\nRead: OpenIntro Statistics Section 1.1 and 1.2.1, 1.2.2\nVocabulary: Data matrix (=dataframe), summary statistic, case, variable, numerical (=quantitative) variable, categorical variable, discrete vs. continuous."
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary",
+    "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary",
+    "title": "1. The Shape of Data",
+    "section": "Examples using data vocabulary",
+    "text": "Examples using data vocabulary\n\n\nData Discussion\n\nDescribe a case in this context.\nDescribe a data matrix (aka dataframe) in this context.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
+    "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
+    "title": "1. The Shape of Data",
+    "section": "Examples using data vocabulary",
+    "text": "Examples using data vocabulary\n\n\nData Discussion\n\nGive a quantitative variable.\nGive a categorical variable.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
+    "href": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
+    "title": "1. The Shape of Data",
+    "section": "The humble .csv file",
+    "text": "The humble .csv file\n\n\nCSV (Comma Separated Value)\n\nText-based\nSimple!\nCompatible\nUgly – bad for eyeballs, bad for screenreaders, unaligned\nPerfect for export/share/import.\n\n\nExample data in .csv format:\nYear,month,day,richter,area,region,deaths 1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000 1902,December,16,6.4,Uzbekistan,Russia,4700 1903,April,28,7,Malazgirt,Turkey,3500 1903,May,28,5.8,Gole,Turkey,1000"
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
+    "href": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
+    "title": "1. The Shape of Data",
+    "section": "Fetching and viewing data with Jupyter – illustration",
+    "text": "Fetching and viewing data with Jupyter – illustration\n\nMake a Jupyter notebook using URL colab.new\nFind OpenIntro Earthquake data CSV link on openintro.org/data\nFetch data in a code cell:\n\n\n!wget [url to .csv file]\n\n\nImport pandas:\n\n\nimport pandas as pd\n\n\nRead and display data:\n\n\ndf = pd.read_csv(\"earthquakes.csv\")\ndf.head()\n\n\nAnalysis:\n\n\ndf.describe()\ndf.corr(numeric_only=True)\n\n\nUse embedded menus and maybe AI-gen code."
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
+    "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
+    "title": "1. The Shape of Data",
+    "section": "Data into Jupyter – practice",
+    "text": "Data into Jupyter – practice\n\nFind the openintro data repository\nLocate “acs12” data source. Copy link location to the .csv format.\nCreate a new jupyter notebook on colab, using URL shortcut “colab.new.”\nIf you’re blind, change the Colab option in Tools, Settings, Editor to turn off the option called “Show context-powered code completions.”\nName your notebook.\nUse wget to download the dataset at that url.\nUse pandas to read the dataframe.\nDisplay the dataframe.\nUse describe() and corr() for analysis."
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
+    "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
+    "title": "1. The Shape of Data",
+    "section": "Data into Jupyter – summary",
+    "text": "Data into Jupyter – summary\n\n!wget https://www.openintro.org/data/csv/acs12.csv\nimport pandas as pd\ndf = pd.read_csv(\"acs12.csv\")\ndf.head()\ndf.describe()\ndf.corr(numeric_only=True)"
+  },
+  {
+    "objectID": "Math125/slides/1_the_shape_of_data.html#individually-homework",
+    "href": "Math125/slides/1_the_shape_of_data.html#individually-homework",
+    "title": "1. The Shape of Data",
+    "section": "Individually – Homework",
+    "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#preparatory-work",
@@ -84,171 +322,45 @@
     "text": "Individual work\nSolve five problems on webwork under “2. Association and Correlation.”\nAs always, find the preparatory work for the next slide deck and do it before class."
   },
   {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#preparatory-work",
-    "href": "Math125/slides/1_the_shape_of_data.html#preparatory-work",
-    "title": "1. The Shape of Data",
-    "section": "Preparatory work",
-    "text": "Preparatory work\nRead: OpenIntro Statistics Section 1.1 and 1.2.1, 1.2.2\nVocabulary: Data matrix (=dataframe), summary statistic, case, variable, numerical (=quantitative) variable, categorical variable, discrete vs. continuous."
-  },
-  {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary",
-    "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary",
-    "title": "1. The Shape of Data",
-    "section": "Examples using data vocabulary",
-    "text": "Examples using data vocabulary\n\n\nData Discussion\n\nDescribe a case in this context.\nDescribe a data matrix (aka dataframe) in this context.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
-  },
-  {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
-    "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
-    "title": "1. The Shape of Data",
-    "section": "Examples using data vocabulary",
-    "text": "Examples using data vocabulary\n\n\nData Discussion\n\nGive a quantitative variable.\nGive a categorical variable.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
-  },
-  {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
-    "href": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
-    "title": "1. The Shape of Data",
-    "section": "The humble .csv file",
-    "text": "The humble .csv file\n\n\nCSV (Comma Separated Value)\n\nText-based\nSimple!\nCompatible\nUgly – bad for eyeballs, bad for screenreaders, unaligned\nPerfect for export/share/import.\n\n\nExample data in .csv format:\nYear,month,day,richter,area,region,deaths 1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000 1902,December,16,6.4,Uzbekistan,Russia,4700 1903,April,28,7,Malazgirt,Turkey,3500 1903,May,28,5.8,Gole,Turkey,1000"
-  },
-  {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
-    "href": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
-    "title": "1. The Shape of Data",
-    "section": "Fetching and viewing data with Jupyter – illustration",
-    "text": "Fetching and viewing data with Jupyter – illustration\n\nMake a Jupyter notebook using URL colab.new\nFind OpenIntro Earthquake data CSV link on openintro.org/data\nFetch data in a code cell:\n\n\n!wget [url to .csv file]\n\n\nImport pandas:\n\n\nimport pandas as pd\n\n\nRead and display data:\n\n\ndf = pd.read_csv(\"earthquakes.csv\")\ndf.head()\n\n\nAnalysis:\n\n\ndf.describe()\ndf.corr(numeric_only=True)\n\n\nUse embedded menus and maybe AI-gen code."
-  },
-  {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
-    "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
-    "title": "1. The Shape of Data",
-    "section": "Data into Jupyter – practice",
-    "text": "Data into Jupyter – practice\n\nFind the openintro data repository\nLocate “acs12” data source. Copy link location to the .csv format.\nCreate a new jupyter notebook on colab, using URL shortcut “colab.new.”\nIf you’re blind, change the Colab option in Tools, Settings, Editor to turn off the option called “Show context-powered code completions.”\nName your notebook.\nUse wget to download the dataset at that url.\nUse pandas to read the dataframe.\nDisplay the dataframe.\nUse describe() and corr() for analysis."
-  },
-  {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
-    "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
-    "title": "1. The Shape of Data",
-    "section": "Data into Jupyter – summary",
-    "text": "Data into Jupyter – summary\n\n!wget https://www.openintro.org/data/csv/acs12.csv\nimport pandas as pd\ndf = pd.read_csv(\"acs12.csv\")\ndf.head()\ndf.describe()\ndf.corr(numeric_only=True)"
-  },
-  {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#individually-homework",
-    "href": "Math125/slides/1_the_shape_of_data.html#individually-homework",
-    "title": "1. The Shape of Data",
-    "section": "Individually – Homework",
-    "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
-  },
-  {
-    "objectID": "Math125/index.html",
-    "href": "Math125/index.html",
-    "title": "Math 125",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Professor Howald’s Teaching Portal",
     "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\nSyllabus\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+    "text": "Please select a course.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nMath 125\n\n\nProbability and Statistics\n\n\n\n\n\n\nMath 340\n\n\nSet Theory and Logic\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "Math125/slides/0_welcome.html#hello-professor",
-    "href": "Math125/slides/0_welcome.html#hello-professor",
-    "title": "0. Course Welcome",
-    "section": "Hello professor",
-    "text": "Hello professor\nI’m Professor jason a howald. (hō - wald, not how - ald)\nHobbies: baking, juggling, woodworking, programming, gaming, etc.\nI like learning and teaching.\nI am cautious, curious, empathetic, sincere, literal, and precise. But I’ll teach you about self-assessment bias later!"
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#hello-team",
-    "href": "Math125/slides/0_welcome.html#hello-team",
-    "title": "0. Course Welcome",
-    "section": "Hello team",
-    "text": "Hello team\nWe’ll work together in class.\nMeet your neighbors. Learn their names. Learn why they are here.\nWith all of our neighbors, we have something to learn and something to teach"
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#hello-modern-technology",
-    "href": "Math125/slides/0_welcome.html#hello-modern-technology",
-    "title": "0. Course Welcome",
-    "section": "Hello modern technology",
-    "text": "Hello modern technology\nLearning a craft means learning its tools.\nWe will use a professional data analysis platform for everyday work. It’s called “Colab”, “Jupyter”, or “Python”, depending on your point of view.\nWe have access to AI-assisted code generation."
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#hello-support",
-    "href": "Math125/slides/0_welcome.html#hello-support",
-    "title": "0. Course Welcome",
-    "section": "Hello support",
-    "text": "Hello support\nDeaf or hard of hearing? Blind or visually impaired? Medical problem? Other?\nLet me know what support you need from me. I’m committed to inclusion and equity and happy to help.\nChoose work habits that work. Success requires pattern and dedication.\nWe’re all in this together. Look out for your neighbors. Be kind.\nContact me by email (howaldja) or by office hours.\nThere is a Math Lab in LLC. When open they have free walk-in tutoring."
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#course-pattern",
-    "href": "Math125/slides/0_welcome.html#course-pattern",
-    "title": "0. Course Welcome",
-    "section": "Course pattern",
-    "text": "Course pattern\nBefore class: Find prep work in lecture slides, and do it.\nDuring class: Work hard, ask questions, support your team. Avoid distractions.\nAfter class: Find homework obligation and do it."
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#supplies",
-    "href": "Math125/slides/0_welcome.html#supplies",
-    "title": "0. Course Welcome",
-    "section": "“Supplies”",
-    "text": "“Supplies”\nComputer access. Laptop is recommended. Smartphone works. (Survey: Who has laptop access?).\nTextbook: Openintro Statistics. (A free open source text).\nSyllabus (on Brightspace)\nCourse website on Brightspace\nHomework is on Webwork. Find through brightspace.\nGoogle Colab"
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#jupyter-as-a-calculator",
-    "href": "Math125/slides/0_welcome.html#jupyter-as-a-calculator",
-    "title": "0. Course Welcome",
-    "section": "Jupyter as a calculator",
-    "text": "Jupyter as a calculator\n\nMake a new Jupyter notebook.\nMake a text cell and enter some text.\nMake a code cell. Type 3+5 and press enter. [Nothing happened!]\nTry shift-enter instead. You should see an answer.\nWhat does the green checkmark mean?\nChange 3+5 to x=3+5. This is a variable assignment. Now what happens?"
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#jupyter-as-a-calculator-more",
-    "href": "Math125/slides/0_welcome.html#jupyter-as-a-calculator-more",
-    "title": "0. Course Welcome",
-    "section": "Jupyter as a calculator (more)",
-    "text": "Jupyter as a calculator (more)\n\nUsing [enter] instead of [shift-enter], place separate calculations on several lines in a code cell. Evaluate.\nFrom the menus, select [Runtime &gt; Run all]. What happens?\nFind the Share button and notice the Access settings.\nFind the Gemini button. Open the window for context-aware chatbot support.\nRename the file. Find the [File &gt; Open] command, for later."
-  },
-  {
-    "objectID": "Math125/slides/0_welcome.html#individually-homework",
-    "href": "Math125/slides/0_welcome.html#individually-homework",
-    "title": "0. Course Welcome",
-    "section": "Individually – homework",
-    "text": "Individually – homework\nObtain the book in .pdf or paper form.\nDo the preparatory work for the next slide deck “1. The Shape of Data.”\nNotify Professor Howald of any special needs.\nDo something nice for someone you care about."
-  },
-  {
-    "objectID": "Math125/syllabus.html",
-    "href": "Math125/syllabus.html",
-    "title": "Syllabus",
+    "objectID": "Math681/syllabus.html",
+    "href": "Math681/syllabus.html",
+    "title": "Syllabus – 681",
     "section": "",
-    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours (link)"
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
   },
   {
-    "objectID": "Math125/syllabus.html#instructor-information",
-    "href": "Math125/syllabus.html#instructor-information",
-    "title": "Syllabus",
+    "objectID": "Math681/syllabus.html#instructor-information",
+    "href": "Math681/syllabus.html#instructor-information",
+    "title": "Syllabus – 681",
     "section": "",
-    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours (link)"
+    "text": "Instructor: Jason Howald\nInstructor Office: MacVicar 209\nInstructor Office Telephone: x2069\nInstructor E-mail: howaldja@potsdam.edu\nInstructor Office Hours: Weekdays: 10:00-10:50 and by appointment"
   },
   {
-    "objectID": "Math125/syllabus.html#course-information",
-    "href": "Math125/syllabus.html#course-information",
-    "title": "Syllabus",
+    "objectID": "Math681/syllabus.html#course-information",
+    "href": "Math681/syllabus.html#course-information",
+    "title": "Syllabus – 681",
     "section": "Course Information",
-    "text": "Course Information\nCredit Hours: 3\nSchedule: MWF 12:00-12:50, Carson 0208\nPrerequisites: none\nRequired textbooks/materials: Openintro Statistics, Fourth Edition (An open textbook.)\nCourse Description: Elementary probabilistic and descriptive statistical concepts as applied to practical problems from other disciplines and an introduction to methods of statistical inference. Prerequisite: high school algebra or equivalent. Topics will include interpretation and analysis of data, calculation probabilities, calculation of mean, median, mode, standard deviation, and variance, fundamental counting principle, Central Limit Theorem, normal and binomial distributions, confidence intervals, and hypothesis testing."
+    "text": "Course Information\nCredit Hours: 3\nSchedule: Monday and Wednesday, 2:30-3:45\nPrerequisites: Formally, 451 and permission. Informally, 671 and 691 are expected.\nRequired textbooks/materials: Instructor notes provided. You may also find it useful to read Functions of One Complex Variable I, 2nd ed. by Conway (optional).\nCourse Description: This is a first course in complex analysis. We will cover the complex number system, metric topology, analytic functions, power series, path integration, and Cauchy’s residue theorem."
   },
   {
-    "objectID": "Math125/syllabus.html#student-learning-objectives",
-    "href": "Math125/syllabus.html#student-learning-objectives",
-    "title": "Syllabus",
-    "section": "Student Learning Objectives",
-    "text": "Student Learning Objectives\nUpon completion of this course, a student will\n\nbe able to distinguish between and a sample and population and then determine whether a numerical value is a statistic or parameter.\nbe able to calculate the mean, median, and mode for a data and decide which best represents the data set.\nbe able to calculate standard deviation and understand that the larger the standard deviation, the more varied the data values.\nbe able to determine whether or not two events are mutually exclusive.\nknow the Fundamental Counting Principle and whether or not an arrangement of objects is a permutation or combination and be able to count them.\nknow what a discrete and continuous random variables are.\nrecognize a normal distribution and be able to calculate probabilities using z-scores and tables or technology.\nknow the Central Limit Theorem and how to apply it and understand the standard deviation for the sampling distribution of sample means is less than that for the original distribution.\nbe able to construct confidence intervals for means and proportions and be able to interpret them.\nbe able to perform an hypothesis test for a mean using a normal or t-distribution and understand how to interpret the decision in the context of the problem."
-  },
-  {
-    "objectID": "Math125/syllabus.html#grading",
-    "href": "Math125/syllabus.html#grading",
-    "title": "Syllabus",
+    "objectID": "Math681/syllabus.html#grading",
+    "href": "Math681/syllabus.html#grading",
+    "title": "Syllabus – 681",
     "section": "Grading",
-    "text": "Grading\nAssessments: We will have about seven unit tests (100 points each) and a final exam (200 points). We will have about eighteen homework assignments, averaging about 15 points each. Most homework uses the Webwork online homework system. Attendance is expected for all students, but not graded. Please inform your instructor if you have to miss class.\nGrade weighting: About 700 points are determined by proctored in-class unit tests. About 250 points are determined by homework. About 200 are determined by a final exam. Final grades by percentage will be assigned as follows: 90-100: 4.0, 87-89: 3.7, 83-86: 3.3, 80-82: 3.0, 77-79: 2.7, 73-76: 2.3, 70-72: 2.0, 67-69: 1.7, 63-66: 1.3, 60-62: 1.0, 0-59: 0.0. No grades will be dropped.\nLate Work Policy: Students have limited opportunities to submit late work, and need permission to do so.\nCalendar of Topics and Assignments: See lecture slides (also shared) for details."
+    "text": "Grading\nWe will have two mid-semester exams during the semester and a final exam at the end.\nHomework: Most homework will be traditional individual work. You may prefer to write it out on paper, but it will be submitted online on the CMS. Typed solutions are preferred but not required. Although a few homework problems are calculations, most are proofs. For all homework, you may discuss with others but you may not copy. Grade weighting: Homework 50%, Midterm Exams 15% and 15%, Final Exam 20%. Final grades will be assigned as follows: 90-100: 4.0, 87-89: 3.7, 83-86: 3.3, 80-82: 3.0, 77-79: 2.7, 73-76: 2.3, 70-72: 2.0, 67-69: 1.7, 63-66: 1.3, 60-62: 1.0, 0-59: 0.0. No grades will be dropped."
   },
   {
-    "objectID": "Math125/syllabus.html#appendices",
-    "href": "Math125/syllabus.html#appendices",
-    "title": "Syllabus",
+    "objectID": "Math681/syllabus.html#appendices",
+    "href": "Math681/syllabus.html#appendices",
+    "title": "Syllabus – 681",
     "section": "Appendices",
-    "text": "Appendices\n\nAI Policy:\nStudents are encouraged to leverage AI tools, such as Jupyter with code completion features or chatbots for learning help, to enhance their understanding of mathematical concepts and streamline computational tasks. All interactions with AI systems are consultations with an external source, just like a book or another person. Copying the work of an AI system and submitting it as ones own, even with some changes, is a form of plagiarism. Calling on AI for solutions to assigned problems is cheating, for the same reason that hiring your Mom to do your homework is cheating.\n\n\nThinking Mathematically:\nThinking Mathematically courses build proficiency with fundamental tools of mathematics, such as arithmetic, algebra, geometry, functions, graphs, and statistics. They teach students precise quantitative logical reasoning and applications of mathematical problem-solving skills in abstract and real-world problems. They engage students in oral and written communication of mathematical ideas.\nMath 125 fulfills the Thinking Mathematically requirement of the Pathways Core Curriculum.\n\nThinking Mathematically Student Learning Outcomes:\nAt the conclusion of this course, students…\n\nUse the fundamental tools of mathematics, such as arithmetic, algebra, geometry, functions, graphs, and statistics. (Applying)\nApply precise, logical quantitative reasoning to mathematical hypotheses and conditions. (Applying)\nIdentify mathematical structure and pattern. (Applying)\nEngage in mathematical abstractions. (Applying)\nCommunicate effectively with oral and written skills appropriate to the discipline. (Understanding)\n\n\n\nMethods of Instruction in relation to SLOs:\nSLO #1: Students use boxplots, histograms, scatterplots, and other visualizations to analyze data sets. Students use arithmetic and algebra to construct confidence intervals and perform hypothesis testing. Students use functions and arithmetic to calculate descriptive statistics (mean, median, etc) of datasets. Students use statistics throughout the course.\nSLO #2: Students solve verbal problems distinguishing between correlation and causation on homework and exams. They verify conditions such as near-normality and sample size for hypothesis tests. They answer homework questions on experiment design which require that they attend to the experimental conditions necessary to draw various conclusions.\nSLO #3: Students learn to use basic data analysis techniques to discover patterns in data. The central limit theorem provides a recurring pattern which students use to solve problems involving p-values, including hypothesis testing, on homework and exams.\nSLO #4: Students use the empirical rule to produce confidence intervals for individual data points and later for parameters based on inference. To understand the general formulations of these rules, students must think of datasets generically and abstractly. On most homeworks, students use formulas for statistics, tests, and inferences which are expressed abstractly to perform concrete computations. The notions of statistic and parameter are themselves abstractions of data computations.\nSLO #5: Students discuss Statistics problems and their solutions in collaborative group work. They present solutions to their peers in the classroom. They also submit individual written work in the form of homework, quizzes, and exams.\nSLO’s #1-#5 will be assessed on various homework problems.\n\n\n\nAccommodative Services\nStudents who need accommodations to complete the requirements and expectations of this course because of a disability should contact the Office of Accommodative Services (136 Sisson Hall, (315) 267-2590, oas@potsdam.edu) or complete their request by filling out the New Student Accommodation Request Form. Please note that accommodations are generally not provided retroactively so timely contact with the Office of Accommodative Services is important. Students registered with the Office of Accommodative Services (OAS) should use the Accommodate Portal to submit their “Semester Request” (Letter of Accommodation) every semester. This letter informs faculty of potential course access and accommodations that might be necessary and reasonable. Further conversation with OAS, faculty, and the student may be warranted to ensure reasonable accommodations.\n\n\nCounseling Services\nAs a student at SUNY Potsdam, you may encounter various stressors that can affect your learning and academic performance. The College Counseling Center (CCC) offers a range of resources to support students in their mental health, social well-being, and overall academic experience. Students seeking to speak with a licensed mental health professional can access free services through the SUNY Potsdam Counseling Center. To connect with our services, please call 315-267-2330, email counseling@potsdam.edu, or visit us at Van Housen 131.\n\n\nDisruptive Student Policy\nIn order to maintain a fair, just, and safe College community environment, students are subject to SUNY Potsdam College regulations and are expected to abide by the Potsdam Pledge, the SUNY Potsdam Academic Catalog, and the Student Community Rights and Responsibilities (the Student Code of Conduct). Anyone who disrupts the academic learning environment (e.g., classrooms, labs, office hours, online platforms, emails, or other virtual communications) will be asked to leave for the day. Disruptions may include, but are not limited to, interrupting/speaking over other people, excessive use of foul or abusive or derogatory language, and repeated getting up/leaving/returning behavior. Students who exhibit aggressive/violent behavior in or out of classrooms will be asked to immediately leave. Disruptive students may be subject to disciplinary action, potentially including administrative removal from the course.\n\n\nFood Insecurity\nThe Prometheus Alumni Food Pantry is in 119 Barrington Student Union. The hours of operation can be found on their Facebook page or Get Involved. An Initial Intake is required 3 of all visitors. Additionally, if you are living off campus and in need of supplemental food assistance, you may be eligible for SNAP (Supplemental Nutrition Assistance Program) benefits. To determine eligibility and to enroll, you can visit mybenefits.ny.gov or call Maximizing Independent Living Choices (MILC) at 315-764-9442 x405. The campus has a registered dietician to assist you; you can contact them through the Student Health Services student portal on BearPaws. If you have questions on any of these services or need further assistance, reach out to the Bear CARE Program.\n\n\nLand Acknowledgement\nWe acknowledge with respect the Mohawk Nation, the Indigenous people on whose ancestral lands SUNY Potsdam now stands. We are reminded by our presence here that we have the duty to live in harmony with one another and with all of creation. We are deeply grateful to the families and communities who care for this beautiful place. Beginning with colonization and continuing for centuries the Haudenosaunee Peoples have been dispossessed of most of their ancestral lands by the actions of individuals and institutions. We acknowledge our responsibility to understand and respond to those actions and to commit to working together to honor our past and build our future with truth. For more information on Land Acknowledgements, see Land_Acknowledgement at illuminative.org\n\n\nSuccess Statement\nSuccess in this course depends heavily on your personal health and wellbeing. Recognize that stress is an expected part of the college experience, and it often can be compounded by unexpected setbacks or life changes outside the classroom. I strongly encourage you to reframe challenges as an unavoidable pathway to success. Reflect on your role in taking care of yourself throughout the term, before the demands of exams and projects reach their peak. Please feel free to reach out to me about any difficulty you may be having that may impact your performance in your courses or campus life as soon as it occurs and before it becomes too overwhelming. In addition, I strongly encourage you to contact the many other support services on campus that stand ready to assist you including the Counseling Center & the Case Manager, Student Health Services, Accommodative Services, and your academic advisor.\n\n\nStudent Support\nEvery student in this class is a valued individual. If you are struggling with issues outside of the classroom, please know that there are professionals both on and off campus who can assist you. If you need immediate assistance, please contact our campus Counseling Center (with free counseling) at (315) 267-2330 or visit their website. Links to other resources are provided below: • Title IX Coordinator, Van Housen Extension 392, (315) 267-2516, • Bias Incident Reporting • Center for Diversity, 223 Sisson Hall, (315) 267-2184 • University Police, Van Housen Extension, (315) 267-2222 (number for non-emergencies; for an emergency please dial 911) • Student Conduct and Community Standards, 208 Barrington Student Union, • Reachout (24-hour crisis hotline), (315) 265-2422 • Renewal House (for victims of domestic violence), SUNY Potsdam Campus Office: Van Housen Extension 390 (open Wednesdays, 9-5:00), (315) 379-9845 (24-hour crisis hotline), Renewalhouse_campus@Verizon.net • Career Services, Lougheed Learning Commons\nAnd please: if you see something, say something. If you see that someone that you care about is struggling, please encourage them to seek help. If they are unwilling to do so, Care Enough to Call has guidelines on whom to contact. Everyone has the responsibility of creating a college climate of compassion."
+    "text": "Appendices\n\nAI Policy:\nStudents are encouraged to leverage AI tools, such as Jupyter with code completion features or chatbots for learning help, to enhance their understanding of mathematical concepts and streamline computational tasks. All interactions with AI systems are consultations with an external source, just like a book or another person. Copying the work of an AI system and submitting it as ones own, even with some changes, is a form of plagiarism. Calling on AI for solutions to assigned problems is cheating, for the same reason that hiring your Mom to do your homework is cheating.\n\n\nAccommodative Services\nStudents who need accommodations to complete the requirements and expectations of this course because of a disability should contact the Office of Accommodative Services (136 Sisson Hall, (315) 267-2590, oas@potsdam.edu) or complete their request by filling out the New Student Accommodation Request Form. Please note that accommodations are generally not provided retroactively so timely contact with the Office of Accommodative Services is important. Students registered with the Office of Accommodative Services (OAS) should use the Accommodate Portal to submit their “Semester Request” (Letter of Accommodation) every semester. This letter informs faculty of potential course access and accommodations that might be necessary and reasonable. Further conversation with OAS, faculty, and the student may be warranted to ensure reasonable accommodations.\n\n\nCounseling Services\nAs a student at SUNY Potsdam, you may encounter various stressors that can affect your learning and academic performance. The College Counseling Center (CCC) offers a range of resources to support students in their mental health, social well-being, and overall academic experience. Students seeking to speak with a licensed mental health professional can access free services through the SUNY Potsdam Counseling Center. To connect with our services, please call 315-267-2330, email counseling@potsdam.edu, or visit us at Van Housen 131.\n\n\nDisruptive Student Policy\nIn order to maintain a fair, just, and safe College community environment, students are subject to SUNY Potsdam College regulations and are expected to abide by the Potsdam Pledge, the SUNY Potsdam Academic Catalog, and the Student Community Rights and Responsibilities (the Student Code of Conduct). Anyone who disrupts the academic learning environment (e.g., classrooms, labs, office hours, online platforms, emails, or other virtual communications) will be asked to leave for the day. Disruptions may include, but are not limited to, interrupting/speaking over other people, excessive use of foul or abusive or derogatory language, and repeated getting up/leaving/returning behavior. Students who exhibit aggressive/violent behavior in or out of classrooms will be asked to immediately leave. Disruptive students may be subject to disciplinary action, potentially including administrative removal from the course.\n\n\nFood Insecurity\nThe Prometheus Alumni Food Pantry is in 119 Barrington Student Union. The hours of operation can be found on their Facebook page or Get Involved. An Initial Intake is required 3 of all visitors. Additionally, if you are living off campus and in need of supplemental food assistance, you may be eligible for SNAP (Supplemental Nutrition Assistance Program) benefits. To determine eligibility and to enroll, you can visit mybenefits.ny.gov or call Maximizing Independent Living Choices (MILC) at 315-764-9442 x405. The campus has a registered dietician to assist you; you can contact them through the Student Health Services student portal on BearPaws. If you have questions on any of these services or need further assistance, reach out to the Bear CARE Program.\n\n\nLand Acknowledgement\nWe acknowledge with respect the Mohawk Nation, the Indigenous people on whose ancestral lands SUNY Potsdam now stands. We are reminded by our presence here that we have the duty to live in harmony with one another and with all of creation. We are deeply grateful to the families and communities who care for this beautiful place. Beginning with colonization and continuing for centuries the Haudenosaunee Peoples have been dispossessed of most of their ancestral lands by the actions of individuals and institutions. We acknowledge our responsibility to understand and respond to those actions and to commit to working together to honor our past and build our future with truth. For more information on Land Acknowledgements, see Land_Acknowledgement at illuminative.org\n\n\nSuccess Statement\nSuccess in this course depends heavily on your personal health and wellbeing. Recognize that stress is an expected part of the college experience, and it often can be compounded by unexpected setbacks or life changes outside the classroom. I strongly encourage you to reframe challenges as an unavoidable pathway to success. Reflect on your role in taking care of yourself throughout the term, before the demands of exams and projects reach their peak. Please feel free to reach out to me about any difficulty you may be having that may impact your performance in your courses or campus life as soon as it occurs and before it becomes too overwhelming. In addition, I strongly encourage you to contact the many other support services on campus that stand ready to assist you including the Counseling Center & the Case Manager, Student Health Services, Accommodative Services, and your academic advisor.\n\n\nStudent Support\nEvery student in this class is a valued individual. If you are struggling with issues outside of the classroom, please know that there are professionals both on and off campus who can assist you. If you need immediate assistance, please contact our campus Counseling Center (with free counseling) at (315) 267-2330 or visit their website. Links to other resources are provided below: • Title IX Coordinator, Van Housen Extension 392, (315) 267-2516, • Bias Incident Reporting • Center for Diversity, 223 Sisson Hall, (315) 267-2184 • University Police, Van Housen Extension, (315) 267-2222 (number for non-emergencies; for an emergency please dial 911) • Student Conduct and Community Standards, 208 Barrington Student Union, • Reachout (24-hour crisis hotline), (315) 265-2422 • Renewal House (for victims of domestic violence), SUNY Potsdam Campus Office: Van Housen Extension 390 (open Wednesdays, 9-5:00), (315) 379-9845 (24-hour crisis hotline), Renewalhouse_campus@Verizon.net • Career Services, Lougheed Learning Commons\nAnd please: if you see something, say something. If you see that someone that you care about is struggling, please encourage them to seek help. If they are unwilling to do so, Care Enough to Call has guidelines on whom to contact. Everyone has the responsibility of creating a college climate of compassion."
   }
 ]

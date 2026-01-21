@@ -1,5 +1,5 @@
 ---
-title: "Syllabus"
+title: "Syllabus -- 125"
 description: "Syllabus and course policies for Jason Howald's Math 125"
 format:
   html:
@@ -9,6 +9,8 @@ format:
 ---
 
 {{< include ../_syllabus_objects/instructor.qmd >}}
+
+{{< include ../_syllabus_objects/officehours.qmd >}}
 
 ## Course Information
 Credit Hours: 3

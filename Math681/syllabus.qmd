@@ -1,0 +1,54 @@
+---
+title: "Syllabus -- 681"
+description: "Syllabus and course policies for Jason Howald's Math 681"
+format:
+  html:
+    toc: true
+    html-math-method: mathjax
+    theme: cosmo
+---
+
+{{< include ../_syllabus_objects/instructor.qmd >}}
+
+{{< include ../_syllabus_objects/officehours.qmd >}}
+
+## Course Information
+Credit Hours: 3
+
+Schedule: Monday and Wednesday, 2:30-3:45
+
+Prerequisites: Formally, 451 and permission. Informally, 671 and 691 are expected.
+
+Required textbooks/materials: Instructor notes provided. You may also find it useful to read Functions of One Complex Variable I, 2nd ed. by Conway (optional). 
+
+Course Description:  This is a first course in complex analysis. We will cover the complex number system, metric topology, analytic functions, power series, path integration, and Cauchy’s residue theorem.
+
+<!-- ## Student Learning Objectives -->
+
+## Grading 
+
+We will have two mid-semester exams during the semester and a final exam at the end.
+
+
+Homework: Most homework will be traditional individual work. You may prefer to write it out on paper, but it will be submitted online on the CMS. Typed solutions are preferred but not required. Although a few homework problems are calculations, most are proofs. For all homework, you may discuss with others but you may not copy.
+Grade weighting:  Homework 50%, Midterm Exams 15% and 15%, Final Exam 20%. 
+Final grades will be assigned as follows: 90-100: 4.0, 87-89: 3.7, 83-86: 3.3, 80-82: 3.0, 77-79: 2.7, 73-76: 2.3, 70-72: 2.0, 67-69: 1.7, 63-66: 1.3, 60-62: 1.0, 0-59: 0.0. No grades will be dropped.
+
+## Appendices
+
+{{< include ../_syllabus_objects/AI.qmd >}}
+
+{{< include ../_syllabus_objects/oas.qmd >}}
+
+{{< include ../_syllabus_objects/counseling.qmd >}}
+
+{{< include ../_syllabus_objects/disruptive.qmd >}}
+
+{{< include ../_syllabus_objects/food.qmd >}}
+
+{{< include ../_syllabus_objects/land.qmd >}}
+
+{{< include ../_syllabus_objects/success.qmd >}}
+
+{{< include ../_syllabus_objects/support.qmd >}}
+
