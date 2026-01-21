@@ -97,7 +97,7 @@ plt.show()
 
 
 ## Scatterplots and correlations
-A **scatterplot** is 2D graph depicting each data case as a point positioned on an $x$-axis according to one variable and on the $y$-axis according to another. Like most graphs, they primarily target sighted users. 
+A **scatterplot** is a 2D graph depicting each data case as a point positioned on an $x$-axis according to one variable and on the $y$-axis according to another. Like most graphs, they primarily target sighted users. 
 
 ```{python}
 #| label: fig-age-height-correlation
@@ -129,11 +129,11 @@ Sir Ronald Fisher, British statistician and geneticist, introduced his now famou
 
 ::: {layout-ncol="3"}
 
-![*Iris setosa* [Radomil, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)](Kosaciec_szczecinkowaty_Iris_setosa.jpg){fig-alt="Close up of a purple Iris setosa flower with small, pointed petals."}
+![*Iris setosa* [Radomil, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)](images/Kosaciec_szczecinkowaty_Iris_setosa.jpg){fig-alt="Close up of a purple Iris setosa flower with small, pointed petals."}
 
-![*Iris versicolor* [D. Langlois, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg)](Iris_versicolor_3.jpg){fig-alt="Close up of a blue-violet Iris versicolor with prominent yellow markings on the petals."}
+![*Iris versicolor* [D. Langlois, CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg)](images/Iris_versicolor_3.jpg){fig-alt="Close up of a blue-violet Iris versicolor with prominent yellow markings on the petals."}
 
-![*Iris virginica* [Frank Mayfield, CC BY-SA 2.0](https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg)](Iris_virginica.jpg){fig-alt="A bright purple Iris virginica flower in full bloom with slender petals."}
+![*Iris virginica* [Frank Mayfield, CC BY-SA 2.0](https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg)](images/Iris_virginica.jpg){fig-alt="A bright purple Iris virginica flower in full bloom with slender petals."}
 
 :::
 

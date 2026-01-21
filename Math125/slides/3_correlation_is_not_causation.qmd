@@ -1,0 +1,87 @@
+---
+title: "3. Correlation is not Causation"
+subtitle: "What to make of a statistical link?"
+description: "Correlation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables."
+---
+
+
+## Preparatory Work
+Read the [Wikipedia article on this topic](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation). Try to understand the comic on the next slide.
+
+
+![Source: Randall Munroe (XKCD). Used with permission.](images/correlation.png){fig-alt="Comic with three panels. A man is talking to a woman.
+Man: I used to think correlation implied causation.
+Man: Then I took a statistics class.  Now I don&#39;t.
+Woman: Sounds like the class helped.
+Man: Well, maybe."}
+
+## Three explanations for correlation (at least!) {.activity}
+
+:::: {.columns style="display: flex; gap: 50px;"}
+
+::: {.column width="35%"}
+
+For each scenario, which is more likely? Why?
+
+* A influences B (directly or indirectly)
+
+* B influences A (directly or indirectly)
+
+* Some **lurking** variable is driving both A and B.
+
+:::
+
+::: {.column width="60%"}
+
+1. Daily ice cream sales and gasoline sales are significantly correlated.
+2. Social media use and depression are correlated.
+3. In school children, finger length and reading ability are strongly correlated.
+4. Both caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.
+5. Young children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life.
+
+:::
+
+::::
+
+## Start with an open mind. {.activity}
+
+Cultivate creative skepticism and critical thinking. 
+
+Athletes with high PPG (points per game) have higher GPA (grade point average). 
+
+Give three credible explanations based on the three forms of the previous slide.
+Brainstorming all three explanation types!
+
+
+## Lurking ("Confounding") variables
+
+Any variable, often unmeasured, that drives a correlation between two other variables.
+When discovered, lurking variables tend to explain away apparent relationships 
+between other variables.
+
+* Coffee consumption and lung cancer are positively correlated. (Really!) We should not 
+conclude that coffee causes lung cancer. There may be lurking variables which we have not 
+considered. One of the hallmarks of critical thinking is **not jumping to conclusions.**
+
+
+## So... withhold judgment forever?
+
+* Attendance rate is correlated to class grade.
+* Laws against trans people are associated to violence against trans people.
+* Within certain banks, loan acceptance is associated to applicant race.
+* Cigarette smoking is correlated to lung cancer.
+
+The idea of confounding variables can become a hater's new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!
+
+## In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?
+
+Yikes. I'm no oracle! These simple rules have served me well.
+
+1. Study history. What's past is prologue.
+2. The truth is often complicated. Get comfortable with nuance and be suspicious of those with none.
+3. “When someone shows you who they are, believe them the first time.” –Maya Angelou
+4. If the Nazis are on your side, you’re on the wrong side.
+
+## Individual Homework
+
+Webwork assignment “Correlation is not causation.”

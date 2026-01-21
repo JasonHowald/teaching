@@ -134,7 +134,6 @@ df.head()
 df.describe()
 df.corr(numeric_only=True)
 ```
-* Use embedded menus and maybe AI-gen code.
 
 
 ## Data into Jupyter -- practice {.activity}

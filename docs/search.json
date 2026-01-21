@@ -249,7 +249,7 @@
     "href": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-2",
     "title": "2. Association and Correlation",
     "section": "Scatterplots and correlations",
-    "text": "Scatterplots and correlations\nA scatterplot is 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 3: Scatterplot (age vs height) showing weak negative correlation (\\(\\rho = -0.30\\))"
+    "text": "Scatterplots and correlations\nA scatterplot is a 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 3: Scatterplot (age vs height) showing weak negative correlation (\\(\\rho = -0.30\\))"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#fishers-irises",
@@ -312,7 +312,7 @@
     "href": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
     "title": "1. The Shape of Data",
     "section": "Fetching and viewing data with Jupyter – illustration",
-    "text": "Fetching and viewing data with Jupyter – illustration\n\nMake a Jupyter notebook using URL colab.new\nFind OpenIntro Earthquake data CSV link on openintro.org/data\nFetch data in a code cell:\n\n\n!wget [url to .csv file]\n\n\nImport pandas:\n\n\nimport pandas as pd\n\n\nRead and display data:\n\n\ndf = pd.read_csv(\"earthquakes.csv\")\ndf.head()\n\n\nAnalysis:\n\n\ndf.describe()\ndf.corr(numeric_only=True)\n\n\nUse embedded menus and maybe AI-gen code."
+    "text": "Fetching and viewing data with Jupyter – illustration\n\nMake a Jupyter notebook using URL colab.new\nFind OpenIntro Earthquake data CSV link on openintro.org/data\nFetch data in a code cell:\n\n\n!wget [url to .csv file]\n\n\nImport pandas:\n\n\nimport pandas as pd\n\n\nRead and display data:\n\n\ndf = pd.read_csv(\"earthquakes.csv\")\ndf.head()\n\n\nAnalysis:\n\n\ndf.describe()\ndf.corr(numeric_only=True)"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
@@ -340,7 +340,56 @@
     "href": "Math125/index.html",
     "title": "Math 125",
     "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "title": "3. Correlation is not Causation",
+    "section": "Preparatory Work",
+    "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "title": "3. Correlation is not Causation",
+    "section": "Three explanations for correlation (at least!)",
+    "text": "Three explanations for correlation (at least!)\n\n\nFor each scenario, which is more likely? Why?\n\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n\n\n\nDaily ice cream sales and gasoline sales are significantly correlated.\nSocial media use and depression are correlated.\nIn school children, finger length and reading ability are strongly correlated.\nBoth caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.\nYoung children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "title": "3. Correlation is not Causation",
+    "section": "Start with an open mind.",
+    "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "title": "3. Correlation is not Causation",
+    "section": "Lurking (“Confounding”) variables",
+    "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "title": "3. Correlation is not Causation",
+    "section": "So… withhold judgment forever?",
+    "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "title": "3. Correlation is not Causation",
+    "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
+    "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "title": "3. Correlation is not Causation",
+    "section": "Individual Homework",
+    "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-professor",
