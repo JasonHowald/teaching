@@ -17,7 +17,7 @@ description: "Correlation, correlation coefficients, and scatter plots of data."
 * Correlation Coefficient $\rho$: A numerical measurement of correlation. The output of df.corr()
 
 
-## Using vocabulary / testing understanding
+## Using vocabulary / testing understanding {.activity}
 Based on your best understanding or best guess…
 
 1. Among students, weekly study time and GPA are likely _____
@@ -187,7 +187,7 @@ plt.show()
 
 ::::
 
-## Types of statistical association
+## Types of statistical association {.activity}
 
 Matt says “Education level and political party association are positively associated.” Explain why Matt must be wrong, regardless of politics.
 

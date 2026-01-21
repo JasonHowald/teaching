@@ -112,25 +112,25 @@
     "text": "The humble .csv file\n\n\nCSV (Comma Separated Value)\n\nText-based\nSimple!\nCompatible\nUgly – bad for eyeballs, bad for screenreaders, unaligned\nPerfect for export/share/import.\n\n\nExample data in .csv format:\nYear,month,day,richter,area,region,deaths 1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000 1902,December,16,6.4,Uzbekistan,Russia,4700 1903,April,28,7,Malazgirt,Turkey,3500 1903,May,28,5.8,Gole,Turkey,1000"
   },
   {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter",
-    "href": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter",
+    "objectID": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
+    "href": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
     "title": "1. The Shape of Data",
-    "section": "Fetching and viewing data with Jupyter",
-    "text": "Fetching and viewing data with Jupyter\n\nMake a Jupyter notebook using URL colab.new\nFind OpenIntro Earthquake data CSV link on openintro.org/data\nFetch data in a code cell:\n\n\n!wget [url to .csv file]\n\n\nImport pandas:\n\n\nimport pandas as pd\n\n\nRead and display data:\n\n\ndf = pd.read_csv(\"earthquakes.csv\")\ndf.head()\n\n\nAnalysis:\n\n\ndf.describe()\ndf.corr(numeric_only=True)\n\n\nUse embedded menus and maybe AI-gen code."
+    "section": "Fetching and viewing data with Jupyter – illustration",
+    "text": "Fetching and viewing data with Jupyter – illustration\n\nMake a Jupyter notebook using URL colab.new\nFind OpenIntro Earthquake data CSV link on openintro.org/data\nFetch data in a code cell:\n\n\n!wget [url to .csv file]\n\n\nImport pandas:\n\n\nimport pandas as pd\n\n\nRead and display data:\n\n\ndf = pd.read_csv(\"earthquakes.csv\")\ndf.head()\n\n\nAnalysis:\n\n\ndf.describe()\ndf.corr(numeric_only=True)\n\n\nUse embedded menus and maybe AI-gen code."
   },
   {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#team-practice-data-into-jupyter",
-    "href": "Math125/slides/1_the_shape_of_data.html#team-practice-data-into-jupyter",
+    "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
+    "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
     "title": "1. The Shape of Data",
-    "section": "Team practice – data into Jupyter",
-    "text": "Team practice – data into Jupyter\n\nFind the openintro data repository\nLocate “acs12” data source. Copy link location to the .csv format.\nCreate a new jupyter notebook on colab, using URL shortcut “colab.new.”\nIf you’re blind, change the Colab option in Tools, Settings, Editor to turn off the option called “Show context-powered code completions.”\nName your notebook.\nUse wget to download the dataset at that url.\nUse pandas to read the dataframe.\nDisplay the dataframe.\nUse describe() and corr() for analysis."
+    "section": "Data into Jupyter – practice",
+    "text": "Data into Jupyter – practice\n\nFind the openintro data repository\nLocate “acs12” data source. Copy link location to the .csv format.\nCreate a new jupyter notebook on colab, using URL shortcut “colab.new.”\nIf you’re blind, change the Colab option in Tools, Settings, Editor to turn off the option called “Show context-powered code completions.”\nName your notebook.\nUse wget to download the dataset at that url.\nUse pandas to read the dataframe.\nDisplay the dataframe.\nUse describe() and corr() for analysis."
   },
   {
-    "objectID": "Math125/slides/1_the_shape_of_data.html#practice-data-into-jupyter-summary",
-    "href": "Math125/slides/1_the_shape_of_data.html#practice-data-into-jupyter-summary",
+    "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
+    "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
     "title": "1. The Shape of Data",
-    "section": "Practice – data into Jupyter – summary",
-    "text": "Practice – data into Jupyter – summary\n\n!wget https://www.openintro.org/data/csv/acs12.csv\nimport pandas as pd\ndf = pd.read_csv(\"acs12.csv\")\ndf.head()\ndf.describe()\ndf.corr(numeric_only=True)"
+    "section": "Data into Jupyter – summary",
+    "text": "Data into Jupyter – summary\n\n!wget https://www.openintro.org/data/csv/acs12.csv\nimport pandas as pd\ndf = pd.read_csv(\"acs12.csv\")\ndf.head()\ndf.describe()\ndf.corr(numeric_only=True)"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#individually-homework",

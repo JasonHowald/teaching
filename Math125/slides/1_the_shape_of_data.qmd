@@ -9,7 +9,7 @@ Read: OpenIntro Statistics Section 1.1 and 1.2.1, 1.2.2
  
 Vocabulary: Data matrix (=dataframe), summary statistic, case, variable, numerical (=quantitative) variable, categorical variable, discrete vs. continuous.
 
-## Examples using data vocabulary
+## Examples using data vocabulary {.activity}
 
 :::: {.columns}
 
@@ -45,7 +45,7 @@ table = GT(df.head(8))
 
 ::::
 
-## Examples using data vocabulary
+## Examples using data vocabulary {.activity}
 
 :::: {.columns}
 
@@ -104,7 +104,7 @@ Year,month,day,richter,area,region,deaths
 :::
 ::::
 
-## Fetching and viewing data with Jupyter
+## Fetching and viewing data with Jupyter -- illustration
 
 * Make a Jupyter notebook using URL [colab.new](https://colab.new)
 * Find OpenIntro Earthquake data CSV link on [openintro.org/data](https://www.openintro.org/data/)
@@ -137,7 +137,7 @@ df.corr(numeric_only=True)
 * Use embedded menus and maybe AI-gen code.
 
 
-## Team practice – data into Jupyter
+## Data into Jupyter -- practice {.activity}
 1. Find the openintro data repository
 2. Locate “acs12” data source. Copy link location to the .csv format.
 3. Create a new jupyter notebook on colab, using URL shortcut “colab.new.”
@@ -148,7 +148,7 @@ df.corr(numeric_only=True)
 8. Display the dataframe.
 9. Use describe() and corr() for analysis.
 
-## Practice – data into Jupyter – summary
+## Data into Jupyter – summary
 ```{python}
 #| eval: false
 #| echo: true
