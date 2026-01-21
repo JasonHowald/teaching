@@ -1,0 +1,12 @@
+---
+title: "Math 672"
+description: "Abstract Algebra II"
+listing:
+  contents: 
+    - "syllabus.qmd"
+    - "lectures.qmd"
+  type: table
+  fields: [title, description]
+---
+
+Welcome to Math 672 with Professor Jason Howald

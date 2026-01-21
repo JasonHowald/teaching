@@ -1,0 +1,12 @@
+---
+title: "Math 340"
+description: "Set Theory and Logic"
+listing:
+  contents: 
+    - "syllabus.qmd"
+    - "lectures.qmd"
+  type: table
+  fields: [title, description]
+---
+
+Welcome to Math 340 with Professor Jason Howald

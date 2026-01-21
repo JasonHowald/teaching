@@ -1,0 +1,15 @@
+---
+title: "Math 681"
+description: "Complex Analysis"
+listing:
+  contents: 
+    - "syllabus.qmd"
+    - path: "ComplexAnalysisHowaldLectures.pdf"
+      title: "Complex Analysis Notes by Howald (PDF)"
+      description: "A comprehensive PDF containing all lecture materials for the semester."
+      categories: [Resource, PDF]
+  type: table
+  fields: [title, description]
+---
+
+Welcome to Math 681 with Professor Jason Howald

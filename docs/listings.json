@@ -1,5 +1,14 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/Math125/index.html",
+      "/Math340/index.html",
+      "/Math672/index.html",
+      "/Math681/index.html"
+    ]
+  },
+  {
     "listing": "/Math125/index.html",
     "items": [
       "/Math125/slides/0_welcome.html",
@@ -9,9 +18,21 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/Math672/index.html",
     "items": [
-      "/Math125/index.html"
+      "/Math672/syllabus.html"
+    ]
+  },
+  {
+    "listing": "/Math681/index.html",
+    "items": [
+      "/Math681/syllabus.html"
+    ]
+  },
+  {
+    "listing": "/Math340/index.html",
+    "items": [
+      "/Math340/syllabus.html"
     ]
   }
 ]
