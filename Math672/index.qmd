@@ -1,6 +1,7 @@
 ---
 title: "Math 672"
 description: "Abstract Algebra II"
+format: html
 listing:
   contents: 
     - "syllabus.qmd"

@@ -1,5 +1,6 @@
 ---
 title: "Professor Howald's Teaching Portal"
+format: html
 listing:
   contents: 
     - path: Math125/index.qmd

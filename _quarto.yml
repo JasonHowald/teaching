@@ -24,3 +24,27 @@ jupyter:
 
 execute:
   freeze: auto
+
+#Everything render to simple html unless I say otherwise (for slides)
+default-format: html
+
+# Formats available and styles
+format:
+  html:
+    theme: cosmo  # Tasteful, professional theme for webpages
+    toc: true
+    number-sections: true
+    html-math-method: mathjax
+  
+  # SLIDES configuration
+  revealjs:
+#    controls: true
+    output-ext: html          
+    embed-resources: true     # Bakes in images/CSS
+    html-math-method: mathjax # Best for VoiceOver Rotor
+    navigation-mode: linear   # Simple path for screen readers
+    theme: [sky, custom.scss]             
+    slide-number: true        # Helpful for students to reference specific parts
+    width: 1312  # 1050 / 0.8. Effectively scales all text down 80%
+    height: 875  # 700 / 0.8
+    margin: 0.1

@@ -1,10 +1,12 @@
 ---
 title: "Math 340"
 description: "Set Theory and Logic"
+format: html
+
 listing:
   contents: 
     - "syllabus.qmd"
-    - "lectures.qmd"
+    - "Structure_of_Argument.qmd"
   type: table
   fields: [title, description]
 ---

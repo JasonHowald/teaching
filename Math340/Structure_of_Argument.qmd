@@ -1,0 +1,702 @@
+---
+title: "Structure of Argument"
+description: "Lecture notes for the semester"
+toc: true
+toc-depth: 3
+toc-expand: 1    # Shows the main sections, but hides sub-sections until clicked
+number-sections: true
+format:
+  html:
+    smooth-scroll: true # Makes jumping to sections feel less jarring
+---
+
+# Introduction and history
+
+How do you convince yourself that something is true? How do you prove a point? After cultivating a healthy skepticism, how do you find belief in facts?  **Reasoning is Believing.**
+
+## Historical Approach -- Aristotle's Syllogisms
+
+Aristotle introduced syllogisms for natural deduction in propositional logic. Here's an example.
+
+> All cats are mammals. Felix is a cat. Therefore Felix is a mammal.
+
+1. Is the logic correct as it stands?
+2. Change the second sentence to assert that Felix is not a cat. Is the syllogism now correct? Can it be corrected?
+3. Instead, change the word "mammal" to "reptile" throughout. Is the logic correct?
+4. Some "cats" may be jazz musicians. Some "cats" may be construction vehicles. Does this affect the logic of the argument?
+
+**Lessons to Understand**
+
+1. Aristotelean logic and all higher logic separates syntax (form, language) from semantics (meaning and truth).
+
+2. Correctness of form can be seen in the syntax. Some forms are correct (All A are B, x is an A $\vdash$ x is B), while other forms (All A are B, x is B, $\vdash$ x is A) are fallacies. Logical arguments which are correct in form are called **sound**.
+
+3. Sound logic from false premises is still wrong. To be right, you must be sure of your premises.
+
+## The Syntax-Semantics Distinction -- practice
+
+> Some cats can run 200 km per hour. In the song Mr. Pinstripe Suit by Big Bad Voodoo Daddy, Mr. Pinstripe Suit is a cat. Therefore Mr. Pinstripe Suit can run 200 km per hour.
+
+There's a lot wrong with this logic.
+
+1. The conclusion is false. Is this a syntax or semantics problem?
+
+2. The premise (200 km/h) is false. It should
+be 100 km/h. Is this a syntax or semantics problem?
+
+3. The word "cat" is being used with two meanings. This is called equivocation. Is it a syntactic or semantic problem?
+
+4. The argument *form* is wrong, regardless of the meaning of its words. Why? Is this a syntax or semantics problem?
+
+# Natural Deduction -- Structure of Valid Argument
+
+## The language of logic
+
+The language of modern logic combines ...
+
+1. **Basic Assertions** which can be true or false
+  - $3 \in \{3, 4, 5\}$ (true)
+  - $3 \in (3,6)$ (false)
+  - $y = x^2$ (depends on x and y)
+  - $n>5$ (depends on n)
+  - $P$, $Q$, $R$ (abstract placeholders for sentences)
+2. **Connectives**
+  - And $\land$
+    - as in $P $ and $ Q$
+    - as in $3 \in (3, 6) \land  x< y $
+  - Or $\lor$
+    - as in $P \lor Q$
+    - as in $3 \in (3, 6)$ or $ x< y $
+  - Not $\neg$
+    - as in $ \neg x =y $, usually written $x \neq y$
+    - as in $\neg P$
+  - Implies $\to$ (aka "if ... then ... ")
+    - as in "If $x > 4$ then $x>0$." (sounds true!)
+    - as in "If $n$ is prime then $n$ is odd" (sounds false.)
+3. **Quantifiers**
+  - For all $\forall$. Makes a **universal statement**.
+  - There exists $\exists$. Makes an **existential statement**.
+  - "The" or "The only" $\iota$ (but not in this course)
+
+4. **Logical Constants**
+  - The value "True": $\top$ or $T$
+  - The value "False": $\bot$ or $F$
+  - Not to be misused "$P = \top$" or "$P = \bot$". To assert that $P$ is true or false, just assert
+  "$P$" or "$\neg P$".
+
+## Semantics and Proof Theory are happily married
+
+Each operator -- "and", "or", "if...then", "not", and others (xor, xnor, nand, etc) needs to be clarified once and for all for its meaning. In this section we discuss two kinds of "meaning" that we attribute to logical operators
+
+### Truth-value meaning
+Based on the truth or falsity of $P$ and of $Q$, when will the logical combination "$P \to Q$" (or other operators) be true?  The answer to this question, including each possibility for $P$ and $Q$, is the **truth table** for the operator. Knowing the various possibilities, depending on $x$ for whether $P(x)$ is true, should we say that $\forall x \enspace P(x)$ is true? 
+
+### Proof-theoretical meaning
+What is the correct argument form to justify a statement like $P \to Q$ (or $\forall x \enspace P(X)$, etc)? Conversely $P \to Q$ (or $P \land Q$ etc.) is given as a premise or intermediate conclusion, what sorts of argument structures does it support? The answers to these questions form the proof theoretical interpretation of the operation.
+
+In principle, either single approach is enough to determine what the operators mean, but a student needs to master both perspectives.
+
+## Understanding "and"
+
+### In a Truth Table
+
+
+The first way to explain "and" is to say generically exactly when "$P$ and $Q$" would be true. This is done using a truth table. The truth table records that $P \land Q$ gets to be True only when both parts are true.
+
+
+| P | Q | P and Q |
+|---|---|:-----:|
+| T | T | T |
+| T | F | F |
+| F | T | F |
+| F | F | F |
+
+
+### In Proof Theory
+
+
+
+Another way to explain "and" is to prescribe how "$P \land Q$" functions as an input or an output of a logical argument. In other words, what does it take to prove "$P $ and $Q$", and how could it used as a premise in a proof?
+
+**And-introduction**
+To justify "$P$ and $Q$," simply justify $P$, then justify $Q$.  Once both are justified, "$P$ and $Q$" may be deduced:
+$$\frac{P , Q}{\therefore P \land Q}$$
+
+**And-elimination**
+In reverse, if "$P \land Q$" is known, one may conclude the parts separately.
+$$\frac{P \land Q}{\therefore P} \hspace{1in} \frac{P \land Q}{\therefore Q}$$
+
+
+
+### Notes
+
+
+**Note for the philosophers:**
+
+Notice that an informal "and" is used in the descriptions of the interpretation of the symbol "$\land$". Foundational logic cannot build logical meaning from nothing. There is always a pre-theoretical, more intuitive logic operating before the theory can develop. Logical foundational work always appears circular or observational rather than cleanly creative. You can waste a lot of effort trying to see around this limitation. [I speak from experience. -jah]
+
+**Note for perceptive and intuitive people**
+
+Normally, asserting "A and B" together also connotes a relatedness of ideas. This is why "It's snowing and I'm cold" sounds better than "It's snowing and I'm hungry." Strictly logically speaking, no relationship between $P$ and $Q$ is required or implied, only that both $P$ and $Q$ are true.
+
+
+## Understanding "if ... then"
+
+### Activity: Decide whether each implication sounds true or false. Explain why.
+
+Read each statement. Decide whether it is true or false. Explain your decision.
+
+1. If it's raining, then I'm carrying an open umbrella.
+2. If I'm carrying an open umbrella, then it's raining,
+3. If Dr. Howald's favorite number is divisible by $4$, then it's even.
+4. It's Friday if you want it to be!
+5. If $1+1=2$ then cats are mammals.
+6. If $x$ is an element of the empty set, then $x$ is negative.
+7. If $x \geq 0$ then $x$ is not an element of the empty set.
+
+### In a Truth Table
+
+The truth table for "implies" is challenging and should be established by public debate, not by fiat. This is the result of our classroom discussion. It is the standard interpretation of $P \to Q$.
+
+| $P$ | $Q$ | If $P$ then $Q$ |
+|------|-----|:---------:|
+| T | T | T |
+| T | F | F |
+| F | T | T |
+| F | F | T |
+
+### In Proof Theory
+
+
+Suppose you want to justify the statement "If $P$ then $Q$." The most natural approach is to assume $P$, then deduce $Q$. This is often called **direct proof:**
+
+**Implication-introduction ("direct proof")**
+If, having assumed $P$, you can prove $Q$, you may conclude "if $P$ then $Q$":
+$$\frac{\begin{matrix}[\text{Assume } P]\\ Q\end{matrix}}{\therefore P \to Q}$$
+
+Notice how strange such a proof is: $P$ is not known true, and the act of assuming $P$ is not warranted by any premises or evidence. The proof from the assumption of $P$ to the conclusion of $Q$ is provisional, hypothetical, a house of cards. But the conclusion $P \to Q$ is known factually and absolutely. Sometimes we say that the assumption of $P$ has been "discharged" by this step, placing the proof on a solid footing.
+
+An alternative is to argue that if $Q$ is *not* true, then neither is $P$. This is called **proof by contrapositive**. It is based on the fact that "$P \to Q$" and "$\neg Q \to \neg P$" are interchangeable.
+
+**Implication-introduction ("proof by contrapositive")**
+If, having assumed not $Q$, you prove not $P$, you may conclude "if $P$ then $Q$":
+$$\frac{\begin{matrix}[\text{Assume } \neg Q]\\ \neg P\end{matrix}}{\therefore P \to Q}$$
+
+As before, most of the argument depends unsteadily on an unproven assumption $(\neg Q)$, but the final step discharges the assumption and results in something valid and certain.
+
+Next we need to observe how an implication $P \to Q$ could be used as a premise:
+
+**Implicaton-elimination ("Modus Ponens")**
+Knowing both $P$ and $P \to Q$, you may conclude $Q$.
+
+$$\frac{P, P \to Q}{\therefore Q}$$
+
+The ability to conclude $Q$, given $P$, is the essential meaning of "$P \to Q$" after all!
+
+**Implicaton-elimination ("Modus Tollens")**
+Knowing $P \to Q$, if $Q$ is false, then $P$ must be false.
+
+$$\frac{\neg Q, P \to Q}{\therefore \neg P}$$
+
+Again this is based on swapping "If $P$ then $Q$" with "If not $Q$ then not $P$", which is the same.
+
+**Example**
+
+We will prove that if a number is divisible by $4$, then it is even.
+
+**proof:** Let $x$ be a number. Assume that $x$ is divisible by $4$. Then $x=4n$ for some other integer $n$. Then $x = 2*(2n)$. Since $x$ is the double of an integer (namely $2n$), $x$ is even.
+
+**Discussion:**
+- The line "Let $x$ be a number" is a way of making a argument about all numbers by using a generic singular number $x$. This is sometimes called an "arbitrary particular." In natural English, this is often accomplished with the pronoun "one" representing an arbitrary particular person: "One should mind one's manners". This step introduces a brief context in which "$x$" represents one fixed but unspecified thing. Any statements about $x$ occurring in this context refer to the same $x$.
+
+- The assumption is made in the second sentence. Often it could be combined with the first: "Let $x$ be a number divisible by $4$." Technically, the introduction of $x$ and the assumption about it are two distinct logical acts.
+
+- We know a lot we didn't say about even numbers, but we used only the most basic, direct interpretation of being even -- being equal to twice some integer. This prevents confusion and streamlines the proof. Because every step in a logical proof is asserted with 100% certainty, we don't need redundant reasoning. We want it simple and clean.
+
+- The conclusion ($Q$) is the last sentence. It does not appear out of nowhere but is deduced via sound argument.
+
+- The implication-introduction needed is left unsaid, merely implied by the argument. This is extremely common. Among regular humans, nobody says "Now we do implication introduction..." or "by the principle of direct proof..." or anything like that. That only happens within formal proof systems.
+
+- This argument also has an implied universality and a hidden universal introduction. We'll get to that later.
+
+**Example**
+
+Prove that if $x^4 = 3x-1$, then $x$ is positive.
+
+(This equation does have roots but they're hard to find.)
+
+
+**proof:** Suppose $x$ is not positive. If it's $0$, then $x^4 = 0$ but $3x-1 = -1$, so they are not equal. If $x$ is negative, then $x^4$ is positive but $3x-1$ is negative, so they are not equal. Either way, they are not equal.
+
+**Discussion:**
+
+- Here $x$ is introduced (fixing its value and creating its context) and subjected to an assumption (not positive) in the first line.
+- This also illustrates a proof by cases, which we'll get to formally soon enough. If $x$ is not positive there are two alternatives.
+- Again the implication-introduction is implied but not said. The structure of the proof (contrapositive) is not obvious and needs to be noticed by the reader. It can be signaled "we prove by contrapositive" but this is not common in serious work.
+- This is a proof by contrapositive, not by contradiction. They are easily confused but distinct structures.
+
+
+Example
+
+An example which illustrates algebraic computation as a series of logical deductions, so that we can think about algebra as forward deduction. Should involve squaring or square roots.
+
+### Notes
+
+**Note for perceptive and intuitive people**
+
+When we assert $P \to Q$, the implication that $P$ causes $Q$ or is at least related is so strong it's hard to overcome, but it is not required or implied. We can sometimes affirm $P \to Q$ even when $P$ and $Q$ are unrelated, for example if we unequivocally know $Q$. When $Q$ causes $P$, the "reverse cause" implication $P \to Q$ may still be true, as in the idiom "where there's smoke, there's fire." (Smoke implies fire.)
+
+**Note on replacement**
+
+How does "If P then Q" relate to the statement "Q or not P"? Are they the same?
+
+**Note on reversal**
+
+How does "If P then Q" relate to the statement "If Q then P"? Are they the same?
+
+**Note on "because"**
+
+How does "If $P$ then $Q$" relate to the statement "Because $P$, $Q$"? Are they the same?
+
+
+## Understanding "or"
+
+### In a Truth Table
+
+
+
+| P | Q | P \to Q |
+|---|---|:-----:|
+| T | T | T |
+| T | F | T |
+| F | T | T |
+| F | F | F |
+
+Notice that "or" includes the case of "and". The subtext "...or both" is always entailed. This interpretation is "inclusive or". The alternative is "exclusive or", usually written xor or $\oplus$. Since "or" is inclusive by default, we never say "and/or" in mathematics, because the "and" is superfluous.
+
+Natural English uses "or" in several senses: Inclusively ("Milk or sugar?"), exclusively ("Your money or your life!", and to request a choice ("Coffee or tea?"). It's a constant source of ambiguity and confusion. Natural language is messy, English especially so.
+
+### In Proof Theory
+
+
+
+**Or-introduction**
+
+Proving $P \lor Q$, is sometimes
+the silly act of weakening a statement by adding an irrelevant alternative:
+
+$$\frac{P}{\therefore P \lor Q} \hspace{1in} \frac{Q}{\therefore P \lor Q} $$
+
+For example: "I know x = 5. Therefore $x=\pm 5$ This argument form is rare because it's rarely useful!
+
+More substantially, interpreting $P \lor Q$ as $\neg P \to Q$ or $\neg Q \to P$ yields a more interesting proof of $P \lor Q$:
+
+$$\frac{\begin{matrix}[\text{Assume } \neg P]\\ Q\end{matrix}}{\therefore P \lor Q} \,\,\,\,\,
+\frac{\begin{matrix}[\text{Assume } \neg Q]\\ P\end{matrix}}{\therefore P \lor Q}$$
+
+Notice that either of these argument forms is enough to support the conclusion of "$P$ or $Q$". There is no need to do both.
+
+
+
+**Or-elimination (Proof by cases)**
+
+Knowing "$P$ or $Q$" is awkward, because we don't know which is true. But if both cases lead to the same conclusion, we needn't care:
+
+$$\frac{P \lor Q\,\,
+\begin{matrix} [\text{Assume } P] \\ R \end{matrix}\,\,
+\begin{matrix} [\text{Assume } Q] \\ R \end{matrix}
+}
+{\therefore R}$$
+
+This is called "proof by cases."
+
+### Exercises -- Identify the argument form
+
+What argument form is used in each case? Is the argument logically correct?
+
+1. "If what you say is true, I can't forgive you. If it's a lie, you're a liar and I can't trust you. Either way, we're through!"
+
+2. "Well, technically, I said I would have water or tea with dinner. And I had water. So that was true."
+
+3. "Cats make me allergic, but Fluffy here has no effect on me! I conclude that your beloved pet is not, after all, a cat!"
+
+4. By not providing a guest bathroom towel, I have left you high and dry, so to speak. Therefore you are  dry and don't need a towel. You're welcome.
+
+5. Let $x$ be a positive number. Then $x>0$. Multiplying both sides of this inequality by $x$ does not change the direction of the inequality, because $x$ is positive. So $x^2 > 0$. We conclude: If $x$ is positive, then so is $x^2$.  
+
+## Understanding "not"
+
+
+### In a Truth Table
+
+The truth table is a breeze:
+
+| $P$ | $\neg P$ |
+|---|:-----:|
+| T | F |
+| F | T |
+
+
+### In Proof Theory
+
+The proof theory is a little more subtle. How do we prove that $P$ is *false*? Typically by showing that if $P$ were true it would lead to logical disaster, usually represented as a proved falsehood ("$\bot$"). The technique is called **proof by contradiction**
+
+> Suppose $x$ were both positive and negative. Then $x > 0$ and $x < 0$. By transitivity $0 < x < 0$, so $0 < 0$, and therefore $0$ is not equal to itself. This is absurd so $x$ *cannot* be both positive and negative.
+
+Formally:
+$$\frac{
+  \begin{matrix}
+  [\text{Assume } P]\\
+  \bot
+  \end{matrix}
+  }{\neg P}
+  \,\,\text{ and similarly } \,\,
+  \frac{
+  \begin{matrix}
+  [\text{Assume } \neg P]\\
+  \bot
+  \end{matrix}
+  }{P}
+  $$
+
+On the other hand, how do we use $\neg P$ as a premise? Sometimes we have an implication of the form $R \to P$, so Modus Tolens is one way to proceed. Sometimes we also have a proof of $P$, so we proceed to a contradiction:
+
+$$\frac{P, \neg P}{\bot}$$
+
+It may seem silly to imagine that both $P$ and $\neg P$ can be proven. But inside the context of another assumption (for contradiction, usually), it's quite common.
+
+### Examples
+
+**Proposition:** The square root of $2$ is irrational.
+
+**proof:** Assume $\sqrt{2}$ is rational. Then
+$\sqrt{2}$ can be written as a fraction $\sqrt{2} = \frac{a}{b}$, in lowest terms, where $a$ and $b$ are both positive integers. It follows that $2 = \frac{a^2}{b^2}$, so $2b^2 = a^2$. It follows that $a^2$ is even, so $a$ is even, so $a^2$ is divisible by $4$, so $b^2$ is even, so $b$ is even, so $\frac{a}{b}$ is not in lowest terms after all. This is a contradiction. We conclude $\sqrt{2}$ is irrational.
+
+**Notes:**
+ - The contradiction $\bot$ arises from something being proved true and false. What statement was proved true and false?
+ - The contradiction is used for a basic not-introduction. What core steps in the proof set up and complete the not-introduction?
+ - Much is claimed about evenness. Why is each assertion true?
+
+
+
+A **paradox** is a proof which leads to a contradiction, but lacks any obvious suspicious assumption (for contradiction) which can be blamed for the problem. Nevertheless, the right response to a paradox is to identify an implicit premise which can be questioned. For example, consider the set of all sets which do not contain themselves as elements. Does it contain itself? This is **Russell's paradox.** Arguably, it's a central logical problem with mathematical foundations. The **Liar Paradox** ("I am lying") is simpler but equally dangerous.
+
+### Do not believe a contradiction
+
+In real life you may be asked to believe two things which are utterly incompatible. If you submit to such gaslighting, your critical thinking skills will be forced into deactivation, whereupon you can be manipulated by abusers and authoritarians. Don't let that happen.
+
+## Understanding "For all"
+
+### Semantics of $\forall$
+
+Universal statements make claims about every thing under discussion. Some examples in English and math illustrate the point:
+
+1. Every lock has a key.
+2. Everyone has a soul mate.
+3. Cats are mammals.
+4. The equation $(x-1)(x+1) = x^2-1$ is true for every $x$.
+5. A number has to be positive, negative, or zero.
+6. "...that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness."
+7. All turtles are reptiles, and all reptiles are scary.
+8. "All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside."
+
+Universal statements interact with other logical combinations to create frequent ambiguity and double-meaning. For example
+
+1. Everyone is not here yet. ($\forall \neg$)
+2. All that glitters is not gold. ($\forall \neg$)
+3. Everyone is not perfect. ($\forall \neg$)
+4. The church group is all men or women ($\forall \lor$)
+5. Alright everyone, when ready, begin. ($\forall \to$)
+
+Each statement has a double-meaning based on how the universal $(\forall)$ interacts with the rest of the logic.
+
+Mathematical syntax has solved the problem by adding clarifying rules of phrasing:  A universal statement should be phrased as a statement about an generic individual ($x$, or $y$, etc) with $\forall x$ or "for all x" or "for each x" tacked to the front, as a modifier. If there's any confusion which part of the statement is being modified, parenthesize the statement itself.
+
+So, "cats are mammals" becomes the indeterminant, "if it's a cat, it's a mammal", and then the quantified "for each thing, (if it's a cat, it's a mammal)". To be more mathematial, the statement
+"The equation $(x-1)(x+1) = x^2-1$ is true for any $x$." becomes simply $\forall x \enspace (x-1)(x+1) = x^2-1 $.  
+
+"Everyone is not here yet" probably means "$\neg \forall x (x\text{ is here})$", but
+"everyone is not perfect" probably means "$\forall x \neg (x \text{ is perfect})$". The formal logic gives clarity where natural language falters.
+
+### Proof Theory of $\forall$
+
+To prove a universal statement $\forall x \enspace P(x)$, we consider an arbitrary particular $x$ and demonstrate that that one has the property of interest. Formally:
+
+$$\frac{\begin{matrix}
+  [\text{Let } x]\\
+  P(x)
+  \end{matrix}}{\forall x \enspace P(x)}$$
+
+Although "Let $x$" is (arguably) not an assumption, there is a certain parallel with the structure of direct proof. The first line "Let $x$" creates a context in which $x$ refers to an individual, without determining which one.
+
+In common practice, the first line is phrased "Let $x$ be a real number" or "Let $x$ be a function", etc., and it's common to attach further assumptions as needed immediately "Let $x$ be an even positive number." Some formal systems demand simply "Let $x$" with no further details, and some omit the line entirely on the theory that $x$ inevitably must represent something. No matter which formal system is used, there are some implicit rules about how you can "let $x$" and later universalize to say $\forall x \enspace P(x)$. The most important one is that the symbol "$x$" must be free for this context. That is, we can't be working within a context in which $x$ has been assigned a value or assumptions have already been made about it.
+
+The meaning of $x$ is stable throughout the argument, but when the argument ends, the variable $x$ goes "out of scope" (as the computer scientists say), and is once again free to represent anything or nothing. And thank goodness, or we'd quickly run out of letters for letting.
+
+### Examples -- proving a generalization
+
+1. odd * odd = odd
+
+2. $A \cap B \subseteq B$
+
+3. $\emptyset \subseteq A$
+
+### Using $\forall$ as a premise
+
+If "$\forall x \enspace P(x)$" is a premise, the standard use is to deduce that something in particular has the given property. All men are mortal, so Socrates, a fortiori, is mortal. Proof-theoretically, this looks like:
+
+$$\frac{\forall x \enspace P(x)}{\enspace P(c)}$$
+
+What is $c$, you ask? Whatever you need. This logical step is usually called **specialization.** In practice it is done with no more comment than asserting that a certain thing ($c$) has a certain property.
+
+## Understanding "There exists"
+
+The existential quantifier $\exists x$ communicates that (at least one) $x$ exists with a given property. For example
+
+1. $\exists x \enspace x>5$. "Something is greater than $5$. This is true because $6$ suffices.
+
+2. $\exists x \enspace \forall y \enspace y < x$. "Something is greater than everything." This is false because there is no (single) $x$ greater than all possible $y$.
+
+3. $\forall y \enspace \exists x \enspace  y < x$. "Everything is less than something."  This is true because, for example, $x=y+1$ is greater than $y$. This example is the same as the previous except for the order of quantification. **Quantifier order matters.**
+
+4. $\exists x \enspace \forall y \enspace xy=y$. Since $x=1$ works here (for all $y$), it is true that there exists such an $x$.
+
+
+### Proof theory of $\exists$
+
+#### Proving $\exists$
+
+The simplest way to show that there is an $x$ with some property is to point to it. This is called "proof by example", or "constructive existence proof."
+
+For example, does an even prime exist? Yes, because $2$ is an even prime. Notice that one example is enough. There is no need to elaborate with more.  Is there a hexagon with all right angles? Yes, because the orange tromino qualifies as a "hexagon":
+
+![*Trominoes* [R. A. Nonenmacher, CC BY-SA 3.0](https://en.wikipedia.org/wiki/Tromino#/media/File:Trominoes.svg)](images/Trominoes.svg.png){fig-alt="Two trominoes. The relevant one, in orange, shows three squares placed together to make a corner shape: one top left, one bottom left, and one bottom right, to make one shape whose perimeter has six sides."}
+
+Again, one example is enough.
+
+Sometimes the example is less explicit, but in context it's still proof by single example. Consider the statement $\forall y \enspace \exists x \enspace  y < x$. To prove it, we allow $y$ to be arbitrary, but we choose $x=y+1$ specifically to show the existence of such $x$. Here $x=y+2$ and $x=y+0.4$ would work just as well, but we only mention $x=y+1$, because one example (for each $y$) is enough.
+
+In summary, whenever we have proven that $c$ is a specific example of a phenomenon, then we may infer that there is one:
+
+$$ \frac{P(c)}{\exists x \enspace P(x)}$$
+
+#### Assuming $\exists$
+
+When an existential statement is known, how do we use it as a premise? This is more difficult because we might not know a specific example. We just know one exists. Typically, the existential is used to introduce a symbol for something which meets the property. For example.
+
+1. I know that $28$ is a <a href="https://en.wikipedia.org/wiki/Perfect_number">perfect number</a>, and so I know that there must be a *smallest* perfect number, (though it might not be 28). Let $n$ be the smallest perfect number.
+
+2. Let $f(x) = x^5 - x^4 + 6x-3$. Since $f(0) = -3$ and $f(1) = 3$, the equation $f(x)=0$ must have at least one solution. Let $a$ represent a solution.
+
+3. There must be a tallest person in the world. Let $A$ represent that person.
+
+In all cases, we don't really know which thing has been chosen, but we trust that the newly introduced symbol represents something correctly. It's important that the new symbol is unencumbered by other meaning. We cannot, for example, say "Let `jason howald' represent the tallest person." or "Let $\sqrt{2}$ represent the equation's solution."
+
+# Set Theory
+
+## Set Builder Notation
+
+**Note on type**
+
+It's good practice to think carefully about the **type** of any mathematical objects. For example,
+
+1. 4, 5, and $\pi$ are numbers.
+2. $4 < 5$ is a true statement. If it has a value, the value is $T$ or $\top$.
+3. $\{4,5,\pi\} $ is a set, but $4 \in \{4,5,\pi\}$ is a statement.
+4. $0 \leq x \leq 4$ is not a set but a statement. Its truth depends on the value of $x$, which is not known in context.
+
+It's important to have set theoretical notations to make explicit which sets we mean. Our primary tool for writing a set with clarity and precision is **set builder notation**. Instead of writing a comma-separated list, we place an order for the elements we want, by means of the conditions we're looking for:
+
+$$\left\{ \text{ [elements we want] }\,\, \Bigm| \,\,\text{ [fine print and conditions.]} \right\}$$
+
+Notice that the elements go on the left, whereas the conditions go on the right. This is important and can cause some confusion. The braces and middle vertical bar should be large enough to be easily seen to be a group.
+
+**Examples**
+
+1. $\left\{ x \in {\mathbb R} \Bigm| 0 \leq x \leq 4\right\}$ This would be read aloud "The set of x in the reals such that x is between 0 and 4." It could also be written more simply using interval notation $[0,4]$
+
+2. $\left\{ x \in {\mathbb Z} \Bigm| |x|
+ < 4 \right\}$. This makes a finite list which could also be written $\{-3,-2,-1,0,1,2,3\}$
+
+3. $\left\{ p \in {\mathbb N} \Bigm| \text{ $p$ and $p+2$  are prime} \right\}$. This set includes 3, 5, 11, and 17, but not 2, 4, 7, 9, or 13. At present (February 2025) this set is widely believed to be infinite, but we do not have a proof.
+
+Notice that in every example, the left side has the form ``[variable] $\in$ [Set]''. There is a variant in which this can be placed on the right as a condition, allowing more interesting operations upon that variable to appear on the left:
+
+1. $$\left\{ x \Bigm| x \in {\mathbb R} \text{ and } 0 \leq x \leq 4\right\}$$. This is equivalent to #1, above, and shows how the source of values of $x$ can be placed to the right.
+
+2. $$\left\{ x^2  \Bigm| x \in {\mathbb Z} \text{ and } |x|
+< 20 \text{ and } x \text{ is prime} \right\}$$ This makes a list of squares of prime numbers less than 20. It could be written $\{4, 9, 25, 49, 121, 169, 289, 361\}$. Technically the conditions include both negative and positive (prime) values of $x$, so for example $9$ appears as $3^2$ and as $(-3)^2$, but it doesn't matter because a set holds each element only once.
+
+3. $$\left\{ \sin(x) \Bigm| x \in {\mathbb R}\right\}$$
+This is another way of asking for the image, or range, of the function $\sin$. You probably already know that the image is the closed interval $[-1,1]$.
+
+
+## Set Notations
+
+We write $x \in A$ to assert that $x$ is an element of the set $A$. The notation requires that $A$ be a set, but requires nothing of $x$: A set can contain numbers, functions, other sets, or even stranger things.
+
+We write $A \subseteq B$ to assert that $A$ is a subset of $B$. The lower bar reminds us that this includes the possibility $A = B$. Some mathematicians write $A \subset B$ to assert that $A$ is a subset and not equal, but others prefer the clearer notation $A \subsetneq B$ when we mean to say they are not equal. Confusingly, some use the notation $A \subset B$ to include the possibility of equality and therefore never use the symbol ``$\subseteq$''.
+
+**Interpretation/Definition of $\subseteq$**: We often need to translate the statement $A \subseteq B$ into a statement about elements. Of course it means that the elements of $A$ are also in $B$. There are two slightly different styles in which this can be said:
+
+**Bound Quantifier Definition of $A \subseteq B$:**
+$$A \subseteq B \text{ means: }\,\, \forall x \in A \enspace x \in B$$
+
+**Unbound Quantifier Definition of $A \subseteq B$:**
+$$A \subseteq B \text{ means: }\,\, \forall x \left( x \in A \to x \in B\right)$$
+
+The policy choice between bound quantification and unbound quantification is usually so philosophical and esoteric that it doesn't matter, even within formal mathematics. But for a few special purposes in foundational work, it's far better to use **unbound** quantification. Since the course is called "Set Theory and Logic", I feel an obligation to do this "the right way" according to the needs of foundational logic, so we will favor the second interpretation. If you're curious, feel free to ask about the reasons why unbound quantification is your friend.
+
+**The empty set is a subset**
+
+Let $B$ be a set. Is $\emptyset \subseteq B$ true or false? Since we have an official interpretation of $\subseteq$, we should use it. The bound-quantifier interpretation leads us to ask "Is every element of $\emptyset$ an element of $B$?" This remains rather confusing, since $\emptyset$ has no elements to discuss. Does this make the statement true, false, or merely "wrong?"
+
+The unbound-quantifier interpretation, on the other hand, gives us a clear answer: "Is it true, for all $x$, that **If** $x \in \emptyset$, **then** $x \in B$?" Recalling our interpretation of "if... then...", we identify that "$x \in \emptyset$" is invariably false, so the implication is true for all $x$. We conclude that $\emptyset \subseteq B$ is indeed true for any set $B$. Notice we've proven $P \to Q$ without assuming $P$, which is rare.
+
+
+
+
+
+
+Three examples of set equality proofs using sets expressed in various ways
+
+1. Intersect distributes over union. Sets are A B C
+
+2. Interval notation set equals set builder notation set
+
+3. Kernel of f(x,y) by 2x+y is multiples of (1,-2)
+
+# Functions
+
+## Nuances of Function Notation
+
+
+
+**Where is the function?** We're accustomed to writing a function $y = x^2$ or for example $f(x)=3x+5$ and saying "that's a function." But which part is a function? Variables are not functions. A variable is an ambiguous reference to an individual thing, usually a real number. So $x$ is not a function, and neither is $y$, despite the idiom "$y$ is a function of $x$". We need to clearly consider the difference between a mathematical form and mathematical value. In analytical philosophy, this is called the use-mention distinction. To illustrate:
+
+**Use:** Half of eleven is 5.5
+
+**Mention:** Half of "eleven" is the letter "e".
+
+We *use* 3x+5 when we reason about its numerical value. We *mention* 3x+5 when we comment on its form as a combination of symbols:
+
+**Mention = form = syntax** | **Use = value = Semantics**
+---|---
+"3x+5" | 3x+5
+type: text string | type: real number
+has an x in it | depends on x
+has four symbols | has one value
+**is not** "5+3x" | **is** 5+3x
+
+Now "$3x+5$" is a string of symbols, *different* from "$3x+4+1$", with no numerical value. It is neither a number nor a function. On the other hand, $3x+5$ is a single real number which will be known if the value of $x$ is known. It is also not a function. If for example $f(x) = 3x+5$, even $f(x)$ is not a function. The only function here is $f$, not the letter "f" but what it stands for in this context: A mathematical object which knows its potential inputs, its potential outputs, and its method for attaching outputs to inputs, an object which can be "evaluated" at an input using the notation for example $f(10)$ to produce the associated output $35$.
+
+In summary, when we write $f(x) = 3x+5$, the function is not $y$, not $3x+5$, nor even $f(x)$, because these are all notations for an individual output. The function is the mathematical $f$, which holds the potential for evaluation at any input.
+
+Note: The evaluation syntax is $f(x)$, placing $f$ to the left of its input, in parentheses. The function could have ("should have?") gone on the right, but folks chose the left. The parentheses in "f(x)" are not just for grouping. They are *function-evaluation* parentheses. They can (almost) never be omitted even when the input is a single symbol.
+
+
+
+## How to introduce a function
+
+A function is a complicated object and needs to be created with care. To specify a function we normally communicate four things:
+
+1. The letter, symbol, or name
+2. The domain
+3. The range
+4. The rule
+
+**Examples**
+
+Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 3x+5$.
+
+Let $g:\{2,4,6,8\} \to {\mathbb Z}$ by $g(x) = |x-5]$.
+
+Let $\arcsin: [-1,1] \to [-\pi/2, \pi/2]$ by $\arcsin(x) = \int_0^x \frac{1}{\sqrt{1-x^2}}dx$
+
+Let $d: {\mathbb R}^2 \to {\mathbb R}$ by $d(x,y) = |x-y|$
+
+More generically, we write "Let $f:D \to R$ by $f(x) = \ldots$ to specify a function called $f$ with domain $D$, range $R$, and rule as given.
+
+
+Arguably we have specified also the *input variable* for the function, but this is an illusion. The variable used to specify the rule is a dummy variable and is irrelevant after the function is specified. So for example if we...
+
+Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 3x+5$.
+
+Let $g:{\mathbb R} \to {\mathbb R}$ by $g(t) = 3t+5$.
+
+... then $f(x)=g(x)$, $f(t) = g(t)$, and indeed $f=g$.
+
+**Recall:** Many students have difficulty using the limit definition of the derivative because it involves plugging in forms which involve variables foreign to the function definition:
+
+$$ f'(x) = \lim_{h \to 0 }\frac{f(x+h)-f(x)}{h}$$
+
+Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = x^2+3x+4$. Apply the limit definition to calculate $f'(x)$.
+
+Solution:
+
+\begin{align*}
+f'(x) &= \lim_{h \to 0 }\frac{f(x+h)-f(x)}{h}\\
+ &= \lim_{h \to 0 }\frac{(x+h)^2 + 3(x+h) + 4 - (x^2 + 3x + 4)}{h}\\
+ &= \text{etc.}
+\end{align*}
+Somehow the first step is often very tricky. It just requires that the input be carefully plugged in using the formula.
+
+
+**Aside:**
+
+You may have studied sequences in Calc II. A sequence $\{a_n\}$ is just a function $a:{\mathbb N} \to {\mathbb R}$. It doesn't "feel" like one because we use the funny subscript notation "$a_n$" instead of the parenthesis notation $a(n)$.
+
+**Test your understanding**:
+
+Which is most precise?
+- The derivative of $\sin$ is $\cos$
+- The derivative of $\sin(x)$ is $\cos(x)$
+
+
+Functions can be different with the same rule and different domains. Functions can have apparently different rules but be the same. Functions can have same domain and range and be technically different with different ranges. Example: max function, average function, eval at 2 function.
+
+Domain can be literally any set. Example where the set is a set of sets, of vectors, of functions, etc.
+
+
+## Inverse Functions
+
+
+
+Proving functions equal - domain, range, f(x) = g(x) for all x.
+
+Injective functions
+
+Examples and non example
+
+What's it for,Cancelling from equations
+
+Proving injective
+
+Theorem: left invertible iff
+
+Surjective functions
+
+Examples and non
+
+Depends on range
+
+Proving surjective
+
+Right invertible iff
+
+Bijective
+
+One to one correspondence
+
+Equinumerous
+
+Prove injective and surjective... But
+
+Theorem invertible iff
+
+When proving bijective, construct the inverse cause honestly you're going to need it
+
+Proving a calculation of image.
+
+
+

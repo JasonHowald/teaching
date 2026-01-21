@@ -1,6 +1,9 @@
 ---
 title: "Math 681"
 description: "Complex Analysis"
+format: html
+resources:
+  - "ComplexAnalysisHowaldLectures.pdf"
 listing:
   contents: 
     - "syllabus.qmd"
