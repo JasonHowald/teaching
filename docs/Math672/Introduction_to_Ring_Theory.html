@@ -286,8 +286,39 @@ window.Quarto = {
 <li>Multiplicative cancellation is valid <strong>in a domain</strong>.</li>
 </ol>
 <p><strong>Classroom group exercise:</strong> Construct proofs of all twelve.</p>
-<p><strong>Binomial Theorem:</strong> <span class="math display">\[(x+y)^n = \sum_{i=0}^n \binom{n}{i} x^iy^{n-i}\]</span></p>
-<p><strong>proof:</strong> The usual proof,</p>
+<p><strong>Definition:</strong> The binomial coefficient <span class="math inline">\(\binom{n}{i}\)</span>, pronounced “n choose i”, is the number of subsets of <span class="math inline">\(\{1, \ldots, n\}\)</span> which have cardinality <span class="math inline">\(i\)</span>.</p>
+<p><strong>Proposition:</strong> (properties of the binomial coefficient <span class="math inline">\(\binom{n}{i}\)</span>)</p>
+<ol type="1">
+<li><span class="math inline">\(\binom{n}{0} = \binom{n}{n} = 1\)</span></li>
+<li><span class="math inline">\(\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\)</span></li>
+</ol>
+<p><strong>proof:</strong> <span class="math inline">\(\binom{n}{0}\)</span> counts only the set <span class="math inline">\(\emptyset\)</span>, and <span class="math inline">\(\binom{n}{0}\)</span> counts only the entire set <span class="math inline">\(\{1, \ldots, n\}\)</span>. This proves part 1. For part 2, every set <span class="math inline">\(S \subseteq \{1, \ldots, n\}\)</span> either contains <span class="math inline">\(n\)</span> or does not. Those that do not are enumerated by <span class="math inline">\(\binom{n-1}{i}\)</span>, and those that do correspond one-to-one (after removal of <span class="math inline">\(n\)</span>) to the sets counted by <span class="math inline">\(\binom{n-1}{i-1}\)</span>.</p>
+<p><strong>Binomial Theorem:</strong> Let <span class="math inline">\(R\)</span> be a commutative ring and let <span class="math inline">\(x, y \in R\)</span>. <span class="math display">\[(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^ky^{n-k}\]</span></p>
+<p><strong>proof:</strong> The usual proof of the binomial theorem, given for real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, goes through without change in an arbitrary commutative ring. We induct on <span class="math inline">\(n\)</span> and observe the base case <span class="math inline">\(n=0\)</span> is trivial. For induction, suppose the theorem is true for <span class="math inline">\(n\)</span> and consider <span class="math inline">\(n+1\)</span>. Then</p>
+<p><span class="math display">\[
+\begin{align*}
+\sum_{k=0}^{n+1} {n+1 \choose k} x^ky^{n+1-k} &amp; =
+\sum_{k=0}^{n+1} \left( {n \choose k} + {n \choose k-1}\right) x^ky^{n+1-k} &amp; \text{ proposition, above} \\
+&amp; =
+\sum_{k=0}^{n+1} {n \choose k} x^ky^{n+1-k} +
+\sum_{k=0}^{n+1} {n \choose k-1} x^ky^{n+1-k} &amp; \text{ split the sum} \\
+&amp; =
+\sum_{k=0}^{n} {n \choose k} x^ky^{n+1-k} +
+\sum_{k=1}^{n+1} {n \choose k-1} x^ky^{n+1-k} &amp; \text{ Discard zero terms} \\
+&amp; =
+\sum_{k=0}^{n} {n \choose k} x^ky^{n+1-k} +
+\sum_{k=0}^{n} {n \choose k} x^{k+1}y^{n+1-(k+1)} &amp; \text{ Reindex second sum} \\
+&amp; =
+y \sum_{k=0}^{n} {n \choose k} x^ky^{n-k} +
+x \sum_{k=0}^{n} {n \choose k} x^{k}y^{n-k} &amp; \text{ Factor and simplify} \\
+&amp; =
+y (x+y)^n +
+x (x+y)^n &amp; \text{ Induction hypothesis} \\
+&amp;= (x+y)^{n+1}&amp; \text{ Simplify} \\
+\end{align*}
+\]</span></p>
+<p>Note that <span class="math inline">\(\binom{n}{i}\)</span> is an integer but the theorem forces us to interpret it as an element of the ring <span class="math inline">\(R\)</span>. When we use an integer this way, we mean <span class="math inline">\(1_R + \ldots + 1_R\)</span>, where the sum has <span class="math inline">\(\binom{n}{i}\)</span> terms. We’ll clarify the situation further after we discuss ring homomorphisms.</p>
+<p>Actually in the theorem above, <span class="math inline">\(R\)</span> need not be a commutative ring. It suffices that the elements <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> individually satisfy <span class="math inline">\(xy = yx\)</span>. So for example the binomial theorem applies to matrices <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> as long as they commute: <span class="math inline">\(AB = BA\)</span>.</p>
 </section>
 <section id="homomorphisms" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="homomorphisms"><span class="header-section-number">1.5</span> Homomorphisms</h2>
@@ -314,7 +345,7 @@ window.Quarto = {
 <section id="all-rings-have-integers" class="level3" data-number="1.5.2">
 <h3 data-number="1.5.2" class="anchored" data-anchor-id="all-rings-have-integers"><span class="header-section-number">1.5.2</span> All rings have “integers”</h3>
 <p>Step 1. [<span class="math inline">\({\mathbb Z}\)</span> is the initial ring] Let <span class="math inline">\(R\)</span> be a ring. Then there is exactly one homomorphism <span class="math inline">\(f:{\mathbb Z} \to R\)</span>.</p>
-<p><strong>proof:</strong> Suppose <span class="math inline">\(f\)</span> were a homomorphism from <span class="math inline">\({\mathbb Z}\)</span> to <span class="math inline">\(R\)</span>. Then <span class="math inline">\(f\)</span> must satisfy <span class="math inline">\(f(0)=0_R\)</span> and <span class="math inline">\(f(1)=1_R\)</span>. It follows from additivity (for <span class="math inline">\(n&gt;1\)</span>) that <span class="math inline">\(f(n) = f(1+1+\ldots+1) = f(1)+f(1)+ \ldots + f(1) =  1_R + 1_R + \ldots + 1_R\)</span>. Finally it follows for the negative integers that <span class="math inline">\(f(-n) = - (1_R + 1_R + \ldots + 1_R)\)</span>. This determines the function <span class="math inline">\(f\)</span> completely. It obviously satisfies axioms 1-3 of a ring homomorphism, and axiom 4 follows from properties 7-10 above. So there is exactly one such homomorphism.</p>
+<p><strong>proof:</strong> Let <span class="math inline">\(f\)</span> be a homomorphism from <span class="math inline">\({\mathbb Z}\)</span> to <span class="math inline">\(R\)</span>. Then <span class="math inline">\(f\)</span> must satisfy <span class="math inline">\(f(0)=0_R\)</span> and <span class="math inline">\(f(1)=1_R\)</span>. It follows from additivity (for <span class="math inline">\(n&gt;1\)</span>) that <span class="math inline">\(f(n) = f(1+1+\ldots+1) = f(1)+f(1)+ \ldots + f(1) =  1_R + 1_R + \ldots + 1_R\)</span>. Finally it follows for the negative integers that <span class="math inline">\(f(-n) = - (1_R + 1_R + \ldots + 1_R)\)</span>. This determines the function <span class="math inline">\(f\)</span> completely, establishing uniqueness. As for existence, the rule above determines a map which obviously satisfies axioms 1-3 of a ring homomorphism, and axiom 4 follows from properties 7-10 above. So there is exactly one such homomorphism.</p>
 <p>Step 2. [Notation] Let <span class="math inline">\(R\)</span> be a ring. We write <span class="math inline">\(n \in R\)</span> to mean the image of <span class="math inline">\(n\)</span> via the unique homomorphism above.</p>
 <p>We will prove later that the image of <span class="math inline">\(f\)</span> is isomorphic to <span class="math inline">\({\mathbb Z}\)</span> or a quotient of <span class="math inline">\({\mathbb Z}\)</span>. For any ring <span class="math inline">\(R\)</span>, we can be confident to write <span class="math inline">\(18 \in R\)</span>, but we can’t be sure that <span class="math inline">\(18\)</span> is nonzero!</p>
 </section>
@@ -325,7 +356,15 @@ window.Quarto = {
 <section id="units" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="units"><span class="header-section-number">2.1</span> Units</h2>
 <p>Even if <span class="math inline">\(R\)</span> is not a field, an <span class="math inline">\(x \in R\)</span> may have a two sided multiplicative inverse. In this case we call <span class="math inline">\(x\)</span> a <strong>unit</strong>, and permit ourselves the notation <span class="math inline">\(x^{-1}\)</span> for the two-sided multiplicative inverse of <span class="math inline">\(x\)</span>, which is unique if it exists. If <span class="math inline">\(R\)</span> is commutative we even write natural division notation <span class="math inline">\(a/x\)</span> or <span class="math inline">\(\frac{a}{x}\)</span>, if <span class="math inline">\(x\)</span> is a unit.</p>
-<p><strong>Examples:</strong> - The ring <span class="math inline">\({\mathbb Z}\)</span> has two units, namely <span class="math inline">\(\pm 1\)</span>. - The “Gaussian Integers” <span class="math inline">\({\mathbb Z}[i]\)</span> has four units, <span class="math inline">\(\pm 1\)</span> and <span class="math inline">\(\pm i\)</span>. - Every nonzero element of a field is a unit, so for example <span class="math inline">\(3 \in {\mathbb R}\)</span> is a unit. - In the polynomial ring <span class="math inline">\({\mathbb R}[x]\)</span>, the units are the nonzero constant polynomials. - In the continuous function ring <span class="math inline">\(C(X)\)</span> of functions on a space <span class="math inline">\(X\)</span>, the units are the functions <span class="math inline">\(f:X \to {\mathbb R}\)</span> which never take the value <span class="math inline">\(0\)</span>. - In <span class="math inline">\(Z/n\)</span>, the units are the elements <span class="math inline">\(x\)</span> relatively prime to <span class="math inline">\(n\)</span>, and their inverses can be found via the extended Euclidean algorithm.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>The ring <span class="math inline">\({\mathbb Z}\)</span> has two units, namely <span class="math inline">\(\pm 1\)</span>.</li>
+<li>The “Gaussian Integers” <span class="math inline">\({\mathbb Z}[i]\)</span> has four units, <span class="math inline">\(\pm 1\)</span> and <span class="math inline">\(\pm i\)</span>.</li>
+<li>Every nonzero element of a field is a unit, so for example <span class="math inline">\(3 \in {\mathbb R}\)</span> is a unit.</li>
+<li>In the polynomial ring <span class="math inline">\({\mathbb R}[x]\)</span>, the units are the nonzero constant polynomials.</li>
+<li>In the continuous function ring <span class="math inline">\(C(X)\)</span> of functions on a space <span class="math inline">\(X\)</span>, the units are the functions <span class="math inline">\(f:X \to {\mathbb R}\)</span> which never take the value <span class="math inline">\(0\)</span>.</li>
+<li>In <span class="math inline">\(Z/n\)</span>, the units are the elements <span class="math inline">\(x\)</span> relatively prime to <span class="math inline">\(n\)</span>, and their inverses can be found via the extended Euclidean algorithm.</li>
+</ul>
 </section>
 <section id="zero-divisors" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="zero-divisors"><span class="header-section-number">2.2</span> Zero-divisors</h2>

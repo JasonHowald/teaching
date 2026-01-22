@@ -1,1 +1,9 @@
-format: revealjs
+format:
+  revealjs:
+    theme: sky
+    history: false
+  # Create an output format to create e.g. 0_welcome.handout-html.html
+  html:
+    theme: cosmo
+    toc: true
+    output-ext: handout.html

@@ -95,9 +95,58 @@ Natural mathematical structures with elements which can be added and multiplied 
 
 **Classroom group exercise:** Construct proofs of all twelve.
 
-**Binomial Theorem:** $$(x+y)^n = \sum_{i=0}^n \binom{n}{i} x^iy^{n-i}$$
+**Definition:** The binomial coefficient $\binom{n}{i}$, pronounced "n choose i", 
+is the number of subsets of $\{1, \ldots, n\}$ which have cardinality $i$.
 
-**proof:** The usual proof,
+**Proposition:** (properties of the binomial coefficient $\binom{n}{i}$)
+
+1. $\binom{n}{0} = \binom{n}{n} = 1$
+2. $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$
+
+**proof:** $\binom{n}{0}$ counts only the set $\emptyset$, and $\binom{n}{0}$ counts only the 
+entire set $\{1, \ldots, n\}$. This proves part 1. For part 2, every set $S \subseteq \{1, \ldots, n\}$ 
+either contains $n$ or does not. Those that do not are enumerated by $\binom{n-1}{i}$, and those that do
+correspond one-to-one (after removal of $n$) to the sets counted by $\binom{n-1}{i-1}$.
+
+**Binomial Theorem:** Let $R$ be a commutative ring and let $x, y \in R$. 
+$$(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^ky^{n-k}$$
+
+**proof:** The usual proof of the binomial theorem, given for real numbers $x$ and $y$, goes 
+through without change in an arbitrary commutative ring. We induct on $n$ and observe the base 
+case $n=0$ is trivial. For induction, suppose the theorem is true for $n$ and consider $n+1$. 
+Then 
+
+$$
+\begin{align*}
+\sum_{k=0}^{n+1} {n+1 \choose k} x^ky^{n+1-k} & =
+\sum_{k=0}^{n+1} \left( {n \choose k} + {n \choose k-1}\right) x^ky^{n+1-k} & \text{ proposition, above} \\
+& =
+\sum_{k=0}^{n+1} {n \choose k} x^ky^{n+1-k} +
+\sum_{k=0}^{n+1} {n \choose k-1} x^ky^{n+1-k} & \text{ split the sum} \\
+& =
+\sum_{k=0}^{n} {n \choose k} x^ky^{n+1-k} +
+\sum_{k=1}^{n+1} {n \choose k-1} x^ky^{n+1-k} & \text{ Discard zero terms} \\
+& =
+\sum_{k=0}^{n} {n \choose k} x^ky^{n+1-k} +
+\sum_{k=0}^{n} {n \choose k} x^{k+1}y^{n+1-(k+1)} & \text{ Reindex second sum} \\
+& =
+y \sum_{k=0}^{n} {n \choose k} x^ky^{n-k} +
+x \sum_{k=0}^{n} {n \choose k} x^{k}y^{n-k} & \text{ Factor and simplify} \\
+& =
+y (x+y)^n +
+x (x+y)^n & \text{ Induction hypothesis} \\
+&= (x+y)^{n+1}& \text{ Simplify} \\
+\end{align*}
+$$
+
+Note that $\binom{n}{i}$ is an integer but the theorem forces us to interpret it 
+as an element of the ring $R$. When we use an integer this way, we mean
+$1_R + \ldots + 1_R$, where the sum has 
+$\binom{n}{i}$ terms. We'll clarify the situation further after we discuss ring homomorphisms.
+
+Actually in the theorem above, $R$ need not be a commutative ring. It suffices that the elements $x$ and $y$
+individually satisfy $xy = yx$. So for example the binomial theorem applies to matrices $A$ and $B$ as long 
+as they commute: $AB = BA$.
 
 ## Homomorphisms
 
@@ -132,12 +181,11 @@ $$\ker(f) = \{x \in \operatorname{Dom}(f) \,|\, f(x) = 0_S\}$$
 
 Step 1. [${\mathbb Z}$ is the initial ring] Let $R$ be a ring. Then there is exactly one homomorphism $f:{\mathbb Z} \to R$.
 
-**proof:** Suppose $f$ were a homomorphism from ${\mathbb Z}$ to $R$. Then $f$ must satisfy $f(0)=0_R$ and $f(1)=1_R$. It follows from additivity (for $n>1$) that $f(n) = f(1+1+\ldots+1) = f(1)+f(1)+ \ldots + f(1) =  1_R + 1_R + \ldots + 1_R$. Finally it follows for the negative integers that $f(-n) = - (1_R + 1_R + \ldots + 1_R)$. This determines the function $f$ completely. It obviously satisfies axioms 1-3 of a ring homomorphism, and axiom 4 follows from properties 7-10 above. So there is exactly one such homomorphism.
+**proof:** Let $f$ be a homomorphism from ${\mathbb Z}$ to $R$. Then $f$ must satisfy $f(0)=0_R$ and $f(1)=1_R$. It follows from additivity (for $n>1$) that $f(n) = f(1+1+\ldots+1) = f(1)+f(1)+ \ldots + f(1) =  1_R + 1_R + \ldots + 1_R$. Finally it follows for the negative integers that $f(-n) = - (1_R + 1_R + \ldots + 1_R)$. This determines the function $f$ completely, establishing uniqueness. As for existence, the rule above determines a map which obviously satisfies axioms 1-3 of a ring homomorphism, and axiom 4 follows from properties 7-10 above. So there is exactly one such homomorphism.
 
 Step 2. [Notation] Let $R$ be a ring. We write $n \in R$ to mean the image of $n$ via the unique homomorphism above.
 
 We will prove later that the image of $f$ is isomorphic to ${\mathbb Z}$ or a quotient of ${\mathbb Z}$. For any ring $R$, we can be confident to write $18 \in R$, but we can't be sure that $18$ is nonzero!
-
 
 # Types of Elements of Rings
 
@@ -146,6 +194,7 @@ We will prove later that the image of $f$ is isomorphic to ${\mathbb Z}$ or a qu
 Even if $R$ is not a field, an $x \in R$ may have a two sided multiplicative inverse. In this case we call $x$ a **unit**, and permit ourselves the notation $x^{-1}$ for the two-sided multiplicative inverse of $x$, which is unique if it exists.  If $R$ is commutative we even write natural division notation $a/x$ or $\frac{a}{x}$, if $x$ is a unit.
 
 **Examples:**
+
   - The ring ${\mathbb Z}$ has two units, namely $\pm 1$.
   - The "Gaussian Integers" ${\mathbb Z}[i]$ has four units, $\pm 1$ and $\pm i$.
   - Every nonzero element of a field is a unit, so for example $3 \in {\mathbb R}$ is a unit.

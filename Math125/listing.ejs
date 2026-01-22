@@ -1,0 +1,19 @@
+<!--Formatter for tabular listing of slides and associated handouts-->
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Slides</th>
+      <th>Handout</th>
+    </tr>
+  </thead>
+  <tbody class="list">
+    <% for (const item of items) { %>
+    <tr>
+      <th><%= item.title %></th>
+      <td><a href="<%= item.path.replace('.qmd', '.html') %>">Slides</a></td>
+      <td><a href="<%= item.path.replace('.qmd', '.handout.html') %>">Handout</a></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>

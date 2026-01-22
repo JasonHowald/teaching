@@ -17,10 +17,11 @@
   {
     "listing": "/Math125/index.html",
     "items": [
-      "/Math125/slides/0_welcome.html",
-      "/Math125/slides/1_the_shape_of_data.html",
-      "/Math125/slides/2_association_and_correlation.html",
-      "/Math125/slides/3_correlation_is_not_causation.html",
+      "/Math125/slides/0_welcome.handout.html.handout.html",
+      "/Math125/slides/1_the_shape_of_data.handout.html.handout.html",
+      "/Math125/slides/2_association_and_correlation.handout.html.handout.html",
+      "/Math125/slides/3_correlation_is_not_causation.handout.html.handout.html",
+      "/Math125/slides/4-5_samping_and_sample_bias.handout.html.handout.html",
       "/Math125/syllabus.html"
     ]
   },

@@ -43,8 +43,10 @@ format:
     embed-resources: true     # Bakes in images/CSS
     html-math-method: mathjax # Best for VoiceOver Rotor
     navigation-mode: linear   # Simple path for screen readers
-    theme: [sky, custom.scss]             
-    slide-number: true        # Helpful for students to reference specific parts
+    theme: [sky, custom.scss] # 
+    slide-number: true        # Show number within slide deck, so students to reference specific parts
     width: 1312  # 1050 / 0.8. Effectively scales all text down 80%
     height: 875  # 700 / 0.8
     margin: 0.1
+    history: false #So that browser back button will return immediately to index.
+  

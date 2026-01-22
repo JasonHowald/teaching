@@ -143,8 +143,7 @@ His dataset is often used as the "hello world" of data exploration.
 
 :::: {.columns}
 
-::: {.column width="50%"}
-
+[
 ### A negative Correlation
 
 ```{python}
@@ -162,10 +161,9 @@ sns.lmplot(data = iris, x='petal_width', y='sepal_width')
 plt.show()
 ```
 
-:::
+]{.column width="50%"}
 
-::: {.column width="50%"}
-
+[
 ### 3 positive correlations 
 
 ```{python}
@@ -183,7 +181,7 @@ sns.lmplot(data = iris, x='petal_width', y='sepal_width', hue="species")
 plt.show()
 ```
 
-:::
+]{.column width="50%"}
 
 ::::
 

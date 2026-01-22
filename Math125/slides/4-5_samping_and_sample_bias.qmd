@@ -1,0 +1,110 @@
+---
+title: "4-5. Sampling and Sample Bias"
+subtitle: "...and all my friends agree with me."
+description: "Methods of sampling, types of sample bias, and the language of good and bad sampling."
+---
+
+
+## Preparation
+Read section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides.
+
+## Key vocabulary – sampling
+
+* **Population:** All conceivable cases.
+* **Sample:** All cases measured and recorded.
+* **Representative Sample:** Does a good job reflecting features of the population.
+* **Biased Sample:** Skewed, slanted, not representative. Intentionally or accidentally.
+* **Bias:** Anything causing a sample to be biased, from cruelty to oversight to unforeseeable effect.
+
+## Key vocabulary – bias types
+
+* **Participation bias or nonresponse bias:** You didn’t measure those who didn’t respond, and it might matter!
+* **Pre-screening bias:** You must be this tall for the survey.
+* **Survivorship bias:** Only “survivors” are included.
+* **Undercoverage bias:** Significant subpopulations were missed.
+* **Geographic bias:** Selecting from a town, street corner, etc.
+
+
+## A pollster’s dilemma {.activity}
+Which of these should a political polling organization accomplish in order 
+to responsibly estimate the outcome of an upcoming election?
+
+1. Interview lots and lots of people.
+2. Include a diversity of people (in age, race, hometown, education, etc) roughly in accord with the population.
+3. Predict who probably will not vote in the election.
+4. Prompt the “undecided” to predict their decision.
+5. Draw no inference when people refuse to participate.
+
+(Good political polling is very, very hard!)
+
+## Food costs money {.activity}
+
+We want to estimate the average household grocery bill in St. Lawrence county.
+What is the population of interest?
+
+You plan to sample 100 households. What are some natural sources of sampling bias and how could you mitigate them?
+
+## Hours reading – a sampling puzzle {.activity}
+You want to measure how much time an average university student spends reading. 
+What is the population of interest (in your opinion)?
+What are some natural sources of sampling bias and how could you mitigate them?
+
+## Focus on survivorship bias {.activity}
+Explain how each observation or inference is vulnerable to survivorship bias.
+
+1. “When I was a kid we took more risks. I turned out fine!”
+2. Early human artistic expression was primarily cave paintings.
+3. University professors learn about modern high school from their students.
+4. We analyzed the 500 largest US companies to see whether US energy policy benefits or hinders them.
+5. Architecture in ancient Greece was mostly just colossal stonework.
+
+## Survivorship bias for the win {.activity}
+Abraham Wald famously studied aircraft damage during WWII. He examined 
+post-mission bullet holes on bombers. (Image is compilation across many planes.)
+
+![Source: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.](images/Survivorship-bias.svg.png){fig-alt="Picture of a World War II bomber with many red dots indicating bullet holes. Dots cluster on the wingtips, tail, and fuselage but are absent at the engines, cockpit, and nose."}
+
+Question: The bomber can carry a small bit of extra weight for shielding. Where should extra shielding be placed to protect aircraft?
+
+## Who, me, biased? {.activity}
+
+Explain how almost every type of sampling bias applies to this fictional scenario:
+
+> "Here at Dominant Dynamics Corp., we pride ourselves on inclusivity, especially in June! We set up a survey table in our corporate lobby where we interviewed employees: “Attention LGBTQIA+ employees! Is this a safe and supportive environment for you?”
+
+
+## Key vocabulary – Sampling strategies
+* **Simple (SRS):** Select from one flat list.
+* **Stratified:** Identify strata of interest, sample some of each stratum.
+* **Cluster:** Divide into convenient clusters. Randomly select some clusters. Take all of each selected cluster.
+* **Multistage:** Like cluster, but take some of each selected cluster.
+
+## Identifying the sampling strategy {.activity}
+You want to survey college students about relationship viewpoints.
+Ana: We’ll each pick a residence hall and knock ten random doors within it.
+Biljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them!
+Marija: Let’s coordinate with five random professors, and survey everybody in their classes.
+Dragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc. 
+Bonus: To generate their names I picked a nation at random, <!-- It was Serbia. --> then chose four random names common within that nation. What sampling strategy did I use?
+
+## Value judgments {.activity}
+Which is most correct? 
+
+1. Simple random is the best method and should always be used.
+2. Simple random is the best method but is often impractical. 
+3. Stratified sampling is the best method but is sometimes impossible.
+4. Cluster sampling reduces the bias of simple random sampling.
+5. Multistage sampling helps to increase the sample size.
+
+## Value judgments – competing priorities {.activity}
+<!-- Igbo names, probably Nigeria -->
+
+Uche asserts: “Large sample sizes are better for my purposes.” <!-- OO-chay -->
+
+Abike asserts: “Small sample sizes are better for my purposes.” <!-- ah-BEE-keh -->
+
+Why might both speakers be correct?
+
+## Homework
+
+On Webwork, assignment 4-5: Sampling and Sample Bias.

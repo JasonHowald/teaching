@@ -13,13 +13,13 @@ Vocabulary: Data matrix (=dataframe), summary statistic, case, variable, numeric
 
 :::: {.columns}
 
-::: {.column width="40%"}
+[
 ### Data Discussion
 * Describe a case in this context.
 * Describe a data matrix (aka dataframe) in this context.
-:::
+]{.column width="40%"}
 
-::: {.column width="60%"}
+[
 ### Data Table 
 
 ```{python}
@@ -41,7 +41,7 @@ table = GT(df.head(8))
 )
 
 ```
-:::
+]{.column width="50%"}
 
 ::::
 
@@ -49,13 +49,13 @@ table = GT(df.head(8))
 
 :::: {.columns}
 
-::: {.column width="40%"}
+[
 ### Data Discussion
 * Give a quantitative variable.
 * Give a categorical variable.
-:::
+]{.column width="40%"}
 
-::: {.column width="60%"}
+[
 ### Data Table 
 
 ```{python}
@@ -77,7 +77,7 @@ table = GT(df.head(8))
 )
 
 ```
-:::
+]{.column width="60%"}
 
 ::::
 
@@ -85,23 +85,24 @@ table = GT(df.head(8))
 ## The humble .csv file
 :::: {.columns}
 
-::: {.column width="40%"}
+[
 ### CSV (Comma Separated Value)
 - Text-based
 - Simple!
 - Compatible
 - Ugly -- bad for eyeballs, bad for screenreaders, unaligned
 - Perfect for export/share/import.
-:::
+]{.column width="40%"}
 
-::: {.column width="60%"}
+[
 ### Example data in .csv format:
 Year,month,day,richter,area,region,deaths
 1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000
 1902,December,16,6.4,Uzbekistan,Russia,4700
 1903,April,28,7,Malazgirt,Turkey,3500
 1903,May,28,5.8,Gole,Turkey,1000
-:::
+]{.column width="60%"}
+
 ::::
 
 ## Fetching and viewing data with Jupyter -- illustration
