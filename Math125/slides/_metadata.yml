@@ -3,7 +3,7 @@ format:
     theme: sky
     history: false
   # Create an output format to create e.g. 0_welcome.handout-html.html
-  html:
-    theme: cosmo
-    toc: true
-    output-ext: handout.html
+  # I gave up in frustration at organizing it into the index.
+#  html:
+#    theme: cosmo
+#    toc: true
