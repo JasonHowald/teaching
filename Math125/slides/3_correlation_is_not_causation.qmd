@@ -19,7 +19,7 @@ Man: Well, maybe."}
 
 :::: {.columns style="display: flex; gap: 50px;"}
 
-[
+:::{.column width="40%"}
 
 For each scenario, which is more likely? Why?
 
@@ -29,16 +29,15 @@ For each scenario, which is more likely? Why?
 
 * Some **lurking** variable is driving both A and B.
 
-]{.column width="50%"}
+:::
 
-
-[
+:::{.column width="60%"}
 1. Daily ice cream sales and gasoline sales are significantly correlated.
 2. Social media use and depression are correlated.
 3. In school children, finger length and reading ability are strongly correlated.
 4. Both caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.
 5. Young children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life.
-]{.column width="60%"}
+:::
 
 ::::
 

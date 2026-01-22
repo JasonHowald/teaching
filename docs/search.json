@@ -235,21 +235,21 @@
     "href": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations",
     "title": "2. Association and Correlation",
     "section": "Scatterplots and correlations",
-    "text": "Scatterplots and correlations\nA scatterplot is 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\nimport seaborn as sns\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load data\ndf = pd.read_csv(\"../openintro.csv/cdc.samp.csv\")\n\n# Create plot with clear labels\nsns.regplot(data=df, x='weight', y='wtdesire')\nplt.xlabel(\"Actual Weight (lbs)\")\nplt.ylabel(\"Desired Weight (lbs)\")\nplt.title(r\"Actual vs. Desired Weight ($\\rho = 0.74$)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Scatterplot (weight vs desired weight) showing strong positive correlation (\\(\\rho = 0.74\\))"
+    "text": "Scatterplots and correlations\nA scatterplot is 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot (weight vs desired weight) showing strong positive correlation (\\(\\rho = 0.74\\))"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-1",
     "href": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-1",
     "title": "2. Association and Correlation",
     "section": "Scatterplots and correlations",
-    "text": "Scatterplots and correlations\nA scatterplot is 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\nimport seaborn as sns\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load data\ndf = pd.read_csv(\"../openintro.csv/cdc.samp.csv\")\n\n# Create plot with clear labels\nsns.scatterplot(data=df, x='age', y='weight')\nplt.xlabel(\"Age (years)\")\nplt.ylabel(\"Weight (lbs)\")\nplt.title(r\"Age vs. Weight ($\\rho = 0.09$)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 2: Scatterplot (age vs weight) showing no significant correlation (\\(\\rho = 0.09\\))"
+    "text": "Scatterplots and correlations\nA scatterplot is 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot (age vs weight) showing no significant correlation (\\(\\rho = 0.09\\))"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-2",
     "href": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-2",
     "title": "2. Association and Correlation",
     "section": "Scatterplots and correlations",
-    "text": "Scatterplots and correlations\nA scatterplot is a 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\nimport seaborn as sns\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load data\ndf = pd.read_csv(\"../openintro.csv/cdc.samp.csv\")\n\n# Create plot with clear labels\nsns.regplot(data=df, x='age', y='height')\nplt.xlabel(\"Age (years)\")\nplt.ylabel(\"Height (lbs)\")\nplt.title(r\"Age vs. Height ($\\rho = -0.30$)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 3: Scatterplot (age vs height) showing weak negative correlation (\\(\\rho = -0.30\\))"
+    "text": "Scatterplots and correlations\nA scatterplot is a 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 3: Scatterplot (age vs height) showing weak negative correlation (\\(\\rho = -0.30\\))"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#fishers-irises",
@@ -263,7 +263,7 @@
     "href": "Math125/slides/2_association_and_correlation.html#correlations-can-change-when-data-is-regrouped.",
     "title": "2. Association and Correlation",
     "section": "Correlations can change when data is regrouped.",
-    "text": "Correlations can change when data is regrouped.\n\n[ ### A negative Correlation\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\niris = pd.read_csv(\"https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv\")\n\nsns.lmplot(data = iris, x='petal_width', y='sepal_width')\nplt.show()\n\n\n\n\nScatterplot showing weak negative correlation between petal width and sepal width\n\n\n\n]{.column width=“50%”}[ ### 3 positive correlations\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\niris = pd.read_csv(\"https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv\")\n\nsns.lmplot(data = iris, x='petal_width', y='sepal_width', hue=\"species\")\nplt.show()\n\n\n\n\nScatterplot showing three strong positive correlations between petal width and sepal width\n\n\n\n]{.column width=“50%”}"
+    "text": "Correlations can change when data is regrouped.\n\n\nA negative Correlation\n\n\n\n\n\nScatterplot showing weak negative correlation between petal width and sepal width\n\n\n\n\n\n3 positive correlations\n\n\n\n\n\nScatterplot showing three strong positive correlations between petal width and sepal width"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#types-of-statistical-association",
@@ -291,21 +291,21 @@
     "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary",
     "title": "1. The Shape of Data",
     "section": "Examples using data vocabulary",
-    "text": "Examples using data vocabulary\n\n### Data Discussion * Describe a case in this context. * Describe a data matrix (aka dataframe) in this context.[ ### Data Table\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset\n\n\n\n\n\n\n\n\n]{.column width=“50%”}"
+    "text": "Examples using data vocabulary\n\n\nData Discussion\n\nDescribe a case in this context.\nDescribe a data matrix (aka dataframe) in this context.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
     "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
     "title": "1. The Shape of Data",
     "section": "Examples using data vocabulary",
-    "text": "Examples using data vocabulary\n\n### Data Discussion * Give a quantitative variable. * Give a categorical variable.[ ### Data Table\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset\n\n\n\n\n\n\n\n\n]{.column width=“60%”}"
+    "text": "Examples using data vocabulary\n\n\nData Discussion\n\nGive a quantitative variable.\nGive a categorical variable.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
     "href": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
     "title": "1. The Shape of Data",
     "section": "The humble .csv file",
-    "text": "The humble .csv file\n\n### CSV (Comma Separated Value) - Text-based - Simple! - Compatible - Ugly – bad for eyeballs, bad for screenreaders, unaligned - Perfect for export/share/import.### Example data in .csv format: Year,month,day,richter,area,region,deaths 1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000 1902,December,16,6.4,Uzbekistan,Russia,4700 1903,April,28,7,Malazgirt,Turkey,3500 1903,May,28,5.8,Gole,Turkey,1000"
+    "text": "The humble .csv file\n\n\nCSV (Comma Separated Value)\n\nText-based\nSimple!\nCompatible\nUgly – bad for eyeballs, bad for screenreaders, unaligned\nPerfect for export/share/import.\n\n\nExample data in .csv format:\nYear,month,day,richter,area,region,deaths 1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000 1902,December,16,6.4,Uzbekistan,Russia,4700 1903,April,28,7,Malazgirt,Turkey,3500 1903,May,28,5.8,Gole,Turkey,1000"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
@@ -334,6 +334,62 @@
     "title": "1. The Shape of Data",
     "section": "Individually – Homework",
     "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "title": "3. Correlation is not Causation",
+    "section": "Preparatory Work",
+    "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "title": "3. Correlation is not Causation",
+    "section": "Three explanations for correlation (at least!)",
+    "text": "Three explanations for correlation (at least!)\n\n\nFor each scenario, which is more likely? Why?\n\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n\n\n\nDaily ice cream sales and gasoline sales are significantly correlated.\nSocial media use and depression are correlated.\nIn school children, finger length and reading ability are strongly correlated.\nBoth caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.\nYoung children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "title": "3. Correlation is not Causation",
+    "section": "Start with an open mind.",
+    "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "title": "3. Correlation is not Causation",
+    "section": "Lurking (“Confounding”) variables",
+    "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "title": "3. Correlation is not Causation",
+    "section": "So… withhold judgment forever?",
+    "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "title": "3. Correlation is not Causation",
+    "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
+    "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "title": "3. Correlation is not Causation",
+    "section": "Individual Homework",
+    "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
+  },
+  {
+    "objectID": "Math125/index.html",
+    "href": "Math125/index.html",
+    "title": "Math 125",
+    "section": "",
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n4-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n6. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
@@ -410,7 +466,7 @@
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#identifying-the-sampling-strategy",
     "title": "4-5. Sampling and Sample Bias",
     "section": "Identifying the sampling strategy",
-    "text": "Identifying the sampling strategy\nYou want to survey college students about relationship viewpoints. Ana: We’ll each pick a residence hall and knock ten random doors within it. Biljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them! Marija: Let’s coordinate with five random professors, and survey everybody in their classes. Dragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc. Bonus: To generate their names I picked a nation at random,  then chose four random names common within that nation. What sampling strategy did I use?"
+    "text": "Identifying the sampling strategy\nYou want to survey college students about relationship viewpoints.\nAna: We’ll each pick a residence hall and knock ten random doors within it.\nBiljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them!\nMarija: Let’s coordinate with five random professors, and survey everybody in their classes.\nDragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc.\nBonus: To generate their names I picked a nation at random,  then chose four random names common within that nation. What sampling strategy did I use?"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments",
@@ -434,60 +490,74 @@
     "text": "Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
   },
   {
-    "objectID": "Math125/index.html",
-    "href": "Math125/index.html",
-    "title": "Math 125",
+    "objectID": "Math125/slides/6_controlled_experiments.html#section",
+    "href": "Math125/slides/6_controlled_experiments.html#section",
+    "title": "6. Controlled Experiments",
     "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n4-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+    "text": "Preparation\nReview sections 1.2.4 and 1.2.5. Read section 1.4, Experiments, and review vocabulary on the next slide."
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
-    "title": "3. Correlation is not Causation",
-    "section": "Preparatory Work",
-    "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
+    "objectID": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
+    "href": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
+    "title": "6. Controlled Experiments",
+    "section": "Key Vocabulary – experiments",
+    "text": "Key Vocabulary – experiments\nControl, randomization, replication, and blocking.\nControl Group and Treatment Group\nPlacebo and the placebo effect\nBlind and double blind experiment design\nExplanatory and response variables\nObservational study vs. experiment\nCausal inference"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
-    "title": "3. Correlation is not Causation",
-    "section": "Three explanations for correlation (at least!)",
-    "text": "Three explanations for correlation (at least!)\n\n[For each scenario, which is more likely? Why?\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n]{.column width=“50%”}1. Daily ice cream sales and gasoline sales are significantly correlated. 2. Social media use and depression are correlated. 3. In school children, finger length and reading ability are strongly correlated. 4. Both caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years. 5. Young children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
+    "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
+    "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
+    "title": "6. Controlled Experiments",
+    "section": "Controlled Experiment or Observational Study? (1/2)",
+    "text": "Controlled Experiment or Observational Study? (1/2)\n\nA survey of 200 pirates reveals correlation between citrus consumption and scurvy.\nChemical X results in 40% better pain reduction, compared to placebo.\nLongitudinal study tracks risk factors and health metrics for 20000 people.\nIn various societies, art is quantifiably more common after the inventions of the yoke and plow."
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
-    "title": "3. Correlation is not Causation",
-    "section": "Start with an open mind.",
-    "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
+    "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
+    "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
+    "title": "6. Controlled Experiments",
+    "section": "Controlled Experiment or Observational Study? (2/2)",
+    "text": "Controlled Experiment or Observational Study? (2/2)\n\nA study links sports-related concussions to academic outcomes.\nWatering some plants more than others affects their growth.\nA professor investigates whether front-row seating is linked to better learning outcomes.\nAt random, I present some users of my social media app with one of two feeds, comparing user engagement and ad clicks."
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
-    "title": "3. Correlation is not Causation",
-    "section": "Lurking (“Confounding”) variables",
-    "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
+    "objectID": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
+    "href": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
+    "title": "6. Controlled Experiments",
+    "section": "Experiments are hard. Why bother?",
+    "text": "Experiments are hard. Why bother?\nWhat is a causal conclusion? What is the weakness of an observational study? How does the controlled experiment overcome this weakness?"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
-    "title": "3. Correlation is not Causation",
-    "section": "So… withhold judgment forever?",
-    "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
+    "objectID": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
+    "href": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
+    "title": "6. Controlled Experiments",
+    "section": "Design for ethical science",
+    "text": "Design for ethical science\nPost Traumatic Stress Disorder (PTSD) sufferers are recruited for a study. Intake interviews classify them by trauma type and symptom severity. Describe a controlled experiment to test the effectiveness of three treatment protocols (cognitive behavioral therapy, group therapy, or no therapy at all).\n\nWould you use placebo in this study?\nHow would you decide which patients go to which treatment type?\nWho should assess patient improvement? (patient? therapist? researcher? other?)\nWhat ethical safeguards are needed?\nIn principle, could your study show that one therapy is better for treating PTSD than another?"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
-    "title": "3. Correlation is not Causation",
-    "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
-    "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
+    "objectID": "Math125/slides/6_controlled_experiments.html#swifties-unite",
+    "href": "Math125/slides/6_controlled_experiments.html#swifties-unite",
+    "title": "6. Controlled Experiments",
+    "section": "Swifties unite!",
+    "text": "Swifties unite!\nOn 2024-09-10, Taylor Swift endorsed Kamala Harris for president. Hypothetically, you talk to 1000 people aware of the endorsement, and 1000 who are not. Those who noticed it show a 4 point shift toward Harris for president. What can be concluded about the political power of Taylor Swift?"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
-    "title": "3. Correlation is not Causation",
-    "section": "Individual Homework",
-    "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
+    "objectID": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
+    "href": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
+    "title": "6. Controlled Experiments",
+    "section": "The Power of Yoga",
+    "text": "The Power of Yoga\nThere is some indication that practicing yoga has positive health effects. In small groups, design a study which could determine whether yoga mitigates depressive symptoms in particular. Address these concerns:\n\nWhat treatment groups will you need?\nHow large should the study be? How might you recruit for it?\nHow will volunteers be assigned to treatment groups?\nWill you use placebo? How?\nWill you use blocking? How?\nHow long will your study take?\nHow will “depressive symptoms” be measured? By whom?"
+  },
+  {
+    "objectID": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
+    "href": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
+    "title": "6. Controlled Experiments",
+    "section": "No free lunch",
+    "text": "No free lunch\nGive an example of a study for which blinding and double-blinding are impossible or unethical. Give an example of a study for which controlling the explanatory variable is impossible or unethical. In pharmacology, is it possible to know (causally, statistically) that a drug has specific biological effects without understanding how or why?"
+  },
+  {
+    "objectID": "Math125/slides/6_controlled_experiments.html#homework",
+    "href": "Math125/slides/6_controlled_experiments.html#homework",
+    "title": "6. Controlled Experiments",
+    "section": "Homework",
+    "text": "Homework\n\nControlled Experiments, on webwork."
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-professor",

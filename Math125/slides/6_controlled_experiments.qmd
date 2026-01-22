@@ -1,0 +1,85 @@
+---
+title: "6. Controlled Experiments"
+description: "How randomization and control help us prove causal links between variables."
+---
+
+##
+Preparation
+
+Review sections 1.2.4 and 1.2.5. Read section 1.4, Experiments, and review vocabulary on the next slide.
+
+
+## Key Vocabulary – experiments
+
+Control, randomization, replication, and blocking.
+
+Control Group and Treatment Group
+
+Placebo and the placebo effect
+
+Blind and double blind experiment design
+
+Explanatory and response variables
+
+Observational study vs. experiment
+
+Causal inference
+
+## Controlled Experiment or Observational Study? (1/2) {.activity}
+
+1. A survey of 200 pirates reveals correlation between citrus consumption and scurvy. 
+2. Chemical X results in 40% better pain reduction, compared to placebo.
+3. Longitudinal study tracks risk factors and health metrics for 20000 people.
+4. In various societies, art is quantifiably more common after the inventions of the yoke and plow. 
+
+## Controlled Experiment or Observational Study? (2/2) {.activity}
+
+5. A study links sports-related concussions to academic outcomes.
+6. Watering some plants more than others affects their growth.
+7. A professor investigates whether front-row seating is linked to better learning outcomes.
+8. At random, I present some users of my social media app with one of two feeds, comparing user engagement and ad clicks.
+
+## Experiments are hard. Why bother?  {.activity}
+What is a causal conclusion?
+What is the weakness of an observational study?
+How does the controlled experiment overcome this weakness?
+
+## Design for ethical science  {.activity}
+
+Post Traumatic Stress Disorder (PTSD) sufferers are recruited for a study. Intake interviews classify them by trauma type and symptom severity. Describe a controlled experiment to test the effectiveness of three treatment protocols (cognitive behavioral therapy, group therapy, or no therapy at all).
+
+1. Would you use placebo in this study? 
+2. How would you decide which patients go to which treatment type?
+3. Who should assess patient improvement? (patient? therapist? researcher? other?)
+4. What ethical safeguards are needed? 
+5. In principle, could your study show that one therapy is better for treating PTSD than another?
+
+## Swifties unite! {.activity}
+
+On 2024-09-10, Taylor Swift endorsed Kamala Harris for president. 
+Hypothetically, you talk to 1000 people aware of the endorsement, 
+and 1000 who are not. Those who noticed it show a 4 point shift 
+toward Harris for president. What can be concluded about the political 
+power of Taylor Swift?
+
+## The Power of Yoga  {.activity}
+
+There is some indication that practicing yoga has positive health effects. In small groups, design a study which could determine whether yoga mitigates depressive symptoms in particular. Address these concerns:
+
+1. What treatment groups will you need? 
+2. How large should the study be? How might you recruit for it?
+3. How will volunteers be assigned to treatment groups?
+4. Will you use placebo? How?
+5. Will you use blocking? How?
+6. How long will your study take?
+7. How will “depressive symptoms” be measured? By whom?
+
+## No free lunch {.activity}
+
+Give an example of a study for which blinding and double-blinding are impossible or unethical.
+Give an example of a study for which controlling the explanatory variable is impossible or unethical.
+In pharmacology, is it possible to know (causally, statistically) that a drug has specific biological effects without understanding how or why?
+
+## Homework
+
+6. Controlled Experiments, on webwork.
