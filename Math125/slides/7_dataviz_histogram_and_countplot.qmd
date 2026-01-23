@@ -1,0 +1,365 @@
+---
+title: "7. Dataviz: Histogram and Countplot"
+description: "Visualizing Distributions of one quantitative or categorical variable using frequency counts"
+---
+
+## Preparation
+Read 2.1.3 (histograms and shape) and 2.2.1 (bar plots) and 2.2.3 (bar plots, continued)
+
+
+## Goals
+* Read a histogram or bar chart correctly.
+* Identify when each plot type is appropriate.
+* Describe the shape of a histogram using proper vocabulary.
+* Generate your own histograms and bar charts from data using seaborn.
+
+## Note on Accessibility: 
+
+Data visualization is the production of charts and graphs that reveal
+trends and interrelationships to the eye. Although it can be done well by 
+and for low-vision and colorblind users, dataviz is fundamentally visual, so
+it's problematic for the blind. Data methods by and for 
+the blind should strongly consider other techniques. Nevertheless, it's 
+important for both blind and sighted students of statistics to understand 
+the larger discipline. I've tried to make these notes useful to everyone, 
+understanding that a histogram might not be.
+
+## Bar Charts (aka Count Plots)
+
+A bar chart represents the distribution of a **categorical** variable, showing
+how many data cases are in each category. It answers questions like...
+
+1. How many of each major do we have on campus?
+2. What home languages are spoken in Potsdam, and how many households speak each language?
+3. How many patients are assigned to each nurse?
+
+To make a bar chart, place the categories (majors, languages, nurses) on 
+one axis (normally "$x$"). From each, make a rectangular bar proportional to the number in that category.
+Leave a gap between the bars. Mark and label the other axis so the counts can be inferred.
+
+## Bar Charts -- example
+
+```{python}
+#| eval: false
+#| echo: true
+import seaborn as sns
+df = pd.read_csv("starbucks.csv")
+sns.countplot(data=df, x= 'type')
+```
+
+```{python}
+#| label: fig-bar-chart
+#| fig-cap: "Bar Chart for Starbucks food item types"
+#| fig-alt: "A bar chart. x-axis labels are bakery, bistro box, petite, hot breakfast, salad, sandwich, and parfait. Rectangles extend upwards from each to varying heights. The largest is bakery, whose height is about 40. The smallest is salad, whose height is barely above zero. "
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/starbucks.csv")
+
+# Create plot with clear labels
+sns.countplot(data=df, x= 'type')
+plt.xlabel("Food item type")
+#plt.ylabel("Desired Weight (lbs)")
+plt.title(r"Types of Starbucks food items ")
+plt.show()
+
+```
+
+## Bar Charts -- understanding {.activity}
+
+1. Can the bars be rearranged on the $x$-axis? Would that change the meaning of the chart?
+2. Do the bar colors matter? Should they be the same or different?
+3. Can a bar chart illustrate the relationship between two different categorical variables? For example, home language related to religious heritage?
+
+## Histograms -- purpose
+
+A histogram is similar, but represents the distribution of a **quantitative** variable. It answers 
+questions like
+
+1. What sorts of GPA's do students on campus have, and which GPA ranges are most common?
+2. How much do Potsdam households spend weekly on groceries? Which amounts are common, which are outliers, and which are unheard of?
+3. Nurses' visits with patients take a variety of time. How do the durations of visits vary? Are most 
+visits short, or is there a wide variety of times?
+
+## Histograms -- method
+
+To draw a histogram, the x-axis is scaled to show the entire range of data values and divided into equal-sized intervals (e.g. 5-10, 10-15, 15-20) called "bins." Rectangular bars are drawn above each bin, showing how frequently the data values fall into that range. The y-axis is labeled "count" or "frequency." Tall bars indicate common data ranges, and short bars indicate rare data ranges. Unlike a bar chart, the bars touch each other.
+
+## Histograms -- example
+
+
+```{python}
+#| eval: false
+#| echo: true
+import seaborn as sns
+df = pd.read_csv("starbucks.csv")
+sns.displot(data=df, x= 'calories', bins=10)
+```
+
+```{python}
+#| label: fig-histogram-chart
+#| fig-cap: "Histogram for Starbucks food item Calorie content"
+#| fig-alt: "A histogram. The x-axis is labeled 'Calories' and extends from 100 to 500. The y-axis is labeled 'count' and extends from 0 to 16. Ten vertical bars extend upward from the x axis to various heights. Those on the right where x is 300 or more are rather tall, whereas those on the left where x is less than 300 are much shorter."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/starbucks.csv")
+
+# Create plot with clear labels
+sns.displot(data=df, x= 'calories', bins=10)
+plt.xlabel("Calories")
+plt.title(r"Types of Starbucks food item Calorie content")
+plt.show()
+
+```
+
+## Histograms -- Understanding {.activity}
+
+1. Can the bins and rectangles be rearranged on the $x$-axis? Would that change the meaning of the plot?
+2. Should the bars be the same color or different colors?
+3. We're free to choose the number of bins, which effects the width of the bars. 
+How should we decide how many to use?
+4. Is it necessary to label the $y$-axis? Why or why not?
+5. Can a histogram show the relationship between one variable and another? For example, can we compare the Calorie counts of various categories of food item (bakery, sandwich, etc) using a histogram?
+
+## Histograms and Bar Charts – Comparison
+
+In common:
+
+* Data values on x-axis.
+* Frequency counts on y-axis, 
+* Rectangles whose height shows the count.
+* Applicable to a single variable only (by default).
+
+Differences:
+
+* Bar for categorical, histogram for quantitative.
+* Bar can be freely rearranged, histogram must be in numerical order.
+* Bar has gaps, histogram none.
+
+
+## Choosing the right visualization {.activity}
+In each scenario, should we favor a histogram, a bar chart, or neither? Discuss with your group and share your answers with the class.
+
+1. To understand the frequency distribution of six colors of candy.
+2. To understand the variety of costs of child care in Potsdam.
+3. To reveal a link between religious identity and political party affiliation.
+4. To reveal a link between time spent studying and course grade.
+5. To visualize the variety of total bill prices at a given restaurant.
+6. To show an answer to the question: How many speakers of each language do we have in this classroom?
+
+## Histogram sense – modality
+
+A distinct peak or hill in the histogram shows a broad range of common values. A histogram is **unimodal** if it has one main peak, **bimodal** if it has two, **trimodal** if it has three, etc.
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+### Unimodal
+```{python}
+#| label: fig-histogram-poverty
+#| fig-cap: "Histogram -- counties' poverty rates"
+#| fig-alt: "Unimodal histogram example. The x-axis is labeled 'Poverty Percent by county' and ranges from 0 to 50. The y-axis is labeled 'frequency' and ranges from 0 to 250. Many narrow vertical bars form the shape of a single large hill centered on about x equals 15. To the left and right of 15 the bars gradually decline toward zero."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.displot(data=df, x= 'poverty')
+plt.xlabel("Poverty Percent by county")
+plt.title(r"Poverty Rate of all U.S. counties.")
+plt.show()
+
+```
+
+
+:::
+
+:::{.column width="50%"}
+
+
+### Bimodal 
+```{python}
+#| label: fig-histogram-mlb
+#| fig-cap: "Histogram -- MLB players' SLG"
+#| fig-alt: "Bimodal histogram example. The x-axis is labeled 'Slugging Percentage' and ranges from 0 to 2. The y-axis is labeled 'frequency' and ranges from 0 to 250. Many narrow vertical bars form the shape of a single large hill centered on about x equals 0.4. The leftmost bar where x equals 0 towers above the rest, forming a secondary distinct spike."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/mlb_players_18.csv")
+
+# Create plot with clear labels
+sns.displot(data=df, x= 'SLG')
+plt.xlabel("Slugging percentage")
+plt.title(r"Slugging percentage of MLB players, 2018.")
+plt.show()
+
+```
+
+:::
+
+::::
+
+## Histogram sense -- skew
+
+**Skew** is an asymmetry showing a longer, heavier 
+tail on one side than the other. 
+
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+### Skewed Left
+```{python}
+#| label: fig-histogram-skewed-left
+#| fig-cap: "Histogram -- counties' homeownership rates"
+#| fig-alt: "Skewed-left histogram example. The x-axis is labeled 'Homeownership percent by county' and ranges from 0 to 90. The y-axis is labeled 'frequency' and ranges from 0 to 250. A large mode is visible around x=80, tapering off to zero slowly and gradually to the left but steeply to the right."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.displot(data=df, x= 'homeownership', bins=30)
+plt.xlabel("Homeownership Percent by county")
+plt.title(r"Homeownership Percent of all U.S. counties.")
+plt.show()
+
+```
+
+
+:::
+
+:::{.column width="50%"}
+
+
+### Skewed Right 
+```{python}
+#| label: fig-histogram-skewed-right
+#| fig-cap: "Histogram -- MLB players' salary'"
+#| fig-alt: "Skewed right histogram example. The x-axis is labeled 'Salary -- millions of dollars per year' and ranges from 0 to 30. The y-axis is labeled 'frequency' and ranges from 0 to 400. A huge spike is visible near zero, and tapers off to form a long right tail. There is no left tail."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/mlb.csv")
+
+# Create plot with clear labels
+sns.displot(data=df, x='salary', bins=30)
+plt.xlabel("Salary ($M per year)")
+plt.title(r"Salary of MLB players (2010)")
+plt.show()
+
+```
+
+:::
+
+::::
+
+
+## Features of a histogram – mean (average)
+
+The average value (or mean) of a data variable can be read from its histogram. The mean is the **center of mass**. Imagine balancing the entire histogram (all rectangles as one unit) on your finger from below. The balance point is the mean.
+
+```{python}
+#| label: fig-histogram-skewed-left-redux
+#| fig-cap: "Histogram -- counties' homeownership rates"
+#| fig-alt: "Skewed-left histogram example. The x-axis is labeled 'Homeownership percent by county' and ranges from 0 to 90. The y-axis is labeled 'frequency' and ranges from 0 to 250. A large mode is visible around x=80, tapering off to zero slowly and gradually to the left but steeply to the right."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.displot(data=df, x= 'homeownership', bins=30)
+plt.xlabel("Homeownership Percent by county")
+plt.title(r"Homeownership Percent of all U.S. counties.")
+plt.show()
+
+```
+
+
+
+## Describe it! {.activity}
+
+Below is a histogram for a “Gamma(3,1)” random variable. Describe its modality, its skew, and its mean as completely as you can. Confer with your group and share with the class.
+
+
+```{python}
+#| label: fig-histogram-gamma
+#| fig-cap: "Gamma(3,1) random variable."
+#| fig-alt: "A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The $y$ axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately $3$."
+#| fig-width: 7
+#| fig-height: 4
+# import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+# Generate random numbers from a Gamma(shape=3, scale=1) distribution
+gamma_data = np.random.gamma(shape=3, scale=1, size=1000)
+
+# Create a histogram
+plt.figure(figsize=(8, 6))
+sns.histplot(gamma_data)
+plt.title('Histogram of Gamma(3,1) Random Variable')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+## Make your own plots -- basic process
+
+1. Fetch data with !wget
+2. Read data with pd.read_csv
+3. import seaborn as sns
+4. sns.displot or sns.countplot. See slides 6 & 10 of this slide deck. 
+
+## Jupyter Notebook Example {.activity}
+
+Your turn! Reproduce the histogram of baseball players' salaries. 
+the data is in OpenIntro's "mlb" dataset. 
+Make sure each teammate can achieve their own success at this task.
+When things go sideways, ask for help!
+Find a second dataframe you're curious about, and make another histogram.
+
+## Individual work
+
+On webwork: 7. Dataviz – histogram and countplot

@@ -336,60 +336,137 @@
     "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
-    "title": "3. Correlation is not Causation",
-    "section": "Preparatory Work",
-    "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Preparation",
+    "text": "Preparation\nRead 2.1.3 (histograms and shape) and 2.2.1 (bar plots) and 2.2.3 (bar plots, continued)"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
-    "title": "3. Correlation is not Causation",
-    "section": "Three explanations for correlation (at least!)",
-    "text": "Three explanations for correlation (at least!)\n\n\nFor each scenario, which is more likely? Why?\n\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n\n\n\nDaily ice cream sales and gasoline sales are significantly correlated.\nSocial media use and depression are correlated.\nIn school children, finger length and reading ability are strongly correlated.\nBoth caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.\nYoung children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Goals",
+    "text": "Goals\n\nRead a histogram or bar chart correctly.\nIdentify when each plot type is appropriate.\nDescribe the shape of a histogram using proper vocabulary.\nGenerate your own histograms and bar charts from data using seaborn."
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
-    "title": "3. Correlation is not Causation",
-    "section": "Start with an open mind.",
-    "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Note on Accessibility:",
+    "text": "Note on Accessibility:\nData visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be."
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
-    "title": "3. Correlation is not Causation",
-    "section": "Lurking (“Confounding”) variables",
-    "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Bar Charts (aka Count Plots)",
+    "text": "Bar Charts (aka Count Plots)\nA bar chart represents the distribution of a categorical variable, showing how many data cases are in each category. It answers questions like…\n\nHow many of each major do we have on campus?\nWhat home languages are spoken in Potsdam, and how many households speak each language?\nHow many patients are assigned to each nurse?\n\nTo make a bar chart, place the categories (majors, languages, nurses) on one axis (normally “\\(x\\)”). From each, make a rectangular bar proportional to the number in that category. Leave a gap between the bars. Mark and label the other axis so the counts can be inferred."
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
-    "title": "3. Correlation is not Causation",
-    "section": "So… withhold judgment forever?",
-    "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Bar Charts – example",
+    "text": "Bar Charts – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.countplot(data=df, x= 'type')\n\n\n\n\n\n\n\n\n\nFigure 1: Bar Chart for Starbucks food item types"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
-    "title": "3. Correlation is not Causation",
-    "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
-    "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Bar Charts – understanding",
+    "text": "Bar Charts – understanding\n\nCan the bars be rearranged on the \\(x\\)-axis? Would that change the meaning of the chart?\nDo the bar colors matter? Should they be the same or different?\nCan a bar chart illustrate the relationship between two different categorical variables? For example, home language related to religious heritage?"
   },
   {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
-    "title": "3. Correlation is not Causation",
-    "section": "Individual Homework",
-    "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Histograms – purpose",
+    "text": "Histograms – purpose\nA histogram is similar, but represents the distribution of a quantitative variable. It answers questions like\n\nWhat sorts of GPA’s do students on campus have, and which GPA ranges are most common?\nHow much do Potsdam households spend weekly on groceries? Which amounts are common, which are outliers, and which are unheard of?\nNurses’ visits with patients take a variety of time. How do the durations of visits vary? Are most visits short, or is there a wide variety of times?"
   },
   {
-    "objectID": "Math125/index.html",
-    "href": "Math125/index.html",
-    "title": "Math 125",
-    "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n4-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n6. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Histograms – method",
+    "text": "Histograms – method\nTo draw a histogram, the x-axis is scaled to show the entire range of data values and divided into equal-sized intervals (e.g. 5-10, 10-15, 15-20) called “bins.” Rectangular bars are drawn above each bin, showing how frequently the data values fall into that range. The y-axis is labeled “count” or “frequency.” Tall bars indicate common data ranges, and short bars indicate rare data ranges. Unlike a bar chart, the bars touch each other."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Histograms – example",
+    "text": "Histograms – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.displot(data=df, x= 'calories', bins=10)\n\n\n\n\n\n\n\n\n\nFigure 2: Histogram for Starbucks food item Calorie content"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Histograms – Understanding",
+    "text": "Histograms – Understanding\n\nCan the bins and rectangles be rearranged on the \\(x\\)-axis? Would that change the meaning of the plot?\nShould the bars be the same color or different colors?\nWe’re free to choose the number of bins, which effects the width of the bars. How should we decide how many to use?\nIs it necessary to label the \\(y\\)-axis? Why or why not?\nCan a histogram show the relationship between one variable and another? For example, can we compare the Calorie counts of various categories of food item (bakery, sandwich, etc) using a histogram?"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Histograms and Bar Charts – Comparison",
+    "text": "Histograms and Bar Charts – Comparison\nIn common:\n\nData values on x-axis.\nFrequency counts on y-axis,\nRectangles whose height shows the count.\nApplicable to a single variable only (by default).\n\nDifferences:\n\nBar for categorical, histogram for quantitative.\nBar can be freely rearranged, histogram must be in numerical order.\nBar has gaps, histogram none."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Choosing the right visualization",
+    "text": "Choosing the right visualization\nIn each scenario, should we favor a histogram, a bar chart, or neither? Discuss with your group and share your answers with the class.\n\nTo understand the frequency distribution of six colors of candy.\nTo understand the variety of costs of child care in Potsdam.\nTo reveal a link between religious identity and political party affiliation.\nTo reveal a link between time spent studying and course grade.\nTo visualize the variety of total bill prices at a given restaurant.\nTo show an answer to the question: How many speakers of each language do we have in this classroom?"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Histogram sense – modality",
+    "text": "Histogram sense – modality\nA distinct peak or hill in the histogram shows a broad range of common values. A histogram is unimodal if it has one main peak, bimodal if it has two, trimodal if it has three, etc.\n\n\nUnimodal\n\n\n\n\n\n\n\n\nFigure 3: Histogram – counties’ poverty rates\n\n\n\n\n\n\nBimodal\n\n\n\n\n\n\n\n\nFigure 4: Histogram – MLB players’ SLG"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Histogram sense – skew",
+    "text": "Histogram sense – skew\nSkew is an asymmetry showing a longer, heavier tail on one side than the other.\n\n\nSkewed Left\n\n\n\n\n\n\n\n\nFigure 5: Histogram – counties’ homeownership rates\n\n\n\n\n\n\nSkewed Right\n\n\n\n\n\n\n\n\nFigure 6: Histogram – MLB players’ salary’"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Features of a histogram – mean (average)",
+    "text": "Features of a histogram – mean (average)\nThe average value (or mean) of a data variable can be read from its histogram. The mean is the center of mass. Imagine balancing the entire histogram (all rectangles as one unit) on your finger from below. The balance point is the mean.\n\n\n\n\n\n\n\n\nFigure 7: Histogram – counties’ homeownership rates"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Describe it!",
+    "text": "Describe it!\nBelow is a histogram for a “Gamma(3,1)” random variable. Describe its modality, its skew, and its mean as completely as you can. Confer with your group and share with the class.\n\n\n\n\n\n\n\n\nFigure 8: Gamma(3,1) random variable."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Make your own plots – basic process",
+    "text": "Make your own plots – basic process\n\nFetch data with !wget\nRead data with pd.read_csv\nimport seaborn as sns\nsns.displot or sns.countplot. See slides 6 & 10 of this slide deck."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Jupyter Notebook Example",
+    "text": "Jupyter Notebook Example\nYour turn! Reproduce the histogram of baseball players’ salaries. the data is in OpenIntro’s “mlb” dataset. Make sure each teammate can achieve their own success at this task. When things go sideways, ask for help! Find a second dataframe you’re curious about, and make another histogram."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
+    "title": "7. Dataviz: Histogram and Countplot",
+    "section": "Individual work",
+    "text": "Individual work\nOn webwork: 7. Dataviz – histogram and countplot"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
@@ -488,6 +565,62 @@
     "title": "4-5. Sampling and Sample Bias",
     "section": "Homework",
     "text": "Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
+  },
+  {
+    "objectID": "Math125/index.html",
+    "href": "Math125/index.html",
+    "title": "Math 125",
+    "section": "",
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n4-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n6. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n7. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "title": "3. Correlation is not Causation",
+    "section": "Preparatory Work",
+    "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "title": "3. Correlation is not Causation",
+    "section": "Three explanations for correlation (at least!)",
+    "text": "Three explanations for correlation (at least!)\n\n\nFor each scenario, which is more likely? Why?\n\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n\n\n\nDaily ice cream sales and gasoline sales are significantly correlated.\nSocial media use and depression are correlated.\nIn school children, finger length and reading ability are strongly correlated.\nBoth caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.\nYoung children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "title": "3. Correlation is not Causation",
+    "section": "Start with an open mind.",
+    "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "title": "3. Correlation is not Causation",
+    "section": "Lurking (“Confounding”) variables",
+    "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "title": "3. Correlation is not Causation",
+    "section": "So… withhold judgment forever?",
+    "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "title": "3. Correlation is not Causation",
+    "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
+    "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "title": "3. Correlation is not Causation",
+    "section": "Individual Homework",
+    "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#section",
