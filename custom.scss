@@ -1,33 +1,7 @@
 /*-- scss:rules --*/
+// Apply in all documents
 
-.reveal h1, 
-.reveal h2, 
-.reveal h3, 
-.reveal h4,
-.reveal .slides section > h1 {
-  letter-spacing: normal !important; // Fixes the squished letters in main headers.
-  font-kerning: normal;
-}
-
-/* Make a small "activity" button available to signify student work in class.*/
-section.activity::before {
-  content: "ACTIVITY";
-  position: absolute;
-  top: -20px;          // Adjust this to sit just above your title
-  right: 0;
-  font-size: 0.4em;    // Small and professional
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  color: #1b281a;      // A muted slate that complements the Sky blue
-  padding: 5px 12px;
-  border: 1px solid #78909c;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-
-
-
-// Override sky-theme default blockquote color 808080, because
+// Override sky-theme blockquote color 808080, because
 // it has too-low contrast ratio against the (sky) blue background.
 blockquote p {
   color: #385838; //Just barely better than WCAG 2.1 AAA standard contrast 7:1 against sky

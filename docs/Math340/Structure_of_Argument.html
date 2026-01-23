@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-656b17b88470cd5da59fd22985420d54.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -138,7 +138,6 @@ window.Quarto = {
   <li><a href="#activity-decide-whether-each-implication-sounds-true-or-false.-explain-why." id="toc-activity-decide-whether-each-implication-sounds-true-or-false.-explain-why." class="nav-link" data-scroll-target="#activity-decide-whether-each-implication-sounds-true-or-false.-explain-why."><span class="header-section-number">2.4.1</span> Activity: Decide whether each implication sounds true or false. Explain why.</a></li>
   <li><a href="#in-a-truth-table-1" id="toc-in-a-truth-table-1" class="nav-link" data-scroll-target="#in-a-truth-table-1"><span class="header-section-number">2.4.2</span> In a Truth Table</a></li>
   <li><a href="#in-proof-theory-1" id="toc-in-proof-theory-1" class="nav-link" data-scroll-target="#in-proof-theory-1"><span class="header-section-number">2.4.3</span> In Proof Theory</a></li>
-  <li><a href="#notes-1" id="toc-notes-1" class="nav-link" data-scroll-target="#notes-1"><span class="header-section-number">2.4.4</span> Notes</a></li>
   </ul></li>
   <li><a href="#understanding-or" id="toc-understanding-or" class="nav-link" data-scroll-target="#understanding-or"><span class="header-section-number">2.5</span> Understanding “or”</a>
   <ul class="collapse">
@@ -152,13 +151,15 @@ window.Quarto = {
   <li><a href="#in-proof-theory-3" id="toc-in-proof-theory-3" class="nav-link" data-scroll-target="#in-proof-theory-3"><span class="header-section-number">2.6.2</span> In Proof Theory</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.6.3</span> Examples</a></li>
   <li><a href="#do-not-believe-a-contradiction" id="toc-do-not-believe-a-contradiction" class="nav-link" data-scroll-target="#do-not-believe-a-contradiction"><span class="header-section-number">2.6.4</span> Do not believe a contradiction</a></li>
+  <li><a href="#a-matter-of-taste" id="toc-a-matter-of-taste" class="nav-link" data-scroll-target="#a-matter-of-taste"><span class="header-section-number">2.6.5</span> A Matter of Taste</a></li>
   </ul></li>
   <li><a href="#understanding-for-all" id="toc-understanding-for-all" class="nav-link" data-scroll-target="#understanding-for-all"><span class="header-section-number">2.7</span> Understanding “For all”</a>
   <ul class="collapse">
   <li><a href="#semantics-of-forall" id="toc-semantics-of-forall" class="nav-link" data-scroll-target="#semantics-of-forall"><span class="header-section-number">2.7.1</span> Semantics of <span class="math inline">\(\forall\)</span></a></li>
-  <li><a href="#proof-theory-of-forall" id="toc-proof-theory-of-forall" class="nav-link" data-scroll-target="#proof-theory-of-forall"><span class="header-section-number">2.7.2</span> Proof Theory of <span class="math inline">\(\forall\)</span></a></li>
-  <li><a href="#examples-proving-a-generalization" id="toc-examples-proving-a-generalization" class="nav-link" data-scroll-target="#examples-proving-a-generalization"><span class="header-section-number">2.7.3</span> Examples – proving a generalization</a></li>
-  <li><a href="#using-forall-as-a-premise" id="toc-using-forall-as-a-premise" class="nav-link" data-scroll-target="#using-forall-as-a-premise"><span class="header-section-number">2.7.4</span> Using <span class="math inline">\(\forall\)</span> as a premise</a></li>
+  <li><a href="#bounded-vs.-unbounded-forall" id="toc-bounded-vs.-unbounded-forall" class="nav-link" data-scroll-target="#bounded-vs.-unbounded-forall"><span class="header-section-number">2.7.2</span> Bounded vs.&nbsp;Unbounded <span class="math inline">\(\forall\)</span></a></li>
+  <li><a href="#proof-theory-of-forall" id="toc-proof-theory-of-forall" class="nav-link" data-scroll-target="#proof-theory-of-forall"><span class="header-section-number">2.7.3</span> Proof Theory of <span class="math inline">\(\forall\)</span></a></li>
+  <li><a href="#examples-proving-a-generalization" id="toc-examples-proving-a-generalization" class="nav-link" data-scroll-target="#examples-proving-a-generalization"><span class="header-section-number">2.7.4</span> Examples – proving a generalization</a></li>
+  <li><a href="#using-forall-as-a-premise" id="toc-using-forall-as-a-premise" class="nav-link" data-scroll-target="#using-forall-as-a-premise"><span class="header-section-number">2.7.5</span> Using <span class="math inline">\(\forall\)</span> as a premise</a></li>
   </ul></li>
   <li><a href="#understanding-there-exists" id="toc-understanding-there-exists" class="nav-link" data-scroll-target="#understanding-there-exists"><span class="header-section-number">2.8</span> Understanding “There exists”</a>
   <ul class="collapse">
@@ -318,12 +319,13 @@ window.Quarto = {
 <section id="in-a-truth-table" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="in-a-truth-table"><span class="header-section-number">2.3.1</span> In a Truth Table</h3>
 <p>The first way to explain “and” is to say generically exactly when “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>” would be true. This is done using a truth table. The truth table records that <span class="math inline">\(P \land Q\)</span> gets to be True only when both parts are true.</p>
+<div style="width: 40%; margin: auto;">
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>P</th>
 <th>Q</th>
-<th style="text-align: center;">P and Q</th>
+<th style="text-align: center;"><span class="math inline">\(P \land Q\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -349,21 +351,28 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="in-proof-theory" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="in-proof-theory"><span class="header-section-number">2.3.2</span> In Proof Theory</h3>
-<p>Another way to explain “and” is to prescribe how “<span class="math inline">\(P \land Q\)</span>” functions as an input or an output of a logical argument. In other words, how to <span class="math inline">\(P \land Q\)</span> function as as premise, and what argument form can produce <span class="math inline">\(P \land Q\)</span> as a conclusion?</p>
-<p><strong>And-introduction</strong> To justify “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>,” simply justify <span class="math inline">\(P\)</span>, then justify <span class="math inline">\(Q\)</span>. Once both are justified, “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>” may be deduced: <span class="math display">\[\frac{P , Q}{\therefore P \land Q}\]</span></p>
-<p><strong>And-elimination</strong> In reverse, if “<span class="math inline">\(P \land Q\)</span>” is known, one may conclude the parts separately. <span class="math display">\[\frac{P \land Q}{\therefore P} \hspace{1in} \frac{P \land Q}{\therefore Q}\]</span></p>
+<p>Another way to explain “and” is to prescribe how “<span class="math inline">\(P \land Q\)</span>” functions as an input or an output of a logical argument. In other words, how does <span class="math inline">\(P \land Q\)</span> function as as premise, and what argument form can produce <span class="math inline">\(P \land Q\)</span> as a conclusion?</p>
+<section id="and-introduction" class="level4" data-number="2.3.2.1">
+<h4 data-number="2.3.2.1" class="anchored" data-anchor-id="and-introduction"><span class="header-section-number">2.3.2.1</span> And-introduction</h4>
+<p>To justify “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>,” simply justify <span class="math inline">\(P\)</span>, then justify <span class="math inline">\(Q\)</span>. Once both are justified, “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>” may be deduced: <span class="math display">\[\frac{P , Q}{\therefore P \land Q}\]</span></p>
+</section>
+<section id="and-elimination" class="level4" data-number="2.3.2.2">
+<h4 data-number="2.3.2.2" class="anchored" data-anchor-id="and-elimination"><span class="header-section-number">2.3.2.2</span> And-elimination</h4>
+<p>In reverse, if “<span class="math inline">\(P \land Q\)</span>” is known, one may conclude the parts separately. <span class="math display">\[\frac{P \land Q}{\therefore P} \hspace{1in} \frac{P \land Q}{\therefore Q}\]</span></p>
 <p>Here we’re introducing the fraction syntax for abstract deduction rules. The top of the fraction represent premises, or more precisely portions of the argument “so far”. The bottom of the fraction represents the sound conclusion which can be be drawn.</p>
 <p>We don’t think of these forms as analogous to real fractions, and the analogy with division is not much use.</p>
 </section>
+</section>
 <section id="notes" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="notes"><span class="header-section-number">2.3.3</span> Notes</h3>
-<p><strong>Note for the philosophers:</strong></p>
-<p>Notice that an informal “and” is used in the descriptions of the interpretation of the symbol “<span class="math inline">\(\land\)</span>”. Foundational logic cannot build logical meaning from nothing. There is always a pre-theoretical, more intuitive logic operating before the theory can develop. Logical foundational work always appears circular or observational rather than cleanly creative. You can waste a lot of effort trying to see around this limitation. [I speak from experience. -jah]</p>
-<p><strong>Note for perceptive and intuitive people</strong></p>
-<p>Normally, asserting “A and B” together also connotes a relatedness of ideas. This is why “It’s snowing and I’m cold” sounds better than “It’s snowing and I’m hungry.” Strictly logically speaking, no relationship between <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> is required or implied, only that both <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are true.</p>
+<ol type="1">
+<li><p>Notice that an informal “and” is used in the descriptions of the interpretation of the symbol “<span class="math inline">\(\land\)</span>”. Foundational logic cannot build logical meaning from nothing. There is always a pre-theoretical, more intuitive logic operating before the theory can develop. Logical foundational work always appears circular or observational rather than cleanly creative. You can waste a lot of effort trying to see around this limitation. (I speak from experience.)</p></li>
+<li><p>Normally, asserting “A and B” together also connotes a relatedness of ideas. This is why “It’s snowing and I’m cold” sounds better than “It’s snowing and I’m hungry.” Strictly logically speaking, no relationship between <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> is required or implied, only that both <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are true.</p></li>
+</ol>
 </section>
 </section>
 <section id="understanding-if-then" class="level2" data-number="2.4">
@@ -384,12 +393,13 @@ window.Quarto = {
 <section id="in-a-truth-table-1" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="in-a-truth-table-1"><span class="header-section-number">2.4.2</span> In a Truth Table</h3>
 <p>The truth table for “implies” is challenging and should be established by public debate, not by fiat. This is the result of our classroom discussion. It is the standard interpretation of <span class="math inline">\(P \to Q\)</span>.</p>
+<div style="width: 40%; margin: auto;">
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th><span class="math inline">\(P\)</span></th>
 <th><span class="math inline">\(Q\)</span></th>
-<th style="text-align: center;">If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P \to Q\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -415,25 +425,41 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
 <p>What’s radical here is the commitment that the truth value of <span class="math inline">\(P \to Q\)</span> should depend only on the plain truth or falsehood of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> individually, not on any interrelationship between them, and not on any hypothetical “if <span class="math inline">\(P\)</span> were different.” This makes the mathematical implication <span class="math inline">\(P \to Q\)</span> a bit different from the natural English implication.</p>
 </section>
 <section id="in-proof-theory-1" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="in-proof-theory-1"><span class="header-section-number">2.4.3</span> In Proof Theory</h3>
 <p>Suppose you want to justify the statement “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>.” The most natural approach is to assume <span class="math inline">\(P\)</span>, then deduce <span class="math inline">\(Q\)</span>. This is often called <strong>direct proof.</strong> This proof structure encapsulates the meaning of <span class="math inline">\(\to\)</span>.</p>
-<p><strong>Implication-introduction (“direct proof”)</strong> If, having assumed <span class="math inline">\(P\)</span>, you can prove <span class="math inline">\(Q\)</span>, you may conclude “if <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>”: <span class="math display">\[\frac{\begin{matrix}[\text{Assume } P]\\ Q\end{matrix}}{\therefore P \to Q}\]</span></p>
-<p>Notice how strange such a proof is: <span class="math inline">\(P\)</span> is not known true, and the act of assuming <span class="math inline">\(P\)</span> is not warranted by any premises or evidence. The proof from the assumption of <span class="math inline">\(P\)</span> to the conclusion of <span class="math inline">\(Q\)</span> is provisional, hypothetical, a house of cards. But the conclusion <span class="math inline">\(P \to Q\)</span> is known factually and absolutely. Sometimes we say that the assumption of <span class="math inline">\(P\)</span> has been “discharged” by this step, placing the proof on a solid footing.</p>
+<section id="implication-introduction-direct-proof" class="level4" data-number="2.4.3.1">
+<h4 data-number="2.4.3.1" class="anchored" data-anchor-id="implication-introduction-direct-proof"><span class="header-section-number">2.4.3.1</span> Implication-introduction (“direct proof”)</h4>
+<p>If, having assumed <span class="math inline">\(P\)</span>, you can prove <span class="math inline">\(Q\)</span>, you may conclude “if <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>”: <span class="math display">\[\frac{\begin{matrix}[\text{Assume } P]\\ Q\end{matrix}}{\therefore P \to Q}\]</span></p>
+<p>Notice how strange such a proof is: <span class="math inline">\(P\)</span> is not known true, and the act of assuming <span class="math inline">\(P\)</span> is not warranted by any premises or evidence. The proof from the assumption of <span class="math inline">\(P\)</span> to the conclusion of <span class="math inline">\(Q\)</span> is provisional, hypothetical, a house of cards. But the conclusion <span class="math inline">\(P \to Q\)</span> is known factually and absolutely. Sometimes we say that the assumption of <span class="math inline">\(P\)</span> has been “discharged” by this step, placing the proof once again on a solid footing.</p>
 <p>An alternative is to argue that if <span class="math inline">\(Q\)</span> is <em>not</em> true, then neither is <span class="math inline">\(P\)</span>. This is called <strong>proof by contrapositive</strong>. It is based on the fact that “<span class="math inline">\(P \to Q\)</span>” and “<span class="math inline">\(\neg Q \to \neg P\)</span>” are interchangeable.</p>
-<p><strong>Implication-introduction (“proof by contrapositive”)</strong> If, having assumed not <span class="math inline">\(Q\)</span>, you prove not <span class="math inline">\(P\)</span>, you may conclude “if <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>”: <span class="math display">\[\frac{\begin{matrix}[\text{Assume } \neg Q]\\ \neg P\end{matrix}}{\therefore P \to Q}\]</span></p>
+</section>
+<section id="implication-introduction-proof-by-contrapositive" class="level4" data-number="2.4.3.2">
+<h4 data-number="2.4.3.2" class="anchored" data-anchor-id="implication-introduction-proof-by-contrapositive"><span class="header-section-number">2.4.3.2</span> Implication-introduction (“proof by contrapositive”)</h4>
+<p>If, having assumed not <span class="math inline">\(Q\)</span>, you prove not <span class="math inline">\(P\)</span>, you may conclude “if <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>”: <span class="math display">\[\frac{\begin{matrix}[\text{Assume } \neg Q]\\ \neg P\end{matrix}}{\therefore P \to Q}\]</span></p>
 <p>As before, most of the argument depends unsteadily on an unproven assumption <span class="math inline">\((\neg Q)\)</span>, but the final step discharges the assumption and results in something valid and certain.</p>
 <p>Next we need to observe how an implication <span class="math inline">\(P \to Q\)</span> could be used as a premise:</p>
-<p><strong>Implicaton-elimination (“Modus Ponens”)</strong> Knowing both <span class="math inline">\(P\)</span> and <span class="math inline">\(P \to Q\)</span>, you may conclude <span class="math inline">\(Q\)</span>.</p>
+</section>
+<section id="implicaton-elimination-modus-ponens" class="level4" data-number="2.4.3.3">
+<h4 data-number="2.4.3.3" class="anchored" data-anchor-id="implicaton-elimination-modus-ponens"><span class="header-section-number">2.4.3.3</span> Implicaton-elimination (“Modus Ponens”)</h4>
+<p>Knowing both <span class="math inline">\(P\)</span> and <span class="math inline">\(P \to Q\)</span>, you may conclude <span class="math inline">\(Q\)</span>.</p>
 <p><span class="math display">\[\frac{P, P \to Q}{\therefore Q}\]</span></p>
 <p>The ability to conclude <span class="math inline">\(Q\)</span>, given <span class="math inline">\(P\)</span>, is the essential meaning of “<span class="math inline">\(P \to Q\)</span>” after all!</p>
-<p><strong>Implicaton-elimination (“Modus Tollens”)</strong> Knowing <span class="math inline">\(P \to Q\)</span>, if <span class="math inline">\(Q\)</span> is false, then <span class="math inline">\(P\)</span> must be false.</p>
+</section>
+<section id="implicaton-elimination-modus-tollens" class="level4" data-number="2.4.3.4">
+<h4 data-number="2.4.3.4" class="anchored" data-anchor-id="implicaton-elimination-modus-tollens"><span class="header-section-number">2.4.3.4</span> Implicaton-elimination (“Modus Tollens”)</h4>
+<p>Knowing <span class="math inline">\(P \to Q\)</span>, if <span class="math inline">\(Q\)</span> is false, then <span class="math inline">\(P\)</span> must be false.</p>
 <p><span class="math display">\[\frac{\neg Q, P \to Q}{\therefore \neg P}\]</span></p>
 <p>Again this is based on swapping “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>” with “If not <span class="math inline">\(Q\)</span> then not <span class="math inline">\(P\)</span>”, which is the same.</p>
-<p><strong>Example</strong></p>
-<p>We will prove that if a number is divisible by <span class="math inline">\(4\)</span>, then it is even.</p>
+</section>
+<section id="example-1-divisibility" class="level4" data-number="2.4.3.5">
+<h4 data-number="2.4.3.5" class="anchored" data-anchor-id="example-1-divisibility"><span class="header-section-number">2.4.3.5</span> Example 1 – divisibility</h4>
+<ol type="1">
+<li>If a number is divisible by <span class="math inline">\(4\)</span>, then it is even.</li>
+</ol>
 <p><strong>proof:</strong> Let <span class="math inline">\(x\)</span> be a number. Assume that <span class="math inline">\(x\)</span> is divisible by <span class="math inline">\(4\)</span>. Then <span class="math inline">\(x=4n\)</span> for some other integer <span class="math inline">\(n\)</span>. Then <span class="math inline">\(x = 2*(2n)\)</span>. Since <span class="math inline">\(x\)</span> is the double of an integer (namely <span class="math inline">\(2n\)</span>), <span class="math inline">\(x\)</span> is even.</p>
 <p><strong>Discussion:</strong> - The line “Let <span class="math inline">\(x\)</span> be a number” is a way of making a argument about all numbers by using a generic singular number <span class="math inline">\(x\)</span>. This is sometimes called an “arbitrary particular.” In natural English, this is often accomplished with the pronoun “one” representing an arbitrary but singular person: “One should mind one’s manners”. This step introduces a brief context in which “<span class="math inline">\(x\)</span>” represents one fixed but unspecified thing. Any statements about <span class="math inline">\(x\)</span> occurring in this context refer to the same <span class="math inline">\(x\)</span>.</p>
 <ul>
@@ -443,7 +469,9 @@ window.Quarto = {
 <li><p>The final implication-introduction needed is left unsaid, merely implied by the argument form. This is extremely common. Among regular humans, nobody says “Now we do implication introduction…” or “by the principle of direct proof…” or anything like that. That only happens within formal proof systems.</p></li>
 <li><p>This argument also has an implied universality and a hidden universal introduction. We’ll get to that later.</p></li>
 </ul>
-<p><strong>Example</strong></p>
+</section>
+<section id="example-2-positive-solutions" class="level4" data-number="2.4.3.6">
+<h4 data-number="2.4.3.6" class="anchored" data-anchor-id="example-2-positive-solutions"><span class="header-section-number">2.4.3.6</span> Example 2, positive solutions</h4>
 <p>Prove that if <span class="math inline">\(x^4 = 3x-1\)</span>, then <span class="math inline">\(x\)</span> is positive.</p>
 <p>(This equation does have roots but they’re hard to find.)</p>
 <p><strong>proof:</strong> Suppose <span class="math inline">\(x\)</span> is not positive. If it’s <span class="math inline">\(0\)</span>, then <span class="math inline">\(x^4 = 0\)</span> but <span class="math inline">\(3x-1 = -1\)</span>, so they are not equal. If <span class="math inline">\(x\)</span> is negative, then <span class="math inline">\(x^4\)</span> is positive but <span class="math inline">\(3x-1\)</span> is negative, so they are not equal. Either way, they are not equal.</p>
@@ -454,7 +482,9 @@ window.Quarto = {
 <li>Again the implication-introduction is implied but not said. The structure of the proof (contrapositive) is not obvious and needs to be noticed by the reader. It can be signaled “we prove by contrapositive” but this is not common in serious work.</li>
 <li>This is a proof by contrapositive, not by contradiction. They are easily confused but distinct structures.</li>
 </ul>
-<p>** Example **</p>
+</section>
+<section id="example-3-algebra-is-logic" class="level4" data-number="2.4.3.7">
+<h4 data-number="2.4.3.7" class="anchored" data-anchor-id="example-3-algebra-is-logic"><span class="header-section-number">2.4.3.7</span> Example 3 – Algebra is logic</h4>
 <p>Solve the equation <span class="math inline">\(\sqrt{x+6} = x\)</span>.</p>
 <p>The first lesson in this problem is that algebraic manipulation is logical argument. Every algebraic step is a deduction. We lay out the steps without comment:</p>
 <p><span class="math display">\[\begin{align*}
@@ -470,31 +500,31 @@ x=3 \text{ or } x&amp;=-2\\
 <li>Should it be “or” or “and” in the last line?</li>
 <li>If this is read as a series of logical deductions, each from the previous, is each of them sound? Especially consider the last step.</li>
 <li>Are both solutions valid?</li>
-<li>Is there an error in the proof?</li>
+<li>Is there an error in the proof? What is its (unwritten) conclusion?</li>
 </ol>
 </section>
-<section id="notes-1" class="level3" data-number="2.4.4">
-<h3 data-number="2.4.4" class="anchored" data-anchor-id="notes-1"><span class="header-section-number">2.4.4</span> Notes</h3>
-<p><strong>Note for perceptive and intuitive people</strong></p>
-<p>When we assert <span class="math inline">\(P \to Q\)</span>, the suggestion that <span class="math inline">\(P\)</span> causes <span class="math inline">\(Q\)</span> or is at least related is so strong it’s hard to overcome, but it is not required or implied. We can sometimes affirm <span class="math inline">\(P \to Q\)</span> even when <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are unrelated, for example if we unequivocally know <span class="math inline">\(Q\)</span>. When <span class="math inline">\(Q\)</span> causes <span class="math inline">\(P\)</span>, the “reverse cause” implication <span class="math inline">\(P \to Q\)</span> may still be true, as in the idiom “where there’s smoke, there’s fire.” (Smoke implies fire, but fire causes smoke.)</p>
-<p><strong>Note on replacement</strong></p>
-<p>How does “If P then Q” relate to the statement “Q or not P”? Are they the same?</p>
-<p><strong>Note on reversal</strong></p>
-<p>How does “If P then Q” relate to the statement “If Q then P”? Are they the same?</p>
-<p><strong>Note on “because”</strong></p>
-<p>How does “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>” relate to the statement “Because <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>”? Are they the same?</p>
+<section id="notes-1" class="level4" data-number="2.4.3.8">
+<h4 data-number="2.4.3.8" class="anchored" data-anchor-id="notes-1"><span class="header-section-number">2.4.3.8</span> Notes</h4>
+<ol type="1">
+<li><p>When we assert <span class="math inline">\(P \to Q\)</span>, the suggestion that <span class="math inline">\(P\)</span> causes <span class="math inline">\(Q\)</span> or is at least related is so strong it’s hard to overcome, but it is not required. We can sometimes affirm <span class="math inline">\(P \to Q\)</span> even when <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are unrelated, for example if we unequivocally know <span class="math inline">\(Q\)</span>. When <span class="math inline">\(Q\)</span> causes <span class="math inline">\(P\)</span>, the “reverse cause” implication <span class="math inline">\(P \to Q\)</span> may still be true, as in the idiom “where there’s smoke, there’s fire.” (Smoke implies fire, but fire causes smoke.)</p></li>
+<li><p>How does “If P then Q” relate to the statement “Q or not P”? Are they the same?</p></li>
+<li><p>How does “If P then Q” relate to the statement “If Q then P”? Are they the same?</p></li>
+<li><p>How does “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>” relate to the statement “Because <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>”? Are they the same?</p></li>
+</ol>
+</section>
 </section>
 </section>
 <section id="understanding-or" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="understanding-or"><span class="header-section-number">2.5</span> Understanding “or”</h2>
 <section id="in-a-truth-table-2" class="level3" data-number="2.5.1">
 <h3 data-number="2.5.1" class="anchored" data-anchor-id="in-a-truth-table-2"><span class="header-section-number">2.5.1</span> In a Truth Table</h3>
+<div style="width: 40%; margin: auto;">
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>P</th>
 <th>Q</th>
-<th style="text-align: center;">P Q</th>
+<th style="text-align: center;"><span class="math inline">\(P \lor Q\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -520,27 +550,42 @@ x=3 \text{ or } x&amp;=-2\\
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notice that “or” includes the case of “and”. The subtext “…or both” is always entailed. This interpretation is “inclusive or”. The alternative is “exclusive or”, usually written xor or <span class="math inline">\(\oplus\)</span>. Since “or” is inclusive by default, we never say “and/or” in mathematics, because the “and” is superfluous.</p>
 <p>Natural English uses “or” in several senses: Inclusively (“Milk or sugar?”), exclusively (“Your money or your life!”, and to request a choice (“Coffee or tea?”). It’s a constant source of ambiguity and confusion. Natural language is messy, English especially so.</p>
 </section>
 <section id="in-proof-theory-2" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="in-proof-theory-2"><span class="header-section-number">2.5.2</span> In Proof Theory</h3>
-<p><strong>Or-introduction</strong></p>
+<section id="or-introduction" class="level4" data-number="2.5.2.1">
+<h4 data-number="2.5.2.1" class="anchored" data-anchor-id="or-introduction"><span class="header-section-number">2.5.2.1</span> Or-introduction</h4>
 <p>Proving <span class="math inline">\(P \lor Q\)</span>, is sometimes the silly act of weakening a statement by adding an irrelevant alternative:</p>
 <p><span class="math display">\[\frac{P}{\therefore P \lor Q} \hspace{1in} \frac{Q}{\therefore P \lor Q} \]</span></p>
 <p>For example: “I know x = 5. Therefore <span class="math inline">\(x=\pm 5\)</span> This argument form is rare because it’s rarely useful!</p>
 <p>More substantially, interpreting <span class="math inline">\(P \lor Q\)</span> as <span class="math inline">\(\neg P \to Q\)</span> or <span class="math inline">\(\neg Q \to P\)</span> yields a more interesting proof of <span class="math inline">\(P \lor Q\)</span>:</p>
-<p><span class="math display">\[\frac{\begin{matrix}[\text{Assume } \neg P]\\ Q\end{matrix}}{\therefore P \lor Q} \,\,\,\,\,
-\frac{\begin{matrix}[\text{Assume } \neg Q]\\ P\end{matrix}}{\therefore P \lor Q}\]</span></p>
+<p><span class="math display">\[
+\frac{\begin{matrix}[\text{Assume } \neg P]\\ Q\end{matrix}}{\therefore P \lor Q}
+\]</span></p>
+<p>Alternatively:</p>
+<p><span class="math display">\[
+\frac{\begin{matrix}[\text{Assume } \neg Q]\\ P\end{matrix}}{\therefore P \lor Q}
+\]</span></p>
 <p>Notice that either of these argument forms is enough to support the conclusion of “<span class="math inline">\(P\)</span> or <span class="math inline">\(Q\)</span>”. There is no need to do both.</p>
-<p><strong>Or-elimination (Proof by cases)</strong></p>
+</section>
+<section id="or-elimination-proof-by-cases" class="level4" data-number="2.5.2.2">
+<h4 data-number="2.5.2.2" class="anchored" data-anchor-id="or-elimination-proof-by-cases"><span class="header-section-number">2.5.2.2</span> Or-elimination (Proof by cases)</h4>
 <p>Knowing “<span class="math inline">\(P\)</span> or <span class="math inline">\(Q\)</span>” is awkward, because we don’t know which is true. But if both cases lead to the same conclusion, we needn’t care:</p>
-<p><span class="math display">\[\frac{P \lor Q\,\,
+<p><span class="math display">\[
+\frac{P \lor Q\,\,
 \begin{matrix} [\text{Assume } P] \\ R \end{matrix}\,\,
 \begin{matrix} [\text{Assume } Q] \\ R \end{matrix}
 }
-{\therefore R}\]</span></p>
+{\therefore R}
+\]</span></p>
 <p>This is called “proof by cases.”</p>
+<p><strong>Example:</strong> For every real number <span class="math inline">\(x\)</span>, we have <span class="math inline">\(x^2 \geq 0\)</span>. Let <span class="math inline">\(x\)</span> be a real number. Either <span class="math inline">\(x &gt; 0\)</span> or <span class="math inline">\(x=0\)</span> or <span class="math inline">\(x &lt; 0\)</span>. If <span class="math inline">\(x &gt; 0\)</span> then we may multiply both sides by <span class="math inline">\(x\)</span> without changing the sign of the inequality, and <span class="math inline">\(x^2 &gt; 0\)</span>. If <span class="math inline">\(x&lt;0\)</span> then we may multiply both sides by <span class="math inline">\(x\)</span>, but we change the side of the inequality, and again <span class="math inline">\(x^2&gt;0\)</span>. If <span class="math inline">\(x=0\)</span> then certainly <span class="math inline">\(x^2 \geq 0\)</span>. In all cases we have <span class="math inline">\(x^2 \geq 0\)</span>.</p>
+<p><strong>Example 2:</strong> For any integer <span class="math inline">\(n\)</span>, <span class="math inline">\(n^2 + n\)</span> is even. If <span class="math inline">\(n\)</span> is even, then so is <span class="math inline">\(n^2\)</span> and <span class="math inline">\(n^2+n\)</span> is the sum of two even numbers, so even. If <span class="math inline">\(n\)</span> is odd, then so is <span class="math inline">\(n^2\)</span>, and <span class="math inline">\(n^2+n\)</span> is the sum of two odd numbers, so even. Thus <span class="math inline">\(n^2+n\)</span> is always even.</p>
+<p>Note in both examples <span class="math inline">\(x\)</span> is used as an arbitrary particular, but we have an implied generalization.</p>
+</section>
 </section>
 <section id="exercises-identify-the-argument-form" class="level3" data-number="2.5.3">
 <h3 data-number="2.5.3" class="anchored" data-anchor-id="exercises-identify-the-argument-form"><span class="header-section-number">2.5.3</span> Exercises – Identify the argument form</h3>
@@ -559,6 +604,7 @@ x=3 \text{ or } x&amp;=-2\\
 <section id="in-a-truth-table-3" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="in-a-truth-table-3"><span class="header-section-number">2.6.1</span> In a Truth Table</h3>
 <p>The truth table is a breeze:</p>
+<div style="width: 20%; margin: auto;">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -577,10 +623,11 @@ x=3 \text{ or } x&amp;=-2\\
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="in-proof-theory-3" class="level3" data-number="2.6.2">
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="in-proof-theory-3"><span class="header-section-number">2.6.2</span> In Proof Theory</h3>
-<p>The proof theory is a little more subtle. How do we prove that <span class="math inline">\(P\)</span> is <em>false</em>? Typically by showing that if <span class="math inline">\(P\)</span> were true it would lead to logical disaster, usually represented as a proved falsehood (“<span class="math inline">\(\bot\)</span>”). The technique is called <strong>proof by contradiction</strong></p>
+<p>The proof theory is a little more subtle. How do we prove that <span class="math inline">\(P\)</span> is <em>false</em>? Typically by showing that if <span class="math inline">\(P\)</span> were true it would lead to logical disaster, usually represented as a proved falsehood (“<span class="math inline">\(\bot\)</span>”). The technique is called <strong>proof by contradiction</strong>:</p>
 <blockquote class="blockquote">
 <p>Suppose <span class="math inline">\(x\)</span> were both positive and negative. Then <span class="math inline">\(x &gt; 0\)</span> and <span class="math inline">\(x &lt; 0\)</span>. By transitivity <span class="math inline">\(0 &lt; x &lt; 0\)</span>, so <span class="math inline">\(0 &lt; 0\)</span>, and therefore <span class="math inline">\(0\)</span> is not equal to itself. This is absurd so <span class="math inline">\(x\)</span> <em>cannot</em> be both positive and negative.</p>
 </blockquote>
@@ -607,11 +654,24 @@ x=3 \text{ or } x&amp;=-2\\
 <p><strong>Proposition:</strong> The square root of <span class="math inline">\(2\)</span> is irrational.</p>
 <p><strong>proof:</strong> Assume <span class="math inline">\(\sqrt{2}\)</span> is rational. Then <span class="math inline">\(\sqrt{2}\)</span> can be written as a fraction <span class="math inline">\(\sqrt{2} = \frac{a}{b}\)</span>, in lowest terms, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are both positive integers. It follows that <span class="math inline">\(2 = \frac{a^2}{b^2}\)</span>, so <span class="math inline">\(2b^2 = a^2\)</span>. It follows that <span class="math inline">\(a^2\)</span> is even, so <span class="math inline">\(a\)</span> is even, so <span class="math inline">\(a^2\)</span> is divisible by <span class="math inline">\(4\)</span>, so <span class="math inline">\(b^2\)</span> is even, so <span class="math inline">\(b\)</span> is even, so <span class="math inline">\(\frac{a}{b}\)</span> is not in lowest terms after all. This is a contradiction. We conclude <span class="math inline">\(\sqrt{2}\)</span> is irrational.</p>
 <p><strong>Notes:</strong> - The contradiction <span class="math inline">\(\bot\)</span> arises from something being proved true and false. What statement was proved true and false? - The contradiction is used for a basic not-introduction. What core steps in the proof set up and complete the not-introduction? - Much is claimed about evenness. Why is each assertion true?</p>
+<p><strong>Proposition:</strong> There are infinitely many prime numbers.</p>
+<p><strong>proof:</strong> Suppose there were only a finitely many prime numbers. Then it would be possible to multiply them all, producing a number <span class="math inline">\(N\)</span> divisible by every prime number. Then <span class="math inline">\(N+1\)</span> would not be larger than every prime number, but not divisible by any prime number. The prime factorization of <span class="math inline">\(N+1\)</span> would not contain any prime numbers at all, which is absurd. It follows that there are infinitely many primes.</p>
 <p>A <strong>paradox</strong> is a proof which leads to a contradiction, but lacks any obvious suspicious assumption (for contradiction) which can be blamed for the problem. Nevertheless, the right response to a paradox is to identify an implicit premise which can be questioned. For example, consider the set of all sets which do not contain themselves as elements. Does it contain itself? This is <strong>Russell’s paradox.</strong> Arguably, it’s a central logical problem with mathematical foundations. The <strong>Liar Paradox</strong> (“I am lying”) is simpler but equally dangerous.</p>
 </section>
 <section id="do-not-believe-a-contradiction" class="level3" data-number="2.6.4">
 <h3 data-number="2.6.4" class="anchored" data-anchor-id="do-not-believe-a-contradiction"><span class="header-section-number">2.6.4</span> Do not believe a contradiction</h3>
 <p>In real life you may be asked to believe two things which are utterly incompatible. If you submit to such gaslighting, your critical thinking skills will be forced into deactivation, whereupon you can be manipulated by abusers and authoritarians. Don’t let that happen.</p>
+</section>
+<section id="a-matter-of-taste" class="level3" data-number="2.6.5">
+<h3 data-number="2.6.5" class="anchored" data-anchor-id="a-matter-of-taste"><span class="header-section-number">2.6.5</span> A Matter of Taste</h3>
+<p>Some mathematicians argue that proofs by contradiction are correct, but inelegant or bad. There are many possible reasons for this view:</p>
+<ol type="1">
+<li>It’s inherently a double-negative (“<span class="math inline">\(P\)</span> can’t be false”), where positive logic is simpler and cleaner.</li>
+<li>It leads to proofs whose “middle” mixes true statements with false statements, making it hard gain insight about the facts.</li>
+<li>It leads to bad habits, particularly among students whose comfort zone is to assume as much as possible, and who may assume <span class="math inline">\(\neg P\)</span> entirely unnecessarily.</li>
+<li>They are interested in exotic logics where “not false” isn’t quite the same as “true.”</li>
+</ol>
+<p>Dr.&nbsp;Ellingsen can tell you more about this point of view.</p>
 </section>
 </section>
 <section id="understanding-for-all" class="level2" data-number="2.7">
@@ -639,11 +699,16 @@ x=3 \text{ or } x&amp;=-2\\
 </ol>
 <p>Each statement has a double-meaning based on how the universal <span class="math inline">\((\forall)\)</span> interacts with the rest of the logic.</p>
 <p>Mathematical syntax has solved the problem by adding clarifying rules of phrasing: A universal statement should be phrased as a statement about an generic individual (<span class="math inline">\(x\)</span>, or <span class="math inline">\(y\)</span>, etc) with <span class="math inline">\(\forall x\)</span> or “for all x” or “for each x” tacked to the front, as a modifier. If there’s any confusion which part of the statement is being modified, parenthesize the statement itself.</p>
-<p>So, “cats are mammals” becomes the indeterminant, “if it’s a cat, it’s a mammal”, and then the quantified “for each thing, (if it’s a cat, it’s a mammal)”. To be more mathematial, the statement “The equation <span class="math inline">\((x-1)(x+1) = x^2-1\)</span> is true for any <span class="math inline">\(x\)</span>.” becomes simply $x (x-1)(x+1) = x^2-1 $.</p>
+<p>So, “cats are mammals” becomes the indeterminant, “if it’s a cat, it’s a mammal”, and then the quantified “for each thing, (if it’s a cat, it’s a mammal)”. To be more mathematial, the statement “The equation <span class="math inline">\((x-1)(x+1) = x^2-1\)</span> is true for any <span class="math inline">\(x\)</span>.” becomes simply <span class="math inline">\(\forall x \enspace (x-1)(x+1) = x^2-1\)</span>.</p>
 <p>“Everyone is not here yet” probably means “<span class="math inline">\(\neg \forall x (x\text{ is here})\)</span>”, but “everyone is not perfect” probably means “<span class="math inline">\(\forall x \neg (x \text{ is perfect})\)</span>”. The formal logic gives clarity where natural language falters.</p>
 </section>
-<section id="proof-theory-of-forall" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="proof-theory-of-forall"><span class="header-section-number">2.7.2</span> Proof Theory of <span class="math inline">\(\forall\)</span></h3>
+<section id="bounded-vs.-unbounded-forall" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="bounded-vs.-unbounded-forall"><span class="header-section-number">2.7.2</span> Bounded vs.&nbsp;Unbounded <span class="math inline">\(\forall\)</span></h3>
+<p>Often when we say “all,” we don’t mean everything in the entire universe, but everything of the type currently under discussion. For example, we may say <span class="math inline">\(\forall x \enspace (x-1)(x+1) = x^2-1\)</span>, but we only mean “for every real number <span class="math inline">\(x\)</span>”. There are two ways to clarify the meaning. First, we can announce a “domain of discourse” (e.g., the set of real numbers <span class="math inline">\({\mathbb R}\)</span>) which guides the interpretation of every quantifier <span class="math inline">\(\forall\)</span> and <span class="math inline">\(\exists\)</span>. Second, we can explicitly <strong>bound</strong> our quantifiers by including a set for interpretation in the statement itself: <span class="math inline">\(\forall x \in {\mathbb R} \enspace \exists n \in {\mathbb Z} \enspace x &lt; n\)</span>.</p>
+<p>In this course we favor <strong>unbound</strong> quantifiers (without such sets specified), because they empower us eventually to shift the interpretation of statements as needed. For example, we may say that the axiom of additive inverse <span class="math inline">\(\forall x \enspace \exists y \enspace x+y=0\)</span> is true in <span class="math inline">\({\mathbb R}\)</span>, true in <span class="math inline">\({\mathbb Z}\)</span>, and false in <span class="math inline">\({\mathbb N}\)</span>, without changing the statement. Eventually, the freedom to write down an entire axiom system without first saying what it applies to is extremely powerful and useful.</p>
+</section>
+<section id="proof-theory-of-forall" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="proof-theory-of-forall"><span class="header-section-number">2.7.3</span> Proof Theory of <span class="math inline">\(\forall\)</span></h3>
 <p>To prove a universal statement <span class="math inline">\(\forall x \enspace P(x)\)</span>, we consider an arbitrary particular <span class="math inline">\(x\)</span> and demonstrate that that one has the property of interest. Formally:</p>
 <p><span class="math display">\[\frac{\begin{matrix}
   [\text{Let } x]\\
@@ -653,16 +718,16 @@ x=3 \text{ or } x&amp;=-2\\
 <p>In common practice, the first line is phrased “Let <span class="math inline">\(x\)</span> be a real number” or “Let <span class="math inline">\(x\)</span> be a function”, etc., and it’s common to attach further assumptions as needed immediately “Let <span class="math inline">\(x\)</span> be an even positive number.” Some formal systems demand simply “Let <span class="math inline">\(x\)</span>” with no further details, and some omit the line entirely on the theory that <span class="math inline">\(x\)</span> inevitably must represent something. No matter which formal system is used, there are some implicit rules about how you can “let <span class="math inline">\(x\)</span>” and later universalize to say <span class="math inline">\(\forall x \enspace P(x)\)</span>. The most important one is that the symbol “<span class="math inline">\(x\)</span>” must be free for this context. That is, we can’t be working within a context in which <span class="math inline">\(x\)</span> has been assigned a value or assumptions have already been made about it.</p>
 <p>The meaning of <span class="math inline">\(x\)</span> is stable throughout the argument, but when the argument ends, the variable <span class="math inline">\(x\)</span> goes “out of scope” (as the computer scientists say), and is once again free to represent anything or nothing. And thank goodness, or we’d quickly run out of letters for letting.</p>
 </section>
-<section id="examples-proving-a-generalization" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="examples-proving-a-generalization"><span class="header-section-number">2.7.3</span> Examples – proving a generalization</h3>
+<section id="examples-proving-a-generalization" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="examples-proving-a-generalization"><span class="header-section-number">2.7.4</span> Examples – proving a generalization</h3>
 <ol type="1">
 <li><p>odd * odd = odd</p></li>
 <li><p><span class="math inline">\(A \cap B \subseteq B\)</span></p></li>
 <li><p><span class="math inline">\(\emptyset \subseteq A\)</span></p></li>
 </ol>
 </section>
-<section id="using-forall-as-a-premise" class="level3" data-number="2.7.4">
-<h3 data-number="2.7.4" class="anchored" data-anchor-id="using-forall-as-a-premise"><span class="header-section-number">2.7.4</span> Using <span class="math inline">\(\forall\)</span> as a premise</h3>
+<section id="using-forall-as-a-premise" class="level3" data-number="2.7.5">
+<h3 data-number="2.7.5" class="anchored" data-anchor-id="using-forall-as-a-premise"><span class="header-section-number">2.7.5</span> Using <span class="math inline">\(\forall\)</span> as a premise</h3>
 <p>If “<span class="math inline">\(\forall x \enspace P(x)\)</span>” is a premise, the standard use is to deduce that something in particular has the given property. All men are mortal, so Socrates, a fortiori, is mortal. Proof-theoretically, this looks like:</p>
 <p><span class="math display">\[\frac{\forall x \enspace P(x)}{\enspace P(c)}\]</span></p>
 <p>What is <span class="math inline">\(c\)</span>, you ask? Whatever you need. This logical step is usually called <strong>specialization.</strong> In practice it is done with no more comment than asserting that a certain thing (<span class="math inline">\(c\)</span>) has a certain property.</p>

@@ -31,7 +31,7 @@ default-format: html
 # Formats available and styles
 format:
   html:
-    theme: cosmo  # Tasteful, professional theme for webpages
+    theme: [cosmo, custom.scss]  # Tasteful, professional theme for webpages
     toc: true
     number-sections: true
     html-math-method: mathjax
@@ -43,7 +43,7 @@ format:
     embed-resources: true     # Bakes in images/CSS
     html-math-method: mathjax # Best for VoiceOver Rotor
     navigation-mode: linear   # Simple path for screen readers
-    theme: [sky, custom.scss] # 
+    theme: [sky, custom.scss, slide_custom.scss] # 
     slide-number: true        # Show number within slide deck, so students to reference specific parts
     width: 1312  # 1050 / 0.8. Effectively scales all text down 80%
     height: 875  # 700 / 0.8
