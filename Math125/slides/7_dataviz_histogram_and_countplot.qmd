@@ -325,7 +325,7 @@ Below is a histogram for a “Gamma(3,1)” random variable. Describe its modali
 ```{python}
 #| label: fig-histogram-gamma
 #| fig-cap: "Gamma(3,1) random variable."
-#| fig-alt: "A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The $y$ axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately $3$."
+#| fig-alt: "A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The y axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately 3."
 #| fig-width: 7
 #| fig-height: 4
 # import numpy as np

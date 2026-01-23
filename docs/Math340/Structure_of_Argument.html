@@ -122,7 +122,7 @@ window.Quarto = {
   <li><a href="#natural-deduction-structure-of-valid-argument" id="toc-natural-deduction-structure-of-valid-argument" class="nav-link" data-scroll-target="#natural-deduction-structure-of-valid-argument"><span class="header-section-number">2</span> Natural Deduction – Structure of Valid Argument</a>
   <ul class="collapse">
   <li><a href="#the-language-of-logic" id="toc-the-language-of-logic" class="nav-link" data-scroll-target="#the-language-of-logic"><span class="header-section-number">2.1</span> The language of logic</a></li>
-  <li><a href="#semantics-and-proof-theory-are-happily-married" id="toc-semantics-and-proof-theory-are-happily-married" class="nav-link" data-scroll-target="#semantics-and-proof-theory-are-happily-married"><span class="header-section-number">2.2</span> Semantics and Proof Theory are happily married</a>
+  <li><a href="#truth-value-and-proof-theory-are-happily-married" id="toc-truth-value-and-proof-theory-are-happily-married" class="nav-link" data-scroll-target="#truth-value-and-proof-theory-are-happily-married"><span class="header-section-number">2.2</span> Truth value and Proof Theory are happily married</a>
   <ul class="collapse">
   <li><a href="#truth-value-meaning" id="toc-truth-value-meaning" class="nav-link" data-scroll-target="#truth-value-meaning"><span class="header-section-number">2.2.1</span> Truth-value meaning</a></li>
   <li><a href="#proof-theoretical-meaning" id="toc-proof-theoretical-meaning" class="nav-link" data-scroll-target="#proof-theoretical-meaning"><span class="header-section-number">2.2.2</span> Proof-theoretical meaning</a></li>
@@ -299,17 +299,18 @@ window.Quarto = {
 <li>Not to be misused “<span class="math inline">\(P = \top\)</span>” or “<span class="math inline">\(P = \bot\)</span>”. To assert that <span class="math inline">\(P\)</span> is true or false, just assert “<span class="math inline">\(P\)</span>” or “<span class="math inline">\(\neg P\)</span>”.</li>
 </ul>
 </section>
-<section id="semantics-and-proof-theory-are-happily-married" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="semantics-and-proof-theory-are-happily-married"><span class="header-section-number">2.2</span> Semantics and Proof Theory are happily married</h2>
+<section id="truth-value-and-proof-theory-are-happily-married" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="truth-value-and-proof-theory-are-happily-married"><span class="header-section-number">2.2</span> Truth value and Proof Theory are happily married</h2>
 <p>Each operator – “and”, “or”, “if…then”, “not”, and others (xor, xnor, nand, etc) needs to be clarified once and for all for its meaning. In this section we discuss two kinds of “meaning” that we attribute to logical operators</p>
 <section id="truth-value-meaning" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="truth-value-meaning"><span class="header-section-number">2.2.1</span> Truth-value meaning</h3>
-<p>Based on the truth or falsity of <span class="math inline">\(P\)</span> and of <span class="math inline">\(Q\)</span>, when will the logical combination “<span class="math inline">\(P \to Q\)</span>” (or other operators) be true? The answer to this question, including each possibility for <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>, is the <strong>truth table</strong> for the operator. Knowing the various possibilities, depending on <span class="math inline">\(x\)</span> for whether <span class="math inline">\(P(x)\)</span> is true, should we say that <span class="math inline">\(\forall x \enspace P(x)\)</span> is true?</p>
+<p>Based on the truth or falsity of <span class="math inline">\(P\)</span> and of <span class="math inline">\(Q\)</span>, when will the logical combination “<span class="math inline">\(P \to Q\)</span>” (or other operators) be true? The answer to this question, including each possibility for <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>, is the <strong>truth table</strong> for the operator. The meaning of <span class="math inline">\(\to\)</span> is baked into the rule for whether <span class="math inline">\(P \to Q\)</span> is true. The same applies to the quantifies: If you know whether <span class="math inline">\(P(x)\)</span> is true or false, for every possible <span class="math inline">\(x\)</span>, then you can deduce whether <span class="math inline">\(\forall x \enspace P(x)\)</span> is true. Knowing how <span class="math inline">\(\forall x\)</span> transforms truth values is one way to know what <span class="math inline">\(\forall x\)</span> means.</p>
 </section>
 <section id="proof-theoretical-meaning" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="proof-theoretical-meaning"><span class="header-section-number">2.2.2</span> Proof-theoretical meaning</h3>
-<p>What is the correct argument form to justify a statement like <span class="math inline">\(P \to Q\)</span> (or <span class="math inline">\(\forall x \enspace P(X)\)</span>, etc)? Conversely <span class="math inline">\(P \to Q\)</span> (or <span class="math inline">\(P \land Q\)</span> etc.) is given as a premise or intermediate conclusion, what sorts of argument structures does it support? The answers to these questions form the proof theoretical interpretation of the operation.</p>
-<p>In principle, either single approach is enough to determine what the operators mean, but a student needs to master both perspectives.</p>
+<p>What is the correct argument form to justify a statement like <span class="math inline">\(P \to Q\)</span> (or <span class="math inline">\(\forall x \enspace P(X)\)</span>, <span class="math inline">\(P \land Q\)</span>, <span class="math inline">\(P \lor Q\)</span> etc.) Conversely, is such a statement is given as a premise or as an intermediate conclusion, what sorts of argument structures does it support? The answers to these questions form the proof theoretical meaning of the operation.</p>
+<p>Wittgenstein’s (later life) theory of meaning claims that the meaning of a word is invested not in some clear referent in reality, but in its habits of use. For example, if you know exactly when “Thank you” is appropriate to say, you know what it means. Proof-theoretical meaning is a usage-based theory of the meaning of a statement, because it is concerned with when and under what conditions a statement can be inserted in a proof, instead of its reference to reality or truth.</p>
+<p>In principle, either single approach is a sufficient theory of meaning, but a student should see both perspectives.</p>
 </section>
 </section>
 <section id="understanding-and" class="level2" data-number="2.3">
@@ -351,9 +352,11 @@ window.Quarto = {
 </section>
 <section id="in-proof-theory" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="in-proof-theory"><span class="header-section-number">2.3.2</span> In Proof Theory</h3>
-<p>Another way to explain “and” is to prescribe how “<span class="math inline">\(P \land Q\)</span>” functions as an input or an output of a logical argument. In other words, what does it take to prove “$P $ and <span class="math inline">\(Q\)</span>”, and how could it used as a premise in a proof?</p>
+<p>Another way to explain “and” is to prescribe how “<span class="math inline">\(P \land Q\)</span>” functions as an input or an output of a logical argument. In other words, how to <span class="math inline">\(P \land Q\)</span> function as as premise, and what argument form can produce <span class="math inline">\(P \land Q\)</span> as a conclusion?</p>
 <p><strong>And-introduction</strong> To justify “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>,” simply justify <span class="math inline">\(P\)</span>, then justify <span class="math inline">\(Q\)</span>. Once both are justified, “<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>” may be deduced: <span class="math display">\[\frac{P , Q}{\therefore P \land Q}\]</span></p>
 <p><strong>And-elimination</strong> In reverse, if “<span class="math inline">\(P \land Q\)</span>” is known, one may conclude the parts separately. <span class="math display">\[\frac{P \land Q}{\therefore P} \hspace{1in} \frac{P \land Q}{\therefore Q}\]</span></p>
+<p>Here we’re introducing the fraction syntax for abstract deduction rules. The top of the fraction represent premises, or more precisely portions of the argument “so far”. The bottom of the fraction represents the sound conclusion which can be be drawn.</p>
+<p>We don’t think of these forms as analogous to real fractions, and the analogy with division is not much use.</p>
 </section>
 <section id="notes" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="notes"><span class="header-section-number">2.3.3</span> Notes</h3>
@@ -412,10 +415,11 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p>What’s radical here is the commitment that the truth value of <span class="math inline">\(P \to Q\)</span> should depend only on the plain truth or falsehood of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> individually, not on any interrelationship between them, and not on any hypothetical “if <span class="math inline">\(P\)</span> were different.” This makes the mathematical implication <span class="math inline">\(P \to Q\)</span> a bit different from the natural English implication.</p>
 </section>
 <section id="in-proof-theory-1" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="in-proof-theory-1"><span class="header-section-number">2.4.3</span> In Proof Theory</h3>
-<p>Suppose you want to justify the statement “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>.” The most natural approach is to assume <span class="math inline">\(P\)</span>, then deduce <span class="math inline">\(Q\)</span>. This is often called <strong>direct proof:</strong></p>
+<p>Suppose you want to justify the statement “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>.” The most natural approach is to assume <span class="math inline">\(P\)</span>, then deduce <span class="math inline">\(Q\)</span>. This is often called <strong>direct proof.</strong> This proof structure encapsulates the meaning of <span class="math inline">\(\to\)</span>.</p>
 <p><strong>Implication-introduction (“direct proof”)</strong> If, having assumed <span class="math inline">\(P\)</span>, you can prove <span class="math inline">\(Q\)</span>, you may conclude “if <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>”: <span class="math display">\[\frac{\begin{matrix}[\text{Assume } P]\\ Q\end{matrix}}{\therefore P \to Q}\]</span></p>
 <p>Notice how strange such a proof is: <span class="math inline">\(P\)</span> is not known true, and the act of assuming <span class="math inline">\(P\)</span> is not warranted by any premises or evidence. The proof from the assumption of <span class="math inline">\(P\)</span> to the conclusion of <span class="math inline">\(Q\)</span> is provisional, hypothetical, a house of cards. But the conclusion <span class="math inline">\(P \to Q\)</span> is known factually and absolutely. Sometimes we say that the assumption of <span class="math inline">\(P\)</span> has been “discharged” by this step, placing the proof on a solid footing.</p>
 <p>An alternative is to argue that if <span class="math inline">\(Q\)</span> is <em>not</em> true, then neither is <span class="math inline">\(P\)</span>. This is called <strong>proof by contrapositive</strong>. It is based on the fact that “<span class="math inline">\(P \to Q\)</span>” and “<span class="math inline">\(\neg Q \to \neg P\)</span>” are interchangeable.</p>
@@ -431,12 +435,12 @@ window.Quarto = {
 <p><strong>Example</strong></p>
 <p>We will prove that if a number is divisible by <span class="math inline">\(4\)</span>, then it is even.</p>
 <p><strong>proof:</strong> Let <span class="math inline">\(x\)</span> be a number. Assume that <span class="math inline">\(x\)</span> is divisible by <span class="math inline">\(4\)</span>. Then <span class="math inline">\(x=4n\)</span> for some other integer <span class="math inline">\(n\)</span>. Then <span class="math inline">\(x = 2*(2n)\)</span>. Since <span class="math inline">\(x\)</span> is the double of an integer (namely <span class="math inline">\(2n\)</span>), <span class="math inline">\(x\)</span> is even.</p>
-<p><strong>Discussion:</strong> - The line “Let <span class="math inline">\(x\)</span> be a number” is a way of making a argument about all numbers by using a generic singular number <span class="math inline">\(x\)</span>. This is sometimes called an “arbitrary particular.” In natural English, this is often accomplished with the pronoun “one” representing an arbitrary particular person: “One should mind one’s manners”. This step introduces a brief context in which “<span class="math inline">\(x\)</span>” represents one fixed but unspecified thing. Any statements about <span class="math inline">\(x\)</span> occurring in this context refer to the same <span class="math inline">\(x\)</span>.</p>
+<p><strong>Discussion:</strong> - The line “Let <span class="math inline">\(x\)</span> be a number” is a way of making a argument about all numbers by using a generic singular number <span class="math inline">\(x\)</span>. This is sometimes called an “arbitrary particular.” In natural English, this is often accomplished with the pronoun “one” representing an arbitrary but singular person: “One should mind one’s manners”. This step introduces a brief context in which “<span class="math inline">\(x\)</span>” represents one fixed but unspecified thing. Any statements about <span class="math inline">\(x\)</span> occurring in this context refer to the same <span class="math inline">\(x\)</span>.</p>
 <ul>
 <li><p>The assumption is made in the second sentence. Often it could be combined with the first: “Let <span class="math inline">\(x\)</span> be a number divisible by <span class="math inline">\(4\)</span>.” Technically, the introduction of <span class="math inline">\(x\)</span> and the assumption about it are two distinct logical acts.</p></li>
 <li><p>We know a lot we didn’t say about even numbers, but we used only the most basic, direct interpretation of being even – being equal to twice some integer. This prevents confusion and streamlines the proof. Because every step in a logical proof is asserted with 100% certainty, we don’t need redundant reasoning. We want it simple and clean.</p></li>
 <li><p>The conclusion (<span class="math inline">\(Q\)</span>) is the last sentence. It does not appear out of nowhere but is deduced via sound argument.</p></li>
-<li><p>The implication-introduction needed is left unsaid, merely implied by the argument. This is extremely common. Among regular humans, nobody says “Now we do implication introduction…” or “by the principle of direct proof…” or anything like that. That only happens within formal proof systems.</p></li>
+<li><p>The final implication-introduction needed is left unsaid, merely implied by the argument form. This is extremely common. Among regular humans, nobody says “Now we do implication introduction…” or “by the principle of direct proof…” or anything like that. That only happens within formal proof systems.</p></li>
 <li><p>This argument also has an implied universality and a hidden universal introduction. We’ll get to that later.</p></li>
 </ul>
 <p><strong>Example</strong></p>
@@ -450,13 +454,29 @@ window.Quarto = {
 <li>Again the implication-introduction is implied but not said. The structure of the proof (contrapositive) is not obvious and needs to be noticed by the reader. It can be signaled “we prove by contrapositive” but this is not common in serious work.</li>
 <li>This is a proof by contrapositive, not by contradiction. They are easily confused but distinct structures.</li>
 </ul>
-<p>Example</p>
-<p>An example which illustrates algebraic computation as a series of logical deductions, so that we can think about algebra as forward deduction. Should involve squaring or square roots.</p>
+<p>** Example **</p>
+<p>Solve the equation <span class="math inline">\(\sqrt{x+6} = x\)</span>.</p>
+<p>The first lesson in this problem is that algebraic manipulation is logical argument. Every algebraic step is a deduction. We lay out the steps without comment:</p>
+<p><span class="math display">\[\begin{align*}
+\sqrt{x+6} &amp;= x\\
+x+6 &amp;= x^2\\
+-x^2+x+6 &amp;= 0\\
+x^2-x-6 &amp;= 0\\
+(x-3)(x+2) &amp;=0 \\
+x=3 \text{ or } x&amp;=-2\\
+\end{align*}
+\]</span></p>
+<ol type="1">
+<li>Should it be “or” or “and” in the last line?</li>
+<li>If this is read as a series of logical deductions, each from the previous, is each of them sound? Especially consider the last step.</li>
+<li>Are both solutions valid?</li>
+<li>Is there an error in the proof?</li>
+</ol>
 </section>
 <section id="notes-1" class="level3" data-number="2.4.4">
 <h3 data-number="2.4.4" class="anchored" data-anchor-id="notes-1"><span class="header-section-number">2.4.4</span> Notes</h3>
 <p><strong>Note for perceptive and intuitive people</strong></p>
-<p>When we assert <span class="math inline">\(P \to Q\)</span>, the implication that <span class="math inline">\(P\)</span> causes <span class="math inline">\(Q\)</span> or is at least related is so strong it’s hard to overcome, but it is not required or implied. We can sometimes affirm <span class="math inline">\(P \to Q\)</span> even when <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are unrelated, for example if we unequivocally know <span class="math inline">\(Q\)</span>. When <span class="math inline">\(Q\)</span> causes <span class="math inline">\(P\)</span>, the “reverse cause” implication <span class="math inline">\(P \to Q\)</span> may still be true, as in the idiom “where there’s smoke, there’s fire.” (Smoke implies fire.)</p>
+<p>When we assert <span class="math inline">\(P \to Q\)</span>, the suggestion that <span class="math inline">\(P\)</span> causes <span class="math inline">\(Q\)</span> or is at least related is so strong it’s hard to overcome, but it is not required or implied. We can sometimes affirm <span class="math inline">\(P \to Q\)</span> even when <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are unrelated, for example if we unequivocally know <span class="math inline">\(Q\)</span>. When <span class="math inline">\(Q\)</span> causes <span class="math inline">\(P\)</span>, the “reverse cause” implication <span class="math inline">\(P \to Q\)</span> may still be true, as in the idiom “where there’s smoke, there’s fire.” (Smoke implies fire, but fire causes smoke.)</p>
 <p><strong>Note on replacement</strong></p>
 <p>How does “If P then Q” relate to the statement “Q or not P”? Are they the same?</p>
 <p><strong>Note on reversal</strong></p>

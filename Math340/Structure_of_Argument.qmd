@@ -84,17 +84,19 @@ The language of modern logic combines ...
   - Not to be misused "$P = \top$" or "$P = \bot$". To assert that $P$ is true or false, just assert
   "$P$" or "$\neg P$".
 
-## Semantics and Proof Theory are happily married
+## Truth value and Proof Theory are happily married
 
 Each operator -- "and", "or", "if...then", "not", and others (xor, xnor, nand, etc) needs to be clarified once and for all for its meaning. In this section we discuss two kinds of "meaning" that we attribute to logical operators
 
 ### Truth-value meaning
-Based on the truth or falsity of $P$ and of $Q$, when will the logical combination "$P \to Q$" (or other operators) be true?  The answer to this question, including each possibility for $P$ and $Q$, is the **truth table** for the operator. Knowing the various possibilities, depending on $x$ for whether $P(x)$ is true, should we say that $\forall x \enspace P(x)$ is true? 
+Based on the truth or falsity of $P$ and of $Q$, when will the logical combination "$P \to Q$" (or other operators) be true?  The answer to this question, including each possibility for $P$ and $Q$, is the **truth table** for the operator. The meaning of $\to$ is baked into the rule for whether $P \to Q$ is true. The same applies to the quantifies: If you know whether $P(x)$ is true or false, for every possible $x$, then you can deduce whether $\forall x \enspace P(x)$ is true. Knowing how $\forall x$ transforms truth values is one way to know what $\forall x$ means.
 
 ### Proof-theoretical meaning
-What is the correct argument form to justify a statement like $P \to Q$ (or $\forall x \enspace P(X)$, etc)? Conversely $P \to Q$ (or $P \land Q$ etc.) is given as a premise or intermediate conclusion, what sorts of argument structures does it support? The answers to these questions form the proof theoretical interpretation of the operation.
+What is the correct argument form to justify a statement like $P \to Q$ (or $\forall x \enspace P(X)$, $P \land Q$, $P \lor Q$ etc.) Conversely, is such a statement is given as a premise or as an intermediate conclusion, what sorts of argument structures does it support? The answers to these questions form the proof theoretical meaning of the operation. 
 
-In principle, either single approach is enough to determine what the operators mean, but a student needs to master both perspectives.
+Wittgenstein's (later life) theory of meaning claims that the meaning of a word is invested not in some clear referent in reality, but in its habits of use. For example, if you know exactly when "Thank you" is appropriate to say, you know what it means. Proof-theoretical meaning is a usage-based theory of the meaning of a statement, because it is concerned with when and under what conditions a statement can be inserted in a proof, instead of its reference to reality or truth.
+
+In principle, either single approach is a sufficient theory of meaning, but a student should see both perspectives.
 
 ## Understanding "and"
 
@@ -116,7 +118,7 @@ The first way to explain "and" is to say generically exactly when "$P$ and $Q$" 
 
 
 
-Another way to explain "and" is to prescribe how "$P \land Q$" functions as an input or an output of a logical argument. In other words, what does it take to prove "$P $ and $Q$", and how could it used as a premise in a proof?
+Another way to explain "and" is to prescribe how "$P \land Q$" functions as an input or an output of a logical argument. In other words, how to $P \land Q$ function as as premise, and what argument form can produce $P \land Q$ as a conclusion?
 
 **And-introduction**
 To justify "$P$ and $Q$," simply justify $P$, then justify $Q$.  Once both are justified, "$P$ and $Q$" may be deduced:
@@ -126,7 +128,10 @@ $$\frac{P , Q}{\therefore P \land Q}$$
 In reverse, if "$P \land Q$" is known, one may conclude the parts separately.
 $$\frac{P \land Q}{\therefore P} \hspace{1in} \frac{P \land Q}{\therefore Q}$$
 
+Here we're introducing the fraction syntax for abstract deduction rules. The top of the fraction represent premises, or more precisely portions of the argument "so far". The bottom of the fraction represents the sound conclusion which can be be drawn.  
 
+We don't think of these forms as analogous to real fractions, and the analogy with division is not 
+much use. 
 
 ### Notes
 
@@ -165,10 +170,17 @@ The truth table for "implies" is challenging and should be established by public
 | F | T | T |
 | F | F | T |
 
+What's radical here is the commitment that the truth value of $P \to Q$ 
+should depend only on the plain truth or falsehood of $P$ and $Q$ individually, 
+not on any interrelationship between them, and not on any hypothetical "if $P$ 
+were different." This makes the mathematical implication $P \to Q$ a bit different
+from the natural English implication.
+
 ### In Proof Theory
 
-
-Suppose you want to justify the statement "If $P$ then $Q$." The most natural approach is to assume $P$, then deduce $Q$. This is often called **direct proof:**
+Suppose you want to justify the statement "If $P$ then $Q$." The most natural 
+approach is to assume $P$, then deduce $Q$. This is often called **direct proof.** 
+This proof structure encapsulates the meaning of $\to$. 
 
 **Implication-introduction ("direct proof")**
 If, having assumed $P$, you can prove $Q$, you may conclude "if $P$ then $Q$":
@@ -207,7 +219,7 @@ We will prove that if a number is divisible by $4$, then it is even.
 **proof:** Let $x$ be a number. Assume that $x$ is divisible by $4$. Then $x=4n$ for some other integer $n$. Then $x = 2*(2n)$. Since $x$ is the double of an integer (namely $2n$), $x$ is even.
 
 **Discussion:**
-- The line "Let $x$ be a number" is a way of making a argument about all numbers by using a generic singular number $x$. This is sometimes called an "arbitrary particular." In natural English, this is often accomplished with the pronoun "one" representing an arbitrary particular person: "One should mind one's manners". This step introduces a brief context in which "$x$" represents one fixed but unspecified thing. Any statements about $x$ occurring in this context refer to the same $x$.
+- The line "Let $x$ be a number" is a way of making a argument about all numbers by using a generic singular number $x$. This is sometimes called an "arbitrary particular." In natural English, this is often accomplished with the pronoun "one" representing an arbitrary but singular person: "One should mind one's manners". This step introduces a brief context in which "$x$" represents one fixed but unspecified thing. Any statements about $x$ occurring in this context refer to the same $x$.
 
 - The assumption is made in the second sentence. Often it could be combined with the first: "Let $x$ be a number divisible by $4$." Technically, the introduction of $x$ and the assumption about it are two distinct logical acts.
 
@@ -215,7 +227,7 @@ We will prove that if a number is divisible by $4$, then it is even.
 
 - The conclusion ($Q$) is the last sentence. It does not appear out of nowhere but is deduced via sound argument.
 
-- The implication-introduction needed is left unsaid, merely implied by the argument. This is extremely common. Among regular humans, nobody says "Now we do implication introduction..." or "by the principle of direct proof..." or anything like that. That only happens within formal proof systems.
+- The final implication-introduction needed is left unsaid, merely implied by the argument form. This is extremely common. Among regular humans, nobody says "Now we do implication introduction..." or "by the principle of direct proof..." or anything like that. That only happens within formal proof systems.
 
 - This argument also has an implied universality and a hidden universal introduction. We'll get to that later.
 
@@ -236,15 +248,32 @@ Prove that if $x^4 = 3x-1$, then $x$ is positive.
 - This is a proof by contrapositive, not by contradiction. They are easily confused but distinct structures.
 
 
-Example
+** Example **
 
-An example which illustrates algebraic computation as a series of logical deductions, so that we can think about algebra as forward deduction. Should involve squaring or square roots.
+Solve the equation $\sqrt{x+6} = x$.
+
+The first lesson in this problem is that algebraic manipulation is logical argument. Every algebraic step is a deduction. We lay out the steps without comment:
+
+$$\begin{align*}
+\sqrt{x+6} &= x\\
+x+6 &= x^2\\
+-x^2+x+6 &= 0\\
+x^2-x-6 &= 0\\
+(x-3)(x+2) &=0 \\
+x=3 \text{ or } x&=-2\\
+\end{align*}
+$$
+
+1. Should it be "or" or "and" in the last line? 
+2. If this is read as a series of logical deductions, each from the previous, is each of them sound? Especially consider the last step. 
+3. Are both solutions valid? 
+4. Is there an error in the proof?
 
 ### Notes
 
 **Note for perceptive and intuitive people**
 
-When we assert $P \to Q$, the implication that $P$ causes $Q$ or is at least related is so strong it's hard to overcome, but it is not required or implied. We can sometimes affirm $P \to Q$ even when $P$ and $Q$ are unrelated, for example if we unequivocally know $Q$. When $Q$ causes $P$, the "reverse cause" implication $P \to Q$ may still be true, as in the idiom "where there's smoke, there's fire." (Smoke implies fire.)
+When we assert $P \to Q$, the suggestion that $P$ causes $Q$ or is at least related is so strong it's hard to overcome, but it is not required or implied. We can sometimes affirm $P \to Q$ even when $P$ and $Q$ are unrelated, for example if we unequivocally know $Q$. When $Q$ causes $P$, the "reverse cause" implication $P \to Q$ may still be true, as in the idiom "where there's smoke, there's fire." (Smoke implies fire, but fire causes smoke.)
 
 **Note on replacement**
 
