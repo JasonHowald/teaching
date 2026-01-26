@@ -1,0 +1,351 @@
+---
+title: "8. Dataviz: Boxplot and Scatterplot"
+description: "Visualizing Distributions of multiple variables using scatterplots or stacked boxplots."
+---
+
+## Preparation
+Read 2.1.1 (scatter plots) and 2.1.5 (box plots)
+
+## Goals
+
+Read scatter plots and box plots correctly.
+
+Identify when each plot type is appropriate.
+
+Generate your own plots from data using seaborn.
+
+Learn the five number summary and compare to a box plot.
+
+## Note on Accessibility: 
+
+Data visualization is the production of charts and graphs that reveal
+trends and interrelationships to the eye. Although it can be done well by 
+and for low-vision and colorblind users, dataviz is fundamentally visual, so
+it's problematic for the blind. Data methods by and for 
+the blind should strongly consider other techniques. Nevertheless, it's 
+important for both blind and sighted students of statistics to understand 
+the larger discipline. I've tried to make these notes useful to everyone, 
+understanding that a histogram might not be.
+
+## The Scatter Plot
+
+A scatterplot is a visualization of **two quantitative variables**, appropriate
+when at least two numerical values are recorded about each data case. The $x$ axis
+is given the range of values of one variable, and the $y$ axis the other. Then each 
+data case is represented as one point $(x,y)$ according to its variable's values. 
+A cloud of points arises and its shape is a clue to any association between the variables.
+
+## The Scatter Plot – Example
+
+```{python}
+#| eval: false
+#| echo: true
+import seaborn as sns
+df = pd.read_csv("county.csv")
+sns.scatterplot(data=df, x='homeownership', y='multi_unit')
+```
+
+```{python}
+#| label: fig-scatterplot
+#| fig-cap: "Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
+#| fig-alt: "A scatterplot. The x-axis is labeled homeownership percent by county and ranges from 0 to 100. The y-axis is labeled multiunit dwelling percent by county and also ranges from 0 to 100. Hundreds of points inhabit the frame, most clustered in the bottom right (high homeownership, low multi-unit). A strong downward-sloping trend is visible, suggesting a negative correlation."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.scatterplot(data=df, x='homeownership', y='multi_unit')
+plt.xlabel(r"Homeownership % by county")
+plt.ylabel(r"Multi-unit dwelling % by county")
+plt.title(r"Example Scatterplot")
+plt.show()
+
+```
+
+## The Scatter Plot -- interpretation
+
+```{python}
+#| eval: false
+#| echo: true
+sns.scatterplot(data=df, x='homeownership', y='multi_unit')
+```
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+1. What are typical, common values for homeownership and multi-unit dwelling? Why?
+2. Where would you find St. Lawrence County on the scatterplot? Where would you find 
+Manhattan?
+3. What sort of county is represented at the bottom right? What sort of counties are 
+the outliers at the top?
+4. Is there an upward or downward trend? Speculate why.
+
+:::
+
+:::{.column width="50%"}
+
+
+```{python}
+#| label: fig-scatterplot-small
+#| fig-cap: "Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
+#| fig-alt: "A scatterplot. The x-axis is labeled homeownership percent by county and ranges from 0 to 100. The y-axis is labeled multiunit dwelling percent by county and also ranges from 0 to 100. Hundreds of points inhabit the frame, most clustered in the bottom right (high homeownership, low multi-unit). A strong downward-sloping trend is visible, suggesting a negative correlation."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.scatterplot(data=df, x='homeownership', y='multi_unit')
+plt.xlabel(r"Homeownership % by county")
+plt.ylabel(r"Multi-unit dwelling % by county")
+plt.title(r"Example Scatterplot")
+plt.show()
+
+```
+:::
+
+::::
+
+
+## Scatterplot -- example with hue 
+
+```{python}
+#| eval: false
+#| echo: true
+sns.lmplot(data=iris, x='petal_width', y='sepal_width', hue = 'species')
+```
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+1. Of the three, which species is easiest to identify? How is it recognized?
+2. What’s the best way to distinguish between the other two species?
+3. Do flowers with wider petals usually have wider sepals too?
+4. There are fewer dots on this scatterplot. What does that mean about the flower data?
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| label: fig-scatterplot-iris-small
+#| fig-cap: "Scatterplot petal width to sepal width for Fisher's irises."
+#| fig-alt: "A scatterplot using Fisher's Iris data. The x-axis is labeled Petal width and ranges from 0 to 2.5. The y-axis is labeled Sepal width and also ranges from 2 to 4.5. 150 points are shown in three main clusters, each with an upward trend line. Each cluster is color coded and labeled with a species name setosa, versicolor, and virginica."
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+iris = pd.read_csv("../csv/iris.csv")
+
+# Create plot with clear labels
+sns.lmplot(data=iris, x='petal_width', y='sepal_width', hue = 'species')
+plt.xlabel(r"Petal width")
+plt.ylabel(r"Sepal width")
+plt.title(r"Example Scatterplot")
+plt.show()
+
+```
+:::
+
+::::
+
+## What's a Box (-and-whisker) Plot?
+
+* A visualization of the distribution of **one quantitative variable**, 
+an alternative to a histogram. 
+* reveals the full range of data values along the $x$-axis. 
+* divides the data range into four "equal" parts, called **quartiles**
+    - the quartiles usually have unequal width, but
+    - each quartile's size is adjusted to include exactly a quarter of the data points.
+    - the inner two quartiles are drawn as a box, and the outer two are drawn as "whiskers"
+    - The five quartile boundary points are called:  Min, 25%, 50%, 75%, and Max.
+
+## Box (-and-whisker) plot -- Basic Example
+
+```{python}
+#| eval: false
+#| echo: true
+sns.boxplot(data=df, x='poverty')
+```
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+1. Based on the boxplot, what is a typical homeownership percent for U.S. counties?
+2. For what x-regions are the data points tightly clustered? Where are they more thinly spread?
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| label: fig-box-basic
+#| fig-cap: "Boxplot for homeownership by county."
+#| fig-alt: "A Boxplot for homeownership by county. The x-axis is labeled homeownership percent and ranges from 0 to 100. The y-axis is unlabeled and unmarked. The boxplot has a central box from x= to x=, divided bya centerline at x=. The whiskers extend left to x= and right to x=. The five number summary is ,,,,"
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.boxplot(data=df, x='poverty')
+plt.xlabel(r"Homeownership %")
+plt.title(r"Example Boxplot")
+plt.show()
+```
+:::
+
+::::
+
+
+## Box (-and-whisker) plot -- Rich Example
+
+Since a boxplot is so narrow, it can be stacked together 
+to compare many related distributions across categories:
+
+```{python}
+#| eval: false
+#| echo: true
+sns.boxplot(data=df, x='Attack', y='Type')
+```
+
+```{python}
+#| label: fig-box-rich
+#| fig-cap: "Boxplot for Attack value of various pokemon, separated by type."
+#| fig-alt: "An array of stacked boxplots. The x-axis is labeled 'Attack' and ranges from . to . The y-axis is labeled 'Type' and labeled with pokemon categories fire, water, grass, dragon, etc. "
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../csv/pokemon.csv")
+
+# Create plot with clear labels
+sns.boxplot(data=df, x='Attack', y='Type 1')
+plt.xlabel(r"Attack")
+plt.ylabel(r"Type")
+plt.title(r"Example Boxplot")
+plt.show()
+```
+## The Box Plot – more serious example {.activity}
+
+```{python}
+#| eval: false
+#| echo: true
+sns.boxplot(data=df, x='', y='')
+```
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+1. Compared to “unemployed”, “employed” people tend to be… younger? older? More numerous? Farther right?
+2. What is the median age for “employed” and “not in labor force”? Speculate why.
+3. If there are relatively few “unemployed” people in the data, how could you know from the box plot?
+4. What five numbers can be read from the boxplot? Infer these numbers from the topmost plot. 
+5. How can you read IQR from the boxplot? How long are the “whiskers allowed to be?
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| label: fig-box-serious
+#| fig-cap: "Boxplot for homeownership by county."
+#| fig-alt: "A Boxplot for homeownership by county. The x-axis is labeled homeownership percent and ranges from 0 to 100. The y-axis is unlabeled and unmarked. The boxplot has a central box from x= to x=, divided bya centerline at x=. The whiskers extend left to x= and right to x=. The five number summary is ,,,,"
+#| fig-width: 7
+#| fig-height: 4
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.boxplot(data=df, x='homeownership')
+plt.xlabel(r" %")
+plt.title(r"")
+plt.show()
+```
+:::
+
+::::
+
+## Whisker Technicalities
+
+<!--cat with long whisker joke picture-->
+
+Customarily, whiskers aren't allowed to be more 1.5 times as long as boxes. If a boxplot
+would be drawn with long whiskers, trim them to 1.5 * [box size], and represent data beyond
+this length as individual dots. Both Python and OpenIntro do this. 
+You need to know this to answer questions like "what's the maximum 
+data value?" using a boxplot. 
+
+## The Box Plot – creation
+<!-- Every boxplot in these notes has creation code.-->
+
+Once a dataframe is loaded, it's not hard to make a boxplot:
+
+```{python}
+#| eval: false
+#| echo: true
+import pandas as pd    #Needed once, not for every plot 
+import seaborn as sns  #Needed once, not for every plot
+df = pd.read_csv("filename.csv")
+sns.boxplot(data=df, x='Attack', y='Type')
+```
+
+See examples illustrated on previous slides. 
+
+## Summary: Which plot type is best for each case? {.activity}
+
+1. To illustrate how time spent studying relates to course grade.
+2. To show any relationship between religious identity and GPA.
+3. To illustrate a link between height and weight.
+4. To show the distribution of molecule sizes in a polymer.
+5. To illustrate total sales by product type.
+6. To visualize the masses and temperatures of thousands of stars.
+7. To show whether pokemon with higher attack also have higher defense.
+
+## Load the OpenIntro Run17 data. Which plot type best addresses each question?
+
+1. What genders are represented and how many of each?
+2. How are the run times distributed? 	
+3. Are the run times unimodal? Bimodal? Something else?
+4. Can you compare run time distribution… 
+    - by event? 
+    - by gender? 
+    - by both?
+5. How are age and run time related? 
+    - Can you compare by gender? By event?
+
+## Individual work
+On Webwork, called “Dataviz Box and Scatter.”

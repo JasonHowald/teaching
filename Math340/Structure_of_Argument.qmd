@@ -154,6 +154,13 @@ Read each statement. Decide whether it is true or false. Explain your decision.
 6. If $x$ is an element of the empty set, then $x$ is negative.
 7. If $x \geq 0$ then $x$ is not an element of the empty set.
 
+To consider: What does the correctness of $P \to Q$ depend on? Surely 
+it depends on whether $P$ and $Q$ are true or false. Does it furthermore
+depend on their relatedness, as in 5? 
+On a hypothetical world where $P$ was different, as in 4?
+On the *possibility* of $P$, as in 6? Is it even possible to make a truth 
+table for $P \to Q$?
+
 ### In a Truth Table
 
 The truth table for "implies" is challenging and should be established by public debate, not by fiat. This is the result of our classroom discussion. It is the standard interpretation of $P \to Q$.

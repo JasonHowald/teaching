@@ -164,6 +164,7 @@ plt.show()
 :::
 
 :::{.column width="50%"}
+
 ### 3 positive correlations 
 
 ```{python}

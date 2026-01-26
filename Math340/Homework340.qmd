@@ -1,0 +1,163 @@
+---
+title: "Homework Problems"
+description: "Homework problems for the semester"
+number-sections: true
+format:
+  html:
+    smooth-scroll: true # Makes jumping to sections feel less jarring
+---
+
+# Introductory Logic
+
+## Not neither
+Write a truth table for "(not $P$) and (not $Q$)". This could be called a "neither nor" truth table. Using that, infer a truth table for "NOT ((not $P$) and (not $Q$))". This could be called, awkwardly, a truth table for "not neither nor". It should exactly match a more familiar table. Which one?
+
+## Syntax or Semantics
+For each logical critique, identify whether it is primarily a *syntax* issue or a *semantic* issue.
+
+1. Your parentheses don't match.
+2. Your premise is *usually* true but not *always* true.
+3. Your first premise uses the word "political" with one meaning, but your second premise uses the word "political" with a slightly different meaning.
+4. The form of the argument is "if $P$ then $Q$. Moreover $Q$. Therefore $P$." This is not a valid argument structure.
+5. Your handwriting is messy.
+6. Your conclusion is a generalization, but I know a specific exception. So something in your argument has to be wrong.
+
+## Double negative
+If $P$ is an assertion, does $\neg \neg P$ have the same meaning as $P$? Explain.
+
+
+## Algebra as proof
+Consider this algebraic proof:
+
+$$
+\begin{align}
+x^2 = 3x-2\\
+x^2 -3x + 2 = 0\\
+(x-2)(x-1) = 0\\
+x-2 = 0  \,\,\underline{\hspace{1in}}\,\, x-1 = 0\\
+x = 2  \,\,\underline{\hspace{1in}}\,\, x = 1\\
+\end{align}
+$$
+
+  - The blank spaces represent the word "or" or "and". Which is most appropriate, and why?
+  - If this is a direct proof of something, what does it establish?
+    - If $x^2 = 3x-2$ then $x$ is 2 and/or 1.    
+    - The numbers $1$ and $2$ are solutions to the equation $x^2 = 3x-2$
+    - $x$ is equal to both $1$ and $2$.
+    - Algebra is awesome.
+  - Is the larger argument correct for *all* $x$, for *some certain* $x$, or for *only* $x=1$ or $x=2$?
+
+## The smallest number
+
+Consider the following proof:
+
+> Let $\varepsilon$ be the smallest positive real number. Then $0 < \varepsilon$. Dividing both sides of this equation by $2$, we have
+$0 < \frac{\varepsilon}{2}$. Adding $\frac{\varepsilon}{2}$ to both sides, we have $\frac{\varepsilon}{2} < \varepsilon$. We have shown that $\frac{\varepsilon}{2}$ is positive and smaller than $\varepsilon$, but this is directly at odds with the nature (first sentence) of $\varepsilon$.
+
+- What is an appropriate conclusion of the proof?
+  - $\frac{\varepsilon}{2} < \varepsilon$
+  - There must be an algebraic mistake.
+  - There is no smallest positive real number.
+  - There may be a smallest positive real number, but it isn't $\varepsilon$
+  - $\varepsilon$ is the smallest positive real number but there is a smaller positive real number, namely $\frac{\varepsilon}{2}$
+
+- What proof structure is used above? (i.e., direct, contrapositive, contradiction, etc)?
+
+## Flat Earth
+Consider the following joke argument:
+
+> If the Earth were flat, then in the past thousands of years, cats would have knocked everything off the edge by now. They haven't done so, so the Earth isn't flat.
+
+- Is this an argument by contradiction, by contrapositive, or by modus tollens? Explain.
+
+## $\cup$ and $\cap$ distribution
+Prove that $A \cap (B \cup C) \subseteq
+(A \cap B) \cup (A \cap C)$. The goal is to reason explicitly from the arbitrary particular to the general. Remember that any subset statement is a generalization about all elements of one set.
+
+## Getting even
+Prove that for all integers $n$, $n^2+n$ is even.
+
+# Set Theory
+
+## I order a sub with nothing on it.
+Here $A$ is an arbitary set and $\emptyset$ is the empty set.
+  - Is the statement "$\forall x (x \in \emptyset \to x \in A)$" true or false? Explain.
+  - Rewrite the statement (without changing its meaning) so that it uses the subset "$\subseteq$" symbol.
+
+## Reading set notation
+What are the elements of this set?
+
+$$\left \{ x \in {\mathbb N} \Bigm| (x \text{ is odd}) \to (x \text{ is prime}) \right\} $$
+
+## Writing set notation
+Write in set builder notation a set which contains just the odd perfect squares.
+
+## Explain a set
+What set is this describing, and why?
+$$\left \{ a \in \{1,2,3\} \Bigm| a \notin {\mathbb N} \right\} $$
+
+
+## Interval notation
+Rewrite this set using [interval notation](https://en.wikipedia.org/wiki/Interval_(mathematics)#Notations_for_intervals):
+$$ \left \{ q^2 \Bigm| q \in {\mathbb R}, -3\leq q \leq 3  \right\} $$
+
+## Integers and <
+
+$ \left \{ x \in {\mathbb N}  \Bigm|  \exists y \in {\mathbb N}\,\, y < x \right\} $
+
+# Functions
+
+## Possible images
+A function $f$ has domain $\{1,2,3\}$ and range ${\mathbb R}$. What are the possibilities for the image of $f$?
+
+
+## No entity without identity
+Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = x^2+1$ and let $g:{\mathbb R} \to {\mathbb R}$ by $g(t) = t^2+1$.
+  - True or False: $f(x)=g(x)$
+  - True or False: $f(x)=g(t)$
+  - True or False: $f=g$
+  - True or False: $f$ and $g$ are the same function.
+
+## You keep using that word. 
+Let $f: {\mathbb R} \to {\mathbb R}$ by $f(x) = 3x+5$.
+  - Tell the additive inverse of $f$
+  - Tell the multiplicative inverse of $f$.
+  - Tell the functional inverse of $f$.
+
+## Domain, range, and arcsin
+For the function $\sin(x)$
+  - Tell the normal domain and range of the function $\sin(x)$.
+  - Tell the domain and range of the function $\arcsin(x)$.
+  - In order for the functions to be inverse functions, how exactly must the domains and ranges of each function be adjusted?
+
+## Domain, range, arctan
+For the function $\tan(x)$
+  - Tell the normal domain and range of the function $\tan(x)$.
+  - Tell the domain and range of the function $\arctan(x)$.
+  - In order for the functions to be inverse functions, how exactly must the domains and ranges of each function be adjusted?
+
+## Sum and inverse
+Let $f: {\mathbb R}^3 \to {\mathbb R}$ by $f([x,y,z]) = x+y+z$.
+- Find a function $g$ which is a right inverse of $f$.  
+- Prove that $g$ is a right inverse of $f$.
+- Prove that $f$ is surjective, using the previous part.
+
+## Surjective, inverse optional.
+Let $h:{\mathbb R} \to {\mathbb R}$ by $h(x) = x^3 - 3x^2 + 3x - 1$. Prove that $h$ is surjective. (Hint: Although there might be another way, I expect that factoring the polynomial will be enormously useful!)
+
+## Injective $\to$ left invertible
+Let $f:A \to B$ be a function, and assume both $A$ and $B$ are nonempty. We've proven that if $f$ has a left inverse, then it is injective. Prove, conversely, that if $f$ is injective, it has a left inverse.
+
+## There is no surjectivity.
+Some say that if a function is truly nothing more than a set of ordered (input/output) pairs, then surjectivity is meaningless. Explain.
+
+## Induction? Hard to say.
+Explain in your own words why the principle of mathematical induction is problematic within a simple number theory in which the only mathematical objects of relevance are natural numbers.
+
+## Powers of 2 equivalence
+Let $x$ and $y$ be natural numbers, we write $x \sim y$ to mean $y/x$ is a power of $2$. (Powers of $2$ are numbers $2^n$ for all $n \in {\mathbb Z}$, including $1$, $1/2$, etc.) Prove that $x \sim y$ is an equivalence relation.
+
+## Ordering tasks.
+A complex to-do list contains many tasks. We use variables $x$ and $y$ to range over the tasks themselves. For example, $x=$(repair faucet) and $y=$(rake leaves). Some tasks have interdependencies. We write $x \le y$ to mean $x=y$ or $x$ must be completed before $y$ can begin. For example (buy brake light replacement) $\le$ (install brake light replacement). Discuss each of the five order axioms in this context. Which are true? Is this system a partial order? total order? well order?
+
+

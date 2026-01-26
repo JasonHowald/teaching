@@ -162,11 +162,21 @@ In each scenario, should we favor a histogram, a bar chart, or neither? Discuss 
 
 A distinct peak or hill in the histogram shows a broad range of common values. A histogram is **unimodal** if it has one main peak, **bimodal** if it has two, **trimodal** if it has three, etc.
 
+
 :::: {.columns}
 
 :::{.column width="50%"}
 
 ### Unimodal
+
+
+```{python}
+#| eval: false
+#| echo: true
+sns.displot(data=df, x= 'poverty')
+```
+
+
 ```{python}
 #| label: fig-histogram-poverty
 #| fig-cap: "Histogram -- counties' poverty rates"
@@ -196,6 +206,13 @@ plt.show()
 
 
 ### Bimodal 
+
+```{python}
+#| eval: false
+#| echo: true
+sns.displot(data=df, x= 'SLG')
+```
+
 ```{python}
 #| label: fig-histogram-mlb
 #| fig-cap: "Histogram -- MLB players' SLG"
@@ -233,6 +250,14 @@ tail on one side than the other.
 :::{.column width="50%"}
 
 ### Skewed Left
+
+```{python}
+#| eval: false
+#| echo: true
+sns.displot(data=df, x= 'homeownership')
+```
+
+
 ```{python}
 #| label: fig-histogram-skewed-left
 #| fig-cap: "Histogram -- counties' homeownership rates"
@@ -261,7 +286,15 @@ plt.show()
 :::{.column width="50%"}
 
 
+
 ### Skewed Right 
+
+```{python}
+#| eval: false
+#| echo: true
+sns.displot(data=df, x='salary')
+```
+
 ```{python}
 #| label: fig-histogram-skewed-right
 #| fig-cap: "Histogram -- MLB players' salary'"

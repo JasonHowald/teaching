@@ -1,17 +1,17 @@
 [
   {
-    "listing": "/Math681/index.html",
+    "listing": "/Math340/index.html",
     "items": [
-      "/Math681/syllabus.html"
+      "/Math340/Homework340.html",
+      "/Math340/Structure_of_Argument.html",
+      "/Math340/syllabus.html"
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/Math672/index.html",
     "items": [
-      "/Math125/index.html",
-      "/Math340/index.html",
-      "/Math672/index.html",
-      "/Math681/index.html"
+      "/Math672/Introduction_to_Ring_Theory.html",
+      "/Math672/syllabus.html"
     ]
   },
   {
@@ -24,21 +24,23 @@
       "/Math125/slides/4-5_samping_and_sample_bias.html",
       "/Math125/slides/6_controlled_experiments.html",
       "/Math125/slides/7_dataviz_histogram_and_countplot.html",
+      "/Math125/slides/8_dataviz_boxplot_and_scatterplot.html",
       "/Math125/syllabus.html"
     ]
   },
   {
-    "listing": "/Math672/index.html",
+    "listing": "/index.html",
     "items": [
-      "/Math672/Introduction_to_Ring_Theory.html",
-      "/Math672/syllabus.html"
+      "/Math125/index.html",
+      "/Math340/index.html",
+      "/Math672/index.html",
+      "/Math681/index.html"
     ]
   },
   {
-    "listing": "/Math340/index.html",
+    "listing": "/Math681/index.html",
     "items": [
-      "/Math340/Structure_of_Argument.html",
-      "/Math340/syllabus.html"
+      "/Math681/syllabus.html"
     ]
   }
 ]

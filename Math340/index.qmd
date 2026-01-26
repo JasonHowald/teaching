@@ -7,6 +7,7 @@ listing:
   contents: 
     - "syllabus.qmd"
     - "Structure_of_Argument.qmd"
+    - "Homework340.qmd"
   type: table
   fields: [title, description]
 ---
