@@ -81,8 +81,9 @@ Prove that for all integers $n$, $n^2+n$ is even.
 
 ## I order a sub with nothing on it.
 Here $A$ is an arbitary set and $\emptyset$ is the empty set.
-  - Is the statement "$\forall x (x \in \emptyset \to x \in A)$" true or false? Explain.
-  - Rewrite the statement (without changing its meaning) so that it uses the subset "$\subseteq$" symbol.
+
+1. Is the statement "$\forall x (x \in \emptyset \to x \in A)$" true or false? Explain.
+2. Rewrite the statement (without changing its meaning) so that it uses the subset "$\subseteq$" symbol.
 
 ## Reading set notation
 What are the elements of this set?
@@ -113,34 +114,39 @@ A function $f$ has domain $\{1,2,3\}$ and range ${\mathbb R}$. What are the poss
 
 ## No entity without identity
 Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = x^2+1$ and let $g:{\mathbb R} \to {\mathbb R}$ by $g(t) = t^2+1$.
-  - True or False: $f(x)=g(x)$
-  - True or False: $f(x)=g(t)$
-  - True or False: $f=g$
-  - True or False: $f$ and $g$ are the same function.
+
+1. True or False: $f(x)=g(x)$
+2. True or False: $f(x)=g(t)$
+3. True or False: $f=g$
+4. True or False: $f$ and $g$ are the same function.
 
 ## You keep using that word. 
 Let $f: {\mathbb R} \to {\mathbb R}$ by $f(x) = 3x+5$.
-  - Tell the additive inverse of $f$
-  - Tell the multiplicative inverse of $f$.
-  - Tell the functional inverse of $f$.
+
+1. Tell the additive inverse of $f$
+2. Tell the multiplicative inverse of $f$.
+3. Tell the functional inverse of $f$.
 
 ## Domain, range, and arcsin
 For the function $\sin(x)$
-  - Tell the normal domain and range of the function $\sin(x)$.
-  - Tell the domain and range of the function $\arcsin(x)$.
-  - In order for the functions to be inverse functions, how exactly must the domains and ranges of each function be adjusted?
+
+1. Tell the normal domain and range of the function $\sin(x)$.
+2. Tell the domain and range of the function $\arcsin(x)$.
+3. In order for the functions to be inverse functions, how exactly must the domains and ranges of each function be adjusted?
 
 ## Domain, range, arctan
 For the function $\tan(x)$
-  - Tell the normal domain and range of the function $\tan(x)$.
-  - Tell the domain and range of the function $\arctan(x)$.
-  - In order for the functions to be inverse functions, how exactly must the domains and ranges of each function be adjusted?
+
+1. Tell the normal domain and range of the function $\tan(x)$.
+2. Tell the domain and range of the function $\arctan(x)$.
+3. In order for the functions to be inverse functions, how exactly must the domains and ranges of each function be adjusted?
 
 ## Sum and inverse
 Let $f: {\mathbb R}^3 \to {\mathbb R}$ by $f([x,y,z]) = x+y+z$.
-- Find a function $g$ which is a right inverse of $f$.  
-- Prove that $g$ is a right inverse of $f$.
-- Prove that $f$ is surjective, using the previous part.
+
+1. Find a function $g$ which is a right inverse of $f$.  
+2. Prove that $g$ is a right inverse of $f$.
+3. Prove that $f$ is surjective, using the previous part.
 
 ## Surjective, inverse optional.
 Let $h:{\mathbb R} \to {\mathbb R}$ by $h(x) = x^3 - 3x^2 + 3x - 1$. Prove that $h$ is surjective. (Hint: Although there might be another way, I expect that factoring the polynomial will be enormously useful!)

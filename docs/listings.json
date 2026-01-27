@@ -10,8 +10,18 @@
   {
     "listing": "/Math672/index.html",
     "items": [
+      "/Math672/Homework672.html",
       "/Math672/Introduction_to_Ring_Theory.html",
       "/Math672/syllabus.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/Math125/index.html",
+      "/Math340/index.html",
+      "/Math672/index.html",
+      "/Math681/index.html"
     ]
   },
   {
@@ -26,15 +36,6 @@
       "/Math125/slides/7_dataviz_histogram_and_countplot.html",
       "/Math125/slides/8_dataviz_boxplot_and_scatterplot.html",
       "/Math125/syllabus.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/Math125/index.html",
-      "/Math340/index.html",
-      "/Math672/index.html",
-      "/Math681/index.html"
     ]
   },
   {

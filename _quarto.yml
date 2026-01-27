@@ -22,8 +22,10 @@ jupyter:
       - "-f"
       - "{connection_file}"
 
+#Attempt to fix a hanging renderer problem
 execute:
   freeze: auto
+
 
 #Everything render to simple html unless I say otherwise (for slides)
 default-format: html

@@ -6,6 +6,7 @@ listing:
   contents: 
     - "syllabus.qmd"
     - "Introduction_to_Ring_Theory.qmd"
+    - "Homework672.qmd"
   type: table
   fields: [title, description]
 ---

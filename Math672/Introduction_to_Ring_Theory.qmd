@@ -87,7 +87,7 @@ Natural mathematical structures with elements which can be added and multiplied 
 5. Additive cancellation
 6. $\forall x \enspace 0x=0$
 7. $\forall x \enspace (-1)x = -x$
-8. $(-a)*b = -(ab)$.
+8. $(-a)*b = -(ab)$ and $a*(-b) = -(ab)$
 9. $(-a)(-b) = ab$.
 10. Multidistribution: $\displaystyle a \sum_{i} x_i = \sum_{i} a x_i$
 11. Two-sided multiplicative inverse is unique if it exists.

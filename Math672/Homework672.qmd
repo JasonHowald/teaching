@@ -1,0 +1,63 @@
+---
+title: "Homework Problems"
+description: "Homework problems for the semester"
+number-sections: true
+format:
+  html:
+    smooth-scroll: true # Makes jumping to sections feel less jarring
+
+---
+
+# Introductory Ring Theory
+
+## 8 and 9.
+
+Prove parts 8 and 9 from the list of properties in section 1.4 of the notes. 
+
+## Evaluation 
+Let ${\mathbb R}[x]$ be the ring of polynomials with real coefficients, let $c \in {\mathbb R}$, and
+let $e_c:{\mathbb R}[x] \to {\mathbb R}$ be the evaluation map at $c$: $e_c(p) = p(c)$. 
+
+1. Demonstrate that $e_c$ is a ring homomorphism.
+2. Calculate the image of $e_c$, and prove that your answer is correct.
+3. Calculate the kernel of $e_c$, and prove that your answer is correct.
+
+## Kernel zero
+
+Let $f:R \to S$ be a homomorphism of rings. Prove that $\ker(f) = \{0_R\}$ if and only if $f$ is 
+injective. 
+
+## Complex matrices
+
+Let ${\mathbb C}$ be the ring of complex numbers, and let $R = \left \{\begin{bmatrix}a&-b\\b&a\end{bmatrix}\,\,|\,\, a, b \in {\mathbb R}\right\}$. 
+
+1. For each ring, identify its zero and one. For each ring, define its addition and multiplication operations.
+2. Define a map $f:{\mathbb C} \to R$ and prove that it is a ring homomorphism.
+3. Calculate the image and kernel of $f$.
+
+## Searching for elements
+
+Give an example of each type of element in each ring, or state "impossible." No need for proof.
+
+|  | ${\mathbb R}$ | ${\mathbb Z}$ | ${\mathbb Z}_{10}$ | $M^{2 \times 2}_{\mathbb R}$ | ${\mathbb R}[x]$|
+|--|--|--|--|--|--|
+| A unit (other than 1) in |
+| A nilpotent in |
+| A zerodivisor in |
+| An irreducible in |
+
+## The Problem with $\sqrt{-5}$
+In this problem we explore the ring $R = {\mathbb Z}[\sqrt{-5}] = \{a + b \sqrt{-5} | a, b \in {\mathbb Z}\}$.
+
+1. Identify the $0$ and $1$ of $R$. Prove (based on the definition above) that $R$ is closed under addition and multiplication. Use the subring test to deduce that $R$ is a subring of ${\mathbb C}$.
+2. To describe the units of $R$, we need something like a length function on it:  For $a+b\sqrt{-5} \in R$, we define $\|a+b\sqrt{-5}\|^2 = a^2+5b^2$.  (Note that this is just the complex square norm function restricted to $R$.)
+
+  - Explain why $\| - \|^2$ is integer valued.
+  - Prove that $\Vert v \Vert^2$ is multiplicative in the sense $\Vert vw\Vert^2 = \Vert v\Vert^2\Vert w\Vert^2$
+  - Prove (from the previous) that if $v$ is a unit of $R$, then $\|v\|^2 = 1$.
+
+3. Identify all units of $R$.
+4. Once units are identified, we can prove that certain elements are irreducible. Demonstrate that $2$, $3$, $1+\sqrt{-5}$, and $1-\sqrt{-5}$ are all irreducible.
+5. It will perhaps bother you to see that $2 \cdot 3 = (1+\sqrt{-5}) \cdot(1-\sqrt{-5})$. Among these irreducible factors of six, are any of them unit multiples of others? Why or why not?
+
+ 
