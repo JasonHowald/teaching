@@ -494,7 +494,7 @@
     "href": "Math672/index.html",
     "title": "Math 672",
     "section": "",
-    "text": "Welcome to Math 672 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nHomework Problems\n\n\nHomework problems for the semester\n\n\n\n\n\n\nIntroduction to Ring Theory\n\n\nLecture notes for the semester\n\n\n\n\n\n\nSyllabus – 672\n\n\nSyllabus and course policies for Jason Howald’s Math 672\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to Math 672 with Professor Jason Howald.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nHomework Problems\n\n\nHomework problems for the semester\n\n\n\n\n\n\nIntroduction to Ring Theory\n\n\nLecture notes for the semester\n\n\n\n\n\n\nSyllabus – 672\n\n\nSyllabus and course policies for Jason Howald’s Math 672\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -502,6 +502,90 @@
     "title": "Professor Howald’s Teaching Portal",
     "section": "",
     "text": "Please select a course.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nMath 125\n\n\nProbability and Statistics\n\n\n\n\n\n\nMath 340\n\n\nSet Theory and Logic\n\n\n\n\n\n\nMath 672\n\n\nAbstract Algebra II\n\n\n\n\n\n\nMath 681\n\n\nComplex Analysis\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#preparation",
+    "href": "Math125/slides/11_quantile_statistics.html#preparation",
+    "title": "11. Quantile Statistics",
+    "section": "Preparation",
+    "text": "Preparation\nReread 2.1.5 on box plots and quantile statistics. Review vocabulary: Percentile, Quartile, Quintile Median, Q1, Q3, IQR"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#true-or-false",
+    "href": "Math125/slides/11_quantile_statistics.html#true-or-false",
+    "title": "11. Quantile Statistics",
+    "section": "True or False",
+    "text": "True or False\nAmong American households, about half earn more than the average income and about half earn less.\nOn a very easy ten point assignment, about half of students will score above average, and about half will score below average"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#mean-isnt-typical",
+    "href": "Math125/slides/11_quantile_statistics.html#mean-isnt-typical",
+    "title": "11. Quantile Statistics",
+    "section": "Mean isn’t typical",
+    "text": "Mean isn’t typical\nMean does a poor job describing “typical,” because it pulls hard toward outliers.\nMedian does a better job describing “typical,” because it mostly ignores outliers."
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#what-is-the-median",
+    "href": "Math125/slides/11_quantile_statistics.html#what-is-the-median",
+    "title": "11. Quantile Statistics",
+    "section": "What is the median?",
+    "text": "What is the median?\nThe median is the middle value by count. Roughly speaking, half the data values are less than the median and half are greater.\nFinding the median:\n\nSort data numerically\nFind the center.\nIf count is odd, median is the middle one.\nIf count is even, median is average of middel two.\n\nExample data values: 5, 7, 8, 9, 9, 9, 10, 10, 11, 12\nDescription: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9.\nThe median is 9"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#what-is-the-median-1",
+    "href": "Math125/slides/11_quantile_statistics.html#what-is-the-median-1",
+    "title": "11. Quantile Statistics",
+    "section": "What is the median?",
+    "text": "What is the median?\n1, 2, 3, 0, 1, 2, 9 ← Median is not zero. Sort first!\n0, 1, 1, 2, 2, 3, 9 ← Median is 2.\n0, 1, 1, 2, 2, 3, 96 ← Median is still 2.\nThe median is insensitive to outliers and individual data errors. The mean is not. This is one reason the median is often preferred."
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#using-the-median-to-understand-your-data.",
+    "href": "Math125/slides/11_quantile_statistics.html#using-the-median-to-understand-your-data.",
+    "title": "11. Quantile Statistics",
+    "section": "Using the median to understand your data.",
+    "text": "Using the median to understand your data.\nWhat is the median salary of MLB players? Use the mlb.csv dataset.\nWhat is the median income of Americans? Use the acs12.csv dataset.\nWhat is the median birth weight of American babies? Use the births14.csv dataset.\nIn all these cases, mean may be deceptive because it’s influenced by outliers. Median better reflects what is typical."
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#quartering-the-data",
+    "href": "Math125/slides/11_quantile_statistics.html#quartering-the-data",
+    "title": "11. Quantile Statistics",
+    "section": "Quartering the data",
+    "text": "Quartering the data\nMake equal quarters by subdividing each half. Just like cutting an apple: 5, 7, 8, 9, 9, 9, 10, 10, 11, 12 Q1=8, Median=9, Q3=10, IQR = 2 Five-number summary: 5, 8, 9, 10, 12. ← Foundation for the box plot if desired. Odd/even fussiness applies to halves. Note: It’s not literally true that a quarter of the data lies between Q1 and Q2. But such statements are usually nearly true for large and continuous datasets."
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#quartering-the-data-caution",
+    "href": "Math125/slides/11_quantile_statistics.html#quartering-the-data-caution",
+    "title": "11. Quantile Statistics",
+    "section": "Quartering the data – caution",
+    "text": "Quartering the data – caution\nMake equal quarters by subdividing each half. Just like cutting an apple: 5, 7, 8, 9, 9, 9, 10, 10, 11, 12 Q1=8, Median=9, Q3=10, IQR = 2 Caution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different. x = pd.Series([1,2,3,4,5,6,7,8]) print(x.quantile(.25), x.quantile(.5), x.quantile(.75)) 2.75 4.5 6.25 x = pd.Series([1,2,3,4,5,6,7,8,9]) print(x.quantile(.25), x.quantile(.5), x.quantile(.75)) 3.0 5.0 7.0"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#by-hand-aint-nobody-got-time-for-that",
+    "href": "Math125/slides/11_quantile_statistics.html#by-hand-aint-nobody-got-time-for-that",
+    "title": "11. Quantile Statistics",
+    "section": "By hand? Ain’t nobody got time for that!",
+    "text": "By hand? Ain’t nobody got time for that!\nA data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done? A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem?"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean",
+    "href": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean",
+    "title": "11. Quantile Statistics",
+    "section": "Median is more informative than Mean",
+    "text": "Median is more informative than Mean\nThis histogram displays the distribution of incomes in OpenIntro’s acs12 dataset. What can you say about a “typical” income in this population?"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean-1",
+    "href": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean-1",
+    "title": "11. Quantile Statistics",
+    "section": "Median is more informative than Mean",
+    "text": "Median is more informative than Mean\nMost reports on “typical” American financial well being use quantile statistics – median household income, median net wealth, median rent, etc. Why? In highly unequal societies, measures of wealth are strongly skewed right. For example, in acs12, the income variable has mean=23600, std=46600, median=3000, and skewness=4.6. (We won’t study skewness in detail, but that’s a lot!) No single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal."
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#individual-work",
+    "href": "Math125/slides/11_quantile_statistics.html#individual-work",
+    "title": "11. Quantile Statistics",
+    "section": "Individual work",
+    "text": "Individual work\nSolve Webwork problems in assignment 11.\nHere’s a quantile statistic: The top 1% of Americans control about as much wealth as the bottom 90% [source: Federal Reserve Economic Data (FRED)]. See what you can do about that."
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#preparatory-work",
@@ -823,7 +907,7 @@
     "href": "Math125/index.html",
     "title": "Math 125",
     "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n4-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n6. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n7. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n8. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n11. Quantile Statistics\n\n\nCalculating and understanding min, 25%, 50%, 75%, and max\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n4-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n6. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n7. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n8. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\n9-10. Mean, Variance, and Standard Deviation\n\n\nCalculating and understanding the first of the descriptive statistics.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
@@ -963,7 +1047,7 @@
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-interpretation",
     "title": "8. Dataviz: Boxplot and Scatterplot",
     "section": "The Scatter Plot – interpretation",
-    "text": "The Scatter Plot – interpretation\n\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\nWhat are typical, common values for homeownership and multi-unit dwelling? Why?\nWhere would you find St. Lawrence County on the scatterplot? Where would you find Manhattan?\nWhat sort of county is represented at the bottom right? What sort of counties are the outliers at the top?\nIs there an upward or downward trend? Speculate why.\n\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
+    "text": "The Scatter Plot – interpretation\n\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\nWhat are typical, common values for homeownership and multi-unit dwelling? Why?\nWhere would you find St. Lawrence County on the scatterplot? Where would you find Manhattan (“New York County”)?\nWhat sort of county is represented at the bottom right? What sort of counties are the outliers at the top?\nIs there an upward or downward trend? Speculate why.\n\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#scatterplot-example-with-hue",
@@ -984,7 +1068,14 @@
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-basic-example",
     "title": "8. Dataviz: Boxplot and Scatterplot",
     "section": "Box (-and-whisker) plot – Basic Example",
-    "text": "Box (-and-whisker) plot – Basic Example\n\nsns.boxplot(data=df, x='poverty')\n\n\n\n\nBased on the boxplot, what is a typical homeownership percent for U.S. counties?\nFor what x-regions are the data points tightly clustered? Where are they more thinly spread?\n\n\n\n\n\n\n\n\n\n\nFigure 4: Boxplot for homeownership by county."
+    "text": "Box (-and-whisker) plot – Basic Example\n\nsns.boxplot(data=df, x='poverty')\n\n\n\n\nBased on the boxplot, what is a typical homeownership percent for U.S. counties?\nFor what x-regions are the data points tightly clustered? Where are they more thinly spread?\n\n\n\n\n\n\n\n\n\n\nFigure 4: Boxplot for poverty percent by county."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
+    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "section": "Whisker Technicalities",
+    "text": "Whisker Technicalities\n\nCustomarily, whiskers aren’t allowed to be more 1.5 times as long as boxes. If a boxplot would be drawn with long whiskers, trim them to 1.5 * [box size], and represent data beyond this length as individual dots. Both Python and OpenIntro do this. You need to know this to answer questions like “what’s the maximum data value?” using a boxplot."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-rich-example",
@@ -998,21 +1089,14 @@
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-more-serious-example",
     "title": "8. Dataviz: Boxplot and Scatterplot",
     "section": "The Box Plot – more serious example",
-    "text": "The Box Plot – more serious example\n\nsns.boxplot(data=df, x='', y='')\n\n\n\n\nCompared to “unemployed”, “employed” people tend to be… younger? older? More numerous? Farther right?\nWhat is the median age for “employed” and “not in labor force”? Speculate why.\nIf there are relatively few “unemployed” people in the data, how could you know from the box plot?\nWhat five numbers can be read from the boxplot? Infer these numbers from the topmost plot.\nHow can you read IQR from the boxplot? How long are the “whiskers allowed to be?\n\n\n\n\n\n\n\n\n\n\nFigure 6: Boxplot for homeownership by county."
+    "text": "The Box Plot – more serious example\n\nsns.boxplot(data = df, x = 'salary', y = 'team')\n\n\n\n\nThe plots seem left-justified. What does that mean about salaries? \nWhich teams pay the least? the most?\nWhat do the circles mean?\nWhich team pays the highest median wage?\nProfessor Howald is considering quitting math and playing major league ball. What’s a realistic salary expectation?\n\n\n\n\n\n\n\n\n\n\nFigure 6: Boxplot for MLB salary by team."
   },
   {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
     "title": "8. Dataviz: Boxplot and Scatterplot",
-    "section": "Whisker Technicalities",
-    "text": "Whisker Technicalities\n\nCustomarily, whiskers aren’t allowed to be more 1.5 times as long as boxes. If a boxplot would be drawn with long whiskers, trim them to 1.5 * [box size], and represent data beyond this length as individual dots. Both Python and OpenIntro do this. You need to know this to answer questions like “what’s the maximum data value?” using a boxplot."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-creation",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-creation",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
-    "section": "The Box Plot – creation",
-    "text": "The Box Plot – creation\n\nOnce a dataframe is loaded, it’s not hard to make a boxplot:\n\nimport pandas as pd    #Needed once, not for every plot \nimport seaborn as sns  #Needed once, not for every plot\ndf = pd.read_csv(\"filename.csv\")\nsns.boxplot(data=df, x='Attack', y='Type')\n\nSee examples illustrated on previous slides."
+    "section": "Plotting yourself",
+    "text": "Plotting yourself\n\nOnce a dataframe is loaded, it’s not hard to make a scatterplot or boxplot:\n\nimport pandas as pd    #Needed once, not for every plot \nimport seaborn as sns  #Needed once, not for every plot\ndf = pd.read_csv(\"filename.csv\")\nsns.boxplot(data=df, x='Attack', y='Type')\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\nSee examples illustrated on previous slides."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#summary-which-plot-type-is-best-for-each-case",
@@ -1022,11 +1106,11 @@
     "text": "Summary: Which plot type is best for each case?\n\nTo illustrate how time spent studying relates to course grade.\nTo show any relationship between religious identity and GPA.\nTo illustrate a link between height and weight.\nTo show the distribution of molecule sizes in a polymer.\nTo illustrate total sales by product type.\nTo visualize the masses and temperatures of thousands of stars.\nTo show whether pokemon with higher attack also have higher defense."
   },
   {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#load-the-openintro-run17-data.-which-plot-type-best-addresses-each-question",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#load-the-openintro-run17-data.-which-plot-type-best-addresses-each-question",
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
     "title": "8. Dataviz: Boxplot and Scatterplot",
-    "section": "Load the OpenIntro Run17 data. Which plot type best addresses each question?",
-    "text": "Load the OpenIntro Run17 data. Which plot type best addresses each question?\n\nWhat genders are represented and how many of each?\nHow are the run times distributed?\n\nAre the run times unimodal? Bimodal? Something else?\nCan you compare run time distribution…\n\nby event?\nby gender?\nby both?\n\nHow are age and run time related?\n\nCan you compare by gender? By event?"
+    "section": "Putting it all together",
+    "text": "Putting it all together\nLoad the OpenIntro Run17 data. Make your own plots to answer each question.\n\nWhat genders are represented and how many of each?\nHow are the run times distributed?\n\nAre the run times unimodal? Bimodal? Something else? Why!?\nCan you compare run time distribution…\n\nby event?\nby gender?\nby both?\n\nHow are age and run time related?\n\nCan you compare by gender? By event?"
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#individual-work",
@@ -1169,6 +1253,104 @@
     "text": "Individually – homework\nObtain the book in .pdf or paper form.\nDo the preparatory work for the next slide deck “1. The Shape of Data.”\nNotify Professor Howald of any special needs.\nDo something nice for someone you care about."
   },
   {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#preparation",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#preparation",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Preparation",
+    "text": "Preparation\nRead 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#vocabulary-and-notation",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#vocabulary-and-notation",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Vocabulary and notation",
+    "text": "Vocabulary and notation\n\n\n\nName\nAs statistic\nAs parameter\n\n\n\n\nCount\n\\(n\\)\n\\(N\\)\n\n\nMean\n\\(\\overline{x}\\)\n\\(\\mu\\)\n\n\nVariance\n\\(s^2\\)\n\\(\\sigma^2\\)\n\n\nStandard Deviation\n\\(s\\)\n\\(\\sigma\\)\n\n\n\nStatistic: Summary number about a sample.\nParameter: Summary number about a population."
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#how-do-you-mean",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#how-do-you-mean",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "How do you mean?",
+    "text": "How do you mean?\nFind the coast_starlight data on openintro. It has only 16 lines. We want the average travel_time from the dataset.\n\nWrite instructions for calculating the average.\nFind the average with just a calculator.\nLoad the data into a spreadsheet and find the average.\nLoad the data into Jupyter and find the average.\nIs this average a statistic or a parameter?\nWhat symbol is appropriate for this average? Why?"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#understanding-the-average",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#understanding-the-average",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Understanding the average",
+    "text": "Understanding the average\nIn everyday English, “average” means “typical” or “usual.” In math, it always means “sum / count”. This can be different from “typical”.\n\nWhat is the average number of fingers (including thumbs) on a person?\nWhat is the average result of a (standard six sided) die roll?\nDo you know the average number of kids in a U.S. family?"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – intro",
+    "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n\n\nStep 1. Find the average: \\(\\frac{5+7+8+9+9+9+10+10+11+12}{10} = 9\\)"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-1",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-1",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – intro",
+    "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 2. Compare each to average, record deviations"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-2",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-2",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – intro",
+    "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 3? Find average deviation: \\(\\frac{(-4)+(-2)+ (-1) + 0 + 0 + 0 + 1 + 1 + 2 + 3}{10} = 0\\)\nOops that was pointless. Why?"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-3",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-3",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – intro",
+    "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 3. Square the deviations. No more negatives!"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-4",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-4",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – intro",
+    "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 4. “Average” those: \\(\\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\)\nThis is the variance. It measures how much the data varies. The symbol is \\(s^2\\). Think of it as one (detached) symbol, not the square of \\(s\\)."
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-5",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-5",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – intro",
+    "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\nyear\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\nyear\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\nyear\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\nsquare years ?!?\n\n\n\n\n\\(s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\nStep 5. Check the units."
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-6",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-6",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – intro",
+    "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nVariance \\(= s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\n\\(s = \\sqrt{4} = 2\\) years\nStep 6. Take the square root. That’s called \\(s\\), the standard deviation."
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-interpretation",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-interpretation",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation – interpretation",
+    "text": "Variance and standard deviation – interpretation\nStandard deviation is the typical deviation (either way) from average, not the greatest possible deviation.\nData points often stray further from average.\nVariance is hard to interpret – its units are screwy.\nStandard deviation is easier to interpret.\nWe divide by \\(n-1\\), not by \\(n\\). Mnemonic: The first data value can’t exhibit variability.\nWe use \\(s^2\\) and \\(s\\) for sample variance and sample standard deviation.\nWe use \\(\\sigma^2\\) and \\(\\sigma\\) for population variance and population standard deviation."
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-easy-way",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-easy-way",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Variance and standard deviation, easy way",
+    "text": "Variance and standard deviation, easy way\n\nYou should have a spreadsheet with your coast_starlight data from earlier. Using the command “STDEV” or “STDEV.S”, find the standard deviation.\nYou should have a Jupyter notebook with the same data. Use “df.describe” to find the standard deviation. (Jupyter example)\nIs all of the data in the range from \\(\\overline{x} - s\\) and \\(\\overline{x}+s\\)?"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#individual-work",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#individual-work",
+    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "section": "Individual work",
+    "text": "Individual work\nComplete the webwork problem set for this presentation."
+  },
+  {
     "objectID": "Math125/syllabus.html",
     "href": "Math125/syllabus.html",
     "title": "Syllabus – 125",
@@ -1218,8 +1400,8 @@
     "text": "Prove parts 8 and 9 from the list of properties in section 1.4 of the notes.\n\n\n\nLet \\({\\mathbb R}[x]\\) be the ring of polynomials with real coefficients, let \\(c \\in {\\mathbb R}\\), and let \\(e_c:{\\mathbb R}[x] \\to {\\mathbb R}\\) be the evaluation map at \\(c\\): \\(e_c(p) = p(c)\\).\n\nDemonstrate that \\(e_c\\) is a ring homomorphism.\nCalculate the image of \\(e_c\\), and prove that your answer is correct.\nCalculate the kernel of \\(e_c\\), and prove that your answer is correct.\n\n\n\n\nLet \\(f:R \\to S\\) be a homomorphism of rings. Prove that \\(\\ker(f) = \\{0_R\\}\\) if and only if \\(f\\) is injective.\n\n\n\nLet \\({\\mathbb C}\\) be the ring of complex numbers, and let \\(R = \\left \\{\\begin{bmatrix}a&-b\\\\b&a\\end{bmatrix}\\,\\,|\\,\\, a, b \\in {\\mathbb R}\\right\\}\\).\n\nFor each ring, identify its zero and one. For each ring, define its addition and multiplication operations.\nDefine a map \\(f:{\\mathbb C} \\to R\\) and prove that it is a ring homomorphism.\nCalculate the image and kernel of \\(f\\).\n\n\n\n\nGive an example of each type of element in each ring, or state “impossible.” No need for proof.\n\n\n\n\n\n\n\n\n\n\n\n\n\\({\\mathbb R}\\)\n\\({\\mathbb Z}\\)\n\\({\\mathbb Z}_{10}\\)\n\\(M^{2 \\times 2}_{\\mathbb R}\\)\n\\({\\mathbb R}[x]\\)\n\n\n\n\nA unit (other than 1) in\n\n\n\n\n\n\n\nA nilpotent in\n\n\n\n\n\n\n\nA zerodivisor in\n\n\n\n\n\n\n\nAn irreducible in\n\n\n\n\n\n\n\n\n\n\n\nIn this problem we explore the ring \\(R = {\\mathbb Z}[\\sqrt{-5}] = \\{a + b \\sqrt{-5} | a, b \\in {\\mathbb Z}\\}\\).\n\nIdentify the \\(0\\) and \\(1\\) of \\(R\\). Prove (based on the definition above) that \\(R\\) is closed under addition and multiplication. Use the subring test to deduce that \\(R\\) is a subring of \\({\\mathbb C}\\).\nTo describe the units of \\(R\\), we need something like a length function on it: For \\(a+b\\sqrt{-5} \\in R\\), we define \\(\\|a+b\\sqrt{-5}\\|^2 = a^2+5b^2\\). (Note that this is just the complex square norm function restricted to \\(R\\).)\n\n\nExplain why \\(\\| - \\|^2\\) is integer valued.\nProve that \\(\\Vert v \\Vert^2\\) is multiplicative in the sense \\(\\Vert vw\\Vert^2 = \\Vert v\\Vert^2\\Vert w\\Vert^2\\)\nProve (from the previous) that if \\(v\\) is a unit of \\(R\\), then \\(\\|v\\|^2 = 1\\).\n\n\nIdentify all units of \\(R\\).\nOnce units are identified, we can prove that certain elements are irreducible. Demonstrate that \\(2\\), \\(3\\), \\(1+\\sqrt{-5}\\), and \\(1-\\sqrt{-5}\\) are all irreducible.\nIt will perhaps bother you to see that \\(2 \\cdot 3 = (1+\\sqrt{-5}) \\cdot(1-\\sqrt{-5})\\). Among these irreducible factors of six, are any of them unit multiples of others? Why or why not?"
   },
   {
-    "objectID": "Math672/Homework672.html#and-9.",
-    "href": "Math672/Homework672.html#and-9.",
+    "objectID": "Math672/Homework672.html#and-9",
+    "href": "Math672/Homework672.html#and-9",
     "title": "Homework Problems",
     "section": "",
     "text": "Prove parts 8 and 9 from the list of properties in section 1.4 of the notes."

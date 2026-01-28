@@ -1,0 +1,171 @@
+---
+title: "9-10. Mean, Variance, and Standard Deviation "
+description: "Calculating and understanding the first of the descriptive statistics."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+
+---
+
+## Preparation
+Read 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)
+
+## Vocabulary and notation
+
+| Name | As **statistic** | As **parameter** |
+|---|---|---|
+| Count | $n$ | $N$ | 
+| Mean | $\overline{x}$ | $\mu$ |
+| Variance | $s^2$ | $\sigma^2$ |
+| Standard Deviation | $s$ | $\sigma$ |
+
+**Statistic:** Summary number about a *sample*.
+
+**Parameter:** Summary number about a *population*. 
+
+## How do you mean? {.activity}
+
+Find the coast_starlight data on openintro. It has only 16 lines. We want the average travel_time from the dataset.
+
+1. Write instructions for calculating the average. 
+2. Find the average with just a calculator.
+3. Load the data into a spreadsheet and find the average.
+4. Load the data into Jupyter and find the average.
+5. Is this average a statistic or a parameter? 
+6. What symbol is appropriate for this average? Why?
+
+## Understanding the average {.activity}
+In everyday English, “average” means “typical” or “usual." In math, it always means 
+"sum / count". This can be different from "typical".
+
+1. What is the average number of fingers (including thumbs) on a person?
+2. What is the average result of a (standard six sided) die roll?
+3. Do you know the average number of kids in a U.S. family?
+
+## Variance and standard deviation – intro
+
+Ten children attend a party. Their ages are:
+
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | 
+|--|--|--|--|--|--|--|--|--|--|--|
+
+<br><br><br>
+
+Step 1. Find the average: $\frac{5+7+8+9+9+9+10+10+11+12}{10} = 9$
+
+## Variance and standard deviation – intro
+
+Ten children attend a party. Their ages are:
+
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | 
+|--|--|--|--|--|--|--|--|--|--|--|
+| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | 
+| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | 
+
+<br><br>
+
+Step 2. Compare each to average, record **deviations**
+
+## Variance and standard deviation – intro
+
+Ten children attend a party. Their ages are:
+
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | 
+|--|--|--|--|--|--|--|--|--|--|--|
+| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | 
+| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | 
+
+<br><br>
+
+Step 3? Find average deviation: $\frac{(-4)+(-2)+ (-1) + 0 + 0 + 0 + 1 + 1 + 2 + 3}{10} = 0$
+
+Oops that was pointless. **Why?**
+
+## Variance and standard deviation – intro
+
+Ten children attend a party. Their ages are:
+
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | 
+|--|--|--|--|--|--|--|--|--|--|--|
+| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | 
+| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | 
+| 16 | 4 | 1 | 0 | 0 | 0 | 1 | 1 | 4 | 9 | (square dev) | 
+
+<br><br>
+
+Step 3. Square the deviations. No more negatives!
+
+## Variance and standard deviation – intro
+
+Ten children attend a party. Their ages are:
+
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | 
+|--|--|--|--|--|--|--|--|--|--|--|
+| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | 
+| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | 
+| 16 | 4 | 1 | 0 | 0 | 0 | 1 | 1 | 4 | 9 | (square dev) | 
+
+<br>
+
+Step 4. "Average" those: $\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4$
+
+This is the **variance.** It measures how much the data **varies.**
+The symbol is $s^2$. Think of it as one (detached) symbol, not the square
+of $s$.
+
+## Variance and standard deviation – intro
+
+Ten children attend a party. Their ages are:
+
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | year | 
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | year | 
+| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | year | 
+| 16 | 4 | 1 | 0 | 0 | 0 | 1 | 1 | 4 | 9 | (square dev) | square years ?!? | 
+
+<br>
+
+$s^2 = \frac{16+4+1+0+0+0+1+1+4+9}{9} = 4$ **square years**.
+
+Step 5. Check the units. 
+
+## Variance and standard deviation – intro
+
+Ten children attend a party. Their ages are:
+
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | year | 
+|--|--|--|--|--|--|--|--|--|--|--|
+| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | year | 
+| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | year | 
+| 16 | 4 | 1 | 0 | 0 | 0 | 1 | 1 | 4 | 9 | (square dev) | square years ?!? | 
+
+<br>
+
+Variance $= s^2 = \frac{16+4+1+0+0+0+1+1+4+9}{9} = 4$ **square years**.
+
+$s = \sqrt{4} = 2$ **years**
+
+Step 6. Take the square root. That's called $s$, the **standard deviation.**
+
+
+## Variance and standard deviation – interpretation
+
+Standard deviation is the typical deviation (either way) from average, not the greatest possible deviation. 
+
+Data points often stray further from average.
+
+Variance is hard to interpret -- its units are screwy.
+
+Standard deviation is easier to interpret. 
+
+We divide by $n-1$, not by $n$. Mnemonic: The first data value can’t exhibit variability.
+
+We use $s^2$ and $s$ for sample variance and sample standard deviation. 
+
+We use $\sigma^2$ and $\sigma$ for population variance and population standard deviation.
+
+## Variance and standard deviation, easy way {.activity}
+1. You should have a spreadsheet with your coast_starlight data from earlier. Using the command “STDEV” or “STDEV.S”, find the standard deviation.
+2. You should have a Jupyter notebook with the same data. Use “df.describe” to find the standard deviation.  (Jupyter example)
+3. Is all of the data in the range from $\overline{x} - s$ and $\overline{x}+s$?
+
+## Individual work
+Complete the webwork problem set for this presentation.

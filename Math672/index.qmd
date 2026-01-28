@@ -11,4 +11,4 @@ listing:
   fields: [title, description]
 ---
 
-Welcome to Math 672 with Professor Jason Howald
+Welcome to Math 672 with Professor Jason Howald.

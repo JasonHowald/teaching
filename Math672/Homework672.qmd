@@ -5,12 +5,14 @@ number-sections: true
 format:
   html:
     smooth-scroll: true # Makes jumping to sections feel less jarring
+  
+engine: jupyter #Force jupyter notebook to invalidate cache.
 
 ---
 
 # Introductory Ring Theory
 
-## 8 and 9.
+## 8 and 9
 
 Prove parts 8 and 9 from the list of properties in section 1.4 of the notes. 
 

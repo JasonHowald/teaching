@@ -4,7 +4,7 @@ project:
   output-dir: docs/
   preview:
     port: 4200
-    browser: false  # This stops it from auto-opening a NEW tab every time
+    #browser: false  # This stops it from auto-opening a NEW tab every time
 
 #jupyter: authoring-env #Fails to load pandas
 website:
@@ -22,18 +22,22 @@ jupyter:
       - "-f"
       - "{connection_file}"
 
-#Attempt to fix a hanging renderer problem
 execute:
-  freeze: auto
+  freeze: false
 
+# Attempt to get preview working:
+# Commented with intent to run quarto preview . from external terminal.
+#editor:
+#  render-on-save: true 
 
 #Everything render to simple html unless I say otherwise (for slides)
 default-format: html
 
+
 # Formats available and styles
 format:
   html:
-    theme: [cosmo, custom.scss]  # Tasteful, professional theme for webpages
+    theme: [cosmo, style/custom.scss]  # Tasteful, professional theme for webpages
     toc: true
     number-sections: true
     html-math-method: mathjax
@@ -45,7 +49,7 @@ format:
     embed-resources: true     # Bakes in images/CSS
     html-math-method: mathjax # Best for VoiceOver Rotor
     navigation-mode: linear   # Simple path for screen readers
-    theme: [sky, custom.scss, slide_custom.scss] # 
+    theme: [sky, style/custom.scss, style/slide_custom.scss] # 
     slide-number: true        # Show number within slide deck, so students to reference specific parts
     width: 1312  # 1050 / 0.8. Effectively scales all text down 80%
     height: 875  # 700 / 0.8

@@ -1,8 +1,0 @@
-/*-- scss:rules --*/
-// Apply in all documents
-
-// Override sky-theme blockquote color 808080, because
-// it has too-low contrast ratio against the (sky) blue background.
-blockquote p {
-  color: #385838; //Just barely better than WCAG 2.1 AAA standard contrast 7:1 against sky
-}

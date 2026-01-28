@@ -1,0 +1,107 @@
+---
+title: "11. Quantile Statistics"
+description: "Calculating and understanding min, 25%, 50%, 75%, and max"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+---
+
+
+## Preparation
+Reread 2.1.5 on box plots and quantile statistics.
+Review vocabulary:
+Percentile, Quartile, Quintile
+Median, Q1, Q3, IQR
+
+## True or False {.activity}
+Among American households, about half earn more than the average income and about half earn less.
+
+On a very easy ten point assignment, about half of students will score above average, and about half will score below average
+
+## Mean isn't typical
+
+**Mean** does a poor job describing "typical," because it pulls hard toward outliers. 
+
+**Median** does a better job describing "typical," because it mostly ignores outliers. 
+
+## What is the median?
+
+The median is the middle value by count. Roughly speaking, half the data 
+values are less than the median and half are greater.
+
+Finding the median: 
+
+- Sort data numerically
+- Find the center. 
+- If count is odd, median is the middle one.
+- If count is even, median is average of middel two.
+
+Example data values: 5, 7, 8, 9, **9**, **9**, 10, 10, 11, 12
+
+<small>Description: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9.</small>
+
+The median is 9
+
+## What is the median?
+
+1, 2, 3, 0, 1, 2, 9  ← Median is not zero. Sort first!
+
+0, 1, 1, 2, 2, 3, 9  ← Median is 2.
+
+0, 1, 1, 2, 2, 3, 96  ← Median is still 2. 
+
+The median is insensitive to outliers and individual data errors. The mean is not. 
+This is one reason the median is often preferred. 
+
+## Using the median to understand your data. 
+
+What is the median salary of MLB players? Use the mlb.csv dataset.
+
+What is the median income of Americans? Use the acs12.csv dataset. 
+
+What is the median birth weight of American babies? Use the births14.csv dataset.
+
+In all these cases, mean may be deceptive because it's influenced by outliers. Median 
+better reflects what is typical.
+
+## Quartering the data
+
+Make equal quarters by subdividing each half. Just like cutting an apple:
+5, 7, 8, 9, 9, 9, 10, 10, 11, 12
+Q1=8,   Median=9,   Q3=10, IQR = 2
+Five-number summary: 5, 8, 9, 10, 12.  ← Foundation for the box plot if desired.
+Odd/even fussiness applies to halves. 
+Note: It’s not literally true that a quarter of the data lies between Q1 and Q2. But such statements are usually nearly true for large and continuous datasets. 
+
+## Quartering the data – caution
+
+Make equal quarters by subdividing each half. Just like cutting an apple:
+5, 7, 8, 9, 9, 9, 10, 10, 11, 12
+Q1=8,   Median=9,   Q3=10, IQR = 2
+Caution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different.
+x = pd.Series([1,2,3,4,5,6,7,8])
+print(x.quantile(.25), x.quantile(.5), x.quantile(.75))
+2.75 4.5 6.25
+x = pd.Series([1,2,3,4,5,6,7,8,9])
+print(x.quantile(.25), x.quantile(.5), x.quantile(.75))
+3.0 5.0 7.0
+
+
+## By hand? Ain’t nobody got time for that!
+
+A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done? 
+A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem?
+
+## Median is more informative than Mean
+This histogram displays the distribution of incomes in OpenIntro’s acs12 dataset. 
+What can you say about a “typical” income in this population?
+
+## Median is more informative than Mean
+Most reports on “typical” American financial well being use quantile statistics – median household income, median net wealth, median rent, etc. Why?
+In highly unequal societies, measures of wealth are strongly skewed right. For example, in acs12, the income variable has mean=23600, std=46600, median=3000, and skewness=4.6. (We won’t study skewness in detail, but that’s a lot!)
+No single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal.
+
+## Individual work
+
+Solve Webwork problems in assignment 11.
+
+Here's a quantile statistic: The top 1% of Americans control about as much wealth as the bottom 90% [source: Federal Reserve Economic Data (FRED)]. See what you can do about that.
+

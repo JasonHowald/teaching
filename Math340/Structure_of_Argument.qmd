@@ -8,6 +8,8 @@ number-sections: true
 format:
   html:
     smooth-scroll: true # Makes jumping to sections feel less jarring
+engine: jupyter #Force jupyter notebook to invalidate cache.
+
 ---
 
 # Introduction and history
