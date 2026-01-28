@@ -1,5 +1,5 @@
 ---
-title: "7. Dataviz: Histogram and Countplot"
+title: "07. Dataviz: Histogram and Countplot"
 description: "Visualizing Distributions of one quantitative or categorical variable using frequency counts"
 ---
 

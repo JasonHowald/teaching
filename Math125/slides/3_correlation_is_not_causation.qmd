@@ -1,5 +1,5 @@
 ---
-title: "3. Correlation is not Causation"
+title: "03. Correlation is not Causation"
 subtitle: "What to make of a statistical link?"
 description: "Correlation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables."
 ---

@@ -1,5 +1,5 @@
 ---
-title: "1. The Shape of Data"
+title: "01. The Shape of Data"
 subtitle: "No escaping the spreadsheet"
 description: "Understanding two dimension data and using Jupyter to manipulate it."
 ---

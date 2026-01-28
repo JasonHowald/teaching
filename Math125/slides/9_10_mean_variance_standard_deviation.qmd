@@ -1,5 +1,5 @@
 ---
-title: "9-10. Mean, Variance, and Standard Deviation "
+title: "09-10. Mean, Variance, and Standard Deviation "
 description: "Calculating and understanding the first of the descriptive statistics."
 engine: jupyter #Force jupyter notebook to invalidate cache.
 

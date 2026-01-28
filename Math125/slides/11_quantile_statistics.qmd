@@ -59,45 +59,68 @@ What is the median income of Americans? Use the acs12.csv dataset.
 
 What is the median birth weight of American babies? Use the births14.csv dataset.
 
-In all these cases, mean may be deceptive because it's influenced by outliers. Median 
-better reflects what is typical.
+In all these cases, the mean may be deceptive because it's influenced by outliers. 
+The median better reflects what is typical.
+
+## Median is more informative than Mean
+Most reports on “typical” American finances use quantile statistics – median household income, median net wealth, median rent, median house price, etc.
+
+In highly unequal societies, measures of wealth are strongly skewed right. Usually median is much smaller than mean.
+
+In the U.S., *median* income is currently about 2/3 of the *average* income (Source: <a href="https://www.ssa.gov/oact/cola/central.html">SSA</a>).
+
+No single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal.
 
 ## Quartering the data
 
-Make equal quarters by subdividing each half. Just like cutting an apple:
-5, 7, 8, 9, 9, 9, 10, 10, 11, 12
-Q1=8,   Median=9,   Q3=10, IQR = 2
-Five-number summary: 5, 8, 9, 10, 12.  ← Foundation for the box plot if desired.
-Odd/even fussiness applies to halves. 
-Note: It’s not literally true that a quarter of the data lies between Q1 and Q2. But such statements are usually nearly true for large and continuous datasets. 
+After sorting a data series, we can make equal quarters by further subdividing 
+each half. Just like cutting an apple:
 
-## Quartering the data – caution
+5, 7, **8**, 9, **9** | **9**, 10, **10**, 11, 12
 
-Make equal quarters by subdividing each half. Just like cutting an apple:
-5, 7, 8, 9, 9, 9, 10, 10, 11, 12
-Q1=8,   Median=9,   Q3=10, IQR = 2
-Caution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different.
-x = pd.Series([1,2,3,4,5,6,7,8])
-print(x.quantile(.25), x.quantile(.5), x.quantile(.75))
-2.75 4.5 6.25
-x = pd.Series([1,2,3,4,5,6,7,8,9])
-print(x.quantile(.25), x.quantile(.5), x.quantile(.75))
-3.0 5.0 7.0
+<small>Description: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9. The third data point, an 8, central within the left half, is accented. The eighth data point, a 10, central within the right half, is also accented.</small>
 
+From this division we can construct the five-number summary:
+
+Min=5, Q1 = 8, Median = 9, Q3 = 10, Max = 12.
+
+These numbers can also be obtained using .describe():
+
+```{python}
+#| eval: true
+#| echo: true
+import pandas as pd
+x = pd.Series([5, 7, 8, 9, 9, 9, 10, 10, 11, 12], name='age')
+x.describe()
+```
+
+## Notes on Q1 and Q3:
+
+The five number summary is the foundation of the box plot.
+
+Odd/even fussiness applies to halves as well.
+
+It’s not literally true that a quarter of the data lies between Q1 and Q2. If $n=10$, how could it be? But such statements are usually nearly true for large and continuous datasets. 
+
+Caution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different. Note the 8.25 on the previous slide.
+
+Caution: Median, 50%, and Q2 are all synonyms. Q1 and 25% are synonyms. 
 
 ## By hand? Ain’t nobody got time for that!
 
-A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done? 
-A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem?
+1. A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done? 
 
-## Median is more informative than Mean
-This histogram displays the distribution of incomes in OpenIntro’s acs12 dataset. 
-What can you say about a “typical” income in this population?
+2. A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series:
 
-## Median is more informative than Mean
-Most reports on “typical” American financial well being use quantile statistics – median household income, median net wealth, median rent, etc. Why?
-In highly unequal societies, measures of wealth are strongly skewed right. For example, in acs12, the income variable has mean=23600, std=46600, median=3000, and skewness=4.6. (We won’t study skewness in detail, but that’s a lot!)
-No single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal.
+```{python}
+#| eval: false
+#| echo: true
+import pandas as pd
+x = pd.Series([18,19,17,20,25,18])
+```
+
+
+
 
 ## Individual work
 

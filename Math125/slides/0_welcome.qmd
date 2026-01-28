@@ -1,5 +1,5 @@
 ---
-title: "0. Course Welcome"
+title: "00. Course Welcome"
 description: "Welcome, orientation, course tools and policies"
 engine: jupyter #Force jupyter notebook to invalidate cache.
 

@@ -1,5 +1,5 @@
 ---
-title: "6. Controlled Experiments"
+title: "06. Controlled Experiments"
 description: "How randomization and control help us prove causal links between variables."
 ---
 

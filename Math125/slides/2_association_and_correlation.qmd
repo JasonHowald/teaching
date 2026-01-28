@@ -1,5 +1,5 @@
 ---
-title: "2. Association and Correlation"
+title: "02. Association and Correlation"
 subtitle: "Interrelationships between variables"
 description: "Correlation, correlation coefficients, and scatter plots of data."
 ---

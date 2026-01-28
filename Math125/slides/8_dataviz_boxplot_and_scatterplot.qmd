@@ -1,5 +1,5 @@
 ---
-title: "8. Dataviz: Boxplot and Scatterplot"
+title: "08. Dataviz: Boxplot and Scatterplot"
 description: "Visualizing Distributions of multiple variables using scatterplots or stacked boxplots."
 ---
 

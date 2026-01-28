@@ -29,7 +29,6 @@
     "items": [
       "/Math125/slides/0_welcome.html",
       "/Math125/slides/1_the_shape_of_data.html",
-      "/Math125/slides/11_quantile_statistics.html",
       "/Math125/slides/2_association_and_correlation.html",
       "/Math125/slides/3_correlation_is_not_causation.html",
       "/Math125/slides/4-5_samping_and_sample_bias.html",
@@ -37,6 +36,7 @@
       "/Math125/slides/7_dataviz_histogram_and_countplot.html",
       "/Math125/slides/8_dataviz_boxplot_and_scatterplot.html",
       "/Math125/slides/9_10_mean_variance_standard_deviation.html",
+      "/Math125/slides/11_quantile_statistics.html",
       "/Math125/syllabus.html"
     ]
   },

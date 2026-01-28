@@ -543,42 +543,35 @@
     "href": "Math125/slides/11_quantile_statistics.html#using-the-median-to-understand-your-data.",
     "title": "11. Quantile Statistics",
     "section": "Using the median to understand your data.",
-    "text": "Using the median to understand your data.\nWhat is the median salary of MLB players? Use the mlb.csv dataset.\nWhat is the median income of Americans? Use the acs12.csv dataset.\nWhat is the median birth weight of American babies? Use the births14.csv dataset.\nIn all these cases, mean may be deceptive because it’s influenced by outliers. Median better reflects what is typical."
-  },
-  {
-    "objectID": "Math125/slides/11_quantile_statistics.html#quartering-the-data",
-    "href": "Math125/slides/11_quantile_statistics.html#quartering-the-data",
-    "title": "11. Quantile Statistics",
-    "section": "Quartering the data",
-    "text": "Quartering the data\nMake equal quarters by subdividing each half. Just like cutting an apple: 5, 7, 8, 9, 9, 9, 10, 10, 11, 12 Q1=8, Median=9, Q3=10, IQR = 2 Five-number summary: 5, 8, 9, 10, 12. ← Foundation for the box plot if desired. Odd/even fussiness applies to halves. Note: It’s not literally true that a quarter of the data lies between Q1 and Q2. But such statements are usually nearly true for large and continuous datasets."
-  },
-  {
-    "objectID": "Math125/slides/11_quantile_statistics.html#quartering-the-data-caution",
-    "href": "Math125/slides/11_quantile_statistics.html#quartering-the-data-caution",
-    "title": "11. Quantile Statistics",
-    "section": "Quartering the data – caution",
-    "text": "Quartering the data – caution\nMake equal quarters by subdividing each half. Just like cutting an apple: 5, 7, 8, 9, 9, 9, 10, 10, 11, 12 Q1=8, Median=9, Q3=10, IQR = 2 Caution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different. x = pd.Series([1,2,3,4,5,6,7,8]) print(x.quantile(.25), x.quantile(.5), x.quantile(.75)) 2.75 4.5 6.25 x = pd.Series([1,2,3,4,5,6,7,8,9]) print(x.quantile(.25), x.quantile(.5), x.quantile(.75)) 3.0 5.0 7.0"
-  },
-  {
-    "objectID": "Math125/slides/11_quantile_statistics.html#by-hand-aint-nobody-got-time-for-that",
-    "href": "Math125/slides/11_quantile_statistics.html#by-hand-aint-nobody-got-time-for-that",
-    "title": "11. Quantile Statistics",
-    "section": "By hand? Ain’t nobody got time for that!",
-    "text": "By hand? Ain’t nobody got time for that!\nA data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done? A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem?"
+    "text": "Using the median to understand your data.\nWhat is the median salary of MLB players? Use the mlb.csv dataset.\nWhat is the median income of Americans? Use the acs12.csv dataset.\nWhat is the median birth weight of American babies? Use the births14.csv dataset.\nIn all these cases, the mean may be deceptive because it’s influenced by outliers. The median better reflects what is typical."
   },
   {
     "objectID": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean",
     "href": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean",
     "title": "11. Quantile Statistics",
     "section": "Median is more informative than Mean",
-    "text": "Median is more informative than Mean\nThis histogram displays the distribution of incomes in OpenIntro’s acs12 dataset. What can you say about a “typical” income in this population?"
+    "text": "Median is more informative than Mean\nMost reports on “typical” American finances use quantile statistics – median household income, median net wealth, median rent, median house price, etc.\nIn highly unequal societies, measures of wealth are strongly skewed right. Usually median is much smaller than mean.\nIn the U.S., median income is currently about 2/3 of the average income (Source: SSA).\nNo single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal."
   },
   {
-    "objectID": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean-1",
-    "href": "Math125/slides/11_quantile_statistics.html#median-is-more-informative-than-mean-1",
+    "objectID": "Math125/slides/11_quantile_statistics.html#quartering-the-data",
+    "href": "Math125/slides/11_quantile_statistics.html#quartering-the-data",
     "title": "11. Quantile Statistics",
-    "section": "Median is more informative than Mean",
-    "text": "Median is more informative than Mean\nMost reports on “typical” American financial well being use quantile statistics – median household income, median net wealth, median rent, etc. Why? In highly unequal societies, measures of wealth are strongly skewed right. For example, in acs12, the income variable has mean=23600, std=46600, median=3000, and skewness=4.6. (We won’t study skewness in detail, but that’s a lot!) No single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal."
+    "section": "Quartering the data",
+    "text": "Quartering the data\nAfter sorting a data series, we can make equal quarters by further subdividing each half. Just like cutting an apple:\n5, 7, 8, 9, 9 | 9, 10, 10, 11, 12\nDescription: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9. The third data point, an 8, central within the left half, is accented. The eighth data point, a 10, central within the right half, is also accented.\nFrom this division we can construct the five-number summary:\nMin=5, Q1 = 8, Median = 9, Q3 = 10, Max = 12.\nThese numbers can also be obtained using .describe():\n\nimport pandas as pd\nx = pd.Series([5, 7, 8, 9, 9, 9, 10, 10, 11, 12], name='age')\nx.describe()\n\ncount    10.00\nmean      9.00\nstd       2.00\nmin       5.00\n25%       8.25\n50%       9.00\n75%      10.00\nmax      12.00\nName: age, dtype: float64"
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#notes-on-q1-and-q3",
+    "href": "Math125/slides/11_quantile_statistics.html#notes-on-q1-and-q3",
+    "title": "11. Quantile Statistics",
+    "section": "Notes on Q1 and Q3:",
+    "text": "Notes on Q1 and Q3:\nThe five number summary is the foundation of the box plot.\nOdd/even fussiness applies to halves as well.\nIt’s not literally true that a quarter of the data lies between Q1 and Q2. If \\(n=10\\), how could it be? But such statements are usually nearly true for large and continuous datasets.\nCaution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different. Note the 8.25 on the previous slide.\nCaution: Median, 50%, and Q2 are all synonyms. Q1 and 25% are synonyms."
+  },
+  {
+    "objectID": "Math125/slides/11_quantile_statistics.html#by-hand-aint-nobody-got-time-for-that",
+    "href": "Math125/slides/11_quantile_statistics.html#by-hand-aint-nobody-got-time-for-that",
+    "title": "11. Quantile Statistics",
+    "section": "By hand? Ain’t nobody got time for that!",
+    "text": "By hand? Ain’t nobody got time for that!\n\nA data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done?\nA certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series:\n\n\nimport pandas as pd\nx = pd.Series([18,19,17,20,25,18])"
   },
   {
     "objectID": "Math125/slides/11_quantile_statistics.html#individual-work",
@@ -590,315 +583,315 @@
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#preparatory-work",
     "href": "Math125/slides/2_association_and_correlation.html#preparatory-work",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Preparatory work",
     "text": "Preparatory work\n\nRead: OpenIntro Statistics Sections 1.2.3, 1.2.4, and 1.2.5\nReview Vocabulary: (next slide)"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#vocabulary-for-relationships",
     "href": "Math125/slides/2_association_and_correlation.html#vocabulary-for-relationships",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Vocabulary for relationships",
     "text": "Vocabulary for relationships\n\nDependent / Associated / Correlated: Some statistical relationship exists\nPositive Correlation: Higher x values linked to higher y values\nNegative Correlation: Higher x values linked to lower y values\nIndependent: The variables are unrelated. No relationship exists.\nExplanatory and Response variables: Variables causing an effect, or being effected, or expected to.\nCorrelation Coefficient \\(\\rho\\): A numerical measurement of correlation. The output of df.corr()"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#using-vocabulary-testing-understanding",
     "href": "Math125/slides/2_association_and_correlation.html#using-vocabulary-testing-understanding",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Using vocabulary / testing understanding",
     "text": "Using vocabulary / testing understanding\nBased on your best understanding or best guess…\n\nAmong students, weekly study time and GPA are likely _____\nAmong mammal species, heart rate and mass are likely _____\nAmong American football players, #tackles and #rushing yards are likely _____\nAmong people, eye color and ice cream preference are likely _____\nAmong Americans, income and political party affiliation are likely _____\nYear by year, global average temperatures and the Dow Jones Industrial Average are likely _____"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#correlation-coefficient",
     "href": "Math125/slides/2_association_and_correlation.html#correlation-coefficient",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Correlation Coefficient",
     "text": "Correlation Coefficient\nJust how correlated are two numerical variables?\nThe correlation coefficient \\(\\rho\\) measures strength and direction of correlation.\nUse df.corr(numeric_only=True) to calculate.\n\\(\\rho\\) nearly 1: x and y are strongly positively correlated.\n\\(\\rho\\) nearly 0: x and y are independent, at least not linearly correlated.\n\\(\\rho\\) nearly -1: x and y are strongly negatively correlated.\nCorrelations quickly flag trends and interrelationships for further study."
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations",
     "href": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Scatterplots and correlations",
     "text": "Scatterplots and correlations\nA scatterplot is 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot (weight vs desired weight) showing strong positive correlation (\\(\\rho = 0.74\\))"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-1",
     "href": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-1",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Scatterplots and correlations",
     "text": "Scatterplots and correlations\nA scatterplot is 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot (age vs weight) showing no significant correlation (\\(\\rho = 0.09\\))"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-2",
     "href": "Math125/slides/2_association_and_correlation.html#scatterplots-and-correlations-2",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Scatterplots and correlations",
     "text": "Scatterplots and correlations\nA scatterplot is a 2D graph depicting each data case as a point positioned on an \\(x\\)-axis according to one variable and on the \\(y\\)-axis according to another. Like most graphs, they primarily target sighted users.\n\n\n\n\n\n\n\n\nFigure 3: Scatterplot (age vs height) showing weak negative correlation (\\(\\rho = -0.30\\))"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#fishers-irises",
     "href": "Math125/slides/2_association_and_correlation.html#fishers-irises",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Fisher’s Irises",
     "text": "Fisher’s Irises\nSir Ronald Fisher, British statistician and geneticist, introduced his now famous Iris data in 1936, with 150 cases involving three very similar species:\n\n\n\n\n\n\nIris setosa Radomil, CC BY-SA 3.0\n\n\n\n\n\n\n\nIris versicolor D. Langlois, CC BY-SA 3.0\n\n\n\n\n\n\n\nIris virginica Frank Mayfield, CC BY-SA 2.0\n\n\n\n\n\nHis dataset is often used as the “hello world” of data exploration."
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#correlations-can-change-when-data-is-regrouped.",
     "href": "Math125/slides/2_association_and_correlation.html#correlations-can-change-when-data-is-regrouped.",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Correlations can change when data is regrouped.",
     "text": "Correlations can change when data is regrouped.\n\n\nA negative Correlation\n\n\n\n\n\nScatterplot showing weak negative correlation between petal width and sepal width\n\n\n\n\n\n3 positive correlations\n\n\n\n\n\nScatterplot showing three strong positive correlations between petal width and sepal width"
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#types-of-statistical-association",
     "href": "Math125/slides/2_association_and_correlation.html#types-of-statistical-association",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Types of statistical association",
     "text": "Types of statistical association\nMatt says “Education level and political party association are positively associated.” Explain why Matt must be wrong, regardless of politics.\nFiona says “Learning piano has no bearing on hair color, and hair color does not influence piano interest or ability. Therefore hair color and piano skill are statistically independent.” Find the flaw in her logic."
   },
   {
     "objectID": "Math125/slides/2_association_and_correlation.html#individual-work",
     "href": "Math125/slides/2_association_and_correlation.html#individual-work",
-    "title": "2. Association and Correlation",
+    "title": "02. Association and Correlation",
     "section": "Individual work",
     "text": "Individual work\nSolve five problems on webwork under “2. Association and Correlation.”\nAs always, find the preparatory work for the next slide deck and do it before class."
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#preparatory-work",
     "href": "Math125/slides/1_the_shape_of_data.html#preparatory-work",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "Preparatory work",
     "text": "Preparatory work\nRead: OpenIntro Statistics Section 1.1 and 1.2.1, 1.2.2\nVocabulary: Data matrix (=dataframe), summary statistic, case, variable, numerical (=quantitative) variable, categorical variable, discrete vs. continuous."
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary",
     "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "Examples using data vocabulary",
     "text": "Examples using data vocabulary\n\n\nData Discussion\n\nDescribe a case in this context.\nDescribe a data matrix (aka dataframe) in this context.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
     "href": "Math125/slides/1_the_shape_of_data.html#examples-using-data-vocabulary-1",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "Examples using data vocabulary",
     "text": "Examples using data vocabulary\n\n\nData Discussion\n\nGive a quantitative variable.\nGive a categorical variable.\n\n\nData Table\n\n\n\n\n\n\n\n\nEarthquake Data\n\n\nEarthquake Strength and Severity from 1902\n\n\nyear\nmonth\nday\nrichter\narea\nregion\ndeaths\n\n\n\n\n1902\nApril\n19\n7.5\nQuezaltenango and San Marco\nGuatemala\n2000.0\n\n\n1902\nDecember\n16\n6.4\nUzbekistan\nRussia\n4700.0\n\n\n1903\nApril\n28\n7.0\nMalazgirt\nTurkey\n3500.0\n\n\n1903\nMay\n28\n5.8\nGole\nTurkey\n1000.0\n\n\n1905\nApril\n4\n7.5\nKangra\nIndia\n19000.0\n\n\n1906\nJanuary\n31\n8.8\nEsmeraldas (off coast)\nEcuador\n1000.0\n\n\n1906\nMarch\n16\n6.8\nChia-i\nTaiwan\n1250.0\n\n\n1906\nApril\n18\n7.7\nSan Francisco\nUnited States\n3000.0\n\n\n\nSource: OpenIntro Earthquakes Dataset"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
     "href": "Math125/slides/1_the_shape_of_data.html#the-humble-.csv-file",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "The humble .csv file",
     "text": "The humble .csv file\n\n\nCSV (Comma Separated Value)\n\nText-based\nSimple!\nCompatible\nUgly – bad for eyeballs, bad for screenreaders, unaligned\nPerfect for export/share/import.\n\n\nExample data in .csv format:\nYear,month,day,richter,area,region,deaths 1902,April,19,7.5,Quezaltenango and San Marco,Guatemala,2000 1902,December,16,6.4,Uzbekistan,Russia,4700 1903,April,28,7,Malazgirt,Turkey,3500 1903,May,28,5.8,Gole,Turkey,1000"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
     "href": "Math125/slides/1_the_shape_of_data.html#fetching-and-viewing-data-with-jupyter-illustration",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "Fetching and viewing data with Jupyter – illustration",
     "text": "Fetching and viewing data with Jupyter – illustration\n\nMake a Jupyter notebook using URL colab.new\nFind OpenIntro Earthquake data CSV link on openintro.org/data\nFetch data in a code cell:\n\n\n!wget [url to .csv file]\n\n\nImport pandas:\n\n\nimport pandas as pd\n\n\nRead and display data:\n\n\ndf = pd.read_csv(\"earthquakes.csv\")\ndf.head()\n\n\nAnalysis:\n\n\ndf.describe()\ndf.corr(numeric_only=True)"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
     "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-practice",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "Data into Jupyter – practice",
     "text": "Data into Jupyter – practice\n\nFind the openintro data repository\nLocate “acs12” data source. Copy link location to the .csv format.\nCreate a new jupyter notebook on colab, using URL shortcut “colab.new.”\nIf you’re blind, change the Colab option in Tools, Settings, Editor to turn off the option called “Show context-powered code completions.”\nName your notebook.\nUse wget to download the dataset at that url.\nUse pandas to read the dataframe.\nDisplay the dataframe.\nUse describe() and corr() for analysis."
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
     "href": "Math125/slides/1_the_shape_of_data.html#data-into-jupyter-summary",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "Data into Jupyter – summary",
     "text": "Data into Jupyter – summary\n\n!wget https://www.openintro.org/data/csv/acs12.csv\nimport pandas as pd\ndf = pd.read_csv(\"acs12.csv\")\ndf.head()\ndf.describe()\ndf.corr(numeric_only=True)"
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#individually-homework",
     "href": "Math125/slides/1_the_shape_of_data.html#individually-homework",
-    "title": "1. The Shape of Data",
+    "title": "01. The Shape of Data",
     "section": "Individually – Homework",
     "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Preparation",
     "text": "Preparation\nRead 2.1.3 (histograms and shape) and 2.2.1 (bar plots) and 2.2.3 (bar plots, continued)"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Goals",
     "text": "Goals\n\nRead a histogram or bar chart correctly.\nIdentify when each plot type is appropriate.\nDescribe the shape of a histogram using proper vocabulary.\nGenerate your own histograms and bar charts from data using seaborn."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Note on Accessibility:",
     "text": "Note on Accessibility:\nData visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Bar Charts (aka Count Plots)",
     "text": "Bar Charts (aka Count Plots)\nA bar chart represents the distribution of a categorical variable, showing how many data cases are in each category. It answers questions like…\n\nHow many of each major do we have on campus?\nWhat home languages are spoken in Potsdam, and how many households speak each language?\nHow many patients are assigned to each nurse?\n\nTo make a bar chart, place the categories (majors, languages, nurses) on one axis (normally “\\(x\\)”). From each, make a rectangular bar proportional to the number in that category. Leave a gap between the bars. Mark and label the other axis so the counts can be inferred."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Bar Charts – example",
     "text": "Bar Charts – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.countplot(data=df, x= 'type')\n\n\n\n\n\n\n\n\n\nFigure 1: Bar Chart for Starbucks food item types"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Bar Charts – understanding",
     "text": "Bar Charts – understanding\n\nCan the bars be rearranged on the \\(x\\)-axis? Would that change the meaning of the chart?\nDo the bar colors matter? Should they be the same or different?\nCan a bar chart illustrate the relationship between two different categorical variables? For example, home language related to religious heritage?"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Histograms – purpose",
     "text": "Histograms – purpose\nA histogram is similar, but represents the distribution of a quantitative variable. It answers questions like\n\nWhat sorts of GPA’s do students on campus have, and which GPA ranges are most common?\nHow much do Potsdam households spend weekly on groceries? Which amounts are common, which are outliers, and which are unheard of?\nNurses’ visits with patients take a variety of time. How do the durations of visits vary? Are most visits short, or is there a wide variety of times?"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Histograms – method",
     "text": "Histograms – method\nTo draw a histogram, the x-axis is scaled to show the entire range of data values and divided into equal-sized intervals (e.g. 5-10, 10-15, 15-20) called “bins.” Rectangular bars are drawn above each bin, showing how frequently the data values fall into that range. The y-axis is labeled “count” or “frequency.” Tall bars indicate common data ranges, and short bars indicate rare data ranges. Unlike a bar chart, the bars touch each other."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Histograms – example",
     "text": "Histograms – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.displot(data=df, x= 'calories', bins=10)\n\n\n\n\n\n\n\n\n\nFigure 2: Histogram for Starbucks food item Calorie content"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Histograms – Understanding",
     "text": "Histograms – Understanding\n\nCan the bins and rectangles be rearranged on the \\(x\\)-axis? Would that change the meaning of the plot?\nShould the bars be the same color or different colors?\nWe’re free to choose the number of bins, which effects the width of the bars. How should we decide how many to use?\nIs it necessary to label the \\(y\\)-axis? Why or why not?\nCan a histogram show the relationship between one variable and another? For example, can we compare the Calorie counts of various categories of food item (bakery, sandwich, etc) using a histogram?"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Histograms and Bar Charts – Comparison",
     "text": "Histograms and Bar Charts – Comparison\nIn common:\n\nData values on x-axis.\nFrequency counts on y-axis,\nRectangles whose height shows the count.\nApplicable to a single variable only (by default).\n\nDifferences:\n\nBar for categorical, histogram for quantitative.\nBar can be freely rearranged, histogram must be in numerical order.\nBar has gaps, histogram none."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Choosing the right visualization",
     "text": "Choosing the right visualization\nIn each scenario, should we favor a histogram, a bar chart, or neither? Discuss with your group and share your answers with the class.\n\nTo understand the frequency distribution of six colors of candy.\nTo understand the variety of costs of child care in Potsdam.\nTo reveal a link between religious identity and political party affiliation.\nTo reveal a link between time spent studying and course grade.\nTo visualize the variety of total bill prices at a given restaurant.\nTo show an answer to the question: How many speakers of each language do we have in this classroom?"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Histogram sense – modality",
     "text": "Histogram sense – modality\nA distinct peak or hill in the histogram shows a broad range of common values. A histogram is unimodal if it has one main peak, bimodal if it has two, trimodal if it has three, etc.\n\n\nUnimodal\n\nsns.displot(data=df, x= 'poverty')\n\n\n\n\n\n\n\n\n\nFigure 3: Histogram – counties’ poverty rates\n\n\n\n\n\n\nBimodal\n\nsns.displot(data=df, x= 'SLG')\n\n\n\n\n\n\n\n\n\nFigure 4: Histogram – MLB players’ SLG"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Histogram sense – skew",
     "text": "Histogram sense – skew\nSkew is an asymmetry showing a longer, heavier tail on one side than the other.\n\n\nSkewed Left\n\nsns.displot(data=df, x= 'homeownership')\n\n\n\n\n\n\n\n\n\nFigure 5: Histogram – counties’ homeownership rates\n\n\n\n\n\n\nSkewed Right\n\nsns.displot(data=df, x='salary')\n\n\n\n\n\n\n\n\n\nFigure 6: Histogram – MLB players’ salary’"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Features of a histogram – mean (average)",
     "text": "Features of a histogram – mean (average)\nThe average value (or mean) of a data variable can be read from its histogram. The mean is the center of mass. Imagine balancing the entire histogram (all rectangles as one unit) on your finger from below. The balance point is the mean.\n\n\n\n\n\n\n\n\nFigure 7: Histogram – counties’ homeownership rates"
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Describe it!",
     "text": "Describe it!\nBelow is a histogram for a “Gamma(3,1)” random variable. Describe its modality, its skew, and its mean as completely as you can. Confer with your group and share with the class.\n\n\n\n\n\n\n\n\nFigure 8: Gamma(3,1) random variable."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Make your own plots – basic process",
     "text": "Make your own plots – basic process\n\nFetch data with !wget\nRead data with pd.read_csv\nimport seaborn as sns\nsns.displot or sns.countplot. See slides 6 & 10 of this slide deck."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Jupyter Notebook Example",
     "text": "Jupyter Notebook Example\nYour turn! Reproduce the histogram of baseball players’ salaries. the data is in OpenIntro’s “mlb” dataset. Make sure each teammate can achieve their own success at this task. When things go sideways, ask for help! Find a second dataframe you’re curious about, and make another histogram."
   },
   {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
-    "title": "7. Dataviz: Histogram and Countplot",
+    "title": "07. Dataviz: Histogram and Countplot",
     "section": "Individual work",
     "text": "Individual work\nOn webwork: 7. Dataviz – histogram and countplot"
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
     "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
-    "title": "3. Correlation is not Causation",
+    "title": "03. Correlation is not Causation",
     "section": "Preparatory Work",
     "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
     "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
-    "title": "3. Correlation is not Causation",
+    "title": "03. Correlation is not Causation",
     "section": "Three explanations for correlation (at least!)",
     "text": "Three explanations for correlation (at least!)\n\n\nFor each scenario, which is more likely? Why?\n\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n\n\n\nDaily ice cream sales and gasoline sales are significantly correlated.\nSocial media use and depression are correlated.\nIn school children, finger length and reading ability are strongly correlated.\nBoth caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.\nYoung children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
     "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
-    "title": "3. Correlation is not Causation",
+    "title": "03. Correlation is not Causation",
     "section": "Start with an open mind.",
     "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
     "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
-    "title": "3. Correlation is not Causation",
+    "title": "03. Correlation is not Causation",
     "section": "Lurking (“Confounding”) variables",
     "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
     "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
-    "title": "3. Correlation is not Causation",
+    "title": "03. Correlation is not Causation",
     "section": "So… withhold judgment forever?",
     "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
     "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
-    "title": "3. Correlation is not Causation",
+    "title": "03. Correlation is not Causation",
     "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
     "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
     "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
-    "title": "3. Correlation is not Causation",
+    "title": "03. Correlation is not Causation",
     "section": "Individual Homework",
     "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
   },
@@ -907,446 +900,446 @@
     "href": "Math125/index.html",
     "title": "Math 125",
     "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n0. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n1. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n11. Quantile Statistics\n\n\nCalculating and understanding min, 25%, 50%, 75%, and max\n\n\n\n\n\n\n2. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n3. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n4-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n6. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n7. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n8. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\n9-10. Mean, Variance, and Standard Deviation\n\n\nCalculating and understanding the first of the descriptive statistics.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n00. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n01. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n02. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n03. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n04-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n06. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n07. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n08. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\n09-10. Mean, Variance, and Standard Deviation\n\n\nCalculating and understanding the first of the descriptive statistics.\n\n\n\n\n\n\n11. Quantile Statistics\n\n\nCalculating and understanding min, 25%, 50%, 75%, and max\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Preparation",
     "text": "Preparation\nRead section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides."
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Key vocabulary – sampling",
     "text": "Key vocabulary – sampling\n\nPopulation: All conceivable cases.\nSample: All cases measured and recorded.\nRepresentative Sample: Does a good job reflecting features of the population.\nBiased Sample: Skewed, slanted, not representative. Intentionally or accidentally.\nBias: Anything causing a sample to be biased, from cruelty to oversight to unforeseeable effect."
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-bias-types",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-bias-types",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Key vocabulary – bias types",
     "text": "Key vocabulary – bias types\n\nParticipation bias or nonresponse bias: You didn’t measure those who didn’t respond, and it might matter!\nPre-screening bias: You must be this tall for the survey.\nSurvivorship bias: Only “survivors” are included.\nUndercoverage bias: Significant subpopulations were missed.\nGeographic bias: Selecting from a town, street corner, etc."
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#a-pollsters-dilemma",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#a-pollsters-dilemma",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "A pollster’s dilemma",
     "text": "A pollster’s dilemma\nWhich of these should a political polling organization accomplish in order to responsibly estimate the outcome of an upcoming election?\n\nInterview lots and lots of people.\nInclude a diversity of people (in age, race, hometown, education, etc) roughly in accord with the population.\nPredict who probably will not vote in the election.\nPrompt the “undecided” to predict their decision.\nDraw no inference when people refuse to participate.\n\n(Good political polling is very, very hard!)"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#food-costs-money",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#food-costs-money",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Food costs money",
     "text": "Food costs money\nWe want to estimate the average household grocery bill in St. Lawrence county. What is the population of interest?\nYou plan to sample 100 households. What are some natural sources of sampling bias and how could you mitigate them?"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#hours-reading-a-sampling-puzzle",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#hours-reading-a-sampling-puzzle",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Hours reading – a sampling puzzle",
     "text": "Hours reading – a sampling puzzle\nYou want to measure how much time an average university student spends reading. What is the population of interest (in your opinion)? What are some natural sources of sampling bias and how could you mitigate them?"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#focus-on-survivorship-bias",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#focus-on-survivorship-bias",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Focus on survivorship bias",
     "text": "Focus on survivorship bias\nExplain how each observation or inference is vulnerable to survivorship bias.\n\n“When I was a kid we took more risks. I turned out fine!”\nEarly human artistic expression was primarily cave paintings.\nUniversity professors learn about modern high school from their students.\nWe analyzed the 500 largest US companies to see whether US energy policy benefits or hinders them.\nArchitecture in ancient Greece was mostly just colossal stonework."
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#survivorship-bias-for-the-win",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#survivorship-bias-for-the-win",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Survivorship bias for the win",
     "text": "Survivorship bias for the win\nAbraham Wald famously studied aircraft damage during WWII. He examined post-mission bullet holes on bombers. (Image is compilation across many planes.)\n\nSource: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.Question: The bomber can carry a small bit of extra weight for shielding. Where should extra shielding be placed to protect aircraft?"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#who-me-biased",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#who-me-biased",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Who, me, biased?",
     "text": "Who, me, biased?\nExplain how almost every type of sampling bias applies to this fictional scenario:\n\n“Here at Dominant Dynamics Corp., we pride ourselves on inclusivity, especially in June! We set up a survey table in our corporate lobby where we interviewed employees: “Attention LGBTQIA+ employees! Is this a safe and supportive environment for you?”"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling-strategies",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling-strategies",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Key vocabulary – Sampling strategies",
     "text": "Key vocabulary – Sampling strategies\n\nSimple (SRS): Select from one flat list.\nStratified: Identify strata of interest, sample some of each stratum.\nCluster: Divide into convenient clusters. Randomly select some clusters. Take all of each selected cluster.\nMultistage: Like cluster, but take some of each selected cluster."
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#identifying-the-sampling-strategy",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#identifying-the-sampling-strategy",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Identifying the sampling strategy",
     "text": "Identifying the sampling strategy\nYou want to survey college students about relationship viewpoints.\nAna: We’ll each pick a residence hall and knock ten random doors within it.\nBiljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them!\nMarija: Let’s coordinate with five random professors, and survey everybody in their classes.\nDragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc.\nBonus: To generate their names I picked a nation at random,  then chose four random names common within that nation. What sampling strategy did I use?"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Value judgments",
     "text": "Value judgments\nWhich is most correct?\n\nSimple random is the best method and should always be used.\nSimple random is the best method but is often impractical.\nStratified sampling is the best method but is sometimes impossible.\nCluster sampling reduces the bias of simple random sampling.\nMultistage sampling helps to increase the sample size."
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments-competing-priorities",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments-competing-priorities",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Value judgments – competing priorities",
     "text": "Value judgments – competing priorities\n\nUche asserts: “Large sample sizes are better for my purposes.” \nAbike asserts: “Small sample sizes are better for my purposes.” \nWhy might both speakers be correct?"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#homework",
     "href": "Math125/slides/4-5_samping_and_sample_bias.html#homework",
-    "title": "4-5. Sampling and Sample Bias",
+    "title": "04-5. Sampling and Sample Bias",
     "section": "Homework",
     "text": "Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#preparation",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#preparation",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Preparation",
     "text": "Preparation\nRead 2.1.1 (scatter plots) and 2.1.5 (box plots)"
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#goals",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#goals",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Goals",
     "text": "Goals\nRead scatter plots and box plots correctly.\nIdentify when each plot type is appropriate.\nGenerate your own plots from data using seaborn.\nLearn the five number summary and compare to a box plot."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#note-on-accessibility",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#note-on-accessibility",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Note on Accessibility:",
     "text": "Note on Accessibility:\nData visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "The Scatter Plot",
     "text": "The Scatter Plot\nA scatterplot is a visualization of two quantitative variables, appropriate when at least two numerical values are recorded about each data case. The \\(x\\) axis is given the range of values of one variable, and the \\(y\\) axis the other. Then each data case is represented as one point \\((x,y)\\) according to its variable’s values. A cloud of points arises and its shape is a clue to any association between the variables."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-example",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-example",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "The Scatter Plot – Example",
     "text": "The Scatter Plot – Example\n\nimport seaborn as sns\ndf = pd.read_csv(\"county.csv\")\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-interpretation",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-interpretation",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "The Scatter Plot – interpretation",
     "text": "The Scatter Plot – interpretation\n\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\nWhat are typical, common values for homeownership and multi-unit dwelling? Why?\nWhere would you find St. Lawrence County on the scatterplot? Where would you find Manhattan (“New York County”)?\nWhat sort of county is represented at the bottom right? What sort of counties are the outliers at the top?\nIs there an upward or downward trend? Speculate why.\n\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#scatterplot-example-with-hue",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#scatterplot-example-with-hue",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Scatterplot – example with hue",
     "text": "Scatterplot – example with hue\n\nsns.lmplot(data=iris, x='petal_width', y='sepal_width', hue = 'species')\n\n\n\n\nOf the three, which species is easiest to identify? How is it recognized?\nWhat’s the best way to distinguish between the other two species?\nDo flowers with wider petals usually have wider sepals too?\nThere are fewer dots on this scatterplot. What does that mean about the flower data?\n\n\n\n\n\n\n\n\n\n\nFigure 3: Scatterplot petal width to sepal width for Fisher’s irises."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whats-a-box--and-whisker-plot",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whats-a-box--and-whisker-plot",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "What’s a Box (-and-whisker) Plot?",
     "text": "What’s a Box (-and-whisker) Plot?\n\nA visualization of the distribution of one quantitative variable, an alternative to a histogram.\nreveals the full range of data values along the \\(x\\)-axis.\ndivides the data range into four “equal” parts, called quartiles\n\nthe quartiles usually have unequal width, but\neach quartile’s size is adjusted to include exactly a quarter of the data points.\nthe inner two quartiles are drawn as a box, and the outer two are drawn as “whiskers”\nThe five quartile boundary points are called: Min, 25%, 50%, 75%, and Max."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-basic-example",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-basic-example",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Box (-and-whisker) plot – Basic Example",
     "text": "Box (-and-whisker) plot – Basic Example\n\nsns.boxplot(data=df, x='poverty')\n\n\n\n\nBased on the boxplot, what is a typical homeownership percent for U.S. counties?\nFor what x-regions are the data points tightly clustered? Where are they more thinly spread?\n\n\n\n\n\n\n\n\n\n\nFigure 4: Boxplot for poverty percent by county."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Whisker Technicalities",
     "text": "Whisker Technicalities\n\nCustomarily, whiskers aren’t allowed to be more 1.5 times as long as boxes. If a boxplot would be drawn with long whiskers, trim them to 1.5 * [box size], and represent data beyond this length as individual dots. Both Python and OpenIntro do this. You need to know this to answer questions like “what’s the maximum data value?” using a boxplot."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-rich-example",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-rich-example",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Box (-and-whisker) plot – Rich Example",
     "text": "Box (-and-whisker) plot – Rich Example\nSince a boxplot is so narrow, it can be stacked together to compare many related distributions across categories:\n\nsns.boxplot(data=df, x='Attack', y='Type')\n\n\n\n\n\n\n\n\n\nFigure 5: Boxplot for Attack value of various pokemon, separated by type."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-more-serious-example",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-more-serious-example",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "The Box Plot – more serious example",
     "text": "The Box Plot – more serious example\n\nsns.boxplot(data = df, x = 'salary', y = 'team')\n\n\n\n\nThe plots seem left-justified. What does that mean about salaries? \nWhich teams pay the least? the most?\nWhat do the circles mean?\nWhich team pays the highest median wage?\nProfessor Howald is considering quitting math and playing major league ball. What’s a realistic salary expectation?\n\n\n\n\n\n\n\n\n\n\nFigure 6: Boxplot for MLB salary by team."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Plotting yourself",
     "text": "Plotting yourself\n\nOnce a dataframe is loaded, it’s not hard to make a scatterplot or boxplot:\n\nimport pandas as pd    #Needed once, not for every plot \nimport seaborn as sns  #Needed once, not for every plot\ndf = pd.read_csv(\"filename.csv\")\nsns.boxplot(data=df, x='Attack', y='Type')\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\nSee examples illustrated on previous slides."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#summary-which-plot-type-is-best-for-each-case",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#summary-which-plot-type-is-best-for-each-case",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Summary: Which plot type is best for each case?",
     "text": "Summary: Which plot type is best for each case?\n\nTo illustrate how time spent studying relates to course grade.\nTo show any relationship between religious identity and GPA.\nTo illustrate a link between height and weight.\nTo show the distribution of molecule sizes in a polymer.\nTo illustrate total sales by product type.\nTo visualize the masses and temperatures of thousands of stars.\nTo show whether pokemon with higher attack also have higher defense."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Putting it all together",
     "text": "Putting it all together\nLoad the OpenIntro Run17 data. Make your own plots to answer each question.\n\nWhat genders are represented and how many of each?\nHow are the run times distributed?\n\nAre the run times unimodal? Bimodal? Something else? Why!?\nCan you compare run time distribution…\n\nby event?\nby gender?\nby both?\n\nHow are age and run time related?\n\nCan you compare by gender? By event?"
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#individual-work",
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#individual-work",
-    "title": "8. Dataviz: Boxplot and Scatterplot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "Individual work",
     "text": "Individual work\nOn Webwork, called “Dataviz Box and Scatter.”"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#section",
     "href": "Math125/slides/6_controlled_experiments.html#section",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "",
     "text": "Preparation\nReview sections 1.2.4 and 1.2.5. Read section 1.4, Experiments, and review vocabulary on the next slide."
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
     "href": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "Key Vocabulary – experiments",
     "text": "Key Vocabulary – experiments\nControl, randomization, replication, and blocking.\nControl Group and Treatment Group\nPlacebo and the placebo effect\nBlind and double blind experiment design\nExplanatory and response variables\nObservational study vs. experiment\nCausal inference"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
     "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "Controlled Experiment or Observational Study? (1/2)",
     "text": "Controlled Experiment or Observational Study? (1/2)\n\nA survey of 200 pirates reveals correlation between citrus consumption and scurvy.\nChemical X results in 40% better pain reduction, compared to placebo.\nLongitudinal study tracks risk factors and health metrics for 20000 people.\nIn various societies, art is quantifiably more common after the inventions of the yoke and plow."
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
     "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "Controlled Experiment or Observational Study? (2/2)",
     "text": "Controlled Experiment or Observational Study? (2/2)\n\nA study links sports-related concussions to academic outcomes.\nWatering some plants more than others affects their growth.\nA professor investigates whether front-row seating is linked to better learning outcomes.\nAt random, I present some users of my social media app with one of two feeds, comparing user engagement and ad clicks."
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
     "href": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "Experiments are hard. Why bother?",
     "text": "Experiments are hard. Why bother?\nWhat is a causal conclusion? What is the weakness of an observational study? How does the controlled experiment overcome this weakness?"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
     "href": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "Design for ethical science",
     "text": "Design for ethical science\nPost Traumatic Stress Disorder (PTSD) sufferers are recruited for a study. Intake interviews classify them by trauma type and symptom severity. Describe a controlled experiment to test the effectiveness of three treatment protocols (cognitive behavioral therapy, group therapy, or no therapy at all).\n\nWould you use placebo in this study?\nHow would you decide which patients go to which treatment type?\nWho should assess patient improvement? (patient? therapist? researcher? other?)\nWhat ethical safeguards are needed?\nIn principle, could your study show that one therapy is better for treating PTSD than another?"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#swifties-unite",
     "href": "Math125/slides/6_controlled_experiments.html#swifties-unite",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "Swifties unite!",
     "text": "Swifties unite!\nOn 2024-09-10, Taylor Swift endorsed Kamala Harris for president. Hypothetically, you talk to 1000 people aware of the endorsement, and 1000 who are not. Those who noticed it show a 4 point shift toward Harris for president. What can be concluded about the political power of Taylor Swift?"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
     "href": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "The Power of Yoga",
     "text": "The Power of Yoga\nThere is some indication that practicing yoga has positive health effects. In small groups, design a study which could determine whether yoga mitigates depressive symptoms in particular. Address these concerns:\n\nWhat treatment groups will you need?\nHow large should the study be? How might you recruit for it?\nHow will volunteers be assigned to treatment groups?\nWill you use placebo? How?\nWill you use blocking? How?\nHow long will your study take?\nHow will “depressive symptoms” be measured? By whom?"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
     "href": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "No free lunch",
     "text": "No free lunch\nGive an example of a study for which blinding and double-blinding are impossible or unethical. Give an example of a study for which controlling the explanatory variable is impossible or unethical. In pharmacology, is it possible to know (causally, statistically) that a drug has specific biological effects without understanding how or why?"
   },
   {
     "objectID": "Math125/slides/6_controlled_experiments.html#homework",
     "href": "Math125/slides/6_controlled_experiments.html#homework",
-    "title": "6. Controlled Experiments",
+    "title": "06. Controlled Experiments",
     "section": "Homework",
     "text": "Homework\n\nControlled Experiments, on webwork."
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-professor",
     "href": "Math125/slides/0_welcome.html#hello-professor",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Hello professor",
     "text": "Hello professor\nI’m Professor jason a howald. (hō - wald, not how - ald)\nHobbies: baking, juggling, woodworking, programming, gaming, etc.\nI like learning and teaching.\nI am cautious, curious, empathetic, sincere, literal, and precise. But I’ll teach you about self-assessment bias later!"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-team",
     "href": "Math125/slides/0_welcome.html#hello-team",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Hello team",
     "text": "Hello team\nWe’ll work together in class.\nMeet your neighbors. Learn their names. Learn why they are here.\nWith all of our neighbors, we have something to learn and something to teach"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-modern-technology",
     "href": "Math125/slides/0_welcome.html#hello-modern-technology",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Hello modern technology",
     "text": "Hello modern technology\nLearning a craft means learning its tools.\nWe will use a professional data analysis platform for everyday work. It’s called “Colab”, “Jupyter”, or “Python”, depending on your point of view.\nWe have access to AI-assisted code generation."
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-support",
     "href": "Math125/slides/0_welcome.html#hello-support",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Hello support",
     "text": "Hello support\nDeaf or hard of hearing? Blind or visually impaired? Medical problem? Other?\nLet me know what support you need from me. I’m committed to inclusion and equity and happy to help.\nChoose work habits that work. Success requires pattern and dedication.\nWe’re all in this together. Look out for your neighbors. Be kind.\nContact me by email (howaldja) or by office hours.\nThere is a Math Lab in LLC. When open they have free walk-in tutoring."
   },
   {
     "objectID": "Math125/slides/0_welcome.html#course-pattern",
     "href": "Math125/slides/0_welcome.html#course-pattern",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Course pattern",
     "text": "Course pattern\nBefore class: Find prep work in lecture slides, and do it.\nDuring class: Work hard, ask questions, support your team. Avoid distractions.\nAfter class: Find homework obligation and do it."
   },
   {
     "objectID": "Math125/slides/0_welcome.html#supplies",
     "href": "Math125/slides/0_welcome.html#supplies",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "“Supplies”",
     "text": "“Supplies”\nComputer access. Laptop is recommended. Smartphone works. (Survey: Who has laptop access?).\nTextbook: Openintro Statistics. (A free open source text).\nSyllabus (on Brightspace)\nCourse website on Brightspace\nHomework is on Webwork. Find through brightspace.\nGoogle Colab"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#jupyter-as-a-calculator",
     "href": "Math125/slides/0_welcome.html#jupyter-as-a-calculator",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Jupyter as a calculator",
     "text": "Jupyter as a calculator\n\nMake a new Jupyter notebook.\nMake a text cell and enter some text.\nMake a code cell. Type 3+5 and press enter. [Nothing happened!]\nTry shift-enter instead. You should see an answer.\nWhat does the green checkmark mean?\nChange 3+5 to x=3+5. This is a variable assignment. Now what happens?"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#jupyter-as-a-calculator-more",
     "href": "Math125/slides/0_welcome.html#jupyter-as-a-calculator-more",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Jupyter as a calculator (more)",
     "text": "Jupyter as a calculator (more)\n\nUsing [enter] instead of [shift-enter], place separate calculations on several lines in a code cell. Evaluate.\nFrom the menus, select [Runtime &gt; Run all]. What happens?\nFind the Share button and notice the Access settings.\nFind the Gemini button. Open the window for context-aware chatbot support.\nRename the file. Find the [File &gt; Open] command, for later."
   },
   {
     "objectID": "Math125/slides/0_welcome.html#individually-homework",
     "href": "Math125/slides/0_welcome.html#individually-homework",
-    "title": "0. Course Welcome",
+    "title": "00. Course Welcome",
     "section": "Individually – homework",
     "text": "Individually – homework\nObtain the book in .pdf or paper form.\nDo the preparatory work for the next slide deck “1. The Shape of Data.”\nNotify Professor Howald of any special needs.\nDo something nice for someone you care about."
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#preparation",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#preparation",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Preparation",
     "text": "Preparation\nRead 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#vocabulary-and-notation",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#vocabulary-and-notation",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Vocabulary and notation",
     "text": "Vocabulary and notation\n\n\n\nName\nAs statistic\nAs parameter\n\n\n\n\nCount\n\\(n\\)\n\\(N\\)\n\n\nMean\n\\(\\overline{x}\\)\n\\(\\mu\\)\n\n\nVariance\n\\(s^2\\)\n\\(\\sigma^2\\)\n\n\nStandard Deviation\n\\(s\\)\n\\(\\sigma\\)\n\n\n\nStatistic: Summary number about a sample.\nParameter: Summary number about a population."
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#how-do-you-mean",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#how-do-you-mean",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "How do you mean?",
     "text": "How do you mean?\nFind the coast_starlight data on openintro. It has only 16 lines. We want the average travel_time from the dataset.\n\nWrite instructions for calculating the average.\nFind the average with just a calculator.\nLoad the data into a spreadsheet and find the average.\nLoad the data into Jupyter and find the average.\nIs this average a statistic or a parameter?\nWhat symbol is appropriate for this average? Why?"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#understanding-the-average",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#understanding-the-average",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Understanding the average",
     "text": "Understanding the average\nIn everyday English, “average” means “typical” or “usual.” In math, it always means “sum / count”. This can be different from “typical”.\n\nWhat is the average number of fingers (including thumbs) on a person?\nWhat is the average result of a (standard six sided) die roll?\nDo you know the average number of kids in a U.S. family?"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – intro",
     "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n\n\nStep 1. Find the average: \\(\\frac{5+7+8+9+9+9+10+10+11+12}{10} = 9\\)"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-1",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-1",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – intro",
     "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 2. Compare each to average, record deviations"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-2",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-2",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – intro",
     "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 3? Find average deviation: \\(\\frac{(-4)+(-2)+ (-1) + 0 + 0 + 0 + 1 + 1 + 2 + 3}{10} = 0\\)\nOops that was pointless. Why?"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-3",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-3",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – intro",
     "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 3. Square the deviations. No more negatives!"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-4",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-4",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – intro",
     "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 4. “Average” those: \\(\\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\)\nThis is the variance. It measures how much the data varies. The symbol is \\(s^2\\). Think of it as one (detached) symbol, not the square of \\(s\\)."
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-5",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-5",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – intro",
     "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\nyear\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\nyear\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\nyear\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\nsquare years ?!?\n\n\n\n\n\\(s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\nStep 5. Check the units."
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-6",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-intro-6",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – intro",
     "text": "Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nVariance \\(= s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\n\\(s = \\sqrt{4} = 2\\) years\nStep 6. Take the square root. That’s called \\(s\\), the standard deviation."
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-interpretation",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-interpretation",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation – interpretation",
     "text": "Variance and standard deviation – interpretation\nStandard deviation is the typical deviation (either way) from average, not the greatest possible deviation.\nData points often stray further from average.\nVariance is hard to interpret – its units are screwy.\nStandard deviation is easier to interpret.\nWe divide by \\(n-1\\), not by \\(n\\). Mnemonic: The first data value can’t exhibit variability.\nWe use \\(s^2\\) and \\(s\\) for sample variance and sample standard deviation.\nWe use \\(\\sigma^2\\) and \\(\\sigma\\) for population variance and population standard deviation."
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-easy-way",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#variance-and-standard-deviation-easy-way",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Variance and standard deviation, easy way",
     "text": "Variance and standard deviation, easy way\n\nYou should have a spreadsheet with your coast_starlight data from earlier. Using the command “STDEV” or “STDEV.S”, find the standard deviation.\nYou should have a Jupyter notebook with the same data. Use “df.describe” to find the standard deviation. (Jupyter example)\nIs all of the data in the range from \\(\\overline{x} - s\\) and \\(\\overline{x}+s\\)?"
   },
   {
     "objectID": "Math125/slides/9_10_mean_variance_standard_deviation.html#individual-work",
     "href": "Math125/slides/9_10_mean_variance_standard_deviation.html#individual-work",
-    "title": "9-10. Mean, Variance, and Standard Deviation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
     "section": "Individual work",
     "text": "Individual work\nComplete the webwork problem set for this presentation."
   },
