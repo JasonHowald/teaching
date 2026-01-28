@@ -428,6 +428,7 @@ window.Quarto = {
 </table>
 </div>
 <p>What’s radical here is the commitment that the truth value of <span class="math inline">\(P \to Q\)</span> should depend only on the plain truth or falsehood of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> individually, not on any interrelationship between them, and not on any hypothetical “if <span class="math inline">\(P\)</span> were different.” This makes the mathematical implication <span class="math inline">\(P \to Q\)</span> a bit different from the natural English implication.</p>
+<p>Note: If <span class="math inline">\(Q\)</span> is known true, then <span class="math inline">\(P\to Q\)</span> must be true, regardless of the status of <span class="math inline">\(P\)</span> or any relationship between them. Less obviously, if <span class="math inline">\(P\)</span> is definitely false, then <span class="math inline">\(P \to Q\)</span> must be true. Thus, any statement of the form “If [falsehood] then [anything]” is affirmed. We can interpret this as mathematics’ wholesale rejection of hypothetical logic.</p>
 </section>
 <section id="in-proof-theory-1" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="in-proof-theory-1"><span class="header-section-number">2.4.3</span> In Proof Theory</h3>
@@ -444,14 +445,14 @@ window.Quarto = {
 <p>As before, most of the argument depends unsteadily on an unproven assumption <span class="math inline">\((\neg Q)\)</span>, but the final step discharges the assumption and results in something valid and certain.</p>
 <p>Next we need to observe how an implication <span class="math inline">\(P \to Q\)</span> could be used as a premise:</p>
 </section>
-<section id="implicaton-elimination-modus-ponens" class="level4" data-number="2.4.3.3">
-<h4 data-number="2.4.3.3" class="anchored" data-anchor-id="implicaton-elimination-modus-ponens"><span class="header-section-number">2.4.3.3</span> Implicaton-elimination (“Modus Ponens”)</h4>
+<section id="implication-elimination-modus-ponens" class="level4" data-number="2.4.3.3">
+<h4 data-number="2.4.3.3" class="anchored" data-anchor-id="implication-elimination-modus-ponens"><span class="header-section-number">2.4.3.3</span> Implication-elimination (“Modus Ponens”)</h4>
 <p>Knowing both <span class="math inline">\(P\)</span> and <span class="math inline">\(P \to Q\)</span>, you may conclude <span class="math inline">\(Q\)</span>.</p>
 <p><span class="math display">\[\frac{P, P \to Q}{\therefore Q}\]</span></p>
 <p>The ability to conclude <span class="math inline">\(Q\)</span>, given <span class="math inline">\(P\)</span>, is the essential meaning of “<span class="math inline">\(P \to Q\)</span>” after all!</p>
 </section>
-<section id="implicaton-elimination-modus-tollens" class="level4" data-number="2.4.3.4">
-<h4 data-number="2.4.3.4" class="anchored" data-anchor-id="implicaton-elimination-modus-tollens"><span class="header-section-number">2.4.3.4</span> Implicaton-elimination (“Modus Tollens”)</h4>
+<section id="implication-elimination-modus-tollens" class="level4" data-number="2.4.3.4">
+<h4 data-number="2.4.3.4" class="anchored" data-anchor-id="implication-elimination-modus-tollens"><span class="header-section-number">2.4.3.4</span> Implication-elimination (“Modus Tollens”)</h4>
 <p>Knowing <span class="math inline">\(P \to Q\)</span>, if <span class="math inline">\(Q\)</span> is false, then <span class="math inline">\(P\)</span> must be false.</p>
 <p><span class="math display">\[\frac{\neg Q, P \to Q}{\therefore \neg P}\]</span></p>
 <p>Again this is based on swapping “If <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>” with “If not <span class="math inline">\(Q\)</span> then not <span class="math inline">\(P\)</span>”, which is the same.</p>

@@ -182,6 +182,8 @@ not on any interrelationship between them, and not on any hypothetical "if $P$
 were different." This makes the mathematical implication $P \to Q$ a bit different
 from the natural English implication.
 
+Note: If $Q$ is known true, then $P\to Q$ must be true, regardless of the status of $P$ or any relationship between them. Less obviously, if $P$ is definitely false, then $P \to Q$ must be true. Thus, any statement of the form "If [falsehood] then [anything]" is affirmed. We can interpret this as mathematics' wholesale rejection of hypothetical logic.
+
 ### In Proof Theory
 
 Suppose you want to justify the statement "If $P$ then $Q$." The most natural 
@@ -204,14 +206,14 @@ As before, most of the argument depends unsteadily on an unproven assumption $(\
 
 Next we need to observe how an implication $P \to Q$ could be used as a premise:
 
-#### Implicaton-elimination ("Modus Ponens")
+#### Implication-elimination ("Modus Ponens")
 Knowing both $P$ and $P \to Q$, you may conclude $Q$.
 
 $$\frac{P, P \to Q}{\therefore Q}$$
 
 The ability to conclude $Q$, given $P$, is the essential meaning of "$P \to Q$" after all!
 
-#### Implicaton-elimination ("Modus Tollens")
+#### Implication-elimination ("Modus Tollens")
 Knowing $P \to Q$, if $Q$ is false, then $P$ must be false.
 
 $$\frac{\neg Q, P \to Q}{\therefore \neg P}$$
