@@ -22,8 +22,9 @@ Many important mathematical structures have not one operation but four: Addition
 ## Basic Definitions
 
 
-
-**Definition:** A (unital) **ring** is a set $R$ together with four structural elements: A chosen element called $0_R$, a chosen element called $1_R$, an operation called addition, written $+_R$, and an operation called multiplication, written $\cdot_R$ or $\times_R$ (usually unwritten, expressed as implied product), satisfying the following **ring axioms**:
+:::{#def-ring}
+### Ring
+A (unital) **ring** is a set $R$ together with four structural elements: A chosen element called $0_R$, a chosen element called $1_R$, an operation called addition, written $+_R$, and an operation called multiplication, written $\cdot_R$ or $\times_R$ (usually unwritten, expressed as implied product), satisfying the following **ring axioms**:
 
 1. (Additive associativity) $x+(y+z) = (x+y)+z$
 2. (Additive identity) $0+x = x = x+0$
@@ -33,6 +34,7 @@ Many important mathematical structures have not one operation but four: Addition
 6. (Multiplicative identity) $1x = x = x1$
 7. (Distribution I) x(y+z) = xy + xz
 8. (Distribution II) (x+y)z = xz + yz
+:::
 
 Notes on the definition:
 
@@ -55,7 +57,9 @@ Notes on the definition:
 10. (No zerodivisors) $(xy=0) \to (x=0 \lor y=0)$
 11. (Multiplicative inverse) $\forall x \enspace (x \neq 0) \to (\exists y \enspace xy = 1 = yx)$
 
+:::{#def-field-etc}
 A ring satisfying 1-9 is called a **commutative ring** (or in some contexts, a "**ring**"!). A ring satisfying 1-10 is called an **integral domain** or simply a **domain**. A ring satisfying 1-11 (but 11 implies 10) is called a **field**.
+:::
 
 The reader may expect that besides ${\mathbb R}$, fields are hard to come by. On the contrary, there are many interesting and exotic fields.
 
@@ -79,7 +83,10 @@ Natural mathematical structures with elements which can be added and multiplied 
 
 ## First Properties of elements
 
-**Theorem** Let $R$ be a ring.
+
+:::{#thm-basic-properties}
+### Basic properties
+Let $R$ be a ring.
 
 1. The additive identity is unique
 2. The multiplicative identity is unique
@@ -93,16 +100,21 @@ Natural mathematical structures with elements which can be added and multiplied 
 10. Multidistribution: $\displaystyle a \sum_{i} x_i = \sum_{i} a x_i$
 11. Two-sided multiplicative inverse is unique if it exists.
 12. Multiplicative cancellation is valid **in a domain**.
+:::
 
 **Classroom group exercise:** Construct proofs of all twelve.
 
-**Definition:** The binomial coefficient $\binom{n}{i}$, pronounced "n choose i", 
+:::{#def-binomial-coefficient}
+The binomial coefficient $\binom{n}{i}$, pronounced "n choose i", 
 is the number of subsets of $\{1, \ldots, n\}$ which have cardinality $i$.
+:::
 
-**Proposition:** (properties of the binomial coefficient $\binom{n}{i}$)
+:::{#prp-binomial-basics}
+### properties of the binomial coefficient $\binom{n}{i}$
 
 1. $\binom{n}{0} = \binom{n}{n} = 1$
 2. $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$
+:::
 
 **proof:** $\binom{n}{0}$ counts only the set $\emptyset$, and $\binom{n}{0}$ counts only the 
 entire set $\{1, \ldots, n\}$. This proves part 1. For part 2, every set $S \subseteq \{1, \ldots, n\}$ 
@@ -119,24 +131,25 @@ Then
 
 $$
 \begin{align*}
-\sum_{k=0}^{n+1} {n+1 \choose k} x^ky^{n+1-k} & =
+&\sum_{k=0}^{n+1} {n+1 \choose k} x^ky^{n+1-k} \\
+= &
 \sum_{k=0}^{n+1} \left( {n \choose k} + {n \choose k-1}\right) x^ky^{n+1-k} & \text{ proposition, above} \\
-& =
+= &
 \sum_{k=0}^{n+1} {n \choose k} x^ky^{n+1-k} +
 \sum_{k=0}^{n+1} {n \choose k-1} x^ky^{n+1-k} & \text{ split the sum} \\
-& =
+= &
 \sum_{k=0}^{n} {n \choose k} x^ky^{n+1-k} +
 \sum_{k=1}^{n+1} {n \choose k-1} x^ky^{n+1-k} & \text{ Discard zero terms} \\
-& =
+= &
 \sum_{k=0}^{n} {n \choose k} x^ky^{n+1-k} +
 \sum_{k=0}^{n} {n \choose k} x^{k+1}y^{n+1-(k+1)} & \text{ Reindex second sum} \\
-& =
+= &
 y \sum_{k=0}^{n} {n \choose k} x^ky^{n-k} +
 x \sum_{k=0}^{n} {n \choose k} x^{k}y^{n-k} & \text{ Factor and simplify} \\
-& =
+= &
 y (x+y)^n +
 x (x+y)^n & \text{ Induction hypothesis} \\
-&= (x+y)^{n+1}& \text{ Simplify} \\
+= & (x+y)^{n+1}& \text{ Simplify} \\
 \end{align*}
 $$
 
@@ -253,17 +266,17 @@ If $x$ is a nonunit and $x$ cannot be factored in the form $x=ab$, with nonunits
 Naturally we are often interested in factoring ring elements into finite products of irreducible elements. This is "usually" possible but there are exceptions.
 
 **Examples:**
+
 1. In ${\mathbb Z}$ naturally the irreducible elements are the (positive and negative) prime numbers.
 2. In ${\mathbb Z}[i]$ we get a slightly different set of irreducible elements. For example here $5$ factors $5 = (2+i)(2-i)$, but both $2+i$ and $2-i$ are irreducible.
-3. In ${\mathbb R}[x]$, every polynomial can be factored into linear factors $(x-r)$ and rootless quadratic irreducible factors $ax^2+bx + c$ where $b^2-4ac < 0$. These factors are the irreducible polynomials.
-4. In ${\mathbb C}[x]$, every polynomial can be factored into linear factors $(x-r)$, and these linear factors are the irreducible polynomials.
-
+3. In ${\mathbb R}[x]$, every polynomial can be factored into (possibly a real constant and) linear factors $(x-r)$ and rootless quadratic irreducible factors $ax^2+bx + c$ where $b^2-4ac < 0$. These factors are the irreducible polynomials.
+4. In ${\mathbb C}[x]$, every polynomial can be factored into (a complex constant and) linear factors $(x-r)$, and these linear factors are the irreducible polynomials.
 
 ## Prime elements
 
 Let $R$ be a commutative ring.
 
-We write $x|y$ ("$x$ divides $y$") to mean that $xz=y for some $z$.
+We write $x|y$ ("$x$ divides $y$") to mean that $xz=y$ for some $z$.
 
 An element $a \in R$ is called **prime** if whenever $a|bc$ then $a|b$ or $a|c$.
 
@@ -276,8 +289,11 @@ This notion also generalizes the idea of prime numbers in ${\mathbb Z}$, but for
 If we wish to prove that irreducibles are prime, we would likely compare the factor trees of $a$, $b$, and $c$. To make this work, we would need to depend on some consistency between those factorizations. This would require $R$ to be a Unique Factorization Domain (UFD. see below). If $R$ is not a UFD, irreducibles need not be prime.
 
 **Examples**
+
 - All the irreducible elements in the previous examples are also prime.
-- Let $R = {\mathbb Z}[\sqrt{-5}] \subseteq {\mathbb C}$ be the ring whose elements are of the form $a+\sqrt{-5}$ for $a, b \in {\mathbb Z}$, with structure inherited from ${\mathbb C}$. Then $R$ is a ring (everyone's first non-UFD domain) and $$2 \cdot 3 = (1-\sqrt{-5}) \cdot (1+\sqrt{-5})$$
+
+- Let $R = {\mathbb Z}[\sqrt{-5}] \subseteq {\mathbb C}$ be the ring whose elements are of the form $a+b\sqrt{-5}$ for $a, b \in {\mathbb Z}$, with structure inherited from ${\mathbb C}$. Then $R$ is a ring (everyone's first non-UFD domain) and $$2 \cdot 3 = (1-\sqrt{-5}) \cdot (1+\sqrt{-5})$$
+
 Now in $R$ all four multiplicands above are irreducible, none of them is a factor of another, and so none of them is prime.
 
 
@@ -293,7 +309,8 @@ In group theory, we defined a quotient group $G/N$, not for any subgroup $N$, bu
 In ring theory, we again allow the properties of kernels to motivate the definitions analogous to the normal subgroup.
 
 Therefore, let $f:R \to S$ be a ring homomorphism. What can we say about $\ker(f)$?
-1. $\ker(f)$ contains $0_R$
+
+1. $\ker(f)$ contains $0_R$.
 2. $\ker(f)$ is closed under addition and additive inverse. The proofs are unsurprising.
 3. Because $\ker(f)$ does **not** normally contain $1_R$, it's not normally a subring. (Warning: This verdict changes in "rng theory.")
 4. $\ker(f)$ has multiplicative closure. Let's look closely at the proof:
@@ -306,7 +323,8 @@ The proof above is correct, but suspicious. Since anything times zero is zero, w
 
 All kernels have this capture property. Something meeting all three observed properties is called an **ideal**:
 
-**Definition:** Let $R$ be a ring and let $I \subseteq R$. We call $I$ an **ideal** if:
+**Definition:** Let $R$ be a commutative ring and let $I \subseteq R$. We call $I$ an **ideal** if:
+
 1. $0 \in I$
 2. $I$ has additive **closure**.
 3. $I$ has multiplicative **capture**: If $x \in I$ or $y \in I$ then $xy = I$.
@@ -331,12 +349,13 @@ This section describes the quotient $R/I$ of a ring by an ideal. This establishe
 **Definition / Theorem:** Let $R$ be a ring and let $I$ be an ideal. The set of cosets:
 $$R/I \equiv_{def} \{a+I \,|\, a \in R \}$$
 with structures:
+
 1. $0_{R/I} \equiv I$
 2. $1_{R/I} \equiv 1+I$
 3. $(x+I)+(y+I) \equiv (x+y)+I$
 4. $(x+I)(y+I) \equiv (xy)+I$
 
-$\ldots$ is called a **quotient ring** and pronounced "R mod I"
+$\ldots$ is called a **quotient ring** and pronounced "R mod I".
 
 **Recall**: $a+I = b+I$ iff $a-b \in I$. This was true in group theory, and ring theory is an extension because $(R,0,+)$ is an abelian group.
 
@@ -365,16 +384,17 @@ $f(x) = x+I$. Naturally, its kernel is $I$ and its image is all of $R/I$.
 
 ## Universal property of the quotient map
 
-**Theorem:** The quotient map $\phi:R \to R/I$ sends $I$ to $0$. For any ring homomorphism $g: R \to S$ for which $g(I) = 0$, there is a unique map $G: R/I \to S$ so that $G \phi = g$
+**Theorem:** The quotient map $\phi:R \to R/I$ sends $I$ to $0$. For any ring homomorphism $g: R \to S$ for which $g(I) = \{0\}$, there is a unique map $G: R/I \to S$ so that $G \phi = g$
 
-**proof:** Let $G: R/I \to S$ by $G(a+I) = g(a)$.
+**proof:** One must check...
+
+- The condition $G \phi = g$ forces $G(a+I) = g(a)$, so $G$ is unique if it exists. We take this to be the definition of $G$.
+- $G$ is well defined.
+- $G$ is a homomorphism.
+- $G\phi = g$.
 
 **shorthand:** To define a map on $R/I$, just define it on $R$ and check $I$ maps to zero.
 
-- The condition $G \phi = g$ forces $G(a+I) = g(a)$, so $G$ is unique if it exists. We take this to be the definition of $G$.
-- $G$ is well defined
-- $G$ is a homomorphism
-- $G\phi = g$.
 
 **Theorem:** If $\mu: R \to T$ is another map for which the previous theorem is true (with $\mu$ for $\phi$ and $T$ for $R/I$, then there is an isomorphism $G:R/I \to T$ and $G\phi = \mu$.
 
@@ -387,6 +407,7 @@ $f(x) = x+I$. Naturally, its kernel is $I$ and its image is all of $R/I$.
 **Definition:** Let $a \in R$. ($R$ commutative.) The **principal ideal generated by $a$**, written $(a)$, is the set $aR$. If an ideal $I$ equals $(a)$ for some $a$, then $I$ is **principal.**
 
 **Examples:**
+
 1. The principal ideal $(4) \subseteq {\mathbb Z}$ consists of the multiples of $4$.
 
 2. In the polynomial ring ${\mathbb R}[x]$, the ideal of polynomials $p$ with $p(2)=0$ is equal to $(x-2)$, because every such polynomial must have $x-2$ as a factor.
@@ -429,6 +450,7 @@ Note that this is more general than an increasing or decreasing sequence of idea
 What if we really really extra want to find the union of several ideals? Then we construct their **sum**
 
 **Definition:** The sum of two ideals $I+J$ is $\ldots$
+
 1. the set of linear combinations
 $$\{ra+sb \,|\, a \in I, b \in J, r,s \in R\}$$
 2. the intersection of all ideals of $R$ containing both $I$ and $J$.
@@ -442,6 +464,7 @@ $$\{ra+sb \,|\, a \in I, b \in J, r,s \in R\}$$
 Sums of even infinite families are also possible:
 
 **Definition:** The sum of any family $\mathscr F$ of ideals is $\ldots$
+
 1. the set of **finite** linear combinations
 $$\left \{\sum_{i} r_ia_i \,|\, r_i \in R, a_i \in F_i \in \mathscr F\right \}$$
 2. the intersection of all ideals in $R$ containing every $F \in \mathscr F$.
@@ -468,9 +491,10 @@ Five is a prime number of course. One interpretation is that for any product $ab
 This is sort of a converse of the multiplicative capture property.
 
 ** Examples:  **
-  - The prime ideal of ${\mathbb Z}$ are exactly the ideals $(p)$ generated by prime numbers, and the zero ideal.
-  - The field ${\mathbb R}$ has only two ideals, and the small one, $(0)$, is prime.
-  - A ring $R$ is a domain if and only if then the zero ideal is prime.
+
+1. The prime ideal of ${\mathbb Z}$ are exactly the ideals $(p)$ generated by prime numbers, and the zero ideal.
+2. The field ${\mathbb R}$ has only two ideals, and the small one, $(0)$, is prime.
+3. A ring $R$ is a domain if and only if then the zero ideal is prime.
 
 Next we define maximal ideals. The absolute largest ideal in any ring $R$ is the unit ideal, $R$ itself. By "maximal ideal" we mean not quite that large, but otherwise as large as can be:
 
@@ -479,8 +503,9 @@ Next we define maximal ideals. The absolute largest ideal in any ring $R$ is the
 **Caution:** This is one of those cases when there can be many "maximal" objects. A ring often has many maximal ideals which of course do not have any subset relationships between one another.
 
 **Examples:**
-  - The maximal ideals of ${\mathbb Z}$ are, once again, exactly the ideals $(p)$ generated by prime numbers. The zero ideal is not maximal.
-  - In function rings, it's common to construct the ideal of all functions $f$ which take the value $0$ at a given fixed point $x \in X$. Often, such an ideal is maximal. Except in some very strange circumstances, this sort of ideal will be maximal.
+
+1. The maximal ideals of ${\mathbb Z}$ are, once again, exactly the ideals $(p)$ generated by prime numbers. The zero ideal is not maximal.
+2. In function rings, it's common to construct the ideal of all functions $f$ which take the value $0$ at a given fixed point $x \in X$. Often, such an ideal is maximal. Except in some very strange circumstances, this sort of ideal will be maximal.
 
 
 
@@ -644,6 +669,7 @@ By the universal property of the quotient map, there is a unique isomorphism mak
 ## Basic Definitions
 
 **Definition:** Let $R$ be a commutative ring. The **polynomial ring over $R$ in the variable $x$**, pronounced "R adjoin x", and written $R[x]$, is $\ldots$
+
 1. The set of all finite sequences $a = (a_0, a_1, \ldots, a_n, \ldots)$, where each $a_i \in R$ and all but finitely many are zero, with
 2. Distinguished zero: $(0,0,0,\ldots)$
 3. Distinguished one: $(1,0,0,\ldots)$
@@ -663,6 +689,7 @@ It's rather a slog to prove that $R[x]$ satisfies the ring axioms. It's a good a
 Once this theorem is proved, we usually wish to switch to the "normal" polynomial notation $a_nx^n + \ldots a_1x + a_0$. This is not an abbreviation but a literalism. The reader may calculate that $x^2 = (0,0,1,0, \ldots)$, $x^3 = (0,0,0,1,0,\ldots)$, etc., and that the recombination $a_nx^n + \ldots a_1x + a_0$ does yield $(a_0, a_1, \ldots, a_n,0,0,0,\ldots)$.
 
 **Vocabulary:** Let $f$ be the polynomial $a_nx^n + \ldots a_1x + a_0$. We mimic the ordinary vocabulary of algebra:
+
   1. The **coefficients** of $f$ are the value $a_i$.
   2. The **constant term** of $f$ is $a_0$.
   3. The **leading term** of $f$ is $a_nx^n$.
@@ -724,6 +751,7 @@ Unique factorization of integers can be established using the Euclidean Algorith
 
 **Definition:**
 A **Euclidean Function** on a ring $R$ is a function $f:R-\{0\} \to {\mathbb N}-\{0\}$ satisfying
+
 1. $\forall a, b\in R-\{0\} \enspace f(a) \leq f(ab)$
 2.  $\forall a \in R \enspace \forall b \in R-\{0\} \enspace \exists q, r \in R \enspace$ so that $a = bq + r$ and either $r = 0$ or $f(r) < f(b)$.
 
@@ -732,11 +760,12 @@ The Euclidean function $f$ is meant to generalize the absolute value function on
 **Definition:** A Euclidean Domain is an integral domain for which a Euclidean Function exists.
 
 **Examples:**
+
 1. Of course ${\mathbb Z}$ itself with $f(n) = |n|$
 2. ${\mathbb Z}[i]$ with $f(a+bi) = |a+bi|^2 = a^2+b^2$
 3. ${\mathbb R}[x]$ with $f(p(x)) = \deg(p(x))+1$.
 4. More generally if $K$ is a field then $K[x]$ is a Euclidean Domain.
-4. The **Eisenstein Integers** $Z[\omega]$ where $\omega = \frac{\sqrt{-3}+1}{2}$ (Note $\omega^3=-1$) form a triangular lattice in ${\mathbb C}$. The complex square norm is again a Euclidean function. In this case it satisfies $$|a+bw|^2 = (a+bw)(a+b\overline{w}) = (a+bw)(a+b\overline{w}) = a^2 + b^2 + ab\overline{w}+abw = a^2+b^2 +ab 2\Re(\omega) = a^2+b^2-ab $$
+5. The **Eisenstein Integers** $Z[\omega]$ where $\omega = \frac{\sqrt{-3}+1}{2}$ (Note $\omega^3=-1$) form a triangular lattice in ${\mathbb C}$. The complex square norm is again a Euclidean function. In this case it satisfies $$|a+bw|^2 = (a+bw)(a+b\overline{w}) = (a+bw)(a+b\overline{w}) = a^2 + b^2 + ab\overline{w}+abw = a^2+b^2 +ab 2\Re(\omega) = a^2+b^2-ab $$
 
 
 
@@ -745,6 +774,7 @@ To prove unique factorization in ${\mathbb Z}$, we first prove that every ideal 
 **Definition:** A **Principal Ideal Domain** is an integral domain in which every ideal is principal.
 
 **Definition:** A **Unique Factorization Domain** is a domain in which
+
 1. Every element of $R$ is zero, a unit, or a product of one or more irreducible elements.
 2. Factorizations are unique in the sense that if
 $$ua_1a_2 \ldots a_m = vb_1b_2\ldots b_n$$
@@ -804,7 +834,7 @@ This would be a strange place to conclude, because it stands to reason that larg
 
 **Theorem:** Let $R$ be a UFD. Then $R[x]$ is a UFD.
 
-The first interesting case is ${\mathbb Z}[x]$. In that case, we need to consider a delicate interplay between polynomials of ${\mathbb Z}[x]$ and those of ${\mathbb Q}[x]$. In the more general case, we must find a tool to compare a domain $R$ to a field containing it. This brings us to the ideal of a **fraction field**, which is the next section. Please read the next section and return.
+The first interesting case is ${\mathbb Z}[x]$. In that case, we need to consider a delicate interplay between polynomials of ${\mathbb Z}[x]$ (not a PID) and those of ${\mathbb Q}[x]$ (an ED/PID). In the more general case, we must find a tool to compare a domain $R$ to a field containing it. This brings us to the ideal of a **fraction field**, which is the next section. Please read the next section and return.
 
 Let $R$ be a UFD, and let $K$ be its fraction field. Our strategy is to compare polynomials factorizations of $f \in R[x]$ to similar factorizations of $f \in K[x]$. This is fraught and requires great care, because conversation will center on which polynomials are "units" and which are "irreducible", but these notions are relative to the ring under discussion. For example, the constant polynomial $f(x) = 2$ is an irreducible nonunit in ${\mathbb Z}[x]$, because $2$ is prime and has no reciprocal there. But the same polynomial in ${\mathbb Q}[x]$ is a unit, because an inverse $1/2$ exists. The polynomial $f(x) = 4x^2+4 = 4(x^2+1)$ is reducible in ${\mathbb Z}[x]$ with factorization $2 \cdot 2 \cdot (1+x^2)$. But in ${\mathbb Q}[x]$ it's irreducible, because $4$ is merely a unit factor. (As an aside, over ${\mathbb C}[x]$ it's reducible for a new reason: Although $4$ is a unit, the polynomial is now $4(x-i)(i+i)$.)
 
@@ -818,15 +848,15 @@ To navigate these hazards, we must be in the habit of saying "unit in $R$" or "i
 
 **Proposition:** Let $R$ be a domain. The units of $R[x]$ are exactly the units of $R$.
 
-**Proof:** Certainly the units of $R$ have the same reciprocals as elements of $R[x]$. Conversely if $f(x)$ is a unit in $R[x]$, then $f(x)g(x)=1$ for some $g(x)$. Since $\deg(fg) = \deg(f)+\deg(g)$ (in a domain!) both $f$ and $g$ must be constants in $R$.
+**Proof:** Certainly the units of $R$ have the same reciprocals when regarded as elements of $R[x]$. Conversely if $f(x)$ is a unit in $R[x]$, then $f(x)g(x)=1$ for some $g(x)$. Since $\deg(fg) = \deg(f)+\deg(g)$ (in a domain!) both $f$ and $g$ must be constants in $R$.
 
 **Proposition:** Let $p\in R$ be irreducible. Then the ideal $(p)  = pR[x] \subseteq R[x]$ generated by $p$ in the polynomial ring is prime.
 
-**proof:** Let $f, g \in R[x]$, and suppose $p | fg$. Then every coefficient of $fg$ is divisible by $p$. For contradiction, if neither $f$ nor $g$ is divisible by $p$, then each has a highest-degree term not divisible by $p$. Say $f(x) = p*(h.o.t.)+ a_ix^i + (l.o.t.)$, and $g(x) = p*(h.o.t.)+ b_jx^j + (l.o.t.)$, with $p \nmid a_i$ and $p \nmid b_j$. Then the coefficient of $x^{i+j}$ is a sum of terms, all divisible by $p$ except exactly one. It follows that $fg$ will not be divisible by $p$. It follows that $pR[x]$ is a prime ideal.
+**proof:** Let $f, g \in R[x]$, and suppose $p | fg$. Then every coefficient of $fg$ is divisible by $p$. For contradiction, if neither $f$ nor $g$ is divisible by $p$, then each has a highest-degree term not divisible by $p$. Say $f(x) = p*(h.o.t.)+ a_ix^i + (l.o.t.)$, and $g(x) = p*(h.o.t.)+ b_jx^j + (l.o.t.)$, with $p \nmid a_i$ and $p \nmid b_j$. Then the coefficient of $x^{i+j}$ in $fg$ is a sum of terms, all divisible by $p$ except exactly one. It follows that $fg$ will not be divisible by $p$. It follows that $pR[x]$ is a prime ideal.
 
 **Proposition:** Let $R$ be a UFD and let $K$ be its field of fractions. Let $f(x) \in R[x]$. If $f(x)$ factors $f(x) = G(x)H(x)$ over $K[x]$ (so $G, H \in K[x]$), then $f$ also factors $f(x) = g(x)h(x)$ over $R[x]$ (so $g,h \in R[x]$), and $g = k_1G$ and $h = k_2H$ for some $k_1, k_2 \in K$.
 
-**Proof: ** In the factorization $f(x) = G(x)H(x)$, both $G$ and $H$ have coefficients which are fractions with denominators from $R$. We multiply both sides of the equation by the product of these denominators to clear them, obtaining $bf = g_1(x)h_1(x)$. Notice that $g_1 = rG$ and $h_1 = sH$ for some $r, s\in R$. Note $b \in R$. By presumption $bR$ can be factored into irreducibles $b_1\ldots b_n$. We wish to "cancel" $b_n$ from both sides (and continue), but it doesn't seem to appear on the right. Now $b_nR[x]$ is a prime ideal, and the product $g_1h_1$ is in it, so one of $g_1$ or $h_1$ coefficients all divisible by $b_n$. Therefore we may divide it by $b_n$ and still have a polynomial in $R[x]$. Continuing this process, we cancel every factor $b_i$ from either $g_1$ or $h_1$, to obtain finally $f(x) = g(x)h(x)$. Now $g_1$ was originally an $R$-multiple of $G$, and is likewise an $R$-multiple of $g$, so $g = k_1G$ for some $k_1 \in K$, and similarly for $h$.
+**Proof: ** In the factorization $f(x) = G(x)H(x)$, both $G$ and $H$ have coefficients which are fractions with denominators from $R$. We multiply both sides of the equation by the product of these denominators to clear them, obtaining $bf = g_1(x)h_1(x)$. Notice that $g_1 = rG$ and $h_1 = sH$ for some $r, s\in R$. Note $b \in R$. By presumption $b$ can be factored into irreducibles $b_1\ldots b_n$. We wish to "cancel" $b_n$ from both sides (and continue), but it doesn't seem to appear on the right. Now $b_nR[x]$ is a prime ideal, and the product $g_1h_1$ is in it, so one of $g_1$ or $h_1$ has coefficients all divisible by $b_n$. Therefore we may divide it by $b_n$ and still have a polynomial in $R[x]$. Continuing this process, we cancel every factor $b_i$ from either $g_1$ or $h_1$, to obtain finally $f(x) = g(x)h(x)$. Now $g_1$ was originally an $R$-multiple of $G$, and is likewise an $R$-multiple of $g$, so $g = k_1G$ for some $k_1 \in K$, and similarly for $h$.
 
 **Note:** The previous theorem is strongly connected to the Rational Roots Theorem, which limits the possible rational roots an integer polynomial might have. If a polynomial $f \in {\mathbb Z}[x]$ has a rational root, then it has a factor $(x-\frac{a}{b})$. (Assume lowest terms) By the previous theorem, it must also be factorable $f(x) = (bx-a)h(x)$ where not only $bx-a$ but also $h(x)$ are integer polynomials.
 
@@ -836,7 +866,7 @@ To navigate these hazards, we must be in the habit of saying "unit in $R$" or "i
 
 Suppose $f(x) = G(x)H(x)$ for $G, H \in K[x]$. Then we get an alternate factorization $f(x) = g(x)h(x)$ in $R[x]$, as above (and $g=k_1G$, $h=k_2H$).  Since $f$ is $R[x]$-irreducible, one of $g$ or $h$ is an $R[x]$ unit, and therefore a $K[x]$-unit.  It follows that the corresponding $G$ or $H$ is also a $K[x]$-unit.  Thus f is irreducible in $K[x]$.
 
-It follows immediately that the ideal $f(x)K[x]$ a prime ideal of $K[x]$, since $K[x]$ is an ED (so PID).  What about the ideal $f(x)R[x]$?  If $g(x)h(x) \in f(x)R[x]$, then this is still true in the larger ring $K[x]$, so one of g or h is in the ideal $f(x)R[x]$.  WLOG $g(x) = f(x)L(x)$, where $L \in K[x]$.
+It follows immediately that the ideal $f(x)K[x]$ is a prime ideal of $K[x]$, since $K[x]$ is an ED (so PID).  What about the ideal $f(x)R[x]$?  If $g(x)h(x) \in f(x)R[x]$, then this is still true in the larger ring $K[x]$, so one of g or h is in the ideal $f(x)K[x]$.  WLOG $g(x) = f(x)L(x)$, where $L \in K[x]$.
 
 As before, $g(x) = f_2(x)l(x)$, where $f_2 = Uf$ and  Thus
 $g = Uf(x)l(x)$.  Clearing denominators, $bg=af(x)l(x)$. For each prime factor of $b$, $f$ cannot be divisible (because $f$ is irreducible of positive degree), so $l$ is divisible, so we may cancel it, leaving finally $g=f(x)(l(x)/b)$ where $l(x)/b \in Z[x]$. Thus $g \in f(x)R[x]$ and finally $f(x)R[x]$ is a prime ideal.
@@ -848,8 +878,7 @@ And finally...
 
 Let's first prove existence of irreducible factorization in $R[x]$.  Suppose there were a perpetual factorization:  $f_1(x)$ is divisible by $f_2(x)$, which is divisible by $f_3(x)$, etc.
 Since $R$ is a domain, these polynomials' degrees would be nonincreasing, so the degrees are eventually constant.  After this point, the factors removed are all elements of $R$, and effectively create an infinite factorization of each individual coefficient of $f_n$
-
-**proof**:  
+ 
 Now suppose $up_1\cdots p_m = vq_1\cdots q_n$, where $u, v$ are units of $R[x]$ and $p_i, q_j$ are irreducible in $R[x]$. As before suppose that this is the shortest nonunique factorization.  Then $vq_1\cdots q_n \in (p_m)$, a prime ideal of $R[x]$, so one of $v, q_1, \ldots, q_n$ is divisible by $p_m$.  Not the unit of course, so for some $j$ we have $p_m | q_j$.  Since $q_j$ is irreducible, $p_m = wq_j$ for a unit $w$. Then we may write $up_1\cdots p_{m-1}wq_j = vq_1\cdots q_n$ and cancel $q_j$: $uwp_2\cdots p_m = vq_1\cdots \hat{q_j}\cdots q_n$.  This is shorter, so unique factorization applies, so the original factorizations are compatible.
 
 We have proven that $R[x]$ is a UFD.
@@ -857,8 +886,6 @@ We have proven that $R[x]$ is a UFD.
 Of course we can induct on the theorem, to conclude, for example that ${\mathbb Z}[x,y,z]$ is a UFD.
 
 # Fields of Fractions and Localization
-
-
 
 ## Fields of Fractions, definition
 

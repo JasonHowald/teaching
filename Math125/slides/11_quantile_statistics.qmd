@@ -119,9 +119,6 @@ import pandas as pd
 x = pd.Series([18,19,17,20,25,18])
 ```
 
-
-
-
 ## Individual work
 
 Solve Webwork problems in assignment 11.

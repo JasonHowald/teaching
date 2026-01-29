@@ -2,6 +2,8 @@
 title: "Syllabus -- 672"
 description: "Syllabus and course policies for Jason Howald's Math 672"
 format: html
+engine: jupyter #Force jupyter notebook to invalidate cache.
+
 ---
 
 {{< include ../_syllabus_objects/instructor.qmd >}}
