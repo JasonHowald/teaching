@@ -714,137 +714,165 @@
     "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Preparation",
-    "text": "Preparation\nRead 2.1.3 (histograms and shape) and 2.2.1 (bar plots) and 2.2.3 (bar plots, continued)"
+    "objectID": "Math125/slides/6_controlled_experiments.html#section",
+    "href": "Math125/slides/6_controlled_experiments.html#section",
+    "title": "06. Controlled Experiments",
+    "section": "",
+    "text": "Preparation\nReview sections 1.2.4 and 1.2.5. Read section 1.4, Experiments, and review vocabulary on the next slide."
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Goals",
-    "text": "Goals\n\nRead a histogram or bar chart correctly.\nIdentify when each plot type is appropriate.\nDescribe the shape of a histogram using proper vocabulary.\nGenerate your own histograms and bar charts from data using seaborn."
+    "objectID": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
+    "href": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
+    "title": "06. Controlled Experiments",
+    "section": "Key Vocabulary – experiments",
+    "text": "Key Vocabulary – experiments\nControl, randomization, replication, and blocking.\nControl Group and Treatment Group\nPlacebo and the placebo effect\nBlind and double blind experiment design\nExplanatory and response variables\nObservational study vs. experiment\nCausal inference"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Note on Accessibility:",
-    "text": "Note on Accessibility:\nData visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be."
+    "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
+    "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
+    "title": "06. Controlled Experiments",
+    "section": "Controlled Experiment or Observational Study? (1/2)",
+    "text": "Controlled Experiment or Observational Study? (1/2)\n\nA survey of 200 pirates reveals correlation between citrus consumption and scurvy.\nChemical X results in 40% better pain reduction, compared to placebo.\nLongitudinal study tracks risk factors and health metrics for 20000 people.\nIn various societies, art is quantifiably more common after the inventions of the yoke and plow."
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Bar Charts (aka Count Plots)",
-    "text": "Bar Charts (aka Count Plots)\nA bar chart represents the distribution of a categorical variable, showing how many data cases are in each category. It answers questions like…\n\nHow many of each major do we have on campus?\nWhat home languages are spoken in Potsdam, and how many households speak each language?\nHow many patients are assigned to each nurse?\n\nTo make a bar chart, place the categories (majors, languages, nurses) on one axis (normally “\\(x\\)”). From each, make a rectangular bar proportional to the number in that category. Leave a gap between the bars. Mark and label the other axis so the counts can be inferred."
+    "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
+    "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
+    "title": "06. Controlled Experiments",
+    "section": "Controlled Experiment or Observational Study? (2/2)",
+    "text": "Controlled Experiment or Observational Study? (2/2)\n\nA study links sports-related concussions to academic outcomes.\nWatering some plants more than others affects their growth.\nA professor investigates whether front-row seating is linked to better learning outcomes.\nAt random, I present some users of my social media app with one of two feeds, comparing user engagement and ad clicks."
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Bar Charts – example",
-    "text": "Bar Charts – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.countplot(data=df, x= 'type')\n\n\n\n\n\n\n\n\n\nFigure 1: Bar Chart for Starbucks food item types"
+    "objectID": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
+    "href": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
+    "title": "06. Controlled Experiments",
+    "section": "Experiments are hard. Why bother?",
+    "text": "Experiments are hard. Why bother?\nWhat is a causal conclusion? What is the weakness of an observational study? How does the controlled experiment overcome this weakness?"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Bar Charts – understanding",
-    "text": "Bar Charts – understanding\n\nCan the bars be rearranged on the \\(x\\)-axis? Would that change the meaning of the chart?\nDo the bar colors matter? Should they be the same or different?\nCan a bar chart illustrate the relationship between two different categorical variables? For example, home language related to religious heritage?"
+    "objectID": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
+    "href": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
+    "title": "06. Controlled Experiments",
+    "section": "Design for ethical science",
+    "text": "Design for ethical science\nPost Traumatic Stress Disorder (PTSD) sufferers are recruited for a study. Intake interviews classify them by trauma type and symptom severity. Describe a controlled experiment to test the effectiveness of three treatment protocols (cognitive behavioral therapy, group therapy, or no therapy at all).\n\nWould you use placebo in this study?\nHow would you decide which patients go to which treatment type?\nWho should assess patient improvement? (patient? therapist? researcher? other?)\nWhat ethical safeguards are needed?\nIn principle, could your study show that one therapy is better for treating PTSD than another?"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Histograms – purpose",
-    "text": "Histograms – purpose\nA histogram is similar, but represents the distribution of a quantitative variable. It answers questions like\n\nWhat sorts of GPA’s do students on campus have, and which GPA ranges are most common?\nHow much do Potsdam households spend weekly on groceries? Which amounts are common, which are outliers, and which are unheard of?\nNurses’ visits with patients take a variety of time. How do the durations of visits vary? Are most visits short, or is there a wide variety of times?"
+    "objectID": "Math125/slides/6_controlled_experiments.html#swifties-unite",
+    "href": "Math125/slides/6_controlled_experiments.html#swifties-unite",
+    "title": "06. Controlled Experiments",
+    "section": "Swifties unite!",
+    "text": "Swifties unite!\nOn 2024-09-10, Taylor Swift endorsed Kamala Harris for president. Hypothetically, you talk to 1000 people aware of the endorsement, and 1000 who are not. Those who noticed it show a 4 point shift toward Harris for president. What can be concluded about the political power of Taylor Swift?"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Histograms – method",
-    "text": "Histograms – method\nTo draw a histogram, the x-axis is scaled to show the entire range of data values and divided into equal-sized intervals (e.g. 5-10, 10-15, 15-20) called “bins.” Rectangular bars are drawn above each bin, showing how frequently the data values fall into that range. The y-axis is labeled “count” or “frequency.” Tall bars indicate common data ranges, and short bars indicate rare data ranges. Unlike a bar chart, the bars touch each other."
+    "objectID": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
+    "href": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
+    "title": "06. Controlled Experiments",
+    "section": "The Power of Yoga",
+    "text": "The Power of Yoga\nThere is some indication that practicing yoga has positive health effects. In small groups, design a study which could determine whether yoga mitigates depressive symptoms in particular. Address these concerns:\n\nWhat treatment groups will you need?\nHow large should the study be? How might you recruit for it?\nHow will volunteers be assigned to treatment groups?\nWill you use placebo? How?\nWill you use blocking? How?\nHow long will your study take?\nHow will “depressive symptoms” be measured? By whom?"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Histograms – example",
-    "text": "Histograms – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.displot(data=df, x= 'calories', bins=10)\n\n\n\n\n\n\n\n\n\nFigure 2: Histogram for Starbucks food item Calorie content"
+    "objectID": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
+    "href": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
+    "title": "06. Controlled Experiments",
+    "section": "No free lunch",
+    "text": "No free lunch\nGive an example of a study for which blinding and double-blinding are impossible or unethical. Give an example of a study for which controlling the explanatory variable is impossible or unethical. In pharmacology, is it possible to know (causally, statistically) that a drug has specific biological effects without understanding how or why?"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Histograms – Understanding",
-    "text": "Histograms – Understanding\n\nCan the bins and rectangles be rearranged on the \\(x\\)-axis? Would that change the meaning of the plot?\nShould the bars be the same color or different colors?\nWe’re free to choose the number of bins, which effects the width of the bars. How should we decide how many to use?\nIs it necessary to label the \\(y\\)-axis? Why or why not?\nCan a histogram show the relationship between one variable and another? For example, can we compare the Calorie counts of various categories of food item (bakery, sandwich, etc) using a histogram?"
+    "objectID": "Math125/slides/6_controlled_experiments.html#homework",
+    "href": "Math125/slides/6_controlled_experiments.html#homework",
+    "title": "06. Controlled Experiments",
+    "section": "Homework",
+    "text": "Homework\n\nControlled Experiments, on webwork."
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Histograms and Bar Charts – Comparison",
-    "text": "Histograms and Bar Charts – Comparison\nIn common:\n\nData values on x-axis.\nFrequency counts on y-axis,\nRectangles whose height shows the count.\nApplicable to a single variable only (by default).\n\nDifferences:\n\nBar for categorical, histogram for quantitative.\nBar can be freely rearranged, histogram must be in numerical order.\nBar has gaps, histogram none."
+    "objectID": "Math125/slides/16_17_conditional_probability.html#preparation-work",
+    "href": "Math125/slides/16_17_conditional_probability.html#preparation-work",
+    "title": "16-17. Conditional Probability",
+    "section": "Preparation work",
+    "text": "Preparation work\nRead all of section 3.2 (pp. 95-108)"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Choosing the right visualization",
-    "text": "Choosing the right visualization\nIn each scenario, should we favor a histogram, a bar chart, or neither? Discuss with your group and share your answers with the class.\n\nTo understand the frequency distribution of six colors of candy.\nTo understand the variety of costs of child care in Potsdam.\nTo reveal a link between religious identity and political party affiliation.\nTo reveal a link between time spent studying and course grade.\nTo visualize the variety of total bill prices at a given restaurant.\nTo show an answer to the question: How many speakers of each language do we have in this classroom?"
+    "objectID": "Math125/slides/16_17_conditional_probability.html#review-two-multiplication-rules",
+    "href": "Math125/slides/16_17_conditional_probability.html#review-two-multiplication-rules",
+    "title": "16-17. Conditional Probability",
+    "section": "Review – two multiplication rules",
+    "text": "Review – two multiplication rules\nMultiplication rule – simplistic\n(works when \\(A\\) and \\(B\\) are independent) \\[ P(A \\text{ and } B) = P(A)*P(B)\\]\nMultiplication rule – full\n(just works) \\[ P(A \\text{ and } B) = P(A)*P(B | A)\\]\n\\[P(\\text{drawing two aces}) = \\frac{4}{52} \\cdot \\frac{3}{51}\\]\n\\(P(B | A)\\) “Probably of B given A” is a conditional probability. It’s the probability of \\(B\\), adjusted for condition that \\(A\\) is known."
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Histogram sense – modality",
-    "text": "Histogram sense – modality\nA distinct peak or hill in the histogram shows a broad range of common values. A histogram is unimodal if it has one main peak, bimodal if it has two, trimodal if it has three, etc.\n\n\nUnimodal\n\nsns.displot(data=df, x= 'poverty')\n\n\n\n\n\n\n\n\n\nFigure 3: Histogram – counties’ poverty rates\n\n\n\n\n\n\nBimodal\n\nsns.displot(data=df, x= 'SLG')\n\n\n\n\n\n\n\n\n\nFigure 4: Histogram – MLB players’ SLG"
+    "objectID": "Math125/slides/16_17_conditional_probability.html#examples-of-conditional-probability",
+    "href": "Math125/slides/16_17_conditional_probability.html#examples-of-conditional-probability",
+    "title": "16-17. Conditional Probability",
+    "section": "Examples of conditional probability",
+    "text": "Examples of conditional probability\nU = You are using an umbrella.\nR = It’s raining.\nP(U) asks “How likely are you to use an umbrella, at any time?”\nP(U | R) asks “When it’s raining, how likely are you to use an umbrella?”\nP(R | U) asks “You’re using an umbrella. What’s the probability of rain?”"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Histogram sense – skew",
-    "text": "Histogram sense – skew\nSkew is an asymmetry showing a longer, heavier tail on one side than the other.\n\n\nSkewed Left\n\nsns.displot(data=df, x= 'homeownership')\n\n\n\n\n\n\n\n\n\nFigure 5: Histogram – counties’ homeownership rates\n\n\n\n\n\n\nSkewed Right\n\nsns.displot(data=df, x='salary')\n\n\n\n\n\n\n\n\n\nFigure 6: Histogram – MLB players’ salary’"
+    "objectID": "Math125/slides/16_17_conditional_probability.html#solving-for-pba",
+    "href": "Math125/slides/16_17_conditional_probability.html#solving-for-pba",
+    "title": "16-17. Conditional Probability",
+    "section": "Solving for P(B|A)",
+    "text": "Solving for P(B|A)\n\\[ P(A\\text{ and } B) = P(A) * P(B | A)\\]\ncan be converted to\n\\[P(B|A) = \\frac{P(A\\text{ and } B)}{P(A)}\\]\nDepending on which two we know, we may use them to calculate the third."
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Features of a histogram – mean (average)",
-    "text": "Features of a histogram – mean (average)\nThe average value (or mean) of a data variable can be read from its histogram. The mean is the center of mass. Imagine balancing the entire histogram (all rectangles as one unit) on your finger from below. The balance point is the mean.\n\n\n\n\n\n\n\n\nFigure 7: Histogram – counties’ homeownership rates"
+    "objectID": "Math125/slides/16_17_conditional_probability.html#order-by-probability-least-likely-to-most-likely",
+    "href": "Math125/slides/16_17_conditional_probability.html#order-by-probability-least-likely-to-most-likely",
+    "title": "16-17. Conditional Probability",
+    "section": "Order by probability (least likely to most likely)",
+    "text": "Order by probability (least likely to most likely)\n\nThe probability of a headache.\nThe probability of a headache, given car accident.\nThe probability of a headache, given you have the flu.\nThe probability of a headache, given you spent the day at the spa.\nThe probability of a headache, after 24 hours of video games."
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Describe it!",
-    "text": "Describe it!\nBelow is a histogram for a “Gamma(3,1)” random variable. Describe its modality, its skew, and its mean as completely as you can. Confer with your group and share with the class.\n\n\n\n\n\n\n\n\nFigure 8: Gamma(3,1) random variable."
+    "objectID": "Math125/slides/16_17_conditional_probability.html#compare-and-contrast",
+    "href": "Math125/slides/16_17_conditional_probability.html#compare-and-contrast",
+    "title": "16-17. Conditional Probability",
+    "section": "Compare and contrast",
+    "text": "Compare and contrast\nRank in order, according to your opinion:\n\\[P(\\text{headache} | \\text{flu})\\]\n\\[P(\\text{flu} | \\text{headache})\\]\n\\[P(\\text{flu and headache})\\]"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Make your own plots – basic process",
-    "text": "Make your own plots – basic process\n\nFetch data with !wget\nRead data with pd.read_csv\nimport seaborn as sns\nsns.displot or sns.countplot. See slides 6 & 10 of this slide deck."
+    "objectID": "Math125/slides/16_17_conditional_probability.html#reversing-a-conditional-the-accuracy-paradox",
+    "href": "Math125/slides/16_17_conditional_probability.html#reversing-a-conditional-the-accuracy-paradox",
+    "title": "16-17. Conditional Probability",
+    "section": "Reversing a conditional – the accuracy paradox",
+    "text": "Reversing a conditional – the accuracy paradox\nA rare genetic disorder affects about 1/1000 of the population. You can test for it with a test which is 99% accurate. If a patient tests positive, how likely is it that they have the disorder?"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Jupyter Notebook Example",
-    "text": "Jupyter Notebook Example\nYour turn! Reproduce the histogram of baseball players’ salaries. the data is in OpenIntro’s “mlb” dataset. Make sure each teammate can achieve their own success at this task. When things go sideways, ask for help! Find a second dataframe you’re curious about, and make another histogram."
+    "objectID": "Math125/slides/16_17_conditional_probability.html#outline-diagrams-for-managing-cases-and-their-probabilities",
+    "href": "Math125/slides/16_17_conditional_probability.html#outline-diagrams-for-managing-cases-and-their-probabilities",
+    "title": "16-17. Conditional Probability",
+    "section": "Outline diagrams for managing cases and their probabilities",
+    "text": "Outline diagrams for managing cases and their probabilities\n\nHave the gene (1/1000)\n\ntest positive (99/100)\n\np = .00099\n\ntest negative (1/100)\n\np = .00001\n\n\nLack the gene 999/1000\n\ntest positive (1/100)\n\np = .00999\n\ntest negative (99/100)\n\np = .98901"
   },
   {
-    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
-    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
-    "title": "07. Dataviz: Histogram and Countplot",
-    "section": "Individual work",
-    "text": "Individual work\nOn webwork: 7. Dataviz – histogram and countplot"
+    "objectID": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals",
+    "href": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals",
+    "title": "16-17. Conditional Probability",
+    "section": "Tree diagrams for managing conditionals",
+    "text": "Tree diagrams for managing conditionals\n\nEach heading is a case or subcase.\nConditional probabilities on each heading.\nFinal probabilities calculated by multiplication.\nRecombine as needed, depending on the problem."
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#probability-and-trust",
+    "href": "Math125/slides/16_17_conditional_probability.html#probability-and-trust",
+    "title": "16-17. Conditional Probability",
+    "section": "Probability and Trust",
+    "text": "Probability and Trust\n\nAssign a baseline probability that a man is “trustworthy” (For simplicity we have only two possibilities – trustworthy or not.) If you are generally trusting, assign a high probabiity. If not, assign a low probability.\n… but he did something Suspicious. Assign probabilities to the Suspicious Thing, if he is trustworthy, and also if he is not. Hint. To be Sus, a thing should be more likely if he’s bad than if he’s good.\nMake an outline diagram for all for possibilities, branching on trustworthiness, then on the Thing. Calculate all probabilities.\nFind P(Trustworthy & Sus) and also P(Sus).\nCalculate P(Trustworthy | Suspicious Thing). This is called a Bayesian Update. Does this math roughly match our own reevaluations of interpersonal trust?"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals-1",
+    "href": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals-1",
+    "title": "16-17. Conditional Probability",
+    "section": "Tree diagrams for managing conditionals",
+    "text": "Tree diagrams for managing conditionals\n\nTrustworthy ()\n\nDid the thing ()\n\np=?\n\nDidn’t ()\n\np=?\n\n\nUntrustworthy ()\n\nDid the thing ()\n\np=?\n\nDidn’t ()\n\np=?"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#a-morning-ritual",
+    "href": "Math125/slides/16_17_conditional_probability.html#a-morning-ritual",
+    "title": "16-17. Conditional Probability",
+    "section": "A morning ritual",
+    "text": "A morning ritual\nEvery morning you flip a coin to decide on breakfast. If it’s heads, you have fresh fruit. If it’s tails, you enjoy a bowl of deep fried cheesy-fats. When you eat fresh fruit, you have stomach ache only 10% of the time, but when you eat garbage, you have a stomach ache 60% of the time.\n\nMake an outline diagram for these probabilities.\nYou have a stomach ache but can’t remember what you ate for breakfast. What’s the probability it was fresh fruit?"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#homework",
+    "href": "Math125/slides/16_17_conditional_probability.html#homework",
+    "title": "16-17. Conditional Probability",
+    "section": "Homework",
+    "text": "Homework\nWebwork assignment “16-17. Conditional Probability” (5 problems)"
   },
   {
     "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
@@ -1005,7 +1033,7 @@
     "href": "Math125/index.html",
     "title": "Math 125",
     "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n00. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n01. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n02. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n03. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n04-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n06. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n07. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n08. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\n09-10. Mean, Variance, and Standard Deviation\n\n\nCalculating and understanding the first of the descriptive statistics.\n\n\n\n\n\n\n11. Quantile Statistics\n\n\nCalculating and understanding min, 25%, 50%, 75%, and max\n\n\n\n\n\n\n12-13. Probability and Counting\n\n\nCalculating probabilities by counting sample spaces\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n00. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n01. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n02. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n03. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n04-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n06. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n07. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n08. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\n09-10. Mean, Variance, and Standard Deviation\n\n\nCalculating and understanding the first of the descriptive statistics.\n\n\n\n\n\n\n11. Quantile Statistics\n\n\nCalculating and understanding min, 25%, 50%, 75%, and max\n\n\n\n\n\n\n12-13. Probability and Counting\n\n\nCalculating probabilities by counting sample spaces\n\n\n\n\n\n\n14-15. Probability Laws\n\n\nCalculating probabilities from other probabilities\n\n\n\n\n\n\n16-17. Conditional Probability\n\n\nProbability, adjusted for prior knowledge.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
@@ -1218,74 +1246,228 @@
     "text": "Individual work\nOn Webwork, called “Dataviz Box and Scatter.”"
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#section",
-    "href": "Math125/slides/6_controlled_experiments.html#section",
-    "title": "06. Controlled Experiments",
-    "section": "",
-    "text": "Preparation\nReview sections 1.2.4 and 1.2.5. Read section 1.4, Experiments, and review vocabulary on the next slide."
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Preparation",
+    "text": "Preparation\nRead 2.1.3 (histograms and shape) and 2.2.1 (bar plots) and 2.2.3 (bar plots, continued)"
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
-    "href": "Math125/slides/6_controlled_experiments.html#key-vocabulary-experiments",
-    "title": "06. Controlled Experiments",
-    "section": "Key Vocabulary – experiments",
-    "text": "Key Vocabulary – experiments\nControl, randomization, replication, and blocking.\nControl Group and Treatment Group\nPlacebo and the placebo effect\nBlind and double blind experiment design\nExplanatory and response variables\nObservational study vs. experiment\nCausal inference"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#goals",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Goals",
+    "text": "Goals\n\nRead a histogram or bar chart correctly.\nIdentify when each plot type is appropriate.\nDescribe the shape of a histogram using proper vocabulary.\nGenerate your own histograms and bar charts from data using seaborn."
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
-    "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-12",
-    "title": "06. Controlled Experiments",
-    "section": "Controlled Experiment or Observational Study? (1/2)",
-    "text": "Controlled Experiment or Observational Study? (1/2)\n\nA survey of 200 pirates reveals correlation between citrus consumption and scurvy.\nChemical X results in 40% better pain reduction, compared to placebo.\nLongitudinal study tracks risk factors and health metrics for 20000 people.\nIn various societies, art is quantifiably more common after the inventions of the yoke and plow."
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#note-on-accessibility",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Note on Accessibility:",
+    "text": "Note on Accessibility:\nData visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be."
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
-    "href": "Math125/slides/6_controlled_experiments.html#controlled-experiment-or-observational-study-22",
-    "title": "06. Controlled Experiments",
-    "section": "Controlled Experiment or Observational Study? (2/2)",
-    "text": "Controlled Experiment or Observational Study? (2/2)\n\nA study links sports-related concussions to academic outcomes.\nWatering some plants more than others affects their growth.\nA professor investigates whether front-row seating is linked to better learning outcomes.\nAt random, I present some users of my social media app with one of two feeds, comparing user engagement and ad clicks."
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-aka-count-plots",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Bar Charts (aka Count Plots)",
+    "text": "Bar Charts (aka Count Plots)\nA bar chart represents the distribution of a categorical variable, showing how many data cases are in each category. It answers questions like…\n\nHow many of each major do we have on campus?\nWhat home languages are spoken in Potsdam, and how many households speak each language?\nHow many patients are assigned to each nurse?\n\nTo make a bar chart, place the categories (majors, languages, nurses) on one axis (normally “\\(x\\)”). From each, make a rectangular bar proportional to the number in that category. Leave a gap between the bars. Mark and label the other axis so the counts can be inferred."
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
-    "href": "Math125/slides/6_controlled_experiments.html#experiments-are-hard.-why-bother",
-    "title": "06. Controlled Experiments",
-    "section": "Experiments are hard. Why bother?",
-    "text": "Experiments are hard. Why bother?\nWhat is a causal conclusion? What is the weakness of an observational study? How does the controlled experiment overcome this weakness?"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-example",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Bar Charts – example",
+    "text": "Bar Charts – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.countplot(data=df, x= 'type')\n\n\n\n\n\n\n\n\n\nFigure 1: Bar Chart for Starbucks food item types"
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
-    "href": "Math125/slides/6_controlled_experiments.html#design-for-ethical-science",
-    "title": "06. Controlled Experiments",
-    "section": "Design for ethical science",
-    "text": "Design for ethical science\nPost Traumatic Stress Disorder (PTSD) sufferers are recruited for a study. Intake interviews classify them by trauma type and symptom severity. Describe a controlled experiment to test the effectiveness of three treatment protocols (cognitive behavioral therapy, group therapy, or no therapy at all).\n\nWould you use placebo in this study?\nHow would you decide which patients go to which treatment type?\nWho should assess patient improvement? (patient? therapist? researcher? other?)\nWhat ethical safeguards are needed?\nIn principle, could your study show that one therapy is better for treating PTSD than another?"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#bar-charts-understanding",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Bar Charts – understanding",
+    "text": "Bar Charts – understanding\n\nCan the bars be rearranged on the \\(x\\)-axis? Would that change the meaning of the chart?\nDo the bar colors matter? Should they be the same or different?\nCan a bar chart illustrate the relationship between two different categorical variables? For example, home language related to religious heritage?"
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#swifties-unite",
-    "href": "Math125/slides/6_controlled_experiments.html#swifties-unite",
-    "title": "06. Controlled Experiments",
-    "section": "Swifties unite!",
-    "text": "Swifties unite!\nOn 2024-09-10, Taylor Swift endorsed Kamala Harris for president. Hypothetically, you talk to 1000 people aware of the endorsement, and 1000 who are not. Those who noticed it show a 4 point shift toward Harris for president. What can be concluded about the political power of Taylor Swift?"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-purpose",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Histograms – purpose",
+    "text": "Histograms – purpose\nA histogram is similar, but represents the distribution of a quantitative variable. It answers questions like\n\nWhat sorts of GPA’s do students on campus have, and which GPA ranges are most common?\nHow much do Potsdam households spend weekly on groceries? Which amounts are common, which are outliers, and which are unheard of?\nNurses’ visits with patients take a variety of time. How do the durations of visits vary? Are most visits short, or is there a wide variety of times?"
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
-    "href": "Math125/slides/6_controlled_experiments.html#the-power-of-yoga",
-    "title": "06. Controlled Experiments",
-    "section": "The Power of Yoga",
-    "text": "The Power of Yoga\nThere is some indication that practicing yoga has positive health effects. In small groups, design a study which could determine whether yoga mitigates depressive symptoms in particular. Address these concerns:\n\nWhat treatment groups will you need?\nHow large should the study be? How might you recruit for it?\nHow will volunteers be assigned to treatment groups?\nWill you use placebo? How?\nWill you use blocking? How?\nHow long will your study take?\nHow will “depressive symptoms” be measured? By whom?"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-method",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Histograms – method",
+    "text": "Histograms – method\nTo draw a histogram, the x-axis is scaled to show the entire range of data values and divided into equal-sized intervals (e.g. 5-10, 10-15, 15-20) called “bins.” Rectangular bars are drawn above each bin, showing how frequently the data values fall into that range. The y-axis is labeled “count” or “frequency.” Tall bars indicate common data ranges, and short bars indicate rare data ranges. Unlike a bar chart, the bars touch each other."
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
-    "href": "Math125/slides/6_controlled_experiments.html#no-free-lunch",
-    "title": "06. Controlled Experiments",
-    "section": "No free lunch",
-    "text": "No free lunch\nGive an example of a study for which blinding and double-blinding are impossible or unethical. Give an example of a study for which controlling the explanatory variable is impossible or unethical. In pharmacology, is it possible to know (causally, statistically) that a drug has specific biological effects without understanding how or why?"
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-example",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Histograms – example",
+    "text": "Histograms – example\n\nimport seaborn as sns\ndf = pd.read_csv(\"starbucks.csv\")\nsns.displot(data=df, x= 'calories', bins=10)\n\n\n\n\n\n\n\n\n\nFigure 2: Histogram for Starbucks food item Calorie content"
   },
   {
-    "objectID": "Math125/slides/6_controlled_experiments.html#homework",
-    "href": "Math125/slides/6_controlled_experiments.html#homework",
-    "title": "06. Controlled Experiments",
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-understanding",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Histograms – Understanding",
+    "text": "Histograms – Understanding\n\nCan the bins and rectangles be rearranged on the \\(x\\)-axis? Would that change the meaning of the plot?\nShould the bars be the same color or different colors?\nWe’re free to choose the number of bins, which effects the width of the bars. How should we decide how many to use?\nIs it necessary to label the \\(y\\)-axis? Why or why not?\nCan a histogram show the relationship between one variable and another? For example, can we compare the Calorie counts of various categories of food item (bakery, sandwich, etc) using a histogram?"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histograms-and-bar-charts-comparison",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Histograms and Bar Charts – Comparison",
+    "text": "Histograms and Bar Charts – Comparison\nIn common:\n\nData values on x-axis.\nFrequency counts on y-axis,\nRectangles whose height shows the count.\nApplicable to a single variable only (by default).\n\nDifferences:\n\nBar for categorical, histogram for quantitative.\nBar can be freely rearranged, histogram must be in numerical order.\nBar has gaps, histogram none."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#choosing-the-right-visualization",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Choosing the right visualization",
+    "text": "Choosing the right visualization\nIn each scenario, should we favor a histogram, a bar chart, or neither? Discuss with your group and share your answers with the class.\n\nTo understand the frequency distribution of six colors of candy.\nTo understand the variety of costs of child care in Potsdam.\nTo reveal a link between religious identity and political party affiliation.\nTo reveal a link between time spent studying and course grade.\nTo visualize the variety of total bill prices at a given restaurant.\nTo show an answer to the question: How many speakers of each language do we have in this classroom?"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-modality",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Histogram sense – modality",
+    "text": "Histogram sense – modality\nA distinct peak or hill in the histogram shows a broad range of common values. A histogram is unimodal if it has one main peak, bimodal if it has two, trimodal if it has three, etc.\n\n\nUnimodal\n\nsns.displot(data=df, x= 'poverty')\n\n\n\n\n\n\n\n\n\nFigure 3: Histogram – counties’ poverty rates\n\n\n\n\n\n\nBimodal\n\nsns.displot(data=df, x= 'SLG')\n\n\n\n\n\n\n\n\n\nFigure 4: Histogram – MLB players’ SLG"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#histogram-sense-skew",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Histogram sense – skew",
+    "text": "Histogram sense – skew\nSkew is an asymmetry showing a longer, heavier tail on one side than the other.\n\n\nSkewed Left\n\nsns.displot(data=df, x= 'homeownership')\n\n\n\n\n\n\n\n\n\nFigure 5: Histogram – counties’ homeownership rates\n\n\n\n\n\n\nSkewed Right\n\nsns.displot(data=df, x='salary')\n\n\n\n\n\n\n\n\n\nFigure 6: Histogram – MLB players’ salary’"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#features-of-a-histogram-mean-average",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Features of a histogram – mean (average)",
+    "text": "Features of a histogram – mean (average)\nThe average value (or mean) of a data variable can be read from its histogram. The mean is the center of mass. Imagine balancing the entire histogram (all rectangles as one unit) on your finger from below. The balance point is the mean.\n\n\n\n\n\n\n\n\nFigure 7: Histogram – counties’ homeownership rates"
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#describe-it",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Describe it!",
+    "text": "Describe it!\nBelow is a histogram for a “Gamma(3,1)” random variable. Describe its modality, its skew, and its mean as completely as you can. Confer with your group and share with the class.\n\n\n\n\n\n\n\n\nFigure 8: Gamma(3,1) random variable."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#make-your-own-plots-basic-process",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Make your own plots – basic process",
+    "text": "Make your own plots – basic process\n\nFetch data with !wget\nRead data with pd.read_csv\nimport seaborn as sns\nsns.displot or sns.countplot. See slides 6 & 10 of this slide deck."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#jupyter-notebook-example",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Jupyter Notebook Example",
+    "text": "Jupyter Notebook Example\nYour turn! Reproduce the histogram of baseball players’ salaries. the data is in OpenIntro’s “mlb” dataset. Make sure each teammate can achieve their own success at this task. When things go sideways, ask for help! Find a second dataframe you’re curious about, and make another histogram."
+  },
+  {
+    "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
+    "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#individual-work",
+    "title": "07. Dataviz: Histogram and Countplot",
+    "section": "Individual work",
+    "text": "Individual work\nOn webwork: 7. Dataviz – histogram and countplot"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#preparatory-work",
+    "href": "Math125/slides/14_15_probability_laws.html#preparatory-work",
+    "title": "14-15. Probability Laws",
+    "section": "Preparatory work",
+    "text": "Preparatory work\nRead section 3.1, with special attention on the Addition Rule, the General Addition Rule, the Complement Rule, and the Multiplication Rule."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#combining-probabilities",
+    "href": "Math125/slides/14_15_probability_laws.html#combining-probabilities",
+    "title": "14-15. Probability Laws",
+    "section": "Combining probabilities",
+    "text": "Combining probabilities\nThe game “Farkle” involves rolling six dice at once. The player receives 1500 points for a “straight” (every number 1-6 is represented in the result), but also receives 1500 points for “three pair” (for example, rolling 2, 2, 4, 4, 5, 5).\nTheir probabilities are P(straight) = 0.015 and P(three pair) = 0.038.\n\nWhat is the probability of getting a straight or three pair?\nWhat is the probability of getting a straight and three pair (on the same roll)?\nWhat is the probability of getting a straight, then three pair (on the next roll)?\nWhat is the probability of not getting a straight?"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#drawing-the-line",
+    "href": "Math125/slides/14_15_probability_laws.html#drawing-the-line",
+    "title": "14-15. Probability Laws",
+    "section": "Drawing the line",
+    "text": "Drawing the line\nA 52-card deck is shuffled.\n\nWhat is the probability that the top card is 2♡?\nWhat is the probability that the second card is 2♣?\nWhat is the probability that the top two cards, in order, are 2♡ and 2♣? (Caution: It’s a trap!)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply",
+    "href": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply",
+    "title": "14-15. Probability Laws",
+    "section": "When to add? When to multiply?",
+    "text": "When to add? When to multiply?\nA and B are events. Their probabilities are P(A) and P(B).\nP(A)+P(B) calculates __________, provided _________.\nP(A)*P(B) calculates __________, provided _________.\n1-P(A) calculates ___________."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply-1",
+    "href": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply-1",
+    "title": "14-15. Probability Laws",
+    "section": "When to add? When to multiply?",
+    "text": "When to add? When to multiply?\nA and B are events. Their probabilities are P(A) and P(B).\nP(A)+P(B) calculates P(A or B), provided A and B are disjoint (mutually exclusive).\nP(A)*P(B) calculates P(A and B), provided A and B are independent.\n1-P(A) calculates P(not A)."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#sum-law-basic",
+    "href": "Math125/slides/14_15_probability_laws.html#sum-law-basic",
+    "title": "14-15. Probability Laws",
+    "section": "Sum law (basic)",
+    "text": "Sum law (basic)\n\\[P(A \\text{ or } B) = P(A)+P(B)\\]\n…when A and B are disjoint (mutually exclusive), meaning they cannot both happen. If events aren’t disjoint, this rule does not apply.\n\n\n\n\n\n\n\n\nFigure 1: Disjoint sets"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#sum-law-full",
+    "href": "Math125/slides/14_15_probability_laws.html#sum-law-full",
+    "title": "14-15. Probability Laws",
+    "section": "Sum law (full)",
+    "text": "Sum law (full)\nIf A and B can occur together, then P(A)+P(B) counts P(A and B) twice. If we can calculate that, and we can correct for it:\n\\[ P(A \\text{ or } B) = P(A)+P(B) - P(A \\text{ and } B)\\]\n\n\n\n\n\n\n\n\nFigure 2: Non-disjoint sets"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#calculate-using-the-laws",
+    "href": "Math125/slides/14_15_probability_laws.html#calculate-using-the-laws",
+    "title": "14-15. Probability Laws",
+    "section": "Calculate using the laws",
+    "text": "Calculate using the laws\nP(wearing a red shirt today) = 0.1\nP(wearing a purple shirt today) = 0.3\nP(having a headache today) = 0.1\n\nWhat is the probability of wearing a red or purple shirt today?\nWhat is the probability of wearing a purple shirt and having a headache today?\nCan you identify any implicit assumptions used in your calculations above?"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#product-law-basic",
+    "href": "Math125/slides/14_15_probability_laws.html#product-law-basic",
+    "title": "14-15. Probability Laws",
+    "section": "Product law (basic)",
+    "text": "Product law (basic)\nP(A and B) = P(A)*P(B) when A and B are independent, meaning that neither event makes the other more or less likely. (If events are dependent, this law does not apply.)\n\n\\(P(\\text{three coins all land heads}) = \\frac{1}{2} \\cdot \\frac{1}{2} \\cdot \\frac{1}{2}\\)\n\\(P(\\text{critical hit, twice}) = 1/20 \\cdot 1/20\\)\n\\(P(\\text{ card is a red two}) = 1/2  *  1/13\\)\n\\(P(\\text{both parents have SCT sickle cell trait}) = 0.006 \\cdot 0.006\\) (but this calculation is naive and wrong…)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#solve-both-and-compare",
+    "href": "Math125/slides/14_15_probability_laws.html#solve-both-and-compare",
+    "title": "14-15. Probability Laws",
+    "section": "Solve both and compare",
+    "text": "Solve both and compare\nWe roll a d6.\n\nCalculate P(the result is even)\nCalculate P(the result is prime)\nCalculate P(the result is even and prime)\n\nA person is surveyed at random.\nP(the person is male) = 0.5\nP(the person likes hats) = 0.4\n\nCalculate P(the person is male and likes hats)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#product-law-full",
+    "href": "Math125/slides/14_15_probability_laws.html#product-law-full",
+    "title": "14-15. Probability Laws",
+    "section": "Product law (full)",
+    "text": "Product law (full)\n\\[ P(A \\text{ and } B) = P(A)*P(B | A)\\]\nThis law always works, but requires a version of P(B) which recalculated under the assumption that A is true. This is called the conditional probability of \\(B\\) given \\(A\\) (The topic of the next slide deck)\nP(even and prime) = 0.5*P(a given even number is prime)\nP(male who likes hats) = 0.5*P(a given male likes hats)\nP(both parents have SCT) = 0.006*P(second parent has SCT, assuming first parent does)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#putting-it-all-together",
+    "href": "Math125/slides/14_15_probability_laws.html#putting-it-all-together",
+    "title": "14-15. Probability Laws",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nP(wearing a red shirt today) = 0.1\nP(wearing a purple shirt today) = 0.3\nP(having a headache today) = 0.1\nWhat is the probability of wearing a purple shirt, or having a headache? Your work should combine two of our probability laws."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#homework",
+    "href": "Math125/slides/14_15_probability_laws.html#homework",
+    "title": "14-15. Probability Laws",
     "section": "Homework",
-    "text": "Homework\n\nControlled Experiments, on webwork."
+    "text": "Homework\nSolve webwork problems “14-15. Probability Laws”"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-professor",

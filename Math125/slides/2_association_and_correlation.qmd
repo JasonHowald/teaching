@@ -116,7 +116,7 @@ df = pd.read_csv("../openintro.csv/cdc.samp.csv")
 # Create plot with clear labels
 sns.regplot(data=df, x='age', y='height')
 plt.xlabel("Age (years)")
-plt.ylabel("Height (lbs)")
+plt.ylabel("Height (in)")
 plt.title(r"Age vs. Height ($\rho = -0.30$)")
 plt.show()
 
