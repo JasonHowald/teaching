@@ -81,8 +81,8 @@ $P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}
 
 
 :::: {.columns style="display: flex; gap: 50px;"}
-
-:::{.column width="50%"}
+ 
+::: {.column width="50%"}
 
 Formula works for:
 
@@ -93,7 +93,7 @@ Formula works for:
 
 :::
 
-:::{.column width="50%"}
+::: {.column width="50%"}
 
 Formula fails for:
 

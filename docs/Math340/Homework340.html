@@ -120,10 +120,11 @@ window.Quarto = {
   <li><a href="#syntax-or-semantics" id="toc-syntax-or-semantics" class="nav-link" data-scroll-target="#syntax-or-semantics"><span class="header-section-number">1.2</span> Syntax or Semantics</a></li>
   <li><a href="#double-negative" id="toc-double-negative" class="nav-link" data-scroll-target="#double-negative"><span class="header-section-number">1.3</span> Double negative</a></li>
   <li><a href="#algebra-as-proof" id="toc-algebra-as-proof" class="nav-link" data-scroll-target="#algebra-as-proof"><span class="header-section-number">1.4</span> Algebra as proof</a></li>
-  <li><a href="#the-smallest-number" id="toc-the-smallest-number" class="nav-link" data-scroll-target="#the-smallest-number"><span class="header-section-number">1.5</span> The smallest number</a></li>
-  <li><a href="#flat-earth" id="toc-flat-earth" class="nav-link" data-scroll-target="#flat-earth"><span class="header-section-number">1.6</span> Flat Earth</a></li>
-  <li><a href="#cup-and-cap-distribution" id="toc-cup-and-cap-distribution" class="nav-link" data-scroll-target="#cup-and-cap-distribution"><span class="header-section-number">1.7</span> <span class="math inline">\(\cup\)</span> and <span class="math inline">\(\cap\)</span> distribution</a></li>
-  <li><a href="#getting-even" id="toc-getting-even" class="nav-link" data-scroll-target="#getting-even"><span class="header-section-number">1.8</span> Getting even</a></li>
+  <li><a href="#absolute-unit" id="toc-absolute-unit" class="nav-link" data-scroll-target="#absolute-unit"><span class="header-section-number">1.5</span> Absolute Unit</a></li>
+  <li><a href="#the-smallest-number" id="toc-the-smallest-number" class="nav-link" data-scroll-target="#the-smallest-number"><span class="header-section-number">1.6</span> The smallest number</a></li>
+  <li><a href="#flat-earth" id="toc-flat-earth" class="nav-link" data-scroll-target="#flat-earth"><span class="header-section-number">1.7</span> Flat Earth</a></li>
+  <li><a href="#cup-and-cap-distribution" id="toc-cup-and-cap-distribution" class="nav-link" data-scroll-target="#cup-and-cap-distribution"><span class="header-section-number">1.8</span> <span class="math inline">\(\cup\)</span> and <span class="math inline">\(\cap\)</span> distribution</a></li>
+  <li><a href="#getting-even" id="toc-getting-even" class="nav-link" data-scroll-target="#getting-even"><span class="header-section-number">1.9</span> Getting even</a></li>
   </ul></li>
   <li><a href="#set-theory" id="toc-set-theory" class="nav-link" data-scroll-target="#set-theory"><span class="header-section-number">2</span> Set Theory</a>
   <ul class="collapse">
@@ -226,8 +227,12 @@ x = 2  \,\,\underline{\hspace{1in}}\,\, x = 1\\
 <li>Is the larger argument correct for <em>all</em> <span class="math inline">\(x\)</span>, for <em>some certain</em> <span class="math inline">\(x\)</span>, or for <em>only</em> <span class="math inline">\(x=1\)</span> or <span class="math inline">\(x=2\)</span>?</li>
 </ul>
 </section>
-<section id="the-smallest-number" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="the-smallest-number"><span class="header-section-number">1.5</span> The smallest number</h2>
+<section id="absolute-unit" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="absolute-unit"><span class="header-section-number">1.5</span> Absolute Unit</h2>
+<p>Let <span class="math inline">\(f(x) = \frac{x}{|x|}\)</span>, a function defined only for nonzero inputs <span class="math inline">\(x\)</span>. Prove that for all nonzero <span class="math inline">\(x\)</span>, <span class="math inline">\(f(x) = \pm 1\)</span>, using a proof structure that works by cases.</p>
+</section>
+<section id="the-smallest-number" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="the-smallest-number"><span class="header-section-number">1.6</span> The smallest number</h2>
 <p>Consider the following proof:</p>
 <blockquote class="blockquote">
 <p>Let <span class="math inline">\(\varepsilon\)</span> be the smallest positive real number. Then <span class="math inline">\(0 &lt; \varepsilon\)</span>. Dividing both sides of this equation by <span class="math inline">\(2\)</span>, we have <span class="math inline">\(0 &lt; \frac{\varepsilon}{2}\)</span>. Adding <span class="math inline">\(\frac{\varepsilon}{2}\)</span> to both sides, we have <span class="math inline">\(\frac{\varepsilon}{2} &lt; \varepsilon\)</span>. We have shown that <span class="math inline">\(\frac{\varepsilon}{2}\)</span> is positive and smaller than <span class="math inline">\(\varepsilon\)</span>, but this is directly at odds with the nature (first sentence) of <span class="math inline">\(\varepsilon\)</span>.</p>
@@ -244,8 +249,8 @@ x = 2  \,\,\underline{\hspace{1in}}\,\, x = 1\\
 <li>What proof structure is used above? (i.e., direct, contrapositive, contradiction, etc)?</li>
 </ul>
 </section>
-<section id="flat-earth" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="flat-earth"><span class="header-section-number">1.6</span> Flat Earth</h2>
+<section id="flat-earth" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="flat-earth"><span class="header-section-number">1.7</span> Flat Earth</h2>
 <p>Consider the following joke argument:</p>
 <blockquote class="blockquote">
 <p>If the Earth were flat, then in the past thousands of years, cats would have knocked everything off the edge by now. They haven’t done so, so the Earth isn’t flat.</p>
@@ -254,13 +259,13 @@ x = 2  \,\,\underline{\hspace{1in}}\,\, x = 1\\
 <li>Is this an argument by contradiction, by contrapositive, or by modus tollens? Explain.</li>
 </ul>
 </section>
-<section id="cup-and-cap-distribution" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="cup-and-cap-distribution"><span class="header-section-number">1.7</span> <span class="math inline">\(\cup\)</span> and <span class="math inline">\(\cap\)</span> distribution</h2>
+<section id="cup-and-cap-distribution" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="cup-and-cap-distribution"><span class="header-section-number">1.8</span> <span class="math inline">\(\cup\)</span> and <span class="math inline">\(\cap\)</span> distribution</h2>
 <p>Prove that <span class="math inline">\(A \cap (B \cup C) \subseteq
 (A \cap B) \cup (A \cap C)\)</span>. The goal is to reason explicitly from the arbitrary particular to the general. Remember that any subset statement is a generalization about all elements of one set.</p>
 </section>
-<section id="getting-even" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="getting-even"><span class="header-section-number">1.8</span> Getting even</h2>
+<section id="getting-even" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="getting-even"><span class="header-section-number">1.9</span> Getting even</h2>
 <p>Prove that for all integers <span class="math inline">\(n\)</span>, <span class="math inline">\(n^2+n\)</span> is even.</p>
 </section>
 </section>

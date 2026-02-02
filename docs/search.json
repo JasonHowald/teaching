@@ -4,7 +4,7 @@
     "href": "Math340/Homework340.html",
     "title": "Homework Problems",
     "section": "",
-    "text": "Write a truth table for “(not \\(P\\)) and (not \\(Q\\))”. This could be called a “neither nor” truth table. Using that, infer a truth table for “NOT ((not \\(P\\)) and (not \\(Q\\)))”. This could be called, awkwardly, a truth table for “not neither nor”. It should exactly match a more familiar table. Which one?\n\n\n\nFor each logical critique, identify whether it is primarily a syntax issue or a semantic issue.\n\nYour parentheses don’t match.\nYour premise is usually true but not always true.\nYour first premise uses the word “political” with one meaning, but your second premise uses the word “political” with a slightly different meaning.\nThe form of the argument is “if \\(P\\) then \\(Q\\). Moreover \\(Q\\). Therefore \\(P\\).” This is not a valid argument structure.\nYour handwriting is messy.\nYour conclusion is a generalization, but I know a specific exception. So something in your argument has to be wrong.\n\n\n\n\nIf \\(P\\) is an assertion, does \\(\\neg \\neg P\\) have the same meaning as \\(P\\)? Explain.\n\n\n\nConsider this algebraic proof:\n\\[\n\\begin{align}\nx^2 = 3x-2\\\\\nx^2 -3x + 2 = 0\\\\\n(x-2)(x-1) = 0\\\\\nx-2 = 0  \\,\\,\\underline{\\hspace{1in}}\\,\\, x-1 = 0\\\\\nx = 2  \\,\\,\\underline{\\hspace{1in}}\\,\\, x = 1\\\\\n\\end{align}\n\\]\n\nThe blank spaces represent the word “or” or “and”. Which is most appropriate, and why?\nIf this is a direct proof of something, what does it establish?\n\nIf \\(x^2 = 3x-2\\) then \\(x\\) is 2 and/or 1.\n\nThe numbers \\(1\\) and \\(2\\) are solutions to the equation \\(x^2 = 3x-2\\)\n\\(x\\) is equal to both \\(1\\) and \\(2\\).\nAlgebra is awesome.\n\nIs the larger argument correct for all \\(x\\), for some certain \\(x\\), or for only \\(x=1\\) or \\(x=2\\)?\n\n\n\n\nConsider the following proof:\n\nLet \\(\\varepsilon\\) be the smallest positive real number. Then \\(0 &lt; \\varepsilon\\). Dividing both sides of this equation by \\(2\\), we have \\(0 &lt; \\frac{\\varepsilon}{2}\\). Adding \\(\\frac{\\varepsilon}{2}\\) to both sides, we have \\(\\frac{\\varepsilon}{2} &lt; \\varepsilon\\). We have shown that \\(\\frac{\\varepsilon}{2}\\) is positive and smaller than \\(\\varepsilon\\), but this is directly at odds with the nature (first sentence) of \\(\\varepsilon\\).\n\n\nWhat is an appropriate conclusion of the proof?\n\n\\(\\frac{\\varepsilon}{2} &lt; \\varepsilon\\)\nThere must be an algebraic mistake.\nThere is no smallest positive real number.\nThere may be a smallest positive real number, but it isn’t \\(\\varepsilon\\)\n\\(\\varepsilon\\) is the smallest positive real number but there is a smaller positive real number, namely \\(\\frac{\\varepsilon}{2}\\)\n\nWhat proof structure is used above? (i.e., direct, contrapositive, contradiction, etc)?\n\n\n\n\nConsider the following joke argument:\n\nIf the Earth were flat, then in the past thousands of years, cats would have knocked everything off the edge by now. They haven’t done so, so the Earth isn’t flat.\n\n\nIs this an argument by contradiction, by contrapositive, or by modus tollens? Explain.\n\n\n\n\nProve that \\(A \\cap (B \\cup C) \\subseteq\n(A \\cap B) \\cup (A \\cap C)\\). The goal is to reason explicitly from the arbitrary particular to the general. Remember that any subset statement is a generalization about all elements of one set.\n\n\n\nProve that for all integers \\(n\\), \\(n^2+n\\) is even."
+    "text": "Write a truth table for “(not \\(P\\)) and (not \\(Q\\))”. This could be called a “neither nor” truth table. Using that, infer a truth table for “NOT ((not \\(P\\)) and (not \\(Q\\)))”. This could be called, awkwardly, a truth table for “not neither nor”. It should exactly match a more familiar table. Which one?\n\n\n\nFor each logical critique, identify whether it is primarily a syntax issue or a semantic issue.\n\nYour parentheses don’t match.\nYour premise is usually true but not always true.\nYour first premise uses the word “political” with one meaning, but your second premise uses the word “political” with a slightly different meaning.\nThe form of the argument is “if \\(P\\) then \\(Q\\). Moreover \\(Q\\). Therefore \\(P\\).” This is not a valid argument structure.\nYour handwriting is messy.\nYour conclusion is a generalization, but I know a specific exception. So something in your argument has to be wrong.\n\n\n\n\nIf \\(P\\) is an assertion, does \\(\\neg \\neg P\\) have the same meaning as \\(P\\)? Explain.\n\n\n\nConsider this algebraic proof:\n\\[\n\\begin{align}\nx^2 = 3x-2\\\\\nx^2 -3x + 2 = 0\\\\\n(x-2)(x-1) = 0\\\\\nx-2 = 0  \\,\\,\\underline{\\hspace{1in}}\\,\\, x-1 = 0\\\\\nx = 2  \\,\\,\\underline{\\hspace{1in}}\\,\\, x = 1\\\\\n\\end{align}\n\\]\n\nThe blank spaces represent the word “or” or “and”. Which is most appropriate, and why?\nIf this is a direct proof of something, what does it establish?\n\nIf \\(x^2 = 3x-2\\) then \\(x\\) is 2 and/or 1.\n\nThe numbers \\(1\\) and \\(2\\) are solutions to the equation \\(x^2 = 3x-2\\)\n\\(x\\) is equal to both \\(1\\) and \\(2\\).\nAlgebra is awesome.\n\nIs the larger argument correct for all \\(x\\), for some certain \\(x\\), or for only \\(x=1\\) or \\(x=2\\)?\n\n\n\n\nLet \\(f(x) = \\frac{x}{|x|}\\), a function defined only for nonzero inputs \\(x\\). Prove that for all nonzero \\(x\\), \\(f(x) = \\pm 1\\), using a proof structure that works by cases.\n\n\n\nConsider the following proof:\n\nLet \\(\\varepsilon\\) be the smallest positive real number. Then \\(0 &lt; \\varepsilon\\). Dividing both sides of this equation by \\(2\\), we have \\(0 &lt; \\frac{\\varepsilon}{2}\\). Adding \\(\\frac{\\varepsilon}{2}\\) to both sides, we have \\(\\frac{\\varepsilon}{2} &lt; \\varepsilon\\). We have shown that \\(\\frac{\\varepsilon}{2}\\) is positive and smaller than \\(\\varepsilon\\), but this is directly at odds with the nature (first sentence) of \\(\\varepsilon\\).\n\n\nWhat is an appropriate conclusion of the proof?\n\n\\(\\frac{\\varepsilon}{2} &lt; \\varepsilon\\)\nThere must be an algebraic mistake.\nThere is no smallest positive real number.\nThere may be a smallest positive real number, but it isn’t \\(\\varepsilon\\)\n\\(\\varepsilon\\) is the smallest positive real number but there is a smaller positive real number, namely \\(\\frac{\\varepsilon}{2}\\)\n\nWhat proof structure is used above? (i.e., direct, contrapositive, contradiction, etc)?\n\n\n\n\nConsider the following joke argument:\n\nIf the Earth were flat, then in the past thousands of years, cats would have knocked everything off the edge by now. They haven’t done so, so the Earth isn’t flat.\n\n\nIs this an argument by contradiction, by contrapositive, or by modus tollens? Explain.\n\n\n\n\nProve that \\(A \\cap (B \\cup C) \\subseteq\n(A \\cap B) \\cup (A \\cap C)\\). The goal is to reason explicitly from the arbitrary particular to the general. Remember that any subset statement is a generalization about all elements of one set.\n\n\n\nProve that for all integers \\(n\\), \\(n^2+n\\) is even."
   },
   {
     "objectID": "Math340/Homework340.html#not-neither",
@@ -33,6 +33,13 @@
     "title": "Homework Problems",
     "section": "",
     "text": "Consider this algebraic proof:\n\\[\n\\begin{align}\nx^2 = 3x-2\\\\\nx^2 -3x + 2 = 0\\\\\n(x-2)(x-1) = 0\\\\\nx-2 = 0  \\,\\,\\underline{\\hspace{1in}}\\,\\, x-1 = 0\\\\\nx = 2  \\,\\,\\underline{\\hspace{1in}}\\,\\, x = 1\\\\\n\\end{align}\n\\]\n\nThe blank spaces represent the word “or” or “and”. Which is most appropriate, and why?\nIf this is a direct proof of something, what does it establish?\n\nIf \\(x^2 = 3x-2\\) then \\(x\\) is 2 and/or 1.\n\nThe numbers \\(1\\) and \\(2\\) are solutions to the equation \\(x^2 = 3x-2\\)\n\\(x\\) is equal to both \\(1\\) and \\(2\\).\nAlgebra is awesome.\n\nIs the larger argument correct for all \\(x\\), for some certain \\(x\\), or for only \\(x=1\\) or \\(x=2\\)?"
+  },
+  {
+    "objectID": "Math340/Homework340.html#absolute-unit",
+    "href": "Math340/Homework340.html#absolute-unit",
+    "title": "Homework Problems",
+    "section": "",
+    "text": "Let \\(f(x) = \\frac{x}{|x|}\\), a function defined only for nonzero inputs \\(x\\). Prove that for all nonzero \\(x\\), \\(f(x) = \\pm 1\\), using a proof structure that works by cases."
   },
   {
     "objectID": "Math340/Homework340.html#the-smallest-number",
@@ -784,468 +791,6 @@
     "text": "Homework\n\nControlled Experiments, on webwork."
   },
   {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#preparation-work",
-    "href": "Math125/slides/16_17_conditional_probability.html#preparation-work",
-    "title": "16-17. Conditional Probability",
-    "section": "Preparation work",
-    "text": "Preparation work\nRead all of section 3.2 (pp. 95-108)"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#review-two-multiplication-rules",
-    "href": "Math125/slides/16_17_conditional_probability.html#review-two-multiplication-rules",
-    "title": "16-17. Conditional Probability",
-    "section": "Review – two multiplication rules",
-    "text": "Review – two multiplication rules\nMultiplication rule – simplistic\n(works when \\(A\\) and \\(B\\) are independent) \\[ P(A \\text{ and } B) = P(A)*P(B)\\]\nMultiplication rule – full\n(just works) \\[ P(A \\text{ and } B) = P(A)*P(B | A)\\]\n\\[P(\\text{drawing two aces}) = \\frac{4}{52} \\cdot \\frac{3}{51}\\]\n\\(P(B | A)\\) “Probably of B given A” is a conditional probability. It’s the probability of \\(B\\), adjusted for condition that \\(A\\) is known."
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#examples-of-conditional-probability",
-    "href": "Math125/slides/16_17_conditional_probability.html#examples-of-conditional-probability",
-    "title": "16-17. Conditional Probability",
-    "section": "Examples of conditional probability",
-    "text": "Examples of conditional probability\nU = You are using an umbrella.\nR = It’s raining.\nP(U) asks “How likely are you to use an umbrella, at any time?”\nP(U | R) asks “When it’s raining, how likely are you to use an umbrella?”\nP(R | U) asks “You’re using an umbrella. What’s the probability of rain?”"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#solving-for-pba",
-    "href": "Math125/slides/16_17_conditional_probability.html#solving-for-pba",
-    "title": "16-17. Conditional Probability",
-    "section": "Solving for P(B|A)",
-    "text": "Solving for P(B|A)\n\\[ P(A\\text{ and } B) = P(A) * P(B | A)\\]\ncan be converted to\n\\[P(B|A) = \\frac{P(A\\text{ and } B)}{P(A)}\\]\nDepending on which two we know, we may use them to calculate the third."
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#order-by-probability-least-likely-to-most-likely",
-    "href": "Math125/slides/16_17_conditional_probability.html#order-by-probability-least-likely-to-most-likely",
-    "title": "16-17. Conditional Probability",
-    "section": "Order by probability (least likely to most likely)",
-    "text": "Order by probability (least likely to most likely)\n\nThe probability of a headache.\nThe probability of a headache, given car accident.\nThe probability of a headache, given you have the flu.\nThe probability of a headache, given you spent the day at the spa.\nThe probability of a headache, after 24 hours of video games."
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#compare-and-contrast",
-    "href": "Math125/slides/16_17_conditional_probability.html#compare-and-contrast",
-    "title": "16-17. Conditional Probability",
-    "section": "Compare and contrast",
-    "text": "Compare and contrast\nRank in order, according to your opinion:\n\\[P(\\text{headache} | \\text{flu})\\]\n\\[P(\\text{flu} | \\text{headache})\\]\n\\[P(\\text{flu and headache})\\]"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#reversing-a-conditional-the-accuracy-paradox",
-    "href": "Math125/slides/16_17_conditional_probability.html#reversing-a-conditional-the-accuracy-paradox",
-    "title": "16-17. Conditional Probability",
-    "section": "Reversing a conditional – the accuracy paradox",
-    "text": "Reversing a conditional – the accuracy paradox\nA rare genetic disorder affects about 1/1000 of the population. You can test for it with a test which is 99% accurate. If a patient tests positive, how likely is it that they have the disorder?"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#outline-diagrams-for-managing-cases-and-their-probabilities",
-    "href": "Math125/slides/16_17_conditional_probability.html#outline-diagrams-for-managing-cases-and-their-probabilities",
-    "title": "16-17. Conditional Probability",
-    "section": "Outline diagrams for managing cases and their probabilities",
-    "text": "Outline diagrams for managing cases and their probabilities\n\nHave the gene (1/1000)\n\ntest positive (99/100)\n\np = .00099\n\ntest negative (1/100)\n\np = .00001\n\n\nLack the gene 999/1000\n\ntest positive (1/100)\n\np = .00999\n\ntest negative (99/100)\n\np = .98901"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals",
-    "href": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals",
-    "title": "16-17. Conditional Probability",
-    "section": "Tree diagrams for managing conditionals",
-    "text": "Tree diagrams for managing conditionals\n\nEach heading is a case or subcase.\nConditional probabilities on each heading.\nFinal probabilities calculated by multiplication.\nRecombine as needed, depending on the problem."
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#probability-and-trust",
-    "href": "Math125/slides/16_17_conditional_probability.html#probability-and-trust",
-    "title": "16-17. Conditional Probability",
-    "section": "Probability and Trust",
-    "text": "Probability and Trust\n\nAssign a baseline probability that a man is “trustworthy” (For simplicity we have only two possibilities – trustworthy or not.) If you are generally trusting, assign a high probabiity. If not, assign a low probability.\n… but he did something Suspicious. Assign probabilities to the Suspicious Thing, if he is trustworthy, and also if he is not. Hint. To be Sus, a thing should be more likely if he’s bad than if he’s good.\nMake an outline diagram for all for possibilities, branching on trustworthiness, then on the Thing. Calculate all probabilities.\nFind P(Trustworthy & Sus) and also P(Sus).\nCalculate P(Trustworthy | Suspicious Thing). This is called a Bayesian Update. Does this math roughly match our own reevaluations of interpersonal trust?"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals-1",
-    "href": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals-1",
-    "title": "16-17. Conditional Probability",
-    "section": "Tree diagrams for managing conditionals",
-    "text": "Tree diagrams for managing conditionals\n\nTrustworthy ()\n\nDid the thing ()\n\np=?\n\nDidn’t ()\n\np=?\n\n\nUntrustworthy ()\n\nDid the thing ()\n\np=?\n\nDidn’t ()\n\np=?"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#a-morning-ritual",
-    "href": "Math125/slides/16_17_conditional_probability.html#a-morning-ritual",
-    "title": "16-17. Conditional Probability",
-    "section": "A morning ritual",
-    "text": "A morning ritual\nEvery morning you flip a coin to decide on breakfast. If it’s heads, you have fresh fruit. If it’s tails, you enjoy a bowl of deep fried cheesy-fats. When you eat fresh fruit, you have stomach ache only 10% of the time, but when you eat garbage, you have a stomach ache 60% of the time.\n\nMake an outline diagram for these probabilities.\nYou have a stomach ache but can’t remember what you ate for breakfast. What’s the probability it was fresh fruit?"
-  },
-  {
-    "objectID": "Math125/slides/16_17_conditional_probability.html#homework",
-    "href": "Math125/slides/16_17_conditional_probability.html#homework",
-    "title": "16-17. Conditional Probability",
-    "section": "Homework",
-    "text": "Homework\nWebwork assignment “16-17. Conditional Probability” (5 problems)"
-  },
-  {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
-    "title": "03. Correlation is not Causation",
-    "section": "Preparatory Work",
-    "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
-  },
-  {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
-    "title": "03. Correlation is not Causation",
-    "section": "Three explanations for correlation (at least!)",
-    "text": "Three explanations for correlation (at least!)\n\n\nFor each scenario, which is more likely? Why?\n\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n\n\n\nDaily ice cream sales and gasoline sales are significantly correlated.\nSocial media use and depression are correlated.\nIn school children, finger length and reading ability are strongly correlated.\nBoth caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.\nYoung children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
-  },
-  {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
-    "title": "03. Correlation is not Causation",
-    "section": "Start with an open mind.",
-    "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
-  },
-  {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
-    "title": "03. Correlation is not Causation",
-    "section": "Lurking (“Confounding”) variables",
-    "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
-  },
-  {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
-    "title": "03. Correlation is not Causation",
-    "section": "So… withhold judgment forever?",
-    "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
-  },
-  {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
-    "title": "03. Correlation is not Causation",
-    "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
-    "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
-  },
-  {
-    "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
-    "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
-    "title": "03. Correlation is not Causation",
-    "section": "Individual Homework",
-    "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#preparation",
-    "href": "Math125/slides/12_13_probability_and_counting.html#preparation",
-    "title": "12-13. Probability and Counting",
-    "section": "Preparation",
-    "text": "Preparation\nRead all of chapter 3, with emphasis on section 3.1."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability",
-    "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability",
-    "title": "12-13. Probability and Counting",
-    "section": "The Language of Probability",
-    "text": "The Language of Probability\nAny process that leads to an unpredictable result is a random process. It can be…\n\n“Truly” randomized: coin flip, card draw, die roll, quantum measurement, etc.\nComplex and unpredictable: Weather, voting, disease spread, manufacturing error, a two-year-old’s mood, etc.\n\nA random variable is any variable (numeric or categorical) which depends on a random process.\n\nResult of a coin flip (“H”) or die roll (“3”)\nThe day’s temperature\nNumber of students who enroll in a class.\nThe age, height, or religion of a person (randomly selected from a population)."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-1",
-    "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-1",
-    "title": "12-13. Probability and Counting",
-    "section": "The Language of Probability",
-    "text": "The Language of Probability\nThe Sample Space is the set of outcomes of a random process.\n\nAll possible results of four coin flips.\nAll possible orderings of a standard deck of 52 cards.\nAll possible rolls of two dice.\nAll possible weather patterns today.\n\nAn Event is a single outcome or a collection of outcomes.\n\nAll four coins land heads (single outcome), or more heads than tails (collection of outcomes)\nCards in sorted order, or top card is 2❤️\n\nTwo dice total 12 (one outcome), or total 7 (collection)\nRainy (collection of outcomes)"
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-2",
-    "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-2",
-    "title": "12-13. Probability and Counting",
-    "section": "The Language of Probability",
-    "text": "The Language of Probability\nFor any event \\(A\\), \\(P(A)\\) mean its probability.\nIf we flip a coins, \\(P(\\) It lands heads \\() = 1/2\\)\nIf we roll two dice, \\(P(\\) Each lands 6 \\() = 1/36\\)\nOften…\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)"
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#what-probability-is-implied",
-    "href": "Math125/slides/12_13_probability_and_counting.html#what-probability-is-implied",
-    "title": "12-13. Probability and Counting",
-    "section": "What probability is implied?",
-    "text": "What probability is implied?\nA probability is always a number between 0 and 1. For each expression, what probability is meant?\n“Could go either way. It’s 50/50.”\n“It’s a 98% chance.”\n“The disease has a 0.2% mortality rate.“\n“It’s one in twenty.”\n“It’s impossible. Not gonna happen.”\n[Bonus] “I give it four-to-one odds.“"
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#probabilities-by-counting",
-    "href": "Math125/slides/12_13_probability_and_counting.html#probabilities-by-counting",
-    "title": "12-13. Probability and Counting",
-    "section": "Probabilities by counting",
-    "text": "Probabilities by counting\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)\nI rolled three dice and they totaled 5. What are the chances!\n\nIdentify the random process: Roll three dice\nCount all possible outcomes, using multiplication.\nCount all outcomes which lead to a total of \\(5\\). Hint: Just list them. 1+2+2 is different from 2+2+1.\nDivide for the probability."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#equally-probable-outcomes",
-    "href": "Math125/slides/12_13_probability_and_counting.html#equally-probable-outcomes",
-    "title": "12-13. Probability and Counting",
-    "section": "Equally probable outcomes",
-    "text": "Equally probable outcomes\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\) is only sometimes warranted\n\n\nFormula works for:\n\nThe two results of a coin flip.\nThe six results of a die roll.\nThe 36 results of two die rolls.\nThe 52 results of a card draw from a deck.\n\n\nFormula fails for:\n\nThe 11 resulting totals (2 through 12) from rolling two dice.\nThe two possible results (positive/negative) from some bloodwork.\nThe two possible winners of a game.\nThe six people she might ask for help."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#winning-a-contest.",
-    "href": "Math125/slides/12_13_probability_and_counting.html#winning-a-contest.",
-    "title": "12-13. Probability and Counting",
-    "section": "Winning a contest.",
-    "text": "Winning a contest.\nThe problem: Two sports teams (A and B) are about evenly matched: Any game between them is a 50/50 toss up. They play five games. What is the probability that team A wins at least four?\nStep 1: What are the “outcomes”?\nStep 2: How many outcomes are possible? Multiplication is your friend!\nStep 3: How many outcomes are successes?\nDivide and conclude.\nBonus: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?"
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-flawed-classic",
-    "href": "Math125/slides/12_13_probability_and_counting.html#a-flawed-classic",
-    "title": "12-13. Probability and Counting",
-    "section": "A Flawed Classic",
-    "text": "A Flawed Classic\nThe problem: A Dad of exactly two kids is asked whether he has a daughter. “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter. What is the probability that he also has a son?\n\n\nOption 1: The other kid\nThe other kid could be male or female. P(son) = 1/2.\n\nOption 2: Family structures\nFour equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate the first. Of the remaining 3, two are “successes.” P(son) = 2/3.\n\nWhich argument is more correct?\nThis classic puzzle depends on several oversimplifications about the world. Identify them."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-monty-hall-problem",
-    "href": "Math125/slides/12_13_probability_and_counting.html#the-monty-hall-problem",
-    "title": "12-13. Probability and Counting",
-    "section": "The Monty Hall Problem",
-    "text": "The Monty Hall Problem\nThis famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.”\n\nYou’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals a door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?\n\n\n\nIt doesn’t matter. A door has been wasted, leaving a 50/50 chance of success with either remaining door.\n\nYou should switch. The initial choice has 1/3 chance, and the remaining door a has 2/3 chance."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-fully-evolved-species",
-    "href": "Math125/slides/12_13_probability_and_counting.html#a-fully-evolved-species",
-    "title": "12-13. Probability and Counting",
-    "section": "A fully evolved species",
-    "text": "A fully evolved species\nFive alligator eggs hatch from a nest What is the probability all are female? What is the probability of four females and one male?"
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-chance-at-magic",
-    "href": "Math125/slides/12_13_probability_and_counting.html#a-chance-at-magic",
-    "title": "12-13. Probability and Counting",
-    "section": "A chance at Magic",
-    "text": "A chance at Magic\nA (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land,” making them immediately useful at the game’s beginning. You draw an initial hand of seven cards.\n\nWhat is the probability of getting no land cards among them?\nHow many draws of seven are possible from a deck of 99 cards?\nHow many draws of seven have no land cards?\nDivide to find the probability."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#preparing-victory-a-true-story",
-    "href": "Math125/slides/12_13_probability_and_counting.html#preparing-victory-a-true-story",
-    "title": "12-13. Probability and Counting",
-    "section": "Preparing Victory, a true story",
-    "text": "Preparing Victory, a true story\nFrancis is playing Monopoly. He has hotels on Boardwalk and Park Place. He gleefully asks “Hey Daddy, what’s the probability that Nana rolls a 4 or a 6 next?” Find the answer."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-perfect-match",
-    "href": "Math125/slides/12_13_probability_and_counting.html#a-perfect-match",
-    "title": "12-13. Probability and Counting",
-    "section": "A perfect match",
-    "text": "A perfect match\nFive cards are drawn from a standard deck. What is the probability of drawing “four of a kind”? To solve this, try to count how many “four of a kind” hands are possible."
-  },
-  {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#homework",
-    "href": "Math125/slides/12_13_probability_and_counting.html#homework",
-    "title": "12-13. Probability and Counting",
-    "section": "Homework",
-    "text": "Homework\nLabeled 12-13, Probability on Webwork."
-  },
-  {
-    "objectID": "Math125/index.html",
-    "href": "Math125/index.html",
-    "title": "Math 125",
-    "section": "",
-    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n00. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n01. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n02. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n03. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n04-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n06. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n07. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n08. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\n09-10. Mean, Variance, and Standard Deviation\n\n\nCalculating and understanding the first of the descriptive statistics.\n\n\n\n\n\n\n11. Quantile Statistics\n\n\nCalculating and understanding min, 25%, 50%, 75%, and max\n\n\n\n\n\n\n12-13. Probability and Counting\n\n\nCalculating probabilities by counting sample spaces\n\n\n\n\n\n\n14-15. Probability Laws\n\n\nCalculating probabilities from other probabilities\n\n\n\n\n\n\n16-17. Conditional Probability\n\n\nProbability, adjusted for prior knowledge.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Preparation",
-    "text": "Preparation\nRead section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides."
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Key vocabulary – sampling",
-    "text": "Key vocabulary – sampling\n\nPopulation: All conceivable cases.\nSample: All cases measured and recorded.\nRepresentative Sample: Does a good job reflecting features of the population.\nBiased Sample: Skewed, slanted, not representative. Intentionally or accidentally.\nBias: Anything causing a sample to be biased, from cruelty to oversight to unforeseeable effect."
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-bias-types",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-bias-types",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Key vocabulary – bias types",
-    "text": "Key vocabulary – bias types\n\nParticipation bias or nonresponse bias: You didn’t measure those who didn’t respond, and it might matter!\nPre-screening bias: You must be this tall for the survey.\nSurvivorship bias: Only “survivors” are included.\nUndercoverage bias: Significant subpopulations were missed.\nGeographic bias: Selecting from a town, street corner, etc."
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#a-pollsters-dilemma",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#a-pollsters-dilemma",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "A pollster’s dilemma",
-    "text": "A pollster’s dilemma\nWhich of these should a political polling organization accomplish in order to responsibly estimate the outcome of an upcoming election?\n\nInterview lots and lots of people.\nInclude a diversity of people (in age, race, hometown, education, etc) roughly in accord with the population.\nPredict who probably will not vote in the election.\nPrompt the “undecided” to predict their decision.\nDraw no inference when people refuse to participate.\n\n(Good political polling is very, very hard!)"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#food-costs-money",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#food-costs-money",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Food costs money",
-    "text": "Food costs money\nWe want to estimate the average household grocery bill in St. Lawrence county. What is the population of interest?\nYou plan to sample 100 households. What are some natural sources of sampling bias and how could you mitigate them?"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#hours-reading-a-sampling-puzzle",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#hours-reading-a-sampling-puzzle",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Hours reading – a sampling puzzle",
-    "text": "Hours reading – a sampling puzzle\nYou want to measure how much time an average university student spends reading. What is the population of interest (in your opinion)? What are some natural sources of sampling bias and how could you mitigate them?"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#focus-on-survivorship-bias",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#focus-on-survivorship-bias",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Focus on survivorship bias",
-    "text": "Focus on survivorship bias\nExplain how each observation or inference is vulnerable to survivorship bias.\n\n“When I was a kid we took more risks. I turned out fine!”\nEarly human artistic expression was primarily cave paintings.\nUniversity professors learn about modern high school from their students.\nWe analyzed the 500 largest US companies to see whether US energy policy benefits or hinders them.\nArchitecture in ancient Greece was mostly just colossal stonework."
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#survivorship-bias-for-the-win",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#survivorship-bias-for-the-win",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Survivorship bias for the win",
-    "text": "Survivorship bias for the win\nAbraham Wald famously studied aircraft damage during WWII. He examined post-mission bullet holes on bombers. (Image is compilation across many planes.)\n\nSource: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.Question: The bomber can carry a small bit of extra weight for shielding. Where should extra shielding be placed to protect aircraft?"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#who-me-biased",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#who-me-biased",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Who, me, biased?",
-    "text": "Who, me, biased?\nExplain how almost every type of sampling bias applies to this fictional scenario:\n\n“Here at Dominant Dynamics Corp., we pride ourselves on inclusivity, especially in June! We set up a survey table in our corporate lobby where we interviewed employees: “Attention LGBTQIA+ employees! Is this a safe and supportive environment for you?”"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling-strategies",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling-strategies",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Key vocabulary – Sampling strategies",
-    "text": "Key vocabulary – Sampling strategies\n\nSimple (SRS): Select from one flat list.\nStratified: Identify strata of interest, sample some of each stratum.\nCluster: Divide into convenient clusters. Randomly select some clusters. Take all of each selected cluster.\nMultistage: Like cluster, but take some of each selected cluster."
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#identifying-the-sampling-strategy",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#identifying-the-sampling-strategy",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Identifying the sampling strategy",
-    "text": "Identifying the sampling strategy\nYou want to survey college students about relationship viewpoints.\nAna: We’ll each pick a residence hall and knock ten random doors within it.\nBiljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them!\nMarija: Let’s coordinate with five random professors, and survey everybody in their classes.\nDragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc.\nBonus: To generate their names I picked a nation at random,  then chose four random names common within that nation. What sampling strategy did I use?"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Value judgments",
-    "text": "Value judgments\nWhich is most correct?\n\nSimple random is the best method and should always be used.\nSimple random is the best method but is often impractical.\nStratified sampling is the best method but is sometimes impossible.\nCluster sampling reduces the bias of simple random sampling.\nMultistage sampling helps to increase the sample size."
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments-competing-priorities",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments-competing-priorities",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Value judgments – competing priorities",
-    "text": "Value judgments – competing priorities\n\nUche asserts: “Large sample sizes are better for my purposes.” \nAbike asserts: “Small sample sizes are better for my purposes.” \nWhy might both speakers be correct?"
-  },
-  {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#homework",
-    "href": "Math125/slides/4-5_samping_and_sample_bias.html#homework",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "Homework",
-    "text": "Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#preparation",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#preparation",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Preparation",
-    "text": "Preparation\nRead 2.1.1 (scatter plots) and 2.1.5 (box plots)"
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#goals",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#goals",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Goals",
-    "text": "Goals\nRead scatter plots and box plots correctly.\nIdentify when each plot type is appropriate.\nGenerate your own plots from data using seaborn.\nLearn the five number summary and compare to a box plot."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#note-on-accessibility",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#note-on-accessibility",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Note on Accessibility:",
-    "text": "Note on Accessibility:\nData visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "The Scatter Plot",
-    "text": "The Scatter Plot\nA scatterplot is a visualization of two quantitative variables, appropriate when at least two numerical values are recorded about each data case. The \\(x\\) axis is given the range of values of one variable, and the \\(y\\) axis the other. Then each data case is represented as one point \\((x,y)\\) according to its variable’s values. A cloud of points arises and its shape is a clue to any association between the variables."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-example",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-example",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "The Scatter Plot – Example",
-    "text": "The Scatter Plot – Example\n\nimport seaborn as sns\ndf = pd.read_csv(\"county.csv\")\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-interpretation",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-interpretation",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "The Scatter Plot – interpretation",
-    "text": "The Scatter Plot – interpretation\n\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\nWhat are typical, common values for homeownership and multi-unit dwelling? Why?\nWhere would you find St. Lawrence County on the scatterplot? Where would you find Manhattan (“New York County”)?\nWhat sort of county is represented at the bottom right? What sort of counties are the outliers at the top?\nIs there an upward or downward trend? Speculate why.\n\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#scatterplot-example-with-hue",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#scatterplot-example-with-hue",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Scatterplot – example with hue",
-    "text": "Scatterplot – example with hue\n\nsns.lmplot(data=iris, x='petal_width', y='sepal_width', hue = 'species')\n\n\n\n\nOf the three, which species is easiest to identify? How is it recognized?\nWhat’s the best way to distinguish between the other two species?\nDo flowers with wider petals usually have wider sepals too?\nThere are fewer dots on this scatterplot. What does that mean about the flower data?\n\n\n\n\n\n\n\n\n\n\nFigure 3: Scatterplot petal width to sepal width for Fisher’s irises."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whats-a-box--and-whisker-plot",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whats-a-box--and-whisker-plot",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "What’s a Box (-and-whisker) Plot?",
-    "text": "What’s a Box (-and-whisker) Plot?\n\nA visualization of the distribution of one quantitative variable, an alternative to a histogram.\nreveals the full range of data values along the \\(x\\)-axis.\ndivides the data range into four “equal” parts, called quartiles\n\nthe quartiles usually have unequal width, but\neach quartile’s size is adjusted to include exactly a quarter of the data points.\nthe inner two quartiles are drawn as a box, and the outer two are drawn as “whiskers”\nThe five quartile boundary points are called: Min, 25%, 50%, 75%, and Max."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-basic-example",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-basic-example",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Box (-and-whisker) plot – Basic Example",
-    "text": "Box (-and-whisker) plot – Basic Example\n\nsns.boxplot(data=df, x='poverty')\n\n\n\n\nBased on the boxplot, what is a typical homeownership percent for U.S. counties?\nFor what x-regions are the data points tightly clustered? Where are they more thinly spread?\n\n\n\n\n\n\n\n\n\n\nFigure 4: Boxplot for poverty percent by county."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Whisker Technicalities",
-    "text": "Whisker Technicalities\n\nCustomarily, whiskers aren’t allowed to be more 1.5 times as long as boxes. If a boxplot would be drawn with long whiskers, trim them to 1.5 * [box size], and represent data beyond this length as individual dots. Both Python and OpenIntro do this. You need to know this to answer questions like “what’s the maximum data value?” using a boxplot."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-rich-example",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-rich-example",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Box (-and-whisker) plot – Rich Example",
-    "text": "Box (-and-whisker) plot – Rich Example\nSince a boxplot is so narrow, it can be stacked together to compare many related distributions across categories:\n\nsns.boxplot(data=df, x='Attack', y='Type')\n\n\n\n\n\n\n\n\n\nFigure 5: Boxplot for Attack value of various pokemon, separated by type."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-more-serious-example",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-more-serious-example",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "The Box Plot – more serious example",
-    "text": "The Box Plot – more serious example\n\nsns.boxplot(data = df, x = 'salary', y = 'team')\n\n\n\n\nThe plots seem left-justified. What does that mean about salaries? \nWhich teams pay the least? the most?\nWhat do the circles mean?\nWhich team pays the highest median wage?\nProfessor Howald is considering quitting math and playing major league ball. What’s a realistic salary expectation?\n\n\n\n\n\n\n\n\n\n\nFigure 6: Boxplot for MLB salary by team."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Plotting yourself",
-    "text": "Plotting yourself\n\nOnce a dataframe is loaded, it’s not hard to make a scatterplot or boxplot:\n\nimport pandas as pd    #Needed once, not for every plot \nimport seaborn as sns  #Needed once, not for every plot\ndf = pd.read_csv(\"filename.csv\")\nsns.boxplot(data=df, x='Attack', y='Type')\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\nSee examples illustrated on previous slides."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#summary-which-plot-type-is-best-for-each-case",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#summary-which-plot-type-is-best-for-each-case",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Summary: Which plot type is best for each case?",
-    "text": "Summary: Which plot type is best for each case?\n\nTo illustrate how time spent studying relates to course grade.\nTo show any relationship between religious identity and GPA.\nTo illustrate a link between height and weight.\nTo show the distribution of molecule sizes in a polymer.\nTo illustrate total sales by product type.\nTo visualize the masses and temperatures of thousands of stars.\nTo show whether pokemon with higher attack also have higher defense."
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Putting it all together",
-    "text": "Putting it all together\nLoad the OpenIntro Run17 data. Make your own plots to answer each question.\n\nWhat genders are represented and how many of each?\nHow are the run times distributed?\n\nAre the run times unimodal? Bimodal? Something else? Why!?\nCan you compare run time distribution…\n\nby event?\nby gender?\nby both?\n\nHow are age and run time related?\n\nCan you compare by gender? By event?"
-  },
-  {
-    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#individual-work",
-    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#individual-work",
-    "title": "08. Dataviz: Boxplot and Scatterplot",
-    "section": "Individual work",
-    "text": "Individual work\nOn Webwork, called “Dataviz Box and Scatter.”"
-  },
-  {
     "objectID": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
     "href": "Math125/slides/7_dataviz_histogram_and_countplot.html#preparation",
     "title": "07. Dataviz: Histogram and Countplot",
@@ -1377,6 +922,545 @@
     "title": "07. Dataviz: Histogram and Countplot",
     "section": "Individual work",
     "text": "Individual work\nOn webwork: 7. Dataviz – histogram and countplot"
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#preparation",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#preparation",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Preparation",
+    "text": "Preparation\nRead 2.1.1 (scatter plots) and 2.1.5 (box plots)"
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#goals",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#goals",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Goals",
+    "text": "Goals\nRead scatter plots and box plots correctly.\nIdentify when each plot type is appropriate.\nGenerate your own plots from data using seaborn.\nLearn the five number summary and compare to a box plot."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#note-on-accessibility",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#note-on-accessibility",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Note on Accessibility:",
+    "text": "Note on Accessibility:\nData visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "The Scatter Plot",
+    "text": "The Scatter Plot\nA scatterplot is a visualization of two quantitative variables, appropriate when at least two numerical values are recorded about each data case. The \\(x\\) axis is given the range of values of one variable, and the \\(y\\) axis the other. Then each data case is represented as one point \\((x,y)\\) according to its variable’s values. A cloud of points arises and its shape is a clue to any association between the variables."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-example",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-example",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "The Scatter Plot – Example",
+    "text": "The Scatter Plot – Example\n\nimport seaborn as sns\ndf = pd.read_csv(\"county.csv\")\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-interpretation",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-scatter-plot-interpretation",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "The Scatter Plot – interpretation",
+    "text": "The Scatter Plot – interpretation\n\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\n\n\n\nWhat are typical, common values for homeownership and multi-unit dwelling? Why?\nWhere would you find St. Lawrence County on the scatterplot? Where would you find Manhattan (“New York County”)?\nWhat sort of county is represented at the bottom right? What sort of counties are the outliers at the top?\nIs there an upward or downward trend? Speculate why.\n\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot Comparing homeownership to multi-unit dwelling by U.S. county"
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#scatterplot-example-with-hue",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#scatterplot-example-with-hue",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Scatterplot – example with hue",
+    "text": "Scatterplot – example with hue\n\nsns.lmplot(data=iris, x='petal_width', y='sepal_width', hue = 'species')\n\n\n\n\nOf the three, which species is easiest to identify? How is it recognized?\nWhat’s the best way to distinguish between the other two species?\nDo flowers with wider petals usually have wider sepals too?\nThere are fewer dots on this scatterplot. What does that mean about the flower data?\n\n\n\n\n\n\n\n\n\n\nFigure 3: Scatterplot petal width to sepal width for Fisher’s irises."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whats-a-box--and-whisker-plot",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whats-a-box--and-whisker-plot",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "What’s a Box (-and-whisker) Plot?",
+    "text": "What’s a Box (-and-whisker) Plot?\n\nA visualization of the distribution of one quantitative variable, an alternative to a histogram.\nreveals the full range of data values along the \\(x\\)-axis.\ndivides the data range into four “equal” parts, called quartiles\n\nthe quartiles usually have unequal width, but\neach quartile’s size is adjusted to include exactly a quarter of the data points.\nthe inner two quartiles are drawn as a box, and the outer two are drawn as “whiskers”\nThe five quartile boundary points are called: Min, 25%, 50%, 75%, and Max."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-basic-example",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-basic-example",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Box (-and-whisker) plot – Basic Example",
+    "text": "Box (-and-whisker) plot – Basic Example\n\nsns.boxplot(data=df, x='poverty')\n\n\n\n\nBased on the boxplot, what is a typical homeownership percent for U.S. counties?\nFor what x-regions are the data points tightly clustered? Where are they more thinly spread?\n\n\n\n\n\n\n\n\n\n\nFigure 4: Boxplot for poverty percent by county."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#whisker-technicalities",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Whisker Technicalities",
+    "text": "Whisker Technicalities\n\nCustomarily, whiskers aren’t allowed to be more 1.5 times as long as boxes. If a boxplot would be drawn with long whiskers, trim them to 1.5 * [box size], and represent data beyond this length as individual dots. Both Python and OpenIntro do this. You need to know this to answer questions like “what’s the maximum data value?” using a boxplot."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-rich-example",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#box--and-whisker-plot-rich-example",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Box (-and-whisker) plot – Rich Example",
+    "text": "Box (-and-whisker) plot – Rich Example\nSince a boxplot is so narrow, it can be stacked together to compare many related distributions across categories:\n\nsns.boxplot(data=df, x='Attack', y='Type')\n\n\n\n\n\n\n\n\n\nFigure 5: Boxplot for Attack value of various pokemon, separated by type."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-more-serious-example",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#the-box-plot-more-serious-example",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "The Box Plot – more serious example",
+    "text": "The Box Plot – more serious example\n\nsns.boxplot(data = df, x = 'salary', y = 'team')\n\n\n\n\nThe plots seem left-justified. What does that mean about salaries? \nWhich teams pay the least? the most?\nWhat do the circles mean?\nWhich team pays the highest median wage?\nProfessor Howald is considering quitting math and playing major league ball. What’s a realistic salary expectation?\n\n\n\n\n\n\n\n\n\n\nFigure 6: Boxplot for MLB salary by team."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#plotting-yourself",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Plotting yourself",
+    "text": "Plotting yourself\n\nOnce a dataframe is loaded, it’s not hard to make a scatterplot or boxplot:\n\nimport pandas as pd    #Needed once, not for every plot \nimport seaborn as sns  #Needed once, not for every plot\ndf = pd.read_csv(\"filename.csv\")\nsns.boxplot(data=df, x='Attack', y='Type')\nsns.scatterplot(data=df, x='homeownership', y='multi_unit')\n\nSee examples illustrated on previous slides."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#summary-which-plot-type-is-best-for-each-case",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#summary-which-plot-type-is-best-for-each-case",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Summary: Which plot type is best for each case?",
+    "text": "Summary: Which plot type is best for each case?\n\nTo illustrate how time spent studying relates to course grade.\nTo show any relationship between religious identity and GPA.\nTo illustrate a link between height and weight.\nTo show the distribution of molecule sizes in a polymer.\nTo illustrate total sales by product type.\nTo visualize the masses and temperatures of thousands of stars.\nTo show whether pokemon with higher attack also have higher defense."
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#putting-it-all-together",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nLoad the OpenIntro Run17 data. Make your own plots to answer each question.\n\nWhat genders are represented and how many of each?\nHow are the run times distributed?\n\nAre the run times unimodal? Bimodal? Something else? Why!?\nCan you compare run time distribution…\n\nby event?\nby gender?\nby both?\n\nHow are age and run time related?\n\nCan you compare by gender? By event?"
+  },
+  {
+    "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#individual-work",
+    "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot.html#individual-work",
+    "title": "08. Dataviz: Boxplot and Scatterplot",
+    "section": "Individual work",
+    "text": "Individual work\nOn Webwork, called “Dataviz Box and Scatter.”"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Preparation",
+    "text": "Preparation\nRead section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Key vocabulary – sampling",
+    "text": "Key vocabulary – sampling\n\nPopulation: All conceivable cases.\nSample: All cases measured and recorded.\nRepresentative Sample: Does a good job reflecting features of the population.\nBiased Sample: Skewed, slanted, not representative. Intentionally or accidentally.\nBias: Anything causing a sample to be biased, from cruelty to oversight to unforeseeable effect."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-bias-types",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-bias-types",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Key vocabulary – bias types",
+    "text": "Key vocabulary – bias types\n\nParticipation bias or nonresponse bias: You didn’t measure those who didn’t respond, and it might matter!\nPre-screening bias: You must be this tall for the survey.\nSurvivorship bias: Only “survivors” are included.\nUndercoverage bias: Significant subpopulations were missed.\nGeographic bias: Selecting from a town, street corner, etc."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#a-pollsters-dilemma",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#a-pollsters-dilemma",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "A pollster’s dilemma",
+    "text": "A pollster’s dilemma\nWhich of these should a political polling organization accomplish in order to responsibly estimate the outcome of an upcoming election?\n\nInterview lots and lots of people.\nInclude a diversity of people (in age, race, hometown, education, etc) roughly in accord with the population.\nPredict who probably will not vote in the election.\nPrompt the “undecided” to predict their decision.\nDraw no inference when people refuse to participate.\n\n(Good political polling is very, very hard!)"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#food-costs-money",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#food-costs-money",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Food costs money",
+    "text": "Food costs money\nWe want to estimate the average household grocery bill in St. Lawrence county. What is the population of interest?\nYou plan to sample 100 households. What are some natural sources of sampling bias and how could you mitigate them?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#hours-reading-a-sampling-puzzle",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#hours-reading-a-sampling-puzzle",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Hours reading – a sampling puzzle",
+    "text": "Hours reading – a sampling puzzle\nYou want to measure how much time an average university student spends reading. What is the population of interest (in your opinion)? What are some natural sources of sampling bias and how could you mitigate them?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#focus-on-survivorship-bias",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#focus-on-survivorship-bias",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Focus on survivorship bias",
+    "text": "Focus on survivorship bias\nExplain how each observation or inference is vulnerable to survivorship bias.\n\n“When I was a kid we took more risks. I turned out fine!”\nEarly human artistic expression was primarily cave paintings.\nUniversity professors learn about modern high school from their students.\nWe analyzed the 500 largest US companies to see whether US energy policy benefits or hinders them.\nArchitecture in ancient Greece was mostly just colossal stonework."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#survivorship-bias-for-the-win",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#survivorship-bias-for-the-win",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Survivorship bias for the win",
+    "text": "Survivorship bias for the win\nAbraham Wald famously studied aircraft damage during WWII. He examined post-mission bullet holes on bombers. (Image is compilation across many planes.)\n\nSource: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.Question: The bomber can carry a small bit of extra weight for shielding. Where should extra shielding be placed to protect aircraft?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#who-me-biased",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#who-me-biased",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Who, me, biased?",
+    "text": "Who, me, biased?\nExplain how almost every type of sampling bias applies to this fictional scenario:\n\n“Here at Dominant Dynamics Corp., we pride ourselves on inclusivity, especially in June! We set up a survey table in our corporate lobby where we interviewed employees: “Attention LGBTQIA+ employees! Is this a safe and supportive environment for you?”"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling-strategies",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#key-vocabulary-sampling-strategies",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Key vocabulary – Sampling strategies",
+    "text": "Key vocabulary – Sampling strategies\n\nSimple (SRS): Select from one flat list.\nStratified: Identify strata of interest, sample some of each stratum.\nCluster: Divide into convenient clusters. Randomly select some clusters. Take all of each selected cluster.\nMultistage: Like cluster, but take some of each selected cluster."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#identifying-the-sampling-strategy",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#identifying-the-sampling-strategy",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Identifying the sampling strategy",
+    "text": "Identifying the sampling strategy\nYou want to survey college students about relationship viewpoints.\nAna: We’ll each pick a residence hall and knock ten random doors within it.\nBiljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them!\nMarija: Let’s coordinate with five random professors, and survey everybody in their classes.\nDragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc.\nBonus: To generate their names I picked a nation at random,  then chose four random names common within that nation. What sampling strategy did I use?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Value judgments",
+    "text": "Value judgments\nWhich is most correct?\n\nSimple random is the best method and should always be used.\nSimple random is the best method but is often impractical.\nStratified sampling is the best method but is sometimes impossible.\nCluster sampling reduces the bias of simple random sampling.\nMultistage sampling helps to increase the sample size."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments-competing-priorities",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#value-judgments-competing-priorities",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Value judgments – competing priorities",
+    "text": "Value judgments – competing priorities\n\nUche asserts: “Large sample sizes are better for my purposes.” \nAbike asserts: “Small sample sizes are better for my purposes.” \nWhy might both speakers be correct?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#homework",
+    "href": "Math125/slides/4-5_samping_and_sample_bias.html#homework",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "Homework",
+    "text": "Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
+  },
+  {
+    "objectID": "Math125/index.html",
+    "href": "Math125/index.html",
+    "title": "Math 125",
+    "section": "",
+    "text": "Welcome to Math 125 with Professor Jason Howald\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\n00. Course Welcome\n\n\nWelcome, orientation, course tools and policies\n\n\n\n\n\n\n01. The Shape of Data\n\n\nUnderstanding two dimension data and using Jupyter to manipulate it.\n\n\n\n\n\n\n02. Association and Correlation\n\n\nCorrelation, correlation coefficients, and scatter plots of data.\n\n\n\n\n\n\n03. Correlation is not Causation\n\n\nCorrelation vs Causation. Lurking variables. A broad array of explanations for a correlation between variables.\n\n\n\n\n\n\n04-5. Sampling and Sample Bias\n\n\nMethods of sampling, types of sample bias, and the language of good and bad sampling.\n\n\n\n\n\n\n06. Controlled Experiments\n\n\nHow randomization and control help us prove causal links between variables.\n\n\n\n\n\n\n07. Dataviz: Histogram and Countplot\n\n\nVisualizing Distributions of one quantitative or categorical variable using frequency counts\n\n\n\n\n\n\n08. Dataviz: Boxplot and Scatterplot\n\n\nVisualizing Distributions of multiple variables using scatterplots or stacked boxplots.\n\n\n\n\n\n\n09-10. Mean, Variance, and Standard Deviation\n\n\nCalculating and understanding the first of the descriptive statistics.\n\n\n\n\n\n\n11. Quantile Statistics\n\n\nCalculating and understanding min, 25%, 50%, 75%, and max\n\n\n\n\n\n\n12-13. Probability and Counting\n\n\nCalculating probabilities by counting sample spaces\n\n\n\n\n\n\n14-15. Probability Laws\n\n\nCalculating probabilities from other probabilities\n\n\n\n\n\n\n16-17. Conditional Probability\n\n\nProbability, adjusted for prior knowledge.\n\n\n\n\n\n\n18-19. The Normal Distribution\n\n\nA basic standard for natural variability.\n\n\n\n\n\n\nSyllabus – 125\n\n\nSyllabus and course policies for Jason Howald’s Math 125\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#preparation",
+    "href": "Math125/slides/12_13_probability_and_counting.html#preparation",
+    "title": "12-13. Probability and Counting",
+    "section": "Preparation",
+    "text": "Preparation\nRead all of chapter 3, with emphasis on section 3.1."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability",
+    "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability",
+    "title": "12-13. Probability and Counting",
+    "section": "The Language of Probability",
+    "text": "The Language of Probability\nAny process that leads to an unpredictable result is a random process. It can be…\n\n“Truly” randomized: coin flip, card draw, die roll, quantum measurement, etc.\nComplex and unpredictable: Weather, voting, disease spread, manufacturing error, a two-year-old’s mood, etc.\n\nA random variable is any variable (numeric or categorical) which depends on a random process.\n\nResult of a coin flip (“H”) or die roll (“3”)\nThe day’s temperature\nNumber of students who enroll in a class.\nThe age, height, or religion of a person (randomly selected from a population)."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-1",
+    "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-1",
+    "title": "12-13. Probability and Counting",
+    "section": "The Language of Probability",
+    "text": "The Language of Probability\nThe Sample Space is the set of outcomes of a random process.\n\nAll possible results of four coin flips.\nAll possible orderings of a standard deck of 52 cards.\nAll possible rolls of two dice.\nAll possible weather patterns today.\n\nAn Event is a single outcome or a collection of outcomes.\n\nAll four coins land heads (single outcome), or more heads than tails (collection of outcomes)\nCards in sorted order, or top card is 2❤️\n\nTwo dice total 12 (one outcome), or total 7 (collection)\nRainy (collection of outcomes)"
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-2",
+    "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-2",
+    "title": "12-13. Probability and Counting",
+    "section": "The Language of Probability",
+    "text": "The Language of Probability\nFor any event \\(A\\), \\(P(A)\\) mean its probability.\nIf we flip a coins, \\(P(\\) It lands heads \\() = 1/2\\)\nIf we roll two dice, \\(P(\\) Each lands 6 \\() = 1/36\\)\nOften…\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)"
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#what-probability-is-implied",
+    "href": "Math125/slides/12_13_probability_and_counting.html#what-probability-is-implied",
+    "title": "12-13. Probability and Counting",
+    "section": "What probability is implied?",
+    "text": "What probability is implied?\nA probability is always a number between 0 and 1. For each expression, what probability is meant?\n“Could go either way. It’s 50/50.”\n“It’s a 98% chance.”\n“The disease has a 0.2% mortality rate.“\n“It’s one in twenty.”\n“It’s impossible. Not gonna happen.”\n[Bonus] “I give it four-to-one odds.“"
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#probabilities-by-counting",
+    "href": "Math125/slides/12_13_probability_and_counting.html#probabilities-by-counting",
+    "title": "12-13. Probability and Counting",
+    "section": "Probabilities by counting",
+    "text": "Probabilities by counting\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)\nI rolled three dice and they totaled 5. What are the chances!\n\nIdentify the random process: Roll three dice\nCount all possible outcomes, using multiplication.\nCount all outcomes which lead to a total of \\(5\\). Hint: Just list them. 1+2+2 is different from 2+2+1.\nDivide for the probability."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#equally-probable-outcomes",
+    "href": "Math125/slides/12_13_probability_and_counting.html#equally-probable-outcomes",
+    "title": "12-13. Probability and Counting",
+    "section": "Equally probable outcomes",
+    "text": "Equally probable outcomes\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\) is only sometimes warranted\n\n\nFormula works for:\n\nThe two results of a coin flip.\nThe six results of a die roll.\nThe 36 results of two die rolls.\nThe 52 results of a card draw from a deck.\n\n\nFormula fails for:\n\nThe 11 resulting totals (2 through 12) from rolling two dice.\nThe two possible results (positive/negative) from some bloodwork.\nThe two possible winners of a game.\nThe six people she might ask for help."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#winning-a-contest.",
+    "href": "Math125/slides/12_13_probability_and_counting.html#winning-a-contest.",
+    "title": "12-13. Probability and Counting",
+    "section": "Winning a contest.",
+    "text": "Winning a contest.\nThe problem: Two sports teams (A and B) are about evenly matched: Any game between them is a 50/50 toss up. They play five games. What is the probability that team A wins at least four?\nStep 1: What are the “outcomes”?\nStep 2: How many outcomes are possible? Multiplication is your friend!\nStep 3: How many outcomes are successes?\nDivide and conclude.\nBonus: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?"
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-flawed-classic",
+    "href": "Math125/slides/12_13_probability_and_counting.html#a-flawed-classic",
+    "title": "12-13. Probability and Counting",
+    "section": "A Flawed Classic",
+    "text": "A Flawed Classic\nThe problem: A Dad of exactly two kids is asked whether he has a daughter. “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter. What is the probability that he also has a son?\n\n\nOption 1: The other kid\nThe other kid could be male or female. P(son) = 1/2.\n\nOption 2: Family structures\nFour equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate the first. Of the remaining 3, two are “successes.” P(son) = 2/3.\n\nWhich argument is more correct?\nThis classic puzzle depends on several oversimplifications about the world. Identify them."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#the-monty-hall-problem",
+    "href": "Math125/slides/12_13_probability_and_counting.html#the-monty-hall-problem",
+    "title": "12-13. Probability and Counting",
+    "section": "The Monty Hall Problem",
+    "text": "The Monty Hall Problem\nThis famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.”\n\nYou’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals a door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?\n\n\n\nIt doesn’t matter. A door has been wasted, leaving a 50/50 chance of success with either remaining door.\n\nYou should switch. The initial choice has 1/3 chance, and the remaining door a has 2/3 chance."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-fully-evolved-species",
+    "href": "Math125/slides/12_13_probability_and_counting.html#a-fully-evolved-species",
+    "title": "12-13. Probability and Counting",
+    "section": "A fully evolved species",
+    "text": "A fully evolved species\nFive alligator eggs hatch from a nest What is the probability all are female? What is the probability of four females and one male?"
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-chance-at-magic",
+    "href": "Math125/slides/12_13_probability_and_counting.html#a-chance-at-magic",
+    "title": "12-13. Probability and Counting",
+    "section": "A chance at Magic",
+    "text": "A chance at Magic\nA (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land,” making them immediately useful at the game’s beginning. You draw an initial hand of seven cards.\n\nWhat is the probability of getting no land cards among them?\nHow many draws of seven are possible from a deck of 99 cards?\nHow many draws of seven have no land cards?\nDivide to find the probability."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#preparing-victory-a-true-story",
+    "href": "Math125/slides/12_13_probability_and_counting.html#preparing-victory-a-true-story",
+    "title": "12-13. Probability and Counting",
+    "section": "Preparing Victory, a true story",
+    "text": "Preparing Victory, a true story\nFrancis is playing Monopoly. He has hotels on Boardwalk and Park Place. He gleefully asks “Hey Daddy, what’s the probability that Nana rolls a 4 or a 6 next?” Find the answer."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-perfect-match",
+    "href": "Math125/slides/12_13_probability_and_counting.html#a-perfect-match",
+    "title": "12-13. Probability and Counting",
+    "section": "A perfect match",
+    "text": "A perfect match\nFive cards are drawn from a standard deck. What is the probability of drawing “four of a kind”? To solve this, try to count how many “four of a kind” hands are possible."
+  },
+  {
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#homework",
+    "href": "Math125/slides/12_13_probability_and_counting.html#homework",
+    "title": "12-13. Probability and Counting",
+    "section": "Homework",
+    "text": "Homework\nLabeled 12-13, Probability on Webwork."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#preparatory-work",
+    "title": "03. Correlation is not Causation",
+    "section": "Preparatory Work",
+    "text": "Preparatory Work\nRead the Wikipedia article on this topic. Try to understand the comic on the next slide.\n\nSource: Randall Munroe (XKCD). Used with permission."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#three-explanations-for-correlation-at-least",
+    "title": "03. Correlation is not Causation",
+    "section": "Three explanations for correlation (at least!)",
+    "text": "Three explanations for correlation (at least!)\n\n\nFor each scenario, which is more likely? Why?\n\nA influences B (directly or indirectly)\nB influences A (directly or indirectly)\nSome lurking variable is driving both A and B.\n\n\n\nDaily ice cream sales and gasoline sales are significantly correlated.\nSocial media use and depression are correlated.\nIn school children, finger length and reading ability are strongly correlated.\nBoth caffeinated soda use and ADHD diagnoses have increased in children over the last 20 years.\nYoung children who sleep with the light on are more likely to develop myopia (nearsightedness) in later life."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#start-with-an-open-mind.",
+    "title": "03. Correlation is not Causation",
+    "section": "Start with an open mind.",
+    "text": "Start with an open mind.\nCultivate creative skepticism and critical thinking.\nAthletes with high PPG (points per game) have higher GPA (grade point average).\nGive three credible explanations based on the three forms of the previous slide. Brainstorming all three explanation types!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#lurking-confounding-variables",
+    "title": "03. Correlation is not Causation",
+    "section": "Lurking (“Confounding”) variables",
+    "text": "Lurking (“Confounding”) variables\nAny variable, often unmeasured, that drives a correlation between two other variables. When discovered, lurking variables tend to explain away apparent relationships between other variables.\n\nCoffee consumption and lung cancer are positively correlated. (Really!) We should not conclude that coffee causes lung cancer. There may be lurking variables which we have not considered. One of the hallmarks of critical thinking is not jumping to conclusions."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#so-withhold-judgment-forever",
+    "title": "03. Correlation is not Causation",
+    "section": "So… withhold judgment forever?",
+    "text": "So… withhold judgment forever?\n\nAttendance rate is correlated to class grade.\nLaws against trans people are associated to violence against trans people.\nWithin certain banks, loan acceptance is associated to applicant race.\nCigarette smoking is correlated to lung cancer.\n\nThe idea of confounding variables can become a hater’s new excuse to dismiss statistical evidence. In cases where common sense understanding, historical understanding, or controlled experimental support a conclusion, we can’t just wave it away!"
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#in-an-age-of-industrialized-weaponized-grade-a-propaganda-how-do-i-know-who-or-what-to-believe",
+    "title": "03. Correlation is not Causation",
+    "section": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?",
+    "text": "In an age of industrialized, weaponized, Grade-A propaganda, how do I know who or what to believe?\nYikes. I’m no oracle! These simple rules have served me well.\n\nStudy history. What’s past is prologue.\nThe truth is often complicated. Get comfortable with nuance and be suspicious of those with none.\n“When someone shows you who they are, believe them the first time.” –Maya Angelou\nIf the Nazis are on your side, you’re on the wrong side."
+  },
+  {
+    "objectID": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "href": "Math125/slides/3_correlation_is_not_causation.html#individual-homework",
+    "title": "03. Correlation is not Causation",
+    "section": "Individual Homework",
+    "text": "Individual Homework\nWebwork assignment “Correlation is not causation.”"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#preparation-work",
+    "href": "Math125/slides/16_17_conditional_probability.html#preparation-work",
+    "title": "16-17. Conditional Probability",
+    "section": "Preparation work",
+    "text": "Preparation work\nRead all of section 3.2 (pp. 95-108)"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#review-two-multiplication-rules",
+    "href": "Math125/slides/16_17_conditional_probability.html#review-two-multiplication-rules",
+    "title": "16-17. Conditional Probability",
+    "section": "Review – two multiplication rules",
+    "text": "Review – two multiplication rules\nMultiplication rule – simplistic\n(works when \\(A\\) and \\(B\\) are independent) \\[ P(A \\text{ and } B) = P(A)*P(B)\\]\nMultiplication rule – full\n(just works) \\[ P(A \\text{ and } B) = P(A)*P(B | A)\\]\n\\[P(\\text{drawing two aces}) = \\frac{4}{52} \\cdot \\frac{3}{51}\\]\n\\(P(B | A)\\) “Probably of B given A” is a conditional probability. It’s the probability of \\(B\\), adjusted for condition that \\(A\\) is known."
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#examples-of-conditional-probability",
+    "href": "Math125/slides/16_17_conditional_probability.html#examples-of-conditional-probability",
+    "title": "16-17. Conditional Probability",
+    "section": "Examples of conditional probability",
+    "text": "Examples of conditional probability\nU = You are using an umbrella.\nR = It’s raining.\nP(U) asks “How likely are you to use an umbrella, at any time?”\nP(U | R) asks “When it’s raining, how likely are you to use an umbrella?”\nP(R | U) asks “You’re using an umbrella. What’s the probability of rain?”"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#solving-for-pba",
+    "href": "Math125/slides/16_17_conditional_probability.html#solving-for-pba",
+    "title": "16-17. Conditional Probability",
+    "section": "Solving for P(B|A)",
+    "text": "Solving for P(B|A)\n\\[ P(A\\text{ and } B) = P(A) * P(B | A)\\]\ncan be converted to\n\\[P(B|A) = \\frac{P(A\\text{ and } B)}{P(A)}\\]\nDepending on which two we know, we may use them to calculate the third."
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#order-by-probability-least-likely-to-most-likely",
+    "href": "Math125/slides/16_17_conditional_probability.html#order-by-probability-least-likely-to-most-likely",
+    "title": "16-17. Conditional Probability",
+    "section": "Order by probability (least likely to most likely)",
+    "text": "Order by probability (least likely to most likely)\n\nThe probability of a headache.\nThe probability of a headache, given car accident.\nThe probability of a headache, given you have the flu.\nThe probability of a headache, given you spent the day at the spa.\nThe probability of a headache, after 24 hours of video games."
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#compare-and-contrast",
+    "href": "Math125/slides/16_17_conditional_probability.html#compare-and-contrast",
+    "title": "16-17. Conditional Probability",
+    "section": "Compare and contrast",
+    "text": "Compare and contrast\nRank in order, according to your opinion:\n\\[P(\\text{headache} | \\text{flu})\\]\n\\[P(\\text{flu} | \\text{headache})\\]\n\\[P(\\text{flu and headache})\\]"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#reversing-a-conditional-the-accuracy-paradox",
+    "href": "Math125/slides/16_17_conditional_probability.html#reversing-a-conditional-the-accuracy-paradox",
+    "title": "16-17. Conditional Probability",
+    "section": "Reversing a conditional – the accuracy paradox",
+    "text": "Reversing a conditional – the accuracy paradox\nA rare genetic disorder affects about 1/1000 of the population. You can test for it with a test which is 99% accurate. If a patient tests positive, how likely is it that they have the disorder?"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#outline-diagrams-for-managing-cases-and-their-probabilities",
+    "href": "Math125/slides/16_17_conditional_probability.html#outline-diagrams-for-managing-cases-and-their-probabilities",
+    "title": "16-17. Conditional Probability",
+    "section": "Outline diagrams for managing cases and their probabilities",
+    "text": "Outline diagrams for managing cases and their probabilities\n\nHave the gene (1/1000)\n\ntest positive (99/100)\n\np = .00099\n\ntest negative (1/100)\n\np = .00001\n\n\nLack the gene 999/1000\n\ntest positive (1/100)\n\np = .00999\n\ntest negative (99/100)\n\np = .98901"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals",
+    "href": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals",
+    "title": "16-17. Conditional Probability",
+    "section": "Tree diagrams for managing conditionals",
+    "text": "Tree diagrams for managing conditionals\n\nEach heading is a case or subcase.\nConditional probabilities on each heading.\nFinal probabilities calculated by multiplication.\nRecombine as needed, depending on the problem."
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#probability-and-trust",
+    "href": "Math125/slides/16_17_conditional_probability.html#probability-and-trust",
+    "title": "16-17. Conditional Probability",
+    "section": "Probability and Trust",
+    "text": "Probability and Trust\n\nAssign a baseline probability that a man is “trustworthy” (For simplicity we have only two possibilities – trustworthy or not.) If you are generally trusting, assign a high probabiity. If not, assign a low probability.\n… but he did something Suspicious. Assign probabilities to the Suspicious Thing, if he is trustworthy, and also if he is not. Hint. To be Sus, a thing should be more likely if he’s bad than if he’s good.\nMake an outline diagram for all for possibilities, branching on trustworthiness, then on the Thing. Calculate all probabilities.\nFind P(Trustworthy & Sus) and also P(Sus).\nCalculate P(Trustworthy | Suspicious Thing). This is called a Bayesian Update. Does this math roughly match our own reevaluations of interpersonal trust?"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals-1",
+    "href": "Math125/slides/16_17_conditional_probability.html#tree-diagrams-for-managing-conditionals-1",
+    "title": "16-17. Conditional Probability",
+    "section": "Tree diagrams for managing conditionals",
+    "text": "Tree diagrams for managing conditionals\n\nTrustworthy ()\n\nDid the thing ()\n\np=?\n\nDidn’t ()\n\np=?\n\n\nUntrustworthy ()\n\nDid the thing ()\n\np=?\n\nDidn’t ()\n\np=?"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#a-morning-ritual",
+    "href": "Math125/slides/16_17_conditional_probability.html#a-morning-ritual",
+    "title": "16-17. Conditional Probability",
+    "section": "A morning ritual",
+    "text": "A morning ritual\nEvery morning you flip a coin to decide on breakfast. If it’s heads, you have fresh fruit. If it’s tails, you enjoy a bowl of deep fried cheesy-fats. When you eat fresh fruit, you have stomach ache only 10% of the time, but when you eat garbage, you have a stomach ache 60% of the time.\n\nMake an outline diagram for these probabilities.\nYou have a stomach ache but can’t remember what you ate for breakfast. What’s the probability it was fresh fruit?"
+  },
+  {
+    "objectID": "Math125/slides/16_17_conditional_probability.html#homework",
+    "href": "Math125/slides/16_17_conditional_probability.html#homework",
+    "title": "16-17. Conditional Probability",
+    "section": "Homework",
+    "text": "Homework\nWebwork assignment “16-17. Conditional Probability” (5 problems)"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#preparatory-work",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#preparatory-work",
+    "title": "18-19. The Normal Distribution",
+    "section": "Preparatory work",
+    "text": "Preparatory work\nRead: OpenIntro Statistics Section 4.1"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#the-normal-distribution-bell-curve",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#the-normal-distribution-bell-curve",
+    "title": "18-19. The Normal Distribution",
+    "section": "The Normal Distribution (bell curve)",
+    "text": "The Normal Distribution (bell curve)\n\n\n\n\n\n\n\n\n\n\nFigure 1: A standard normal distribution\n\n\n\n\n\n\nNormal Distribution is:\n\nShaped like a bell\nUnimodal\nSymmetric\nUnskewedx"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#the-normal-distribution-is-everywhere",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#the-normal-distribution-is-everywhere",
+    "title": "18-19. The Normal Distribution",
+    "section": "The Normal Distribution is everywhere",
+    "text": "The Normal Distribution is everywhere\n\n\n\n\n\n\n\n\n\n\nFigure 2: A suspiciously normal data distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: A suspiciously normal data distribution"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#plenty-of-data-distributions-are-not-normal",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#plenty-of-data-distributions-are-not-normal",
+    "title": "18-19. The Normal Distribution",
+    "section": "Plenty of data distributions are not normal",
+    "text": "Plenty of data distributions are not normal\n\n\n\n\n\n\n\n\n\n\nFigure 4: A far-from-normal data distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: A suspiciously normal data distribution"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#the-family-of-normal-distributions",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#the-family-of-normal-distributions",
+    "title": "18-19. The Normal Distribution",
+    "section": "The Family of Normal Distributions",
+    "text": "The Family of Normal Distributions\n\nviewof mu = Inputs.range([-5, 5], {\n  value: 0, \n  step: 0.1, \n  label: \"μ:\", \n})\n\nviewof sigma = Inputs.range([0.1, 3], {\n  value: 1, \n  step: 0.1, \n  label: \"σ:\", \n})\n\n// 2. Dynamic Notation Display\n// This updates instantly whenever the sliders move\nmd`### Distribution: N(${mu.toFixed(1)}, ${(sigma**2).toFixed(2)})`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n  height: 400,\n  grid: true,\n  y: { domain: [0, 1], label: \"Density\" },\n  x: { domain: [-10, 10], label: \"Value\" },\n  marks: [\n    // The Normal Curve\n    Plot.lineY(d3.range(-10, 10, 0.05), {\n      x: x =&gt; x,\n      y: x =&gt; (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2)),\n      stroke: \"#2c3e50\",\n      strokeWidth: 3\n    }),\n    // A dashed vertical line at the mean to help visualize shift\n    Plot.ruleX([mu], {stroke: \"red\", strokeDasharray: \"4,4\", opacity: 0.5})\n  ]\n})\n\n\n\n\n\n\n\n\nThe notation \\(N(\\mu, \\sigma^2)\\) refers to a normal distribution while telling its mean \\(\\mu\\) and its standard deviation \\(\\sigma\\). What kind of normal distribution is \\(N(100,16)\\)?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#reading-the-bell-curve",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#reading-the-bell-curve",
+    "title": "18-19. The Normal Distribution",
+    "section": "Reading the bell curve",
+    "text": "Reading the bell curve\n\n\n\nCholesterol Level Histograms. Source: Slhessarenko, N., Jacob, C.M., Azevedo, R.S. et al. Serum lipids in Brazilian children and adolescents: determining their reference intervals. BMC Public Health 15, 18 (2015). https://doi.org/10.1186/s12889-015-1359-4. Open access article.\n\n\nWhat is a typical cholesterol for a six year old?\nWhat portion of kids age 1-8 have cholesterol between 60 and 120?\nHow unusual is a cholesterol of 160, for a kid aged 1-8?\nDo kids age 1-8 have more, less, or about the same cholesterol, compared to kids 9-12?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#technical-definition-for-the-record",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#technical-definition-for-the-record",
+    "title": "18-19. The Normal Distribution",
+    "section": "Technical definition, for the record",
+    "text": "Technical definition, for the record\nTechnically, normal is not just unimodal, symmetric, unskewed, and bell shaped. A normal distribution fits the specific formula below. Lucky for us, we don’t need to use or memorize the formula in Math 125!\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}\\]"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#central-limit-theorem",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#central-limit-theorem",
+    "title": "18-19. The Normal Distribution",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\nWhen should we expect a distribution to be normal?\nIf a data variable aggregates many small independent effects, it’s usually normal or close. For example:\n\nHuman height (arguably)\nExam scores (usually)\nCholesterol levels (usually)\nGame scores in sports (basketball more than hockey!)\nSampling distributions (This is foreshadowing. More on this later!)\n\nThis phenomenon is called the Central Limit Theorem. Its precise statement is too technical for Math 125."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#which-are-probably-normal-or-close",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#which-are-probably-normal-or-close",
+    "title": "18-19. The Normal Distribution",
+    "section": "Which are probably normal (or close)?",
+    "text": "Which are probably normal (or close)?\n\nThe widths of 2x4 lumber at Lowes.\nThe amount of liquid in coffee beverages served at Tim Hortons.\nThe weights of pets in Potsdam.\nSAT scores of Potsdam High School graduates.\nThe lengths of days (throughout the year) in Potsdam.\nThe results of overlapping political polls, all taken at the same time and place (but polling different people)."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#the-empirical-rule-68-95-99.7",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#the-empirical-rule-68-95-99.7",
+    "title": "18-19. The Normal Distribution",
+    "section": "The empirical rule (68-95-99.7)",
+    "text": "The empirical rule (68-95-99.7)\n\nWithin one standard deviation from the mean lies 68% of the data.\nWithin two standard deviations from the mean lies 95% of the data.\nWithin three standard deviations from the mean lies 99.7% of the data.\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Time-to-work distribution\n\n\n\n\n\n\n\n\ncount    783.000000\nmean      25.997446\nstd       22.290973\nmin        1.000000\n25%       10.000000\n50%       20.000000\n75%       30.000000\nmax      163.000000\nName: time_to_work, dtype: float64\n\n\nIn range \\((26 - 2*22.3, 25+2*22.3)\\): 96% of data points."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#the-empirical-rule-68-95-99.7-1",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#the-empirical-rule-68-95-99.7-1",
+    "title": "18-19. The Normal Distribution",
+    "section": "The empirical rule (68-95-99.7)",
+    "text": "The empirical rule (68-95-99.7)\n(Graphic used with permission, Wikimedia Foundation)\nPercentiles and tail areas A distribution is N(100,102). How much data should be expected above 120? A distribution is N(60, 22). How much data should be expected below 54? A distribution is N(10, 52). How much data should be expected above 16? Use the empirical rule or choose a cdf calculation tool: Matt Bognar’s CDF calculator Use Jupyter from scipy import stats stats.norm.cdf(2) Use a Z-table (this is the old school method).\nZ-score Intro: So, is that a lot then? A certain pet parrot’s body temperature is 107°. What more would you need to know, before judging whether the body temperature is a health concern?\nSo, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. What other general stats about parrots and their temperatures would be useful to contextualize this information?\nSo, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. The standard deviation of body temp is 1.4°. Is the bird’s temperature normal, somewhat high, or very high? Why?\nJudging relative to the distribution Judging a data value x relative to the distribution it’s in requires both: Comparison to the mean of the distribution: subtract μ Conversion to units of standard deviations: divide by σ Thus the formula: Z-score = (data value - μ) / σ The Z-score acts like a interchangeable standard of unusualness, scaled to the distribution the data belongs to.\nZ-score = (value - μ) / σ It counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions. Z = 0: Average. Z = +1, -1: Uninteresting. Z = +2, -2: Raise eyebrow. Z = +3, -3: Remarkable. Z = +5, -5: Stunning. Interpreting the Z-score\nZ score A distribution for test scores is normally distributed N(500, 502). You score 625. Well done! What is your Z score? An LED manufacture process produces units with illumination N(50,0.22). One particular bulb has illumination 49.4. What is its Z-score? If we reject any bulb at 49.4 or below, how much of the inventory would we waste? By reconfiguring the assembly process, we can make the distribution N(51, 12). How would you describe the effect of this change?\nThe rarity of a Z-score: the p-value A good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score. Use Bognar’s tool to answer: How much of the normal distribution is above Z = 2.3? How much of the normal distribution is more extreme, on either side, than Z=3.1? Use stats.norm.cdf to answer: How much of the normal distribution is below Z = -5? How much of the normal distribution is above Z = 2.5?\nMethods for finding p-value, recap To find tail areas, you can… Use the Empirical Rule with some geometric reasoning. (Z=1, 2, 3 only) Matt Bognar’s CDF calculator (Z in the range -4..4) Use Jupyter (Any Z will do) from scipy import stats stats.norm.cdf(2) Use a Z-table. (Paper method, limited accuracy and range)\nPutting it all together Most people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile? An average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day? A 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?\nHomework Solve homework problems “18-19. The Normal Distribution”"
   },
   {
     "objectID": "Math125/slides/14_15_probability_laws.html#preparatory-work",
@@ -1817,14 +1901,14 @@
     "href": "Math340/Structure_of_Argument.html#understanding-or",
     "title": "Structure of Argument",
     "section": "2.5 Understanding “or”",
-    "text": "2.5 Understanding “or”\n\n2.5.1 In a Truth Table\n\n\n\n\nP\nQ\n\\(P \\lor Q\\)\n\n\n\n\nT\nT\nT\n\n\nT\nF\nT\n\n\nF\nT\nT\n\n\nF\nF\nF\n\n\n\n\nNotice that “or” includes the case of “and”. The subtext “…or both” is always entailed. This interpretation is “inclusive or”. The alternative is “exclusive or”, usually written xor or \\(\\oplus\\). Since “or” is inclusive by default, we never say “and/or” in mathematics, because the “and” is superfluous.\nNatural English uses “or” in several senses: Inclusively (“Milk or sugar?”), exclusively (“Your money or your life!”, and to request a choice (“Coffee or tea?”). It’s a constant source of ambiguity and confusion. Natural language is messy, English especially so.\n\n\n2.5.2 In Proof Theory\n\n2.5.2.1 Or-introduction\nProving \\(P \\lor Q\\), is sometimes the silly act of weakening a statement by adding an irrelevant alternative:\n\\[\\frac{P}{\\therefore P \\lor Q} \\hspace{1in} \\frac{Q}{\\therefore P \\lor Q} \\]\nFor example: “I know x = 5. Therefore \\(x=\\pm 5\\) This argument form is rare because it’s rarely useful!\nMore substantially, interpreting \\(P \\lor Q\\) as \\(\\neg P \\to Q\\) or \\(\\neg Q \\to P\\) yields a more interesting proof of \\(P \\lor Q\\):\n\\[\n\\frac{\\begin{matrix}[\\text{Assume } \\neg P]\\\\ Q\\end{matrix}}{\\therefore P \\lor Q}\n\\]\nAlternatively:\n\\[\n\\frac{\\begin{matrix}[\\text{Assume } \\neg Q]\\\\ P\\end{matrix}}{\\therefore P \\lor Q}\n\\]\nNotice that either of these argument forms is enough to support the conclusion of “\\(P\\) or \\(Q\\)”. There is no need to do both.\n\n\n2.5.2.2 Or-elimination (Proof by cases)\nKnowing “\\(P\\) or \\(Q\\)” is awkward, because we don’t know which is true. But if both cases lead to the same conclusion, we needn’t care:\n\\[\n\\frac{P \\lor Q\\,\\,\n\\begin{matrix} [\\text{Assume } P] \\\\ R \\end{matrix}\\,\\,\n\\begin{matrix} [\\text{Assume } Q] \\\\ R \\end{matrix}\n}\n{\\therefore R}\n\\]\nThis is called “proof by cases.”\nExample: For every real number \\(x\\), we have \\(x^2 \\geq 0\\). Let \\(x\\) be a real number. Either \\(x &gt; 0\\) or \\(x=0\\) or \\(x &lt; 0\\). If \\(x &gt; 0\\) then we may multiply both sides by \\(x\\) without changing the sign of the inequality, and \\(x^2 &gt; 0\\). If \\(x&lt;0\\) then we may multiply both sides by \\(x\\), but we change the side of the inequality, and again \\(x^2&gt;0\\). If \\(x=0\\) then certainly \\(x^2 \\geq 0\\). In all cases we have \\(x^2 \\geq 0\\).\nExample 2: For any integer \\(n\\), \\(n^2 + n\\) is even. If \\(n\\) is even, then so is \\(n^2\\) and \\(n^2+n\\) is the sum of two even numbers, so even. If \\(n\\) is odd, then so is \\(n^2\\), and \\(n^2+n\\) is the sum of two odd numbers, so even. Thus \\(n^2+n\\) is always even.\nNote in both examples \\(x\\) is used as an arbitrary particular, but we have an implied generalization.\n\n\n\n2.5.3 Exercises – Identify the argument form\nWhat argument form is used in each case? Is the argument logically correct?\n\n“If what you say is true, I can’t forgive you. If it’s a lie, you’re a liar and I can’t trust you. Either way, we’re through!”\n“Well, technically, I said I would have water or tea with dinner. And I had water. So that was true.”\n“Cats make me allergic, but Fluffy here has no effect on me! I conclude that your beloved pet is not, after all, a cat!”\nBy not providing a guest bathroom towel, I have left you high and dry, so to speak. Therefore you are dry and don’t need a towel. You’re welcome.\nLet \\(x\\) be a positive number. Then \\(x&gt;0\\). Multiplying both sides of this inequality by \\(x\\) does not change the direction of the inequality, because \\(x\\) is positive. So \\(x^2 &gt; 0\\). We conclude: If \\(x\\) is positive, then so is \\(x^2\\)."
+    "text": "2.5 Understanding “or”\n\n2.5.1 In a Truth Table\n\n\n\n\nP\nQ\n\\(P \\lor Q\\)\n\n\n\n\nT\nT\nT\n\n\nT\nF\nT\n\n\nF\nT\nT\n\n\nF\nF\nF\n\n\n\n\nNotice that “or” includes the case of “and”. The subtext “…or both” is always entailed. This interpretation is “inclusive or”. The alternative is “exclusive or”, usually written xor or \\(\\oplus\\). Since “or” is inclusive by default, we never say “and/or” in mathematics, because the “and” is superfluous.\nNatural English uses “or” in several senses: Inclusively (“Milk or sugar?”), exclusively (“Your money or your life!”, and to request a choice (“Coffee or tea?”). It’s a constant source of ambiguity and confusion. Natural language is messy, English especially so.\n\n\n2.5.2 In Proof Theory\n\n2.5.2.1 Or-introduction\nProving \\(P \\lor Q\\), is sometimes the silly act of weakening a statement by adding an irrelevant alternative:\n\\[\\frac{P}{\\therefore P \\lor Q} \\hspace{1in} \\frac{Q}{\\therefore P \\lor Q} \\]\nFor example: “I know x = 5. Therefore \\(x=\\pm 5\\) This argument form is rare because it’s rarely useful!\nMore substantially, interpreting \\(P \\lor Q\\) as \\(\\neg P \\to Q\\) or \\(\\neg Q \\to P\\) yields a more interesting proof of \\(P \\lor Q\\):\n\\[\n\\frac{\\begin{matrix}[\\text{Assume } \\neg P]\\\\ Q\\end{matrix}}{\\therefore P \\lor Q}\n\\]\nAlternatively:\n\\[\n\\frac{\\begin{matrix}[\\text{Assume } \\neg Q]\\\\ P\\end{matrix}}{\\therefore P \\lor Q}\n\\]\nNotice that either of these argument forms is enough to support the conclusion of “\\(P\\) or \\(Q\\)”. There is no need to do both.\n\n\n2.5.2.2 Or-elimination (Proof by cases)\nKnowing “\\(P\\) or \\(Q\\)” is awkward, because we don’t know which is true. But if both cases lead to the same conclusion, we needn’t care:\n\\[\n\\frac{P \\lor Q\\,\\,\n\\begin{matrix} [\\text{Assume } P] \\\\ R \\end{matrix}\\,\\,\n\\begin{matrix} [\\text{Assume } Q] \\\\ R \\end{matrix}\n}\n{\\therefore R}\n\\]\nThis is called “proof by cases.”\nExample: When solving a quadratic, we often move from, say, \\(x^2-3x+2=0\\) to factored form \\((x-2)(x-1)=0\\), to the conclusion \\(x=2\\) or \\(x=1\\). The last step can be understood as or-introduction in the following sense. Knowing \\((x-2)(x-1)=0\\), we assume \\(x \\neq 2\\). Then \\(x-2\\) is not zero, so we may divide by it: \\(x-1 = \\frac{0}{x-2} = 0\\). It follows that \\(x=1\\). We have proven \\(x=1\\) under the (unjustified) assumption \\(x \\neq 2\\), and we conclude \\(x=2\\) or \\(x=1\\).\nExample: For every real number \\(x\\), we have \\(x^2 \\geq 0\\). Let \\(x\\) be a real number. Either \\(x &gt; 0\\) or \\(x=0\\) or \\(x &lt; 0\\). If \\(x &gt; 0\\) then we may multiply both sides by \\(x\\) without changing the sign of the inequality, and \\(x^2 &gt; 0\\). If \\(x&lt;0\\) then we may multiply both sides by \\(x\\), but we change the side of the inequality, and again \\(x^2&gt;0\\). If \\(x=0\\) then certainly \\(x^2 \\geq 0\\). In all cases we have \\(x^2 \\geq 0\\).\nExample: For any integer \\(n\\), \\(n^2 + n\\) is even. If \\(n\\) is even, then so is \\(n^2\\) and \\(n^2+n\\) is the sum of two even numbers, so even. If \\(n\\) is odd, then so is \\(n^2\\), and \\(n^2+n\\) is the sum of two odd numbers, so even. Thus \\(n^2+n\\) is always even.\nExample: For any integer \\(n\\), \\(n^2-3n+2 \\geq 0\\). The factorization \\(n^2-3n+2 = (n-1)(n-2)\\) is helpful, depending on \\(n\\). If \\(n=1\\) or \\(n=2\\), the function is \\(0\\). If \\(n&gt;2\\), we have a product of two positives. If \\(n&lt;1\\), we have a product of two negative. Since \\(n=1\\) or \\(n=2\\) or \\(n&gt;2\\) or \\(n&lt;1\\), we conclude that \\(n^2-3n+2\\) is always \\(\\geq 0\\).\n\n\n\n2.5.3 Exercises – Identify the argument form\nWhat argument form is used in each case? Is the argument logically correct?\n\n“If what you say is true, I can’t forgive you. If it’s a lie, you’re a liar and I can’t trust you. Either way, we’re through!”\n“Well, technically, I said I would have water or tea with dinner. And I had water. So that was true.”\n“Cats make me allergic, but Fluffy here has no effect on me! I conclude that your beloved pet is not, after all, a cat!”\nBy not providing a guest bathroom towel, I have left you high and dry, so to speak. Therefore you are dry and don’t need a towel. You’re welcome.\nLet \\(x\\) be a positive number. Then \\(x&gt;0\\). Multiplying both sides of this inequality by \\(x\\) does not change the direction of the inequality, because \\(x\\) is positive. So \\(x^2 &gt; 0\\). We conclude: If \\(x\\) is positive, then so is \\(x^2\\)."
   },
   {
     "objectID": "Math340/Structure_of_Argument.html#understanding-not",
     "href": "Math340/Structure_of_Argument.html#understanding-not",
     "title": "Structure of Argument",
     "section": "2.6 Understanding “not”",
-    "text": "2.6 Understanding “not”\n\n2.6.1 In a Truth Table\nThe truth table is a breeze:\n\n\n\n\n\\(P\\)\n\\(\\neg P\\)\n\n\n\n\nT\nF\n\n\nF\nT\n\n\n\n\n\n\n2.6.2 In Proof Theory\nThe proof theory is a little more subtle. How do we prove that \\(P\\) is false? Typically by showing that if \\(P\\) were true it would lead to logical disaster, usually represented as a proved falsehood (“\\(\\bot\\)”). The technique is called proof by contradiction:\n\nSuppose \\(x\\) were both positive and negative. Then \\(x &gt; 0\\) and \\(x &lt; 0\\). By transitivity \\(0 &lt; x &lt; 0\\), so \\(0 &lt; 0\\), and therefore \\(0\\) is not equal to itself. This is absurd so \\(x\\) cannot be both positive and negative.\n\nFormally: \\[\\frac{\n  \\begin{matrix}\n  [\\text{Assume } P]\\\\\n  \\bot\n  \\end{matrix}\n  }{\\neg P}\n  \\,\\,\\text{ and similarly } \\,\\,\n  \\frac{\n  \\begin{matrix}\n  [\\text{Assume } \\neg P]\\\\\n  \\bot\n  \\end{matrix}\n  }{P}\n  \\]\nOn the other hand, how do we use \\(\\neg P\\) as a premise? Sometimes we have an implication of the form \\(R \\to P\\), so Modus Tolens is one way to proceed. Sometimes we also have a proof of \\(P\\), so we proceed to a contradiction:\n\\[\\frac{P, \\neg P}{\\bot}\\]\nIt may seem silly to imagine that both \\(P\\) and \\(\\neg P\\) can be proven. But inside the context of another assumption (for contradiction, usually), it’s quite common.\n\n\n2.6.3 Examples\nProposition: The square root of \\(2\\) is irrational.\nproof: Assume \\(\\sqrt{2}\\) is rational. Then \\(\\sqrt{2}\\) can be written as a fraction \\(\\sqrt{2} = \\frac{a}{b}\\), in lowest terms, where \\(a\\) and \\(b\\) are both positive integers. It follows that \\(2 = \\frac{a^2}{b^2}\\), so \\(2b^2 = a^2\\). It follows that \\(a^2\\) is even, so \\(a\\) is even, so \\(a^2\\) is divisible by \\(4\\), so \\(b^2\\) is even, so \\(b\\) is even, so \\(\\frac{a}{b}\\) is not in lowest terms after all. This is a contradiction. We conclude \\(\\sqrt{2}\\) is irrational.\nNotes: - The contradiction \\(\\bot\\) arises from something being proved true and false. What statement was proved true and false? - The contradiction is used for a basic not-introduction. What core steps in the proof set up and complete the not-introduction? - Much is claimed about evenness. Why is each assertion true?\nProposition: There are infinitely many prime numbers.\nproof: Suppose there were only a finitely many prime numbers. Then it would be possible to multiply them all, producing a number \\(N\\) divisible by every prime number. Then \\(N+1\\) would not be larger than every prime number, but not divisible by any prime number. The prime factorization of \\(N+1\\) would not contain any prime numbers at all, which is absurd. It follows that there are infinitely many primes.\nA paradox is a proof which leads to a contradiction, but lacks any obvious suspicious assumption (for contradiction) which can be blamed for the problem. Nevertheless, the right response to a paradox is to identify an implicit premise which can be questioned. For example, consider the set of all sets which do not contain themselves as elements. Does it contain itself? This is Russell’s paradox. Arguably, it’s a central logical problem with mathematical foundations. The Liar Paradox (“I am lying”) is simpler but equally dangerous.\n\n\n2.6.4 Do not believe a contradiction\nIn real life you may be asked to believe two things which are utterly incompatible. If you submit to such gaslighting, your critical thinking skills will be forced into deactivation, whereupon you can be manipulated by abusers and authoritarians. Don’t let that happen.\n\n\n2.6.5 A Matter of Taste\nSome mathematicians argue that proofs by contradiction are correct, but inelegant or bad. There are many possible reasons for this view:\n\nIt’s inherently a double-negative (“\\(P\\) can’t be false”), where positive logic is simpler and cleaner.\nIt leads to proofs whose “middle” mixes true statements with false statements, making it hard gain insight about the facts.\nIt leads to bad habits, particularly among students whose comfort zone is to assume as much as possible, and who may assume \\(\\neg P\\) entirely unnecessarily.\nThey are interested in exotic logics where “not false” isn’t quite the same as “true.”\n\nDr. Ellingsen can tell you more about this point of view."
+    "text": "2.6 Understanding “not”\n\n2.6.1 In a Truth Table\nThe truth table is a breeze:\n\n\n\n\n\\(P\\)\n\\(\\neg P\\)\n\n\n\n\nT\nF\n\n\nF\nT\n\n\n\n\n\n\n2.6.2 In Proof Theory\nThe proof theory is a little more subtle. How do we prove that \\(P\\) is false? Typically by showing that if \\(P\\) were true it would lead to logical disaster, usually represented as a proved falsehood (“\\(\\bot\\)”). The technique is called proof by contradiction:\n\nSuppose \\(x\\) were both positive and negative. Then \\(x &gt; 0\\) and \\(x &lt; 0\\). By transitivity \\(0 &lt; x &lt; 0\\), so \\(0 &lt; 0\\), and therefore \\(0\\) is not equal to itself. This is absurd so \\(x\\) cannot be both positive and negative.\n\nFormally: \\[\\frac{\n  \\begin{matrix}\n  [\\text{Assume } P]\\\\\n  \\bot\n  \\end{matrix}\n  }{\\neg P}\n  \\,\\,\\text{ and similarly } \\,\\,\n  \\frac{\n  \\begin{matrix}\n  [\\text{Assume } \\neg P]\\\\\n  \\bot\n  \\end{matrix}\n  }{P}\n  \\]\nOn the other hand, how do we use \\(\\neg P\\) as a premise? Sometimes we have an implication of the form \\(R \\to P\\), so Modus Tolens is one way to proceed. Sometimes we also have a proof of \\(P\\), so we proceed to a contradiction:\n\\[\\frac{P, \\neg P}{\\bot}\\]\nIt may seem silly to imagine that both \\(P\\) and \\(\\neg P\\) can be proven. But inside the context of another assumption (for contradiction, usually), it’s quite common.\n\n\n2.6.3 Examples\nProposition: The square root of \\(2\\) is irrational.\nproof: Assume \\(\\sqrt{2}\\) is rational. Then \\(\\sqrt{2}\\) can be written as a fraction \\(\\sqrt{2} = \\frac{a}{b}\\), in lowest terms, where \\(a\\) and \\(b\\) are both positive integers. It follows that \\(2 = \\frac{a^2}{b^2}\\), so \\(2b^2 = a^2\\). It follows that \\(a^2\\) is even, so \\(a\\) is even, so \\(a^2\\) is divisible by \\(4\\), so \\(b^2\\) is even, so \\(b\\) is even, so \\(\\frac{a}{b}\\) is not in lowest terms after all. This is a contradiction. We conclude \\(\\sqrt{2}\\) is irrational.\nNotes: - The contradiction \\(\\bot\\) arises from something being proved true and false. What statement was proved true and false? - The contradiction is used for a basic not-introduction. What core steps in the proof set up and complete the not-introduction? - Much is claimed about evenness. Why is each assertion true?\nProposition: There are infinitely many prime numbers.\nproof: Suppose there were only a finitely many prime numbers. Then it would be possible to multiply them all, producing a number \\(N\\) divisible by every prime number. Then \\(N+1\\) would be larger than every prime number, but not divisible by any prime number. The prime factorization of \\(N+1\\) would not contain any prime numbers at all, which is absurd. It follows that there are infinitely many primes.\nA paradox is a proof which leads to a contradiction, but lacks any obvious suspicious assumption (for contradiction) which can be blamed for the problem. Nevertheless, the right response to a paradox is to identify an implicit premise which can be questioned. For example, consider the set of all sets which do not contain themselves as elements. Does it contain itself? This is Russell’s paradox. Arguably, it’s a central logical problem with mathematical foundations. The Liar Paradox (“I am lying”) is simpler but equally dangerous.\n\n\n2.6.4 Do not believe a contradiction\nIn real life you may be asked to believe two things which are utterly incompatible. If you submit to such gaslighting, your critical thinking skills will be forced into deactivation, whereupon you can be manipulated by abusers and authoritarians. Don’t let that happen.\n\n\n2.6.5 A Matter of Taste\nSome mathematicians argue that proofs by contradiction are correct, but inelegant or bad. There are many possible reasons for this view:\n\nIt’s inherently a double-negative (“\\(P\\) can’t be false”), where positive logic is simpler and cleaner.\nIt leads to a proof whose “middle” mixes true statements with false statements, making it hard to gain insight about the facts.\nIt leads to bad habits, particularly among students whose comfort zone is to assume as much as possible, and who may assume \\(\\neg P\\) unnecessarily.\nThey are interested in exotic logics where “not false” isn’t quite the same as “true.”\n\nDr. Ellingsen can tell you more about this point of view."
   },
   {
     "objectID": "Math340/Structure_of_Argument.html#understanding-for-all",

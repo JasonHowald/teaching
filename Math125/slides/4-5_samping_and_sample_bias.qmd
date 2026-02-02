@@ -2,6 +2,8 @@
 title: "04-5. Sampling and Sample Bias"
 subtitle: "...and all my friends agree with me."
 description: "Methods of sampling, types of sample bias, and the language of good and bad sampling."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+
 ---
 
 
@@ -62,7 +64,7 @@ Explain how each observation or inference is vulnerable to survivorship bias.
 Abraham Wald famously studied aircraft damage during WWII. He examined 
 post-mission bullet holes on bombers. (Image is compilation across many planes.)
 
-![Source: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.](images/Survivorship-bias.svg.png){fig-alt="Picture of a World War II bomber with many red dots indicating bullet holes. Dots cluster on the wingtips, tail, and fuselage but are absent at the engines, cockpit, and nose."}
+![Source: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.](images/Survivorship-bias.svg.png){fig-alt="Picture of a World War II bomber with many red dots indicating bullet holes. Dots cluster on the wingtips, tail, and fuselage but are absent at the engines, cockpit, and nose."} 
 
 Question: The bomber can carry a small bit of extra weight for shielding. Where should extra shielding be placed to protect aircraft?
 

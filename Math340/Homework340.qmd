@@ -49,6 +49,13 @@ $$
     - Algebra is awesome.
   - Is the larger argument correct for *all* $x$, for *some certain* $x$, or for *only* $x=1$ or $x=2$?
 
+
+## Absolute Unit
+
+Let $f(x) = \frac{x}{|x|}$, a function defined only for nonzero inputs
+$x$. Prove that for all nonzero $x$, $f(x) = \pm 1$, using a proof 
+structure that works by cases. 
+
 ## The smallest number
 
 Consider the following proof:

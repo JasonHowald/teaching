@@ -345,11 +345,14 @@ $$
 
 This is called "proof by cases." 
 
+**Example:** When solving a quadratic, we often move from, say, $x^2-3x+2=0$ to factored form $(x-2)(x-1)=0$, to the conclusion $x=2$ or $x=1$. The last step can be understood as or-introduction in the following sense. Knowing $(x-2)(x-1)=0$, we assume $x \neq 2$. Then $x-2$ is not zero, so we may divide by it: $x-1 = \frac{0}{x-2} = 0$. It follows that $x=1$. We have proven $x=1$ under the (unjustified) assumption $x \neq 2$, and we conclude $x=2$ or $x=1$. 
+
 **Example:** For every real number $x$, we have $x^2 \geq 0$. Let $x$ be a real number. Either $x > 0$ or $x=0$ or $x < 0$. If $x > 0$ then we may multiply both sides by $x$ without changing the sign of the inequality, and $x^2 > 0$. If $x<0$ then we may multiply both sides by $x$, but we change the side of the inequality, and again $x^2>0$. If $x=0$ then certainly $x^2 \geq 0$. In all cases we have $x^2 \geq 0$.
 
-**Example 2:** For any integer $n$, $n^2 + n$ is even. If $n$ is even, then so is $n^2$ and $n^2+n$ is the sum of two even numbers, so even. If $n$ is odd, then so is $n^2$, and $n^2+n$ is the sum of two odd numbers, so even. Thus $n^2+n$ is always even.
+**Example:** For any integer $n$, $n^2 + n$ is even. If $n$ is even, then so is $n^2$ and $n^2+n$ is the sum of two even numbers, so even. If $n$ is odd, then so is $n^2$, and $n^2+n$ is the sum of two odd numbers, so even. Thus $n^2+n$ is always even.
 
-Note in both examples $x$ is used as an arbitrary particular, but we have an implied generalization. 
+**Example:** For any integer $n$, $n^2-3n+2 \geq 0$. The factorization $n^2-3n+2 = (n-1)(n-2)$ is helpful, depending on $n$. If $n=1$ or $n=2$, the function is $0$. If $n>2$, we have a product of two positives. If $n<1$, we have a product of two negative. Since $n=1$ or $n=2$ or $n>2$ or $n<1$, we conclude that $n^2-3n+2$ is always $\geq 0$. 
+
 
 ### Exercises -- Identify the argument form
 
@@ -422,7 +425,7 @@ $\sqrt{2}$ can be written as a fraction $\sqrt{2} = \frac{a}{b}$, in lowest term
 **Proposition:** There are infinitely many prime numbers.
 
 **proof:** Suppose there were only a finitely many prime numbers. Then it would be possible to multiply 
-them all, producing a number $N$ divisible by every prime number. Then $N+1$ would not be larger than 
+them all, producing a number $N$ divisible by every prime number. Then $N+1$ would be larger than 
 every prime number, but not divisible by any prime number. The prime factorization of $N+1$ would not 
 contain any prime numbers at all, which is absurd. It follows that there are infinitely many primes. 
 
@@ -440,10 +443,10 @@ There are many possible reasons for this view:
 
 1. It's inherently a double-negative ("$P$ can't be false"), where positive logic is simpler
 and cleaner.
-2. It leads to proofs whose "middle" mixes true statements with false statements, 
-making it hard gain insight about the facts.
+2. It leads to a proof whose "middle" mixes true statements with false statements, 
+making it hard to gain insight about the facts.
 3. It leads to bad habits, particularly among students whose comfort zone is to assume as 
-much as possible, and who may assume $\neg P$ entirely unnecessarily. 
+much as possible, and who may assume $\neg P$ unnecessarily. 
 4. They are interested in exotic logics where "not false" isn't quite the same as "true."
 
 Dr. Ellingsen can tell you more about this point of view.
