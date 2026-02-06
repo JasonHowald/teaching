@@ -418,9 +418,11 @@ It may seem silly to imagine that both $P$ and $\neg P$ can be proven. But insid
 $\sqrt{2}$ can be written as a fraction $\sqrt{2} = \frac{a}{b}$, in lowest terms, where $a$ and $b$ are both positive integers. It follows that $2 = \frac{a^2}{b^2}$, so $2b^2 = a^2$. It follows that $a^2$ is even, so $a$ is even, so $a^2$ is divisible by $4$, so $b^2$ is even, so $b$ is even, so $\frac{a}{b}$ is not in lowest terms after all. This is a contradiction. We conclude $\sqrt{2}$ is irrational.
 
 **Notes:**
+
  - The contradiction $\bot$ arises from something being proved true and false. What statement was proved true and false?
- - The contradiction is used for a basic not-introduction. What core steps in the proof set up and complete the not-introduction?
+ - The contradiction is used for a basic not-introduction. Where in the proof does the proof by contradiction commence and how does it end?
  - Much is claimed about evenness. Why is each assertion true?
+ - The moment of contradiction is a turning point in the proof. It needs to be marked in some way. Above, we say directly "This is a contradiction." Often, authors mark a contradiction with various symbols, including arrow-collision: $\Rightarrow \Leftarrow$ or $\rightarrow \leftarrow$, bot/falsum symbol $\bot$, a lightning bolt &#x21af; or simply an "X." 
 
 **Proposition:** There are infinitely many prime numbers.
 
@@ -429,8 +431,17 @@ them all, producing a number $N$ divisible by every prime number. Then $N+1$ wou
 every prime number, but not divisible by any prime number. The prime factorization of $N+1$ would not 
 contain any prime numbers at all, which is absurd. It follows that there are infinitely many primes. 
 
+Our next proposition is a bit of a surprise, perhaps.
 
-A **paradox** is a proof which leads to a contradiction, but lacks any obvious suspicious assumption (for contradiction) which can be blamed for the problem. Nevertheless, the right response to a paradox is to identify an implicit premise which can be questioned. For example, consider the set of all sets which do not contain themselves as elements. Does it contain itself? This is **Russell's paradox.** Arguably, it's a central logical problem with mathematical foundations. The **Liar Paradox** ("I am lying") is simpler but equally dangerous.
+**Proposition:** There is no set of all sets. 
+
+**proof:** Suppose that $S$ were the set of all sets. Notice that $S$ is a set, so $S \in S$. By itself, this is not problematic. Some sets contain themselves. Most don't. From $S$, we construct
+$R = \{x \in S | x \notin x\}$. In words, $R$ (for Bertrand Russell) is the set of all sets which are not elements of themselves. Now $R$ is a 
+set and might contain itself. Because of its membership condition, if $R$ contains itself, then it ought not to. If $R$ does not contain itself, it ought to. This is a contradiction. 
+
+**Notes:** This proof is widely called "Russell's Paradox." Historically caused *quite* a stir in mathematical foundations, and was a pivotal force leading to modern set theory.
+
+A **paradox** is a proof which leads to a contradiction, but lacks any obvious suspicious assumption (for contradiction) which can be blamed for the problem. Nevertheless, the right response to a paradox is to identify an implicit premise which can be questioned.
 
 ### Do not believe a contradiction
 
@@ -447,7 +458,7 @@ and cleaner.
 making it hard to gain insight about the facts.
 3. It leads to bad habits, particularly among students whose comfort zone is to assume as 
 much as possible, and who may assume $\neg P$ unnecessarily. 
-4. They are interested in exotic logics where "not false" isn't quite the same as "true."
+4. They are interested in exotic logics where, between $P$ and $\neg P$ there is a "middle" option, so that refuting $\neg P$ isn't quite the same as knowing $P$.
 
 Dr. Ellingsen can tell you more about this point of view.
 

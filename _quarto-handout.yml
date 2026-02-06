@@ -1,0 +1,10 @@
+#This is an optional render which makes slides handouts. 
+# >quarto render --profile handout
+project:
+  render:
+    - "Math125/slides/*.qmd"  # Only target slide decks
+
+#Slides get funny extension for handout versions.
+format:
+  html:
+    output-ext: "handout.html"

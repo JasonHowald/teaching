@@ -48,6 +48,14 @@ Give an example of each type of element in each ring, or state "impossible." No 
 | A zerodivisor in |
 | An irreducible in |
 
+## Relativity
+
+Interpret this problem in ${\mathbb Z}[x]$, in ${\mathbb R}[x]$, in ${\mathbb C}[x]$, and in ${\mathbb Z}[i][x]$. You should get a variety of answers depending on the ring. 
+
+Is $5x^2 + 5$ an irreducible element of the ring? If so, explain why. 
+If possible, factor it into irreducible elements. 
+
+
 ## The Problem with $\sqrt{-5}$
 In this problem we explore the ring $R = {\mathbb Z}[\sqrt{-5}] = \{a + b \sqrt{-5} | a, b \in {\mathbb Z}\}$.
 
@@ -60,6 +68,6 @@ In this problem we explore the ring $R = {\mathbb Z}[\sqrt{-5}] = \{a + b \sqrt{
 
 3. Identify all units of $R$.
 4. Once units are identified, we can prove that certain elements are irreducible. Demonstrate that $2$, $3$, $1+\sqrt{-5}$, and $1-\sqrt{-5}$ are all irreducible.
-5. It will perhaps bother you to see that $2 \cdot 3 = (1+\sqrt{-5}) \cdot(1-\sqrt{-5})$. Among these irreducible factors of six, are any of them unit multiples of others? Why or why not?
+5. It will perhaps bother you to see that $2 \cdot 3 = (1+\sqrt{-5}) \cdot(1-\sqrt{-5})$. Among these irreducible factors of six, are any of them unit multiples of others? Why or why not? 
 
  

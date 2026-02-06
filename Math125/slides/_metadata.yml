@@ -1,9 +1,6 @@
+project:
+  type: default
+
 format:
-  revealjs:
-    theme: sky
-    history: false
-  # Create an output format to create e.g. 0_welcome.handout-html.html
-  # I gave up in frustration at organizing it into the index.
-#  html:
-#    theme: cosmo
-#    toc: true
+  revealjs: 
+    slide-number: true
