@@ -1,0 +1,29 @@
+for f in *.qmd; do
+  # 1. Skip if it's already a handout or a partial (starts with _)
+  [[ $f == *"-handout.qmd" ]] && continue
+  [[ $f == _* ]] && continue
+
+  # 2. Define names
+  base="${f%.qmd}"
+  partial="_${f}"
+  handout="${base}-handout.qmd"
+
+  # 3. Rename the source to a partial so Quarto doesn't render it directly
+  mv "$f" "$partial"
+
+  # 4. Create the handout wrapper
+  echo "---" > "$handout"
+  echo "title: \"$base (Handout)\"" >> "$handout"
+  echo "format: html" >> "$handout"
+  echo "---" >> "$handout"
+  echo "" >> "$handout"
+  echo "{{< include $partial >}}" >> "$handout"
+
+  # 5. Optional: Create the slide wrapper (to keep everything symmetric)
+  echo "---" > "$f"
+  echo "title: \"$base\"" >> "$f"
+  echo "format: revealjs" >> "$f"
+  echo "---" >> "$f"
+  echo "" >> "$f"
+  echo "{{< include $partial >}}" >> "$f"
+done

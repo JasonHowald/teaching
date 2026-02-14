@@ -1,0 +1,8 @@
+---
+title: "16-17. Conditional Probability"
+description: "Probability, adjusted for prior knowledge."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _16_17_conditional_probability.qmd >}}

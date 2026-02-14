@@ -1,0 +1,8 @@
+---
+title: "14-15. Probability Laws"
+description: "Calculating probabilities from other probabilities"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _14_15_probability_laws.qmd >}}

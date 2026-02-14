@@ -1,0 +1,184 @@
+## Preparation
+Read all of chapter 3, with emphasis on section 3.1.
+
+## The Language of Probability
+Any process that leads to an unpredictable result is a **random process.** It can be...
+
+- “Truly” randomized: coin flip, card draw, die roll, quantum measurement, etc.
+- Complex and unpredictable: Weather, voting, disease spread, manufacturing error, a two-year-old’s mood, etc.
+
+A **random variable** is any variable (numeric or categorical) which depends on a random process.
+
+1. Result of a coin flip (“H”) or die roll (“3”)
+2. The day’s temperature
+3. Number of students who enroll in a class.
+4. The age, height, or religion of a person (randomly selected from a population).
+
+## The Language of Probability
+
+The **Sample Space** is the set of outcomes of a random process.
+
+- All possible results of four coin flips.
+- All possible orderings of a standard deck of 52 cards.
+- All possible rolls of two dice.
+- All possible weather patterns today. 
+
+An **Event** is a single outcome or a collection of outcomes.
+
+- All four coins land heads (single outcome), or more heads than tails (collection of outcomes)
+- Cards in sorted order, or top card is **2❤️**  
+- Two dice total 12 (one outcome), or total 7 (collection)
+- Rainy (collection of outcomes)
+
+## The Language of Probability
+
+For any event $A$, $P(A)$ mean its probability.
+
+If we flip a coins, $P($ It lands heads $) = 1/2$
+
+If we roll two dice, $P($ Each lands 6 $) = 1/36$
+
+Often...
+
+$P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}$
+
+
+## What probability is implied? {.activity}
+
+A probability is always a number between 0 and 1. For each expression, what probability is meant?
+
+“Could go either way. It’s 50/50.”
+
+“It’s a 98% chance.”
+
+“The disease has a 0.2% mortality rate.“
+
+“It’s one in twenty.”
+
+“It’s impossible. Not gonna happen.”
+
+[Bonus] “I give it four-to-one odds.“
+
+## Probabilities by counting
+$P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}$
+
+I rolled three dice and they totaled 5. What are the chances!
+
+1. Identify the random process: Roll three dice
+2. Count all possible outcomes, using multiplication.
+3. Count all outcomes which lead to a total of $5$. Hint: Just list them. 1+2+2 is 
+different from 2+2+1.
+4. Divide for the probability.
+
+## Equally probable outcomes
+$P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}$ is *only sometimes warranted*
+
+
+:::: {.columns style="display: flex; gap: 50px;"}
+ 
+::: {.column width="50%"}
+
+Formula works for:
+
+1. The two results of a coin flip.
+2. The six results of a die roll.
+3. The 36 results of two die rolls.
+4. The 52 results of a card draw from a deck.
+
+:::
+
+::: {.column width="50%"}
+
+Formula fails for:
+
+1. The 11 resulting totals (2 through 12) from rolling two dice. 
+2. The two possible results (positive/negative) from some bloodwork. 
+3. The two possible winners of a game.
+4. The six people she might ask for help.
+
+:::
+
+::::
+
+## Winning a contest. {.activity}
+
+The problem: Two sports teams (A and B) are about evenly matched: Any game between them is a 50/50 toss up. They play five games. What is the probability that team A wins at least four?
+
+Step 1: What are the "outcomes"?
+
+Step 2: How many outcomes are possible? Multiplication is your friend!
+
+Step 3: How many outcomes are successes?
+
+Divide and conclude.
+
+Bonus: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?
+
+## A Flawed Classic {.activity}
+
+The problem: A Dad of exactly two kids is asked whether he has a daughter.  “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter. What is the probability that he also has a son?
+
+:::: {.columns style="display: flex; gap: 50px;"}
+
+:::{.column width="50%"}
+**Option 1: The other kid**
+
+The other kid could be male or female. P(son) = 1/2.
+:::
+
+:::{.column width="50%"}
+**Option 2: Family structures**
+
+Four equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate the first. Of the remaining 3, two are "successes." P(son) = 2/3.
+:::
+
+::::
+
+Which argument is more correct? 
+
+This classic puzzle depends on several oversimplifications about the world. Identify them. 
+
+## The Monty Hall Problem {.activity}
+This famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.” 
+
+>You’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals a door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?
+
+:::: {.columns style="display: flex; gap: 50px;"}
+
+:::{.column width="50%"}
+
+It doesn't matter. A door has been wasted, 
+leaving a 50/50 chance of success with either 
+remaining door.
+:::
+
+:::{.column width="50%"}
+You should switch. The initial choice has 1/3 chance, 
+and the remaining door a has 2/3 chance.
+:::
+
+::::
+
+## A fully evolved species {.activity}
+Five alligator eggs hatch from a nest
+What is the probability all are female?
+What is the probability of four females and one male?
+
+
+## A chance at Magic {.activity}
+A (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land,” making them immediately useful at the game’s beginning. You draw an initial hand of seven cards. 
+
+1. What is the probability of getting no land cards among them?
+2. How many draws of seven are possible from a deck of 99 cards?
+3. How many draws of seven have no land cards?
+4. Divide to find the probability.
+
+## Preparing Victory, a true story {.activity}
+Francis is playing Monopoly. He has hotels on Boardwalk and Park Place. He gleefully asks “Hey Daddy, what’s the probability that Nana rolls a 4 or a 6 next?” Find the answer.
+
+## A perfect match {.activity}
+Five cards are drawn from a standard deck. What is the probability of drawing “four of a kind”?
+To solve this, try to count how many “four of a kind” hands are possible.
+
+## Homework
+Labeled 12-13, Probability on Webwork. 

@@ -1,0 +1,8 @@
+---
+title: "18-19. The Normal Distribution"
+description: "A basic standard for natural variability."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _18_19_the_normal_distribution.qmd >}}

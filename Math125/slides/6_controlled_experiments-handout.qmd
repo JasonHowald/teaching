@@ -1,0 +1,7 @@
+---
+title: "06. Controlled Experiments"
+description: "How randomization and control help us prove causal links between variables."
+format: html
+---
+
+{{< include _6_controlled_experiments.qmd >}}

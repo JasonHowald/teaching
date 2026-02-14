@@ -1,0 +1,8 @@
+---
+title: "02. Association and Correlation"
+subtitle: "Interrelationships between variables"
+description: "Correlation, correlation coefficients, and scatter plots of data."
+format: html
+---
+
+{{< include _2_association_and_correlation.qmd >}}

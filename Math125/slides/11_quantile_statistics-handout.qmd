@@ -1,0 +1,8 @@
+---
+title: "11. Quantile Statistics"
+description: "Calculating and understanding min, 25%, 50%, 75%, and max"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _11_quantile_statistics.qmd >}}

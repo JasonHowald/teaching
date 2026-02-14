@@ -1,0 +1,194 @@
+## Preparatory work
+Read section 3.1, with special attention on the Addition Rule, the General Addition Rule, the Complement Rule, and the Multiplication Rule. 
+
+## Combining probabilities
+The game “Farkle” involves rolling six dice at once. The player receives 1500 points for a “straight” (every number 1-6 is represented in the result), but also receives 1500 points for “three pair” (for example, rolling 2, 2, 4, 4, 5, 5).  
+Their probabilities are P(straight) = 0.015 and P(three pair) = 0.038.
+
+1. What is the probability of getting a straight or three pair?
+2. What is the probability of getting a straight and three pair (on the same roll)?
+3. What is the probability of getting a straight, then three pair (on the next roll)?
+4. What is the probability of not getting a straight?
+
+## Drawing the line
+A 52-card deck is shuffled. 
+
+1. What is the probability that the top card is 2♡?
+2. What is the probability that the second card is 2♣? 
+3. What is the probability that the top two cards, in order, 
+are 2♡ and 2♣? (Caution: It's a trap!)
+
+## When to add? When to multiply? {.activity}
+
+A and B are events. Their probabilities are P(A) and P(B).
+
+P(A)+P(B) calculates __________, provided _________.
+
+P(A)*P(B) calculates __________, provided _________.
+
+1-P(A) calculates ___________.
+
+## When to add? When to multiply? 
+
+A and B are events. Their probabilities are P(A) and P(B).
+
+P(A)+P(B) calculates P(A or B), provided A and B are disjoint (mutually exclusive).
+
+P(A)*P(B) calculates P(A and B), provided A and B are independent.
+
+1-P(A) calculates P(not A).
+
+## Sum law (basic)
+
+$$P(A \text{ or } B) = P(A)+P(B)$$
+
+...when A and B are **disjoint** (mutually exclusive), meaning they cannot both happen.
+If events aren't disjoint, this rule does not apply. 
+
+```{python}
+#| label: fig-disjoint-venn
+#| fig-cap: "Disjoint sets"
+#| fig-alt: "Diagram illustrating disjoint sets. A circle labeled A and another labeled B are arranged within a rectangle so that they have no overlap. "
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+# Create a figure and a set of subplots
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Bounding rectangle (Universal Set)
+universal_rect = patches.Rectangle((0, 0), 10, 8, linewidth=2, edgecolor='black', facecolor='lightgray', alpha=0.5)
+ax.add_patch(universal_rect)
+#ax.text(9.5, 7.5, 'U', fontsize=12, ha='right', va='top')
+
+# Set A (Circle)
+circle_a = patches.Circle((2.5, 4), 2, linewidth=2, edgecolor='blue', facecolor='lightblue', alpha=0.7)
+ax.add_patch(circle_a)
+ax.text(2.5, 4, 'A', fontsize=15, ha='center', va='center', color='black')
+
+# Set B (Circle), disjoint from A
+circle_b = patches.Circle((7.5, 4), 2, linewidth=2, edgecolor='red', facecolor='lightcoral', alpha=0.7)
+ax.add_patch(circle_b)
+ax.text(7.5, 4, 'B', fontsize=15, ha='center', va='center', color='black')
+
+# Set plot limits and aspect ratio
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 8)
+ax.set_aspect('equal', adjustable='box')
+
+# Hide axes
+ax.axis('off')
+
+# Set title
+ax.set_title('Venn Diagram: Disjoint Sets A and B')
+
+# Display the plot
+plt.show()
+```
+
+## Sum law (full)
+If A and B can occur together, then P(A)+P(B) counts P(A and B) twice. If we can calculate that, and we can correct for it:
+
+$$ P(A \text{ or } B) = P(A)+P(B) - P(A \text{ and } B)$$
+
+```{python}
+#| label: fig-venn
+#| fig-cap: "Non-disjoint sets"
+#| fig-alt: "Diagram illustrating sets which are not disjoint. A circle labeled A and another labeled B are arranged within a rectangle. There is a clear region of overlap in the center of the picture. "
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+# Create a figure and a set of subplots
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Bounding rectangle (Universal Set)
+universal_rect = patches.Rectangle((0, 0), 10, 8, linewidth=2, edgecolor='black', facecolor='lightgray', alpha=0.5)
+ax.add_patch(universal_rect)
+#ax.text(9.5, 7.5, 'U', fontsize=12, ha='right', va='top')
+
+# Set A (Circle)
+circle_a = patches.Circle((3.5, 4), 2, linewidth=2, edgecolor='blue', facecolor='lightblue', alpha=0.7)
+ax.add_patch(circle_a)
+ax.text(3.5, 4, 'A', fontsize=15, ha='center', va='center', color='black')
+
+# Set B (Circle), disjoint from A
+circle_b = patches.Circle((6.5, 4), 2, linewidth=2, edgecolor='red', facecolor='lightcoral', alpha=0.7)
+ax.add_patch(circle_b)
+ax.text(6.5, 4, 'B', fontsize=15, ha='center', va='center', color='black')
+
+# Set plot limits and aspect ratio
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 8)
+ax.set_aspect('equal', adjustable='box')
+
+# Hide axes
+ax.axis('off')
+
+# Set title
+ax.set_title('Venn Diagram: Non-disjoint Sets A and B')
+
+# Display the plot 
+plt.show()
+```
+
+## Calculate using the laws {.activity}
+
+P(wearing a red shirt today) = 0.1
+
+P(wearing a purple shirt today) = 0.3
+
+P(having a headache today) = 0.1
+
+1. What is the probability of wearing a red or purple shirt today?
+2. What is the probability of wearing a purple shirt and having a headache today?
+3. Can you identify any implicit assumptions used in your calculations above?
+
+## Product law (basic)
+P(A and B) = P(A)*P(B) when A and B are **independent**, meaning that neither event makes the other more or less likely.
+(If events are dependent, this law does not apply.)
+
+1. $P(\text{three coins all land heads}) = \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2}$
+2. $P(\text{critical hit, twice}) = 1/20 \cdot 1/20$
+3. $P(\text{ card is a red two}) = 1/2  *  1/13$
+4. $P(\text{both parents have SCT sickle cell trait}) = 0.006 \cdot 0.006$ (but this calculation is naive and wrong…)
+
+## Solve both and compare
+We roll a d6. 
+
+1. Calculate P(the result is even)
+2. Calculate P(the result is prime)
+3. Calculate P(the result is even and prime)
+
+A person is surveyed at random.  
+
+P(the person is male) = 0.5 
+
+P(the person likes hats) = 0.4
+
+4. Calculate P(the person is male and likes hats)
+
+## Product law (full)
+$$ P(A \text{ and } B) = P(A)*P(B | A)$$
+
+This law always works, but requires a version of P(B) which 
+recalculated under the assumption that A is true. This is 
+called the **conditional probability of $B$ given $A$**
+(The topic of the [next slide deck](16_17_conditional_probability.qmd))
+
+P(even and prime) = 0.5*P(a given even number is prime)
+
+P(male who likes hats) = 0.5*P(a given male likes hats)
+
+P(both parents have SCT) = 0.006*P(second parent has SCT, assuming first parent does)
+
+## Putting it all together {.activity}
+
+P(wearing a red shirt today) = 0.1
+
+P(wearing a purple shirt today) = 0.3
+
+P(having a headache today) = 0.1
+
+What is the probability of wearing a purple shirt, or having a headache? Your work should combine two of our probability laws.
+
+## Homework
+Solve webwork problems “14-15. Probability Laws”

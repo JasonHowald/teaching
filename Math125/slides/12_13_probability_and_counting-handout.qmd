@@ -1,0 +1,8 @@
+---
+title: "12-13. Probability and Counting"
+description: "Calculating probabilities by counting sample spaces"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _12_13_probability_and_counting.qmd >}}

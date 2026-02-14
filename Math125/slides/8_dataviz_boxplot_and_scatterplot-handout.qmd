@@ -1,0 +1,7 @@
+---
+title: "08. Dataviz: Boxplot and Scatterplot"
+description: "Visualizing Distributions of multiple variables using scatterplots or stacked boxplots."
+format: html
+---
+
+{{< include _8_dataviz_boxplot_and_scatterplot.qmd >}}

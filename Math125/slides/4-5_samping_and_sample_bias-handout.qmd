@@ -1,0 +1,9 @@
+---
+title: "04-5. Sampling and Sample Bias"
+subtitle: "...and all my friends agree with me."
+description: "Methods of sampling, types of sample bias, and the language of good and bad sampling."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _4-5_samping_and_sample_bias.qmd >}}

@@ -1,0 +1,8 @@
+---
+title: "00. Course Welcome"
+description: "Welcome, orientation, course tools and policies"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _0_welcome.qmd >}}

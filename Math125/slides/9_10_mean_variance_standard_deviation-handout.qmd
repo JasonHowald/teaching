@@ -1,0 +1,8 @@
+---
+title: "09-10. Mean, Variance, and Standard Deviation "
+description: "Calculating and understanding the first of the descriptive statistics."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _9_10_mean_variance_standard_deviation.qmd >}}

@@ -1,0 +1,111 @@
+## Preparation work
+Read all of section 3.2 (pp. 95-108)
+
+## Review -- two multiplication rules
+
+### Multiplication rule -- simplistic
+(works when $A$ and $B$ are **independent**)
+$$ P(A \text{ and } B) = P(A)*P(B)$$
+
+### Multiplication rule -- full
+(just works)
+$$ P(A \text{ and } B) = P(A)*P(B | A)$$
+
+$$P(\text{drawing two aces}) = \frac{4}{52} \cdot \frac{3}{51}$$
+
+$P(B | A)$ "Probably of B given A" is a **conditional probability.** It's the probability of $B$, adjusted for 
+condition that $A$ is known.
+
+## Examples of conditional probability
+
+U = You are using an umbrella.
+
+R = It's raining.
+
+P(U) asks "How likely are you to use an umbrella, at any time?"
+
+P(U | R) asks "When it's raining, how likely are you to use an umbrella?"
+
+P(R | U) asks "You're using an umbrella. What's the probability of rain?"
+
+## Solving for P(B|A)
+
+$$ P(A\text{ and } B) = P(A) * P(B | A)$$
+
+can be converted to 
+
+$$P(B|A) = \frac{P(A\text{ and } B)}{P(A)}$$
+
+Depending on which two we know, we may use them to calculate the third.
+
+
+## Order by probability (least likely to most likely) {.activity}
+
+1. The probability of a headache.
+2. The probability of a headache, given car accident.
+3. The probability of a headache, given you have the flu.
+4. The probability of a headache, given you spent the day at the spa.
+5. The probability of a headache, after 24 hours of video games.
+
+## Compare and contrast
+
+Rank in order, according to your opinion:
+
+$$P(\text{headache} | \text{flu})$$
+
+$$P(\text{flu} | \text{headache})$$
+
+$$P(\text{flu and headache})$$
+
+## Reversing a conditional – the accuracy paradox
+A rare genetic disorder affects about 1/1000 of the population. You can test for it with a test which is 99% accurate. If a patient tests positive, how likely is it that they have the disorder?
+
+## Outline diagrams for managing cases and their probabilities
+
+1. Have the gene (1/1000)
+    - test positive (99/100)
+        - p = .00099
+    - test negative (1/100)
+        - p = .00001
+2. Lack the gene 999/1000
+    - test positive (1/100)
+        - p = .00999
+    - test negative (99/100)
+        - p = .98901
+
+## Tree diagrams for managing conditionals
+1. Each heading is a case or subcase.
+2. Conditional probabilities on each heading. 
+3. Final probabilities calculated by multiplication.
+4. Recombine as needed, depending on the problem.
+
+## Probability and Trust {.activity}
+1. Assign a baseline probability that a man is “trustworthy” (For simplicity we have only two possibilities – trustworthy or not.) If you are generally trusting, assign a high probabiity. If not, assign a low probability.
+2. ... but he did something Suspicious. Assign probabilities to the Suspicious Thing, if he is trustworthy, and also if he is not. Hint. To be Sus, a thing should be more likely if he's bad than if he's good.
+3. Make an outline diagram for all for possibilities, branching on trustworthiness, then on the Thing. Calculate all probabilities.
+4. Find P(Trustworthy & Sus) and also P(Sus).
+5. Calculate P(Trustworthy | Suspicious Thing). This is called a Bayesian Update.
+Does this math roughly match our own reevaluations of interpersonal trust?
+
+## Tree diagrams for managing conditionals
+
+1. Trustworthy ()
+    - Did the thing ()
+        - p=?
+    - Didn't ()
+        - p=?
+2. Untrustworthy ()
+    - Did the thing ()
+        - p=?
+    - Didn't ()
+        - p=?
+
+## A morning ritual {.activity}
+Every morning you flip a coin to decide on breakfast. If it's heads, you have fresh fruit. If it's tails, you enjoy a bowl of deep fried cheesy-fats. When you eat fresh fruit, you have stomach ache only 10% of the time, but when you eat garbage, you have a stomach ache 60% of the time. 
+
+1. Make an outline diagram for these probabilities.
+
+2. You have a stomach ache but can't remember what you ate for breakfast. What's the probability it was fresh fruit?
+
+## Homework
+Webwork assignment “16-17. Conditional Probability” (5 problems)
