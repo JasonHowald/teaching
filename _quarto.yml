@@ -9,7 +9,7 @@ project:
 #jupyter: authoring-env #Fails to load pandas
 website:
   navbar: false
-  
+
 jupyter:
   kernelspec:
     name: "python3"

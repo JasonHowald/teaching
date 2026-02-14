@@ -10,7 +10,7 @@ Read 2.1.3 (histograms and shape) and 2.2.1 (bar plots) and 2.2.3 (bar plots, co
 ## Goals
 * Read a histogram or bar chart correctly.
 * Identify when each plot type is appropriate.
-* Describe the shape of a histogram using proper vocabulary.
+* Describe the shape of a histogram using proper vocabulary. 
 * Generate your own histograms and bar charts from data using seaborn.
 
 ## Note on Accessibility: 

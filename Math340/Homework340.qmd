@@ -79,6 +79,14 @@ Consider the following joke argument:
 
 - Is this an argument by contradiction, by contrapositive, or by modus tollens? Explain.
 
+## It all evens out
+
+Prove that the the sum of any two even integers is even. Interpret "even" to mean double some integer. Structure your proof correctly to prove a universal statement.
+
+## Fermat's littler problem
+
+Prove that for any $n$, $n^3-n$ is divisible by $3$. I suggest that you divide the problem into three cases, based on the fact that any number can be written $3k$ or $3k+1$ or $3k+2$.
+
 ## $\cup$ and $\cap$ distribution
 Prove that $A \cap (B \cup C) \subseteq
 (A \cap B) \cup (A \cap C)$. The goal is to reason explicitly from the arbitrary particular to the general. Remember that any subset statement is a generalization about all elements of one set.

@@ -1293,12 +1293,5 @@
     "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "16 Individual work",
     "text": "16 Individual work\nOn Webwork, called “Dataviz Box and Scatter.”"
-  },
-  {
-    "objectID": "typeset/index.html",
-    "href": "typeset/index.html",
-    "title": "Typesetting pathways",
-    "section": "",
-    "text": "flowchart LR\n    H1[\"**INPUTS**\"] ~~~ H2{{\"**ENGINES**\"}} ~~~ H3((\"**OUTPUTS**\"))\n    %% Input Sources\n\n    MD[Markdown + LaTeX &lt;br&gt; + Python + etc.]\n    LaTeX[LaTeX]\n    Word[Word/Google Docs]\n \n    %% Engines\n    Web_Engine{{Pandoc/MathJax &lt;br&gt; or make4ht}}\n    PDF_Engine{{latex/pdflatex/lualatex}}\n    Quarto{{Quarto Engine}}\n    Notebook{{Jupyter / Colab}}\n    EXPORT{{Export }}\n\n    %% To Engines\n    LaTeX --&gt; Web_Engine\n    LaTeX ==&gt; PDF_Engine\n    MD ==&gt; Notebook\n    MD ==&gt; Quarto\n    Word --&gt; EXPORT\n\n    %% Final Output Formats\n    SharedNB((Shared Notebook &lt;br&gt; on Colab))\n    HTML((\".html page &lt;br&gt;brightspace/github\"))\n    PDF((\"Shared .pdf\"))\n    DOCX((\"Shared Doc\"))\n\n    %% To Outputs\n    Notebook ==&gt; SharedNB\n    Notebook ~~~ HTML\n    Quarto --&gt; PDF\n    Quarto ==&gt; HTML\n    Quarto --&gt; SharedNB\n    PDF_Engine ==&gt; PDF\n    Web_Engine --&gt; HTML \n    EXPORT --&gt; PDF\n    Word ===&gt; DOCX\n\n    %% Styling\n    style SharedNB fill:#ffd, stroke:#000\n    style PDF fill:#ffd,stroke:#000\n    style HTML fill:#dfd,stroke:#000\n    style DOCX fill:#ffd,stroke:#000"
   }
 ]

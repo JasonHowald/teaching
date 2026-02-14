@@ -15,7 +15,7 @@ engine: jupyter #Force jupyter notebook to invalidate cache.
 
 ## Relation to Group Theory
 
-Group theory is the theory of algebraic structures with one operation. The axioms of identity, inverse, and associativity are the minimal assumptions which empower the solution of equations, and describe a huge variety of systems.
+Group Theory is the theory of algebraic structures with one operation. The axioms of identity, inverse, and associativity are the minimal assumptions which empower the solution of equations, and describe a huge variety of systems.
 
 Many important mathematical structures have not one operation but four: Addition, subtraction, multiplication, and division, and satisfy various other axioms, such as distribution. There is some variability in these structures. In some (e.g., ${\mathbb Z}$) we lack closure under division. In others we lack a multiplicative identity. In others (e.g. matrix rings) we lack multiplicative commutativity. Our definition of a **ring** reflects a minimally useful behavior of addition and multiplication. Division is excluded because we often genuinely lose access to division. Subtraction is excluded because addition and additive inverse accomplish the same thing.
 
