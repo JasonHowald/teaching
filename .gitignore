@@ -18,6 +18,7 @@
 
 # DO NOT ignore the docs folder
 !docs/
+!docs/**/*_files/
 
 /.quarto/
 **/*.quarto_ipynb
