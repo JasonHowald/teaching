@@ -166,12 +166,14 @@ viewof mu = Inputs.range([-5, 5], {
   value: 0, 
   step: 0.1, 
   label: "μ:", 
+  width: 250 
 })
 
 viewof sigma = Inputs.range([0.1, 3], {
   value: 1, 
   step: 0.1, 
   label: "σ:", 
+  width: 250 
 })
 
 // 2. Dynamic Notation Display
@@ -259,8 +261,8 @@ is too technical for Math 125.
 ## The empirical rule (68-95-99.7)
 
 1. Within one standard deviation from the mean lies 68% of the data.
-2. Within two standard deviations from the mean lies 95% of the data.
-3. Within three standard deviations from the mean lies 99.7% of the data.
+2. Within two standard deviations from the mean lies 95%.
+3. Within three standard deviations from the mean lies 99.7% ...approximately.
 
 :::: {.columns}
 
@@ -306,84 +308,169 @@ In range $(26 - 2*22.3, 25+2*22.3)$: 96% of data points.
 
 ::::
 
-## The empirical rule (68-95-99.7)
+## The empirical rule (68-95-99.7) 
 
-(Graphic used with permission, Wikimedia Foundation)
+```{python}
+#| label: fig-empirical
+#| fig-cap: "Empirical Rule illustration"
+#| fig-alt: "An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure."
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
 
-Percentiles and tail areas
-A distribution is N(100,102). How much data should be expected above 120?
-A distribution is N(60, 22). How much data should be expected below 54?
-A distribution is N(10, 52). How much data should be expected above 16?
-Use the empirical rule or choose a cdf calculation tool:
-Matt Bognar’s CDF calculator
-Use Jupyter
+# Parameters for the normal distribution
+mu = 0  # Mean
+sigma = 1  # Standard deviation
+
+# Generate data for the normal distribution curve
+x = np.linspace(mu - 4*sigma, mu + 4*sigma, 500)
+y = norm.pdf(x, mu, sigma)
+
+# Calculate exact percentages using CDF
+percent_1std = (norm.cdf(sigma) - norm.cdf(-sigma)) * 100
+percent_2std = (norm.cdf(2*sigma) - norm.cdf(-2*sigma)) * 100
+percent_3std = (norm.cdf(3*sigma) - norm.cdf(-3*sigma)) * 100
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(x, y, color='blue', linewidth=2, label='Normal Distribution PDF')
+
+# Mark the mean
+ax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\mu$) = {mu:.2f}')
+
+# Define the standard deviation ranges
+std1_left, std1_right = mu - sigma, mu + sigma
+std2_left, std2_right = mu - 2*sigma, mu + 2*sigma
+std3_left, std3_right = mu - 3*sigma, mu + 3*sigma
+
+# Shade the areas for 68%, 95%, and 99.7%
+# 99.7% (3 standard deviations)
+x_fill_3std = x[(x >= std3_left) & (x <= std3_right)]
+y_fill_3std = y[(x >= std3_left) & (x <= std3_right)]
+ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\mu \pm 3\sigma$ ({percent_3std:.2f}%)')
+
+# 95% (2 standard deviations)
+x_fill_2std = x[(x >= std2_left) & (x <= std2_right)]
+y_fill_2std = y[(x >= std2_left) & (x <= std2_right)]
+ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\mu \pm 2\sigma$ ({percent_2std:.2f}%)')
+
+# 68% (1 standard deviation)
+x_fill_1std = x[(x >= std1_left) & (x <= std1_right)]
+y_fill_1std = y[(x >= std1_left) & (x <= std1_right)]
+ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\mu \pm 1\sigma$ ({percent_1std:.2f}%)')
+
+# Add labels for standard deviation marks
+plt.text(mu + sigma, norm.pdf(mu + sigma, mu, sigma) + 0.02, r'$\mu + \sigma$', horizontalalignment='center', color='red')
+plt.text(mu - sigma, norm.pdf(mu - sigma, mu, sigma) + 0.02, r'$\mu - \sigma$', horizontalalignment='center', color='red')
+plt.text(mu + 2*sigma, norm.pdf(mu + 2*sigma, mu, sigma) + 0.02, r'$\mu + 2\sigma$', horizontalalignment='center', color='green')
+plt.text(mu - 2*sigma, norm.pdf(mu - 2*sigma, mu, sigma) + 0.02, r'$\mu - 2\sigma$', horizontalalignment='center', color='green')
+plt.text(mu + 3*sigma, norm.pdf(mu + 3*sigma, mu, sigma) + 0.02, r'$\mu + 3\sigma$', horizontalalignment='center', color='purple')
+plt.text(mu - 3*sigma, norm.pdf(mu - 3*sigma, mu, sigma) + 0.02, r'$\mu - 3\sigma$', horizontalalignment='center', color='purple')
+
+# Set title and labels
+ax.set_title('Empirical Rule (68-95-99.7) Illustration', fontsize=16)
+ax.set_xlabel('Standard Deviations above/below the mean', fontsize=12)
+ax.set_ylabel('Probability Density', fontsize=12)
+ax.legend(loc='upper right')
+ax.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
+```
+
+## Percentiles and tail areas
+
+1. A distribution is $N(100,10^2)$. How much data should be expected above 120?
+2. A distribution is $N(60, 2^2)$. How much data should be expected below 54?
+3. A distribution is $N(10, 5^2)$. How much data should be expected above 16?
+(Why can't this last problem be solved the same way?)
+
+## Ways to calculate tail areas and percentiles
+
+1. Geometrically, using empirical rule (for $\pm 1, 2, 3$ only!)
+2. Using a graphical tool, like [Bognar's normal CDF calculator](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html)
+3. Using Jupyter:
+
+```{python}
+#| eval: true
+#| echo: true
 from scipy import stats
-stats.norm.cdf(2)
-Use a Z-table (this is the old school method).
+stats.norm.cdf(-2)
+```
+4. Using a Z-table (old school, not in this course). 
 
-Z-score Intro: So, is that a lot then?
+
+## So, is that a lot then? (Z-score)
+
 A certain pet parrot’s body temperature is 107°. 
+
 What more would you need to know, before judging whether the body temperature is a health concern?
 
-So, is that a lot then?
+## So, is that a lot then?  (Z-score)
 A certain pet parrot’s body temperature is 107°. 
+
 The average body temperature for the species is 105°. 
 Of course, the parrot is 2° warmer than average. 
+
 What other general stats about parrots and their temperatures would be useful to contextualize this information?
 
-So, is that a lot then?
+## So, is that a lot then?  (Z-score)
+
 A certain pet parrot’s body temperature is 107°. 
+
 The average body temperature for the species is 105°. 
 Of course, the parrot is 2° warmer than average. 
+
 The standard deviation of body temp is 1.4°. 
+The parrot is warm by about one and a half standard deviations.
+
 Is the bird’s temperature normal, somewhat high, or very high? Why?
 
-Judging relative to the distribution
-Judging a data value x relative to the distribution it’s in requires both:
-Comparison to the mean of the distribution: subtract μ
-Conversion to units of standard deviations: divide by σ
-Thus the formula: 
-	Z-score = (data value - μ) / σ
-The Z-score acts like a interchangeable standard of unusualness, scaled to the distribution the data belongs to.
+## A fair rating -- data in context
 
-Z-score = (value - μ) / σ
+Judge relative to average -- subtract $\mu$.
+
+Judge relative to variability -- divide by $\sigma$.
+
+$$\text{Z-score} = \frac{\text{data value} - \mu}{\sigma}$$
+
+Z-score = number of standard deviations from the mean.
+
+Z-score is an interchangeable standard of unusualness, scaled to the distribution the data belongs to.
+
+## Intuition for Z-scores
 It counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions.
-Z = 0: Average.
-Z = +1, -1: Uninteresting.
-Z = +2, -2: Raise eyebrow.
-Z = +3, -3: Remarkable.
-Z = +5, -5: Stunning.
-Interpreting the Z-score
 
-Z score
-A distribution for test scores is normally distributed N(500, 502). You score 625. Well done! What is your Z score?
-An LED manufacture process produces units with illumination N(50,0.22). One particular bulb has illumination 49.4. 
-What is its Z-score?
-If we reject any bulb at 49.4 or below, how much of the inventory would we waste? 
-By reconfiguring the assembly process, we can make the distribution N(51, 12). How would you describe the effect of this change?
+* Z = 0: Average.
+* Z = +1, -1: Uninteresting.
+* Z = +2, -2: Raise eyebrow.
+* Z = +3, -3: Remarkable.
+* Z = +5, -5: Stunning.
 
-The rarity of a Z-score:  the p-value
-A good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score.
-Use Bognar’s tool to answer:
-How much of the normal distribution is above Z = 2.3? 
-How much of the normal distribution is more extreme, on either side, than Z=3.1?
-Use stats.norm.cdf to answer: 
-How much of the normal distribution is below  Z = -5?
-How much of the normal distribution is above Z = 2.5?
+## Practice with Z score
 
-Methods for finding p-value, recap
-To find tail areas, you can…
-Use the Empirical Rule with some geometric reasoning. (Z=1, 2, 3 only)
-Matt Bognar’s CDF calculator (Z in the range -4..4)
-Use Jupyter (Any Z will do)
-from scipy import stats
-stats.norm.cdf(2)
-Use a Z-table. (Paper method, limited accuracy and range)
+1. A distribution for test scores is normally distributed $N(500, 50^2)$. You score 625. Well done! What is your Z score?
+2. An LED manufacture process produces units with illumination $N(50,0.2^2)$. One particular bulb has illumination 49.4.
+  - What is its Z-score?
+  - If we reject any bulb at 49.4 or below, how much of the inventory would we waste? 
+  - By reconfiguring the assembly process, we can make the distribution $N(51, 1^2)$. How would you describe the effect of this change? How would this affect the manufacturing waste?
 
-Putting it all together
-Most people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile?
-An average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day?
-A 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?
+## The rarity of a Z-score:  the p-value
+A good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score, called the $p$-value.
 
-Homework
+### Use Bognar’s tool to answer:
+
+1. How much of the normal distribution is above Z = 2.3? 
+2. How much of the normal distribution is more extreme, on either side, than Z=3.1?
+
+### Use stats.norm.cdf to answer: 
+
+1. How much of the normal distribution is below  Z = -5?
+2. How much of the normal distribution is above Z = 2.5?
+
+## Putting it all together
+1. Most people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile?
+2. An average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day?
+3. A 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?
+
+## Homework
 Solve homework problems “18-19. The Normal Distribution”

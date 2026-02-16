@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Standard error and confidence intervals.">
+
+<title>20. Standard Error and Confidence Intervals – Teaching</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preparatory-work" id="toc-preparatory-work" class="nav-link active" data-scroll-target="#preparatory-work"><span class="header-section-number">1</span> Preparatory work</a></li>
+  <li><a href="#correct-each-statement-statistics-vs.-parameters." id="toc-correct-each-statement-statistics-vs.-parameters." class="nav-link" data-scroll-target="#correct-each-statement-statistics-vs.-parameters."><span class="header-section-number">2</span> Correct each statement – statistics vs.&nbsp;parameters.</a></li>
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem"><span class="header-section-number">3</span> The problem</a></li>
+  <li><a href="#the-compensation" id="toc-the-compensation" class="nav-link" data-scroll-target="#the-compensation"><span class="header-section-number">4</span> The compensation</a></li>
+  <li><a href="#the-good-news" id="toc-the-good-news" class="nav-link" data-scroll-target="#the-good-news"><span class="header-section-number">5</span> The good news</a></li>
+  <li><a href="#visualizing-the-standard-error" id="toc-visualizing-the-standard-error" class="nav-link" data-scroll-target="#visualizing-the-standard-error"><span class="header-section-number">6</span> Visualizing the Standard Error</a></li>
+  <li><a href="#visualizing-standard-error" id="toc-visualizing-standard-error" class="nav-link" data-scroll-target="#visualizing-standard-error"><span class="header-section-number">7</span> Visualizing Standard Error</a></li>
+  <li><a href="#three-huge-takeaways." id="toc-three-huge-takeaways." class="nav-link" data-scroll-target="#three-huge-takeaways."><span class="header-section-number">8</span> Three huge takeaways.</a></li>
+  <li><a href="#coin-flip-o-matic-inator" id="toc-coin-flip-o-matic-inator" class="nav-link" data-scroll-target="#coin-flip-o-matic-inator"><span class="header-section-number">9</span> 🪙 100-Coin Flip-o-matic-inator</a></li>
+  <li><a href="#coin-flip-o-matic-analysis" id="toc-coin-flip-o-matic-analysis" class="nav-link" data-scroll-target="#coin-flip-o-matic-analysis"><span class="header-section-number">10</span> 🪙 100-Coin Flip-o-matic, analysis</a></li>
+  <li><a href="#good-news-there-are-formulas" id="toc-good-news-there-are-formulas" class="nav-link" data-scroll-target="#good-news-there-are-formulas"><span class="header-section-number">11</span> Good news: There are formulas</a></li>
+  <li><a href="#se-as-the-basis-for-confidence-intervals" id="toc-se-as-the-basis-for-confidence-intervals" class="nav-link" data-scroll-target="#se-as-the-basis-for-confidence-intervals"><span class="header-section-number">12</span> SE as the basis for Confidence Intervals</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">13</span> Example #1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">14</span> Example #2</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3"><span class="header-section-number">15</span> Example #3</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4"><span class="header-section-number">16</span> Example #4</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">20. Standard Error and Confidence Intervals</h1>
+<p class="subtitle lead">All measurement has potential error. With care we can compensate.</p>
+</div>
+
+<div>
+  <div class="description">
+    Standard error and confidence intervals.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="preparatory-work" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="preparatory-work"><span class="header-section-number">1</span> Preparatory work</h2>
+<p>Read: OpenIntro Statistics Section 5.1 and 5.2</p>
+</section>
+<section id="correct-each-statement-statistics-vs.-parameters." class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="correct-each-statement-statistics-vs.-parameters."><span class="header-section-number">2</span> Correct each statement – statistics vs.&nbsp;parameters.</h2>
+<ol type="1">
+<li>I sampled 500 patients and averaged their blood pressure. Now I know the population average blood pressure.</li>
+<li>I surveyed 500 teens and calculated a bullying risk probability. Now I know a parameter.</li>
+<li>I sampled 500 library books. Now I know the average length of all books.</li>
+<li>I weighed 500 cats. Now I know μ, the average weight of cats.</li>
+</ol>
+</section>
+<section id="the-problem" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="the-problem"><span class="header-section-number">3</span> The problem</h2>
+<ul>
+<li>Statistical measurements only <em>estimate</em> parameters. When a statistic is used to estimate a parameter, we call it a <strong>point estimate</strong>.</li>
+<li>Statistical measurement error is natural and inevitable. Point estimates naturally differ from the parameters they intend to measure.</li>
+</ul>
+</section>
+<section id="the-compensation" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="the-compensation"><span class="header-section-number">4</span> The compensation</h2>
+<ul>
+<li>Large samples allow us to limit measurement error.</li>
+<li>Special formulas (for SE) allow us to quantify and predict measurement error.</li>
+<li>Confidence intervals allow us to responsibly report our point estimates and their potential error in a responsible way.</li>
+</ul>
+</section>
+<section id="the-good-news" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="the-good-news"><span class="header-section-number">5</span> The good news</h2>
+<ul>
+<li>Usually, measurement error is not just random, but normal N(0,…) with mean 0 and predictable deviation.</li>
+<li>The deviation of the error of a point estimate is called the Standard Error (SE), and it can be predicted.</li>
+</ul>
+</section>
+<section id="visualizing-the-standard-error" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="visualizing-the-standard-error"><span class="header-section-number">6</span> Visualizing the Standard Error</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="3" data-source-offset="-55"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>shape <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>scale <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>randomGamma <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">-</span><span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()) <span class="op">*</span> scale<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. STATIC SAMPLE (Does not depend on n or m, so it won't re-run)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>staticSample <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> <span class="dv">1000</span> }<span class="op">,</span> randomGamma)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. REACTIVE SAMPLING DISTRIBUTION</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>samplingDistribution <span class="op">=</span> {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">// This line ensures the cell re-runs when n or numSamples changes</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _trigger <span class="op">=</span> [n<span class="op">,</span> numSamples]<span class="op">;</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> numSamples }<span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> s <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> n }<span class="op">,</span> randomGamma)<span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> d3<span class="op">.</span><span class="fu">mean</span>(s)<span class="op">;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. STATS calculations</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>estimatedSE <span class="op">=</span> d3<span class="op">.</span><span class="fu">deviation</span>(samplingDistribution)<span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>meanOfMeans <span class="op">=</span> d3<span class="op">.</span><span class="fu">mean</span>(samplingDistribution)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell panel-input card bg-light p-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="1" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Sample Size (n)"</span>})</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>viewof numSamples <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">501</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">31</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Resamples (m)"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="population" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="population"><span class="header-section-number">6.1</span> Population</h3>
+<p><strong>(<span class="math inline">\(N=1000\)</span>)</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb3--1"><a href="#cb3--1" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb3-0"><a href="#cb3-0" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="st">"16px"</span> }<span class="op">,</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">40</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Value"</span>}<span class="op">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">10</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"red"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span>})<span class="op">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The dodgeY transform stacks the dots on top of each other</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(staticSample<span class="op">,</span> Plot<span class="op">.</span><span class="fu">dodgeY</span>({</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">anchor</span><span class="op">:</span> <span class="st">"bottom"</span><span class="op">,</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#4e79a7"</span><span class="op">,</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="dv">10</span>]<span class="op">,</span> {<span class="dt">y</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="st">"μ=10"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"red"</span>})</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="resampling-dist." class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="resampling-dist."><span class="header-section-number">6.2</span> Resampling Dist.</h3>
+<p><strong>(Average of <span class="math inline">\(n\)</span>, done <span class="math inline">\(m\)</span> times)</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb4--1"><a href="#cb4--1" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb4-0"><a href="#cb4-0" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="st">"16px"</span> }<span class="op">,</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">40</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Sample Mean (x̄)"</span> }<span class="op">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">10</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"red"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4"</span>})<span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(samplingDistribution<span class="op">,</span> Plot<span class="op">.</span><span class="fu">dodgeY</span>({</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">anchor</span><span class="op">:</span> <span class="st">"bottom"</span><span class="op">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#e15759"</span><span class="op">,</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.7</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">,</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">//    Plot.ruleX([meanOfMeans], {stroke: "black", strokeWidth: 3})</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+<section id="visualizing-standard-error" class="level2 activity" data-number="7">
+<h2 class="activity anchored" data-number="7" data-anchor-id="visualizing-standard-error"><span class="header-section-number">7</span> Visualizing Standard Error</h2>
+<p>Adjust the sliders to see how the sample size (<span class="math inline">\(n\)</span>) and the number of resamples (<span class="math inline">\(m\)</span>) affect the distribution of the mean.</p>
+<ol type="1">
+<li><p>Set <span class="math inline">\(n=25\)</span>. When <span class="math inline">\(m=1\)</span>, what happens? Why is the single red dot close to <span class="math inline">\(10\)</span>? Why isn’t it exactly at <span class="math inline">\(10\)</span>? Why isn’t it at the same place as on your neighbor’s screen?</p></li>
+<li><p>Raise <span class="math inline">\(m\)</span>. Why are the red dots close to <span class="math inline">\(10\)</span>? Why do they vary? How much do they stray from <span class="math inline">\(10\)</span>, typically? <em>That’s</em> <strong>Standard Error</strong></p></li>
+<li><p>Keeping <span class="math inline">\(m\)</span> somewhat large, Raise <span class="math inline">\(n\)</span>. Do the red dots spread out farther from <span class="math inline">\(10\)</span> or cluster more closely?</p></li>
+<li><p>With large <span class="math inline">\(m\)</span>, set <span class="math inline">\(n=1\)</span>. Why does the right-hand plot look like that?</p></li>
+<li><p>The original population is quite skewed. For large <span class="math inline">\(n\)</span>, is the sampling distribution skewed or normal?</p></li>
+</ol>
+</section>
+<section id="three-huge-takeaways." class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="three-huge-takeaways."><span class="header-section-number">8</span> Three huge takeaways.</h2>
+<ol type="1">
+<li><p><strong>The Standard Error is the standard deviation of the sampling distribution.</strong> It depends on the deviation in the original population and also depends on <span class="math inline">\(n\)</span>.</p></li>
+<li><p>Large-sample (i.e.&nbsp;big n) averages cluster tightly around the true mean. This is the <strong>Law of Large Numbers.</strong></p></li>
+<li><p>Regardless of the shape of the original distribution, large-sample averages follow a normal bell curve. This is the <strong>Central Limit Theorem.</strong> Its mean and variability are described in parts 1 &amp; 2 above.</p></li>
+</ol>
+</section>
+<section id="coin-flip-o-matic-inator" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="coin-flip-o-matic-inator"><span class="header-section-number">9</span> 🪙 100-Coin Flip-o-matic-inator</h2>
+<p>Adjust the slider to repeat the experiment of flipping <span class="math inline">\(100\)</span> coins. We are counting the proportion of “Heads” (out of <span class="math inline">\(100\)</span>) we get each time.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="3" data-source-offset="-64"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>flip100Coins <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> heads <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">100</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">&gt;</span> <span class="fl">0.5</span>) heads<span class="op">++;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> heads<span class="op">/</span><span class="dv">100</span><span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Reactive data array</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>flipData <span class="op">=</span> {</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> _trigger <span class="op">=</span> m<span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> m }<span class="op">,</span> flip100Coins)<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell panel-input card bg-light p-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-startfrom="0" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb6-0"><a href="#cb6-0" aria-hidden="true" tabindex="-1"></a>viewof m <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Experiments (m)"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb7--1"><a href="#cb7--1" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Plotting the results</span></span>
+<span id="cb7-0"><a href="#cb7-0" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="st">"18px"</span> }<span class="op">,</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="op">.</span><span class="dv">30</span><span class="op">,</span> <span class="op">.</span><span class="dv">70</span>]<span class="op">,</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Heads observed in 100 flips →"</span><span class="op">,</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">tickFormat</span><span class="op">:</span> <span class="st">".2f"</span><span class="op">,</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">50</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Expected value line (50)</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Plot.ruleX([50], {stroke: "red", strokeDasharray: "4", strokeWidth: 2}),</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The coin stacks</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(flipData<span class="op">,</span> Plot<span class="op">.</span><span class="fu">dodgeY</span>({</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">anchor</span><span class="op">:</span> <span class="st">"bottom"</span><span class="op">,</span> </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#4e79a7"</span><span class="op">,</span> </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">0.5</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">,</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+<section id="coin-flip-o-matic-analysis" class="level2 activity" data-number="10">
+<h2 class="activity anchored" data-number="10" data-anchor-id="coin-flip-o-matic-analysis"><span class="header-section-number">10</span> 🪙 100-Coin Flip-o-matic, analysis</h2>
+<ol type="1">
+<li><p>Where in the activity is the <strong>parameter</strong> for the coin? Where is the <strong>point estimate(s)</strong>?</p></li>
+<li><p>Why are the results near 0.5? Why are they not exactly 0.5? Why are your results different from your neighbors, even with the same <span class="math inline">\(m\)</span>?</p></li>
+<li><p>Using a large value of <span class="math inline">\(m\)</span>, what is the shape of the sampling distribution?</p></li>
+<li><p>Where is the center of the sampling distribution?</p></li>
+<li><p>Estimate the variability of the sampling distribution. This is <strong>Standard Error</strong> of the proportion.</p></li>
+</ol>
+</section>
+<section id="good-news-there-are-formulas" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="good-news-there-are-formulas"><span class="header-section-number">11</span> Good news: There are formulas</h2>
+<p>We don’t have to calculate standard errors by simulating sampling distributions. There are formulas.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Point Estimate</th>
+<th style="text-align: center;">Formula</th>
+<th style="text-align: left;">Variable Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean <span class="math inline">\(\mu\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\bar{x}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\sigma}{\sqrt{n}}\)</span></td>
+<td style="text-align: left;">Quantitative</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proportion <span class="math inline">\(p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sqrt{\frac{p(1-p)}{n}}\)</span></td>
+<td style="text-align: left;">Categorical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Difference</td>
+<td style="text-align: center;"><span class="math inline">\(\text{diff}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sqrt{SE_1^2 + SE_2^2}\)</span></td>
+<td style="text-align: left;">Comparison</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="se-as-the-basis-for-confidence-intervals" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="se-as-the-basis-for-confidence-intervals"><span class="header-section-number">12</span> SE as the basis for Confidence Intervals</h2>
+<p>You have a point estimate for a parameter. It approximates a parameter. You want to guess the parameter.</p>
+<p><strong>The Empirical Rule</strong> says that 95% of the time, the measurement error is less than <span class="math inline">\(2*SE\)</span>, so the <strong>confidence interval</strong>: <span class="math display">\[\text{ point estimate } \pm 2*SE\]</span> almost certainly captures the parameter.</p>
+</section>
+<section id="example-1" class="level2 activity" data-number="13">
+<h2 class="activity anchored" data-number="13" data-anchor-id="example-1"><span class="header-section-number">13</span> Example #1</h2>
+<p>Using North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv</p>
+<p>The “premie” variable is categorical. 152 / 998 births are identified as premature.</p>
+<ol type="1">
+<li>What is the point estimate and what is the parameter in this context?</li>
+<li>Calculate the proportion of premie births in our data.</li>
+<li>What is the standard error for this point estimate?</li>
+<li>Assuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate.</li>
+</ol>
+</section>
+<section id="example-2" class="level2" data-number="14">
+<h2 data-number="14" class="anchored" data-anchor-id="example-2"><span class="header-section-number">14</span> Example #2</h2>
+<p>Using North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv</p>
+<p>The mother’s age variable (“mage”) has mean: 27, stdev: 6.2, count: 1000</p>
+<ol type="1">
+<li>What is the sample average? This is the point estimate.</li>
+<li>What is the parameter which the point estimate approximates?</li>
+<li>What is the standard error for this point estimate?</li>
+<li>Assuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate.</li>
+</ol>
+</section>
+<section id="example-3" class="level2" data-number="15">
+<h2 data-number="15" class="anchored" data-anchor-id="example-3"><span class="header-section-number">15</span> Example #3</h2>
+<p>100 birds are sampled, and have an average mass of 400g, with a standard deviation of 20g.</p>
+<ol type="1">
+<li>Find the standard error of this average.</li>
+<li>Construct a confidence interval for this data using 2*SE.</li>
+<li>Explain what the confidence interval means.</li>
+<li>What is the confidence <strong>level</strong>?</li>
+</ol>
+</section>
+<section id="example-4" class="level2" data-number="16">
+<h2 data-number="16" class="anchored" data-anchor-id="example-4"><span class="header-section-number">16</span> Example #4</h2>
+<p>Last week’s political poll gave candidate X a 45% approval, but this week’s poll gives the same candidate a 49% approval. Each poll was out of 2000 voters. Find the standard error for each point estimate. Construct a confidence interval for each point estimate, using 2*SE. Do the confidence intervals overlap? What is the significance of this?</p>
+<p>Vocabulary Standard Deviation vs.&nbsp;Standard Error Confidence Interval vs.&nbsp;Confidence Level Margin of Error (often 2*SE)</p>
+<p>Homework …on Webwork: “20. Standard Error and Confidence”</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIDEuIERBVEEgR0VORVJBVElPTlxuLy8gR2FtbWEgZGlzdHJpYnV0aW9uIHBhcmFtZXRlcnNcbnNoYXBlID0gMjtcbnNjYWxlID0gNTtcbnJhbmRvbUdhbW1hID0gKCkgPT4gLU1hdGgubG9nKE1hdGgucmFuZG9tKCkgKiBNYXRoLnJhbmRvbSgpKSAqIHNjYWxlO1xuXG4vLyAyLiBTVEFUSUMgU0FNUExFIChEb2VzIG5vdCBkZXBlbmQgb24gbiBvciBtLCBzbyBpdCB3b24ndCByZS1ydW4pXG5zdGF0aWNTYW1wbGUgPSBBcnJheS5mcm9tKHsgbGVuZ3RoOiAxMDAwIH0sIHJhbmRvbUdhbW1hKTtcblxuLy8gMy4gUkVBQ1RJVkUgU0FNUExJTkcgRElTVFJJQlVUSU9OXG5zYW1wbGluZ0Rpc3RyaWJ1dGlvbiA9IHtcbiAgLy8gVGhpcyBsaW5lIGVuc3VyZXMgdGhlIGNlbGwgcmUtcnVucyB3aGVuIG4gb3IgbnVtU2FtcGxlcyBjaGFuZ2VzXG4gIGNvbnN0IF90cmlnZ2VyID0gW24sIG51bVNhbXBsZXNdOyBcbiAgcmV0dXJuIEFycmF5LmZyb20oeyBsZW5ndGg6IG51bVNhbXBsZXMgfSwgKCkgPT4ge1xuICAgIGNvbnN0IHMgPSBBcnJheS5mcm9tKHsgbGVuZ3RoOiBuIH0sIHJhbmRvbUdhbW1hKTtcbiAgICByZXR1cm4gZDMubWVhbihzKTtcbiAgfSk7XG59XG5cbi8vIDQuIFNUQVRTIGNhbGN1bGF0aW9uc1xuZXN0aW1hdGVkU0UgPSBkMy5kZXZpYXRpb24oc2FtcGxpbmdEaXN0cmlidXRpb24pO1xubWVhbk9mTWVhbnMgPSBkMy5tZWFuKHNhbXBsaW5nRGlzdHJpYnV0aW9uKTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBuID0gSW5wdXRzLnJhbmdlKFsxLCAxMDBdLCB7c3RlcDogMSwgdmFsdWU6IDMwLCBsYWJlbDogXCJTYW1wbGUgU2l6ZSAobilcIn0pXG52aWV3b2YgbnVtU2FtcGxlcyA9IElucHV0cy5yYW5nZShbMSwgNTAxXSwge3N0ZXA6IDEsIHZhbHVlOiAzMSwgbGFiZWw6IFwiTnVtYmVyIG9mIFJlc2FtcGxlcyAobSlcIn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICBoZWlnaHQ6IDQwMCxcbiAgc3R5bGU6IHsgZm9udFNpemU6IFwiMTZweFwiIH0sXG4gIHg6IHsgZG9tYWluOiBbMCwgNDBdLCBsYWJlbDogXCJWYWx1ZVwifSxcbiAgeTogeyBheGlzOiBudWxsIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5ydWxlWChbMTBdLCB7c3Ryb2tlOiBcInJlZFwiLCBzdHJva2VEYXNoYXJyYXk6IFwiNFwiLCBzdHJva2VXaWR0aDogMn0pLFxuICAgIC8vIFRoZSBkb2RnZVkgdHJhbnNmb3JtIHN0YWNrcyB0aGUgZG90cyBvbiB0b3Agb2YgZWFjaCBvdGhlclxuICAgIFBsb3QuZG90KHN0YXRpY1NhbXBsZSwgUGxvdC5kb2RnZVkoe1xuICAgICAgeDogZCA9PiBkLCBcbiAgICAgIGFuY2hvcjogXCJib3R0b21cIiwgXG4gICAgICBmaWxsOiBcIiM0ZTc5YTdcIiwgXG4gICAgICByOiAzXG4gICAgfSkpLFxuICAgIFBsb3QudGV4dChbMTBdLCB7eTogMCwgdGV4dDogZCA9PiBcIs68PTEwXCIsIGR5OiAyMCwgZmlsbDogXCJyZWRcIn0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICBoZWlnaHQ6IDQwMCxcbiAgc3R5bGU6IHsgZm9udFNpemU6IFwiMTZweFwiIH0sXG4gIHg6IHsgZG9tYWluOiBbMCwgNDBdLCBsYWJlbDogXCJTYW1wbGUgTWVhbiAoeMyEKVwiIH0sXG4gIHk6IHsgYXhpczogbnVsbCB9LFxuICBtYXJrczogW1xuICAgIFBsb3QucnVsZVgoWzEwXSwge3N0cm9rZTogXCJyZWRcIiwgc3Ryb2tlRGFzaGFycmF5OiBcIjRcIn0pLFxuICAgIFBsb3QuZG90KHNhbXBsaW5nRGlzdHJpYnV0aW9uLCBQbG90LmRvZGdlWSh7XG4gICAgICB4OiBkID0+IGQsIFxuICAgICAgYW5jaG9yOiBcImJvdHRvbVwiLFxuICAgICAgZmlsbDogXCIjZTE1NzU5XCIsIFxuICAgICAgcjogMi41LFxuICAgICAgZmlsbE9wYWNpdHk6IDAuN1xuICAgIH0pKSxcbi8vICAgIFBsb3QucnVsZVgoW21lYW5PZk1lYW5zXSwge3N0cm9rZTogXCJibGFja1wiLCBzdHJva2VXaWR0aDogM30pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyAxLiBUaGUgTWF0aCBMb2dpY1xuLy8gRnVuY3Rpb24gdG8gc2ltdWxhdGUgZmxpcHBpbmcgMTAwIGNvaW5zXG5mbGlwMTAwQ29pbnMgPSAoKSA9PiB7XG4gIGxldCBoZWFkcyA9IDA7XG4gIGZvciAobGV0IGkgPSAwOyBpIDwgMTAwOyBpKyspIHtcbiAgICBpZiAoTWF0aC5yYW5kb20oKSA+IDAuNSkgaGVhZHMrKztcbiAgfVxuICByZXR1cm4gaGVhZHMvMTAwO1xufVxuXG4vLyBSZWFjdGl2ZSBkYXRhIGFycmF5XG5mbGlwRGF0YSA9IHtcbiAgY29uc3QgX3RyaWdnZXIgPSBtO1xuICByZXR1cm4gQXJyYXkuZnJvbSh7IGxlbmd0aDogbSB9LCBmbGlwMTAwQ29pbnMpO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIG0gPSBJbnB1dHMucmFuZ2UoWzEsIDEwMDBdLCB7c3RlcDogMSwgdmFsdWU6IDEsIGxhYmVsOiBcIk51bWJlciBvZiBFeHBlcmltZW50cyAobSlcIn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyAyLiBQbG90dGluZyB0aGUgcmVzdWx0c1xuUGxvdC5wbG90KHtcbiAgaGVpZ2h0OiA1MDAsXG4gIHN0eWxlOiB7IGZvbnRTaXplOiBcIjE4cHhcIiB9LFxuICB4OiB7IFxuICAgIGRvbWFpbjogWy4zMCwgLjcwXSwgXG4gICAgbGFiZWw6IFwiTnVtYmVyIG9mIEhlYWRzIG9ic2VydmVkIGluIDEwMCBmbGlwcyDihpJcIixcbiAgICB0aWNrRm9ybWF0OiBcIi4yZlwiLCBcbiAgICBsYWJlbE9mZnNldDogNTBcbiAgfSxcbiAgeTogeyBheGlzOiBudWxsIH0sXG4gIG1hcmtzOiBbXG4gICAgLy8gRXhwZWN0ZWQgdmFsdWUgbGluZSAoNTApXG4gICAgLy9QbG90LnJ1bGVYKFs1MF0sIHtzdHJva2U6IFwicmVkXCIsIHN0cm9rZURhc2hhcnJheTogXCI0XCIsIHN0cm9rZVdpZHRoOiAyfSksXG4gICAgXG4gICAgLy8gVGhlIGNvaW4gc3RhY2tzXG4gICAgUGxvdC5kb3QoZmxpcERhdGEsIFBsb3QuZG9kZ2VZKHtcbiAgICAgIHg6IGQgPT4gZCwgXG4gICAgICBhbmNob3I6IFwiYm90dG9tXCIsIFxuICAgICAgZmlsbDogXCIjNGU3OWE3XCIsIFxuICAgICAgcjogNCxcbiAgICAgIHN0cm9rZTogXCJ3aGl0ZVwiLFxuICAgICAgc3Ryb2tlV2lkdGg6IDAuNVxuICAgIH0pKSxcbiAgICBcbiAgXVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdudW1TYW1wbGVzJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ20nKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../Math125/slides";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

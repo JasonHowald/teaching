@@ -48,7 +48,7 @@ Give an example of each type of element in each ring, or state "impossible." No 
 | A zerodivisor in |
 | An irreducible in |
 
-## Relativity
+## Relativity 
 
 Interpret this problem in ${\mathbb Z}[x]$, in ${\mathbb R}[x]$, in ${\mathbb C}[x]$, and in ${\mathbb Z}[i][x]$. You should get a variety of answers depending on the ring. 
 
@@ -70,4 +70,21 @@ In this problem we explore the ring $R = {\mathbb Z}[\sqrt{-5}] = \{a + b \sqrt{
 4. Once units are identified, we can prove that certain elements are irreducible. Demonstrate that $2$, $3$, $1+\sqrt{-5}$, and $1-\sqrt{-5}$ are all irreducible.
 5. It will perhaps bother you to see that $2 \cdot 3 = (1+\sqrt{-5}) \cdot(1-\sqrt{-5})$. Among these irreducible factors of six, are any of them unit multiples of others? Why or why not? 
 
- 
+## $(R/I) / (J/I)$
+
+Let $I \subseteq J \subseteq R$, where $I$ and $J$ are ideals and $R$ is a ring. Define $J/I$ to be $\{j+I | j \in J\}$.
+
+1. Prove that $J/I$ is an ideal of $R/I$. 
+2. Prove that $(R/I) / (J/I)$ is isomorphic to $R/J$.
+
+## Patterns in ${\mathbb Z}[i]$
+
+Find an infinite repeating pattern of points which, when removed from the lattice ${\mathbb Z}[i]$, do not permit five points in a row, horizontally, vertically, or diagonally, to be found among the remaining points. Minimize the number of points which must be removed. 
+
+1. What proportion of the points of ${\mathbb Z}[i]$ must be removed to exclude five-in-a-row?
+2. Sketch a picture of the points which must be removed. 
+3. It's possible to choose your points so that they correspond to an ideal $I$ of ${\mathbb Z}[i]$. Is it principal? What is its generator?
+
+## "the light gleams an instant, then it's night once more.” 
+
+Prove that $R = {\mathbb Z}[x]/(x)$ is isomorphic to ${\mathbb Z}$

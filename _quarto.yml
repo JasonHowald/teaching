@@ -47,6 +47,18 @@ format:
     output-ext: html          
     embed-resources: false
     html-math-method: mathjax # Best for VoiceOver Rotor
+    include-in-header: # For better slide pronunciations. 
+      - text: |
+          <script>
+          window.MathJax = {
+            options: {
+              enableAssistiveMml: true
+            },
+            loader: {
+              load: ['[tex]/noerrors', '[tex]/noundefined', 'a11y/assistive-mml']
+            }
+          };
+          </script>
     navigation-mode: linear   # Simple path for screen readers
     theme: [sky, style/custom.scss, style/slide_custom.scss] # 
     slide-number: true        # Show number within slide deck, so students to reference specific parts

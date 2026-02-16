@@ -1,0 +1,12 @@
+---
+title: "20. Standard Error and Confidence Intervals"
+subtitle: "All measurement has potential error. With care we can compensate."
+description: "Standard error and confidence intervals. "
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _20_Standard_Error_and_Confidence.qmd >}}
+
+
+

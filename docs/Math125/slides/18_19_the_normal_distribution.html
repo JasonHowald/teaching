@@ -188,6 +188,16 @@
   </style>
   <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+  <script>
+  window.MathJax = {
+    options: {
+      enableAssistiveMml: true
+    },
+    loader: {
+      load: ['[tex]/noerrors', '[tex]/noundefined', 'a11y/assistive-mml']
+    }
+  };
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -309,17 +319,19 @@ Figure&nbsp;5: A suspiciously normal data distribution
 <span id="cb1-4"><a></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> </span>
 <span id="cb1-5"><a></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> </span>
 <span id="cb1-6"><a></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"μ:"</span><span class="op">,</span> </span>
-<span id="cb1-7"><a></a>})</span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a>viewof sigma <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.1</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> {</span>
-<span id="cb1-10"><a></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> </span>
-<span id="cb1-11"><a></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> </span>
-<span id="cb1-12"><a></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"σ:"</span><span class="op">,</span> </span>
-<span id="cb1-13"><a></a>})</span>
-<span id="cb1-14"><a></a></span>
-<span id="cb1-15"><a></a><span class="co">// 2. Dynamic Notation Display</span></span>
-<span id="cb1-16"><a></a><span class="co">// This updates instantly whenever the sliders move</span></span>
-<span id="cb1-17"><a></a><span class="fu">md</span><span class="vs">`### Distribution: N(</span><span class="sc">${</span>mu<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>(sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">)`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span> </span>
+<span id="cb1-8"><a></a>})</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a>viewof sigma <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.1</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> {</span>
+<span id="cb1-11"><a></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> </span>
+<span id="cb1-12"><a></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> </span>
+<span id="cb1-13"><a></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"σ:"</span><span class="op">,</span> </span>
+<span id="cb1-14"><a></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span> </span>
+<span id="cb1-15"><a></a>})</span>
+<span id="cb1-16"><a></a></span>
+<span id="cb1-17"><a></a><span class="co">// 2. Dynamic Notation Display</span></span>
+<span id="cb1-18"><a></a><span class="co">// This updates instantly whenever the sliders move</span></span>
+<span id="cb1-19"><a></a><span class="fu">md</span><span class="vs">`### Distribution: N(</span><span class="sc">${</span>mu<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>(sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">)`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -341,23 +353,23 @@ Figure&nbsp;5: A suspiciously normal data distribution
 </div>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="20" data-source-offset="-406"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 19;"><span id="cb2-20"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb2-21"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
-<span id="cb2-22"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb2-23"><a></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span> }<span class="op">,</span></span>
-<span id="cb2-24"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Value"</span> }<span class="op">,</span></span>
-<span id="cb2-25"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb2-26"><a></a>    <span class="co">// The Normal Curve</span></span>
-<span id="cb2-27"><a></a>    Plot<span class="op">.</span><span class="fu">lineY</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.05</span>)<span class="op">,</span> {</span>
-<span id="cb2-28"><a></a>      <span class="dt">x</span><span class="op">:</span> x <span class="kw">=&gt;</span> x<span class="op">,</span></span>
-<span id="cb2-29"><a></a>      <span class="dt">y</span><span class="op">:</span> x <span class="kw">=&gt;</span> (<span class="dv">1</span> <span class="op">/</span> (sigma <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>((x <span class="op">-</span> mu) <span class="op">/</span> sigma<span class="op">,</span> <span class="dv">2</span>))<span class="op">,</span></span>
-<span id="cb2-30"><a></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#2c3e50"</span><span class="op">,</span></span>
-<span id="cb2-31"><a></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
-<span id="cb2-32"><a></a>    })<span class="op">,</span></span>
-<span id="cb2-33"><a></a>    <span class="co">// A dashed vertical line at the mean to help visualize shift</span></span>
-<span id="cb2-34"><a></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([mu]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"red"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4,4"</span><span class="op">,</span> <span class="dt">opacity</span><span class="op">:</span> <span class="fl">0.5</span>})</span>
-<span id="cb2-35"><a></a>  ]</span>
-<span id="cb2-36"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="22" data-source-offset="-434"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 21;"><span id="cb2-22"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-23"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb2-24"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-25"><a></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span> }<span class="op">,</span></span>
+<span id="cb2-26"><a></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Value"</span> }<span class="op">,</span></span>
+<span id="cb2-27"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-28"><a></a>    <span class="co">// The Normal Curve</span></span>
+<span id="cb2-29"><a></a>    Plot<span class="op">.</span><span class="fu">lineY</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.05</span>)<span class="op">,</span> {</span>
+<span id="cb2-30"><a></a>      <span class="dt">x</span><span class="op">:</span> x <span class="kw">=&gt;</span> x<span class="op">,</span></span>
+<span id="cb2-31"><a></a>      <span class="dt">y</span><span class="op">:</span> x <span class="kw">=&gt;</span> (<span class="dv">1</span> <span class="op">/</span> (sigma <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>((x <span class="op">-</span> mu) <span class="op">/</span> sigma<span class="op">,</span> <span class="dv">2</span>))<span class="op">,</span></span>
+<span id="cb2-32"><a></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#2c3e50"</span><span class="op">,</span></span>
+<span id="cb2-33"><a></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb2-34"><a></a>    })<span class="op">,</span></span>
+<span id="cb2-35"><a></a>    <span class="co">// A dashed vertical line at the mean to help visualize shift</span></span>
+<span id="cb2-36"><a></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([mu]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"red"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4,4"</span><span class="op">,</span> <span class="dt">opacity</span><span class="op">:</span> <span class="fl">0.5</span>})</span>
+<span id="cb2-37"><a></a>  ]</span>
+<span id="cb2-38"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-4" data-nodetype="expression">
@@ -418,8 +430,8 @@ and a standard deviation of about 25, but the first is much taller." style="widt
 <h2>The empirical rule (68-95-99.7)</h2>
 <ol type="1">
 <li>Within one standard deviation from the mean lies 68% of the data.</li>
-<li>Within two standard deviations from the mean lies 95% of the data.</li>
-<li>Within three standard deviations from the mean lies 99.7% of the data.</li>
+<li>Within two standard deviations from the mean lies 95%.</li>
+<li>Within three standard deviations from the mean lies 99.7% …approximately.</li>
 </ol>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -438,7 +450,7 @@ Figure&nbsp;6: Time-to-work distribution
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<div id="2144426a" class="cell" data-execution_count="7">
+<div id="b54fed87" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>count    783.000000
 mean      25.997446
@@ -456,18 +468,121 @@ Name: time_to_work, dtype: float64</code></pre>
 </section>
 <section id="the-empirical-rule-68-95-99.7-1" class="slide level2">
 <h2>The empirical rule (68-95-99.7)</h2>
-<p>(Graphic used with permission, Wikimedia Foundation)</p>
-<p>Percentiles and tail areas A distribution is N(100,102). How much data should be expected above 120? A distribution is N(60, 22). How much data should be expected below 54? A distribution is N(10, 52). How much data should be expected above 16? Use the empirical rule or choose a cdf calculation tool: Matt Bognar’s CDF calculator Use Jupyter from scipy import stats stats.norm.cdf(2) Use a Z-table (this is the old school method).</p>
-<p>Z-score Intro: So, is that a lot then? A certain pet parrot’s body temperature is 107°. What more would you need to know, before judging whether the body temperature is a health concern?</p>
-<p>So, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. What other general stats about parrots and their temperatures would be useful to contextualize this information?</p>
-<p>So, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. The standard deviation of body temp is 1.4°. Is the bird’s temperature normal, somewhat high, or very high? Why?</p>
-<p>Judging relative to the distribution Judging a data value x relative to the distribution it’s in requires both: Comparison to the mean of the distribution: subtract μ Conversion to units of standard deviations: divide by σ Thus the formula: Z-score = (data value - μ) / σ The Z-score acts like a interchangeable standard of unusualness, scaled to the distribution the data belongs to.</p>
-<p>Z-score = (value - μ) / σ It counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions. Z = 0: Average. Z = +1, -1: Uninteresting. Z = +2, -2: Raise eyebrow. Z = +3, -3: Remarkable. Z = +5, -5: Stunning. Interpreting the Z-score</p>
-<p>Z score A distribution for test scores is normally distributed N(500, 502). You score 625. Well done! What is your Z score? An LED manufacture process produces units with illumination N(50,0.22). One particular bulb has illumination 49.4. What is its Z-score? If we reject any bulb at 49.4 or below, how much of the inventory would we waste? By reconfiguring the assembly process, we can make the distribution N(51, 12). How would you describe the effect of this change?</p>
-<p>The rarity of a Z-score: the p-value A good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score. Use Bognar’s tool to answer: How much of the normal distribution is above Z = 2.3? How much of the normal distribution is more extreme, on either side, than Z=3.1? Use stats.norm.cdf to answer: How much of the normal distribution is below Z = -5? How much of the normal distribution is above Z = 2.5?</p>
-<p>Methods for finding p-value, recap To find tail areas, you can… Use the Empirical Rule with some geometric reasoning. (Z=1, 2, 3 only) Matt Bognar’s CDF calculator (Z in the range -4..4) Use Jupyter (Any Z will do) from scipy import stats stats.norm.cdf(2) Use a Z-table. (Paper method, limited accuracy and range)</p>
-<p>Putting it all together Most people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile? An average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day? A 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?</p>
-<p>Homework Solve homework problems “18-19. The Normal Distribution”</p>
+<div id="cell-fig-empirical" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div id="fig-empirical" class="quarto-float quarto-figure quarto-figure-center" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-empirical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="18_19_the_normal_distribution_files/figure-revealjs/fig-empirical-output-1.png" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure." width="951" height="567">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-empirical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Empirical Rule illustration
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="percentiles-and-tail-areas" class="slide level2">
+<h2>Percentiles and tail areas</h2>
+<ol type="1">
+<li>A distribution is <span class="math inline">\(N(100,10^2)\)</span>. How much data should be expected above 120?</li>
+<li>A distribution is <span class="math inline">\(N(60, 2^2)\)</span>. How much data should be expected below 54?</li>
+<li>A distribution is <span class="math inline">\(N(10, 5^2)\)</span>. How much data should be expected above 16? (Why can’t this last problem be solved the same way?)</li>
+</ol>
+</section>
+<section id="ways-to-calculate-tail-areas-and-percentiles" class="slide level2">
+<h2>Ways to calculate tail areas and percentiles</h2>
+<ol type="1">
+<li>Geometrically, using empirical rule (for <span class="math inline">\(\pm 1, 2, 3\)</span> only!)</li>
+<li>Using a graphical tool, like <a href="https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html">Bognar’s normal CDF calculator</a></li>
+<li>Using Jupyter:</li>
+</ol>
+<div id="48c78ce2" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb4-2"><a></a>stats.norm.cdf(<span class="op">-</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>np.float64(0.022750131948179198)</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Using a Z-table (old school, not in this course).</li>
+</ol>
+</section>
+<section id="so-is-that-a-lot-then-z-score" class="slide level2">
+<h2>So, is that a lot then? (Z-score)</h2>
+<p>A certain pet parrot’s body temperature is 107°.</p>
+<p>What more would you need to know, before judging whether the body temperature is a health concern?</p>
+</section>
+<section id="so-is-that-a-lot-then-z-score-1" class="slide level2">
+<h2>So, is that a lot then? (Z-score)</h2>
+<p>A certain pet parrot’s body temperature is 107°.</p>
+<p>The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average.</p>
+<p>What other general stats about parrots and their temperatures would be useful to contextualize this information?</p>
+</section>
+<section id="so-is-that-a-lot-then-z-score-2" class="slide level2">
+<h2>So, is that a lot then? (Z-score)</h2>
+<p>A certain pet parrot’s body temperature is 107°.</p>
+<p>The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average.</p>
+<p>The standard deviation of body temp is 1.4°. The parrot is warm by about one and a half standard deviations.</p>
+<p>Is the bird’s temperature normal, somewhat high, or very high? Why?</p>
+</section>
+<section id="a-fair-rating-data-in-context" class="slide level2">
+<h2>A fair rating – data in context</h2>
+<p>Judge relative to average – subtract <span class="math inline">\(\mu\)</span>.</p>
+<p>Judge relative to variability – divide by <span class="math inline">\(\sigma\)</span>.</p>
+<p><span class="math display">\[\text{Z-score} = \frac{\text{data value} - \mu}{\sigma}\]</span></p>
+<p>Z-score = number of standard deviations from the mean.</p>
+<p>Z-score is an interchangeable standard of unusualness, scaled to the distribution the data belongs to.</p>
+</section>
+<section id="intuition-for-z-scores" class="slide level2">
+<h2>Intuition for Z-scores</h2>
+<p>It counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions.</p>
+<ul>
+<li>Z = 0: Average.</li>
+<li>Z = +1, -1: Uninteresting.</li>
+<li>Z = +2, -2: Raise eyebrow.</li>
+<li>Z = +3, -3: Remarkable.</li>
+<li>Z = +5, -5: Stunning.</li>
+</ul>
+</section>
+<section id="practice-with-z-score" class="slide level2">
+<h2>Practice with Z score</h2>
+<ol type="1">
+<li>A distribution for test scores is normally distributed <span class="math inline">\(N(500, 50^2)\)</span>. You score 625. Well done! What is your Z score?</li>
+<li>An LED manufacture process produces units with illumination <span class="math inline">\(N(50,0.2^2)\)</span>. One particular bulb has illumination 49.4.</li>
+</ol>
+<ul>
+<li>What is its Z-score?</li>
+<li>If we reject any bulb at 49.4 or below, how much of the inventory would we waste?</li>
+<li>By reconfiguring the assembly process, we can make the distribution <span class="math inline">\(N(51, 1^2)\)</span>. How would you describe the effect of this change? How would this affect the manufacturing waste?</li>
+</ul>
+</section>
+<section id="the-rarity-of-a-z-score-the-p-value" class="slide level2">
+<h2>The rarity of a Z-score: the p-value</h2>
+<p>A good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score, called the <span class="math inline">\(p\)</span>-value.</p>
+<h3 id="use-bognars-tool-to-answer">Use Bognar’s tool to answer:</h3>
+<ol type="1">
+<li>How much of the normal distribution is above Z = 2.3?</li>
+<li>How much of the normal distribution is more extreme, on either side, than Z=3.1?</li>
+</ol>
+<h3 id="use-stats.norm.cdf-to-answer">Use stats.norm.cdf to answer:</h3>
+<ol type="1">
+<li>How much of the normal distribution is below Z = -5?</li>
+<li>How much of the normal distribution is above Z = 2.5?</li>
+</ol>
+</section>
+<section id="putting-it-all-together" class="slide level2">
+<h2>Putting it all together</h2>
+<ol type="1">
+<li>Most people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile?</li>
+<li>An average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day?</li>
+<li>A 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?</li>
+</ol>
+</section>
+<section id="homework" class="slide level2">
+<h2>Homework</h2>
+<p>Solve homework problems “18-19. The Normal Distribution”</p>
 
 
 </section>
@@ -687,7 +802,7 @@ Name: time_to_work, dtype: float64</code></pre>
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gMS4gRGVmaW5lIFNsaWRlcnMgd2l0aCBleHBsaWNpdCBsYWJlbFdpZHRoIHRvIHByZXZlbnQgbGluZWJyZWFrc1xudmlld29mIG11ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHtcbiAgdmFsdWU6IDAsIFxuICBzdGVwOiAwLjEsIFxuICBsYWJlbDogXCLOvDpcIiwgXG59KVxuXG52aWV3b2Ygc2lnbWEgPSBJbnB1dHMucmFuZ2UoWzAuMSwgM10sIHtcbiAgdmFsdWU6IDEsIFxuICBzdGVwOiAwLjEsIFxuICBsYWJlbDogXCLPgzpcIiwgXG59KVxuXG4vLyAyLiBEeW5hbWljIE5vdGF0aW9uIERpc3BsYXlcbi8vIFRoaXMgdXBkYXRlcyBpbnN0YW50bHkgd2hlbmV2ZXIgdGhlIHNsaWRlcnMgbW92ZVxubWRgIyMjIERpc3RyaWJ1dGlvbjogTigke211LnRvRml4ZWQoMSl9LCAkeyhzaWdtYSoqMikudG9GaXhlZCgyKX0pYFxuXG4vLyAzLiBUaGUgUGxvdFxuUGxvdC5wbG90KHtcbiAgaGVpZ2h0OiA0MDAsXG4gIGdyaWQ6IHRydWUsXG4gIHk6IHsgZG9tYWluOiBbMCwgMV0sIGxhYmVsOiBcIkRlbnNpdHlcIiB9LFxuICB4OiB7IGRvbWFpbjogWy0xMCwgMTBdLCBsYWJlbDogXCJWYWx1ZVwiIH0sXG4gIG1hcmtzOiBbXG4gICAgLy8gVGhlIE5vcm1hbCBDdXJ2ZVxuICAgIFBsb3QubGluZVkoZDMucmFuZ2UoLTEwLCAxMCwgMC4wNSksIHtcbiAgICAgIHg6IHggPT4geCxcbiAgICAgIHk6IHggPT4gKDEgLyAoc2lnbWEgKiBNYXRoLnNxcnQoMiAqIE1hdGguUEkpKSkgKiBNYXRoLmV4cCgtMC41ICogTWF0aC5wb3coKHggLSBtdSkgLyBzaWdtYSwgMikpLFxuICAgICAgc3Ryb2tlOiBcIiMyYzNlNTBcIixcbiAgICAgIHN0cm9rZVdpZHRoOiAzXG4gICAgfSksXG4gICAgLy8gQSBkYXNoZWQgdmVydGljYWwgbGluZSBhdCB0aGUgbWVhbiB0byBoZWxwIHZpc3VhbGl6ZSBzaGlmdFxuICAgIFBsb3QucnVsZVgoW211XSwge3N0cm9rZTogXCJyZWRcIiwgc3Ryb2tlRGFzaGFycmF5OiBcIjQsNFwiLCBvcGFjaXR5OiAwLjV9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtdScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzaWdtYScpIn1dfQ==
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gMS4gRGVmaW5lIFNsaWRlcnMgd2l0aCBleHBsaWNpdCBsYWJlbFdpZHRoIHRvIHByZXZlbnQgbGluZWJyZWFrc1xudmlld29mIG11ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHtcbiAgdmFsdWU6IDAsIFxuICBzdGVwOiAwLjEsIFxuICBsYWJlbDogXCLOvDpcIiwgXG4gIHdpZHRoOiAyNTAgXG59KVxuXG52aWV3b2Ygc2lnbWEgPSBJbnB1dHMucmFuZ2UoWzAuMSwgM10sIHtcbiAgdmFsdWU6IDEsIFxuICBzdGVwOiAwLjEsIFxuICBsYWJlbDogXCLPgzpcIiwgXG4gIHdpZHRoOiAyNTAgXG59KVxuXG4vLyAyLiBEeW5hbWljIE5vdGF0aW9uIERpc3BsYXlcbi8vIFRoaXMgdXBkYXRlcyBpbnN0YW50bHkgd2hlbmV2ZXIgdGhlIHNsaWRlcnMgbW92ZVxubWRgIyMjIERpc3RyaWJ1dGlvbjogTigke211LnRvRml4ZWQoMSl9LCAkeyhzaWdtYSoqMikudG9GaXhlZCgyKX0pYFxuXG4vLyAzLiBUaGUgUGxvdFxuUGxvdC5wbG90KHtcbiAgaGVpZ2h0OiA0MDAsXG4gIGdyaWQ6IHRydWUsXG4gIHk6IHsgZG9tYWluOiBbMCwgMV0sIGxhYmVsOiBcIkRlbnNpdHlcIiB9LFxuICB4OiB7IGRvbWFpbjogWy0xMCwgMTBdLCBsYWJlbDogXCJWYWx1ZVwiIH0sXG4gIG1hcmtzOiBbXG4gICAgLy8gVGhlIE5vcm1hbCBDdXJ2ZVxuICAgIFBsb3QubGluZVkoZDMucmFuZ2UoLTEwLCAxMCwgMC4wNSksIHtcbiAgICAgIHg6IHggPT4geCxcbiAgICAgIHk6IHggPT4gKDEgLyAoc2lnbWEgKiBNYXRoLnNxcnQoMiAqIE1hdGguUEkpKSkgKiBNYXRoLmV4cCgtMC41ICogTWF0aC5wb3coKHggLSBtdSkgLyBzaWdtYSwgMikpLFxuICAgICAgc3Ryb2tlOiBcIiMyYzNlNTBcIixcbiAgICAgIHN0cm9rZVdpZHRoOiAzXG4gICAgfSksXG4gICAgLy8gQSBkYXNoZWQgdmVydGljYWwgbGluZSBhdCB0aGUgbWVhbiB0byBoZWxwIHZpc3VhbGl6ZSBzaGlmdFxuICAgIFBsb3QucnVsZVgoW211XSwge3N0cm9rZTogXCJyZWRcIiwgc3Ryb2tlRGFzaGFycmF5OiBcIjQsNFwiLCBvcGFjaXR5OiAwLjV9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtdScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzaWdtYScpIn1dfQ==
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

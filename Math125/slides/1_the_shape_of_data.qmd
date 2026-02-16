@@ -7,3 +7,4 @@ format: revealjs
 ---
 
 {{< include _1_the_shape_of_data.qmd >}}
+  

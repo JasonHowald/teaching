@@ -186,6 +186,16 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+  window.MathJax = {
+    options: {
+      enableAssistiveMml: true
+    },
+    loader: {
+      load: ['[tex]/noerrors', '[tex]/noundefined', 'a11y/assistive-mml']
+    }
+  };
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -227,7 +237,7 @@
 </section>
 <section id="bar-charts-example" class="slide level2">
 <h2>Bar Charts – example</h2>
-<div id="ab274633" class="cell" data-execution_count="1">
+<div id="16efcff7" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-2"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"starbucks.csv"</span>)</span>
 <span id="cb1-3"><a></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'type'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -270,7 +280,7 @@ Figure&nbsp;1: Bar Chart for Starbucks food item types
 </section>
 <section id="histograms-example" class="slide level2">
 <h2>Histograms – example</h2>
-<div id="3225d353" class="cell" data-execution_count="3">
+<div id="f927e278" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb2-2"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"starbucks.csv"</span>)</span>
 <span id="cb2-3"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'calories'</span>, bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -334,7 +344,7 @@ Figure&nbsp;2: Histogram for Starbucks food item Calorie content
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="unimodal">Unimodal</h3>
-<div id="1174bd65" class="cell" data-execution_count="5">
+<div id="a579b0ce" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'poverty'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-poverty" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="6">
@@ -353,7 +363,7 @@ Figure&nbsp;3: Histogram – counties’ poverty rates
 </div>
 </div><div class="column" style="width:50%;">
 <h3 id="bimodal">Bimodal</h3>
-<div id="6c43ea54" class="cell" data-execution_count="7">
+<div id="eb501354" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'SLG'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-mlb" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="8">
@@ -378,7 +388,7 @@ Figure&nbsp;4: Histogram – MLB players’ SLG
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="skewed-left">Skewed Left</h3>
-<div id="5969e5b1" class="cell" data-execution_count="9">
+<div id="02513f00" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'homeownership'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-skewed-left" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="10">
@@ -397,7 +407,7 @@ Figure&nbsp;5: Histogram – counties’ homeownership rates
 </div>
 </div><div class="column" style="width:50%;">
 <h3 id="skewed-right">Skewed Right</h3>
-<div id="eca25dc7" class="cell" data-execution_count="11">
+<div id="799d72b0" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'salary'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-skewed-right" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="12">

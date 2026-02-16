@@ -1,0 +1,275 @@
+## Preparatory work
+Read: OpenIntro Statistics Section 5.1 and 5.2
+
+## Correct each statement -- statistics vs. parameters.
+
+1. I sampled 500 patients and averaged their blood pressure. Now I know the population average blood pressure.
+2. I surveyed 500 teens and calculated a bullying risk probability. Now I know a parameter.
+3. I sampled 500 library books. Now I know the average length of all books.
+4. I weighed 500 cats. Now I know μ, the average weight of cats.
+
+## The problem
+
+- Statistical measurements only *estimate* parameters. When a statistic is used to estimate a parameter, we call it a **point estimate**.
+- Statistical measurement error is natural and inevitable. Point estimates naturally differ from the parameters they intend to measure.
+
+## The compensation
+
+- Large samples allow us to limit measurement error.
+- Special formulas (for SE) allow us to quantify and predict measurement error. 
+- Confidence intervals allow us to responsibly report our point estimates and their potential error in a responsible way.
+
+## The good news
+
+- Usually, measurement error is not just random, but normal N(0,...) with mean 0 and predictable deviation. 
+- The deviation of the error of a point estimate is called the Standard Error (SE), 
+and it can be predicted.
+
+## Visualizing the Standard Error
+
+```{ojs}
+//| echo: false
+// 1. DATA GENERATION
+// Gamma distribution parameters
+shape = 2;
+scale = 5;
+randomGamma = () => -Math.log(Math.random() * Math.random()) * scale;
+
+// 2. STATIC SAMPLE (Does not depend on n or m, so it won't re-run)
+staticSample = Array.from({ length: 1000 }, randomGamma);
+
+// 3. REACTIVE SAMPLING DISTRIBUTION
+samplingDistribution = {
+  // This line ensures the cell re-runs when n or numSamples changes
+  const _trigger = [n, numSamples]; 
+  return Array.from({ length: numSamples }, () => {
+    const s = Array.from({ length: n }, randomGamma);
+    return d3.mean(s);
+  });
+}
+
+// 4. STATS calculations
+estimatedSE = d3.deviation(samplingDistribution);
+meanOfMeans = d3.mean(samplingDistribution);
+```
+
+
+```{ojs}
+//| panel: input
+viewof n = Inputs.range([1, 100], {step: 1, value: 30, label: "Sample Size (n)"})
+viewof numSamples = Inputs.range([1, 501], {step: 1, value: 31, label: "Number of Resamples (m)"})
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Population 
+**($N=1000$)**
+```{ojs}
+Plot.plot({
+  height: 400,
+  style: { fontSize: "16px" },
+  x: { domain: [0, 40], label: "Value"},
+  y: { axis: null },
+  marks: [
+    Plot.ruleX([10], {stroke: "red", strokeDasharray: "4", strokeWidth: 2}),
+    // The dodgeY transform stacks the dots on top of each other
+    Plot.dot(staticSample, Plot.dodgeY({
+      x: d => d, 
+      anchor: "bottom", 
+      fill: "#4e79a7", 
+      r: 3
+    })),
+    Plot.text([10], {y: 0, text: d => "μ=10", dy: 20, fill: "red"})
+  ]
+})
+```
+:::
+
+::: {.column width="50%"}
+### Resampling Dist.
+**(Average of $n$, done $m$ times)**
+```{ojs}
+Plot.plot({
+  height: 400,
+  style: { fontSize: "16px" },
+  x: { domain: [0, 40], label: "Sample Mean (x̄)" },
+  y: { axis: null },
+  marks: [
+    Plot.ruleX([10], {stroke: "red", strokeDasharray: "4"}),
+    Plot.dot(samplingDistribution, Plot.dodgeY({
+      x: d => d, 
+      anchor: "bottom",
+      fill: "#e15759", 
+      r: 2.5,
+      fillOpacity: 0.7
+    })),
+//    Plot.ruleX([meanOfMeans], {stroke: "black", strokeWidth: 3})
+  ]
+})
+```
+:::
+
+::::
+
+## Visualizing Standard Error {.activity}
+
+Adjust the sliders to see how the sample size ($n$) and 
+the number of resamples ($m$) affect the distribution of the mean.
+
+1. Set $n=25$. When $m=1$, what happens? Why is the single red dot close to $10$? Why isn't it exactly at $10$? Why isn't it at the same place as on your neighbor's screen?
+
+2. Raise $m$. Why are the red dots close to $10$? Why do they vary? How much do they stray from $10$, typically? *That's* **Standard Error**
+
+3. Keeping $m$ somewhat large, Raise $n$. Do the red dots spread out farther from 
+$10$ or cluster more closely?
+
+4. With large $m$, set $n=1$. Why does the right-hand plot look like that?
+
+5. The original population is quite skewed. For large $n$, is the sampling distribution skewed or normal?
+
+## Three huge takeaways.
+
+1. **The Standard Error is the standard deviation of the sampling distribution.** 
+It depends on the deviation in the original population and also depends on $n$. 
+
+2. Large-sample (i.e. big n) averages cluster tightly around the true mean. This is 
+the **Law of Large Numbers.**
+
+3. Regardless of the shape of the original distribution, large-sample averages follow
+a normal bell curve. This is the **Central Limit Theorem.** Its mean and variability are described in parts 1 & 2 above.
+
+
+## 🪙 100-Coin Flip-o-matic-inator
+
+Adjust the slider to repeat the experiment of flipping $100$ coins. We are counting the proportion of "Heads" (out of $100$) we get each time.
+
+```{ojs}
+//| echo: false
+// 1. The Math Logic
+// Function to simulate flipping 100 coins
+flip100Coins = () => {
+  let heads = 0;
+  for (let i = 0; i < 100; i++) {
+    if (Math.random() > 0.5) heads++;
+  }
+  return heads/100;
+}
+
+// Reactive data array
+flipData = {
+  const _trigger = m;
+  return Array.from({ length: m }, flip100Coins);
+}
+```
+
+ 
+```{ojs}
+//| panel: input
+viewof m = Inputs.range([1, 1000], {step: 1, value: 1, label: "Number of Experiments (m)"})
+```
+
+```{ojs}
+// 2. Plotting the results
+Plot.plot({
+  height: 500,
+  style: { fontSize: "18px" },
+  x: { 
+    domain: [.30, .70], 
+    label: "Number of Heads observed in 100 flips →",
+    tickFormat: ".2f", 
+    labelOffset: 50
+  },
+  y: { axis: null },
+  marks: [
+    // Expected value line (50)
+    //Plot.ruleX([50], {stroke: "red", strokeDasharray: "4", strokeWidth: 2}),
+    
+    // The coin stacks
+    Plot.dot(flipData, Plot.dodgeY({
+      x: d => d, 
+      anchor: "bottom", 
+      fill: "#4e79a7", 
+      r: 4,
+      stroke: "white",
+      strokeWidth: 0.5
+    })),
+    
+  ]
+})
+```
+
+## 🪙 100-Coin Flip-o-matic, analysis {.activity}
+
+1. Where in the activity is the **parameter** for the coin? Where is the **point estimate(s)**?
+
+2. Why are the results near 0.5? Why are they not exactly 0.5? Why are your results 
+different from your neighbors, even with the same $m$?
+
+3. Using a large value of $m$, what is the shape of the sampling distribution?
+
+4. Where is the center of the sampling distribution?
+
+5. Estimate the variability of the sampling distribution. This is **Standard Error** of the proportion.
+
+## Good news: There are formulas
+
+We don't have to calculate standard errors by simulating sampling distributions. There are
+formulas.
+
+| Parameter | Point Estimate | Formula | Variable Type |
+| :--- | :---: | :---: | :--- |
+| Mean $\mu$ | $\bar{x}$ | $\displaystyle \frac{\sigma}{\sqrt{n}}$ | Quantitative |
+| Proportion $p$ | $\hat{p}$ | $\displaystyle \sqrt{\frac{p(1-p)}{n}}$ | Categorical |
+| Difference | $\text{diff}$ | $\displaystyle \sqrt{SE_1^2 + SE_2^2}$ | Comparison |
+
+## SE as the basis for Confidence Intervals
+
+You have a point estimate for a parameter. It approximates a parameter. You want to guess the parameter. 
+
+**The Empirical Rule** says that 95% of the time, the measurement error is less than $2*SE$, so the **confidence interval**: 
+$$\text{ point estimate } \pm 2*SE$$
+almost certainly captures the parameter.
+
+## Example #1 {.activity}
+Using North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv
+
+The “premie” variable is categorical. 152 / 998 births are identified as premature.
+
+1. What is the point estimate and what is the parameter in this context?
+2. Calculate the proportion of premie births in our data.
+3. What is the standard error for this point estimate?
+4. Assuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate.
+
+## Example #2
+Using North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv
+
+The mother’s age variable ("mage") has mean: 27, stdev: 6.2, count: 1000
+
+1. What is the sample average? This is the point estimate.
+2. What is the parameter which the point estimate approximates?
+3. What is the standard error for this point estimate?
+4. Assuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate.
+
+## Example #3
+
+100 birds are sampled, and have an average mass of 400g, with a standard deviation of 20g. 
+
+1. Find the standard error of this average.
+2. Construct a confidence interval for this data using 2*SE.
+3. Explain what the confidence interval means. 
+4. What is the confidence **level**?
+
+## Example #4
+Last week’s political poll gave candidate X a 45% approval, but this week’s poll gives the same candidate a 49% approval. Each poll was out of 2000 voters. 
+Find the standard error for each point estimate.
+Construct a confidence interval for each point estimate, using 2*SE.
+Do the confidence intervals overlap? What is the significance of this?
+
+Vocabulary
+Standard Deviation vs. Standard Error
+Confidence Interval vs. Confidence Level
+Margin of Error (often 2*SE)
+
+Homework
+…on Webwork: “20. Standard Error and Confidence”

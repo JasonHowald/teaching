@@ -32,7 +32,6 @@ format: html
 | **12-13:** Probability & Counting | [Slides [for Prob/Counting]{.visually-hidden}](slides/12_13_probability_and_counting.html) | [Handout [for Prob/Counting]{.visually-hidden}](slides/12_13_probability_and_counting-handout.html) |
 | **14-15:** Probability Laws | [Slides [for Prob Laws]{.visually-hidden}](slides/14_15_probability_laws.html) | [Handout [for Prob Laws]{.visually-hidden}](slides/14_15_probability_laws-handout.html) |
 | **16-17:** Conditional Probability | [Slides [for Conditional Prob]{.visually-hidden}](slides/16_17_conditional_probability.html) | [Handout [for Conditional Prob]{.visually-hidden}](slides/16_17_conditional_probability-handout.html) |
-<!--| **18-19:** Normal Distribution | [Slides [for Normal Dist]{.visually-hidden}](slides/18_19_the_normal_distribution.html) | [Handout [for Normal Dist]{.visually-hidden}](slides/18_19_the_normal_distribution-handout.html) |-->
-<!--normal is unfinished-->
-
+| **18-19:** Normal Distribution | [Slides [for Normal Dist]{.visually-hidden}](slides/18_19_the_normal_distribution.html) | [Handout [for Normal Dist]{.visually-hidden}](slides/18_19_the_normal_distribution-handout.html) |
+| **20:** Standard Error & Confidence | [Slides [for Normal Dist]{.visually-hidden}](slides/20_Standard_Error_and_Confidence.html) | [Handout [for Normal Dist]{.visually-hidden}](slides/20_Standard_Error_and_Confidence-handout.html) |
 

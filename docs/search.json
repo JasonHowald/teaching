@@ -270,7 +270,7 @@
     "href": "Math672/Homework672.html",
     "title": "Homework Problems",
     "section": "",
-    "text": "Prove parts 8 and 9 from the list of properties in section 1.4 of the notes.\n\n\n\nLet \\({\\mathbb R}[x]\\) be the ring of polynomials with real coefficients, let \\(c \\in {\\mathbb R}\\), and let \\(e_c:{\\mathbb R}[x] \\to {\\mathbb R}\\) be the evaluation map at \\(c\\): \\(e_c(p) = p(c)\\).\n\nDemonstrate that \\(e_c\\) is a ring homomorphism.\nCalculate the image of \\(e_c\\), and prove that your answer is correct.\nCalculate the kernel of \\(e_c\\), and prove that your answer is correct.\n\n\n\n\nLet \\(f:R \\to S\\) be a homomorphism of rings. Prove that \\(\\ker(f) = \\{0_R\\}\\) if and only if \\(f\\) is injective.\n\n\n\nLet \\({\\mathbb C}\\) be the ring of complex numbers, and let \\(R = \\left \\{\\begin{bmatrix}a&-b\\\\b&a\\end{bmatrix}\\,\\,|\\,\\, a, b \\in {\\mathbb R}\\right\\}\\).\n\nFor each ring, identify its zero and one. For each ring, define its addition and multiplication operations.\nDefine a map \\(f:{\\mathbb C} \\to R\\) and prove that it is a ring homomorphism.\nCalculate the image and kernel of \\(f\\).\n\n\n\n\nGive an example of each type of element in each ring, or state “impossible.” No need for proof.\n\n\n\n\n\n\n\n\n\n\n\n\n\\({\\mathbb R}\\)\n\\({\\mathbb Z}\\)\n\\({\\mathbb Z}_{10}\\)\n\\(M^{2 \\times 2}_{\\mathbb R}\\)\n\\({\\mathbb R}[x]\\)\n\n\n\n\nA unit (other than 1) in\n\n\n\n\n\n\n\nA nilpotent in\n\n\n\n\n\n\n\nA zerodivisor in\n\n\n\n\n\n\n\nAn irreducible in\n\n\n\n\n\n\n\n\n\n\n\nInterpret this problem in \\({\\mathbb Z}[x]\\), in \\({\\mathbb R}[x]\\), in \\({\\mathbb C}[x]\\), and in \\({\\mathbb Z}[i][x]\\). You should get a variety of answers depending on the ring.\nIs \\(5x^2 + 5\\) an irreducible element of the ring? If so, explain why. If possible, factor it into irreducible elements.\n\n\n\nIn this problem we explore the ring \\(R = {\\mathbb Z}[\\sqrt{-5}] = \\{a + b \\sqrt{-5} | a, b \\in {\\mathbb Z}\\}\\).\n\nIdentify the \\(0\\) and \\(1\\) of \\(R\\). Prove (based on the definition above) that \\(R\\) is closed under addition and multiplication. Use the subring test to deduce that \\(R\\) is a subring of \\({\\mathbb C}\\).\nTo describe the units of \\(R\\), we need something like a length function on it: For \\(a+b\\sqrt{-5} \\in R\\), we define \\(\\|a+b\\sqrt{-5}\\|^2 = a^2+5b^2\\). (Note that this is just the complex square norm function restricted to \\(R\\).)\n\n\nExplain why \\(\\| - \\|^2\\) is integer valued.\nProve that \\(\\Vert v \\Vert^2\\) is multiplicative in the sense \\(\\Vert vw\\Vert^2 = \\Vert v\\Vert^2\\Vert w\\Vert^2\\)\nProve (from the previous) that if \\(v\\) is a unit of \\(R\\), then \\(\\|v\\|^2 = 1\\).\n\n\nIdentify all units of \\(R\\).\nOnce units are identified, we can prove that certain elements are irreducible. Demonstrate that \\(2\\), \\(3\\), \\(1+\\sqrt{-5}\\), and \\(1-\\sqrt{-5}\\) are all irreducible.\nIt will perhaps bother you to see that \\(2 \\cdot 3 = (1+\\sqrt{-5}) \\cdot(1-\\sqrt{-5})\\). Among these irreducible factors of six, are any of them unit multiples of others? Why or why not?"
+    "text": "Prove parts 8 and 9 from the list of properties in section 1.4 of the notes.\n\n\n\nLet \\({\\mathbb R}[x]\\) be the ring of polynomials with real coefficients, let \\(c \\in {\\mathbb R}\\), and let \\(e_c:{\\mathbb R}[x] \\to {\\mathbb R}\\) be the evaluation map at \\(c\\): \\(e_c(p) = p(c)\\).\n\nDemonstrate that \\(e_c\\) is a ring homomorphism.\nCalculate the image of \\(e_c\\), and prove that your answer is correct.\nCalculate the kernel of \\(e_c\\), and prove that your answer is correct.\n\n\n\n\nLet \\(f:R \\to S\\) be a homomorphism of rings. Prove that \\(\\ker(f) = \\{0_R\\}\\) if and only if \\(f\\) is injective.\n\n\n\nLet \\({\\mathbb C}\\) be the ring of complex numbers, and let \\(R = \\left \\{\\begin{bmatrix}a&-b\\\\b&a\\end{bmatrix}\\,\\,|\\,\\, a, b \\in {\\mathbb R}\\right\\}\\).\n\nFor each ring, identify its zero and one. For each ring, define its addition and multiplication operations.\nDefine a map \\(f:{\\mathbb C} \\to R\\) and prove that it is a ring homomorphism.\nCalculate the image and kernel of \\(f\\).\n\n\n\n\nGive an example of each type of element in each ring, or state “impossible.” No need for proof.\n\n\n\n\n\n\n\n\n\n\n\n\n\\({\\mathbb R}\\)\n\\({\\mathbb Z}\\)\n\\({\\mathbb Z}_{10}\\)\n\\(M^{2 \\times 2}_{\\mathbb R}\\)\n\\({\\mathbb R}[x]\\)\n\n\n\n\nA unit (other than 1) in\n\n\n\n\n\n\n\nA nilpotent in\n\n\n\n\n\n\n\nA zerodivisor in\n\n\n\n\n\n\n\nAn irreducible in\n\n\n\n\n\n\n\n\n\n\n\nInterpret this problem in \\({\\mathbb Z}[x]\\), in \\({\\mathbb R}[x]\\), in \\({\\mathbb C}[x]\\), and in \\({\\mathbb Z}[i][x]\\). You should get a variety of answers depending on the ring.\nIs \\(5x^2 + 5\\) an irreducible element of the ring? If so, explain why. If possible, factor it into irreducible elements.\n\n\n\nIn this problem we explore the ring \\(R = {\\mathbb Z}[\\sqrt{-5}] = \\{a + b \\sqrt{-5} | a, b \\in {\\mathbb Z}\\}\\).\n\nIdentify the \\(0\\) and \\(1\\) of \\(R\\). Prove (based on the definition above) that \\(R\\) is closed under addition and multiplication. Use the subring test to deduce that \\(R\\) is a subring of \\({\\mathbb C}\\).\nTo describe the units of \\(R\\), we need something like a length function on it: For \\(a+b\\sqrt{-5} \\in R\\), we define \\(\\|a+b\\sqrt{-5}\\|^2 = a^2+5b^2\\). (Note that this is just the complex square norm function restricted to \\(R\\).)\n\n\nExplain why \\(\\| - \\|^2\\) is integer valued.\nProve that \\(\\Vert v \\Vert^2\\) is multiplicative in the sense \\(\\Vert vw\\Vert^2 = \\Vert v\\Vert^2\\Vert w\\Vert^2\\)\nProve (from the previous) that if \\(v\\) is a unit of \\(R\\), then \\(\\|v\\|^2 = 1\\).\n\n\nIdentify all units of \\(R\\).\nOnce units are identified, we can prove that certain elements are irreducible. Demonstrate that \\(2\\), \\(3\\), \\(1+\\sqrt{-5}\\), and \\(1-\\sqrt{-5}\\) are all irreducible.\nIt will perhaps bother you to see that \\(2 \\cdot 3 = (1+\\sqrt{-5}) \\cdot(1-\\sqrt{-5})\\). Among these irreducible factors of six, are any of them unit multiples of others? Why or why not?\n\n\n\n\nLet \\(I \\subseteq J \\subseteq R\\), where \\(I\\) and \\(J\\) are ideals and \\(R\\) is a ring. Define \\(J/I\\) to be \\(\\{j+I | j \\in J\\}\\).\n\nProve that \\(J/I\\) is an ideal of \\(R/I\\).\nProve that \\((R/I) / (J/I)\\) is isomorphic to \\(R/J\\).\n\n\n\n\nFind an infinite repeating pattern of points which, when removed from the lattice \\({\\mathbb Z}[i]\\), do not permit five points in a row, horizontally, vertically, or diagonally, to be found among the remaining points. Minimize the number of points which must be removed.\n\nWhat proportion of the points of \\({\\mathbb Z}[i]\\) must be removed to exclude five-in-a-row?\nSketch a picture of the points which must be removed.\nIt’s possible to choose your points so that they correspond to an ideal \\(I\\) of \\({\\mathbb Z}[i]\\). Is it principal? What is its generator?\n\n\n\n\nProve that \\(R = {\\mathbb Z}[x]/(x)\\) is isomorphic to \\({\\mathbb Z}\\)"
   },
   {
     "objectID": "Math672/Homework672.html#and-9",
@@ -320,6 +320,27 @@
     "title": "Homework Problems",
     "section": "",
     "text": "In this problem we explore the ring \\(R = {\\mathbb Z}[\\sqrt{-5}] = \\{a + b \\sqrt{-5} | a, b \\in {\\mathbb Z}\\}\\).\n\nIdentify the \\(0\\) and \\(1\\) of \\(R\\). Prove (based on the definition above) that \\(R\\) is closed under addition and multiplication. Use the subring test to deduce that \\(R\\) is a subring of \\({\\mathbb C}\\).\nTo describe the units of \\(R\\), we need something like a length function on it: For \\(a+b\\sqrt{-5} \\in R\\), we define \\(\\|a+b\\sqrt{-5}\\|^2 = a^2+5b^2\\). (Note that this is just the complex square norm function restricted to \\(R\\).)\n\n\nExplain why \\(\\| - \\|^2\\) is integer valued.\nProve that \\(\\Vert v \\Vert^2\\) is multiplicative in the sense \\(\\Vert vw\\Vert^2 = \\Vert v\\Vert^2\\Vert w\\Vert^2\\)\nProve (from the previous) that if \\(v\\) is a unit of \\(R\\), then \\(\\|v\\|^2 = 1\\).\n\n\nIdentify all units of \\(R\\).\nOnce units are identified, we can prove that certain elements are irreducible. Demonstrate that \\(2\\), \\(3\\), \\(1+\\sqrt{-5}\\), and \\(1-\\sqrt{-5}\\) are all irreducible.\nIt will perhaps bother you to see that \\(2 \\cdot 3 = (1+\\sqrt{-5}) \\cdot(1-\\sqrt{-5})\\). Among these irreducible factors of six, are any of them unit multiples of others? Why or why not?"
+  },
+  {
+    "objectID": "Math672/Homework672.html#ri-ji",
+    "href": "Math672/Homework672.html#ri-ji",
+    "title": "Homework Problems",
+    "section": "",
+    "text": "Let \\(I \\subseteq J \\subseteq R\\), where \\(I\\) and \\(J\\) are ideals and \\(R\\) is a ring. Define \\(J/I\\) to be \\(\\{j+I | j \\in J\\}\\).\n\nProve that \\(J/I\\) is an ideal of \\(R/I\\).\nProve that \\((R/I) / (J/I)\\) is isomorphic to \\(R/J\\)."
+  },
+  {
+    "objectID": "Math672/Homework672.html#patterns-in-mathbb-zi",
+    "href": "Math672/Homework672.html#patterns-in-mathbb-zi",
+    "title": "Homework Problems",
+    "section": "",
+    "text": "Find an infinite repeating pattern of points which, when removed from the lattice \\({\\mathbb Z}[i]\\), do not permit five points in a row, horizontally, vertically, or diagonally, to be found among the remaining points. Minimize the number of points which must be removed.\n\nWhat proportion of the points of \\({\\mathbb Z}[i]\\) must be removed to exclude five-in-a-row?\nSketch a picture of the points which must be removed.\nIt’s possible to choose your points so that they correspond to an ideal \\(I\\) of \\({\\mathbb Z}[i]\\). Is it principal? What is its generator?"
+  },
+  {
+    "objectID": "Math672/Homework672.html#the-light-gleams-an-instant-then-its-night-once-more.",
+    "href": "Math672/Homework672.html#the-light-gleams-an-instant-then-its-night-once-more.",
+    "title": "Homework Problems",
+    "section": "",
+    "text": "Prove that \\(R = {\\mathbb Z}[x]/(x)\\) is isomorphic to \\({\\mathbb Z}\\)"
   },
   {
     "objectID": "Math125/syllabus.html",
@@ -620,7 +641,7 @@
     "href": "Math125/slides/18_19_the_normal_distribution-handout.html#the-family-of-normal-distributions",
     "title": "18-19. The Normal Distribution",
     "section": "5 The Family of Normal Distributions",
-    "text": "5 The Family of Normal Distributions\n\nviewof mu = Inputs.range([-5, 5], {\n  value: 0, \n  step: 0.1, \n  label: \"μ:\", \n})\n\nviewof sigma = Inputs.range([0.1, 3], {\n  value: 1, \n  step: 0.1, \n  label: \"σ:\", \n})\n\n// 2. Dynamic Notation Display\n// This updates instantly whenever the sliders move\nmd`### Distribution: N(${mu.toFixed(1)}, ${(sigma**2).toFixed(2)})`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n  height: 400,\n  grid: true,\n  y: { domain: [0, 1], label: \"Density\" },\n  x: { domain: [-10, 10], label: \"Value\" },\n  marks: [\n    // The Normal Curve\n    Plot.lineY(d3.range(-10, 10, 0.05), {\n      x: x =&gt; x,\n      y: x =&gt; (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2)),\n      stroke: \"#2c3e50\",\n      strokeWidth: 3\n    }),\n    // A dashed vertical line at the mean to help visualize shift\n    Plot.ruleX([mu], {stroke: \"red\", strokeDasharray: \"4,4\", opacity: 0.5})\n  ]\n})\n\n\n\n\n\n\n\n\nThe notation \\(N(\\mu, \\sigma^2)\\) refers to a normal distribution while telling its mean \\(\\mu\\) and its standard deviation \\(\\sigma\\). What kind of normal distribution is \\(N(100,16)\\)?"
+    "text": "5 The Family of Normal Distributions\n\nviewof mu = Inputs.range([-5, 5], {\n  value: 0, \n  step: 0.1, \n  label: \"μ:\", \n  width: 250 \n})\n\nviewof sigma = Inputs.range([0.1, 3], {\n  value: 1, \n  step: 0.1, \n  label: \"σ:\", \n  width: 250 \n})\n\n// 2. Dynamic Notation Display\n// This updates instantly whenever the sliders move\nmd`### Distribution: N(${mu.toFixed(1)}, ${(sigma**2).toFixed(2)})`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n  height: 400,\n  grid: true,\n  y: { domain: [0, 1], label: \"Density\" },\n  x: { domain: [-10, 10], label: \"Value\" },\n  marks: [\n    // The Normal Curve\n    Plot.lineY(d3.range(-10, 10, 0.05), {\n      x: x =&gt; x,\n      y: x =&gt; (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2)),\n      stroke: \"#2c3e50\",\n      strokeWidth: 3\n    }),\n    // A dashed vertical line at the mean to help visualize shift\n    Plot.ruleX([mu], {stroke: \"red\", strokeDasharray: \"4,4\", opacity: 0.5})\n  ]\n})\n\n\n\n\n\n\n\n\nThe notation \\(N(\\mu, \\sigma^2)\\) refers to a normal distribution while telling its mean \\(\\mu\\) and its standard deviation \\(\\sigma\\). What kind of normal distribution is \\(N(100,16)\\)?"
   },
   {
     "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#reading-the-bell-curve",
@@ -655,14 +676,91 @@
     "href": "Math125/slides/18_19_the_normal_distribution-handout.html#the-empirical-rule-68-95-99.7",
     "title": "18-19. The Normal Distribution",
     "section": "10 The empirical rule (68-95-99.7)",
-    "text": "10 The empirical rule (68-95-99.7)\n\nWithin one standard deviation from the mean lies 68% of the data.\nWithin two standard deviations from the mean lies 95% of the data.\nWithin three standard deviations from the mean lies 99.7% of the data.\n\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nfile_path = '../openintro.csv/acs12.csv'\ncolumn_name = 'time_to_work'\n\ndf1 = pd.read_csv(file_path)\ndata1 = df1[column_name].dropna()\n\nplt.figure(figsize=(6, 6))\nsns.histplot(data1, bins=30, kde=True, edgecolor='black')\nplt.title(f'Histogram of {column_name} from {file_path.split(\"/\")[-1]}')\nplt.xlabel('Commute time (minutes)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\n\n\n\n\nFigure 6: Time-to-work distribution\n\n\n\n\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nfile_path = '../openintro.csv/acs12.csv'\ncolumn_name = 'time_to_work'\n\ndf1 = pd.read_csv(file_path)\ndf1[column_name].describe()\n\ncount    783.000000\nmean      25.997446\nstd       22.290973\nmin        1.000000\n25%       10.000000\n50%       20.000000\n75%       30.000000\nmax      163.000000\nName: time_to_work, dtype: float64\n\n\nIn range \\((26 - 2*22.3, 25+2*22.3)\\): 96% of data points."
+    "text": "10 The empirical rule (68-95-99.7)\n\nWithin one standard deviation from the mean lies 68% of the data.\nWithin two standard deviations from the mean lies 95%.\nWithin three standard deviations from the mean lies 99.7% …approximately.\n\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nfile_path = '../openintro.csv/acs12.csv'\ncolumn_name = 'time_to_work'\n\ndf1 = pd.read_csv(file_path)\ndata1 = df1[column_name].dropna()\n\nplt.figure(figsize=(6, 6))\nsns.histplot(data1, bins=30, kde=True, edgecolor='black')\nplt.title(f'Histogram of {column_name} from {file_path.split(\"/\")[-1]}')\nplt.xlabel('Commute time (minutes)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\n\n\n\n\nFigure 6: Time-to-work distribution\n\n\n\n\n\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nfile_path = '../openintro.csv/acs12.csv'\ncolumn_name = 'time_to_work'\n\ndf1 = pd.read_csv(file_path)\ndf1[column_name].describe()\n\ncount    783.000000\nmean      25.997446\nstd       22.290973\nmin        1.000000\n25%       10.000000\n50%       20.000000\n75%       30.000000\nmax      163.000000\nName: time_to_work, dtype: float64\n\n\nIn range \\((26 - 2*22.3, 25+2*22.3)\\): 96% of data points."
   },
   {
     "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#the-empirical-rule-68-95-99.7-1",
     "href": "Math125/slides/18_19_the_normal_distribution-handout.html#the-empirical-rule-68-95-99.7-1",
     "title": "18-19. The Normal Distribution",
     "section": "11 The empirical rule (68-95-99.7)",
-    "text": "11 The empirical rule (68-95-99.7)\n(Graphic used with permission, Wikimedia Foundation)\nPercentiles and tail areas A distribution is N(100,102). How much data should be expected above 120? A distribution is N(60, 22). How much data should be expected below 54? A distribution is N(10, 52). How much data should be expected above 16? Use the empirical rule or choose a cdf calculation tool: Matt Bognar’s CDF calculator Use Jupyter from scipy import stats stats.norm.cdf(2) Use a Z-table (this is the old school method).\nZ-score Intro: So, is that a lot then? A certain pet parrot’s body temperature is 107°. What more would you need to know, before judging whether the body temperature is a health concern?\nSo, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. What other general stats about parrots and their temperatures would be useful to contextualize this information?\nSo, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. The standard deviation of body temp is 1.4°. Is the bird’s temperature normal, somewhat high, or very high? Why?\nJudging relative to the distribution Judging a data value x relative to the distribution it’s in requires both: Comparison to the mean of the distribution: subtract μ Conversion to units of standard deviations: divide by σ Thus the formula: Z-score = (data value - μ) / σ The Z-score acts like a interchangeable standard of unusualness, scaled to the distribution the data belongs to.\nZ-score = (value - μ) / σ It counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions. Z = 0: Average. Z = +1, -1: Uninteresting. Z = +2, -2: Raise eyebrow. Z = +3, -3: Remarkable. Z = +5, -5: Stunning. Interpreting the Z-score\nZ score A distribution for test scores is normally distributed N(500, 502). You score 625. Well done! What is your Z score? An LED manufacture process produces units with illumination N(50,0.22). One particular bulb has illumination 49.4. What is its Z-score? If we reject any bulb at 49.4 or below, how much of the inventory would we waste? By reconfiguring the assembly process, we can make the distribution N(51, 12). How would you describe the effect of this change?\nThe rarity of a Z-score: the p-value A good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score. Use Bognar’s tool to answer: How much of the normal distribution is above Z = 2.3? How much of the normal distribution is more extreme, on either side, than Z=3.1? Use stats.norm.cdf to answer: How much of the normal distribution is below Z = -5? How much of the normal distribution is above Z = 2.5?\nMethods for finding p-value, recap To find tail areas, you can… Use the Empirical Rule with some geometric reasoning. (Z=1, 2, 3 only) Matt Bognar’s CDF calculator (Z in the range -4..4) Use Jupyter (Any Z will do) from scipy import stats stats.norm.cdf(2) Use a Z-table. (Paper method, limited accuracy and range)\nPutting it all together Most people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile? An average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day? A 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?\nHomework Solve homework problems “18-19. The Normal Distribution”"
+    "text": "11 The empirical rule (68-95-99.7)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\n# Parameters for the normal distribution\nmu = 0  # Mean\nsigma = 1  # Standard deviation\n\n# Generate data for the normal distribution curve\nx = np.linspace(mu - 4*sigma, mu + 4*sigma, 500)\ny = norm.pdf(x, mu, sigma)\n\n# Calculate exact percentages using CDF\npercent_1std = (norm.cdf(sigma) - norm.cdf(-sigma)) * 100\npercent_2std = (norm.cdf(2*sigma) - norm.cdf(-2*sigma)) * 100\npercent_3std = (norm.cdf(3*sigma) - norm.cdf(-3*sigma)) * 100\n\n# Create the plot\nfig, ax = plt.subplots(figsize=(10, 6))\nax.plot(x, y, color='blue', linewidth=2, label='Normal Distribution PDF')\n\n# Mark the mean\nax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\\mu$) = {mu:.2f}')\n\n# Define the standard deviation ranges\nstd1_left, std1_right = mu - sigma, mu + sigma\nstd2_left, std2_right = mu - 2*sigma, mu + 2*sigma\nstd3_left, std3_right = mu - 3*sigma, mu + 3*sigma\n\n# Shade the areas for 68%, 95%, and 99.7%\n# 99.7% (3 standard deviations)\nx_fill_3std = x[(x &gt;= std3_left) & (x &lt;= std3_right)]\ny_fill_3std = y[(x &gt;= std3_left) & (x &lt;= std3_right)]\nax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n\n# 95% (2 standard deviations)\nx_fill_2std = x[(x &gt;= std2_left) & (x &lt;= std2_right)]\ny_fill_2std = y[(x &gt;= std2_left) & (x &lt;= std2_right)]\nax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n\n# 68% (1 standard deviation)\nx_fill_1std = x[(x &gt;= std1_left) & (x &lt;= std1_right)]\ny_fill_1std = y[(x &gt;= std1_left) & (x &lt;= std1_right)]\nax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n# Add labels for standard deviation marks\nplt.text(mu + sigma, norm.pdf(mu + sigma, mu, sigma) + 0.02, r'$\\mu + \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu - sigma, norm.pdf(mu - sigma, mu, sigma) + 0.02, r'$\\mu - \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu + 2*sigma, norm.pdf(mu + 2*sigma, mu, sigma) + 0.02, r'$\\mu + 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu - 2*sigma, norm.pdf(mu - 2*sigma, mu, sigma) + 0.02, r'$\\mu - 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu + 3*sigma, norm.pdf(mu + 3*sigma, mu, sigma) + 0.02, r'$\\mu + 3\\sigma$', horizontalalignment='center', color='purple')\nplt.text(mu - 3*sigma, norm.pdf(mu - 3*sigma, mu, sigma) + 0.02, r'$\\mu - 3\\sigma$', horizontalalignment='center', color='purple')\n\n# Set title and labels\nax.set_title('Empirical Rule (68-95-99.7) Illustration', fontsize=16)\nax.set_xlabel('Standard Deviations above/below the mean', fontsize=12)\nax.set_ylabel('Probability Density', fontsize=12)\nax.legend(loc='upper right')\nax.grid(True, linestyle='--', alpha=0.6)\nplt.tight_layout()\nplt.show()\n\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_57536/588814348.py:34: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_57536/588814348.py:39: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_57536/588814348.py:44: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n\n\n\n\n\n\n\nFigure 7: Empirical Rule illustration"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#percentiles-and-tail-areas",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#percentiles-and-tail-areas",
+    "title": "18-19. The Normal Distribution",
+    "section": "12 Percentiles and tail areas",
+    "text": "12 Percentiles and tail areas\n\nA distribution is \\(N(100,10^2)\\). How much data should be expected above 120?\nA distribution is \\(N(60, 2^2)\\). How much data should be expected below 54?\nA distribution is \\(N(10, 5^2)\\). How much data should be expected above 16? (Why can’t this last problem be solved the same way?)"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#ways-to-calculate-tail-areas-and-percentiles",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#ways-to-calculate-tail-areas-and-percentiles",
+    "title": "18-19. The Normal Distribution",
+    "section": "13 Ways to calculate tail areas and percentiles",
+    "text": "13 Ways to calculate tail areas and percentiles\n\nGeometrically, using empirical rule (for \\(\\pm 1, 2, 3\\) only!)\nUsing a graphical tool, like Bognar’s normal CDF calculator\nUsing Jupyter:\n\n\nfrom scipy import stats\nstats.norm.cdf(-2)\n\nnp.float64(0.022750131948179198)\n\n\n\nUsing a Z-table (old school, not in this course)."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#so-is-that-a-lot-then-z-score",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#so-is-that-a-lot-then-z-score",
+    "title": "18-19. The Normal Distribution",
+    "section": "14 So, is that a lot then? (Z-score)",
+    "text": "14 So, is that a lot then? (Z-score)\nA certain pet parrot’s body temperature is 107°.\nWhat more would you need to know, before judging whether the body temperature is a health concern?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#so-is-that-a-lot-then-z-score-1",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#so-is-that-a-lot-then-z-score-1",
+    "title": "18-19. The Normal Distribution",
+    "section": "15 So, is that a lot then? (Z-score)",
+    "text": "15 So, is that a lot then? (Z-score)\nA certain pet parrot’s body temperature is 107°.\nThe average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average.\nWhat other general stats about parrots and their temperatures would be useful to contextualize this information?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#so-is-that-a-lot-then-z-score-2",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#so-is-that-a-lot-then-z-score-2",
+    "title": "18-19. The Normal Distribution",
+    "section": "16 So, is that a lot then? (Z-score)",
+    "text": "16 So, is that a lot then? (Z-score)\nA certain pet parrot’s body temperature is 107°.\nThe average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average.\nThe standard deviation of body temp is 1.4°. The parrot is warm by about one and a half standard deviations.\nIs the bird’s temperature normal, somewhat high, or very high? Why?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#a-fair-rating-data-in-context",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#a-fair-rating-data-in-context",
+    "title": "18-19. The Normal Distribution",
+    "section": "17 A fair rating – data in context",
+    "text": "17 A fair rating – data in context\nJudge relative to average – subtract \\(\\mu\\).\nJudge relative to variability – divide by \\(\\sigma\\).\n\\[\\text{Z-score} = \\frac{\\text{data value} - \\mu}{\\sigma}\\]\nZ-score = number of standard deviations from the mean.\nZ-score is an interchangeable standard of unusualness, scaled to the distribution the data belongs to."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#intuition-for-z-scores",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#intuition-for-z-scores",
+    "title": "18-19. The Normal Distribution",
+    "section": "18 Intuition for Z-scores",
+    "text": "18 Intuition for Z-scores\nIt counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions.\n\nZ = 0: Average.\nZ = +1, -1: Uninteresting.\nZ = +2, -2: Raise eyebrow.\nZ = +3, -3: Remarkable.\nZ = +5, -5: Stunning."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#practice-with-z-score",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#practice-with-z-score",
+    "title": "18-19. The Normal Distribution",
+    "section": "19 Practice with Z score",
+    "text": "19 Practice with Z score\n\nA distribution for test scores is normally distributed \\(N(500, 50^2)\\). You score 625. Well done! What is your Z score?\nAn LED manufacture process produces units with illumination \\(N(50,0.2^2)\\). One particular bulb has illumination 49.4.\n\n\nWhat is its Z-score?\nIf we reject any bulb at 49.4 or below, how much of the inventory would we waste?\nBy reconfiguring the assembly process, we can make the distribution \\(N(51, 1^2)\\). How would you describe the effect of this change? How would this affect the manufacturing waste?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#the-rarity-of-a-z-score-the-p-value",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#the-rarity-of-a-z-score-the-p-value",
+    "title": "18-19. The Normal Distribution",
+    "section": "20 The rarity of a Z-score: the p-value",
+    "text": "20 The rarity of a Z-score: the p-value\nA good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score, called the \\(p\\)-value.\n\n20.1 Use Bognar’s tool to answer:\n\nHow much of the normal distribution is above Z = 2.3?\nHow much of the normal distribution is more extreme, on either side, than Z=3.1?\n\n\n\n20.2 Use stats.norm.cdf to answer:\n\nHow much of the normal distribution is below Z = -5?\nHow much of the normal distribution is above Z = 2.5?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#putting-it-all-together",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#putting-it-all-together",
+    "title": "18-19. The Normal Distribution",
+    "section": "21 Putting it all together",
+    "text": "21 Putting it all together\n\nMost people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile?\nAn average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day?\nA 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#homework",
+    "href": "Math125/slides/18_19_the_normal_distribution-handout.html#homework",
+    "title": "18-19. The Normal Distribution",
+    "section": "22 Homework",
+    "text": "22 Homework\nSolve homework problems “18-19. The Normal Distribution”"
   },
   {
     "objectID": "Math125/slides/0_welcome.html#hello-professor",
@@ -728,214 +826,326 @@
     "text": "Individually – homework\nObtain the book in .pdf or paper form.\nDo the preparatory work for the next slide deck “1. The Shape of Data.”\nNotify Professor Howald of any special needs.\nDo something nice for someone you care about."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html",
-    "title": "04-5. Sampling and Sample Bias",
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#preparatory-work",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#preparatory-work",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Preparatory work",
+    "text": "Preparatory work\nRead: OpenIntro Statistics Section 5.1 and 5.2"
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#correct-each-statement-statistics-vs.-parameters.",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#correct-each-statement-statistics-vs.-parameters.",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Correct each statement – statistics vs. parameters.",
+    "text": "Correct each statement – statistics vs. parameters.\n\nI sampled 500 patients and averaged their blood pressure. Now I know the population average blood pressure.\nI surveyed 500 teens and calculated a bullying risk probability. Now I know a parameter.\nI sampled 500 library books. Now I know the average length of all books.\nI weighed 500 cats. Now I know μ, the average weight of cats."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#the-problem",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#the-problem",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "The problem",
+    "text": "The problem\n\nStatistical measurements only estimate parameters. When a statistic is used to estimate a parameter, we call it a point estimate.\nStatistical measurement error is natural and inevitable. Point estimates naturally differ from the parameters they intend to measure."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#the-compensation",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#the-compensation",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "The compensation",
+    "text": "The compensation\n\nLarge samples allow us to limit measurement error.\nSpecial formulas (for SE) allow us to quantify and predict measurement error.\nConfidence intervals allow us to responsibly report our point estimates and their potential error in a responsible way."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#the-good-news",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#the-good-news",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "The good news",
+    "text": "The good news\n\nUsually, measurement error is not just random, but normal N(0,…) with mean 0 and predictable deviation.\nThe deviation of the error of a point estimate is called the Standard Error (SE), and it can be predicted."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#visualizing-the-standard-error",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#visualizing-the-standard-error",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Visualizing the Standard Error",
+    "text": "Visualizing the Standard Error\n\nshape = 2;\nscale = 5;\nrandomGamma = () =&gt; -Math.log(Math.random() * Math.random()) * scale;\n\n// 2. STATIC SAMPLE (Does not depend on n or m, so it won't re-run)\nstaticSample = Array.from({ length: 1000 }, randomGamma);\n\n// 3. REACTIVE SAMPLING DISTRIBUTION\nsamplingDistribution = {\n  // This line ensures the cell re-runs when n or numSamples changes\n  const _trigger = [n, numSamples]; \n  return Array.from({ length: numSamples }, () =&gt; {\n    const s = Array.from({ length: n }, randomGamma);\n    return d3.mean(s);\n  });\n}\n\n// 4. STATS calculations\nestimatedSE = d3.deviation(samplingDistribution);\nmeanOfMeans = d3.mean(samplingDistribution);\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof n = Inputs.range([1, 100], {step: 1, value: 30, label: \"Sample Size (n)\"})\nviewof numSamples = Inputs.range([1, 501], {step: 1, value: 31, label: \"Number of Resamples (m)\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPopulation\n(\\(N=1000\\))\n\nPlot.plot({\n  height: 400,\n  style: { fontSize: \"16px\" },\n  x: { domain: [0, 40], label: \"Value\"},\n  y: { axis: null },\n  marks: [\n    Plot.ruleX([10], {stroke: \"red\", strokeDasharray: \"4\", strokeWidth: 2}),\n    // The dodgeY transform stacks the dots on top of each other\n    Plot.dot(staticSample, Plot.dodgeY({\n      x: d =&gt; d, \n      anchor: \"bottom\", \n      fill: \"#4e79a7\", \n      r: 3\n    })),\n    Plot.text([10], {y: 0, text: d =&gt; \"μ=10\", dy: 20, fill: \"red\"})\n  ]\n})\n\n\n\n\n\n\n\nResampling Dist.\n(Average of \\(n\\), done \\(m\\) times)\n\nPlot.plot({\n  height: 400,\n  style: { fontSize: \"16px\" },\n  x: { domain: [0, 40], label: \"Sample Mean (x̄)\" },\n  y: { axis: null },\n  marks: [\n    Plot.ruleX([10], {stroke: \"red\", strokeDasharray: \"4\"}),\n    Plot.dot(samplingDistribution, Plot.dodgeY({\n      x: d =&gt; d, \n      anchor: \"bottom\",\n      fill: \"#e15759\", \n      r: 2.5,\n      fillOpacity: 0.7\n    })),\n//    Plot.ruleX([meanOfMeans], {stroke: \"black\", strokeWidth: 3})\n  ]\n})"
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#visualizing-standard-error",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#visualizing-standard-error",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Visualizing Standard Error",
+    "text": "Visualizing Standard Error\nAdjust the sliders to see how the sample size (\\(n\\)) and the number of resamples (\\(m\\)) affect the distribution of the mean.\n\nSet \\(n=25\\). When \\(m=1\\), what happens? Why is the single red dot close to \\(10\\)? Why isn’t it exactly at \\(10\\)? Why isn’t it at the same place as on your neighbor’s screen?\nRaise \\(m\\). Why are the red dots close to \\(10\\)? Why do they vary? How much do they stray from \\(10\\), typically? That’s Standard Error\nKeeping \\(m\\) somewhat large, Raise \\(n\\). Do the red dots spread out farther from \\(10\\) or cluster more closely?\nWith large \\(m\\), set \\(n=1\\). Why does the right-hand plot look like that?\nThe original population is quite skewed. For large \\(n\\), is the sampling distribution skewed or normal?"
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#three-huge-takeaways.",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#three-huge-takeaways.",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Three huge takeaways.",
+    "text": "Three huge takeaways.\n\nThe Standard Error is the standard deviation of the sampling distribution. It depends on the deviation in the original population and also depends on \\(n\\).\nLarge-sample (i.e. big n) averages cluster tightly around the true mean. This is the Law of Large Numbers.\nRegardless of the shape of the original distribution, large-sample averages follow a normal bell curve. This is the Central Limit Theorem. Its mean and variability are described in parts 1 & 2 above."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#coin-flip-o-matic-inator",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#coin-flip-o-matic-inator",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "🪙 100-Coin Flip-o-matic-inator",
+    "text": "🪙 100-Coin Flip-o-matic-inator\nAdjust the slider to repeat the experiment of flipping \\(100\\) coins. We are counting the proportion of “Heads” (out of \\(100\\)) we get each time.\n\nflip100Coins = () =&gt; {\n  let heads = 0;\n  for (let i = 0; i &lt; 100; i++) {\n    if (Math.random() &gt; 0.5) heads++;\n  }\n  return heads/100;\n}\n\n// Reactive data array\nflipData = {\n  const _trigger = m;\n  return Array.from({ length: m }, flip100Coins);\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof m = Inputs.range([1, 1000], {step: 1, value: 1, label: \"Number of Experiments (m)\"})\n\n\n\n\n\n\n\n// 2. Plotting the results\nPlot.plot({\n  height: 500,\n  style: { fontSize: \"18px\" },\n  x: { \n    domain: [.30, .70], \n    label: \"Number of Heads observed in 100 flips →\",\n    tickFormat: \".2f\", \n    labelOffset: 50\n  },\n  y: { axis: null },\n  marks: [\n    // Expected value line (50)\n    //Plot.ruleX([50], {stroke: \"red\", strokeDasharray: \"4\", strokeWidth: 2}),\n    \n    // The coin stacks\n    Plot.dot(flipData, Plot.dodgeY({\n      x: d =&gt; d, \n      anchor: \"bottom\", \n      fill: \"#4e79a7\", \n      r: 4,\n      stroke: \"white\",\n      strokeWidth: 0.5\n    })),\n    \n  ]\n})"
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#coin-flip-o-matic-analysis",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#coin-flip-o-matic-analysis",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "🪙 100-Coin Flip-o-matic, analysis",
+    "text": "🪙 100-Coin Flip-o-matic, analysis\n\nWhere in the activity is the parameter for the coin? Where is the point estimate(s)?\nWhy are the results near 0.5? Why are they not exactly 0.5? Why are your results different from your neighbors, even with the same \\(m\\)?\nUsing a large value of \\(m\\), what is the shape of the sampling distribution?\nWhere is the center of the sampling distribution?\nEstimate the variability of the sampling distribution. This is Standard Error of the proportion."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#good-news-there-are-formulas",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#good-news-there-are-formulas",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Good news: There are formulas",
+    "text": "Good news: There are formulas\nWe don’t have to calculate standard errors by simulating sampling distributions. There are formulas.\n\n\n\n\n\n\n\n\n\nParameter\nPoint Estimate\nFormula\nVariable Type\n\n\n\n\nMean \\(\\mu\\)\n\\(\\bar{x}\\)\n\\(\\displaystyle \\frac{\\sigma}{\\sqrt{n}}\\)\nQuantitative\n\n\nProportion \\(p\\)\n\\(\\hat{p}\\)\n\\(\\displaystyle \\sqrt{\\frac{p(1-p)}{n}}\\)\nCategorical\n\n\nDifference\n\\(\\text{diff}\\)\n\\(\\displaystyle \\sqrt{SE_1^2 + SE_2^2}\\)\nComparison"
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#se-as-the-basis-for-confidence-intervals",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#se-as-the-basis-for-confidence-intervals",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "SE as the basis for Confidence Intervals",
+    "text": "SE as the basis for Confidence Intervals\nYou have a point estimate for a parameter. It approximates a parameter. You want to guess the parameter.\nThe Empirical Rule says that 95% of the time, the measurement error is less than \\(2*SE\\), so the confidence interval: \\[\\text{ point estimate } \\pm 2*SE\\] almost certainly captures the parameter."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#example-1",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#example-1",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Example #1",
+    "text": "Example #1\nUsing North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv\nThe “premie” variable is categorical. 152 / 998 births are identified as premature.\n\nWhat is the point estimate and what is the parameter in this context?\nCalculate the proportion of premie births in our data.\nWhat is the standard error for this point estimate?\nAssuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#example-2",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#example-2",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Example #2",
+    "text": "Example #2\nUsing North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv\nThe mother’s age variable (“mage”) has mean: 27, stdev: 6.2, count: 1000\n\nWhat is the sample average? This is the point estimate.\nWhat is the parameter which the point estimate approximates?\nWhat is the standard error for this point estimate?\nAssuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate."
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#example-3",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#example-3",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Example #3",
+    "text": "Example #3\n100 birds are sampled, and have an average mass of 400g, with a standard deviation of 20g.\n\nFind the standard error of this average.\nConstruct a confidence interval for this data using 2*SE.\nExplain what the confidence interval means.\nWhat is the confidence level?"
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#example-4",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence.html#example-4",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "Example #4",
+    "text": "Example #4\nLast week’s political poll gave candidate X a 45% approval, but this week’s poll gives the same candidate a 49% approval. Each poll was out of 2000 voters. Find the standard error for each point estimate. Construct a confidence interval for each point estimate, using 2*SE. Do the confidence intervals overlap? What is the significance of this?\nVocabulary Standard Deviation vs. Standard Error Confidence Interval vs. Confidence Level Margin of Error (often 2*SE)\nHomework …on Webwork: “20. Standard Error and Confidence”"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#preparatory-work",
+    "href": "Math125/slides/14_15_probability_laws.html#preparatory-work",
+    "title": "14-15. Probability Laws",
+    "section": "Preparatory work",
+    "text": "Preparatory work\nRead section 3.1, with special attention on the Addition Rule, the General Addition Rule, the Complement Rule, and the Multiplication Rule."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#combining-probabilities",
+    "href": "Math125/slides/14_15_probability_laws.html#combining-probabilities",
+    "title": "14-15. Probability Laws",
+    "section": "Combining probabilities",
+    "text": "Combining probabilities\nThe game “Farkle” involves rolling six dice at once. The player receives 1500 points for a “straight” (every number 1-6 is represented in the result), but also receives 1500 points for “three pair” (for example, rolling 2, 2, 4, 4, 5, 5).\nTheir probabilities are P(straight) = 0.015 and P(three pair) = 0.038.\n\nWhat is the probability of getting a straight or three pair?\nWhat is the probability of getting a straight and three pair (on the same roll)?\nWhat is the probability of getting a straight, then three pair (on the next roll)?\nWhat is the probability of not getting a straight?"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#drawing-the-line",
+    "href": "Math125/slides/14_15_probability_laws.html#drawing-the-line",
+    "title": "14-15. Probability Laws",
+    "section": "Drawing the line",
+    "text": "Drawing the line\nA 52-card deck is shuffled.\n\nWhat is the probability that the top card is 2♡?\nWhat is the probability that the second card is 2♣?\nWhat is the probability that the top two cards, in order, are 2♡ and 2♣? (Caution: It’s a trap!)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply",
+    "href": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply",
+    "title": "14-15. Probability Laws",
+    "section": "When to add? When to multiply?",
+    "text": "When to add? When to multiply?\nA and B are events. Their probabilities are P(A) and P(B).\nP(A)+P(B) calculates __________, provided _________.\nP(A)*P(B) calculates __________, provided _________.\n1-P(A) calculates ___________."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply-1",
+    "href": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply-1",
+    "title": "14-15. Probability Laws",
+    "section": "When to add? When to multiply?",
+    "text": "When to add? When to multiply?\nA and B are events. Their probabilities are P(A) and P(B).\nP(A)+P(B) calculates P(A or B), provided A and B are disjoint (mutually exclusive).\nP(A)*P(B) calculates P(A and B), provided A and B are independent.\n1-P(A) calculates P(not A)."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#sum-law-basic",
+    "href": "Math125/slides/14_15_probability_laws.html#sum-law-basic",
+    "title": "14-15. Probability Laws",
+    "section": "Sum law (basic)",
+    "text": "Sum law (basic)\n\\[P(A \\text{ or } B) = P(A)+P(B)\\]\n…when A and B are disjoint (mutually exclusive), meaning they cannot both happen. If events aren’t disjoint, this rule does not apply.\n\n\n\n\n\n\n\n\nFigure 1: Disjoint sets"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#sum-law-full",
+    "href": "Math125/slides/14_15_probability_laws.html#sum-law-full",
+    "title": "14-15. Probability Laws",
+    "section": "Sum law (full)",
+    "text": "Sum law (full)\nIf A and B can occur together, then P(A)+P(B) counts P(A and B) twice. If we can calculate that, and we can correct for it:\n\\[ P(A \\text{ or } B) = P(A)+P(B) - P(A \\text{ and } B)\\]\n\n\n\n\n\n\n\n\nFigure 2: Non-disjoint sets"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#calculate-using-the-laws",
+    "href": "Math125/slides/14_15_probability_laws.html#calculate-using-the-laws",
+    "title": "14-15. Probability Laws",
+    "section": "Calculate using the laws",
+    "text": "Calculate using the laws\nP(wearing a red shirt today) = 0.1\nP(wearing a purple shirt today) = 0.3\nP(having a headache today) = 0.1\n\nWhat is the probability of wearing a red or purple shirt today?\nWhat is the probability of wearing a purple shirt and having a headache today?\nCan you identify any implicit assumptions used in your calculations above?"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#product-law-basic",
+    "href": "Math125/slides/14_15_probability_laws.html#product-law-basic",
+    "title": "14-15. Probability Laws",
+    "section": "Product law (basic)",
+    "text": "Product law (basic)\nP(A and B) = P(A)*P(B) when A and B are independent, meaning that neither event makes the other more or less likely. (If events are dependent, this law does not apply.)\n\n\\(P(\\text{three coins all land heads}) = \\frac{1}{2} \\cdot \\frac{1}{2} \\cdot \\frac{1}{2}\\)\n\\(P(\\text{critical hit, twice}) = 1/20 \\cdot 1/20\\)\n\\(P(\\text{ card is a red two}) = 1/2  *  1/13\\)\n\\(P(\\text{both parents have SCT sickle cell trait}) = 0.006 \\cdot 0.006\\) (but this calculation is naive and wrong…)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#solve-both-and-compare",
+    "href": "Math125/slides/14_15_probability_laws.html#solve-both-and-compare",
+    "title": "14-15. Probability Laws",
+    "section": "Solve both and compare",
+    "text": "Solve both and compare\nWe roll a d6.\n\nCalculate P(the result is even)\nCalculate P(the result is prime)\nCalculate P(the result is even and prime)\n\nA person is surveyed at random.\nP(the person is male) = 0.5\nP(the person likes hats) = 0.4\n\nCalculate P(the person is male and likes hats)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#product-law-full",
+    "href": "Math125/slides/14_15_probability_laws.html#product-law-full",
+    "title": "14-15. Probability Laws",
+    "section": "Product law (full)",
+    "text": "Product law (full)\n\\[ P(A \\text{ and } B) = P(A)*P(B | A)\\]\nThis law always works, but requires a version of P(B) which recalculated under the assumption that A is true. This is called the conditional probability of \\(B\\) given \\(A\\) (The topic of the next slide deck)\nP(even and prime) = 0.5*P(a given even number is prime)\nP(male who likes hats) = 0.5*P(a given male likes hats)\nP(both parents have SCT) = 0.006*P(second parent has SCT, assuming first parent does)"
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#putting-it-all-together",
+    "href": "Math125/slides/14_15_probability_laws.html#putting-it-all-together",
+    "title": "14-15. Probability Laws",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nP(wearing a red shirt today) = 0.1\nP(wearing a purple shirt today) = 0.3\nP(having a headache today) = 0.1\nWhat is the probability of wearing a purple shirt, or having a headache? Your work should combine two of our probability laws."
+  },
+  {
+    "objectID": "Math125/slides/14_15_probability_laws.html#homework",
+    "href": "Math125/slides/14_15_probability_laws.html#homework",
+    "title": "14-15. Probability Laws",
+    "section": "Homework",
+    "text": "Homework\nSolve webwork problems “14-15. Probability Laws”"
+  },
+  {
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html",
+    "title": "20. Standard Error and Confidence Intervals",
     "section": "",
-    "text": "Read section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides."
+    "text": "Read: OpenIntro Statistics Section 5.1 and 5.2"
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#preparation",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#preparation",
-    "title": "04-5. Sampling and Sample Bias",
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#preparatory-work",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#preparatory-work",
+    "title": "20. Standard Error and Confidence Intervals",
     "section": "",
-    "text": "Read section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides."
+    "text": "Read: OpenIntro Statistics Section 5.1 and 5.2"
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "2 Key vocabulary – sampling",
-    "text": "2 Key vocabulary – sampling\n\nPopulation: All conceivable cases.\nSample: All cases measured and recorded.\nRepresentative Sample: Does a good job reflecting features of the population.\nBiased Sample: Skewed, slanted, not representative. Intentionally or accidentally.\nBias: Anything causing a sample to be biased, from cruelty to oversight to unforeseeable effect."
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#correct-each-statement-statistics-vs.-parameters.",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#correct-each-statement-statistics-vs.-parameters.",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "2 Correct each statement – statistics vs. parameters.",
+    "text": "2 Correct each statement – statistics vs. parameters.\n\nI sampled 500 patients and averaged their blood pressure. Now I know the population average blood pressure.\nI surveyed 500 teens and calculated a bullying risk probability. Now I know a parameter.\nI sampled 500 library books. Now I know the average length of all books.\nI weighed 500 cats. Now I know μ, the average weight of cats."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-bias-types",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-bias-types",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "3 Key vocabulary – bias types",
-    "text": "3 Key vocabulary – bias types\n\nParticipation bias or nonresponse bias: You didn’t measure those who didn’t respond, and it might matter!\nPre-screening bias: You must be this tall for the survey.\nSurvivorship bias: Only “survivors” are included.\nUndercoverage bias: Significant subpopulations were missed.\nGeographic bias: Selecting from a town, street corner, etc."
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#the-problem",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#the-problem",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "3 The problem",
+    "text": "3 The problem\n\nStatistical measurements only estimate parameters. When a statistic is used to estimate a parameter, we call it a point estimate.\nStatistical measurement error is natural and inevitable. Point estimates naturally differ from the parameters they intend to measure."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#a-pollsters-dilemma",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#a-pollsters-dilemma",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "4 A pollster’s dilemma",
-    "text": "4 A pollster’s dilemma\nWhich of these should a political polling organization accomplish in order to responsibly estimate the outcome of an upcoming election?\n\nInterview lots and lots of people.\nInclude a diversity of people (in age, race, hometown, education, etc) roughly in accord with the population.\nPredict who probably will not vote in the election.\nPrompt the “undecided” to predict their decision.\nDraw no inference when people refuse to participate.\n\n(Good political polling is very, very hard!)"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#the-compensation",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#the-compensation",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "4 The compensation",
+    "text": "4 The compensation\n\nLarge samples allow us to limit measurement error.\nSpecial formulas (for SE) allow us to quantify and predict measurement error.\nConfidence intervals allow us to responsibly report our point estimates and their potential error in a responsible way."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#food-costs-money",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#food-costs-money",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "5 Food costs money",
-    "text": "5 Food costs money\nWe want to estimate the average household grocery bill in St. Lawrence county. What is the population of interest?\nYou plan to sample 100 households. What are some natural sources of sampling bias and how could you mitigate them?"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#the-good-news",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#the-good-news",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "5 The good news",
+    "text": "5 The good news\n\nUsually, measurement error is not just random, but normal N(0,…) with mean 0 and predictable deviation.\nThe deviation of the error of a point estimate is called the Standard Error (SE), and it can be predicted."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#hours-reading-a-sampling-puzzle",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#hours-reading-a-sampling-puzzle",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "6 Hours reading – a sampling puzzle",
-    "text": "6 Hours reading – a sampling puzzle\nYou want to measure how much time an average university student spends reading. What is the population of interest (in your opinion)? What are some natural sources of sampling bias and how could you mitigate them?"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#visualizing-the-standard-error",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#visualizing-the-standard-error",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "6 Visualizing the Standard Error",
+    "text": "6 Visualizing the Standard Error\n\nshape = 2;\nscale = 5;\nrandomGamma = () =&gt; -Math.log(Math.random() * Math.random()) * scale;\n\n// 2. STATIC SAMPLE (Does not depend on n or m, so it won't re-run)\nstaticSample = Array.from({ length: 1000 }, randomGamma);\n\n// 3. REACTIVE SAMPLING DISTRIBUTION\nsamplingDistribution = {\n  // This line ensures the cell re-runs when n or numSamples changes\n  const _trigger = [n, numSamples]; \n  return Array.from({ length: numSamples }, () =&gt; {\n    const s = Array.from({ length: n }, randomGamma);\n    return d3.mean(s);\n  });\n}\n\n// 4. STATS calculations\nestimatedSE = d3.deviation(samplingDistribution);\nmeanOfMeans = d3.mean(samplingDistribution);\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof n = Inputs.range([1, 100], {step: 1, value: 30, label: \"Sample Size (n)\"})\nviewof numSamples = Inputs.range([1, 501], {step: 1, value: 31, label: \"Number of Resamples (m)\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.1 Population\n(\\(N=1000\\))\n\nPlot.plot({\n  height: 400,\n  style: { fontSize: \"16px\" },\n  x: { domain: [0, 40], label: \"Value\"},\n  y: { axis: null },\n  marks: [\n    Plot.ruleX([10], {stroke: \"red\", strokeDasharray: \"4\", strokeWidth: 2}),\n    // The dodgeY transform stacks the dots on top of each other\n    Plot.dot(staticSample, Plot.dodgeY({\n      x: d =&gt; d, \n      anchor: \"bottom\", \n      fill: \"#4e79a7\", \n      r: 3\n    })),\n    Plot.text([10], {y: 0, text: d =&gt; \"μ=10\", dy: 20, fill: \"red\"})\n  ]\n})\n\n\n\n\n\n\n\n\n\n6.2 Resampling Dist.\n(Average of \\(n\\), done \\(m\\) times)\n\nPlot.plot({\n  height: 400,\n  style: { fontSize: \"16px\" },\n  x: { domain: [0, 40], label: \"Sample Mean (x̄)\" },\n  y: { axis: null },\n  marks: [\n    Plot.ruleX([10], {stroke: \"red\", strokeDasharray: \"4\"}),\n    Plot.dot(samplingDistribution, Plot.dodgeY({\n      x: d =&gt; d, \n      anchor: \"bottom\",\n      fill: \"#e15759\", \n      r: 2.5,\n      fillOpacity: 0.7\n    })),\n//    Plot.ruleX([meanOfMeans], {stroke: \"black\", strokeWidth: 3})\n  ]\n})"
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#focus-on-survivorship-bias",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#focus-on-survivorship-bias",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "7 Focus on survivorship bias",
-    "text": "7 Focus on survivorship bias\nExplain how each observation or inference is vulnerable to survivorship bias.\n\n“When I was a kid we took more risks. I turned out fine!”\nEarly human artistic expression was primarily cave paintings.\nUniversity professors learn about modern high school from their students.\nWe analyzed the 500 largest US companies to see whether US energy policy benefits or hinders them.\nArchitecture in ancient Greece was mostly just colossal stonework."
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#visualizing-standard-error",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#visualizing-standard-error",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "7 Visualizing Standard Error",
+    "text": "7 Visualizing Standard Error\nAdjust the sliders to see how the sample size (\\(n\\)) and the number of resamples (\\(m\\)) affect the distribution of the mean.\n\nSet \\(n=25\\). When \\(m=1\\), what happens? Why is the single red dot close to \\(10\\)? Why isn’t it exactly at \\(10\\)? Why isn’t it at the same place as on your neighbor’s screen?\nRaise \\(m\\). Why are the red dots close to \\(10\\)? Why do they vary? How much do they stray from \\(10\\), typically? That’s Standard Error\nKeeping \\(m\\) somewhat large, Raise \\(n\\). Do the red dots spread out farther from \\(10\\) or cluster more closely?\nWith large \\(m\\), set \\(n=1\\). Why does the right-hand plot look like that?\nThe original population is quite skewed. For large \\(n\\), is the sampling distribution skewed or normal?"
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#survivorship-bias-for-the-win",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#survivorship-bias-for-the-win",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "8 Survivorship bias for the win",
-    "text": "8 Survivorship bias for the win\nAbraham Wald famously studied aircraft damage during WWII. He examined post-mission bullet holes on bombers. (Image is compilation across many planes.)\n\n\n\nSource: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.\n\n\nQuestion: The bomber can carry a small bit of extra weight for shielding. Where should extra shielding be placed to protect aircraft?"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#three-huge-takeaways.",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#three-huge-takeaways.",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "8 Three huge takeaways.",
+    "text": "8 Three huge takeaways.\n\nThe Standard Error is the standard deviation of the sampling distribution. It depends on the deviation in the original population and also depends on \\(n\\).\nLarge-sample (i.e. big n) averages cluster tightly around the true mean. This is the Law of Large Numbers.\nRegardless of the shape of the original distribution, large-sample averages follow a normal bell curve. This is the Central Limit Theorem. Its mean and variability are described in parts 1 & 2 above."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#who-me-biased",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#who-me-biased",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "9 Who, me, biased?",
-    "text": "9 Who, me, biased?\nExplain how almost every type of sampling bias applies to this fictional scenario:\n\n“Here at Dominant Dynamics Corp., we pride ourselves on inclusivity, especially in June! We set up a survey table in our corporate lobby where we interviewed employees: “Attention LGBTQIA+ employees! Is this a safe and supportive environment for you?”"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#coin-flip-o-matic-inator",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#coin-flip-o-matic-inator",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "9 🪙 100-Coin Flip-o-matic-inator",
+    "text": "9 🪙 100-Coin Flip-o-matic-inator\nAdjust the slider to repeat the experiment of flipping \\(100\\) coins. We are counting the proportion of “Heads” (out of \\(100\\)) we get each time.\n\nflip100Coins = () =&gt; {\n  let heads = 0;\n  for (let i = 0; i &lt; 100; i++) {\n    if (Math.random() &gt; 0.5) heads++;\n  }\n  return heads/100;\n}\n\n// Reactive data array\nflipData = {\n  const _trigger = m;\n  return Array.from({ length: m }, flip100Coins);\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof m = Inputs.range([1, 1000], {step: 1, value: 1, label: \"Number of Experiments (m)\"})\n\n\n\n\n\n\n\n// 2. Plotting the results\nPlot.plot({\n  height: 500,\n  style: { fontSize: \"18px\" },\n  x: { \n    domain: [.30, .70], \n    label: \"Number of Heads observed in 100 flips →\",\n    tickFormat: \".2f\", \n    labelOffset: 50\n  },\n  y: { axis: null },\n  marks: [\n    // Expected value line (50)\n    //Plot.ruleX([50], {stroke: \"red\", strokeDasharray: \"4\", strokeWidth: 2}),\n    \n    // The coin stacks\n    Plot.dot(flipData, Plot.dodgeY({\n      x: d =&gt; d, \n      anchor: \"bottom\", \n      fill: \"#4e79a7\", \n      r: 4,\n      stroke: \"white\",\n      strokeWidth: 0.5\n    })),\n    \n  ]\n})"
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling-strategies",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling-strategies",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "10 Key vocabulary – Sampling strategies",
-    "text": "10 Key vocabulary – Sampling strategies\n\nSimple (SRS): Select from one flat list.\nStratified: Identify strata of interest, sample some of each stratum.\nCluster: Divide into convenient clusters. Randomly select some clusters. Take all of each selected cluster.\nMultistage: Like cluster, but take some of each selected cluster."
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#coin-flip-o-matic-analysis",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#coin-flip-o-matic-analysis",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "10 🪙 100-Coin Flip-o-matic, analysis",
+    "text": "10 🪙 100-Coin Flip-o-matic, analysis\n\nWhere in the activity is the parameter for the coin? Where is the point estimate(s)?\nWhy are the results near 0.5? Why are they not exactly 0.5? Why are your results different from your neighbors, even with the same \\(m\\)?\nUsing a large value of \\(m\\), what is the shape of the sampling distribution?\nWhere is the center of the sampling distribution?\nEstimate the variability of the sampling distribution. This is Standard Error of the proportion."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#identifying-the-sampling-strategy",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#identifying-the-sampling-strategy",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "11 Identifying the sampling strategy",
-    "text": "11 Identifying the sampling strategy\nYou want to survey college students about relationship viewpoints.\nAna: We’ll each pick a residence hall and knock ten random doors within it.\nBiljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them!\nMarija: Let’s coordinate with five random professors, and survey everybody in their classes.\nDragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc.\nBonus: To generate their names I picked a nation at random,  then chose four random names common within that nation. What sampling strategy did I use?"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#good-news-there-are-formulas",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#good-news-there-are-formulas",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "11 Good news: There are formulas",
+    "text": "11 Good news: There are formulas\nWe don’t have to calculate standard errors by simulating sampling distributions. There are formulas.\n\n\n\n\n\n\n\n\n\nParameter\nPoint Estimate\nFormula\nVariable Type\n\n\n\n\nMean \\(\\mu\\)\n\\(\\bar{x}\\)\n\\(\\displaystyle \\frac{\\sigma}{\\sqrt{n}}\\)\nQuantitative\n\n\nProportion \\(p\\)\n\\(\\hat{p}\\)\n\\(\\displaystyle \\sqrt{\\frac{p(1-p)}{n}}\\)\nCategorical\n\n\nDifference\n\\(\\text{diff}\\)\n\\(\\displaystyle \\sqrt{SE_1^2 + SE_2^2}\\)\nComparison"
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "12 Value judgments",
-    "text": "12 Value judgments\nWhich is most correct?\n\nSimple random is the best method and should always be used.\nSimple random is the best method but is often impractical.\nStratified sampling is the best method but is sometimes impossible.\nCluster sampling reduces the bias of simple random sampling.\nMultistage sampling helps to increase the sample size."
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#se-as-the-basis-for-confidence-intervals",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#se-as-the-basis-for-confidence-intervals",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "12 SE as the basis for Confidence Intervals",
+    "text": "12 SE as the basis for Confidence Intervals\nYou have a point estimate for a parameter. It approximates a parameter. You want to guess the parameter.\nThe Empirical Rule says that 95% of the time, the measurement error is less than \\(2*SE\\), so the confidence interval: \\[\\text{ point estimate } \\pm 2*SE\\] almost certainly captures the parameter."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments-competing-priorities",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments-competing-priorities",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "13 Value judgments – competing priorities",
-    "text": "13 Value judgments – competing priorities\n\nUche asserts: “Large sample sizes are better for my purposes.” \nAbike asserts: “Small sample sizes are better for my purposes.” \nWhy might both speakers be correct?"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-1",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-1",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "13 Example #1",
+    "text": "13 Example #1\nUsing North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv\nThe “premie” variable is categorical. 152 / 998 births are identified as premature.\n\nWhat is the point estimate and what is the parameter in this context?\nCalculate the proportion of premie births in our data.\nWhat is the standard error for this point estimate?\nAssuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate."
   },
   {
-    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#homework",
-    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#homework",
-    "title": "04-5. Sampling and Sample Bias",
-    "section": "14 Homework",
-    "text": "14 Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-2",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-2",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "14 Example #2",
+    "text": "14 Example #2\nUsing North Carolina Birth data: https://www.openintro.org/stat/data/nc.csv\nThe mother’s age variable (“mage”) has mean: 27, stdev: 6.2, count: 1000\n\nWhat is the sample average? This is the point estimate.\nWhat is the parameter which the point estimate approximates?\nWhat is the standard error for this point estimate?\nAssuming a margin of error of 2*SE, report a confidence interval which extends on both sides of the point estimate."
   },
   {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "",
-    "text": "Read 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)"
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-3",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-3",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "15 Example #3",
+    "text": "15 Example #3\n100 birds are sampled, and have an average mass of 400g, with a standard deviation of 20g.\n\nFind the standard error of this average.\nConstruct a confidence interval for this data using 2*SE.\nExplain what the confidence interval means.\nWhat is the confidence level?"
   },
   {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#preparation",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#preparation",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "",
-    "text": "Read 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#vocabulary-and-notation",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#vocabulary-and-notation",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "2 Vocabulary and notation",
-    "text": "2 Vocabulary and notation\n\n\n\nName\nAs statistic\nAs parameter\n\n\n\n\nCount\n\\(n\\)\n\\(N\\)\n\n\nMean\n\\(\\overline{x}\\)\n\\(\\mu\\)\n\n\nVariance\n\\(s^2\\)\n\\(\\sigma^2\\)\n\n\nStandard Deviation\n\\(s\\)\n\\(\\sigma\\)\n\n\n\nStatistic: Summary number about a sample.\nParameter: Summary number about a population."
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#how-do-you-mean",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#how-do-you-mean",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "3 How do you mean?",
-    "text": "3 How do you mean?\nFind the coast_starlight data on openintro. It has only 16 lines. We want the average travel_time from the dataset.\n\nWrite instructions for calculating the average.\nFind the average with just a calculator.\nLoad the data into a spreadsheet and find the average.\nLoad the data into Jupyter and find the average.\nIs this average a statistic or a parameter?\nWhat symbol is appropriate for this average? Why?"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#understanding-the-average",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#understanding-the-average",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "4 Understanding the average",
-    "text": "4 Understanding the average\nIn everyday English, “average” means “typical” or “usual.” In math, it always means “sum / count”. This can be different from “typical”.\n\nWhat is the average number of fingers (including thumbs) on a person?\nWhat is the average result of a (standard six sided) die roll?\nDo you know the average number of kids in a U.S. family?"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "5 Variance and standard deviation – intro",
-    "text": "5 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n\n\nStep 1. Find the average: \\(\\frac{5+7+8+9+9+9+10+10+11+12}{10} = 9\\)"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-1",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-1",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "6 Variance and standard deviation – intro",
-    "text": "6 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 2. Compare each to average, record deviations"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-2",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-2",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "7 Variance and standard deviation – intro",
-    "text": "7 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 3? Find average deviation: \\(\\frac{(-4)+(-2)+ (-1) + 0 + 0 + 0 + 1 + 1 + 2 + 3}{10} = 0\\)\nOops that was pointless. Why?"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-3",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-3",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "8 Variance and standard deviation – intro",
-    "text": "8 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 3. Square the deviations. No more negatives!"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-4",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-4",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "9 Variance and standard deviation – intro",
-    "text": "9 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 4. “Average” those: \\(\\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\)\nThis is the variance. It measures how much the data varies. The symbol is \\(s^2\\). Think of it as one (detached) symbol, not the square of \\(s\\)."
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-5",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-5",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "10 Variance and standard deviation – intro",
-    "text": "10 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\nyear\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\nyear\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\nyear\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\nsquare years ?!?\n\n\n\n\n\\(s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\nStep 5. Check the units."
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-6",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-6",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "11 Variance and standard deviation – intro",
-    "text": "11 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nVariance \\(= s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\n\\(s = \\sqrt{4} = 2\\) years\nStep 6. Take the square root. That’s called \\(s\\), the standard deviation."
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-interpretation",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-interpretation",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "12 Variance and standard deviation – interpretation",
-    "text": "12 Variance and standard deviation – interpretation\nStandard deviation is the typical deviation (either way) from average, not the greatest possible deviation.\nData points often stray further from average.\nVariance is hard to interpret – its units are screwy.\nStandard deviation is easier to interpret.\nWe divide by \\(n-1\\), not by \\(n\\). Mnemonic: The first data value can’t exhibit variability.\nWe use \\(s^2\\) and \\(s\\) for sample variance and sample standard deviation.\nWe use \\(\\sigma^2\\) and \\(\\sigma\\) for population variance and population standard deviation."
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-easy-way",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-easy-way",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "13 Variance and standard deviation, easy way",
-    "text": "13 Variance and standard deviation, easy way\n\nYou should have a spreadsheet with your coast_starlight data from earlier. Using the command “STDEV” or “STDEV.S”, find the standard deviation.\nYou should have a Jupyter notebook with the same data. Use “df.describe” to find the standard deviation. (Jupyter example)\nIs all of the data in the range from \\(\\overline{x} - s\\) and \\(\\overline{x}+s\\)?"
-  },
-  {
-    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#individual-work",
-    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#individual-work",
-    "title": "09-10. Mean, Variance, and Standard Deviation",
-    "section": "14 Individual work",
-    "text": "14 Individual work\nComplete the webwork problem set for this presentation."
+    "objectID": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-4",
+    "href": "Math125/slides/20_Standard_Error_and_Confidence-handout.html#example-4",
+    "title": "20. Standard Error and Confidence Intervals",
+    "section": "16 Example #4",
+    "text": "16 Example #4\nLast week’s political poll gave candidate X a 45% approval, but this week’s poll gives the same candidate a 49% approval. Each poll was out of 2000 voters. Find the standard error for each point estimate. Construct a confidence interval for each point estimate, using 2*SE. Do the confidence intervals overlap? What is the significance of this?\nVocabulary Standard Deviation vs. Standard Error Confidence Interval vs. Confidence Level Margin of Error (often 2*SE)\nHomework …on Webwork: “20. Standard Error and Confidence”"
   },
   {
     "objectID": "Math125/slides/18_19_the_normal_distribution.html#preparatory-work",
@@ -970,7 +1180,7 @@
     "href": "Math125/slides/18_19_the_normal_distribution.html#the-family-of-normal-distributions",
     "title": "18-19. The Normal Distribution",
     "section": "The Family of Normal Distributions",
-    "text": "The Family of Normal Distributions\n\nviewof mu = Inputs.range([-5, 5], {\n  value: 0, \n  step: 0.1, \n  label: \"μ:\", \n})\n\nviewof sigma = Inputs.range([0.1, 3], {\n  value: 1, \n  step: 0.1, \n  label: \"σ:\", \n})\n\n// 2. Dynamic Notation Display\n// This updates instantly whenever the sliders move\nmd`### Distribution: N(${mu.toFixed(1)}, ${(sigma**2).toFixed(2)})`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n  height: 400,\n  grid: true,\n  y: { domain: [0, 1], label: \"Density\" },\n  x: { domain: [-10, 10], label: \"Value\" },\n  marks: [\n    // The Normal Curve\n    Plot.lineY(d3.range(-10, 10, 0.05), {\n      x: x =&gt; x,\n      y: x =&gt; (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2)),\n      stroke: \"#2c3e50\",\n      strokeWidth: 3\n    }),\n    // A dashed vertical line at the mean to help visualize shift\n    Plot.ruleX([mu], {stroke: \"red\", strokeDasharray: \"4,4\", opacity: 0.5})\n  ]\n})\n\n\n\n\n\n\n\n\nThe notation \\(N(\\mu, \\sigma^2)\\) refers to a normal distribution while telling its mean \\(\\mu\\) and its standard deviation \\(\\sigma\\). What kind of normal distribution is \\(N(100,16)\\)?"
+    "text": "The Family of Normal Distributions\n\nviewof mu = Inputs.range([-5, 5], {\n  value: 0, \n  step: 0.1, \n  label: \"μ:\", \n  width: 250 \n})\n\nviewof sigma = Inputs.range([0.1, 3], {\n  value: 1, \n  step: 0.1, \n  label: \"σ:\", \n  width: 250 \n})\n\n// 2. Dynamic Notation Display\n// This updates instantly whenever the sliders move\nmd`### Distribution: N(${mu.toFixed(1)}, ${(sigma**2).toFixed(2)})`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n  height: 400,\n  grid: true,\n  y: { domain: [0, 1], label: \"Density\" },\n  x: { domain: [-10, 10], label: \"Value\" },\n  marks: [\n    // The Normal Curve\n    Plot.lineY(d3.range(-10, 10, 0.05), {\n      x: x =&gt; x,\n      y: x =&gt; (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2)),\n      stroke: \"#2c3e50\",\n      strokeWidth: 3\n    }),\n    // A dashed vertical line at the mean to help visualize shift\n    Plot.ruleX([mu], {stroke: \"red\", strokeDasharray: \"4,4\", opacity: 0.5})\n  ]\n})\n\n\n\n\n\n\n\n\nThe notation \\(N(\\mu, \\sigma^2)\\) refers to a normal distribution while telling its mean \\(\\mu\\) and its standard deviation \\(\\sigma\\). What kind of normal distribution is \\(N(100,16)\\)?"
   },
   {
     "objectID": "Math125/slides/18_19_the_normal_distribution.html#reading-the-bell-curve",
@@ -1005,14 +1215,91 @@
     "href": "Math125/slides/18_19_the_normal_distribution.html#the-empirical-rule-68-95-99.7",
     "title": "18-19. The Normal Distribution",
     "section": "The empirical rule (68-95-99.7)",
-    "text": "The empirical rule (68-95-99.7)\n\nWithin one standard deviation from the mean lies 68% of the data.\nWithin two standard deviations from the mean lies 95% of the data.\nWithin three standard deviations from the mean lies 99.7% of the data.\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Time-to-work distribution\n\n\n\n\n\n\n\n\ncount    783.000000\nmean      25.997446\nstd       22.290973\nmin        1.000000\n25%       10.000000\n50%       20.000000\n75%       30.000000\nmax      163.000000\nName: time_to_work, dtype: float64\n\n\nIn range \\((26 - 2*22.3, 25+2*22.3)\\): 96% of data points."
+    "text": "The empirical rule (68-95-99.7)\n\nWithin one standard deviation from the mean lies 68% of the data.\nWithin two standard deviations from the mean lies 95%.\nWithin three standard deviations from the mean lies 99.7% …approximately.\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Time-to-work distribution\n\n\n\n\n\n\n\n\ncount    783.000000\nmean      25.997446\nstd       22.290973\nmin        1.000000\n25%       10.000000\n50%       20.000000\n75%       30.000000\nmax      163.000000\nName: time_to_work, dtype: float64\n\n\nIn range \\((26 - 2*22.3, 25+2*22.3)\\): 96% of data points."
   },
   {
     "objectID": "Math125/slides/18_19_the_normal_distribution.html#the-empirical-rule-68-95-99.7-1",
     "href": "Math125/slides/18_19_the_normal_distribution.html#the-empirical-rule-68-95-99.7-1",
     "title": "18-19. The Normal Distribution",
     "section": "The empirical rule (68-95-99.7)",
-    "text": "The empirical rule (68-95-99.7)\n(Graphic used with permission, Wikimedia Foundation)\nPercentiles and tail areas A distribution is N(100,102). How much data should be expected above 120? A distribution is N(60, 22). How much data should be expected below 54? A distribution is N(10, 52). How much data should be expected above 16? Use the empirical rule or choose a cdf calculation tool: Matt Bognar’s CDF calculator Use Jupyter from scipy import stats stats.norm.cdf(2) Use a Z-table (this is the old school method).\nZ-score Intro: So, is that a lot then? A certain pet parrot’s body temperature is 107°. What more would you need to know, before judging whether the body temperature is a health concern?\nSo, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. What other general stats about parrots and their temperatures would be useful to contextualize this information?\nSo, is that a lot then? A certain pet parrot’s body temperature is 107°. The average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average. The standard deviation of body temp is 1.4°. Is the bird’s temperature normal, somewhat high, or very high? Why?\nJudging relative to the distribution Judging a data value x relative to the distribution it’s in requires both: Comparison to the mean of the distribution: subtract μ Conversion to units of standard deviations: divide by σ Thus the formula: Z-score = (data value - μ) / σ The Z-score acts like a interchangeable standard of unusualness, scaled to the distribution the data belongs to.\nZ-score = (value - μ) / σ It counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions. Z = 0: Average. Z = +1, -1: Uninteresting. Z = +2, -2: Raise eyebrow. Z = +3, -3: Remarkable. Z = +5, -5: Stunning. Interpreting the Z-score\nZ score A distribution for test scores is normally distributed N(500, 502). You score 625. Well done! What is your Z score? An LED manufacture process produces units with illumination N(50,0.22). One particular bulb has illumination 49.4. What is its Z-score? If we reject any bulb at 49.4 or below, how much of the inventory would we waste? By reconfiguring the assembly process, we can make the distribution N(51, 12). How would you describe the effect of this change?\nThe rarity of a Z-score: the p-value A good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score. Use Bognar’s tool to answer: How much of the normal distribution is above Z = 2.3? How much of the normal distribution is more extreme, on either side, than Z=3.1? Use stats.norm.cdf to answer: How much of the normal distribution is below Z = -5? How much of the normal distribution is above Z = 2.5?\nMethods for finding p-value, recap To find tail areas, you can… Use the Empirical Rule with some geometric reasoning. (Z=1, 2, 3 only) Matt Bognar’s CDF calculator (Z in the range -4..4) Use Jupyter (Any Z will do) from scipy import stats stats.norm.cdf(2) Use a Z-table. (Paper method, limited accuracy and range)\nPutting it all together Most people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile? An average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day? A 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?\nHomework Solve homework problems “18-19. The Normal Distribution”"
+    "text": "The empirical rule (68-95-99.7)\n\n\n\n\n\n\n\n\nFigure 7: Empirical Rule illustration"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#percentiles-and-tail-areas",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#percentiles-and-tail-areas",
+    "title": "18-19. The Normal Distribution",
+    "section": "Percentiles and tail areas",
+    "text": "Percentiles and tail areas\n\nA distribution is \\(N(100,10^2)\\). How much data should be expected above 120?\nA distribution is \\(N(60, 2^2)\\). How much data should be expected below 54?\nA distribution is \\(N(10, 5^2)\\). How much data should be expected above 16? (Why can’t this last problem be solved the same way?)"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#ways-to-calculate-tail-areas-and-percentiles",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#ways-to-calculate-tail-areas-and-percentiles",
+    "title": "18-19. The Normal Distribution",
+    "section": "Ways to calculate tail areas and percentiles",
+    "text": "Ways to calculate tail areas and percentiles\n\nGeometrically, using empirical rule (for \\(\\pm 1, 2, 3\\) only!)\nUsing a graphical tool, like Bognar’s normal CDF calculator\nUsing Jupyter:\n\n\nfrom scipy import stats\nstats.norm.cdf(-2)\n\nnp.float64(0.022750131948179198)\n\n\n\nUsing a Z-table (old school, not in this course)."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#so-is-that-a-lot-then-z-score",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#so-is-that-a-lot-then-z-score",
+    "title": "18-19. The Normal Distribution",
+    "section": "So, is that a lot then? (Z-score)",
+    "text": "So, is that a lot then? (Z-score)\nA certain pet parrot’s body temperature is 107°.\nWhat more would you need to know, before judging whether the body temperature is a health concern?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#so-is-that-a-lot-then-z-score-1",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#so-is-that-a-lot-then-z-score-1",
+    "title": "18-19. The Normal Distribution",
+    "section": "So, is that a lot then? (Z-score)",
+    "text": "So, is that a lot then? (Z-score)\nA certain pet parrot’s body temperature is 107°.\nThe average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average.\nWhat other general stats about parrots and their temperatures would be useful to contextualize this information?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#so-is-that-a-lot-then-z-score-2",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#so-is-that-a-lot-then-z-score-2",
+    "title": "18-19. The Normal Distribution",
+    "section": "So, is that a lot then? (Z-score)",
+    "text": "So, is that a lot then? (Z-score)\nA certain pet parrot’s body temperature is 107°.\nThe average body temperature for the species is 105°. Of course, the parrot is 2° warmer than average.\nThe standard deviation of body temp is 1.4°. The parrot is warm by about one and a half standard deviations.\nIs the bird’s temperature normal, somewhat high, or very high? Why?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#a-fair-rating-data-in-context",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#a-fair-rating-data-in-context",
+    "title": "18-19. The Normal Distribution",
+    "section": "A fair rating – data in context",
+    "text": "A fair rating – data in context\nJudge relative to average – subtract \\(\\mu\\).\nJudge relative to variability – divide by \\(\\sigma\\).\n\\[\\text{Z-score} = \\frac{\\text{data value} - \\mu}{\\sigma}\\]\nZ-score = number of standard deviations from the mean.\nZ-score is an interchangeable standard of unusualness, scaled to the distribution the data belongs to."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#intuition-for-z-scores",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#intuition-for-z-scores",
+    "title": "18-19. The Normal Distribution",
+    "section": "Intuition for Z-scores",
+    "text": "Intuition for Z-scores\nIt counts the number of standard deviations from the mean, which is a statistically “fair” across different distributions.\n\nZ = 0: Average.\nZ = +1, -1: Uninteresting.\nZ = +2, -2: Raise eyebrow.\nZ = +3, -3: Remarkable.\nZ = +5, -5: Stunning."
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#practice-with-z-score",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#practice-with-z-score",
+    "title": "18-19. The Normal Distribution",
+    "section": "Practice with Z score",
+    "text": "Practice with Z score\n\nA distribution for test scores is normally distributed \\(N(500, 50^2)\\). You score 625. Well done! What is your Z score?\nAn LED manufacture process produces units with illumination \\(N(50,0.2^2)\\). One particular bulb has illumination 49.4.\n\n\nWhat is its Z-score?\nIf we reject any bulb at 49.4 or below, how much of the inventory would we waste?\nBy reconfiguring the assembly process, we can make the distribution \\(N(51, 1^2)\\). How would you describe the effect of this change? How would this affect the manufacturing waste?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#the-rarity-of-a-z-score-the-p-value",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#the-rarity-of-a-z-score-the-p-value",
+    "title": "18-19. The Normal Distribution",
+    "section": "The rarity of a Z-score: the p-value",
+    "text": "The rarity of a Z-score: the p-value\nA good measure of the unusualness of a Z-score is the portion of the curve at least as extreme as that score, called the \\(p\\)-value.\nUse Bognar’s tool to answer:\n\nHow much of the normal distribution is above Z = 2.3?\nHow much of the normal distribution is more extreme, on either side, than Z=3.1?\n\nUse stats.norm.cdf to answer:\n\nHow much of the normal distribution is below Z = -5?\nHow much of the normal distribution is above Z = 2.5?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#putting-it-all-together",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#putting-it-all-together",
+    "title": "18-19. The Normal Distribution",
+    "section": "Putting it all together",
+    "text": "Putting it all together\n\nMost people tend to score about 550 on a given exam, with a standard deviation of 60. Your score is 685. Good job! What is your Z-score? What is your percentile?\nAn average business day sees about $1000 in sales, with a standard deviation of about $200. Sales were slow today. Only $450. What is the Z-score? How rare is such a disastrous sales day?\nA 1000-letter sample of English language should have on average about 80 “a”’s, with a standard deviation of about 9. A randomly chosen Youtube video description has 1000 characters but 120 “a”’s. What is the Z-score of this result? How rare is it? Can you think of alternate explanations?"
+  },
+  {
+    "objectID": "Math125/slides/18_19_the_normal_distribution.html#homework",
+    "href": "Math125/slides/18_19_the_normal_distribution.html#homework",
+    "title": "18-19. The Normal Distribution",
+    "section": "Homework",
+    "text": "Homework\nSolve homework problems “18-19. The Normal Distribution”"
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot-handout.html",
@@ -1593,7 +1880,7 @@
     "href": "Math125/index.html#lectures-handouts",
     "title": "Math 125",
     "section": "2 Lectures & Handouts",
-    "text": "2 Lectures & Handouts\n\n\n\nTopic\nSlides (Interactive)\nHandout (Printable)\n\n\n\n\n0: Welcome & Intro\nSlides for Welcome\nHandout for Welcome\n\n\n1: The Shape of Data\nSlides for Shape of Data\nHandout for Shape of Data\n\n\n2: Association & Correlation\nSlides for Association\nHandout for Association\n\n\n3: Correlation & Causation\nSlides for Correlation\nHandout for Correlation\n\n\n4-5: Sampling & Bias\nSlides for Sampling\nHandout for Sampling\n\n\n6: Controlled Experiments\nSlides for Experiments\nHandout for Experiments\n\n\n7: Histograms & Countplots\nSlides for Histograms\nHandout for Histograms\n\n\n8: Boxplots & Scatterplots\nSlides for Boxplots\nHandout for Boxplots\n\n\n9-10: Mean & Variance\nSlides for Mean/Variance\nHandout for Mean/Variance\n\n\n11: Quantile Statistics\nSlides for Quantiles\nHandout for Quantiles\n\n\n12-13: Probability & Counting\nSlides for Prob/Counting\nHandout for Prob/Counting\n\n\n14-15: Probability Laws\nSlides for Prob Laws\nHandout for Prob Laws\n\n\n16-17: Conditional Probability\nSlides for Conditional Prob\nHandout for Conditional Prob"
+    "text": "2 Lectures & Handouts\n\n\n\nTopic\nSlides (Interactive)\nHandout (Printable)\n\n\n\n\n0: Welcome & Intro\nSlides for Welcome\nHandout for Welcome\n\n\n1: The Shape of Data\nSlides for Shape of Data\nHandout for Shape of Data\n\n\n2: Association & Correlation\nSlides for Association\nHandout for Association\n\n\n3: Correlation & Causation\nSlides for Correlation\nHandout for Correlation\n\n\n4-5: Sampling & Bias\nSlides for Sampling\nHandout for Sampling\n\n\n6: Controlled Experiments\nSlides for Experiments\nHandout for Experiments\n\n\n7: Histograms & Countplots\nSlides for Histograms\nHandout for Histograms\n\n\n8: Boxplots & Scatterplots\nSlides for Boxplots\nHandout for Boxplots\n\n\n9-10: Mean & Variance\nSlides for Mean/Variance\nHandout for Mean/Variance\n\n\n11: Quantile Statistics\nSlides for Quantiles\nHandout for Quantiles\n\n\n12-13: Probability & Counting\nSlides for Prob/Counting\nHandout for Prob/Counting\n\n\n14-15: Probability Laws\nSlides for Prob Laws\nHandout for Prob Laws\n\n\n16-17: Conditional Probability\nSlides for Conditional Prob\nHandout for Conditional Prob\n\n\n18-19: Normal Distribution\nSlides for Normal Dist\nHandout for Normal Dist\n\n\n20: Standard Error & Confidence\nSlides for Normal Dist\nHandout for Normal Dist"
   },
   {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias.html#preparation",
@@ -2240,95 +2527,214 @@
     "text": "Homework\n\nControlled Experiments, on webwork."
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#preparatory-work",
-    "href": "Math125/slides/14_15_probability_laws.html#preparatory-work",
-    "title": "14-15. Probability Laws",
-    "section": "Preparatory work",
-    "text": "Preparatory work\nRead section 3.1, with special attention on the Addition Rule, the General Addition Rule, the Complement Rule, and the Multiplication Rule."
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "",
+    "text": "Read 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#combining-probabilities",
-    "href": "Math125/slides/14_15_probability_laws.html#combining-probabilities",
-    "title": "14-15. Probability Laws",
-    "section": "Combining probabilities",
-    "text": "Combining probabilities\nThe game “Farkle” involves rolling six dice at once. The player receives 1500 points for a “straight” (every number 1-6 is represented in the result), but also receives 1500 points for “three pair” (for example, rolling 2, 2, 4, 4, 5, 5).\nTheir probabilities are P(straight) = 0.015 and P(three pair) = 0.038.\n\nWhat is the probability of getting a straight or three pair?\nWhat is the probability of getting a straight and three pair (on the same roll)?\nWhat is the probability of getting a straight, then three pair (on the next roll)?\nWhat is the probability of not getting a straight?"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#preparation",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#preparation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "",
+    "text": "Read 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#drawing-the-line",
-    "href": "Math125/slides/14_15_probability_laws.html#drawing-the-line",
-    "title": "14-15. Probability Laws",
-    "section": "Drawing the line",
-    "text": "Drawing the line\nA 52-card deck is shuffled.\n\nWhat is the probability that the top card is 2♡?\nWhat is the probability that the second card is 2♣?\nWhat is the probability that the top two cards, in order, are 2♡ and 2♣? (Caution: It’s a trap!)"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#vocabulary-and-notation",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#vocabulary-and-notation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "2 Vocabulary and notation",
+    "text": "2 Vocabulary and notation\n\n\n\nName\nAs statistic\nAs parameter\n\n\n\n\nCount\n\\(n\\)\n\\(N\\)\n\n\nMean\n\\(\\overline{x}\\)\n\\(\\mu\\)\n\n\nVariance\n\\(s^2\\)\n\\(\\sigma^2\\)\n\n\nStandard Deviation\n\\(s\\)\n\\(\\sigma\\)\n\n\n\nStatistic: Summary number about a sample.\nParameter: Summary number about a population."
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply",
-    "href": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply",
-    "title": "14-15. Probability Laws",
-    "section": "When to add? When to multiply?",
-    "text": "When to add? When to multiply?\nA and B are events. Their probabilities are P(A) and P(B).\nP(A)+P(B) calculates __________, provided _________.\nP(A)*P(B) calculates __________, provided _________.\n1-P(A) calculates ___________."
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#how-do-you-mean",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#how-do-you-mean",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "3 How do you mean?",
+    "text": "3 How do you mean?\nFind the coast_starlight data on openintro. It has only 16 lines. We want the average travel_time from the dataset.\n\nWrite instructions for calculating the average.\nFind the average with just a calculator.\nLoad the data into a spreadsheet and find the average.\nLoad the data into Jupyter and find the average.\nIs this average a statistic or a parameter?\nWhat symbol is appropriate for this average? Why?"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply-1",
-    "href": "Math125/slides/14_15_probability_laws.html#when-to-add-when-to-multiply-1",
-    "title": "14-15. Probability Laws",
-    "section": "When to add? When to multiply?",
-    "text": "When to add? When to multiply?\nA and B are events. Their probabilities are P(A) and P(B).\nP(A)+P(B) calculates P(A or B), provided A and B are disjoint (mutually exclusive).\nP(A)*P(B) calculates P(A and B), provided A and B are independent.\n1-P(A) calculates P(not A)."
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#understanding-the-average",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#understanding-the-average",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "4 Understanding the average",
+    "text": "4 Understanding the average\nIn everyday English, “average” means “typical” or “usual.” In math, it always means “sum / count”. This can be different from “typical”.\n\nWhat is the average number of fingers (including thumbs) on a person?\nWhat is the average result of a (standard six sided) die roll?\nDo you know the average number of kids in a U.S. family?"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#sum-law-basic",
-    "href": "Math125/slides/14_15_probability_laws.html#sum-law-basic",
-    "title": "14-15. Probability Laws",
-    "section": "Sum law (basic)",
-    "text": "Sum law (basic)\n\\[P(A \\text{ or } B) = P(A)+P(B)\\]\n…when A and B are disjoint (mutually exclusive), meaning they cannot both happen. If events aren’t disjoint, this rule does not apply.\n\n\n\n\n\n\n\n\nFigure 1: Disjoint sets"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "5 Variance and standard deviation – intro",
+    "text": "5 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n\n\nStep 1. Find the average: \\(\\frac{5+7+8+9+9+9+10+10+11+12}{10} = 9\\)"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#sum-law-full",
-    "href": "Math125/slides/14_15_probability_laws.html#sum-law-full",
-    "title": "14-15. Probability Laws",
-    "section": "Sum law (full)",
-    "text": "Sum law (full)\nIf A and B can occur together, then P(A)+P(B) counts P(A and B) twice. If we can calculate that, and we can correct for it:\n\\[ P(A \\text{ or } B) = P(A)+P(B) - P(A \\text{ and } B)\\]\n\n\n\n\n\n\n\n\nFigure 2: Non-disjoint sets"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-1",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-1",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "6 Variance and standard deviation – intro",
+    "text": "6 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 2. Compare each to average, record deviations"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#calculate-using-the-laws",
-    "href": "Math125/slides/14_15_probability_laws.html#calculate-using-the-laws",
-    "title": "14-15. Probability Laws",
-    "section": "Calculate using the laws",
-    "text": "Calculate using the laws\nP(wearing a red shirt today) = 0.1\nP(wearing a purple shirt today) = 0.3\nP(having a headache today) = 0.1\n\nWhat is the probability of wearing a red or purple shirt today?\nWhat is the probability of wearing a purple shirt and having a headache today?\nCan you identify any implicit assumptions used in your calculations above?"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-2",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-2",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "7 Variance and standard deviation – intro",
+    "text": "7 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n\n\nStep 3? Find average deviation: \\(\\frac{(-4)+(-2)+ (-1) + 0 + 0 + 0 + 1 + 1 + 2 + 3}{10} = 0\\)\nOops that was pointless. Why?"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#product-law-basic",
-    "href": "Math125/slides/14_15_probability_laws.html#product-law-basic",
-    "title": "14-15. Probability Laws",
-    "section": "Product law (basic)",
-    "text": "Product law (basic)\nP(A and B) = P(A)*P(B) when A and B are independent, meaning that neither event makes the other more or less likely. (If events are dependent, this law does not apply.)\n\n\\(P(\\text{three coins all land heads}) = \\frac{1}{2} \\cdot \\frac{1}{2} \\cdot \\frac{1}{2}\\)\n\\(P(\\text{critical hit, twice}) = 1/20 \\cdot 1/20\\)\n\\(P(\\text{ card is a red two}) = 1/2  *  1/13\\)\n\\(P(\\text{both parents have SCT sickle cell trait}) = 0.006 \\cdot 0.006\\) (but this calculation is naive and wrong…)"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-3",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-3",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "8 Variance and standard deviation – intro",
+    "text": "8 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 3. Square the deviations. No more negatives!"
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#solve-both-and-compare",
-    "href": "Math125/slides/14_15_probability_laws.html#solve-both-and-compare",
-    "title": "14-15. Probability Laws",
-    "section": "Solve both and compare",
-    "text": "Solve both and compare\nWe roll a d6.\n\nCalculate P(the result is even)\nCalculate P(the result is prime)\nCalculate P(the result is even and prime)\n\nA person is surveyed at random.\nP(the person is male) = 0.5\nP(the person likes hats) = 0.4\n\nCalculate P(the person is male and likes hats)"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-4",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-4",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "9 Variance and standard deviation – intro",
+    "text": "9 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nStep 4. “Average” those: \\(\\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\)\nThis is the variance. It measures how much the data varies. The symbol is \\(s^2\\). Think of it as one (detached) symbol, not the square of \\(s\\)."
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#product-law-full",
-    "href": "Math125/slides/14_15_probability_laws.html#product-law-full",
-    "title": "14-15. Probability Laws",
-    "section": "Product law (full)",
-    "text": "Product law (full)\n\\[ P(A \\text{ and } B) = P(A)*P(B | A)\\]\nThis law always works, but requires a version of P(B) which recalculated under the assumption that A is true. This is called the conditional probability of \\(B\\) given \\(A\\) (The topic of the next slide deck)\nP(even and prime) = 0.5*P(a given even number is prime)\nP(male who likes hats) = 0.5*P(a given male likes hats)\nP(both parents have SCT) = 0.006*P(second parent has SCT, assuming first parent does)"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-5",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-5",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "10 Variance and standard deviation – intro",
+    "text": "10 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\nyear\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\nyear\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\nyear\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\nsquare years ?!?\n\n\n\n\n\\(s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\nStep 5. Check the units."
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#putting-it-all-together",
-    "href": "Math125/slides/14_15_probability_laws.html#putting-it-all-together",
-    "title": "14-15. Probability Laws",
-    "section": "Putting it all together",
-    "text": "Putting it all together\nP(wearing a red shirt today) = 0.1\nP(wearing a purple shirt today) = 0.3\nP(having a headache today) = 0.1\nWhat is the probability of wearing a purple shirt, or having a headache? Your work should combine two of our probability laws."
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-6",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-intro-6",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "11 Variance and standard deviation – intro",
+    "text": "11 Variance and standard deviation – intro\nTen children attend a party. Their ages are:\n\n\n\n5\n7\n8\n9\n9\n9\n10\n10\n11\n12\n(Ages)\n\n\n\n\n9\n9\n9\n9\n9\n9\n9\n9\n9\n9\n(mean)\n\n\n-4\n-2\n-1\n0\n0\n0\n1\n1\n2\n3\n(deviations)\n\n\n16\n4\n1\n0\n0\n0\n1\n1\n4\n9\n(square dev)\n\n\n\n\nVariance \\(= s^2 = \\frac{16+4+1+0+0+0+1+1+4+9}{9} = 4\\) square years.\n\\(s = \\sqrt{4} = 2\\) years\nStep 6. Take the square root. That’s called \\(s\\), the standard deviation."
   },
   {
-    "objectID": "Math125/slides/14_15_probability_laws.html#homework",
-    "href": "Math125/slides/14_15_probability_laws.html#homework",
-    "title": "14-15. Probability Laws",
-    "section": "Homework",
-    "text": "Homework\nSolve webwork problems “14-15. Probability Laws”"
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-interpretation",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-interpretation",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "12 Variance and standard deviation – interpretation",
+    "text": "12 Variance and standard deviation – interpretation\nStandard deviation is the typical deviation (either way) from average, not the greatest possible deviation.\nData points often stray further from average.\nVariance is hard to interpret – its units are screwy.\nStandard deviation is easier to interpret.\nWe divide by \\(n-1\\), not by \\(n\\). Mnemonic: The first data value can’t exhibit variability.\nWe use \\(s^2\\) and \\(s\\) for sample variance and sample standard deviation.\nWe use \\(\\sigma^2\\) and \\(\\sigma\\) for population variance and population standard deviation."
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-easy-way",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#variance-and-standard-deviation-easy-way",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "13 Variance and standard deviation, easy way",
+    "text": "13 Variance and standard deviation, easy way\n\nYou should have a spreadsheet with your coast_starlight data from earlier. Using the command “STDEV” or “STDEV.S”, find the standard deviation.\nYou should have a Jupyter notebook with the same data. Use “df.describe” to find the standard deviation. (Jupyter example)\nIs all of the data in the range from \\(\\overline{x} - s\\) and \\(\\overline{x}+s\\)?"
+  },
+  {
+    "objectID": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#individual-work",
+    "href": "Math125/slides/9_10_mean_variance_standard_deviation-handout.html#individual-work",
+    "title": "09-10. Mean, Variance, and Standard Deviation",
+    "section": "14 Individual work",
+    "text": "14 Individual work\nComplete the webwork problem set for this presentation."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "",
+    "text": "Read section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#preparation",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#preparation",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "",
+    "text": "Read section 1.3 – Sampling principles and strategies. Review vocabulary on next two slides."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "2 Key vocabulary – sampling",
+    "text": "2 Key vocabulary – sampling\n\nPopulation: All conceivable cases.\nSample: All cases measured and recorded.\nRepresentative Sample: Does a good job reflecting features of the population.\nBiased Sample: Skewed, slanted, not representative. Intentionally or accidentally.\nBias: Anything causing a sample to be biased, from cruelty to oversight to unforeseeable effect."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-bias-types",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-bias-types",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "3 Key vocabulary – bias types",
+    "text": "3 Key vocabulary – bias types\n\nParticipation bias or nonresponse bias: You didn’t measure those who didn’t respond, and it might matter!\nPre-screening bias: You must be this tall for the survey.\nSurvivorship bias: Only “survivors” are included.\nUndercoverage bias: Significant subpopulations were missed.\nGeographic bias: Selecting from a town, street corner, etc."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#a-pollsters-dilemma",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#a-pollsters-dilemma",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "4 A pollster’s dilemma",
+    "text": "4 A pollster’s dilemma\nWhich of these should a political polling organization accomplish in order to responsibly estimate the outcome of an upcoming election?\n\nInterview lots and lots of people.\nInclude a diversity of people (in age, race, hometown, education, etc) roughly in accord with the population.\nPredict who probably will not vote in the election.\nPrompt the “undecided” to predict their decision.\nDraw no inference when people refuse to participate.\n\n(Good political polling is very, very hard!)"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#food-costs-money",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#food-costs-money",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "5 Food costs money",
+    "text": "5 Food costs money\nWe want to estimate the average household grocery bill in St. Lawrence county. What is the population of interest?\nYou plan to sample 100 households. What are some natural sources of sampling bias and how could you mitigate them?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#hours-reading-a-sampling-puzzle",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#hours-reading-a-sampling-puzzle",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "6 Hours reading – a sampling puzzle",
+    "text": "6 Hours reading – a sampling puzzle\nYou want to measure how much time an average university student spends reading. What is the population of interest (in your opinion)? What are some natural sources of sampling bias and how could you mitigate them?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#focus-on-survivorship-bias",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#focus-on-survivorship-bias",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "7 Focus on survivorship bias",
+    "text": "7 Focus on survivorship bias\nExplain how each observation or inference is vulnerable to survivorship bias.\n\n“When I was a kid we took more risks. I turned out fine!”\nEarly human artistic expression was primarily cave paintings.\nUniversity professors learn about modern high school from their students.\nWe analyzed the 500 largest US companies to see whether US energy policy benefits or hinders them.\nArchitecture in ancient Greece was mostly just colossal stonework."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#survivorship-bias-for-the-win",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#survivorship-bias-for-the-win",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "8 Survivorship bias for the win",
+    "text": "8 Survivorship bias for the win\nAbraham Wald famously studied aircraft damage during WWII. He examined post-mission bullet holes on bombers. (Image is compilation across many planes.)\n\n\n\nSource: By Martin Grandjean (vector), McGeddon (picture), US Air Force (hit plot concept) - Own work, CC BY-SA 4.0, Used with permission.\n\n\nQuestion: The bomber can carry a small bit of extra weight for shielding. Where should extra shielding be placed to protect aircraft?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#who-me-biased",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#who-me-biased",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "9 Who, me, biased?",
+    "text": "9 Who, me, biased?\nExplain how almost every type of sampling bias applies to this fictional scenario:\n\n“Here at Dominant Dynamics Corp., we pride ourselves on inclusivity, especially in June! We set up a survey table in our corporate lobby where we interviewed employees: “Attention LGBTQIA+ employees! Is this a safe and supportive environment for you?”"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling-strategies",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#key-vocabulary-sampling-strategies",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "10 Key vocabulary – Sampling strategies",
+    "text": "10 Key vocabulary – Sampling strategies\n\nSimple (SRS): Select from one flat list.\nStratified: Identify strata of interest, sample some of each stratum.\nCluster: Divide into convenient clusters. Randomly select some clusters. Take all of each selected cluster.\nMultistage: Like cluster, but take some of each selected cluster."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#identifying-the-sampling-strategy",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#identifying-the-sampling-strategy",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "11 Identifying the sampling strategy",
+    "text": "11 Identifying the sampling strategy\nYou want to survey college students about relationship viewpoints.\nAna: We’ll each pick a residence hall and knock ten random doors within it.\nBiljana: Let’s ask the registrar for a list of 100 random current students. Then we can email them!\nMarija: Let’s coordinate with five random professors, and survey everybody in their classes.\nDragan: It may depend on relationship status. We need to get a sample with the right number of people who are single, dating, married, etc.\nBonus: To generate their names I picked a nation at random,  then chose four random names common within that nation. What sampling strategy did I use?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "12 Value judgments",
+    "text": "12 Value judgments\nWhich is most correct?\n\nSimple random is the best method and should always be used.\nSimple random is the best method but is often impractical.\nStratified sampling is the best method but is sometimes impossible.\nCluster sampling reduces the bias of simple random sampling.\nMultistage sampling helps to increase the sample size."
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments-competing-priorities",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#value-judgments-competing-priorities",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "13 Value judgments – competing priorities",
+    "text": "13 Value judgments – competing priorities\n\nUche asserts: “Large sample sizes are better for my purposes.” \nAbike asserts: “Small sample sizes are better for my purposes.” \nWhy might both speakers be correct?"
+  },
+  {
+    "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html#homework",
+    "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html#homework",
+    "title": "04-5. Sampling and Sample Bias",
+    "section": "14 Homework",
+    "text": "14 Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
   },
   {
     "objectID": "Math125/slides/1_the_shape_of_data.html#preparatory-work",
