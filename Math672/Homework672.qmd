@@ -55,7 +55,6 @@ Interpret this problem in ${\mathbb Z}[x]$, in ${\mathbb R}[x]$, in ${\mathbb C}
 Is $5x^2 + 5$ an irreducible element of the ring? If so, explain why. 
 If possible, factor it into irreducible elements. 
 
-
 ## The Problem with $\sqrt{-5}$
 In this problem we explore the ring $R = {\mathbb Z}[\sqrt{-5}] = \{a + b \sqrt{-5} | a, b \in {\mathbb Z}\}$.
 

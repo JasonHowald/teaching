@@ -1,12 +1,7 @@
----
-title: "08. Dataviz: Boxplot and Scatterplot"
-description: "Visualizing Distributions of multiple variables using scatterplots or stacked boxplots."
----
-
 ## Preparation
 Read 2.1.1 (scatter plots) and 2.1.5 (box plots)
 
-## Goals
+## Goals 
 
 Read scatter plots and box plots correctly.
 
@@ -35,7 +30,7 @@ is given the range of values of one variable, and the $y$ axis the other. Then e
 data case is represented as one point $(x,y)$ according to its variable's values. 
 A cloud of points arises and its shape is a clue to any association between the variables.
 
-## The Scatter Plot – Example
+## The Scatter Plot – Example 
 
 ```{python}
 #| eval: false
@@ -177,7 +172,7 @@ an alternative to a histogram.
     - the inner two quartiles are drawn as a box, and the outer two are drawn as "whiskers"
     - The five quartile boundary points are called:  Min, 25%, 50%, 75%, and Max.
 
-## Box (-and-whisker) plot -- Basic Example
+## Box (-and-whisker) plot -- Example
 
 ```{python}
 #| eval: false
@@ -211,6 +206,52 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("../openintro.csv/county.csv")
 
 # Create plot with clear labels
+sns.boxplot(data=df, x='poverty')
+plt.xlabel(r"Poverty %")
+plt.title(r"Example Boxplot")
+plt.show()
+```
+:::
+
+::::
+
+## Box plot with Swarm plot
+
+```{python}
+#| eval: false
+#| echo: true
+sns.swarmplot(data=df, x='poverty')
+sns.boxplot(data=df, x='poverty')
+```
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+Many students find the swarmplot/boxplot helpful to understand
+what the boxplot is doing. Notice that about a quarter of the points
+lies within each zone. 
+
+:::
+
+:::{.column width="50%"}
+
+```{python}
+#| label: fig-box-swarm
+#| fig-cap: "Boxplot for poverty percent by county, with swarm plot."
+#| fig-alt: "The same boxplot from the previous slide, with data points plotted into it."
+#| fig-width: 7
+#| fig-height: 2
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data 
+df = pd.read_csv("../openintro.csv/county.csv")
+
+# Create plot with clear labels
+sns.swarmplot(data=df.sample(500), x='poverty')
 sns.boxplot(data=df, x='poverty')
 plt.xlabel(r"Poverty %")
 plt.title(r"Example Boxplot")

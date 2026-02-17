@@ -141,8 +141,13 @@ window.Quarto = {
   <li><a href="#canonical-quotient-homomorphism" id="toc-canonical-quotient-homomorphism" class="nav-link" data-scroll-target="#canonical-quotient-homomorphism"><span class="header-section-number">3.3</span> Canonical quotient homomorphism</a></li>
   <li><a href="#universal-property-of-the-quotient-map" id="toc-universal-property-of-the-quotient-map" class="nav-link" data-scroll-target="#universal-property-of-the-quotient-map"><span class="header-section-number">3.4</span> Universal property of the quotient map</a></li>
   <li><a href="#principal-ideals" id="toc-principal-ideals" class="nav-link" data-scroll-target="#principal-ideals"><span class="header-section-number">3.5</span> Principal Ideals</a></li>
-  <li><a href="#combining-ideals" id="toc-combining-ideals" class="nav-link" data-scroll-target="#combining-ideals"><span class="header-section-number">3.6</span> Combining Ideals</a></li>
-  <li><a href="#generating-ideals" id="toc-generating-ideals" class="nav-link" data-scroll-target="#generating-ideals"><span class="header-section-number">3.7</span> Generating ideals</a></li>
+  <li><a href="#combining-ideals" id="toc-combining-ideals" class="nav-link" data-scroll-target="#combining-ideals"><span class="header-section-number">3.6</span> Combining Ideals</a>
+  <ul class="collapse">
+  <li><a href="#intersections" id="toc-intersections" class="nav-link" data-scroll-target="#intersections"><span class="header-section-number">3.6.1</span> Intersections</a></li>
+  <li><a href="#unions" id="toc-unions" class="nav-link" data-scroll-target="#unions"><span class="header-section-number">3.6.2</span> Unions</a></li>
+  <li><a href="#sums" id="toc-sums" class="nav-link" data-scroll-target="#sums"><span class="header-section-number">3.6.3</span> Sums</a></li>
+  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products"><span class="header-section-number">3.6.4</span> Products</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#maximal-and-prime-ideals" id="toc-maximal-and-prime-ideals" class="nav-link" data-scroll-target="#maximal-and-prime-ideals"><span class="header-section-number">4</span> Maximal and Prime ideals</a>
   <ul class="collapse">
@@ -521,34 +526,55 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <section id="combining-ideals" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="combining-ideals"><span class="header-section-number">3.6</span> Combining Ideals</h2>
 <p>Since ideals are subsets, it’s natural to ask whether the union or intersection of ideals yields another.</p>
+<section id="intersections" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="intersections"><span class="header-section-number">3.6.1</span> Intersections</h3>
 <p><strong>Theorem:</strong> The intersection two ideals, or indeed any family ideals, is an ideal.</p>
 <p><strong>proof:</strong> Let <span class="math inline">\(\mathscr I\)</span> be a family of ideals, and write <span class="math inline">\(J = \bigcap \mathscr I\)</span> for their intersection. Certainly <span class="math inline">\(0 \in J\)</span>. For any <span class="math inline">\(a, b \in J\)</span>, <span class="math inline">\(a+b\)</span> is in every member of <span class="math inline">\(\mathscr I\)</span>, so <span class="math inline">\(a+b \in J\)</span>. Similarly, if <span class="math inline">\(a \in J\)</span>, then <span class="math inline">\(ra\)</span> is in every member of <span class="math inline">\(\mathscr I\)</span>, so <span class="math inline">\(ra \in J\)</span>. It follows that <span class="math inline">\(J\)</span> is an ideal.</p>
-<p>This theorem is often used to create a unique smallest ideal having some desired properties, by intersecting all ideals having that property. Sort of like shrink-wrap. For example, the principal ideal <span class="math inline">\((a)\)</span> could have been defined as the intersection of the family of all ideals which contains <span class="math inline">\(a\)</span>. As long as the property (here “contains <span class="math inline">\(a\)</span>”) is preserved by intersection, this trick will work.</p>
-<p><strong>Unions:</strong> The union of ideals is almost never an ideal, because if <span class="math inline">\(a \in I_1\)</span> and <span class="math inline">\(b \in I_2\)</span>, then <span class="math inline">\(a+b\)</span> is likely in neither ideal, so the union is not closed under summation. An exception is a union of a <strong>chain</strong> of ideals:</p>
+<p>This theorem is often used to create a unique smallest ideal having some desired properties, by intersecting all ideals having that property. Sort of like shrink-wrap. For example, the principal ideal <span class="math inline">\((a)\)</span> could have been defined as the intersection of the family of every ideal which contains <span class="math inline">\(a\)</span>. As long as the property (here “contains <span class="math inline">\(a\)</span>”) is preserved by intersection, this trick will create a unique smallest ideal with the property, contained in any other ideal with the property.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(S\)</span> be a subset of <span class="math inline">\(R\)</span>. The <strong>ideal generated by <span class="math inline">\(S\)</span>,</strong> written <span class="math inline">\((S)\)</span>, is (each of):</p>
+<ol type="i">
+<li>The intersection of all ideals <span class="math inline">\(I\)</span> of <span class="math inline">\(R\)</span> containing <span class="math inline">\(S\)</span>.</li>
+<li>The set of all <span class="math inline">\(R\)</span>-linear combinations <span class="math display">\[\{r_1s_1 + r_2s_2 + \ldots + r_ns_n | n \in {\mathbb N}, r_i \in R, s_i \in S\}\]</span></li>
+</ol>
+<p><strong>proof of equivalence:</strong> Write <span class="math inline">\((S)_{\text{outer}}\)</span> for the set described in i, and <span class="math inline">\((S)_{\text{inner}}\)</span> for the set described in ii. Then certainly <span class="math inline">\((S)_{\text{outer}}\)</span> is an ideal containing and is the smallest ideal containing <span class="math inline">\(S\)</span>.</p>
+<p>The set <span class="math inline">\((S)_{\text{inner}}\)</span> contains <span class="math inline">\(0\)</span>, is closed under addition, and satisfies multiplicative capture, so it is an ideal containing <span class="math inline">\(S\)</span>. Any other ideal <span class="math inline">\(I\)</span> containing <span class="math inline">\(S\)</span> must contain the elements of $<span class="math inline">\((S)_{\text{inner}}\)</span>, by capture and closure. It follows that <span class="math inline">\((S)_{\text{inner}}\)</span> is likewise the unique smallest ideal containing <span class="math inline">\(S\)</span>, so the two ideals agree.</p>
+</section>
+<section id="unions" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="unions"><span class="header-section-number">3.6.2</span> Unions</h3>
+<p>The union of ideals is almost never an ideal, because if <span class="math inline">\(a \in I_1\)</span> and <span class="math inline">\(b \in I_2\)</span>, there’s no reason to believe that <span class="math inline">\(a+b\)</span> is in either ideal, so the union is usually not closed under summation. Of course, if <span class="math inline">\(I \subseteq J\)</span> then their union <span class="math inline">\(I \cup J = J\)</span> is an ideal, but this is isn’t creative or useful. A more creative union is the union of a <strong>chain</strong> of ideals.</p>
 <p><strong>Definition:</strong> A <strong>chain</strong> <span class="math inline">\(\mathscr C\)</span> of ideals is a family which is totally ordered by the subset relation <span class="math inline">\(\subseteq\)</span>.</p>
-<p>Note that this is more general than an increasing or decreasing sequence of ideals. A chain may be uncountable and the order structure may be far more complicated than <span class="math inline">\({\mathbb N}\)</span> or <span class="math inline">\({\mathbb Z}\)</span>.</p>
+<p>Note that this is more general than an increasing or decreasing sequence of ideals. A chain may be uncountable and the order structure may be far more complicated than <span class="math inline">\({\mathbb N}\)</span> or <span class="math inline">\({\mathbb Z}\)</span>. For example, the family of principal ideals <span class="math inline">\(\{(x^r) | r \in (1,\infty)\}\)</span> is an uncountable chain of distinct ideals in the ring of continuous functions on <span class="math inline">\({\mathbb R}\)</span>.</p>
 <p><strong>Theorem:</strong> Let <span class="math inline">\(\mathscr C\)</span> be a (nonempty) chain of ideals. Then their union <span class="math inline">\(U = \bigcup C\)</span> is an ideal.</p>
-<p><strong>proof:</strong> We proceed in three steps 1. Since <span class="math inline">\(0 \in I \in \mathscr C\)</span> for some <span class="math inline">\(I\)</span>, <span class="math inline">\(0 \in U\)</span>. 2. Let <span class="math inline">\(a \in U\)</span>. Then <span class="math inline">\(a \in I \in \mathscr C\)</span>, so <span class="math inline">\(ra \in I \subseteq U\)</span>, as desired. 3. Let <span class="math inline">\(a, b \in U\)</span>. Then <span class="math inline">\(a \in I in \mathscr C\)</span> and <span class="math inline">\(b \in J \in mathscr C\)</span>. In this step alone it matters that <span class="math inline">\(\mathscr C\)</span> is a chain. Since it is, <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> have a containment relation and WLOG (by symmetry of the assumption) <span class="math inline">\(I \subseteq J\)</span>. Then <span class="math inline">\(a+b \in J \subseteq U\)</span> as desired.</p>
+<p><strong>proof:</strong> We proceed in three steps</p>
+<ol type="1">
+<li>Since <span class="math inline">\(0 \in I \in \mathscr C\)</span> for some <span class="math inline">\(I\)</span>, <span class="math inline">\(0 \in U\)</span>.</li>
+<li>Let <span class="math inline">\(a \in U\)</span>. Then <span class="math inline">\(a \in I \in \mathscr C\)</span>, so <span class="math inline">\(ra \in I \subseteq U\)</span>, as desired.</li>
+<li>Let <span class="math inline">\(a, b \in U\)</span>. Then <span class="math inline">\(a \in I \in \mathscr C\)</span> and <span class="math inline">\(b \in J \in \mathscr C\)</span>. In this step alone it matters that <span class="math inline">\(\mathscr C\)</span> is a chain. Since it is, <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> have a containment relation and WLOG (by symmetry of the assumption) <span class="math inline">\(I \subseteq J\)</span>. Then <span class="math inline">\(a+b \in J \subseteq U\)</span> as desired.</li>
+</ol>
+</section>
+<section id="sums" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="sums"><span class="header-section-number">3.6.3</span> Sums</h3>
 <p>What if we really really extra want to find the union of several ideals? Then we construct their <strong>sum</strong></p>
 <p><strong>Definition:</strong> The sum of two ideals <span class="math inline">\(I+J\)</span> is <span class="math inline">\(\ldots\)</span></p>
 <ol type="1">
 <li>the set of linear combinations <span class="math display">\[\{ra+sb \,|\, a \in I, b \in J, r,s \in R\}\]</span></li>
 <li>the intersection of all ideals of <span class="math inline">\(R\)</span> containing both <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span>.</li>
+<li>The ideal generated by the union <span class="math inline">\(I \cup J\)</span>.</li>
 </ol>
-<p><strong>correctness checks</strong></p>
-<p><strong>Claim:</strong> The description in (1) is indeed an ideal. <strong>proof</strong> The set obviously contains <span class="math inline">\(0\)</span>. It’s easy to check that it has additive closure and multiplicative capture.</p>
-<p><strong>Claim:</strong> The ideals in (1) and in (2) are the same. <strong>Proof:</strong> Any ideal containing both <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> must contain all such linear combinations, by closure and capture. This shows (1) (2), if you will. But the ideal of (1) is one of the ideals intersected in (2), and this yields the other containment.</p>
+<p>To prove these three equivalent, prove that each set contains <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span>, is an ideal, and is contained in any other ideal containing both <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span>.</p>
 <p>Sums of even infinite families are also possible:</p>
 <p><strong>Definition:</strong> The sum of any family <span class="math inline">\(\mathscr F\)</span> of ideals is <span class="math inline">\(\ldots\)</span></p>
 <ol type="1">
 <li>the set of <strong>finite</strong> linear combinations <span class="math display">\[\left \{\sum_{i} r_ia_i \,|\, r_i \in R, a_i \in F_i \in \mathscr F\right \}\]</span></li>
 <li>the intersection of all ideals in <span class="math inline">\(R\)</span> containing every <span class="math inline">\(F \in \mathscr F\)</span>.</li>
+<li>The ideal generated by <span class="math inline">\(\cup \mathscr F\)</span></li>
 </ol>
-<p><strong>Note:</strong> The proof that (1) is an ideal and that (1) and (2) describe the same set are essentially the same but slightly more fiddly.</p>
 </section>
-<section id="generating-ideals" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="generating-ideals"><span class="header-section-number">3.7</span> Generating ideals</h2>
-<p><strong>Definition:</strong> More generally, if <span class="math inline">\(A\)</span> is any sub<strong>set</strong> of a ring <span class="math inline">\(R\)</span>, the <strong>ideal generated by <span class="math inline">\(A\)</span></strong> is the intersection of all ideals containing <span class="math inline">\(A\)</span>. It is the unique minimal ideal containing <span class="math inline">\(A\)</span>.</p>
+<section id="products" class="level3" data-number="3.6.4">
+<h3 data-number="3.6.4" class="anchored" data-anchor-id="products"><span class="header-section-number">3.6.4</span> Products</h3>
+<p>Given two ideals <span class="math inline">\(I\)</span>, <span class="math inline">\(J\)</span> in a ring <span class="math inline">\(R\)</span>, the setwise product <span class="math inline">\(\{ij | i \in I, j \in J\}\)</span> satisfies the capture property, but can fail additive closure, since <span class="math inline">\(i_1j_1 + i_2j_2\)</span> need not have a factorization in the form <span class="math inline">\(i_3j_3\)</span>. As a simple example, if <span class="math inline">\(I = (2,x)\)</span> and <span class="math inline">\(J = (3,x)\)</span>, then <span class="math inline">\(x \cdot 3 + (-2)\cdot x = x\)</span> cannot be written <span class="math inline">\(ij\)</span> for <span class="math inline">\(i \in I\)</span> and <span class="math inline">\(j \in J\)</span>. We need to create all sums of such products to get additive closure:</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(I, J\)</span> be ideals of a ring <span class="math inline">\(R\)</span>. The product ideal <span class="math inline">\(IJ\)</span> is defined to be 1. The set of all sums of the form <span class="math display">\[\{i_1j_1 + i_2j_2 + \ldots + j_nj_n | n \in {\mathbb N}, i_k \in I, j_k \in J\}\]</span> 2. The ideal generated by the set <span class="math inline">\(\{ij | i \in I, j \in J\}\)</span></p>
+</section>
 </section>
 </section>
 <section id="maximal-and-prime-ideals" class="level1" data-number="4">
@@ -558,11 +584,11 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <p>Five is a prime number of course. One interpretation is that for any product <span class="math inline">\(ab\)</span> divisible by <span class="math inline">\(5\)</span>, one of the factors <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span> is divisible by <span class="math inline">\(5\)</span>. Notice that this condition is as much about the class of numbers divisible by <span class="math inline">\(5\)</span>, an ideal, as it is about <span class="math inline">\(5\)</span> itself. This motivates our next definition.</p>
 <p><strong>Definition:</strong> Let <span class="math inline">\(I \subseteq R\)</span> be an ideal. We call <span class="math inline">\(I\)</span> <strong>prime</strong> if <span class="math inline">\(I\)</span> is not the unit ideal and whenever <span class="math inline">\(ab \in I\)</span>, then <span class="math inline">\(a\)</span> I$ or <span class="math inline">\(b \in I\)</span>.</p>
 <p>This is sort of a converse of the multiplicative capture property.</p>
-<p>** Examples: **</p>
+<p><strong>Examples:</strong></p>
 <ol type="1">
 <li>The prime ideal of <span class="math inline">\({\mathbb Z}\)</span> are exactly the ideals <span class="math inline">\((p)\)</span> generated by prime numbers, and the zero ideal.</li>
 <li>The field <span class="math inline">\({\mathbb R}\)</span> has only two ideals, and the small one, <span class="math inline">\((0)\)</span>, is prime.</li>
-<li>A ring <span class="math inline">\(R\)</span> is a domain if and only if then the zero ideal is prime.</li>
+<li>A ring <span class="math inline">\(R\)</span> is a domain if and only if the zero ideal is prime.</li>
 </ol>
 <p>Next we define maximal ideals. The absolute largest ideal in any ring <span class="math inline">\(R\)</span> is the unit ideal, <span class="math inline">\(R\)</span> itself. By “maximal ideal” we mean not quite that large, but otherwise as large as can be:</p>
 <p><strong>Definition:</strong> Let <span class="math inline">\(I \subseteq R\)</span> be an ideal. We call <span class="math inline">\(I\)</span> <strong>maximal</strong> if the only ideal which properly contains it is the unit ideal.</p>
@@ -570,7 +596,7 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <p><strong>Examples:</strong></p>
 <ol type="1">
 <li>The maximal ideals of <span class="math inline">\({\mathbb Z}\)</span> are, once again, exactly the ideals <span class="math inline">\((p)\)</span> generated by prime numbers. The zero ideal is not maximal.</li>
-<li>In function rings, it’s common to construct the ideal of all functions <span class="math inline">\(f\)</span> which take the value <span class="math inline">\(0\)</span> at a given fixed point <span class="math inline">\(x \in X\)</span>. Often, such an ideal is maximal. Except in some very strange circumstances, this sort of ideal will be maximal.</li>
+<li>In function rings, it’s common to construct the ideal of all functions <span class="math inline">\(f\)</span> which take the value <span class="math inline">\(0\)</span> at a given fixed point <span class="math inline">\(x \in X\)</span>. Often, such an ideal is maximal.</li>
 </ol>
 </section>
 <section id="quotient-by-prime-or-maximal" class="level2" data-number="4.2">
@@ -606,6 +632,7 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <ol type="1">
 <li><p>We apply Zorn’s Lemma to the poset of all ideals of <span class="math inline">\(R\)</span>. This produces a maximal element of the poset, which of course is the unit ideal, <span class="math inline">\(R\)</span> itself. What a waste of a Lemma!</p></li>
 <li><p>We apply Zorn’s Lemma to the poset of all proper ideals of <span class="math inline">\(R\)</span>. (That is, excluding the unit ideal.) Any maximal element of this poset is a maximal ideal in the normal sense. This demonstrates that every commutative ring has a maximal ideal.</p></li>
+<li><p>Given a fixed proper ideal <span class="math inline">\(I\)</span>, we apply Zorn’s Lemma to the poset of all ideals of <span class="math inline">\(R\)</span> which contain <span class="math inline">\(I\)</span>, excluding the unit ideal. A maximal element of this poset is a maximal ideal which contains <span class="math inline">\(I\)</span>. This demonstrates that every proper ideal is contained in some maximal ideal.</p></li>
 <li><p>We fix <span class="math inline">\(f \in R\)</span> (not nilpotent) and apply Zorn’s Lemma to the poset of ideals which contain neither <span class="math inline">\(f\)</span> nor or any power of <span class="math inline">\(f\)</span>. Notice this condition is preserved under chain unions. The result is an ideal <span class="math inline">\(I\)</span> which may not be a maximal ideal, but will always be prime.</p></li>
 </ol>
 </section>
