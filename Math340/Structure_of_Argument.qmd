@@ -528,9 +528,7 @@ The meaning of $x$ is stable throughout the argument, but when the argument ends
 ### Examples -- proving a generalization
 
 1. odd * odd = odd
-
 2. $A \cap B \subseteq B$
-
 3. $\emptyset \subseteq A$
 
 ### Using $\forall$ as a premise
@@ -583,6 +581,92 @@ When an existential statement is known, how do we use it as a premise? This is m
 3. There must be a tallest person in the world. Let $A$ represent that person.
 
 In all cases, we don't really know which thing has been chosen, but we trust that the newly introduced symbol represents something correctly. It's important that the new symbol is unencumbered by other meaning. We cannot, for example, say "Let `jason howald' represent the tallest person." or "Let $\sqrt{2}$ represent the equation's solution."
+
+## Complex combinations
+
+A mathematical statement is often a complicated combination of logical and nonlogical
+ideas. Proving even an easy statement with deep logical structure can be a challenge. Let's consider some examples. The underlying principle this:
+
+> The argument structure of the proof is a mirror of the syntactic structure of the statement. 
+
+### Epsilon and Delta
+
+**Definition:** In calculus we often say $\lim_{x \to c} f(x) = L$. The formal interpretation of this statement is a lengthy statement called the "epsilon delta definition":
+
+$$\forall \varepsilon > 0 \enspace \exists \delta > 0 \enspace \forall x \enspace
+0 < |x-c| < \delta \to |f(x) - f(c)|<\varepsilon$$
+
+Using this definition, we may have to proof, for example, that $\lim_{x \to 2} 5x + 3 = 13$. 
+It's normal to feel a bit baffled by the statement, at a loss for how to begin. In fact you already know most of what you need. We'll give the proof with reasons for each step. 
+
+
+| Proof | Explanation |
+|---|---|
+| Goal: $\displaystyle \lim_{x \to 2} 5x + 3 = 13$ |  |
+| Let $\varepsilon > 0$ | The statement begin $\forall \varepsilon > 0 \ldots $ It is universal in form. The basic structure of proof should therefore be to reason about an arbitrary particular $\varepsilon$. |
+| Choose $\delta = \underline{\hspace{1in}}$ | The statement to prove about the given  $\varepsilon$ begins $\exists \delta>0$. To prove something exists, I must provide a single constructed example. However, I don't yet know which choice of $\delta$ is correct, so I will leave it blank for now. |
+| Let $x \in {\mathbb R} | In context (with $\varepsilon$ and $\delta$ chosen), I must prove a universal "$\forall x  \ldots$. This is the only reasonable way to begin to do so.|
+| Assume $0 < |x-c| < \delta$ | In context (having $\varepsilon$, $\delta$, and $x$), we must prove an implication. A direct proof is the most natural way, so we assume the first part with intent to prove the second part. | 
+| $|f(x) - f(c)| = \ldots $ | Our only hope to prove $|f(x) - f(c)|<\varepsilon$ is to calculate the left-hand side in detail and prove that it's (for some reason) less than $\varepsilon$.|
+| 
+\begin{align} 
+& |f(x) - f(c)| \\
+& |f(x) - f(2)| \\
+&= | (5x+3) - (5\cdot 2+3)| \\
+&= | (5x+3) - 13| \\
+&= | 5x - 10 | \\
+&= 5| x - 2 | \\
+\end{align}
+| Without any special techniques, we expand and simplify, plugging in the known value for $c$, the formula for $f$, and generally applying algebra as we see it.|
+| $\ldots 5| x - 2 | < 5 \delta$ | There is an active assumption after all. |
+
+All of this is "following the logic" without any real cleverness. But now we are stymied, first by the fact that $|f(x) - f(c)|$ is supposed to be proved $< \varepsilon$, and second by the fact that we cannot continue because we didn't actually choose $\delta$ to be a specific value. We left that blank. These problems solve each other. Retroactively we set $\delta = \varepsilon / 5$, and continue $\ldots 5| x - 2 | < 5 \delta = \varepsilon$.
+
+Now discharging the assumption, our implication is proven. Discharging the choice of $x$, our universal $\forall x$ is proven. By proof-by-example, our $\exists \delta>0$ is proven. Finally discharging the choice of $\varepsilon$, we finish the proof. All of these "clean up" steps are usually left unsaid. 
+
+In summary, if we trust that the syntax of the statement guides the structure of its proof, and if we're comfortable doing a bit of algebra, then the proof is self-authoring except for one fairly simply idea, which is to choose $\delta = \varepsilon/5$. 
+
+### Modular arithmetic examples
+
+When we do math with days of the week or numbers on the clock, we often 
+like to treat numbers cyclically. A certain number ($7$ or $12$) artificially
+counts for nothing, which causes
+other numbers ($2$, $9$, and $16$ in the case of weeks, 
+$2$, $14$, and $26$ in the case of clocks) to count as equal. This is called
+**modular arithmetic**. The cycle length number ($7$ or $12$) is called the 
+**modulus**, and the "sameness" (e.g. $2$ and $9$) is called **modular equivalence**
+written $2 \equiv 9$ (mod 7).
+
+To be more formal, $a \equiv b$ (mod $n$) means: $$\exists k \enspace kn = (b-a)$$ 
+
+Our next proof example is this claim: 
+
+**Proposition:** If $a \equiv b$ (mod $n$) then $a^2 \equiv b^2$ (mod $n$). 
+
+To unpack this into quantified logic, we obtain: 
+
+$$\forall a \enspace \forall b \enspace \forall n \enspace  
+((\exists k \enspace kn = (b-a)) \to (\exists k \enspace kn = (b^2-a^2)))$$
+
+Let's get started. Much of the beginning is forced:
+
+| Proof | Explanation |
+|---|---|
+| Let $a \in {\mathbb Z}$ | forced |
+| Let $b \in {\mathbb Z}$ | forced |
+| Let $n \in {\mathbb Z}$ | forced |
+| Assume $\exists k \enspace kn = (b-a)$ | for the direct proof | 
+| Let $k \in {\mathbb Z}$ satisfy $kn = (b-a)$ | This is somewhat tricky. We need to use the existential assumption to move forward. It empowers us to choose some certain $k$ having the relevant property $kn=(b-a)$. It's the difference between "something" and "this thing."| 
+
+At this point we may feel stuck. Obviously we need to show "$(\exists k \enspace kn = (b^2-a^2))$", which, since it's an existential, will be demonstrated by picking out a particular $k$ satisfying the equation $kn = (b^2-a^2)$. But this goal doesn't fit our known equation $kn = (b-a)$. What to do? The trick is that the $k$ doesn't have to be the same in both cases. First we allow some algebra to guide us:
+
+$$b^2-a^2 = (b-a)(b+a) = kn(b+a) = (k(b+a))n$$
+
+And there it is. The difference $b^2-a^2$ is something times $n$. It doesn't really matter that the "something" is $k(b+a)$. This allows us to infer (proof by example) the desired existential:
+
+$$\exists k \enspace b^2-a^2 = kn$$
+
+Now it's just a matter of clean-up. Discharging our assumption, we've proven the implication. Discharging the arbitrary choices of $n$, $b$, and $a$ (in that order), we've proven the universal statement. As always, this clean-up is usually left unsaid. 
 
 # Set Theory
 

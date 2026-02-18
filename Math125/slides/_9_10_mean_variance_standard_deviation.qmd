@@ -27,11 +27,11 @@ Find the coast_starlight data on openintro. It has only 16 lines. We want the av
 
 ## Understanding the average {.activity}
 In everyday English, “average” means “typical” or “usual." In math, it always means 
-"sum / count". This can be different from "typical".
+"sum divided by count". This can be different from "typical".
 
 1. What is the average number of fingers (including thumbs) on a person?
 2. What is the average result of a (standard six sided) die roll?
-3. Do you know the average number of kids in a U.S. family?
+3. What is the average number of kids in a U.S. family?
 
 ## Variance and standard deviation – intro
 

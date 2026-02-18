@@ -165,6 +165,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#proof-theory-of-exists" id="toc-proof-theory-of-exists" class="nav-link" data-scroll-target="#proof-theory-of-exists"><span class="header-section-number">2.8.1</span> Proof theory of <span class="math inline">\(\exists\)</span></a></li>
   </ul></li>
+  <li><a href="#complex-combinations" id="toc-complex-combinations" class="nav-link" data-scroll-target="#complex-combinations"><span class="header-section-number">2.9</span> Complex combinations</a>
+  <ul class="collapse">
+  <li><a href="#epsilon-and-delta" id="toc-epsilon-and-delta" class="nav-link" data-scroll-target="#epsilon-and-delta"><span class="header-section-number">2.9.1</span> Epsilon and Delta</a></li>
+  <li><a href="#modular-arithmetic-examples" id="toc-modular-arithmetic-examples" class="nav-link" data-scroll-target="#modular-arithmetic-examples"><span class="header-section-number">2.9.2</span> Modular arithmetic examples</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#set-theory" id="toc-set-theory" class="nav-link" data-scroll-target="#set-theory"><span class="header-section-number">3</span> Set Theory</a>
   <ul class="collapse">
@@ -734,9 +739,9 @@ x=3 \text{ or } x&amp;=-2\\
 <section id="examples-proving-a-generalization" class="level3" data-number="2.7.4">
 <h3 data-number="2.7.4" class="anchored" data-anchor-id="examples-proving-a-generalization"><span class="header-section-number">2.7.4</span> Examples – proving a generalization</h3>
 <ol type="1">
-<li><p>odd * odd = odd</p></li>
-<li><p><span class="math inline">\(A \cap B \subseteq B\)</span></p></li>
-<li><p><span class="math inline">\(\emptyset \subseteq A\)</span></p></li>
+<li>odd * odd = odd</li>
+<li><span class="math inline">\(A \cap B \subseteq B\)</span></li>
+<li><span class="math inline">\(\emptyset \subseteq A\)</span></li>
 </ol>
 </section>
 <section id="using-forall-as-a-premise" class="level3" data-number="2.7.5">
@@ -782,6 +787,123 @@ x=3 \text{ or } x&amp;=-2\\
 </ol>
 <p>In all cases, we don’t really know which thing has been chosen, but we trust that the newly introduced symbol represents something correctly. It’s important that the new symbol is unencumbered by other meaning. We cannot, for example, say “Let `jason howald’ represent the tallest person.” or “Let <span class="math inline">\(\sqrt{2}\)</span> represent the equation’s solution.”</p>
 </section>
+</section>
+</section>
+<section id="complex-combinations" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="complex-combinations"><span class="header-section-number">2.9</span> Complex combinations</h2>
+<p>A mathematical statement is often a complicated combination of logical and nonlogical ideas. Proving even an easy statement with deep logical structure can be a challenge. Let’s consider some examples. The underlying principle this:</p>
+<blockquote class="blockquote">
+<p>The argument structure of the proof is a mirror of the syntactic structure of the statement.</p>
+</blockquote>
+<section id="epsilon-and-delta" class="level3" data-number="2.9.1">
+<h3 data-number="2.9.1" class="anchored" data-anchor-id="epsilon-and-delta"><span class="header-section-number">2.9.1</span> Epsilon and Delta</h3>
+<p><strong>Definition:</strong> In calculus we often say <span class="math inline">\(\lim_{x \to c} f(x) = L\)</span>. The formal interpretation of this statement is a lengthy statement called the “epsilon delta definition”:</p>
+<p><span class="math display">\[\forall \varepsilon &gt; 0 \enspace \exists \delta &gt; 0 \enspace \forall x \enspace
+0 &lt; |x-c| &lt; \delta \to |f(x) - f(c)|&lt;\varepsilon\]</span></p>
+<p>Using this definition, we may have to proof, for example, that <span class="math inline">\(\lim_{x \to 2} 5x + 3 = 13\)</span>. It’s normal to feel a bit baffled by the statement, at a loss for how to begin. In fact you already know most of what you need. We’ll give the proof with reasons for each step.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Proof</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goal: <span class="math inline">\(\displaystyle \lim_{x \to 2} 5x + 3 = 13\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Let <span class="math inline">\(\varepsilon &gt; 0\)</span></td>
+<td>The statement begin $&gt; 0 $ It is universal in form. The basic structure of proof should therefore be to reason about an arbitrary particular <span class="math inline">\(\varepsilon\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>Choose <span class="math inline">\(\delta = \underline{\hspace{1in}}\)</span></td>
+<td>The statement to prove about the given <span class="math inline">\(\varepsilon\)</span> begins <span class="math inline">\(\exists \delta&gt;0\)</span>. To prove something exists, I must provide a single constructed example. However, I don’t yet know which choice of <span class="math inline">\(\delta\)</span> is correct, so I will leave it blank for now.</td>
+</tr>
+<tr class="even">
+<td>Let $x </td>
+<td>In context (with <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> chosen), I must prove a universal “<span class="math inline">\(\forall x  \ldots\)</span>. This is the only reasonable way to begin to do so.</td>
+</tr>
+<tr class="odd">
+<td>Assume <span class="math inline">\(0 &lt; |x-c| &lt; \delta\)</span></td>
+<td>In context (having <span class="math inline">\(\varepsilon\)</span>, <span class="math inline">\(\delta\)</span>, and <span class="math inline">\(x\)</span>), we must prove an implication. A direct proof is the most natural way, so we assume the first part with intent to prove the second part.</td>
+</tr>
+<tr class="even">
+<td>$</td>
+<td>f(x) - f(c)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{align}
+&amp; |f(x) - f(c)| \\
+&amp; |f(x) - f(2)| \\
+&amp;= | (5x+3) - (5\cdot 2+3)| \\
+&amp;= | (5x+3) - 13| \\
+&amp;= | 5x - 10 | \\
+&amp;= 5| x - 2 | \\
+\end{align}\]</span> | Without any special techniques, we expand and simplify, plugging in the known value for <span class="math inline">\(c\)</span>, the formula for <span class="math inline">\(f\)</span>, and generally applying algebra as we see it.| | <span class="math inline">\(\ldots 5| x - 2 | &lt; 5 \delta\)</span> | There is an active assumption after all. |</p>
+<p>All of this is “following the logic” without any real cleverness. But now we are stymied, first by the fact that <span class="math inline">\(|f(x) - f(c)|\)</span> is supposed to be proved <span class="math inline">\(&lt; \varepsilon\)</span>, and second by the fact that we cannot continue because we didn’t actually choose <span class="math inline">\(\delta\)</span> to be a specific value. We left that blank. These problems solve each other. Retroactively we set <span class="math inline">\(\delta = \varepsilon / 5\)</span>, and continue <span class="math inline">\(\ldots 5| x - 2 | &lt; 5 \delta = \varepsilon\)</span>.</p>
+<p>Now discharging the assumption, our implication is proven. Discharging the choice of <span class="math inline">\(x\)</span>, our universal <span class="math inline">\(\forall x\)</span> is proven. By proof-by-example, our <span class="math inline">\(\exists \delta&gt;0\)</span> is proven. Finally discharging the choice of <span class="math inline">\(\varepsilon\)</span>, we finish the proof. All of these “clean up” steps are usually left unsaid.</p>
+<p>In summary, if we trust that the syntax of the statement guides the structure of its proof, and if we’re comfortable doing a bit of algebra, then the proof is self-authoring except for one fairly simply idea, which is to choose <span class="math inline">\(\delta = \varepsilon/5\)</span>.</p>
+</section>
+<section id="modular-arithmetic-examples" class="level3" data-number="2.9.2">
+<h3 data-number="2.9.2" class="anchored" data-anchor-id="modular-arithmetic-examples"><span class="header-section-number">2.9.2</span> Modular arithmetic examples</h3>
+<p>When we do math with days of the week or numbers on the clock, we often like to treat numbers cyclically. A certain number (<span class="math inline">\(7\)</span> or <span class="math inline">\(12\)</span>) artificially counts for nothing, which causes other numbers (<span class="math inline">\(2\)</span>, <span class="math inline">\(9\)</span>, and <span class="math inline">\(16\)</span> in the case of weeks, <span class="math inline">\(2\)</span>, <span class="math inline">\(14\)</span>, and <span class="math inline">\(26\)</span> in the case of clocks) to count as equal. This is called <strong>modular arithmetic</strong>. The cycle length number (<span class="math inline">\(7\)</span> or <span class="math inline">\(12\)</span>) is called the <strong>modulus</strong>, and the “sameness” (e.g.&nbsp;<span class="math inline">\(2\)</span> and <span class="math inline">\(9\)</span>) is called <strong>modular equivalence</strong> written <span class="math inline">\(2 \equiv 9\)</span> (mod 7).</p>
+<p>To be more formal, <span class="math inline">\(a \equiv b\)</span> (mod <span class="math inline">\(n\)</span>) means: <span class="math display">\[\exists k \enspace kn = (b-a)\]</span></p>
+<p>Our next proof example is this claim:</p>
+<p><strong>Proposition:</strong> If <span class="math inline">\(a \equiv b\)</span> (mod <span class="math inline">\(n\)</span>) then <span class="math inline">\(a^2 \equiv b^2\)</span> (mod <span class="math inline">\(n\)</span>).</p>
+<p>To unpack this into quantified logic, we obtain:</p>
+<p><span class="math display">\[\forall a \enspace \forall b \enspace \forall n \enspace  
+((\exists k \enspace kn = (b-a)) \to (\exists k \enspace kn = (b^2-a^2)))\]</span></p>
+<p>Let’s get started. Much of the beginning is forced:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Proof</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Let <span class="math inline">\(a \in {\mathbb Z}\)</span></td>
+<td>forced</td>
+</tr>
+<tr class="even">
+<td>Let <span class="math inline">\(b \in {\mathbb Z}\)</span></td>
+<td>forced</td>
+</tr>
+<tr class="odd">
+<td>Let <span class="math inline">\(n \in {\mathbb Z}\)</span></td>
+<td>forced</td>
+</tr>
+<tr class="even">
+<td>Assume <span class="math inline">\(\exists k \enspace kn = (b-a)\)</span></td>
+<td>for the direct proof</td>
+</tr>
+<tr class="odd">
+<td>Let <span class="math inline">\(k \in {\mathbb Z}\)</span> satisfy <span class="math inline">\(kn = (b-a)\)</span></td>
+<td>This is somewhat tricky. We need to use the existential assumption to move forward. It empowers us to choose some certain <span class="math inline">\(k\)</span> having the relevant property <span class="math inline">\(kn=(b-a)\)</span>. It’s the difference between “something” and “this thing.”</td>
+</tr>
+</tbody>
+</table>
+<p>At this point we may feel stuck. Obviously we need to show “<span class="math inline">\((\exists k \enspace kn = (b^2-a^2))\)</span>”, which, since it’s an existential, will be demonstrated by picking out a particular <span class="math inline">\(k\)</span> satisfying the equation <span class="math inline">\(kn = (b^2-a^2)\)</span>. But this goal doesn’t fit our known equation <span class="math inline">\(kn = (b-a)\)</span>. What to do? The trick is that the <span class="math inline">\(k\)</span> doesn’t have to be the same in both cases. First we allow some algebra to guide us:</p>
+<p><span class="math display">\[b^2-a^2 = (b-a)(b+a) = kn(b+a) = (k(b+a))n\]</span></p>
+<p>And there it is. The difference <span class="math inline">\(b^2-a^2\)</span> is something times <span class="math inline">\(n\)</span>. It doesn’t really matter that the “something” is <span class="math inline">\(k(b+a)\)</span>. This allows us to infer (proof by example) the desired existential:</p>
+<p><span class="math display">\[\exists k \enspace b^2-a^2 = kn\]</span></p>
+<p>Now it’s just a matter of clean-up. Discharging our assumption, we’ve proven the implication. Discharging the arbitrary choices of <span class="math inline">\(n\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(a\)</span> (in that order), we’ve proven the universal statement. As always, this clean-up is usually left unsaid.</p>
 </section>
 </section>
 </section>
