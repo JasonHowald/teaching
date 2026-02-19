@@ -140,13 +140,14 @@ window.Quarto = {
   <li><a href="#you-can-mod-out-by-an-ideal" id="toc-you-can-mod-out-by-an-ideal" class="nav-link" data-scroll-target="#you-can-mod-out-by-an-ideal"><span class="header-section-number">3.2</span> You can mod out by an ideal</a></li>
   <li><a href="#canonical-quotient-homomorphism" id="toc-canonical-quotient-homomorphism" class="nav-link" data-scroll-target="#canonical-quotient-homomorphism"><span class="header-section-number">3.3</span> Canonical quotient homomorphism</a></li>
   <li><a href="#universal-property-of-the-quotient-map" id="toc-universal-property-of-the-quotient-map" class="nav-link" data-scroll-target="#universal-property-of-the-quotient-map"><span class="header-section-number">3.4</span> Universal property of the quotient map</a></li>
-  <li><a href="#principal-ideals" id="toc-principal-ideals" class="nav-link" data-scroll-target="#principal-ideals"><span class="header-section-number">3.5</span> Principal Ideals</a></li>
-  <li><a href="#combining-ideals" id="toc-combining-ideals" class="nav-link" data-scroll-target="#combining-ideals"><span class="header-section-number">3.6</span> Combining Ideals</a>
+  <li><a href="#first-isomorphism-theorem" id="toc-first-isomorphism-theorem" class="nav-link" data-scroll-target="#first-isomorphism-theorem"><span class="header-section-number">3.5</span> First Isomorphism Theorem</a></li>
+  <li><a href="#principal-ideals" id="toc-principal-ideals" class="nav-link" data-scroll-target="#principal-ideals"><span class="header-section-number">3.6</span> Principal Ideals</a></li>
+  <li><a href="#combining-ideals" id="toc-combining-ideals" class="nav-link" data-scroll-target="#combining-ideals"><span class="header-section-number">3.7</span> Combining Ideals</a>
   <ul class="collapse">
-  <li><a href="#intersections" id="toc-intersections" class="nav-link" data-scroll-target="#intersections"><span class="header-section-number">3.6.1</span> Intersections</a></li>
-  <li><a href="#unions" id="toc-unions" class="nav-link" data-scroll-target="#unions"><span class="header-section-number">3.6.2</span> Unions</a></li>
-  <li><a href="#sums" id="toc-sums" class="nav-link" data-scroll-target="#sums"><span class="header-section-number">3.6.3</span> Sums</a></li>
-  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products"><span class="header-section-number">3.6.4</span> Products</a></li>
+  <li><a href="#intersections" id="toc-intersections" class="nav-link" data-scroll-target="#intersections"><span class="header-section-number">3.7.1</span> Intersections</a></li>
+  <li><a href="#unions" id="toc-unions" class="nav-link" data-scroll-target="#unions"><span class="header-section-number">3.7.2</span> Unions</a></li>
+  <li><a href="#sums" id="toc-sums" class="nav-link" data-scroll-target="#sums"><span class="header-section-number">3.7.3</span> Sums</a></li>
+  <li><a href="#products" id="toc-products" class="nav-link" data-scroll-target="#products"><span class="header-section-number">3.7.4</span> Products</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#maximal-and-prime-ideals" id="toc-maximal-and-prime-ideals" class="nav-link" data-scroll-target="#maximal-and-prime-ideals"><span class="header-section-number">4</span> Maximal and Prime ideals</a>
@@ -508,8 +509,14 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <p><strong>Theorem:</strong> If <span class="math inline">\(\mu: R \to T\)</span> is another map for which the previous theorem is true (with <span class="math inline">\(\mu\)</span> for <span class="math inline">\(\phi\)</span> and <span class="math inline">\(T\)</span> for <span class="math inline">\(R/I\)</span>, then there is an isomorphism <span class="math inline">\(G:R/I \to T\)</span> and <span class="math inline">\(G\phi = \mu\)</span>.</p>
 <p><strong>proof:</strong> Construct both commutative triangles and compare their compositions to the identity.</p>
 </section>
-<section id="principal-ideals" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="principal-ideals"><span class="header-section-number">3.5</span> Principal Ideals</h2>
+<section id="first-isomorphism-theorem" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="first-isomorphism-theorem"><span class="header-section-number">3.5</span> First Isomorphism Theorem</h2>
+<p>As for groups, we have a first isomorphism theorem for rings</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(f:R \to S\)</span> be a ring homomorphism. Then the image <span class="math inline">\(f(R)\)</span> is a subring of <span class="math inline">\(S\)</span> and is isomorphic to <span class="math inline">\(R/\ker(f)\)</span>. Specifically, the map <span class="math display">\[\phi:R/\ker(f) \to \operatorname{im}(f) \enspace \text{ by }  \phi(r+\ker(f)) = f(r)\]</span> is the isomorphism.</p>
+<p><strong>proof:</strong> Since <span class="math inline">\(f\)</span> is a homomorphism, <span class="math inline">\(f(R)\)</span> contains <span class="math inline">\(0_S\)</span> and <span class="math inline">\(1_S\)</span>. The image is closed under addition and multiplication because <span class="math inline">\(f(x)f(y) = f(xy)\)</span> and <span class="math inline">\(f(x)+f(y) = f(x+y)\)</span>. Now clearly <span class="math inline">\(f:R \to \operatorname{im}(f)\)</span> sends the elements of <span class="math inline">\(\ker(f)\)</span> to <span class="math inline">\(0_S\)</span>, so the universal property of the quotient produces a homomorphism <span class="math inline">\(\phi:R/\ker(f) \to \operatorname{im}(f)\)</span> for which <span class="math inline">\(\phi(r+\ker(f)) = f(r)\)</span>. Obviously this <span class="math inline">\(\phi\)</span> is surjective (onto <span class="math inline">\(\operatorname{im}(f)\)</span>). To prove that <span class="math inline">\(\phi\)</span> is injective, let us consider <span class="math inline">\(\ker(\phi)\)</span>. If <span class="math inline">\(\phi(r+\ker(f)) = 0\)</span> then <span class="math inline">\(f(r)=0\)</span>, so <span class="math inline">\(r \in \ker(f)\)</span> and then <span class="math inline">\(r+\ker(f)=\ker(f) = 0_{R/\ker(f)}\)</span> That is, the only element of <span class="math inline">\(\ker(\phi)\)</span> is the zero of its domain ring. It follows that <span class="math inline">\(\phi\)</span> is an isomorphism of rings.</p>
+</section>
+<section id="principal-ideals" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="principal-ideals"><span class="header-section-number">3.6</span> Principal Ideals</h2>
 <p><strong>Definition:</strong> Let <span class="math inline">\(a \in R\)</span>. (<span class="math inline">\(R\)</span> commutative.) The <strong>principal ideal generated by <span class="math inline">\(a\)</span></strong>, written <span class="math inline">\((a)\)</span>, is the set <span class="math inline">\(aR\)</span>. If an ideal <span class="math inline">\(I\)</span> equals <span class="math inline">\((a)\)</span> for some <span class="math inline">\(a\)</span>, then <span class="math inline">\(I\)</span> is <strong>principal.</strong></p>
 <p><strong>Examples:</strong></p>
 <ol type="1">
@@ -523,11 +530,11 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <p><strong>Corollary:</strong> The quotient rings of <span class="math inline">\({\mathbb Z}\)</span> are <span class="math inline">\({\mathbb Z}\)</span> itself, the zero ring, and the various finite rings <span class="math inline">\({\mathbb Z}/(n)\)</span>.</p>
 <p><strong>Example:</strong> This is probably the easiest “natural” example of a nonprincipal ideal. Let <span class="math inline">\(R = {\mathbb Z}[x]\)</span> be the polynomial ring with integer coefficients, and let <span class="math inline">\(I = \{f \in R \,|\, f(0) \text{ is even } \}\)</span>. Then <span class="math inline">\(I\)</span> contains both <span class="math inline">\(2\)</span> and <span class="math inline">\(x\)</span>. Because no polynomial is a factor of both <span class="math inline">\(2\)</span> and <span class="math inline">\(x\)</span>, the ideal <span class="math inline">\(I\)</span> is not principal.</p>
 </section>
-<section id="combining-ideals" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="combining-ideals"><span class="header-section-number">3.6</span> Combining Ideals</h2>
+<section id="combining-ideals" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="combining-ideals"><span class="header-section-number">3.7</span> Combining Ideals</h2>
 <p>Since ideals are subsets, it’s natural to ask whether the union or intersection of ideals yields another.</p>
-<section id="intersections" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="intersections"><span class="header-section-number">3.6.1</span> Intersections</h3>
+<section id="intersections" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="intersections"><span class="header-section-number">3.7.1</span> Intersections</h3>
 <p><strong>Theorem:</strong> The intersection two ideals, or indeed any family ideals, is an ideal.</p>
 <p><strong>proof:</strong> Let <span class="math inline">\(\mathscr I\)</span> be a family of ideals, and write <span class="math inline">\(J = \bigcap \mathscr I\)</span> for their intersection. Certainly <span class="math inline">\(0 \in J\)</span>. For any <span class="math inline">\(a, b \in J\)</span>, <span class="math inline">\(a+b\)</span> is in every member of <span class="math inline">\(\mathscr I\)</span>, so <span class="math inline">\(a+b \in J\)</span>. Similarly, if <span class="math inline">\(a \in J\)</span>, then <span class="math inline">\(ra\)</span> is in every member of <span class="math inline">\(\mathscr I\)</span>, so <span class="math inline">\(ra \in J\)</span>. It follows that <span class="math inline">\(J\)</span> is an ideal.</p>
 <p>This theorem is often used to create a unique smallest ideal having some desired properties, by intersecting all ideals having that property. Sort of like shrink-wrap. For example, the principal ideal <span class="math inline">\((a)\)</span> could have been defined as the intersection of the family of every ideal which contains <span class="math inline">\(a\)</span>. As long as the property (here “contains <span class="math inline">\(a\)</span>”) is preserved by intersection, this trick will create a unique smallest ideal with the property, contained in any other ideal with the property.</p>
@@ -539,8 +546,8 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <p><strong>proof of equivalence:</strong> Write <span class="math inline">\((S)_{\text{outer}}\)</span> for the set described in i, and <span class="math inline">\((S)_{\text{inner}}\)</span> for the set described in ii. Then certainly <span class="math inline">\((S)_{\text{outer}}\)</span> is an ideal containing and is the smallest ideal containing <span class="math inline">\(S\)</span>.</p>
 <p>The set <span class="math inline">\((S)_{\text{inner}}\)</span> contains <span class="math inline">\(0\)</span>, is closed under addition, and satisfies multiplicative capture, so it is an ideal containing <span class="math inline">\(S\)</span>. Any other ideal <span class="math inline">\(I\)</span> containing <span class="math inline">\(S\)</span> must contain the elements of $<span class="math inline">\((S)_{\text{inner}}\)</span>, by capture and closure. It follows that <span class="math inline">\((S)_{\text{inner}}\)</span> is likewise the unique smallest ideal containing <span class="math inline">\(S\)</span>, so the two ideals agree.</p>
 </section>
-<section id="unions" class="level3" data-number="3.6.2">
-<h3 data-number="3.6.2" class="anchored" data-anchor-id="unions"><span class="header-section-number">3.6.2</span> Unions</h3>
+<section id="unions" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="unions"><span class="header-section-number">3.7.2</span> Unions</h3>
 <p>The union of ideals is almost never an ideal, because if <span class="math inline">\(a \in I_1\)</span> and <span class="math inline">\(b \in I_2\)</span>, there’s no reason to believe that <span class="math inline">\(a+b\)</span> is in either ideal, so the union is usually not closed under summation. Of course, if <span class="math inline">\(I \subseteq J\)</span> then their union <span class="math inline">\(I \cup J = J\)</span> is an ideal, but this is isn’t creative or useful. A more creative union is the union of a <strong>chain</strong> of ideals.</p>
 <p><strong>Definition:</strong> A <strong>chain</strong> <span class="math inline">\(\mathscr C\)</span> of ideals is a family which is totally ordered by the subset relation <span class="math inline">\(\subseteq\)</span>.</p>
 <p>Note that this is more general than an increasing or decreasing sequence of ideals. A chain may be uncountable and the order structure may be far more complicated than <span class="math inline">\({\mathbb N}\)</span> or <span class="math inline">\({\mathbb Z}\)</span>. For example, the family of principal ideals <span class="math inline">\(\{(x^r) | r \in (1,\infty)\}\)</span> is an uncountable chain of distinct ideals in the ring of continuous functions on <span class="math inline">\({\mathbb R}\)</span>.</p>
@@ -552,8 +559,8 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <li>Let <span class="math inline">\(a, b \in U\)</span>. Then <span class="math inline">\(a \in I \in \mathscr C\)</span> and <span class="math inline">\(b \in J \in \mathscr C\)</span>. In this step alone it matters that <span class="math inline">\(\mathscr C\)</span> is a chain. Since it is, <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> have a containment relation and WLOG (by symmetry of the assumption) <span class="math inline">\(I \subseteq J\)</span>. Then <span class="math inline">\(a+b \in J \subseteq U\)</span> as desired.</li>
 </ol>
 </section>
-<section id="sums" class="level3" data-number="3.6.3">
-<h3 data-number="3.6.3" class="anchored" data-anchor-id="sums"><span class="header-section-number">3.6.3</span> Sums</h3>
+<section id="sums" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="sums"><span class="header-section-number">3.7.3</span> Sums</h3>
 <p>What if we really really extra want to find the union of several ideals? Then we construct their <strong>sum</strong></p>
 <p><strong>Definition:</strong> The sum of two ideals <span class="math inline">\(I+J\)</span> is <span class="math inline">\(\ldots\)</span></p>
 <ol type="1">
@@ -570,8 +577,8 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <li>The ideal generated by <span class="math inline">\(\cup \mathscr F\)</span></li>
 </ol>
 </section>
-<section id="products" class="level3" data-number="3.6.4">
-<h3 data-number="3.6.4" class="anchored" data-anchor-id="products"><span class="header-section-number">3.6.4</span> Products</h3>
+<section id="products" class="level3" data-number="3.7.4">
+<h3 data-number="3.7.4" class="anchored" data-anchor-id="products"><span class="header-section-number">3.7.4</span> Products</h3>
 <p>Given two ideals <span class="math inline">\(I\)</span>, <span class="math inline">\(J\)</span> in a ring <span class="math inline">\(R\)</span>, the setwise product <span class="math inline">\(\{ij | i \in I, j \in J\}\)</span> satisfies the capture property, but can fail additive closure, since <span class="math inline">\(i_1j_1 + i_2j_2\)</span> need not have a factorization in the form <span class="math inline">\(i_3j_3\)</span>. As a simple example, if <span class="math inline">\(I = (2,x)\)</span> and <span class="math inline">\(J = (3,x)\)</span>, then <span class="math inline">\(x \cdot 3 + (-2)\cdot x = x\)</span> cannot be written <span class="math inline">\(ij\)</span> for <span class="math inline">\(i \in I\)</span> and <span class="math inline">\(j \in J\)</span>. We need to create all sums of such products to get additive closure:</p>
 <p><strong>Definition:</strong> Let <span class="math inline">\(I, J\)</span> be ideals of a ring <span class="math inline">\(R\)</span>. The product ideal <span class="math inline">\(IJ\)</span> is defined to be 1. The set of all sums of the form <span class="math display">\[\{i_1j_1 + i_2j_2 + \ldots + j_nj_n | n \in {\mathbb N}, i_k \in I, j_k \in J\}\]</span> 2. The ideal generated by the set <span class="math inline">\(\{ij | i \in I, j \in J\}\)</span></p>
 </section>

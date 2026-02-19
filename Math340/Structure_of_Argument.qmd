@@ -656,7 +656,7 @@ Let's get started. Much of the beginning is forced:
 | Let $b \in {\mathbb Z}$ | forced |
 | Let $n \in {\mathbb Z}$ | forced |
 | Assume $\exists k \enspace kn = (b-a)$ | for the direct proof | 
-| Let $k \in {\mathbb Z}$ satisfy $kn = (b-a)$ | This is somewhat tricky. We need to use the existential assumption to move forward. It empowers us to choose some certain $k$ having the relevant property $kn=(b-a)$. It's the difference between "something" and "this thing."| 
+| Let $k \in {\mathbb Z}$ satisfy $kn = (b-a)$ | This is somewhat tricky. We need to use the existential assumption to move forward. It empowers us to choose some certain $k$ having the relevant property $kn=(b-a)$. It's the difference between "something" and "this thing."|
 
 At this point we may feel stuck. Obviously we need to show "$(\exists k \enspace kn = (b^2-a^2))$", which, since it's an existential, will be demonstrated by picking out a particular $k$ satisfying the equation $kn = (b^2-a^2)$. But this goal doesn't fit our known equation $kn = (b-a)$. What to do? The trick is that the $k$ doesn't have to be the same in both cases. First we allow some algebra to guide us:
 

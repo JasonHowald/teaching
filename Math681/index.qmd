@@ -7,6 +7,7 @@ resources:
 listing:
   contents: 
     - "syllabus.qmd"
+    - "Complex_Analysis.qmd"
     - path: "ComplexAnalysisHowaldLectures.pdf"
       title: "Complex Analysis Notes by Howald (PDF)"
       description: "A comprehensive PDF containing all lecture materials for the semester."

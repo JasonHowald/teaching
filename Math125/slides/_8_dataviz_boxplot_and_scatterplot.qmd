@@ -76,7 +76,7 @@ sns.scatterplot(data=df, x='homeownership', y='multi_unit')
 :::{.column width="50%"}
 
 1. What are typical, common values for homeownership and multi-unit dwelling? Why?
-2. Where would you find St. Lawrence County on the scatterplot? Where would you find 
+2. Where is St. Lawrence County on the scatterplot? Where is 
 Manhattan ("New York County")?
 3. What sort of county is represented at the bottom right? What sort of counties are 
 the outliers at the top?
@@ -230,7 +230,7 @@ sns.boxplot(data=df, x='poverty')
 
 Many students find the swarmplot/boxplot helpful to understand
 what the boxplot is doing. Notice that about a quarter of the points
-lies within each zone. 
+lie within each zone. 
 
 :::
 
@@ -251,7 +251,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("../openintro.csv/county.csv")
 
 # Create plot with clear labels
-sns.swarmplot(data=df.sample(500), x='poverty')
+sns.swarmplot(data=df.sample(1000), x='poverty')
 sns.boxplot(data=df, x='poverty')
 plt.xlabel(r"Poverty %")
 plt.title(r"Example Boxplot")
