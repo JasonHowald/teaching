@@ -7,7 +7,6 @@ format:
     smooth-scroll: true # Makes jumping to sections feel less jarring
   
 engine: jupyter #Force jupyter notebook to invalidate cache.
-
 ---
 
 # Introductory Ring Theory

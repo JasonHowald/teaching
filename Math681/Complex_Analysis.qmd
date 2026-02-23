@@ -52,10 +52,10 @@ nature with its method of expression, in order to avoid the real work of
 describing its nature. We can do much better:
 
 ::: {#def-C .definition}
-${\mathbb C}$ is defined to be the set of ordered
-pairs $(a,b)$:
-$${\mathbb C}\equiv \{(a,b) \,|\, a, b \in {\mathbb R}\}$$ with
-associated addition and multiplication formulas:
+${\mathbb C}$ 
+is defined to be the set of ordered pairs $(a,b)$:
+$${\mathbb C} \equiv \{(a,b) \, | \, a, b \in {\mathbb R}\}$$ 
+with associated addition and multiplication formulas:
 $(a,b) + (c,d) = ((a+c)  , (b + d))$, and
 $(a,b) * (c,d) = ((ac-bd) , (ad+bc))$.
 :::
@@ -113,7 +113,7 @@ ${\mathbb R}\times {\mathbb R}$ is a ring (in the first place! We hadn't
 yet checked it.) and is isomorphic to ${\mathbb R}[i]/(i^2+1)$. To show
 that ${\mathbb R}[i]/(i^2+1)$ is a field, note that ${\mathbb R}[i]$ is
 a PID and $i^2+1$ is irreducible, so $(i^2+1)$ is a maximal ideal. Thus
-the quotient is a field. ◻
+the quotient is a field. 
 :::
 
 The fact that it is a field indicates that it is a full number system --
@@ -281,7 +281,7 @@ If $z \neq 0$, $w \overline{z} = |z|^2 w/z$, and $|z|^2$ is necessarily
 positive real.
 
 This completes the proof for $|w+z|$. For the case $|w-z|$ simply apply
-the first case with $-z$ in place of $z$. ◻
+the first case with $-z$ in place of $z$. 
 :::
 
 ::: exercise
@@ -311,7 +311,7 @@ $$\operatorname{cis}(\theta) \equiv_{\text{def}} \cos(\theta) + i \sin(\theta)$$
 
 Thus $w = |w|\operatorname{cis}(\theta)$.
 
-::: {#prp:exponentLawsCis .prop}
+::: {#prp-exponent-law-cis .prop}
 The function
 $\operatorname{cis}:{\mathbb R}\to {\mathbb C}$ has the following
 properties
@@ -333,7 +333,7 @@ formulas for $\cos$ and $\sin$. (Digression: Proof of angle sum
 formulas, using geometry: Represent the angle $\theta+\phi$ as on a unit
 circle, then drop a perpendicular to the angle $\theta$, and from there
 another perpendicular to $x$-axis, and calculate the height.) 3 follows
-from 2. 4 follows from 2 with induction. ◻
+from 2. 4 follows from 2 with induction. 
 :::
 
 We would like to claim that
@@ -357,8 +357,7 @@ $e^{i\theta}$.
 **Exercise 1.8**. Use the laws for $\operatorname{cis}(\theta)$ to
 derive "triple angle formulas" for $\sin$ and $\cos$. *Do not* use the
 angle sum formulas directly (although of course the proof of proposition
-[1.10](#thm:exponentLawsCis){reference-type="ref"
-reference="thm:exponentLawsCis"} depends on them).
+@prp-exponent-law-cis depends on them).
 :::
 
 ::: exercise
@@ -371,8 +370,7 @@ the set and its operation.) What is its kernel?
 **Exercise 1.10**. Find the sixth roots of unity. Give their values
 arithmetically and include a picture of them in the complex plane.
 Together they form a group, by proposition
-[1.10](#thm:exponentLawsCis){reference-type="ref"
-reference="thm:exponentLawsCis"} (do not prove), isomorphic to what
+@prp-exponent-law-cis (do not prove), isomorphic to what
 familiar group? What is the operation of the group? What is the identity
 of the group?
 :::
@@ -882,7 +880,7 @@ covered, then $c \in B(c,\varepsilon) \subseteq U_c \in \mathcal U$. If
 any $c' \in B(c,\varepsilon)$ were such that $[a,c']$ were finitely
 coverable, then $[a,c]$ could be finitely covered by adding the cover
 element $U_c$. So $[a,b] - C$ is also open. Since $a \in C$,
-connectedness yields $[a,b] = C$ as desired. ◻
+connectedness yields $[a,b] = C$ as desired. 
 :::
 
 ::: {#thm-heine-borel-nD .theorem}
@@ -895,7 +893,7 @@ closed and bounded.
 If $K$ is closed and bounded, it's a subset of some interval
 product $[a_1, b_1] \times
 \ldots \times [a_n, b_n]$, which is compact by the previous two
-statements. ◻
+statements. 
 :::
 
 **Caution:** For many students, "closed and bounded" is conceptually
@@ -961,7 +959,7 @@ for any $\varepsilon>0$ we may choose $N$ so that for all larger $n,m$
 we have $|x_m-x_n| < \varepsilon/2$. But the tail sequence
 $\{x_N, x_{N+1}, \ldots\}$ has within it some
 $x_n\in B(L, \varepsilon/2)$. By the triangle inequality,
-$\{x_N, x_{N+1}, \ldots\} \subseteq B(L, \varepsilon)$. ◻
+$\{x_N, x_{N+1}, \ldots\} \subseteq B(L, \varepsilon)$. 
 :::
 
 ::: {#cor-Rn-complete .corollary}
@@ -971,7 +969,7 @@ ${\mathbb R}^n$ and ${\mathbb C}$ are complete.
 ::: {.proof}
 A Cauchy sequence $(v_n)$ in ${\mathbb R}^n$ has as its
 coordinates $n$ Cauchy sequences on ${\mathbb R}$. They converge
-individually, producing a vector to which $(v_n)$ converges. ◻
+individually, producing a vector to which $(v_n)$ converges. 
 :::
 
 ::: exercise
@@ -1027,7 +1025,7 @@ converges uniformly because $|f_n(x)| \leq 2^{-n}$. The point of this
 refined notion of convergence is that the uniform limit of continuous
 functions is continuous:
 
-::: {#thm:ULimitContinuousContinuous .theorem}
+::: {#thm-ULimitContinuousContinuous .theorem}
 **Theorem 2.33**. *Let $(f_n)$ be a sequence of continuous functions
 converging uniformly to $f$. Then $f$ is continuous.*
 :::
@@ -1045,7 +1043,7 @@ Now for given $x_0 \in X$ and for any $x \in X$ we have by the triangle
 inequality for $\rho$:
 $$\text{ if }d(x_0, x)< \delta \text{ then }  \rho(f(x),f(x_0)) \leq \rho(f(x),f_n(x))+\rho(f_n(x),f_n(x_0))+ \rho(f_n(x_0),f(x_0)) = \frac{\varepsilon}{3}
     +\frac{\varepsilon}{3}+\frac{\varepsilon}{3} = \varepsilon$$ as
-desired. ◻
+desired. 
 :::
 
 While we're interchanging quantifiers, we would like to point out a
@@ -1053,8 +1051,8 @@ stronger form of *continuity* in which we convert
 $\forall x_0 \enspace \exists \delta$ to
 $\exists \delta \enspace \forall x_0$:
 
-::: {.definition}
-**Definition 2.34**. Let $f:X \to Y$. We say that $f$ is **uniformly
+::: {#def-uniformly-continuous .definition}
+Let $f:X \to Y$. We say that $f$ is **uniformly
 continuous** if
 $$\forall \varepsilon>0 \enspace \exists \delta>0 \enspace \forall x_0 \in X \enspace \forall x\in X \enspace
         d(x,x_0)<\delta \to \rho(f(x),f(x_0)) < \varepsilon$$
@@ -1062,22 +1060,20 @@ $$\forall \varepsilon>0 \enspace \exists \delta>0 \enspace \forall x_0 \in X \en
 
 Given the terminology, the following theorem is obligatory:
 
-::: {#thm:ULimitUContinuousUContinuous .theorem}
-**Theorem 2.35**. *Let $(f_n)$ be a sequence of uniformly continuous
+::: {#thm-ULimitUContinuousUContinuous .theorem}
+**Theorem 2.35**. Let $(f_n)$ be a sequence of uniformly continuous
 functions converging uniformly to $f$. Then $f$ is uniformly
-continuous.*
+continuous.
 :::
 
 ::: {.proof}
-In the proof of theorem
-[2.33](#thm:ULimitContinuousContinuous){reference-type="ref"
-reference="thm:ULimitContinuousContinuous"}, strike out "Let $x_0$ be
-fixed" and replace "given $x_0$" with "any $x_0$". ◻
+In the proof of theorem @thm-ULimitContinuousContinuous, 
+strike out "Let $x_0$ be fixed" and replace "given $x_0$" with "any $x_0$".
 :::
 
-::: {.theorem}
-**Theorem 2.36**. *If $f:X \to Y$ is continuous on a **compact** domain
-$X$, then $f$ is uniformly continuous.*
+::: {#thm-continuous-compact-Ucontinuous.theorem}
+If $f:X \to Y$ is continuous on a **compact** domain
+$X$, then $f$ is uniformly continuous.
 :::
 
 ::: {.proof}
@@ -1090,7 +1086,7 @@ $d(y,x)<\delta_0$. There is some $z$ (from the finite subcover) with
 $d(y,z) \leq \delta_z$, so also
 $d(x,z) \leq \delta_0 + \delta_z \leq 2 \delta_z$ so
 $\rho(f(y),f(x)) \leq \rho(f(y),f(z))+ \rho(f(z),f(x)) \leq \varepsilon/2 + \varepsilon/2
-    = \varepsilon$ as desired. ◻
+    = \varepsilon$ as desired. 
 :::
 
 ::: exercise
@@ -1101,8 +1097,8 @@ to a uniformly continuous function.
 
 Next we introduce absolute convergence:
 
-::: {.definition}
-**Definition 2.37**. We call the series $\sum_{n=0}^\infty a_n$ of
+::: {#def-absolutely-convergent .definition}
+We call the series $\sum_{n=0}^\infty a_n$ of
 complex numbers **absolutely convergent** if the series
 $\sum_{n=0}^\infty |a_n|$ converges.
 :::
@@ -1121,13 +1117,13 @@ Cauchy. Then by the triangle inequality,
 $\left|\sum_{k=m+1}^n a_k\right| < \varepsilon$. This shows that the
 sequence of partial sums
 $\left(\sum_{k=0}^N a_k \right)_{N \in {\mathbb N}}$ is Cauchy, so
-converges. ◻
+converges. 
 :::
 
 The proof of the M-test uses an infinitary triangle inequality, so we
 start with that:
 
-::: {.proposition}
+::: {#prp-infinitary-triangle-inequality.proposition}
 **Proposition 2.38**. *Let $(z_n)$ be a sequence of complex numbers.
 Then
 $$\left|\sum_{n=1}^\infty z_n \right| \leq \sum_{n=1}^\infty \left|z_n\right|$$*
@@ -1138,21 +1134,22 @@ $$\left|\sum_{n=1}^\infty z_n \right| \leq \sum_{n=1}^\infty \left|z_n\right|$$*
 $$\left|\sum_{n=1}^\infty z_n\right| = \left|\lim_N \sum_{n=1}^N z_n\right| =\lim_N \left|\sum_{n=1}^N z_n\right| \leq
 \lim_N \sum_{n=1}^N \left|z_n\right|  = \sum_{n=1}^\infty \left|z_n\right|$$
 ...because $|-|$ is continuous and
-$a_n \leq b_n \to \lim a_n \leq \lim b_n$. ◻
+$a_n \leq b_n \to \lim a_n \leq \lim b_n$. 
 :::
 
 The next theorem is fundamental to our use of power series.
 
-::: {#thm:WeierstrassMTest .theorem}
-**Theorem 2.39** (Weierstrass M-test). *Let $u_n: X \to {\mathbb C}$ be
+::: {#thm-WeierstrassMTest .theorem}
+## Weierstrass M-test
+Let $u_n: X \to {\mathbb C}$ be
 a sequence of functions having
 $\forall x\in X \enspace |u_n(x)| \leq M_n$ for a sequence of bounds
 $M_n$. If $\sum_{n=1}^\infty M_n <\infty$, then $\sum_{n=1}^\infty u_n$
-converges uniformly and absolutely on $X$.*
+converges uniformly and absolutely on $X$.
 :::
 
 ::: {.proof}
-*Proof of the M-test.* First, fix $x$. Absolute convergence of
+First, fix $x$. Absolute convergence of
 $\sum_{n=1}^\infty u_n(x)$ follows from the comparison test since
 $|u_n(x)| \leq M_n$. This shows that $\sum_{n=1}^\infty u_n(x)$
 converges pointwise to a function we call $f(x)$.
@@ -1161,7 +1158,7 @@ For uniform convergence, let $\varepsilon>0$. Choose $N$ so that
 $\sum_{n=N+1}^\infty M_n < \varepsilon$ and let $n>N$. Then for any $x$
 we have
 $$\left|f(x) - \sum_{i=1}^n u_i(x)\right| =  \left|\sum_{i=n+1}^\infty u_i(x)\right| \leq \sum_{i=n+1}^\infty \left|u_i(x)\right| \leq 
-\sum_{i=n+1}^\infty M_i < \varepsilon$$ as desired. ◻
+\sum_{i=n+1}^\infty M_i < \varepsilon$$ as desired. 
 :::
 
 ::: exercise
@@ -1179,8 +1176,8 @@ $B(0, r)$ with $0<r<1$.
 We define the derivative of a complex-valued function exactly as one
 would expect:
 
-::: {.definition}
-**Definition 3.1**. Let $f: {\mathbb C}\to {\mathbb C}$. The
+::: {#def-derivative .definition}
+Let $f: {\mathbb C}\to {\mathbb C}$. The
 **derivative** of $f$ is defined to be:
 $$f'(z_0) = \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)}{h}$$ Equivalently
 (with $z = z_0+h$):
@@ -1207,7 +1204,7 @@ differentiable, and so on.
 For now, we distinguish between three conditions later proven
 equivalent:
 
-::: {.definition}
+::: {#def-differentiable .definition}
 **Definition 3.2**. Let $U \subseteq {\mathbb C}$ be an open set. We say
 that $f: U \to {\mathbb C}$ is **differentiable** if $f'(z)$ exists for
 all $z \in U$. We say that $f$ is **continuously differentiable** if $f$
@@ -1222,37 +1219,38 @@ use the more direct language.
 
 We begin with an easy example from which we will later generate more.
 
-::: {#thm:DerivativeLinear .example}
-**Example 3.3**. \[Derivative of a linear function\] If $f(z) = mz+b$
+::: {#thm-derivative-linear .example}
+If $f(z) = mz+b$
 (where $m$, $b$ are complex constants) then $f'(z) = m$
 :::
 
 ::: {.proof}
 The expression $\frac{f(z)-f(z_0)}{z-z_0}$ is always $m$,
-independent of both $z$ and $z_0$, so the limit exists and equals $m$. ◻
+independent of both $z$ and $z_0$, so the limit exists and equals $m$.
 :::
 
 Before we can prove the various derivative rules, we need some limit
 laws:
 
-::: {.theorem}
-**Theorem 3.4** (Limit Rules). *Let $X$ be a metric space and let
+::: {#thm-limit-rules .theorem}
+## Limit Rules
+Let $X$ be a metric space and let
 $f, g : X \to {\mathbb C}$ or ${\mathbb C}^n$. (Note this includes the
 case $f,g:X \to {\mathbb R}$.) The following equations are true provided
-their right hand sides exist.*
+their right hand sides exist.
 
-1.  *$\lim_{x \to x_0} f(x) \pm g(x) = \lim_{x \to x_0} f(x) \pm \lim_{x \to x_0} g(x)$*
+1.  $\lim_{x \to x_0} f(x) \pm g(x) = \lim_{x \to x_0} f(x) \pm \lim_{x \to x_0} g(x)$
 
-2.  *$\lim_{x \to x_0} f(x)g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x)$*
+2.  $\lim_{x \to x_0} f(x)g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x)$
 
-3.  *$\displaystyle \lim_{x \to x_0} f(x)/g(x) = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x)}$*
+3.  $\displaystyle \lim_{x \to x_0} f(x)/g(x) = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x)}$
 
-4.  *If $\square:{\mathbb C}^2 \to {\mathbb C}$ is a continuous binary
+4.  If $\square:{\mathbb C}^2 \to {\mathbb C}$ is a continuous binary
     operation then
-    $\lim_{x \to x_0} f_1(x) \square f_2(x) = \lim_{x \to x_0} f_1(x) \square \lim_{x \to x_0} f_2(x)$*
+    $\lim_{x \to x_0} f_1(x) \square f_2(x) = \lim_{x \to x_0} f_1(x) \square \lim_{x \to x_0} f_2(x)$
 
-5.  *If $\lim_{x \to x_0} g(x) = y_0$ and $f$ is continuous at $y_0$,
-    then $\lim_{x \to x_0} f(g(x)) = f(y_0)$*
+5.  If $\lim_{x \to x_0} g(x) = y_0$ and $f$ is continuous at $y_0$,
+    then $\lim_{x \to x_0} f(g(x)) = f(y_0)$
 :::
 
 ::: {.proof}
@@ -1271,35 +1269,35 @@ subtraction we may take $B(a, \varepsilon/2) \times B(b,\varepsilon/2)$,
 by the triangle inequality. For multiplication suppose hypothetically
 $\delta_1>0$ and $\delta_2>0$ are already chosen. If
 $(x,y) \in B(a, \delta_1) \times B(b,\delta_2)$ then
-$\abs*{xy-ab} \leq \abs*{xy-bx+bx-ab} \leq \abs*{x}\abs*{y-b} + \abs*{b}\abs*{x-a}
-< \abs*{x}\delta_2 + \abs*{b}\delta_1 \leq \abs*{x-a+a}\delta_2 + \abs*{b}\delta_1
-\leq \delta_1\delta_2 + \abs*{a}\delta_2 + \abs*{b}\delta_1$.
+$\modulus{xy-ab} \leq \modulus{xy-bx+bx-ab} \leq \modulus{x}\modulus{y-b} + \modulus{b}\modulus{x-a}
+< \modulus{x}\delta_2 + \modulus{b}\delta_1 \leq \modulus{x-a+a}\delta_2 + \modulus{b}\delta_1
+\leq \delta_1\delta_2 + \modulus{a}\delta_2 + \modulus{b}\delta_1$.
 We use this computation to guide our choices of $\delta_1$ and
 $\delta_2$. We may make
-$\abs*{b}\delta_1 \leq {\varepsilon}/3$ by
+$\modulus{b}\delta_1 \leq {\varepsilon}/3$ by
 choosing
-$\delta_1 = \frac{{\varepsilon}}{3\abs*{b}}$
+$\delta_1 = \frac{{\varepsilon}}{3\modulus{b}}$
 (or $1$ if $b=0$). We may then assure that the other two terms are each
 less than or equal to ${\varepsilon}/3$ by choosing
-$\delta_2 = \min(\frac{{\varepsilon}}{3\delta_1},\frac{{\varepsilon}}{3\abs*{a}})$.
+$\delta_2 = \min(\frac{{\varepsilon}}{3\delta_1},\frac{{\varepsilon}}{3\modulus{a}})$.
 (Or simply $\delta_2 = \frac{{\varepsilon}}{3\delta_1}$ if
 $a=0$.)
 
 We can deduce the division law from the multiplication law if we can
 show that $r(x) = 1/x$ is a continuous function at any $x_0 \neq 0$. Let
 ${\varepsilon}>0$ and suppose $\delta$ somehow already
-chosen, with $\abs*{x-x_0}<\delta$. Then
-$$\abs*{\frac{1}{x} - \frac{1}{x_0}} = \abs*{\frac{x_0-x}{xx_0}} < 
-\abs*{\frac{\delta}{(x-x_0 + x_0)x_0}} =
-{\frac{\delta}{\abs*{x-x_0 + x_0}\abs*{x_0}}} \leq {\frac{\delta}{\abs*{\abs*{x_0}-\delta}\abs*{x_0}}}
-=\frac{\delta}{(\abs*{x_0}-\delta)\abs*{x_0}}$$
-provided $\abs*{x_0}-\delta$ is positive. If
-$\delta < \frac{\abs*{x_0}}{2}$ it is, and we may
+chosen, with $\modulus{x-x_0}<\delta$. Then
+$$\modulus{\frac{1}{x} - \frac{1}{x_0}} = \modulus{\frac{x_0-x}{xx_0}} < 
+\modulus{\frac{\delta}{(x-x_0 + x_0)x_0}} =
+{\frac{\delta}{\modulus{x-x_0 + x_0}\modulus{x_0}}} \leq {\frac{\delta}{\modulus{\modulus{x_0}-\delta}\modulus{x_0}}}
+=\frac{\delta}{(\modulus{x_0}-\delta)\modulus{x_0}}$$
+provided $\modulus{x_0}-\delta$ is positive. If
+$\delta < \frac{\modulus{x_0}}{2}$ it is, and we may
 furthermore continue
-$$\leq \frac{\delta}{\frac{\abs*{x_0}}{2} \abs*{x_0}} = \frac{2\delta}{|x_0|^2} \leq^? \varepsilon$$
+$$\leq \frac{\delta}{\frac{\modulus{x_0}}{2} \modulus{x_0}} = \frac{2\delta}{|x_0|^2} \leq^? \varepsilon$$
 Therefore if
 $\delta = \min(\frac{x_0}{2}, \frac{{\varepsilon}|x_0|^2}{2})$
-we have our result. ◻
+we have our result. 
 :::
 
 ::: exercise
@@ -1316,7 +1314,7 @@ with proof.
 
 1.  $f(z) = \overline{z}$, at any point $z\in {\mathbb C}$.
 
-2.  $f(z) = \abs*{z}^2$, at any point
+2.  $f(z) = \modulus{z}^2$, at any point
     $z \in {\mathbb C}$. (Hint: Consider $z=0$ and $z \neq 0$ as
     separate cases.)
 
@@ -1325,21 +1323,21 @@ with proof.
 
 We may now begin the theory of differentiable functions in earnest.
 
-::: {.proposition}
-**Proposition 3.5**. *If $f$ is differentiable, then $f$ is continuous.*
+::: {#prp-differentialbe-continuous .proposition}
+If $f$ is differentiable, then $f$ is continuous.
 :::
 
 ::: {.proof}
-*Proof.*
-$$\lim_{w \to z} f(w)-f(z) = \lim_{w \to z} \frac{f(w)-f(z)}{w-z} \cdot (w-z) = f'(z)\lim_{w \to z}(w-z) = 0$$ ◻
+$$\lim_{w \to z} f(w)-f(z) = \lim_{w \to z} \frac{f(w)-f(z)}{w-z} \cdot (w-z) = f'(z)\lim_{w \to z}(w-z) = 0$$ 
 :::
 
-::: {#thm:LinearApproximation .theorem}
-**Theorem 3.6** (Linear Approximation). *Let $f$ be a complex function
+::: {#thm-linear-approximation .theorem}
+## Linear Approximation 
+Let $f$ be a complex function
 defined in a neighborhood of a point $z$. Then $f$ is differentiable at
 $z$ if and only if there is a linear function $L$ and an "error"
 function $g$ with $f = L+g$, $g(z) = 0$, and
-$\lim_{w\to z}\frac{g(w)}{w-z}  = 0$.*
+$\lim_{w\to z}\frac{g(w)}{w-z}  = 0$.
 :::
 
 ::: {.proof}
@@ -1348,7 +1346,7 @@ value $m$ so that $\lim_{w \to z} \frac{f(w)-f(z)}{w-z} - m=0$
 Equivalently $\lim_{w \to z} \frac{f(w) - f(z)- m(w-z)}{w-z} =0$. Notice
 that $L(w) = f(z)+m(w-z)$ is linear and the numerator suffices for
 $g(w)$. Conversely if $f=L+g$ as above, then
-$f'(z) = L'(z)+g'(z) = m + 0 = m$, so $f'(z)$ exists. ◻
+$f'(z) = L'(z)+g'(z) = m + 0 = m$, so $f'(z)$ exists. 
 :::
 
 ::: exercise
@@ -1375,22 +1373,23 @@ the weaker "W".
     to the above, if we replace $S$ with $W$? Answer without proof.
 :::
 
-::: {#thm:DerivativeRules .theorem}
-**Theorem 3.7**. *\[Derivative Rules\] Let $f,g:U \to {\mathbb C}$. The
-following equations are true provided the right hand sides exist:*
+::: {#thm-derivative-rules .theorem}
+## Derivative Rules
+Let $f,g:U \to {\mathbb C}$. The
+following equations are true provided the right hand sides exist:
 
-1.  *(sum/difference rule)
-    $\frac{d}{dz}(f(z) \pm g(z)) = f'(z)\pm g'(z)$*
+1.  (sum/difference rule)
+    $\frac{d}{dz}(f(z) \pm g(z)) = f'(z)\pm g'(z)$
 
-2.  *(constant multiple rule) $\frac{d}{dz}(kf(z)) = kf'(z)$*
+2.  (constant multiple rule) $\frac{d}{dz}(kf(z)) = kf'(z)$
 
-3.  *(product rule)
-    $\frac{d}{dz}(f(z) \cdot g(z)) = f'(z) g(z) + f(z) g'(z)$*
+3.  (product rule)
+    $\frac{d}{dz}(f(z) \cdot g(z)) = f'(z) g(z) + f(z) g'(z)$
 
-4.  *(quotient rule)
-    $\frac{d}{dz}(f(z)/g(z)) = \frac{f'(z)g(z)-f(z)g'(z)}{(g(z))^2}$*
+4.  (quotient rule)
+    $\frac{d}{dz}(f(z)/g(z)) = \frac{f'(z)g(z)-f(z)g'(z)}{(g(z))^2}$
 
-5.  *(chain rule) $\frac{d}{dz}(f(g(z))) = f'(g(z))g'(z)$*
+5.  (chain rule) $\frac{d}{dz}(f(g(z))) = f'(g(z))g'(z)$
 :::
 
 ::: {.proof}
@@ -1404,39 +1403,37 @@ proof-based calculus, we provide them.
 
 2.  Exercise (below).
 
-3.  $$\begin{aligned}
+3.  
+\begin{aligned}
         \frac{d}{dz}(f(z)g(z)) &= \lim_{w \to z} \frac{f(w)g(w)-f(z)g(z)}{w-z} \\
             &= \lim_{w \to z} \frac{f(w)g(w)-f(z)g(w)+f(z)g(w)-f(z)g(z)}{w-z}\\
             &= \left(\lim_{w \to z} \frac{f(w)-f(z)}{w-z} g(w)\right) + \left(\lim_{x \to z}f(z)\frac{g(w)-g(z)}{w-z}\right)\\
             &= f'(z)g(z) + f(z)g'(z)
-    \end{aligned}$$
+    \end{aligned}
 
 4.  Exercise (below).
 
 5.  The most attractive demonstration of the chain rule is sadly wrong.
-    It goes like this: $$\begin{aligned}
+    It goes like this: 
+    \begin{aligned}
             \frac{d}{dz}(f(g(z))) &= \lim_{w \to z} \frac{f(g(w))-f(g(z))}{w-z} \\
             &= \lim_{w \to z} \frac{f(g(w))-f(g(z))}{g(w)-g(z)} \cdot \lim_{w \to z}\frac{g(w)-g(z)}{w-z} \text{ but see below}\\
             &= f'(g(z)) \cdot g'(z)        
-    \end{aligned}$$ The problem is that the introduced denominator
+    \end{aligned} 
+    The problem is that the introduced denominator
     $g(w)-g(z)$ may be zero, even though $w-z$ is not. We therefore
     replace the fraction $\frac{f(g(w))-f(g(z))}{g(w)-g(z)}$ with a
     piecewise defined function designed to deal with that possibility:
-    $$\begin{aligned}
+    \begin{aligned}
             \frac{d}{dz}(f(g(z))) &= \lim_{w \to z} \frac{f(g(w))-f(g(z))}{w-z} \label{eqn:Chain1}\\
             &= \lim_{w \to z} \left[\left\{\begin{array}{ll}\frac{f(g(w))-f(g(z))}{g(w)-g(z)}  & \text{ if $g(w) \neq g(z)$} \\
         f'(g(z))& \text{ if $g(w) = g(z)$} \end{array} \right\} \cdot \frac{g(w)-g(z)}{w-z}\right] \label{eqn:Chain2}\\
             &= f'(g(z)) \cdot g'(z)
-        
-    \end{aligned}$$
+    \end{aligned}
 
-    Notice that [\[eqn:Chain1\]](#eqn:Chain1){reference-type="ref"
-    reference="eqn:Chain1"} and
-    [\[eqn:Chain2\]](#eqn:Chain2){reference-type="ref"
-    reference="eqn:Chain2"} remain equal when $g(w)=g(z)$, because both
+    Notice that the equality holds true when $g(w)=g(z)$, because both
     sides are zero. To evaluate the limit
-    [\[eqn:Chain2\]](#eqn:Chain2){reference-type="ref"
-    reference="eqn:Chain2"} we used the product law and a continuity
+    we used the product law and a continuity
     argument: The piecewise part may be regarded as the composition of
     $w \mapsto g(w)$ (continuous at $w=z$) with the function
     $x \mapsto  \left\{\begin{array}{ll}\frac{f(x)-f(g(z))}{x-g(z)}  & \text{ if $x \neq g(z)$} \\
@@ -1444,7 +1441,7 @@ proof-based calculus, we provide them.
     continuous at $x=g(z)$ by the definition of the derivative
     $f'(g(z))$.
 
- ◻
+ 
 :::
 
 ::: exercise
@@ -1470,30 +1467,30 @@ product rule.
 
 Our last derivative rule is for inverse functions:
 
-::: {#thm:DerivativeInverse .theorem}
-**Theorem 3.8**. *Let $g(f(z))=z$ for all $z \in G$ (open), $f$
+::: {#thm-derivative-inverse .theorem}
+Let $g(f(z))=z$ for all $z \in G$ (open), $f$
 continuous at $z$. Then $$f'(z) = \frac{1}{g'(f(z))}$$ provided the
-right hand side exists.*
+right hand side exists.
 :::
 
 ::: {.proof}
 The chain rule suffices if we assume $f'(z)$ exists, but we
 wish to prove it exists. We need to partly mimic that proof:
 $$1 = \frac{d}{dz} g(f(z)) = \lim_{w \to z} \frac{g(f(w))-g(f(z))}{w-z} = 
-    \lim_{w \to z} \frac{g(f(w))-g(f(z))}{f(w)-f(z)}\frac{f(w)-f(z)}{w-z}$$
+\lim_{w \to z} \frac{g(f(w))-g(f(z))}{f(w)-f(z)}\frac{f(w)-f(z)}{w-z}$$
 Note: Since $g(f(z))=z$ in $G$, we know $f$ is injective on $G$ (open),
 so the introduced denominator $f(w)-f(z)$ is nonzero. Now
 $\lim_{w \to z} \frac{g(f(w))-g(f(z))}{f(w)-f(z)}$ is $g'(f(z))$, as in
 the chain rule proof, and is presumed nonzero. We may divide both sides
-by this limit and apply the quotient law for limits to conclude. ◻
+by this limit and apply the quotient law for limits to conclude. 
 :::
 
-::: {.corollary}
-**Corollary 3.9**. *If $g:X \to Y$ ($X \subseteq {\mathbb C}$,
+::: {#cor-derivative-inverse .corollary}
+If $g:X \to Y$ ($X \subseteq {\mathbb C}$,
 $Y \subseteq {\mathbb C}$) is a differentiable bijection with nonzero
 derivative and continuous right inverse function $f$ (so
 $g \circ f = \operatorname{id}$). Then $f$ is also differentiable, and
-$f'(z) = \frac{1}{g'(f(z))}$ for all $z \in Y$.*
+$f'(z) = \frac{1}{g'(f(z))}$ for all $z \in Y$.
 :::
 
 We would like to apply the previous theorem to square roots, but first
@@ -1503,32 +1500,30 @@ $r \operatorname{cis}(\theta)$, with $r\geq 0$ and
 $\theta \in (-\pi, \pi]$ (or alternatively $[0, 2\pi)$). Then let
 $w = \sqrt{r}\operatorname{cis}(\theta/2)$. Explicitly as a function of
 $z$, we have
-$w = \sqrt{\abs*{z}} \operatorname{cis}(\arg(z)/2)$,
+$w = \sqrt{\modulus{z}} \operatorname{cis}(\arg(z)/2)$,
 where $\arg(z)$ is an **argument function**, or angle, of $z$. From the
-properties of the function $\operatorname{cis}$ (Proposition
-[1.10](#thm:exponentLawsCis){reference-type="ref"
-reference="thm:exponentLawsCis"}), we see that $w^2 = z$ and it's
+properties of the function $\operatorname{cis}$ (@prp-exponent-law-cis), 
+we see that $w^2 = z$ and it's
 legitimate to write $w = \sqrt{z}$. Since $(\sqrt{z})^2 = z$, we appear
-to be in the situation of theorem
-[3.8](#thm:DerivativeInverse){reference-type="ref"
-reference="thm:DerivativeInverse"}, but only if we can say $\sqrt{z}$ is
+to be in the situation of 
+@thm-derivative-inverse, but only if we can say $\sqrt{z}$ is
 continuous.
 
 Notice that $\operatorname{cis}(\theta) = \cos(\theta) + i\sin(\theta)$
 is continuous by sum and multiple rules, since $\cos$ and $\sin$ are
-continuous. Furthermore $r = \abs*{z}$ is a continuous
+continuous. Furthermore $r = \modulus{z}$ is a continuous
 function of $z$, and $\sqrt{-}$ is continuous on $[0,\infty)$. It
 follows that $f(z)=\sqrt{z}$ is continuous whenever $\arg(z)$ is
 continuous.
 
-::: {.proposition}
-**Proposition 3.10**. *Let $\arg:{\mathbb C}- \{0\} \to (-\pi,\pi]$ with
+::: {#prp-arg-continuity .proposition}
+Let $\arg:{\mathbb C}- \{0\} \to (-\pi,\pi]$ with
 $\arg(r\operatorname{cis}(\theta)) = \theta$ whenever
 $\theta \in (-\pi, \pi]$. Then $\arg$ is continuous at $z$ when
 $\arg(z)$ is in the interior of the range and discontinuous at $z$ when
 $arg(z)$ is on the boundary. The statement remains true if the range
 $(-\pi, \pi]$ is replaced with any other halfopen interval of length
-$2\pi$.*
+$2\pi$.
 :::
 
 ::: {.proof}
@@ -1543,11 +1538,11 @@ so $\arg^{-1}(B(\theta_0, 1))$ is not open.
 
 To elaborate, notice that by restriction $\arg(z):S^1 \to (-\pi, \pi]$.
 This map has compact domain but noncompact image, so it *must* be
-discontinuous somewhere. ◻
+discontinuous somewhere. 
 :::
 
 Returning to the square root, we see that
-$w = \sqrt{z} = \sqrt{\abs*{z}} \operatorname{cis}(\arg(z)/2)$
+$w = \sqrt{z} = \sqrt{\modulus{z}} \operatorname{cis}(\arg(z)/2)$
 is discontinuous exactly when $z$ is negative real. A technical argument
 shows that it is continuous at $z=0$ as well. The derivative formula
 $\frac{d}{dz}\sqrt{z} = \frac{1}{2\sqrt{x}}$ is valid for all $z$ except
@@ -1578,11 +1573,11 @@ properties of complex functions to the multivariable calculus of real
 functions. The first application of this line of thinking is called the
 Cauchy Riemann Equations
 
-::: {.proposition}
-**Proposition 3.11** (Cauchy-Riemann Equations). *Let
-$f(z) = f(x+iy) = u(x,y) + iv(x,y)$ be a complex function differentiable
+::: {#prp-cauchy-riemann-equations .proposition}
+## Cauchy-Riemann Equations
+Let $f(z) = f(x+iy) = u(x,y) + iv(x,y)$ be a complex function differentiable
 at $z \in {\mathbb C}$ (where $u:{\mathbb R}^2 \to {\mathbb R}$ and
-$v:{\mathbb R}^2 \to {\mathbb R}$). Then at $z$:*
+$v:{\mathbb R}^2 \to {\mathbb R}$). Then at $z$:
 
 *$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}  \enspace \text{ and } \enspace \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$*
 :::
@@ -1600,7 +1595,7 @@ partial derivatives of $u$ and $v$:
 $$f'(z) = \frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x} =  \frac{1}{i} \left(\frac{\partial u}{\partial y} + i \frac{\partial v}{\partial y}\right)$$
 
 Setting the real parts equal yields the first Cauchy Riemann equation,
-and setting imaginary parts equal yields the second. ◻
+and setting imaginary parts equal yields the second. 
 :::
 
 If the function $f:{\mathbb C}\to {\mathbb C}$ is a *twice*
@@ -1627,8 +1622,8 @@ $$\frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} u  = 0  \e
 That is, the real and imaginary parts of a twice differentiable complex
 function are harmonic, in the following sense.
 
-::: {.definition}
-**Definition 3.12**. The second order differential operator above is
+::: {#def-laplace-operator .definition}
+The second order differential operator above is
 called the **Laplace operator**, typically written
 $$\nabla^2 =\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}$$
 A function $u$ for which $\nabla^2 u =0$ is called a **harmonic
@@ -1645,23 +1640,21 @@ time.
 
 ## Power Series
 
-Using Example [3.3](#thm:DerivativeLinear){reference-type="ref"
-reference="thm:DerivativeLinear"} and the combinations of Theorem
-[3.7](#thm:DerivativeRules){reference-type="ref"
-reference="thm:DerivativeRules"} we can quickly prove that all
-polynomials are differentiable, and that their derivatives are
+Using @thm-derivative-linear and the combinations of @thm-derivative-rules 
+we can quickly prove that all polynomials are differentiable, 
+and that their derivatives are
 calculated exactly as one would expect:
 
-::: {#thm:DerivativePolynomial .example}
-**Example 3.13**. The derivative of $\displaystyle \sum_{n=0}^N a_nz^n$
+::: {#prp-derivative-polynomial .proposition}
+The derivative of $\displaystyle \sum_{n=0}^N a_nz^n$
 is $\displaystyle \sum_{n=0}^N a_n n z^{n-1}$
 :::
 
 We would like to extend this example to include infinite sums, but first
 we must consider matters of convergence.
 
-::: {#def:PowerSeries .definition}
-**Definition 3.14**. A **power series** is a function of $z$ of the form
+::: {#def-power-series .definition}
+A **power series** is a function of $z$ of the form
 $$f(z) = \sum_{n=0}^\infty a_nz^n \text{, or more generally } f(z) = \sum_{n=0}^\infty a_n(z-a)^n$$
 When $\sum_{n=0}^\infty a_nz^n$ converges we say $f$ converges at $z$.
 The set of $z$ at which $f$ converges is called the domain of
@@ -1670,12 +1663,13 @@ convergence.
 
 The generalization to sums of the form $\sum a_n (z-a)^n$ is unnecesary
 in the case of polynomials because powers $(z-a)^n$ may be simply
-expanded. In the case of series, such expansion introduces convergence
+expanded. In the case of series, the generalization is valuable because 
+such expansion introduces convergence
 problems. For example, what is the constant term of
 $\sum_{n=0}^\infty 1(z+1)^n$ after expansion?
 
-::: {#ex:Geometric Series .example}
-**Example 3.15**. The function $f(z) = \sum_{n=0}^\infty z^n$ is a
+::: {#exm-geometric-series .example}
+The function $f(z) = \sum_{n=0}^\infty z^n$ is a
 **geometric series**. It converges uniformly on any region $B(0,r)$ with
 $0<r<1$, but if $|z| \geq 1$ it diverges. (More generally,
 $\sum_{n=0}^\infty (z-a)^n$ converges uniformly on $B(a,r)$ and diverges
@@ -1684,25 +1678,24 @@ when $|z-a|\geq1$.)
 
 ::: {.proof}
 Let $0<r<1$. On $B(0,r)$ we have $|z| <r$ so $|z^n| < r^n$. The
-values $r^n$ satisfy the requirements of the Weierstrass M-test (Theorem
-[2.39](#thm:WeierstrassMTest){reference-type="ref"
-reference="thm:WeierstrassMTest"}) because
+values $r^n$ satisfy the requirements of the Weierstrass M-test 
+@thm-WeierstrassMTest because
 $\sum_{n=0}^\infty r^n = \frac{1}{1-r}$, so $\sum_{n=0}^\infty z^n$ is
 uniformly convergent on $B(0,r)$. If on the other hand $|z|\geq1$, then
 the terms of $\sum_{n=0}^\infty z^n$ do not even approach zero, so the
-series diverges. ◻
+series diverges. 
 :::
 
 We sometimes prove convergence or divergence of series by comparison to
 a geometric series. This technique is at the heart of the root test:
 
-::: {#thm:RootTest .theorem}
-**Theorem 3.16** (Cauchy's Root Test). *Let $\sum_{n=0}^\infty a_n$ be a
-series, and let $C=\limsup |a_n|^{1/n}$.*
+::: {#thm-root-test .theorem}
+## Cauchy's Root Test
+Let $\sum_{n=0}^\infty a_n$ be a
+series, and let $C=\limsup |a_n|^{1/n}$.
 
-1.  *If $C<1$ then the series absolutely converges.*
-
-2.  *If $C>1$ then the series diverges.*
+1.  If $C<1$ then the series absolutely converges.
+2.  If $C>1$ then the series diverges.
 :::
 
 ::: {.proof}
@@ -1715,16 +1708,16 @@ and $\sum a_n$ is absolutely convergent.
 In the second case, we have $1<\limsup |a_n|^{1/n}$. This time we choose
 $s$ with $1<s<\limsup |a_n|^{1/n}$, and as before $|a_n|>s^n$ for
 infinitely many $n$. Then the terms $a_n$ do not even approach zero, so
-$\sum_{n=0}^\infty a_n$ diverges. ◻
+$\sum_{n=0}^\infty a_n$ diverges. 
 :::
 
-::: {#thm:CauchyHadamardRadius .theorem}
-**Theorem 3.17** (Cauchy-Hadamard test). *Let
-$f(z) = \displaystyle \sum_{n=0}^\infty a_n(z-a)^n$ be a power series.
+::: {#thm-Cauchy-Hadamard-radius .theorem}
+## Cauchy-Hadamard test
+Let $f(z) = \displaystyle \sum_{n=0}^\infty a_n(z-a)^n$ be a power series.
 Let $$R = 1/\limsup |a_n|^{1/n} \hspace{3em}
-    \text{(with $R=\infty$ if the $\limsup$ is $0$.)}$$ Then $f(x)$
+\text{(with $R=\infty$ if the $\limsup$ is $0$.)}$$ Then $f(x)$
 converges uniformly and absolutely on any region $B(a,r)$ with $0<r<R$,
-but if $|z-a| > R$ it diverges.*
+but if $|z-a| > R$ it diverges.
 :::
 
 ::: {.proof}
@@ -1736,16 +1729,16 @@ uniform and absolute convergence.
 
 If on the other hand $|z-a|>R$, then
 $C=\limsup |a_n(z-a)^n|^{1/n} = |z-a|\limsup |a_n|^{1/n} = |z-a|/R>1$,
-so the root test guarantees divergence. ◻
+so the root test guarantees divergence. 
 :::
 
 Although the Hadamard test is powerful, the ratio test is often easier
 to use. Before we prove it we need a technical lemma:
 
-::: {#thm:RatioToRoot .lemma}
-**Lemma 3.18**. *Let $a _n$ be a sequence of positive real numbers. If
+::: {#lem-ratio-to-root .lemma}
+Let $a _n$ be a sequence of positive real numbers. If
 $\lim_{n \to \infty} \frac{a_{n+1}}{a_n} = L$ then
-$\lim_{n \to \infty} a_n^{1/n} = L$.*
+$\lim_{n \to \infty} a_n^{1/n} = L$.
 :::
 
 ::: {.proof}
@@ -1764,19 +1757,19 @@ $n>\max(N, 2b_N/{\varepsilon})$ we have
 $\frac{b_n}{n} < {\varepsilon}$ as desired.
 
 If $K \neq 0$, we apply the previous case to the modified sequence
-$b_n-nK$. ◻
+$b_n-nK$. 
 :::
 
-::: {#thm:RatioTest .theorem}
-**Theorem 3.19**. *\[Ratio Test for Power Series\] Let
-$f(z) = \sum_{n=0}^\infty a_n(z-a)^n$ be a power series. If
+::: {#thm-ratio-test .theorem}
+## Ratio Test 
+Let $f(z) = \sum_{n=0}^\infty a_n(z-a)^n$ be a power series. If
 $\lim_{n \to \infty} \left|\frac{a_{n}}{a_{n+1}}\right|$ exists then it
-equals the radius of convergence of $f$.*
+equals the radius of convergence of $f$.
 :::
 
 ::: {.proof}
-Apply the lemma and the Hadamard test to the sequence
-$|a_n|$. ◻
+Apply @lem-ratio-to-root to the sequence $|a_n|$
+and then use @thm-Cauchy-Hadamard-radius.
 :::
 
 ::: exercise
@@ -1789,16 +1782,16 @@ $|a_n|$. ◻
 3.  ...with zero radius of convergence.
 :::
 
-::: {#thm:SumProductTwoSeries .lemma}
-**Lemma 3.20**. *Let $A = \sum_{n=0}^\infty a_n$ and
-$B = \sum_{n=0}^\infty b_n$ be convergent series in ${\mathbb C}$.*
+::: {#thm-sum-product-series .theorem}
+Let $A = \sum_{n=0}^\infty a_n$ and
+$B = \sum_{n=0}^\infty b_n$ be convergent series in ${\mathbb C}$.
 
-1.  *$\sum_{n=0}^\infty ka_n = kA$.*
+1. $\sum_{n=0}^\infty ka_n = kA$.
 
-2.  *$\sum_{n=0}^\infty a_n +b_n = A+B$.*
+2.  $\sum_{n=0}^\infty a_n +b_n = A+B$.
 
-3.  *$\sum_{n=0}^\infty c_n = AB$ where $c_n = \sum_{k=0}^na_kb_{n-k}$,
-    provided at least one series converges absolutely.*
+3.  $\sum_{n=0}^\infty c_n = AB$ where $c_n = \sum_{k=0}^na_kb_{n-k}$,
+    provided at least one series converges absolutely.
 :::
 
 ::: {.proof}
@@ -1830,16 +1823,16 @@ Let $A_N = \sum_{n=0}^N a_n$ and $B_N = \sum_{n=0}^N b_n$.
     large). Therefore we split the sum in half. Let $0 \leq M < N$. Here
     $M$ will also be specifically chosen later. We continue\...
 
-    $$=  \overbrace{\sum_{0 \leq i < M}   |a_i| \left | \sum_{j > N-i} b_j  \right |}^{\alpha}
+    $$=  \overbrace{\sum_{0 \leq i < M}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\alpha}
     + 
-    \overbrace{\sum_{M \leq i < N}   |a_i| \left | \sum_{j > N-i} b_j  \right |}^{\beta}
+    \overbrace{\sum_{M \leq i < N}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\beta}
     + 
     \overbrace{\sum_{i \geq N} |a_i| |B|  \\}^{\gamma}$$
 
     Without further delay let $\varepsilon > 0$.
 
     We control term $\beta$ first. The sequence
-    $\left |\sum_{j > N-i} b_j\right|$ (as a function of $N$) converges
+    $\left |\sum_{j \geq N-i} b_j\right|$ (as a function of $N$) converges
     to $0$, so it has an upper bound $U_B$ , independent of $N$ and $M$.
     As a function of $N$, the convergent sequence
     $\sum_{i \geq N} |a_i|$ is Cauchy, so its differences
@@ -1850,9 +1843,9 @@ Let $A_N = \sum_{n=0}^N a_n$ and $B_N = \sum_{n=0}^N b_n$.
 
     Next we control term $\alpha$. Having chosen $M$ we may treat
     $\sum_{0 \leq i < M}  |a_i|$ as a constant $V_A$. Again because the
-    sequence $\left |\sum_{j > N-i} b_j\right|$ converges to $0$, we may
+    sequence $\left |\sum_{j \geq N-i} b_j\right|$ converges to $0$, we may
     choose $K$ so that if $N-i>K$ then
-    $\left | \sum_{j > N-i} b_j\right|<\frac{\varepsilon}{3V_A}$. Now
+    $\left | \sum_{j \geq N-i} b_j\right|<\frac{\varepsilon}{3V_A}$. Now
     for any $N>K+M$, we have $N-i>K$ and so
     $\alpha < \frac{\varepsilon}{3}$.
 
@@ -1866,39 +1859,35 @@ Let $A_N = \sum_{n=0}^N a_n$ and $B_N = \sum_{n=0}^N b_n$.
     If $N > \max(K+M, G)$ then
     $\left | AB - \sum_{n < N} c_n \right | < \varepsilon$ as required.
 
- ◻
+ 
 :::
 
-::: {#thm:SumProductTwoPowerSeries .theorem}
-**Theorem 3.21**. *Let $f(z) = \sum_{n=0}^\infty a_n(z-a)^n$ and
+::: {#thm-sum-product-power-series .theorem}
+Let $f(z) = \sum_{n=0}^\infty a_n(z-a)^n$ and
 $g(z)= \sum_{n=0}^\infty b_n(z-a)^n$ be power series with radius of
 convergence at least $R$. Then (the series below converge on $B(a,R)$
-and)*
+and)
 
-1.  *$\sum_{n=0}^\infty (ka_n)(z-a)^n = kf(z)$.*
+1.  $\sum_{n=0}^\infty (ka_n)(z-a)^n = kf(z)$.
 
-2.  *$\sum_{n=0}^\infty (a_n+b_n)(z-a)^n = f(z)+g(z)$.*
+2.  $\sum_{n=0}^\infty (a_n+b_n)(z-a)^n = f(z)+g(z)$.
 
-3.  *$\sum_{n=0}^\infty c_n(z-a)^n = f(z)g(z)$ where
-    $c_n = \sum_{k=0}^n(a_kb_{n-k})$.*
+3.  $\sum_{n=0}^\infty c_n(z-a)^n = f(z)g(z)$ where
+    $c_n = \sum_{k=0}^n(a_kb_{n-k})$.
 :::
 
 ::: {.proof}
-All three parts follow from Lemma
-[3.20](#thm:SumProductTwoSeries){reference-type="ref"
-reference="thm:SumProductTwoSeries"}. ◻
+All three parts follow from @thm-sum-product-series.
 :::
 
 ::: exercise
-**Exercise 3.8**. Find series $A = \sum_{n=0}^\infty a_n$ and
+**Exercise 3.8**. (Hard) Find series $A = \sum_{n=0}^\infty a_n$ and
 $B=\sum_{n=0}^\infty b_n$, both convergent but neither absolutely
 convergent, for which $\sum_{n=0}^\infty c_n$ does not converge to $AB$.
 (Hints: Choose $\sum a_n$ and $\sum b_n$ real and alternating but
 decreasing in absolute value. This will guarantee their convergence but
 leave many options to violate absolute convergence (a condition you must
-avoid in light of Lemma
-[3.20](#thm:SumProductTwoSeries){reference-type="ref"
-reference="thm:SumProductTwoSeries"}). Argue that
+avoid in light of @thm-sum-product-series. Argue that
 $c_n = \sum_{k=0}^na_kb_{n-k}$ is a sum with positive terms. Bound them
 below, deduce a lower bound for $c_n$, and force $\sum c_n$ to diverge.)
 :::
@@ -1908,8 +1897,8 @@ below, deduce a lower bound for $c_n$, and force $\sum c_n$ to diverge.)
 the series multiplication rule, and find its radius of convergence.
 :::
 
-::: {.definition}
-**Definition 3.22**. Let $f(z) = \sum_{n=0}^\infty a_n(z-a)^n$ be a
+::: {#def-formal-derivative .definition}
+Let $f(z) = \sum_{n=0}^\infty a_n(z-a)^n$ be a
 power series. The **formal derivative** is the power series
 $$\sum_{n=0}^\infty a_n n (z-a)^{n-1}$$
 :::
@@ -1917,10 +1906,10 @@ $$\sum_{n=0}^\infty a_n n (z-a)^{n-1}$$
 We wish to show that the formal derivative equals the derivative, but
 first we need to check its convergence:
 
-::: {#thm:FormalDerivativeRadiusConvergence .theorem}
-**Theorem 3.23**. *Let $\sum_n a_n(z-a)^n$ be a power series. Then the
+::: {#thm-formal-derivative-radius-convergence .theorem}
+Let $\sum_n a_n(z-a)^n$ be a power series. Then the
 formal derivative $\sum_n na_n(z-a)^{n-1}$ has the same radius of
-convergence.*
+convergence.
 :::
 
 ::: {.proof}
@@ -1931,28 +1920,24 @@ test on the latter:
 
 $$\limsup \sqrt[n]{|na_n|} = \limsup \sqrt[n]{n}\sqrt[n]{|a_n|}  = \lim_n \sqrt[n]{n} \limsup \sqrt[n]{|a_n|} = \limsup \sqrt[n]{|a_n|}$$
 
-(This is a valid limit law when the limit is defined. The limit
-$\lim_n \sqrt[n]{n}$ can be evaluated by Lemma
-[3.18](#thm:RatioToRoot){reference-type="ref"
-reference="thm:RatioToRoot"}.) ◻
+This is a valid limit law when the limit is defined. The limit
+$\lim_n \sqrt[n]{n}$ can be evaluated by @lem-ratio-to-root.
 :::
 
-::: {.corollary}
-**Corollary 3.24**. *As above, the formal antiderivative has the same
-radius of convergence.*
+::: {#cor-formal-antiderivaitve-radius-convergence .corollary}
+As above, the formal antiderivative has the same
+radius of convergence.
 :::
 
 ::: {.proof}
 The formal antiderivative of $f$ has some radius of
-convergence, which matches that of *its* formal derivative (by Theorem
-[3.23](#thm:FormalDerivativeRadiusConvergence){reference-type="ref"
-reference="thm:FormalDerivativeRadiusConvergence"}), which of course is
-$f$. ◻
+convergence, which matches that of *its* formal derivative by @thm-formal-derivative-radius-convergence, which of course is
+$f$.
 :::
 
-::: {#thm:FormalDerivativeIsDerivative .theorem}
-**Theorem 3.25**. *The formally derived series converges to the
-derivative (inside the radius of convergence $B(a,R)$).*
+::: {#thm-formal-derivative-is-derivative .theorem}
+The formally derived series converges to the
+derivative inside the radius of convergence $B(a,R)$.
 :::
 
 ::: {.proof}
@@ -2007,10 +1992,10 @@ We've shown that for $\varepsilon>0$, we can find some $n$ and
 $\delta>0$ so that if $0 <|w-z|<\delta$ then
 $\left|\frac{f(w)-f(z)}{w-z}  - f_1(z) \right|<\varepsilon$. We
 disregard $n$ since the expression doesn't depend on $n$, and conclude
-that $\lim_{w \to z} \frac{f(w)-f(z)}{w-z} = f_1(z)$ as desired. ◻
+that $\lim_{w \to z} \frac{f(w)-f(z)}{w-z} = f_1(z)$ as desired. 
 :::
 
-::: {.corollary}
+::: {#cor-formal-antiderivative-is-antiderivative .corollary}
 **Corollary 3.26**. *Let
 $f(z) = \displaystyle\sum_{n=0}^\infty a_n(z-a)^n$ be a power series
 with radius of convergence $R$. Then the formal antiderivative is an
@@ -2019,13 +2004,12 @@ antiderivative on $B(a,R)$.*
 
 ::: {.proof}
 Compare the derivative and the formal derivative of the formal
-antiderivative of $f$. ◻
+antiderivative of $f$. 
 :::
 
 ::: exercise
-**Exercise 3.10**. Theorem
-[3.25](#thm:FormalDerivativeIsDerivative){reference-type="ref"
-reference="thm:FormalDerivativeIsDerivative"} proves that
+**Exercise 3.10**. @thm-formal-derivative-is-derivative
+proves that
 $\lim_{n \to \infty} \frac{d}{dz} s_n(z)$ equals
 $\frac{d}{dz} \lim_{n \to \infty} s_n(z)$ for certain functions $s_n$.
 In this exercise you show that the equality is not a generic law. Find
@@ -2050,94 +2034,67 @@ At this point our general theory of analytic functions is quite strong,
 but our variety of examples is not. Next we use power series to
 introduce complex versions of three important real-valued functions.
 
-::: {.definition}
-**Definition 3.27**. We define: $$\begin{aligned}
+::: {#def-exp-cos-sin .definition}
+**Definition 3.27**. We define: 
+\begin{aligned}
         e^z \equiv & \sum_{n=0}^\infty \frac{z^n}{n!} = 1 + z + \frac{z^2}{2} + \frac{z^3}{6} + \frac{z^4}{24} + \ldots \\
         \cos(z) \equiv & \sum_{\substack{n=0 \\ n \text{ even}}}^\infty \frac{(-1)^{\frac{n}{2}}z^n}{n!} = 1 - \frac{z^2}{2} + \frac{z^4}{24} - \frac{z^6}{720} + \ldots \\
         \sin(z) \equiv & \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty \frac{(-1)^{\lfloor\frac{n}{2}\rfloor}z^n}{n!} = x - \frac{z^3}{6} + \frac{z^5}{120} - \frac{z^7}{5040} + \ldots 
-    
-\end{aligned}$$
+\end{aligned}
 :::
 
-::: {.proposition}
-**Proposition 3.28**. *Each function $e^z$, $\cos(z)$, and $\sin(z)$ has
-infinite radius of convergence.*
+::: {#prp-exp-cos-sin-convergence .proposition}
+**Proposition 3.28**. Each function $e^z$, $\cos(z)$, and $\sin(z)$ has
+infinite radius of convergence.
 :::
 
 ::: {.proof}
-For $e^x$, the ratio test
-([3.19](#thm:RatioTest){reference-type="ref" reference="thm:RatioTest"})
-gives
-$\lim_n \abs*{\frac{a_n}{a_{n+1}}} = \lim_n (n+1) = \infty$.
+For $e^x$, the ratio test @thm-ratio-test
+gives $\lim_n \modulus{\frac{a_n}{a_{n+1}}} = \lim_n (n+1) = \infty$.
 The ratio test doesn't apply for $\cos$ and $\sin$ because their zero
 terms, but its use for $e^x$ allows us to conclude that
-$\limsup \abs*{\frac{1}{n!}}^{1/n} = 0$, and the
+$\limsup \modulus{\frac{1}{n!}}^{1/n} = 0$, and the
 $\limsup$'s for $\cos$ and $\sin$ must agree with this result, so by
-Cauchy-Hadamard they also have infinite radius of convergence. ◻
+Cauchy-Hadamard they also have infinite radius of convergence. 
 :::
 
-::: {#thm:PropertiesBasicTranscendentals .theorem}
-**Theorem 3.29** (Properties of $e^z$, $\cos(z)$, and $\sin(z)$). *The
-functions $e^z$, $\cos(z)$, and $\sin(z)$ have the following
-properties:*
+::: {#thm-properties-exp-cos-sin .theorem}
+## Properties of $e^z$, $\cos(z)$, and $\sin(z)$ 
+The functions $e^z$, $\cos(z)$, and $\sin(z)$ have the following
+properties:
 
-1.  *Exponent laws: For any $w, z \in {\mathbb C}$: []{#exponentLaws
-    label="exponentLaws"}*
-
-    1.  *$e^0=1$*
-
-    2.  *$e^{w+z} = e^we^z$ []{#sumLawExponents
-        label="sumLawExponents"}*
-
-    3.  *$e^{w-z} = e^w/e^z$*
-
-    4.  *$e^{nz} = (e^z)^n$ for all $n \in {\mathbb N}$.
-        []{#exponentLawExponents label="exponentLawExponents"}*
-
-2.  *Interrelationships: []{#Interrelationships
-    label="Interrelationships"}*
-
-    1.  *Euler's Formula: $e^{iz} = \cos(z) + i\sin(z)$ for all
-        $z \in {\mathbb C}$. []{#EulersFormula label="EulersFormula"}*
-
-    2.  *$e^{a+ib} = e^a\operatorname{cis}(b) = e^a(\cos(b)+i\sin(b))$
-        for all $a, b \in {\mathbb R}$ []{#ExpDefCis label="ExpDefCis"}*
-
-    3.  *$\cos(z) = \frac{1}{2}(e^{iz} + e^{-iz})$ []{#cosFromExp
-        label="cosFromExp"}*
-
-    4.  *$\sin(z) = \frac{1}{2i}(e^{iz} - e^{-iz})$ []{#sinFromExp
-        label="sinFromExp"}*
-
-3.  *Symmetries: For all $z \in {\mathbb C}$:*
-
-    1.  *$e^z = e^{z+2\pi i}$ []{#ExpPeriodic label="ExpPeriodic"}*
-
-    2.  *$\cos(z) = \cos(z+2\pi)$[]{#CosPeriodic label="CosPeriodic"}*
-
-    3.  *$\sin(z) = \sin(z+2\pi)$[]{#SinPeriodic label="SinPeriodic"}*
-
-    4.  *$\cos(-z)=\cos(z)$ []{#cosEven label="cosEven"}*
-
-    5.  *$\sin(-z)=-\sin(z)$ []{#sinOdd label="sinOdd"}*
-
-4.  *Derivatives:*
-
-    1.  *$\frac{d}{dz} e^z = e^z$*
-
-    2.  *$\frac{d}{dz} \cos(z) = -\sin(z)$*
-
-    3.  *$\frac{d}{dz} \sin(z) = \cos(z)$*
+1.  Exponent laws: For any $w, z \in {\mathbb C}$:
+    a.  $e^0=1$
+    b.  $e^{w+z} = e^we^z$ 
+    c.  $e^{w-z} = e^w/e^z$
+    d.  $e^{nz} = (e^z)^n$ for all $n \in {\mathbb N}$. 
+2.  Interrelationships:
+    a.  Euler's Formula: $e^{iz} = \cos(z) + i\sin(z)$ for all
+        $z \in {\mathbb C}$. 
+    b.  $e^{a+ib} = e^a\operatorname{cis}(b) = e^a(\cos(b)+i\sin(b))$
+        for all $a, b \in {\mathbb R}$ 
+    c.  $\cos(z) = \frac{1}{2}(e^{iz} + e^{-iz})$ 
+    d.  $\sin(z) = \frac{1}{2i}(e^{iz} - e^{-iz})$ 
+3.  Symmetries: For all $z \in {\mathbb C}$:
+    a.  $e^z = e^{z+2\pi i}$ 
+    b.  $\cos(z) = \cos(z+2\pi)$ 
+    c.  $\sin(z) = \sin(z+2\pi)$ 
+    d.  $\cos(-z)=\cos(z)$ 
+    e.  $\sin(-z)=-\sin(z)$ 
+4.  Derivatives:
+    a.  $\frac{d}{dz} e^z = e^z$
+    b.  $\frac{d}{dz} \cos(z) = -\sin(z)$
+    c.  $\frac{d}{dz} \sin(z) = \cos(z)$
 :::
 
 ::: {.proof}
 The derivative formulas are straightforward consequences of
-Theorem [3.25](#thm:FormalDerivativeIsDerivative){reference-type="ref"
-reference="thm:FormalDerivativeIsDerivative"}, and the value of each
-function at $0$ is trivial. The alert reader may worry that we are
+@thm-formal-derivative-is-derivative, and the value of each
+function at $0$ is trivial. 
+
+The alert reader may worry that we are
 equivocating by using the symbols $\sin(x)$, $\cos(x)$ and $e^x$ with
-two different meanings, especially in
-[\[ExpDefCis\]](#ExpDefCis){reference-type="ref" reference="ExpDefCis"}
+two different meanings, especially in 2b.,
 where $\operatorname{cis}(t)$ is defined in terms of prior knowledge
 $\sin$ and $\cos$. Writing the "new" functions in bold, we calculate the
 derivatives of the functions:
@@ -2148,68 +2105,43 @@ This shows that the newly defined complex exponential and trigonometric
 functions, restricted to ${\mathbb R}$, agree with their original
 versions.
 
-Parts [\[sumLawExponents\]](#sumLawExponents){reference-type="ref"
-reference="sumLawExponents"} and
-[\[EulersFormula\]](#EulersFormula){reference-type="ref"
-reference="EulersFormula"} are the most significant, and most of the
+Parts 1b.  and 2a. 
+are the most significant, and most of the
 other properties follow from these.
 
-First we prove
-[\[sumLawExponents\]](#sumLawExponents){reference-type="ref"
-reference="sumLawExponents"}:
+First we prove 1b:
 $$e^{a+b} = \sum_{n=0}^\infty \frac{(a+b)^n}{n!} =\sum_{n=0}^\infty \sum_{k=0}^n \frac{a^kb^{n-k}}{k!(n-k)!}
     = \left(\sum_{n=0}^\infty \frac{a^n}{n!}\right)\left(\sum_{n=0}^\infty \frac{b^n}{n!}\right) = e^ae^b$$
-Note the use of the binomial formula and Theorem
-[3.21](#thm:SumProductTwoPowerSeries){reference-type="ref"
-reference="thm:SumProductTwoPowerSeries"}.
+Note the use of the binomial formula and @thm-sum-product-power-series.
 
-To prove [\[EulersFormula\]](#EulersFormula){reference-type="ref"
-reference="EulersFormula"}, simply insert $iz$ into the series for $e^z$
+To prove 2a., simply insert $iz$ into the series for $e^z$
 and substitute $i^2 = -1$, $i^3 = -i$, $i^4 = 1$, etc. The even terms
 make $\cos(z)$, and the odd terms make $i\sin(z)$. Notice that this
 requires Theorem
-[3.21](#thm:SumProductTwoPowerSeries){reference-type="ref"
-reference="thm:SumProductTwoPowerSeries"} for the validity of
+@thm-sum-product-power-series for the validity of
 term-by-term addition of series.
 
 The equation $e^0=1$ is obvious, and the other exponent laws follow
-easily from [\[sumLawExponents\]](#sumLawExponents){reference-type="ref"
-reference="sumLawExponents"}. Equation
-[\[ExpDefCis\]](#ExpDefCis){reference-type="ref" reference="ExpDefCis"},
+easily from 1b. Equation
+2b.,
 sometimes used as a definition of $e^{a+ib}$, follows from
-[\[sumLawExponents\]](#sumLawExponents){reference-type="ref"
-reference="sumLawExponents"} and
-[\[EulersFormula\]](#EulersFormula){reference-type="ref"
-reference="EulersFormula"}.
+1a. and 2a.
 
-The symmetries [\[cosEven\]](#cosEven){reference-type="ref"
-reference="cosEven"} and [\[sinOdd\]](#sinOdd){reference-type="ref"
-reference="sinOdd"} follow by direct substitution into the series.
+The symmetries 3d. and 3e. follow by direct substitution into the series.
 Combined with Euler's formula
-[\[EulersFormula\]](#EulersFormula){reference-type="ref"
-reference="EulersFormula"} for $e^{iz}$ and $e^{-iz}$ we obtain
-[\[cosFromExp\]](#cosFromExp){reference-type="ref"
-reference="cosFromExp"} and
-[\[sinFromExp\]](#sinFromExp){reference-type="ref"
-reference="sinFromExp"}. Next
-[\[ExpPeriodic\]](#ExpPeriodic){reference-type="ref"
-reference="ExpPeriodic"} follows from
-[\[ExpDefCis\]](#ExpDefCis){reference-type="ref" reference="ExpDefCis"}
+2a. for $e^{iz}$ and $e^{-iz}$ we obtain
+3b. and
+3c. Next
+3a. follows from
+2b.
 and the periodicities of the *real* functions $\cos$ and $\sin$. (I
 would prefer to give a self-contained argument, not dependent on prior
 knowledge of $\cos$ and $\sin$, but this would require a rigorous
 definition of $\pi$ and would take us far afield! See Spivak's Calculus
-for this argument.) Using
-[\[ExpPeriodic\]](#ExpPeriodic){reference-type="ref"
-reference="ExpPeriodic"} we deduce
-[\[CosPeriodic\]](#CosPeriodic){reference-type="ref"
-reference="CosPeriodic"} from
-[\[cosFromExp\]](#cosFromExp){reference-type="ref"
-reference="cosFromExp"}, and
-[\[SinPeriodic\]](#SinPeriodic){reference-type="ref"
-reference="SinPeriodic"} from
-[\[sinFromExp\]](#sinFromExp){reference-type="ref"
-reference="sinFromExp"} ◻
+for this argument.) Using 3a, we deduce 3b from 2c and 3c from 2d. 
+Note that we have assumed the periodicity of the ordinary real 
+$\cos$ and $\sin$ to prove the periodicity of these functions' 
+complex extensions.
 :::
 
 ::: exercise
@@ -2221,55 +2153,56 @@ power series definitions?
 :::
 
 We're ready now to face the challenge of the logarithm. Of course the
-job of $\log(z)$ is to invert the function $e^z$, but
-[\[ExpPeriodic\]](#ExpPeriodic){reference-type="ref"
-reference="ExpPeriodic"} above reveals that $e^z$ is far from injective.
-We must restrict its domain. In fact, for any $w \in {\mathbb C}$, we
-have $e^w = e^z$ for some $z$ in the region
-$D = \{a+bi | b \in (-\pi,\pi]\}$, where $e^z$ is injective (though we
-haven't proven it). Thus $D$ seems a natural choice for the restricted
-domain of $e^z$.
+job of $\log(z)$ is to invert the function $e^z$, but since 
+$e^z = e^{z+2\pi i}$, the function $e^z$ is far from injective.
+We must restrict its domain. In particular, the domain must not include
+$z$ and $z+2\pi i$ for any $z$. This suggests the restriction
+$D = \{a+bi | b \in (-\pi,\pi]\}$. Soon we'll show that $e^z$ is injective
+on $D$.
 
 Let us set $w = e^z$, where $z=a+bi \in D$ and try to solve for $z$:
-Using [\[ExpDefCis\]](#ExpDefCis){reference-type="ref"
-reference="ExpDefCis"} we have $w = e^a\operatorname{cis}(b)$. Taking
-moduli, $\abs*{w} = \abs*{e^a} \cdot 1$,
-and $a=\ln_{\mathbb R}(\abs*{w})$, where of course
-$\ln_{\mathbb R}$ is the real natural logarithm. Returning to
+\begin{align}
+w &= e^z \\
+w &= e^a\operatorname{cis}(b) \\
+\modulus{w} &= \modulus{e^a} \cdot 1 \\ 
+\ln_{\mathbb R}(\modulus{w}) &= a\\
+\end{align}
+... where of course
+$\ln_{\mathbb R}$ is the real natural logarithm function. Returning to
 $w = e^a\operatorname{cis}(b)$ and taking arguments, we have
 $\arg(w) = \arg{\operatorname{cis}(b)} = b$ (since $e^a$ is a positive
 real, and since $b \in (-\pi,\pi]$). Thus
-$z = a+bi = \ln_{\mathbb R}(\abs*{w})  +i \arg(w)$. This
+$z = a+bi = \ln_{\mathbb R}(\modulus{w})  +i \arg(w)$. This
 leads us to the following definition and proposition:
 
-::: {.definition}
-**Definition 3.30**. Let $z \in {\mathbb C}$. We define the
-**logarithm** $\log:{\mathbb C}\to \{a+bi | b \in (-\pi,\pi]\}$ of $z$
+::: {#def-logarithm .definition}
+Let $z \in {\mathbb C}$. We define the
+**complex logarithm** $\log:{\mathbb C}\to \{a+bi | b \in (-\pi,\pi]\}$ of $z$
 by the formula:
-$$\log(z) \equiv \ln_{\mathbb R}(\abs*{z})  +i \arg(z)$$
+$$\log(z) \equiv \ln_{\mathbb R}(\modulus{z})  +i \arg(z)$$
 where $\arg$ is an argument function.
 :::
 
-Notice that the ambiguity of $\arg$ is built into $\log$. We can define
-$\log$ using any argument function, making appropriate changes below.
+Notice that the ambiguity of $\arg$ is built into $\log$. We can redefine
+$\log$ using any argument function (for example taking values in $[0,2\pi)$), making appropriate changes below.
 
-::: {.proposition}
-**Proposition 3.31**. *The function $\log(z)$ is undefined at $0$ and
+::: {#prp-log-continuous-derivative .proposition}
+The function $\log(z)$ is undefined at $0$ and
 discontinuous exactly where $\arg(z)$ is (i.e., the negative reals).
-Where continuous, the derivative is $\log'(z) = 1/z$. For all $z$ we
-have $e^{\log(z)} = z$, and whenever $\Im(z) \in (-\pi,\pi]$ we have
-$\log(e^z) = z$.*
-:::
+Where continuous, the function has derivative $\log'(z) = 1/z$. For all $z$ we
+have $e^{\log(z)} = z$, and whenever $Im(z) \in (-\pi,\pi]$ we have
+$\log(e^z) = z$.
+::: 
 
-::: {.proof}
-At $z=0$, $\ln_{\mathbb R}(\abs*{z})$ is
-undefined. Everywhere else, $\ln_{\mathbb R}(\abs*{z})$
+::: {.proof} 
+At $z=0$, $\ln_{\mathbb R}(\modulus{z})$ is
+undefined. Everywhere else, $\ln_{\mathbb R}(\modulus{z})$
 is continuous, so all discontinuities come from the term $i\arg(z)$. For
 any $z$,
-$e^{\log(z)} = e^{\ln_{\mathbb R}(\abs*{z})  +i \arg(z)} = e^{\ln_{\mathbb R}(\abs*{z})} \operatorname{cis}(\arg(z))  = \abs*{z} \operatorname{cis}(\arg(z)) = z$.
+$e^{\log(z)} = e^{\ln_{\mathbb R}(\modulus{z})  +i \arg(z)} = e^{\ln_{\mathbb R}(\modulus{z})} \operatorname{cis}(\arg(z))  = \modulus{z} \operatorname{cis}(\arg(z)) = z$.
 For $b \in (-\pi,\pi]$, we have
-$\log(e^{a+bi}) = \log(e^a \operatorname{cis}(b)) = \ln_{\mathbb R}(\abs*{e^a})  +i \arg(\operatorname{cis}(b)) = a + ib$
-as desired. ◻
+$\log(e^{a+bi}) = \log(e^a \operatorname{cis}(b)) = \ln_{\mathbb R}(\modulus{e^a})  +i \arg(\operatorname{cis}(b)) = a + ib$
+as desired. 
 :::
 
 It's useful to look closely at the discontinuities of $\log$. As $z$
@@ -2340,7 +2273,7 @@ defined by the formula $$a^z \equiv_{def}  e^{z \log(a)}$$ (To remember
 the formula, just apply rules of logarithms to $a^z = e^{\log(a^z)}$.)
 Now let $a$ be an arbitrary complex number. Prove that the exponential
 function $a^z$ satisfies the sum law for exponential functions
-$a^{w+z} = a^wa^z$
+$a^{w+z} = a^wa^z$. Calculate $(1+i)^i$.
 :::
 
 ## Derivatives and Difference quotients
@@ -2362,128 +2295,113 @@ However, this does not automatically mean that
 $q:X \times X \to {\mathbb C}$ is continuous. Furthermore note that $q$
 is symmetric in the sense that $q(w,z) = q(z,w)$.
 
-::: {#thm:SmallDerivativeSmallDifferenceQuotient .theorem}
-**Theorem 3.32**. *Let $X$ be an open convex subset of ${\mathbb C}$ or
+::: {#thm-small-derivative-small-q .theorem}
+Let $X$ be an open convex subset of ${\mathbb C}$ or
 ${\mathbb R}$, and let $f:X \to {\mathbb C}$ be differentiable with
-$\abs*{f'}<\varepsilon$. Then
+$\modulus{f'}<\varepsilon$. Then
 $\forall w \neq z \in X \enspace 
-    \abs*{ \frac{f(w)-f(z)}{w-z}}<\varepsilon$.*
+    \modulus{ \frac{f(w)-f(z)}{w-z}}<\varepsilon$.
 :::
 
 ::: {.proof}
-Notice that $q(w,z)$ (above) is continuous in $w$ for fixed $z$
-and vice versa, and
-$\abs*{q(w,z)}=\abs*{q(w,z)}$.
-
 We prove a sort of transitivity along straight lines: Assume
-$\abs*{q(w,m)}< {\varepsilon}$,
-$\abs*{q(m,z)}< {\varepsilon}$, and $m$ is
+$\modulus{q(w,m)}< {\varepsilon}$,
+$\modulus{q(m,z)}< {\varepsilon}$, and $m$ is
 between $w$ and $z$ on a straight line segment in ${\mathbb C}$. Then
-$$\abs*{q(w,z)} = \left|\frac{f(w)-f(z)}{w-z}\right| \leq \frac{|f(w)-f(m)| +|f(m)-f(z)|}{|w-m|+|m-z|} < {\varepsilon}$$
+$$\modulus{q(w,z)} = \left|\frac{f(w)-f(z)}{w-z}\right| \leq \frac{|f(w)-f(m)| +|f(m)-f(z)|}{|w-m|+|m-z|} < {\varepsilon}$$
 by the triangle inequality in the numerator and "triangle equality" for
 $|w-z|$. By basic properties of fractions, this is between
-$\abs*{q(w,m)}$ and $\abs*{q(m,z)}$, so
+$\modulus{q(w,m)}$ and $\modulus{q(m,z)}$, so
 it too is less than ${\varepsilon}$.
 
-From here we need only topology. Let $w,z \in X$ and let $I$ be the line
-segment connecting them. Since $q(w,z)$ is continuous in $w$,
-$S = \{w | q(w,z)<{\varepsilon}\}$ is open. Since
-$|f'(z)|<{\varepsilon}$, $S$ contains $z$. Since $I$ is
-compact, $I-S$ is empty or has a minimal (i.e. closest to $z$) element,
-$w_0 \neq z$. But then
-$S' = \{w : \abs*{q(w_0,w)}<{\varepsilon}\}$
-is likewise open and contains $w_0$, so there is some $m$ between $z$
-and $w_0$ for which
-$\abs*{q(z,m)}<{\varepsilon}$ and
-$\abs*{q(m,w_0)}<{\varepsilon}$,
-contradicting the transitivity property. This shows $I-S$ is empty, so
-$q(w,z)<{\varepsilon}$ as desired. ◻
+From here we need only topology. Fix $z \in X$. Let 
+$S = \{w | q(w,z)<{\varepsilon}\}$. This is open because $q(w,z)$ is a 
+continuous function of $w$. If any $w \in X-S$, then we may choose 
+such a $w$ as close as possible to $z$. By convexity, $z$ and $w$ 
+are connected by a straight line segment $I$. 
+Since $\modulus{f'(w)}<\varepsilon$, we have a neighborhood 
+$B(w,\delta)$ on which $\norm{q(w,x)}<\varepsilon$.
+Choose $m \in I \cap B(w,\delta)$ between $z$ and $w$, and we 
+have a contradiction to the transitivity condition above.
 :::
 
-::: {#thm:ZeroDerivativeLocallyConstant .cor}
-**Corollary 3.33**. *If $f:U \to {\mathbb C}$ is differentiable with
+::: {#cor-zero-derivative-locally-constant .corollary}
+If $f:U \to {\mathbb C}$ is differentiable with
 zero derivative then $f$ is locally constant in the sense that
 $\forall z \in U \enspace \exists \delta>0 \enspace f$ is constant on
-$B(z,\delta)$.*
+$B(z,\delta)$.
 :::
 
 ::: {.proof}
-Theorem
-[3.32](#thm:SmallDerivativeSmallDifferenceQuotient){reference-type="ref"
-reference="thm:SmallDerivativeSmallDifferenceQuotient"} applies for all
-$\varepsilon>0$. ◻
+@thm-small-derivative-small-q
+ applies for all
+$\varepsilon>0$. 
 :::
 
-::: {.corollary}
-**Corollary 3.34**. *If $f:U \to {\mathbb C}$ is differentiable with
-zero derivative and $U$ is connected, then $f$ is constant.*
+::: {#cor-zero-derivative-constant .corollary}
+If $f:U \to {\mathbb C}$ is differentiable with
+zero derivative and $U$ is connected, then $f$ is constant.
 :::
 
 ::: {.proof}
 Choose $z_0 \in U$ and let $c = f(z_0)$. Then
 $U = f^{-1}(c) \cup f^{-1}({\mathbb C}-\{c\})$. The first set is open by
-Corollary
-[3.33](#thm:ZeroDerivativeLocallyConstant){reference-type="ref"
-reference="thm:ZeroDerivativeLocallyConstant"}, and the second is open
+@cor-zero-derivative-locally-constant, and the second is open
 by continuity. By connectedness, the latter set must be empty, so $f$ is
-constant. ◻
+constant. 
 :::
 
-::: {.corollary}
-**Corollary 3.35**. *Let $f:U \to {\mathbb C}$, with $U$ open and
+::: {#cor-antiderivative-uniqueness .corollary}
+Let $f:U \to {\mathbb C}$, with $U$ open and
 connected. If $f$ has an antiderivative, then it is unique up to
-constant.*
+constant.
 :::
 
 ::: {.proof}
 If $F_1$ and $F_2$ are antiderivatives of $f$, then $F_1-F_2$
-has zero derivative, so is constant. ◻
+has zero derivative, so is constant. 
 :::
 
-From Theorem
-[3.32](#thm:SmallDerivativeSmallDifferenceQuotient){reference-type="ref"
-reference="thm:SmallDerivativeSmallDifferenceQuotient"} we also deduce:
+From @thm-small-derivative-small-q we also deduce:
 
-::: {#thm:EstimateDerivativeEstimateDifferenceQuotient .cor}
-**Corollary 3.36**. *Let $X$ be an open convex subset of ${\mathbb C}$
+::: {#cor-estimate-derivative-estimate-q .cor}
+Let $X$ be an open convex subset of ${\mathbb C}$
 or ${\mathbb R}$, and let $f:X \to {\mathbb C}$ be differentiable with
 $f'\in B(m,{\varepsilon})$, with $m \in {\mathbb C}$. Then
 $\forall w \neq z \in X \enspace 
-    \frac{f(w)-f(z)}{w-z} \in B(m,{\varepsilon})$.*
+    \frac{f(w)-f(z)}{w-z} \in B(m,{\varepsilon})$.
 :::
 
 ::: {.proof}
-Apply Theorem
-[3.32](#thm:SmallDerivativeSmallDifferenceQuotient){reference-type="ref"
-reference="thm:SmallDerivativeSmallDifferenceQuotient"} to the function
-$f(x)-mx$. ◻
+Apply @thm-small-derivative-small-q to the function
+$f(x)-mx$. 
 :::
 
-If furthermore $f'$ is a continuous function, then so is the function
-$q$ above:
+If furthermore $f'$ is a continuous function, then $q(w,z)$ is 
+not only continuous in each variable, but also a continuous 
+function of two variables.
 
-::: {#thm:DifferenceQuotientDerivativeContinuous .theorem}
-**Theorem 3.37**. *Let $f:X \to {\mathbb C}$, where $X$ is an open
+::: {#thm-q-continuous .theorem}
+Let $f:X \to {\mathbb C}$, where $X$ is an open
 subset of ${\mathbb C}$ or ${\mathbb R}$. If $f'$ is defined and
 continuous on $X$, then the function
 $$q(w,z) = \left\{\begin{array}{ll}\frac{f(w)-f(z)}{w-z}  & \text{ if $w \neq z$}\\
             f'(z)& \text{ if $w= z$} \end{array} \right.$$ is a
-continuous function from $X \times X$ to ${\mathbb C}$.*
+continuous function from $X \times X$ to ${\mathbb C}$.
 :::
 
 ::: {.proof}
 We prove continuity at an arbitrary point $(z_0,w_0)$. If
-$w_0\neq z_0$ then in a neighborhood of $(z_0,w_0)$ we have
+$w_0 \neq z_0$ then in a neighborhood of $(z_0,w_0)$ we have
 $q(w,z) =  \frac{f(w)-f(z)}{w-z}$, which is continuous since both $f(z)$
 and $\frac{1}{w-z}$ are. If $w_0=z_0$, let ${\varepsilon}>0$.
 Let $m = f'(z_0) = q(w_0,z_0)$. Choose $\delta>0$ so that
-$\abs*{w-z_0}<\delta \to f'(w) \in B(m,{\varepsilon})$
-by continuity of $f'$. Since $B(z_0,\delta)$ is convex, Corollary
-[3.36](#thm:EstimateDerivativeEstimateDifferenceQuotient){reference-type="ref"
-reference="thm:EstimateDerivativeEstimateDifferenceQuotient"} applies,
+$\modulus{w-z_0}<\delta \to f'(w) \in B(m,{\varepsilon})$
+by continuity of $f'$. Since $B(z_0,\delta)$ is convex, 
+@cor-estimate-derivative-estimate-q applies,
 so for all $(w, z) \in B(z_0,\delta) \times B(z_0,\delta)$ we have
 $q(w,z) \in B(m,{\varepsilon})$. Therefore $q$ is
-continuous. ◻
+continuous. 
 :::
 
 Any continuous function will be uniformly continuous on compact sets. If
@@ -2491,12 +2409,13 @@ $X$ is furthermore compact we get a very useful tool which allows us to
 uniformly estimate $\frac{f(z)-f(w)}{z-w}$ using the derivative
 $f'(z_0)$ at a different, but nearby point $z_0$:
 
-::: {#thm:ContinuousDerivativeUniformlyApproximateDifferenceQuotient .theorem}
-**Theorem 3.38**. *Let $f:K \to {\mathbb C}$, where $K$ is a compact
+::: {#thm-uniform-approximation-of-q .theorem}
+## Uniform approximation of the difference quotient
+Let $f:K \to {\mathbb C}$, where $K$ is a compact
 subset of ${\mathbb C}$ or ${\mathbb R}$. If $f'$ is defined and
 continuous on some open superset $U$ of $K$, then
 $$\forall {\varepsilon}>0 \enspace \exists \delta>0 \enspace \forall z_0 \in K \enspace \forall w \neq z\in B(z_0, \delta) \cap K \to 
-    \abs*{\frac{f(z)-f(w)}{z-w} - f'(z_0)} < {\varepsilon}$$*
+    \modulus{\frac{f(z)-f(w)}{z-w} - f'(z_0)} < {\varepsilon}$$
 :::
 
 ::: {.proof}
@@ -2505,13 +2424,16 @@ $q(w,z) = \left\{\begin{array}{ll}\frac{f(w)-f(z)}{w-z}  & \text{ if $w \neq z$}
             f'(z)& \text{ if $w= z$} \end{array} \right\}$ on the domain
 $K \times K$ to learn:
 $$\forall {\varepsilon}>0 \enspace \exists \delta>0 \enspace \forall (w_0, z_0) \in K\times K \enspace \forall (w,z) \in K\times K \enspace 
-    d((w_0,z_0), (w,z))< \delta \to \abs*{q(w, z) - q(w_0,z_0)}< {\varepsilon}$$
+    d((w_0,z_0), (w,z))< \delta \to \modulus{q(w, z) - q(w_0,z_0)}< {\varepsilon}$$
 Here
-$d((w_0,z_0), (w,z)) = \max(\abs*{w_0-w},\abs*{z_0-z})$.
+$d((w_0,z_0), (w,z)) = \max(\modulus{w_0-w},\modulus{z_0-z})$.
 The desired formula is obtained by taking the special case $w_0=z_0$ and
 noting that when $w_0=z_0$ the condition $w \neq z\in B(z_0, \delta)$
-implies the condition $d((w_0,z_0), (w,z))< \delta$. ◻
+implies the condition $d((w_0,z_0), (w,z))< \delta$. 
 :::
+
+@thm-uniform-approximation-of-q plays a role in our integration theory similar
+to the mean value theorem in a theory based within ${\mathbb R}$. 
 
 ::: exercise
 **Exercise 3.17**. A standard example of a function
@@ -2535,7 +2457,7 @@ $$f(x) = \begin{cases}x^2 \sin(1/x) & \text{ if } x \neq 0 \\ 0 & \text{ if } x 
 
 We wish to define a theory of complex integration which directly
 generalizes the real integral $\int_a^b f(x) dx$. It isn't obvious how
-the theory should change to accomodate the complex numbers, and the
+the theory should change to accommodate the complex numbers, and the
 basic definitions are a bit mysterious to the beginner. So we begin with
 a conversation designed to review real integration and motivate new
 definitions.
@@ -2545,12 +2467,12 @@ measure the signed area under the curve $f(x)$ between $x=a$ and $x=b$.
 It requires remarkably sophisticated geometry to directly define "area"
 in a way that applies to the great variety of graphs of everyday
 functions, so instead we approximate the area using rectangles, and
-define the integral to be the limit of rectangular approximations as
+define the integral to be the limit of rectangular approximations, as
 rectangles narrow toward zero width:
 
-::: {.definition}
-**Definition 4.1** (Real integral -- incomplete definition). Let
-$f:{\mathbb R}\to {\mathbb R}$ be a function. The **definite integral of
+::: {#def-real-integral-naive .definition}
+## Real integral -- incomplete definition)
+Let $f:{\mathbb R}\to {\mathbb R}$ be a function. The **definite integral of
 $f$ from $a$ to $b$** is defined to be
 $$\int_a^b f(x) dx \equiv_{\text{def}} \lim \sum_{i=1}^{m} f(\tau_i)(t_{i} - t_{i-1})$$
 :::
@@ -2584,8 +2506,8 @@ These are reasons to consider more general arrangements of points
 $a=t_0<t_1<\ldots<t_m=b$, and more general sample points $\tau_i$: We
 call this data a *partition.*
 
-::: {.definition}
-**Definition 4.2**. A **partition** $P$ of a closed interval $[a,b]$ is
+::: {#def-partition .definition}
+A **partition** $P$ of a closed interval $[a,b]$ is
 a finite set of points $a<t_0<t_1<\ldots<t_m=b$, called the
 **endpoints** of $P$. A **tagged partition** is a partition as above,
 together with a list of **tags** $\tau_1, \ldots \tau_m$, so that
@@ -2603,28 +2525,28 @@ functions of $m$. To describe the limit "as the rectangles get
 narrower," we measure the **norm** of a partition to be the maximum
 width of its intervals.
 
-::: {.definition}
-**Definition 4.3**. Let $P$ be a partition of $[a,b]$ with endpoints
+::: {#def-partition-norm .definition}
+Let $P$ be a partition of $[a,b]$ with endpoints
 $a<t_0<t_1<\ldots<t_m=b$. The **norm** of $P$ is the maximum width:
 $$||P|| \equiv_{\text{def}} \max\{t_i-t_{i-1} : 1\leq i\leq m\}$$
 :::
 
-::: {.definition}
-**Definition 4.4** (Real integral -- partitions definition). Let
-$f:{\mathbb R}\to {\mathbb R}$ be a function. The **definite integral of
-$f$ from $a$ to $b$** is defined to be
-$$\int_a^b f(x) dx \equiv_{\text{def}} \lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \sum_{i=1}^{m} f(\tau_i)(t_{i} - t_{i-1})$$
+::: {#def-real-integral-partitions .definition}
+## Real integral -- partitions definition
+Let $f:{\mathbb R}\to {\mathbb R}$ be a function. The **definite integral of
+$f$ from $a$ to $b$** is defined to be 
+$$\int_a^b f(x) dx \equiv_{\text{def}} \lim_{\norm{P} \to 0} \sum_{i=1}^{m} f(\tau_i)(t_{i} - t_{i-1})$$
 If the limit exists, we say that $f$ is **Riemann integrable.**
 :::
 
 \...but this is a new kind of limit entirely, demanding a new
 definition.
 
-::: {.definition}
-**Definition 4.5**. Let $\phi$ be a function from tagged partitions of
+::: {#def-partition-limit .definition}
+Let $\phi$ be a function from tagged partitions of
 $[a,b]$ to ${\mathbb R}$ (or ${\mathbb C}$). We define:
-$$\lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \phi(P) \equiv_{\text{def}} \iota L \enspace \forall \varepsilon>0 \enspace \exists \delta >0
-    \enspace \forall \text{ tagged partitions } P \text{ on } [a,b] \enspace \big(\@ifstar{\norm}{\norm*}{P}<\delta \to |\phi(P)-L|<\varepsilon\big)$$
+$$\lim_{\norm{P} \to 0} \phi(P) \equiv_{\text{def}} \iota L \enspace \forall \varepsilon>0 \enspace \exists \delta >0
+    \enspace \forall \text{ tagged partitions } P \text{ on } [a,b] \enspace \big(\norm{P}<\delta \to |\phi(P)-L|<\varepsilon\big)$$
 :::
 
 Note that the codomain of $\phi$ can be changed to any metric space by
@@ -2640,7 +2562,7 @@ $\tau_i$. Our waypoints $z_n$ can no longer be ordered because
 ${\mathbb C}$ has no order structure. We can no longer insist that
 $z_{i-1} \leq \tau_i \leq z_i$ for the same reason, but let us ignore
 this problem for now. We could, however, generalize the idea of
-partition norm to be $\max_i \abs*{z_i-z_{i-1}}$. But
+partition norm to be $\max_i \modulus{z_i-z_{i-1}}$. But
 after all this we would still discover an intractable difficulty: For
 many very reasonable functions such as $f(z) = 1/z$, the limit of sums
 $\sum_{i=1}^{m} f(\tau_i)(z_{i} - z_{i-1})$ depends on how the points
@@ -2651,8 +2573,8 @@ complex plane. We define an object called a *path* (written $\gamma$)
 which exactly prescribes these wanderings. Then the integral depends not
 only on endpoints $a$ and $b$ but on the path $\gamma$.
 
-::: {.definition}
-**Definition 4.6**. A **path** is a continuous function
+::: {#def-path .definition}
+A **path** is a continuous function
 $\gamma:[a,b] \to {\mathbb C}$ from a closed interval to ${\mathbb C}$.
 A path is **closed** if $\gamma(a)=\gamma(b)$.
 :::
@@ -2663,11 +2585,12 @@ $\{\gamma(t_i)\}$ will be the needed finite sequence of waypoints in
 ${\mathbb C}$, and $\gamma(\tau_i)$ will be the required sample points.
 We now define the path integral of a complex function.
 
-::: {.definition}
-**Definition 4.7** (Path integral). Let $f:{\mathbb C}\to {\mathbb C}$
+::: {#def-path-integral .definition}
+## Path integral 
+Let $f:{\mathbb C}\to {\mathbb C}$
 be a function, and $\gamma:[a,b] \to {\mathbb C}$ a path. The **path
 integral of $f$ along $\gamma$** is defined to be
-$$\int_\gamma f(z) dz \equiv_{\text{def}} \lim_{\@ifstar{\norm}{\norm*}{P} \to 0} 
+$$\int_\gamma f(z) dz \equiv_{\text{def}} \lim_{\norm{P} \to 0} 
         \sum_{i=1}^{m} f(\gamma(\tau_i))(\gamma(t_{i}) - \gamma(t_{i-1}))$$
 where the limit is over tagged partitions $P$ of $[a,b]$.
 :::
@@ -2692,7 +2615,7 @@ $\chi_{\mathbb Q}(x) =
 
 2.  Show that $\chi_{\mathbb Q}$ is not integrable on $[0,1]$ using the
     (more sophisticated) partition-based definition
-    $$\int_a^b f(x) dx \equiv_{\text{def}} \lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \sum_{i=1}^{m} f(\tau_i)(t_{i} - t_{i-1})$$
+    $$\int_a^b f(x) dx \equiv_{\text{def}} \lim_{\norm{P} \to 0} \sum_{i=1}^{m} f(\tau_i)(t_{i} - t_{i-1})$$
     where $t_i$ and $\tau_i$ come from the partition $P$.
 :::
 
@@ -2708,13 +2631,13 @@ $f \circ \gamma:[a,b] \to {\mathbb C}$, we have an obvious
 generalization in which $f \circ \gamma$ is replaced with an arbitrary
 function on $[a,b]$:
 
-::: {.definition}
-**Definition 4.8** (Riemann-Stieltjes integral). Let
-$f:[a,b] \to {\mathbb C}$ be a function, and
+::: {#def-riemann-stieltjes-integral .definition}
+## Riemann-Stieltjes integral
+Let $f:[a,b] \to {\mathbb C}$ be a function, and
 $\gamma:[a,b] \to {\mathbb C}$ a function (usually a path). The
 **Riemann-Stieltjes integral of $f$ with respect to $\gamma$** is
 defined to be
-$$\int_a^b f d\gamma = \int_a^b f(t) d\gamma(t) \equiv_{\text{def}} \lim_{\@ifstar{\norm}{\norm*}{P} \to 0} 
+$$\int_a^b f d\gamma = \int_a^b f(t) d\gamma(t) \equiv_{\text{def}} \lim_{\norm{P} \to 0} 
         \sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1}))$$
 where the limit is over tagged partitions $P$ of $[a,b]$.
 :::
@@ -2729,15 +2652,16 @@ of $\gamma$ give nonzero weight, in the sense of integration, to single
 points of $[a,b]$.
 
 ::: note
-**Note 4.9**. *If $\gamma(t) = t$ in the Riemann-Stieltjes integral,
-then $$\int_a^b f(t) dt = \int_a^b f d\gamma$$*
+**Note:** 
+If $\gamma(t) = t$ in the Riemann-Stieltjes integral,
+then $$\int_a^b f(t) dt = \int_a^b f d\gamma$$
 
-*If $\gamma$ is a path, then
-$$\int_\gamma f(z) dz = \int_a^b (f \circ \gamma) d\gamma$$*
+If $\gamma$ is a path, then
+$$\int_\gamma f(z) dz = \int_a^b (f \circ \gamma) d\gamma$$
 
-*By studying the Riemann-Stieltjes integral, we are developing a common
+By studying the Riemann-Stieltjes integral, we are developing a common
 foundation of both complex path integrals and ordinary Riemann
-integration.*
+integration.
 :::
 
 ::: exercise
@@ -2756,11 +2680,11 @@ path from $1$ to $i$. Give an explicit equation for $\gamma$.
 ## Limit properties of functions on partitions
 
 We wish to prove a criterion for existence of the Riemann-Stieltjes
-integral. The integral is a limit as $\@ifstar{\norm}{\norm*}{P} \to 0$,
+integral. The integral is a limit as $\norm{P} \to 0$,
 and it's convenient to develop the properties of such limits:
 
-::: {.definition}
-**Definition 4.10**. Let $P$ and $Q$ be partitions of $[a,b]$ (tagged or
+::: {#def-partition-refines .definition}
+Let $P$ and $Q$ be partitions of $[a,b]$ (tagged or
 not). We say that $Q$ **refines** $P$, and write $P \preccurlyeq Q$, if
 the endpoints $\{t_i\}$ of $P$ form a subset of the endpoints $\{s_j\}$
 of $Q$. (Note: For $P \preccurlyeq Q$, we require no relationship
@@ -2770,65 +2694,65 @@ between tags. Some authors do!)
 Note that when $P \preccurlyeq Q$, $Q$ is greater in terms of *more
 division points*, but $P$ usually has wider intervals.
 
-::: {.proposition}
-**Proposition 4.11**. *Let $\phi(P)$ be a function from tagged
+::: {#prp-partition-limit-sup .proposition}
+Let $\phi(P)$ be a function from tagged
 partitions $P$ of $[a,b]$ to ${\mathbb R}$ with $\phi$ increasing in the
 sense that if $P \preccurlyeq Q$ then $\phi(P) \leq \phi(Q)$. If
-$\displaystyle \lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \phi(P)$ exists
-then it equals $\sup_P(\phi(P))$*
+$\displaystyle \lim_{\norm{P} \to 0} \phi(P)$ exists
+then it equals $\sup_P(\phi(P))$
 :::
 
 ::: {.proof}
-Let $L = \lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \phi(P)$. Let
+Let $L = \lim_{\norm{P} \to 0} \phi(P)$. Let
 $Q$ be any partition. Let $\varepsilon >0$. Choose $\delta>0$ for
 $\varepsilon$ in the definition of the limit. Choose some refinement
-$Q \preccurlyeq R$ with $\@ifstar{\norm}{\norm*}{R}<\delta$. Then
+$Q \preccurlyeq R$ with $\norm{R}<\delta$. Then
 $\phi(Q) \leq \phi(R) < L+\varepsilon$. Since $\varepsilon$ was arbitary,
 $\phi(Q) \leq L$ for all $Q$ and $\sup_P(\phi(P)) \leq L$. Since
 $\phi(P)$ can be made arbitarily close to $L$,
-$\sup_P(\phi(P)) \geq L$. ◻
+$\sup_P(\phi(P)) \geq L$. 
 :::
 
-::: {.definition}
-**Definition 4.12**. Let $\phi(P)$ be a function from tagged partitions
+::: {#def-partition-cauchy .definition}
+Let $\phi(P)$ be a function from tagged partitions
 $P$ of $[a,b]$ to a metric space $X$ (usually ${\mathbb C}$). We say
 that $\phi$ is **Cauchy** if:
 $$\forall {\varepsilon}>0 \enspace \exists \delta>0 \enspace \forall \text{ tagged partitions } P, Q \text{ with } 
-    \@ifstar{\norm}{\norm*}{P} <\delta \text{ and } P \preccurlyeq Q  \text{ we have } d(\phi(P),\phi(Q))<{\varepsilon}$$
+    \norm{P} <\delta \text{ and } P \preccurlyeq Q  \text{ we have } d(\phi(P),\phi(Q))<{\varepsilon}$$
 :::
 
-::: {.theorem}
-**Theorem 4.13**. *Let $\phi(P)$ be a function from tagged partitions
+::: {#thm-cauchy-partition-converges .theorem}
+Let $\phi(P)$ be a function from tagged partitions
 $P$ of $[a,b]$ to a complete metric space $X$. Then $\phi$ is Cauchy if
 and only if
-$\displaystyle \lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \phi(P)$ exists.*
+$\displaystyle \lim_{\norm{P} \to 0} \phi(P)$ exists.
 :::
 
 ::: {.proof}
-If $\lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \phi(P) = L$, let
+If $\lim_{\norm{P} \to 0} \phi(P) = L$, let
 ${\varepsilon}>0$ and choose $\delta>0$ so that
-$\@ifstar{\norm}{\norm*}{P}<\delta$ implies
+$\norm{P}<\delta$ implies
 $d(\phi(P),L) < {\varepsilon}/2$. Now if $P \preccurlyeq Q$
-then $\@ifstar{\norm}{\norm*}{Q}<\delta$ and
+then $\norm{Q}<\delta$ and
 $d(\phi(P),\phi(Q)) \leq d(\phi(P),L) + d(\phi(Q),L) < {\varepsilon}/2+{\varepsilon}/2 = {\varepsilon}$.
 
 Conversely let $\phi$ be Cauchy. Construct a sequence of partitions
 $P_0 \preccurlyeq 
     P_1 \preccurlyeq P_2 \preccurlyeq \ldots$ with
-$\lim_n \@ifstar{\norm}{\norm*}{P_n} = 0$. For example, subdivide
+$\lim_n \norm{P_n} = 0$. For example, subdivide
 $[a,b]$ into $2^n$ equal intervals, tagged at midpoints. Then the
 sequence $(\phi(P_n))$ is Cauchy in the usual sense, so has a limit $L$.
-To see that $\lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \phi(P) =L$, let
+To see that $\lim_{\norm{P} \to 0} \phi(P) =L$, let
 ${\varepsilon}>0$. Choose $\delta$ for
 ${\varepsilon}/3$ in the Cauchy criterion for $\phi$, and
 choose $N$ so that for $n>N$ we have
-$\@ifstar{\norm}{\norm*}{P_n}<\delta$ and
+$\norm{P_n}<\delta$ and
 $d(\phi(P_n),L)<{\varepsilon}/3$. To show partition
-convergence, let $\@ifstar{\norm}{\norm*}{Q}<\delta$. Choose some $n>N$
+convergence, let $\norm{Q}<\delta$. Choose some $n>N$
 and a joint refinement filter $R$ so that $P_n \preccurlyeq R$ and
 $Q \preccurlyeq R$. Then the Cauchy criterion applies to both
 $d(\phi(Q),\phi(R))$ and $d(\phi(R),\phi(P_n))$, so:
-$$d(\phi(Q),L) \leq  d(\phi(Q),\phi(R)) +d(\phi(R),\phi(P_n))  +d(\phi(P_n),L)  \leq {\varepsilon}/3+{\varepsilon}/3+{\varepsilon}/3 = {\varepsilon}$$ ◻
+$$d(\phi(Q),L) \leq  d(\phi(Q),\phi(R)) +d(\phi(R),\phi(P_n))  +d(\phi(P_n),L)  \leq {\varepsilon}/3+{\varepsilon}/3+{\varepsilon}/3 = {\varepsilon}$$ 
 :::
 
 ## Existence of Integrals
@@ -2841,12 +2765,12 @@ of these sets are convenient domains of integration, so we must identify
 a subclass of "reasonable" curves, in particular those of finite length
 in a sense we call "bounded variation."
 
-::: {.definition}
-**Definition 4.14**. Let $\gamma:[a,b] \to {\mathbb C}$ be a function.
+::: {#def-variation .definition}
+Let $\gamma:[a,b] \to {\mathbb C}$ be a function.
 The **variation** of $\gamma$ on a partition $P$ with endpoints
 $\{a=t_0< \ldots< t_m=b\}$ is the total distance along the $m$ straight
 line segments connecting $\gamma(t_0), \ldots , \gamma(t_m)$:
-$$v(\gamma;P) \equiv_{\text{def}} \sum_{i=1}^m \abs*{\gamma(t_i)-\gamma(t_{i-1})}$$
+$$v(\gamma;P) \equiv_{\text{def}} \sum_{i=1}^m \modulus{\gamma(t_i)-\gamma(t_{i-1})}$$
 The **total variation** of $\gamma$ is the supremum over all partitions
 $P$ of $[a,b]$: $$v(\gamma) \equiv_\text{def} \sup_P v(\gamma ; P)$$ If
 $V(\gamma)$ is finite, we say $\gamma$ has **bounded variation**.
@@ -2856,45 +2780,45 @@ We will show that if $f$ is continuous and $\gamma$ has bounded
 variation, then the integral $\int_a^b f(t) d\gamma(t)$ exists.
 Integrals over paths of unbounded variation sometimes do not exist.
 
-::: {.proposition}
-**Proposition 4.15**. *$v(\gamma,P)$ is an increasing function of $P$ in
+::: {#prp-variation-increasing .proposition}
+$v(\gamma,P)$ is an increasing function of $P$ in
 the sense that if $P \preccurlyeq Q$ then
-$v(\gamma,P) \leq v(\gamma,Q)$*
+$v(\gamma,P) \leq v(\gamma,Q)$
 :::
 
 ::: {.proof}
 Let $P$ have endpoints $\{t_i\}_{i=0}^m$ and let $Q$ have
 endpoints $\{s_j\}_{j=0}^n$. Apply the triangle inequality to
-$\abs*{\gamma(t_i)-\gamma(t_{i-1})} = \abs*{\gamma(s_{j_i})- \gamma(s_{j_i-1})+\gamma(s_{j_i-1}) \ldots - \gamma(s_{j_{i-1}{)}}}$. ◻
+$\modulus{\gamma(t_i)-\gamma(t_{i-1})} = \modulus{\gamma(s_{j_i})- \gamma(s_{j_i-1})+\gamma(s_{j_i-1}) \ldots - \gamma(s_{j_{i-1}{)}}}$. 
 :::
 
-::: {#variationAsLimit .cor}
-**Corollary 4.16**. *Let $\gamma:[a,b] \to {\mathbb C}$ be a function.
-If $\lim_{\@ifstar{\norm}{\norm*}{P} \to 0} v(\gamma,P)$ exists then it
-equals $v(\gamma)$.*
+::: {#cor-variation-limit .cor}
+Let $\gamma:[a,b] \to {\mathbb C}$ be a function.
+If $\lim_{\norm{P} \to 0} v(\gamma,P)$ exists then it
+equals $v(\gamma)$.
 :::
 
 We are now ready to prove the existence of the integral:
 
-::: {#thm:IntegralContinuousExists .theorem}
-**Theorem 4.17**. *Let $\gamma:[a,b] \to {\mathbb C}$ have bounded
+::: {#thm-integral-continuous-exists .theorem}
+Let $\gamma:[a,b] \to {\mathbb C}$ have bounded
 variation, and let $f:[a,b] \to {\mathbb C}$ be continuous. Then
-$\int_a^b f(t) d\gamma(t)$ exists.*
+$\int_a^b f(t) d\gamma(t)$ exists.
 :::
 
 ::: {.proof}
-The integral is a limit as $\@ifstar{\norm}{\norm*}{P} \to 0$,
+The integral is a limit as $\norm{P} \to 0$,
 and of course we plan to use the Cauchy criterion. Let
 ${\varepsilon}>0$. Since $f$ is continuous on a compact set,
 it is uniformly continuous and we may choose $\delta>0$ so that whenever
-$\abs*{x-y}<\delta$ then
-$\abs*{f(x)-f(y)}<\frac{{\varepsilon}}{v(\gamma)}$.
+$\modulus{x-y}<\delta$ then
+$\modulus{f(x)-f(y)}<\frac{{\varepsilon}}{v(\gamma)}$.
 Here $v(\gamma)$ is the variation of $\gamma$, presumed finite. Let
 $P \preccurlyeq Q$ be partitions of $[a,b]$, where $P$ has endpoints
 $t_i$ and tags $\tau_i$ and $Q$ has endpoints $s_j$ and tags $\sigma_j$,
-and assume $\@ifstar{\norm}{\norm*}{P} <\delta$. Since $Q$ refines $P$,
+and assume $\norm{P} <\delta$. Since $Q$ refines $P$,
 each $t_i$ is equal to some $s_j$. Say $t_i = s_{k_i}$. The difference
-$\abs*{\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) - \sum_{j=1}^{m'} f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))}$
+$\modulus{\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) - \sum_{j=1}^{m'} f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))}$
 can be reorganized by expanding each single term
 $f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1}))$ to a subsum
 $\sum_{j=k_{i-1}+1}^{k_i} f(\tau_i)(\gamma(s_j) - \gamma(s_{j-1}))$ We
@@ -2910,35 +2834,35 @@ $$\begin{aligned}
 The watchful reader will notice that the sum above is not a normal
 partition estimate to an integral because $\tau'_j$ is not necessarily
 in the range $[s_{j-1},s_j]$. Nevertheless we may combine the two sums:
-$$\begin{aligned}
-    \abs*{\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) - \sum_{j=1}^{m'} f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))} &= \\
-    \abs*{\sum_{j=1}^{m'} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1})) -  f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))} &=
-    \abs*{\sum_{j=1}^{m'} (f(\tau'_j)- f(\sigma_j))(\gamma(s_j) - \gamma(s_{j-1}))}  \\
-    &\leq \sum_{j=1}^{m'} \abs*{f(\tau'_j)- f(\sigma_j)}\abs*{\gamma(s_j) - \gamma(s_{j-1})} \\
-    &< \sum_{j=1}^{m'} \frac{{\varepsilon}}{v(\gamma)}\abs*{\gamma(s_j) - \gamma(s_{j-1})}  \leq {\varepsilon}
+\begin{aligned}
+    \modulus{\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) - \sum_{j=1}^{m'} f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))} &= \\
+    \modulus{\sum_{j=1}^{m'} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1})) -  f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))} &=
+    \modulus{\sum_{j=1}^{m'} (f(\tau'_j)- f(\sigma_j))(\gamma(s_j) - \gamma(s_{j-1}))}  \\
+    &\leq \sum_{j=1}^{m'} \modulus{f(\tau'_j)- f(\sigma_j)}\modulus{\gamma(s_j) - \gamma(s_{j-1})} \\
+    &< \sum_{j=1}^{m'} \frac{{\varepsilon}}{v(\gamma)}\modulus{\gamma(s_j) - \gamma(s_{j-1})}  \leq {\varepsilon}
     
-\end{aligned}$$
+\end{aligned}
 
 We conclude that the function
 $\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1}))$ is a Cauchy
 function of the partition $P$, so it converges. That is, the integral
-$\int_a^b f(t) d\gamma(t)$ exists. ◻
+$\int_a^b f(t) d\gamma(t)$ exists. 
 :::
 
-::: {#thm:RiemannIntegralExists .cor}
-**Corollary 4.18**. *Let $f:[a,b] \to {\mathbb C}$ be continuous. Then
-$\int_a^b f(t) dt$ exists.*
+::: {#thm-Riemann-integral-exists .cor}
+Let $f:[a,b] \to {\mathbb C}$ be continuous. Then
+$\int_a^b f(t) dt$ exists.
 :::
 
 ::: {.proof}
-$\gamma(t)=t$ has bounded variation $v(\gamma)=b-a$. ◻
+$\gamma(t)=t$ has bounded variation $v(\gamma)=b-a$. 
 :::
 
 ::: exercise
 **Exercise 4.5**. A function $h:X \to {\mathbb C}$ (with
 $X \subseteq {\mathbb C}$) is called **Lipschitz** if it has bounded
 difference quotients: That is, there is a constant $M$ so that for all
-$x \neq y \in X$ $\abs*{\frac{h(y)-h(x)}{y-x}}<M$. Prove
+$x \neq y \in X$ $\modulus{\frac{h(y)-h(x)}{y-x}}<M$. Prove
 that if $f:[a,b] \to {\mathbb C}$ and $\gamma:[a,b] \to {\mathbb C}$ are
 both Lipschitz, then $\int_a^b f d\gamma$ exists. (Hint: Not from the
 definitions!)
@@ -2946,24 +2870,24 @@ definitions!)
 
 The next theorem is easy but extremely useful:
 
-::: {#thm:MLInequality .theorem}
-**Theorem 4.19** (ML inequality). *Let $f:[a,b] \to {\mathbb C}$ be
+::: {#thm-ML-inequality .theorem}
+## ML inequality
+Let $f:[a,b] \to {\mathbb C}$ be
 continuous. Let $|f| \leq M$ on $[a,b]$, and let $L = v(\gamma)$. Then
-$\abs*{\int_a^b f(t) d\gamma} \leq ML$.*
+$\modulus{\int_a^b f(t) d\gamma} \leq ML$.
 :::
 
 ::: {.proof}
-Notice the integral exists by Theorem
-[4.17](#thm:IntegralContinuousExists){reference-type="ref"
-reference="thm:IntegralContinuousExists"} For any partition $P$ we have
-$\displaystyle \abs*{\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1}))} \leq \sum_{i=1}^{m} M\abs*{\gamma(t_{i}) - \gamma(t_{i-1})} \leq Mv(\gamma) \leq ML$. ◻
+Notice the integral exists by @thm-integral-continuous-exists.
+For any partition $P$ we have
+$\displaystyle \modulus{\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1}))} \leq \sum_{i=1}^{m} M\modulus{\gamma(t_{i}) - \gamma(t_{i-1})} \leq Mv(\gamma) \leq ML$. 
 :::
 
-::: {#LimitCommutesIntegral .cor}
-**Corollary 4.20**. *Let $g(z,w)$ be a continuous function of two
+::: {#cor-limit-commutes-integral .cor}
+Let $g(z,w)$ be a continuous function of two
 variables on $U \times im(\gamma)$, where $\gamma$ is continuous and
 bounded variation. Let $z_0 \in U$. Then
-$$\lim_{z \to z_0} \int_\gamma g(z,w) dw = \int_\gamma \lim_{z \to z_0}  g(z,w) dw = \int_\gamma g(z_0,w) dw$$*
+$$\lim_{z \to z_0} \int_\gamma g(z,w) dw = \int_\gamma \lim_{z \to z_0}  g(z,w) dw = \int_\gamma g(z_0,w) dw$$
 :::
 
 ::: {.proof}
@@ -2971,38 +2895,39 @@ Choose a ball $\overline{B(z_0,\rho)} \subseteq U$ and choose
 $\delta<\rho$ for $\frac{{\varepsilon}}{v(\gamma)}$ in the
 uniform continuity of $g$ on the compact set
 $\overline{B(z_0,\rho)} \times im(\gamma)$. Then when
-$\abs*{z-z_0}<\delta$ the ML inequality gives:
+$\modulus{z-z_0}<\delta$ the ML inequality gives:
 
-$$\abs*{\int_\gamma g(z,w) dw - \int_\gamma g(z_0,w) dw } = \abs*{\int_\gamma g(z,w) - g(z_0,w) dw} \leq \frac{{\varepsilon}}{v(\gamma)} v(\gamma) = {\varepsilon}$$ ◻
+$$\modulus{\int_\gamma g(z,w) dw - \int_\gamma g(z_0,w) dw } = \modulus{\int_\gamma g(z,w) - g(z_0,w) dw} \leq \frac{{\varepsilon}}{v(\gamma)} v(\gamma) = {\varepsilon}$$ 
 :::
 
-::: {.theorem}
-**Theorem 4.21** (Additivity properties of Riemann-Stieltjes integral).
-*Let $f, g: [a,b] \to {\mathbb C}$ be continuous, let
+::: {#thm-integral-additivity .theorem}
+## Additivity properties of Riemann-Stieltjes integral
+Let $f, g: [a,b] \to {\mathbb C}$ be continuous, let
 $\gamma, \sigma:[a,b] \to {\mathbb C}$ be bounded variation, and let
-$c_1,c_2 \in {\mathbb C}$. Then*
+$c_1,c_2 \in {\mathbb C}$. Then
 
-1.  *$\int_a^b (c_1f+c_2g) d\gamma = c_1\int_a^b f d\gamma + c_2\int_a^b g d\gamma$*
+1.  $\int_a^b (c_1f+c_2g) d\gamma = c_1\int_a^b f d\gamma + c_2\int_a^b g d\gamma$
 
-2.  *$\int_a^b f d(c_1\gamma+c_2\sigma) = c_1\int_a^b f d\gamma + c_2 \int_a^b f d\sigma$*
+2.  $\int_a^b f d(c_1\gamma+c_2\sigma) = c_1\int_a^b f d\gamma + c_2 \int_a^b f d\sigma$
 
-3.  *$\int_a^{b'} f d\gamma = \int_a^b f d\gamma +  \int_b^{b'} f d\gamma$*
+3.  $\int_a^{b'} f d\gamma = \int_a^b f d\gamma +  \int_b^{b'} f d\gamma$
 :::
 
 ::: {.proof}
 (Parts 1 and 2 are routine. Part 3 is subtle because an
 arbitrary partition $P$ of the interval $[a,b']$ may not have $b$ as an
-endpoint.) ◻
+endpoint.) 
 :::
 
-::: example
-**Example 4.22**. (Differentiability does not guarantee bounded
-variation.) Let $$\gamma(t) = \left\{
+::: {#exm-differentiable-unbounded-variation .example}
+## Differentiability does not guarantee bounded variation. 
+Let $$\gamma(t) = \left\{
 \begin{array}{lr}
     t^2 \cos(\frac{1}{t^2}) & \text{ if } t \neq 0 \\
     0 & \text{ if } t=0 
 \end{array}
-\right.$$ Then $\gamma$ is everywhere differentiable, $\gamma'$ is
+\right.$$ 
+Then $\gamma$ is everywhere differentiable, $\gamma'$ is
 discontinuous at $0$, and $\gamma$ has unbounded variation on any
 neighborhood of $0$.
 :::
@@ -3023,55 +2948,52 @@ $\frac{1}{ \sqrt{\pi N}} < b$. For simplicity take both $M$ and $N$
 even.) The corresponding values of $\gamma$ are:
 $$\gamma(a), 0, \frac{1}{\pi M}, \frac{-1}{\pi (M-1)},\frac{1}{\pi (M-2)}, \ldots, \frac{-1}{\pi (N+1)},\frac{1}{\pi N}, \gamma(b)$$
 Because the harmonic series diverges, $v(\gamma,P)$ can be made
-arbitrarily large by choosing $M$ sufficient large. ◻
+arbitrarily large by choosing $M$ sufficient large. 
 :::
 
 The previous example indicates that we need a stronger condition than
 differentiability to guarantee bounded variation:
 
-::: {.definition}
-**Definition 4.23**. Let $\gamma:[a,b] \to {\mathbb C}$ be a function.
+::: {#def-smooth-path .definition}
+Let $\gamma:[a,b] \to {\mathbb C}$ be a function.
 We call $\gamma$ **smooth** if $\gamma$ is differentiable and $\gamma'$
 is continuous.
 :::
 
-::: {#thm:SmoothBoundedVariation .prop}
-**Proposition 4.24**. *If $\gamma:[a,b] \to {\mathbb C}$ is smooth, then
+::: {#thm-smooth-bounded-variation .prop}
+If $\gamma:[a,b] \to {\mathbb C}$ is smooth, then
 $\gamma$ has bounded variation and moreover
-$v(\gamma) = \int_a^b \abs*{\gamma'(t)} dt$.*
+$v(\gamma) = \int_a^b \modulus{\gamma'(t)} dt$.
 :::
 
 ::: {.proof}
 We claim that the integral exists and for any
 ${\varepsilon}>0$ there is a $\delta>0$ so that if
-$\@ifstar{\norm}{\norm*}{P}<\delta$ then both
+$\norm{P}<\delta$ then both
 
-$$\abs*{\sum_{i=1}^m \abs*{\gamma(t_i)-\gamma(t_{i-1})}- {\sum_{i=1}^{m} \abs*{\gamma'(\tau_i)}(t_{i} - t_{i-1})}} < {\varepsilon}/2 \hspace{1cm} \text{ and } \hspace{1cm} \abs*{{\sum_{i=1}^{m} \abs*{\gamma'(\tau_i)}(t_{i} - t_{i-1})}-  \int_a^b \abs*{\gamma'(t)} dt}<{\varepsilon}/2$$
+$$\modulus{\sum_{i=1}^m \modulus{\gamma(t_i)-\gamma(t_{i-1})}- {\sum_{i=1}^{m} \modulus{\gamma'(\tau_i)}(t_{i} - t_{i-1})}} < {\varepsilon}/2 \hspace{1cm} \text{ and } \hspace{1cm} \modulus{{\sum_{i=1}^{m} \modulus{\gamma'(\tau_i)}(t_{i} - t_{i-1})}-  \int_a^b \modulus{\gamma'(t)} dt}<{\varepsilon}/2$$
 
 Together these will establish that
-$\lim_{\@ifstar{\norm}{\norm*}{P} \to 0} \sum_{i=1}^m \abs*{\gamma(t_i)-\gamma(t_{i-1})}= \int_a^b \abs*{\gamma'(t)} dt$,
-after which proposition [4.16](#variationAsLimit){reference-type="ref"
-reference="variationAsLimit"} applies.
+$\lim_{\norm{P} \to 0} \sum_{i=1}^m \modulus{\gamma(t_i)-\gamma(t_{i-1})}= \int_a^b \modulus{\gamma'(t)} dt$,
+after which @cor-variation-limit applies.
 
-By Corollary [4.18](#thm:RiemannIntegralExists){reference-type="ref"
-reference="thm:RiemannIntegralExists"}, we know that
-$\int_a^b \abs*{\gamma'(t)} dt$ exists. The righthand
+By @thm-Riemann-integral-exists
+we know that
+$\int_a^b \modulus{\gamma'(t)} dt$ exists. The righthand
 inequality then follows by the definition of the integral.
 
 For the lefthand inequality, let $P$ be a partition with endpoints $t_i$
 and tags $\tau_i$. $$\begin{aligned}
-    \abs*{\sum_{i=1}^m \abs*{\gamma(t_i)-\gamma(t_{i-1})} -
-    \sum_{i=1}^{m} \abs*{\gamma'(\tau_i)}(t_{i} - t_{i-1})}
-    =& \abs*{\sum_{i=1}^m \left(\abs*{\frac{\gamma(t_i)-\gamma(t_{i-1})}{t_{i} - t_{i-1}}} - \abs*{\gamma'(\tau_i)} \right)(t_i - t_{i-1})}\\
-    \leq& \sum_{i=1}^m \abs*{\frac{\gamma(t_i)-\gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)}(t_i - t_{i-1})
+    \modulus{\sum_{i=1}^m \modulus{\gamma(t_i)-\gamma(t_{i-1})} -
+    \sum_{i=1}^{m} \modulus{\gamma'(\tau_i)}(t_{i} - t_{i-1})}
+    =& \modulus{\sum_{i=1}^m \left(\modulus{\frac{\gamma(t_i)-\gamma(t_{i-1})}{t_{i} - t_{i-1}}} - \modulus{\gamma'(\tau_i)} \right)(t_i - t_{i-1})}\\
+    \leq& \sum_{i=1}^m \modulus{\frac{\gamma(t_i)-\gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)}(t_i - t_{i-1})
     
-\end{aligned}$$ Now let ${\varepsilon}>0$. Using Theorem
-[3.38](#thm:ContinuousDerivativeUniformlyApproximateDifferenceQuotient){reference-type="ref"
-reference="thm:ContinuousDerivativeUniformlyApproximateDifferenceQuotient"},
+\end{aligned}$$ Now let ${\varepsilon}>0$. Using @thm-uniform-approximation-of-q
 we can choose $\delta$ so that for any partition $P$ with
-$\@ifstar{\norm}{\norm*}{P}<\delta$ we have
-$\abs*{\frac{\gamma(t_i)-\gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)} < \frac{{\varepsilon}}{2(b-a)}$.
-The difference above is then less than ${\varepsilon}/2$. ◻
+$\norm{P}<\delta$ we have
+$\modulus{\frac{\gamma(t_i)-\gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)} < \frac{{\varepsilon}}{2(b-a)}$.
+The difference above is then less than ${\varepsilon}/2$. 
 :::
 
 ::: exercise
@@ -3089,20 +3011,19 @@ If $\gamma$ is smooth, then $d\gamma$ may be replaced with
 $\gamma'(t)dt$ (as in traditional $u$-substitution), converting the
 Riemann-Stieltjes integral to a traditional Riemann integral:
 
-::: {#thm:RiemannStieltjesSmoothToRiemann .theorem}
-**Theorem 4.25**. *Let $\gamma:[a,b] \to {\mathbb C}$ be smooth, and let
+::: {#thm-Riemann-Stieltjes-smooth-Riemann .theorem}
+Let $\gamma:[a,b] \to {\mathbb C}$ be smooth, and let
 $f:[a,b] \to {\mathbb C}$ be continuous. Then
-$$\int_a^b f d\gamma = \int_a^b f(t) \gamma'(t) dt$$*
+$$\int_a^b f d\gamma = \int_a^b f(t) \gamma'(t) dt$$
 :::
 
 ::: {.proof}
 Since $\gamma$ is smooth, it has bounded variation by
-Proposition [4.24](#thm:SmoothBoundedVariation){reference-type="ref"
-reference="thm:SmoothBoundedVariation"}. Therefore both integrals exist
-by Theorem [4.17](#thm:IntegralContinuousExists){reference-type="ref"
-reference="thm:IntegralContinuousExists"} and its Corollary
-[4.18](#thm:RiemannIntegralExists){reference-type="ref"
-reference="thm:RiemannIntegralExists"}. Let $P$ be a partition with
+@thm-smooth-bounded-variation.
+Therefore both integrals exist
+by @thm-integral-continuous-exists
+and @thm-Riemann-integral-exists
+Let $P$ be a partition with
 endpoints $t_i$ and tags $\tau_i$ and consider the difference between
 the sums:
 $$\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1}))  - \sum_{i=1}^{m} f(\tau_i)\gamma'(\tau_i)(t_{i} - t_{i-1})$$
@@ -3110,45 +3031,43 @@ Regrouping gives:
 $$=\sum_{i=1}^{m} f(\tau_i)\left(\frac{\gamma(t_{i}) - \gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)\right)(t_i-t_{i-1})$$
 
 Let ${\varepsilon}>0$. Since $f$ is continuous on a compact
-set we may bound it: $\abs*{f}<B$. Again by Theorem
-[3.38](#thm:ContinuousDerivativeUniformlyApproximateDifferenceQuotient){reference-type="ref"
-reference="thm:ContinuousDerivativeUniformlyApproximateDifferenceQuotient"},
-we choose $\delta$ so that whenever $\@ifstar{\norm}{\norm*}{P}<\delta$
+set we may bound it: $\modulus{f}<B$. Again by @thm-uniform-approximation-of-q,
+we choose $\delta$ so that whenever $\norm{P}<\delta$
 we have
-$\abs*{\frac{\gamma(t_{i}) - \gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)}<\frac{{\varepsilon}}{B(b-a)}$,
+$\modulus{\frac{\gamma(t_{i}) - \gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)}<\frac{{\varepsilon}}{B(b-a)}$,
 which makes the modulus of the sum less than ${\varepsilon}$
-as required. ◻
+as required. 
 :::
 
 Next we prove a substitution theorem:
 
-::: {#thm:RiemannStieltjesSubstitution .theorem}
-**Theorem 4.26**. *Let $\gamma:[a,b] \to {\mathbb C}$ and
+::: {#thm-Riemann-Stieltjes-substitution .theorem}
+Let $\gamma:[a,b] \to {\mathbb C}$ and
 $f:[a,b] \to {\mathbb C}$ be continuous. Let $\phi:[c,d] \to [a,b]$ be
 continuous, nondecreasing, and onto. Then
 $$\int_c^d (f \circ \phi)(t) d(\gamma \circ \phi)(t) = \int_a^b f(t) d\gamma(t)$$
-provided the right hand side exists.*
+provided the right hand side exists.
 :::
 
 ::: {.proof}
 Let ${\varepsilon}>0$. Since
 $I = \int_a^b f(t) d\gamma(t)$ exists, we may choose $\rho>0$ according
 to the definition of the integral, so that for any partition $P$ of
-$[a,b]$ with $\@ifstar{\norm}{\norm*}{P}<\rho$ we have
-$\abs*{I- \sum_{i=1}^m f(\tau_i)(\gamma(t)_i-\gamma(t_{i-1})) }<{\varepsilon}$.
+$[a,b]$ with $\norm{P}<\rho$ we have
+$\modulus{I- \sum_{i=1}^m f(\tau_i)(\gamma(t)_i-\gamma(t_{i-1})) }<{\varepsilon}$.
 Next choose $\delta$ for $\rho$ in the definition of absolute continuity
 of $\phi$, so that
-$\abs*{s-s'}<\delta \to \abs*{\phi(s)-\phi(s')} < \rho$.
+$\modulus{s-s'}<\delta \to \modulus{\phi(s)-\phi(s')} < \rho$.
 Now if $Q$ partitions $[c,d]$ with endpoints $s_i$, tags $\sigma_i$, and
-$\@ifstar{\norm}{\norm*}{Q}<\delta$, consider the integral estimate
+$\norm{Q}<\delta$, consider the integral estimate
 using $Q$:
 $$\sum_{i=1}^m f(\phi(\sigma_i))(\gamma(\phi(s_i))-\gamma(\phi(s_{i-1})))$$
 This *is* an integral estimate using a partition "$\phi(Q)$" of $[a,b]$
 having endpoints $\phi(s_i)$ and tags $\phi(\sigma_i)$, and
-$\@ifstar{\norm}{\norm*}{\phi(Q)}<\rho$ by construction, so it is in
+$\norm{\phi(Q)}<\rho$ by construction, so it is in
 $B(I,{\varepsilon})$ as required. (If $\phi$ is not
 injective, we may need to drop multiple copies of $\phi(s_i)$ to get a
-partition, but this does not affect the sum.) ◻
+partition, but this does not affect the sum.) 
 :::
 
 Recall that our interest in Riemann-Stieltjes integrals originated with
@@ -3156,35 +3075,27 @@ path integrals
 $\int_{\gamma} f \equiv_{def} \int_a^b f(\gamma(t)) d\gamma(t)$. Let us
 collect together our knowledge about this special case:
 
-::: {#thm:PathIntegralsBasics .theorem}
-**Theorem 4.27**. *Let $\gamma:[a,b] \to {\mathbb C}$ be a function and
-let $f$ be defined on $\gamma([a,b])$.*
+::: {#thm-path-integral-summary .theorem}
+## Path Integral Summary
+Let $\gamma:[a,b] \to {\mathbb C}$ be a function and
+let $f$ be defined on $\gamma([a,b])$.
 
-1.  *If $f$ is continuous and $\gamma$ is smooth then $\int_\gamma f$
-    exists.*
-
-2.  *If $\phi:[c,d] \to [a,b]$ is continuous, nondecreasing, and onto,
+1.  If $f$ is continuous and $\gamma$ is smooth then $\int_\gamma f$
+    exists.
+2.  If $\phi:[c,d] \to [a,b]$ is continuous, nondecreasing, and onto,
     then $\int_{\gamma \circ \phi} f = \int_\gamma f$ provided the right
-    hand side exists.*
+    hand side exists.
 
-3.  *[]{#thm:PathIntegralsBasicsGammaPrime
-    label="thm:PathIntegralsBasicsGammaPrime"} If $f$ is continuous and
+3.  If $f$ is continuous and
     $\gamma$ is smooth then the path integral can be computed by an
     ordinary Riemann integral:
-    $\int_\gamma f = \int_a^b f(\gamma(t)) \gamma'(t) dt$.*
+    $\int_\gamma f = \int_a^b f(\gamma(t)) \gamma'(t) dt$.
 :::
 
 ::: {.proof}
-The first is
-[4.17](#thm:IntegralContinuousExists){reference-type="ref"
-reference="thm:IntegralContinuousExists"} and
-[4.24](#thm:SmoothBoundedVariation){reference-type="ref"
-reference="thm:SmoothBoundedVariation"}. The second is
-[4.26](#thm:RiemannStieltjesSubstitution){reference-type="ref"
-reference="thm:RiemannStieltjesSubstitution"} with $f \circ \gamma$ in
-place of $f$. The third is
-[4.25](#thm:RiemannStieltjesSmoothToRiemann){reference-type="ref"
-reference="thm:RiemannStieltjesSmoothToRiemann"}. ◻
+The first is @thm-integral-continuous-exists and @thm-smooth-bounded-variation.
+The second is @thm-Riemann-Stieltjes-substitution with $f \circ \gamma$ in
+place of $f$. The third is @thm-Riemann-Stieltjes-smooth-Riemann.
 :::
 
 Finally we prove a Fundamental Theorem of Calculus for path integrals:
@@ -3206,10 +3117,10 @@ with partition $P$ of $[a,b]$ (with endpoints $t_i$ and tags $\tau_i$)
 and the right hand side of the above equation:
 
 $$\begin{aligned}
-    &\abs*{\sum_{i=1}^{m} f(\gamma(\tau_i))(\gamma(t_{i}) - \gamma(t_{i-1}))  - (F(\gamma(b)) - F(\gamma(a)))} \\
-    =& \abs*{\sum_{i=1}^{m} f(\gamma(\tau_i))(\gamma(t_{i}) - \gamma(t_{i-1}))  - \sum_{i=1}^m F(\gamma(t_i)) - F(\gamma(t_{i-1})) }\\
-    =& \abs*{\sum_{i=1}^{m} \left(F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}\right)(\gamma(t_{i}) - \gamma(t_{i-1}))} \\
-    \leq & \sum_{i=1}^{m} \abs*{F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}}\abs*{\gamma(t_{i}) - \gamma(t_{i-1})} \\
+    &\modulus{\sum_{i=1}^{m} f(\gamma(\tau_i))(\gamma(t_{i}) - \gamma(t_{i-1}))  - (F(\gamma(b)) - F(\gamma(a)))} \\
+    =& \modulus{\sum_{i=1}^{m} f(\gamma(\tau_i))(\gamma(t_{i}) - \gamma(t_{i-1}))  - \sum_{i=1}^m F(\gamma(t_i)) - F(\gamma(t_{i-1})) }\\
+    =& \modulus{\sum_{i=1}^{m} \left(F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}\right)(\gamma(t_{i}) - \gamma(t_{i-1}))} \\
+    \leq & \sum_{i=1}^{m} \modulus{F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}}\modulus{\gamma(t_{i}) - \gamma(t_{i-1})} \\
     
 \end{aligned}$$
 
@@ -3218,17 +3129,17 @@ Theorem
 [3.38](#thm:ContinuousDerivativeUniformlyApproximateDifferenceQuotient){reference-type="ref"
 reference="thm:ContinuousDerivativeUniformlyApproximateDifferenceQuotient"}
 so that
-$w \neq z\in B(z_0, \rho) \cap \gamma([a,b]) \to \abs*{F'(z_0) - \frac{F(z)-F(w)}{z-w}} < \frac{{\varepsilon}}{v(\gamma)}$.
+$w \neq z\in B(z_0, \rho) \cap \gamma([a,b]) \to \modulus{F'(z_0) - \frac{F(z)-F(w)}{z-w}} < \frac{{\varepsilon}}{v(\gamma)}$.
 By uniform continuity of $\gamma$ choose $\delta>0$ so that
-$\abs*{x-y}<\delta \to \abs*{\gamma(x)-\gamma(y)}<\rho$.
-Then for any partition $P$ with $\@ifstar{\norm}{\norm*}{P}<\delta$ we
+$\modulus{x-y}<\delta \to \modulus{\gamma(x)-\gamma(y)}<\rho$.
+Then for any partition $P$ with $\norm{P}<\delta$ we
 have
-$\abs*{F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}} < \frac{{\varepsilon}}{v(\gamma)}$.
+$\modulus{F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}} < \frac{{\varepsilon}}{v(\gamma)}$.
 Then
-$$\sum_{i=1}^{m} \abs*{F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}}\abs*{\gamma(t_{i}) - \gamma(t_{i-1})} < \sum_{i=1}^{m} \frac{{\varepsilon}}{v(\gamma)}\abs*{\gamma(t_{i}) - \gamma(t_{i-1})} \leq 
+$$\sum_{i=1}^{m} \modulus{F'(\gamma(\tau_i)) - \frac{F(\gamma(t_i)) - F(\gamma(t_{i-1}))}{\gamma(t_i) - \gamma(t_{i-1})}}\modulus{\gamma(t_{i}) - \gamma(t_{i-1})} < \sum_{i=1}^{m} \frac{{\varepsilon}}{v(\gamma)}\modulus{\gamma(t_{i}) - \gamma(t_{i-1})} \leq 
     \frac{{\varepsilon}}{v(\gamma)} v(\gamma) = {\varepsilon}$$
 It follows that $\int_\gamma f = F(\gamma(b)) - F(\gamma(a))$ as
-desired. ◻
+desired. 
 :::
 
 ::: {#thm:ClosedPathPrimitiveZeroIntegral .cor}
@@ -3247,7 +3158,7 @@ $F'=f$). Then $$\int_a^b f(x) dx = F(b) - F(a)$$*
 
 ::: {.proof}
 Use the identity function for $\gamma:[a,b] \to [a,b]$ in the
-previous theorem. ◻
+previous theorem. 
 :::
 
 ::: exercise
@@ -3323,7 +3234,7 @@ reference="thm:PathIntegralsBasics"}, Part
 [\[thm:PathIntegralsBasicsGammaPrime\]](#thm:PathIntegralsBasicsGammaPrime){reference-type="ref"
 reference="thm:PathIntegralsBasicsGammaPrime"}.
 $$\int_\gamma f = \int_0^{2\pi} f(\gamma(t))\gamma'(t) dt = 
-    \int_0^{2\pi} \frac{1}{a+re^{it}-a} ire^{it} dt = \int_0^{2\pi} i dt = 2\pi i$$ ◻
+    \int_0^{2\pi} \frac{1}{a+re^{it}-a} ire^{it} dt = \int_0^{2\pi} i dt = 2\pi i$$ 
 :::
 
 There is much to learn from this simple example. First, notice that the
@@ -3396,7 +3307,7 @@ segment from $a$ to $b$. Therefore $\ln(\frac{z-a}{z-b})$ is
 differentiable on the complement in ${\mathbb C}$ of this segment, and
 the reader may check its derivative is indeed
 $\frac{1}{z-a} - \frac{1}{z-b}$. This set includes $\gamma$, so the
-fundamental theorem applies. ◻
+fundamental theorem applies. 
 :::
 
 Notice that this proof does more than advertised: It works when $\gamma$
@@ -3438,7 +3349,7 @@ reduce to the error function $g$. The limit property of $g$, coupled
 with the lower bound on $\int g dz$ will give a contradiction.
 
 Let $T_0 = T = \triangle ABC$. Let
-$C=\abs*{\int_{\partial T} f(z) dz}$. Let $p$ and $d$ be
+$C=\modulus{\int_{\partial T} f(z) dz}$. Let $p$ and $d$ be
 the perimeter and diameter of $T$. Let $D$, $E$, and $F$ be the
 midpoints of $BC$, $CA$, and $AB$ respectively. Then
 $\partial \triangle ABC = \partial \triangle AFE + \partial \triangle FBD + \partial \triangle DEF + \partial \triangle EDC$.
@@ -3453,17 +3364,17 @@ $\lim_{w \to z_0} \frac{g(w)}{w-z_0} =0$. Since $L$ has a primitive,
 $\int_{\partial T_n} f(z) dz = \int_{\partial T_n} g(z) dz$. For any
 ${\varepsilon}>0$, for $n$ sufficiently large we have for all
 $w \in T_n$:
-$\abs*{\frac{g(w)}{w-z_0}} < {\varepsilon}$,
+$\modulus{\frac{g(w)}{w-z_0}} < {\varepsilon}$,
 so
-$\abs*{g(w)} \leq {\varepsilon}\abs*{w-z_0} < {\varepsilon}d/2^n$.
+$\modulus{g(w)} \leq {\varepsilon}\modulus{w-z_0} < {\varepsilon}d/2^n$.
 By the ML-inequality,
-$$\abs*{\int_{\partial T_n} f(z) dz} = \abs*{\int_{\partial T_n} g(z) dz} \leq {\varepsilon}d/2^n P/2^n = \frac{{\varepsilon}d P}{4^n}$$
+$$\modulus{\int_{\partial T_n} f(z) dz} = \modulus{\int_{\partial T_n} g(z) dz} \leq {\varepsilon}d/2^n P/2^n = \frac{{\varepsilon}d P}{4^n}$$
 For ${\varepsilon}$ sufficiently small, this is inconsistent
-with the lower bound $C/4^n$ above. ◻
+with the lower bound $C/4^n$ above. 
 :::
 
 Since the property $\int_{dT} f(z) dz =0$ applies only to triangle
-paths, it may seem to specialized to be useful. But it forces $f$ to
+paths, it may seem too specialized to be useful. But it forces $f$ to
 have a primitive, as the next theorem shows.
 
 ::: notation
@@ -3489,7 +3400,7 @@ $\displaystyle\lim_{C \to B}\frac{\int_{[B,C]}f(B) dz}{C-B} = f(B)$ it
 suffices to show
 $\displaystyle\lim_{C \to B}\frac{\int_{[B,C]}(f(z)-f(B)) dz}{C-B} = 0$.
 The last is a simple application of the continuity of $f$ at $B$ and the
-ML inequality. ◻
+ML inequality. 
 :::
 
 This brings us to our first version of Cauchy's theorem:
@@ -3506,7 +3417,7 @@ reference="thm:CauchyTheoremTriangle"},
 [5.6](#thm:TriangleNoIntegralExact){reference-type="ref"
 reference="thm:TriangleNoIntegralExact"}, and
 [4.29](#thm:ClosedPathPrimitiveZeroIntegral){reference-type="ref"
-reference="thm:ClosedPathPrimitiveZeroIntegral"}: ◻
+reference="thm:ClosedPathPrimitiveZeroIntegral"}: 
 :::
 
 The integral $\int_\gamma f(z) dz$ of a differentiable function around a
@@ -3524,7 +3435,7 @@ then $$\int_\gamma f(z) dz = \int_\sigma f(z) dz$$*
 ::: {.proof}
 Disassemble the irregular annulus into three sections,
 producing three paths whose sum is $\gamma-\sigma$, each of which is
-contained in a convex set where $f$ is differentiable. ◻
+contained in a convex set where $f$ is differentiable. 
 :::
 
 According to the previous theorem, if $f$ is differentiable on a convex
@@ -3546,7 +3457,7 @@ makes this idea precise.
 
 ::: {.theorem}
 **Theorem 5.9**. *Let $f$ be differentiable on
-$\overline{B(z_0,R)} - z$. Let $\gamma(t) = z_0+Re^{it}$ be the boundary
+$\overline{B(z_0,R)} - z_0$. Let $\gamma(t) = z_0+Re^{it}$ be the boundary
 path. Then $$\int_\gamma f(w) dw = 2\pi i \lim_{w \to z_0} f(w)(w-z_0)$$
 provided the limit exists.*
 :::
@@ -3555,20 +3466,20 @@ provided the limit exists.*
 Let $L= \lim_{w \to z_0} f(w)(w-z_0)$. Let
 ${\varepsilon}>0$ and choose $r$ so that for all
 $w \in \overline{B(z_0,r)}$ we have
-$\abs*{f(w)(w-z_0) - L} < {\varepsilon}$. By
+$\modulus{f(w)(w-z_0) - L} < {\varepsilon}$. By
 the previous theorem, we may replace $\gamma$ with any path
 $\sigma(t) = 
     z_0+re^{it}$ of small radius around $z_0$. We know that
 $\int_\sigma \frac{L}{w-z_0} dw = 2\pi i L$, so we calculate the
 difference: $$\begin{aligned}
-\abs*{\int_\sigma f(w) dw - 2\pi i L} =& 
-    \abs*{ \int_\sigma f(w) dw - \int_\sigma \frac{L}{w-z_0} dw }\\ 
-    =& \abs*{ \int_\sigma \left( f(w)-\frac{L}{w-z_0} \right) dw }\\
-    =& \abs*{\int_\sigma \left( \frac{f(w)(w-z_0)-L}{w-z_0} \right) dw}\\
+\modulus{\int_\sigma f(w) dw - 2\pi i L} =& 
+    \modulus{ \int_\sigma f(w) dw - \int_\sigma \frac{L}{w-z_0} dw }\\ 
+    =& \modulus{ \int_\sigma \left( f(w)-\frac{L}{w-z_0} \right) dw }\\
+    =& \modulus{\int_\sigma \left( \frac{f(w)(w-z_0)-L}{w-z_0} \right) dw}\\
     \leq & \frac{{\varepsilon}}{r} 2\pi r = 2\pi {\varepsilon}&\text{By the ML inequality \ref{thm:MLInequality}}
     
 \end{aligned}$$ Since this can be made arbitrarily small by choice of
-$\sigma$, we have equality. ◻
+$\sigma$, we have equality. 
 :::
 
 ::: exercise
@@ -3588,7 +3499,7 @@ $$f(z) = \frac{1}{2\pi i }\int_\gamma \frac{f(w)}{w-z} dw$$*
 ::: {.proof}
 The work is done in the previous theorem. We need only
 calculate
-$$\frac{1}{2\pi i }\int_\gamma \frac{f(w)}{w-z} dw = \frac{1}{2\pi i } 2 \pi i \lim_{w \to z} \frac{f(w)}{w-z} (w-z) = f(z)$$ ◻
+$$\frac{1}{2\pi i }\int_\gamma \frac{f(w)}{w-z} dw = \frac{1}{2\pi i } 2 \pi i \lim_{w \to z} \frac{f(w)}{w-z} (w-z) = f(z)$$ 
 :::
 
 At first glance, the Cauchy Integral Formula looks like a method of
@@ -3615,12 +3526,12 @@ $$\sum_{n=0}^\infty \int_\gamma f_n(z) dz = \int_\gamma f(z) dz$$*
 ::: {.proof}
 For the first claim, let ${\varepsilon}>0$ and
 choose $N$ so that for $n>N$ we have
-$\abs*{f_n(z)-f(z)}<{\varepsilon}/v(\gamma)$
+$\modulus{f_n(z)-f(z)}<{\varepsilon}/v(\gamma)$
 *uniformly* on $X$. Then
-$$\abs*{\int_\gamma f_n(z) dz - \int_\gamma f(z) dz} = 
-    \abs*{\int_\gamma f_n(z)-f(z) dz} \leq \frac{{\varepsilon}}{v(\gamma)} v(\gamma) = {\varepsilon}$$
+$$\modulus{\int_\gamma f_n(z) dz - \int_\gamma f(z) dz} = 
+    \modulus{\int_\gamma f_n(z)-f(z) dz} \leq \frac{{\varepsilon}}{v(\gamma)} v(\gamma) = {\varepsilon}$$
 The second claim follows from the first since integrals commute with
-finite sums. ◻
+finite sums. 
 :::
 
 ::: {#thm:differentiablePowerSeries .theorem}
@@ -3637,13 +3548,13 @@ at $z_0$:
 $$\frac{1}{w-z} = \frac{1}{(w-z_0) - (z-z_0)} = \frac{1}{w-z_0} \cdot \frac{1}{1-\frac{z-z_0}{w-z_0}} =  
     \frac{1}{w-z_0} \cdot \sum_{n=0}^\infty \left(\frac{z-z_0}{w-z_0}\right)^n$$
 For fixed $z \in B(z_0,R)$ and all $w$ on the boundary,
-$\abs*{\frac{z-z_0}{w-z_0}}<1$ is constant in $w$, so we
+$\modulus{\frac{z-z_0}{w-z_0}}<1$ is constant in $w$, so we
 have uniformly convergence $$\begin{aligned}
  f(z) =  \frac{1}{2\pi i }\int_\gamma \frac{f(w)}{w-z} dw 
     =& \frac{1}{2\pi i }\int_\gamma f(w) \frac{1}{w-z_0} \cdot \sum_{n=0}^\infty \left(\frac{z-z_0}{w-z_0}\right)^n dw\\
     =& \sum_{n=0}^\infty (z-z_0)^n \frac{1}{2\pi i } \int_\gamma \frac{f(w)}{(w-z_0)^{n+1}} dw\\
     
-\end{aligned}$$ ◻
+\end{aligned}$$ 
 :::
 
 This theorem sets complex analysis apart from real analysis more clearly
@@ -3670,7 +3581,7 @@ neighborhood $B(a,r)$ of $a$. Furthermore the power series for $f$ at
 any point $b \in B(a,r)$ is clearly zero as well. This proves that $S$
 is open. Since $S$ is the intersection of preimages
 $(f^{(n)})^{-1}(\{0\})$ of closed sets under continuous maps, $S$ is
-closed. ◻
+closed. 
 :::
 
 ::: {#thm:MorerasTheorem .theorem}
@@ -3683,22 +3594,22 @@ for any triangle $T \subset V$ then $f$ is infinitely differentiable.*
 On any (convex!) ball $B(z_0,R) \subseteq V$, $f$ has a
 primitive $F$, and $F'=f$. Since $F$ has a power series, it is twice (in
 fact infinitely) differentiable, so $f$ is differentiable
-(infinitely). ◻
+(infinitely). 
 :::
 
 ::: {#thm:CauchysEstimates .theorem}
 **Theorem 5.15** (Cauchy's Estimates). *Let $f$ be differentiable on
 $\overline{B(z_0,R)}$, and assume $|f(z)|\leq M$ on the boundary. Then
-$\abs*{f^{(n)}(z_0)} \leq \frac{Mn!}{R^n}$.*
+$\modulus{f^{(n)}(z_0)} \leq \frac{Mn!}{R^n}$.*
 :::
 
 ::: {.proof}
 From the power series expansion
 [5.12](#thm:differentiablePowerSeries){reference-type="ref"
 reference="thm:differentiablePowerSeries"}, we know
-$\abs*{f^{(n)}(z_0)} = \abs*{n!\frac{1}{2\pi i } \int_\gamma \frac{f(w)}{(w-z_0)^{n+1}} dw}$.
+$\modulus{f^{(n)}(z_0)} = \modulus{n!\frac{1}{2\pi i } \int_\gamma \frac{f(w)}{(w-z_0)^{n+1}} dw}$.
 The ML-inequality bounds the integral by
-$n! \frac{1}{2\pi} \frac{M}{R^{(n+1)}} 2 \pi R = \frac{Mn!}{R^n}$. ◻
+$n! \frac{1}{2\pi} \frac{M}{R^{(n+1)}} 2 \pi R = \frac{Mn!}{R^n}$. 
 :::
 
 ::: {.definition}
@@ -3712,10 +3623,10 @@ constant.*
 :::
 
 ::: {.proof}
-Assume $\abs*{f(z)} \leq M$ for all $z$. Fix
-$z_0 \in {\mathbb C}$. Then $\abs*{f'(z_0)} \leq M/R$,
+Assume $\modulus{f(z)} \leq M$ for all $z$. Fix
+$z_0 \in {\mathbb C}$. Then $\modulus{f'(z_0)} \leq M/R$,
 for all $R$, so $f'(z_0)=0$. Since $f$ has constant zero derivative (and
-${\mathbb C}$ is connected), $f$ is constant. ◻
+${\mathbb C}$ is connected), $f$ is constant. 
 :::
 
 ::: {#thm:FundamentalTheoremOfAlgebra .theorem}
@@ -3727,14 +3638,14 @@ coefficients. Then $P$ has a root in ${\mathbb C}$.*
 ::: {.proof}
 Certainly $P(z)$ is entire. If $P(z)$ has no root, then
 $1/P(z)$ is also entire. Let $a_nz^n$ be the leading coefficient. Now
-$\abs*{P(z)} = \abs*{z^n}\abs*{a_n + a_{n-1}z^{-1} + \ldots + a_0z^{-n}} \geq \abs*{z^n}(\abs*{a_n} - \abs*{a_{n-1}z^{-1}} - \ldots - \abs*{a_{0}z^{-n}})$.
+$\modulus{P(z)} = \modulus{z^n}\modulus{a_n + a_{n-1}z^{-1} + \ldots + a_0z^{-n}} \geq \modulus{z^n}(\modulus{a_n} - \modulus{a_{n-1}z^{-1}} - \ldots - \modulus{a_{0}z^{-n}})$.
 Whenever $|z| \geq R = 2n\max(a_i/a_n,1)$, we continue
-$P(x) \geq \abs*{z^n}\left(\abs*{a_n} - \frac{\abs*{a_{n-1}a_n}}{2na_{n-1}} - \ldots - \frac{\abs*{a_{0}a_n}}{2na_0} \right) = \abs*{z^n}\abs*{\frac{a_n}{2}} \geq \abs*{\frac{a_n}{2}}$.
+$P(x) \geq \modulus{z^n}\left(\modulus{a_n} - \frac{\modulus{a_{n-1}a_n}}{2na_{n-1}} - \ldots - \frac{\modulus{a_{0}a_n}}{2na_0} \right) = \modulus{z^n}\modulus{\frac{a_n}{2}} \geq \modulus{\frac{a_n}{2}}$.
 Thus when $z \geq R$ we have
-$|\frac1{P(z)}| \leq \abs*{\frac{2}{a_n}}$. On the other
+$|\frac1{P(z)}| \leq \modulus{\frac{2}{a_n}}$. On the other
 hand, $\frac{1}{P(z)}$ is bounded on $\overline{B(z,R)}$ by continuity
 (if $P(z)$ has no roots) and compactness. Thus $\frac{1}{P(z)}$ is
-constant and so is $P(z)$. ◻
+constant and so is $P(z)$. 
 :::
 
 Our next formula can be interpreted as a generalized Pythagorean
@@ -3746,7 +3657,7 @@ each fourier component.
 **Theorem 5.19** (Parseval's Formula). *Let
 $f(z) = \sum_{n=0}^\infty a_n(z-a)^n$ be a power series with radius of
 convergence $R$, and let $r<R$. Then
-$$\frac{1}{2\pi} \int_0^{2\pi} \abs*{f(a+re^{it})}^2 dt = \sum_{n=0}^\infty \abs*{a_nr^n}^2$$*
+$$\frac{1}{2\pi} \int_0^{2\pi} \modulus{f(a+re^{it})}^2 dt = \sum_{n=0}^\infty \modulus{a_nr^n}^2$$*
 :::
 
 Notice the connection with Fourier series:
@@ -3767,21 +3678,21 @@ $f(a+re^{it}) = \sum_{n=0}^\infty a_n(re^{it})^n = \sum_{n=0}^\infty a_nr^n b_n(
 where $s_N(t) =\sum_{n=0}^N a_nr^n b_n(t)$. Now the convergence
 $s_N \to f$ is uniform on $\overline{B(a,r)}$ since $r<R$, and the same
 is true of
-$\abs*{s_N}^2 \to \abs*{f}^2$. Therefore
+$\modulus{s_N}^2 \to \modulus{f}^2$. Therefore
 $$\begin{aligned}
-    \frac{1}{2\pi} \int_0^{2\pi} \abs*{f(a+re^{it})}^2 dt 
-    =& \lim_{N \to \infty}  \frac{1}{2\pi} \int_0^{2\pi} \abs*{s_N(t)}^2 dt\\
+    \frac{1}{2\pi} \int_0^{2\pi} \modulus{f(a+re^{it})}^2 dt 
+    =& \lim_{N \to \infty}  \frac{1}{2\pi} \int_0^{2\pi} \modulus{s_N(t)}^2 dt\\
     =& \lim_{N \to \infty}\frac{1}{2\pi} \int_0^{2\pi} s_N(t)\overline{s_N(t)} dt \\
     =& \lim_{N \to \infty} \frac{1}{2\pi} \int_0^{2\pi} \sum_{m=0}^N a_mr^m b_m(t)\overline{\sum_{n=0}^N a_nr^n b_n(t)} dt \\
     =& \lim_{N \to \infty} \frac{1}{2\pi}  \sum_{m=0}^N \sum_{n=0}^N \int_0^{2\pi} a_mr^m b_m(t)\overline{ a_nr^n b_n(t)} dt \\
-    =& \lim_{N \to \infty} \frac{1}{2\pi} \sum_{n=0}^N \abs*{a_nr^n}^2  = \frac{1}{2\pi} \sum_{n=0}^\infty \abs*{a_nr^n}^2 \text{ as desired.}\\
-\end{aligned}$$ ◻
+    =& \lim_{N \to \infty} \frac{1}{2\pi} \sum_{n=0}^N \modulus{a_nr^n}^2  = \frac{1}{2\pi} \sum_{n=0}^\infty \modulus{a_nr^n}^2 \text{ as desired.}\\
+\end{aligned}$$ 
 :::
 
 ::: {#thm:MaximumModulusTheorem .theorem}
 **Theorem 5.20** (Maximum Modulus Theorem). *Let $f$ be differentiable
 and nonconstant on a connected open set $U$. Then
-$\abs*{f}$ does not achieve a local maximum on $U$.*
+$\modulus{f}$ does not achieve a local maximum on $U$.*
 :::
 
 ::: {.proof}
@@ -3790,19 +3701,19 @@ series $f(z) = \sum_{n=0}^\infty a_n(z-a)^n$, and for some smaller ball
 $B(a,r)$, Parceval's formula holds. For some $n>0$ we have $a_n \neq 0$
 by [5.13](#thm:ZeroPowerSeriesConstant){reference-type="ref"
 reference="thm:ZeroPowerSeriesConstant"}. Suppose
-$\abs*{f(a+re^{it})} \leq \abs*{f(a)}$
+$\modulus{f(a+re^{it})} \leq \modulus{f(a)}$
 for all $t$. Then
-$$|f(a)|^2 = \abs*{a_0}^2 <  \sum_{n=0}^\infty \abs*{a_nr^n}^2 = \frac{1}{2\pi} \int_0^{2\pi} \abs*{f(a+re^{it})}^2 dt \leq \frac{1}{2\pi} 2\pi \abs*{f(a)}^2 =\abs*{f(a)}^2$$
+$$|f(a)|^2 = \modulus{a_0}^2 <  \sum_{n=0}^\infty \modulus{a_nr^n}^2 = \frac{1}{2\pi} \int_0^{2\pi} \modulus{f(a+re^{it})}^2 dt \leq \frac{1}{2\pi} 2\pi \modulus{f(a)}^2 =\modulus{f(a)}^2$$
 by Parceval's Formula
 ([5.19](#thm:ParsevalsFormula){reference-type="ref"
 reference="thm:ParsevalsFormula"}) and the ML Inequality
 ([4.19](#thm:MLInequality){reference-type="ref"
 reference="thm:MLInequality"}). This contradiction shows $a$ cannot be a
-local maximum of $\abs*{f(z)}$. ◻
+local maximum of $\modulus{f(z)}$. 
 :::
 
 If we consider a compact domain, such as $\overline{B(0,R)}$, then of
-course $\abs*{f}$ attains a maximum value. The Maximum
+course $\modulus{f}$ attains a maximum value. The Maximum
 Modulus Theorem guarantees that it occurs on the boundary.
 
 ## General Cauchy Integral Theorem
@@ -3848,7 +3759,7 @@ Thus the theorem statement is true for $x_1$ if and only if it is true
 for $x_2$.
 
 Now if $z_1-a$ is a negative real, consider the function
-$\log'(z) = \ln(\abs*{z}) + i \arg'(z)$, where
+$\log'(z) = \ln(\modulus{z}) + i \arg'(z)$, where
 $\arg'(z) \in [0,2\pi)$. Then $\log'(z) - \log(z) \in \{0, 2\pi i \}$.
 Moreover, $\log'(w-a)$ is an antiderivative of $\frac{1}{w-a}$ unless
 $w-a$ is a *positive* real. Using $\log'$ in place of $\log$, the above
@@ -3856,7 +3767,7 @@ argument goes through again.
 
 We conclude that $x_1 \in X$ iff $x_2 \in X$. This shows that $X$ is
 both open and closed. Since $\alpha \in X$, we deduce $\beta \in X$ as
-desired. ◻
+desired. 
 :::
 
 In the case of a closed curve $\gamma$,
@@ -3891,7 +3802,7 @@ This integral can be bounded above (ML inequality) by
 $\frac{v(\gamma) {\varepsilon}_2}{2\pi {\varepsilon}_1^2}$.
 For sufficiently small
 ${\varepsilon}_2<{\varepsilon}_1$, this is less
-than $1$, so the $W(\gamma,z) - W(\gamma,z') =0$ as desired. ◻
+than $1$, so the $W(\gamma,z) - W(\gamma,z') =0$ as desired. 
 :::
 
 Here's another proof, arguably a better proof:
@@ -3906,7 +3817,7 @@ $$\int_{\gamma} \frac{1}{w-z} dw - \int_{\gamma} \frac{1}{w-z'} dw = \int_{\gamm
 As we've proved earlier, this integrand has an antiderivative
 $\log\left(\frac{w-z}{w-z'} \right)$ everywhere except the line segment
 connecting $z$ to $z'$. By the fundamental theorem of calculus, the
-integral is zero. ◻
+integral is zero. 
 :::
 
 We take for granted that the complement of a path
@@ -3923,11 +3834,11 @@ ${\mathbb C}-im(\gamma)$. Then $W(\gamma,z)=0$.*
 ::: {.proof}
 By local constancy, $W(\gamma,z)$ is constant on the component
 of interest. When $z$ is sufficiently far from $im(\gamma)$, (distance
-$\geq M$, say) we have $\abs*{\frac{1}{w-z}} < 1/M$, so
-$\abs*{W(\gamma,z)} \leq \frac{v(\gamma)}{2\pi M}$. For
+$\geq M$, say) we have $\modulus{\frac{1}{w-z}} < 1/M$, so
+$\modulus{W(\gamma,z)} \leq \frac{v(\gamma)}{2\pi M}$. For
 $M$ sufficiently large, this is close to $0$, so equal to $0$. Since
 $W(\gamma,z)$ is constant for such $z$, $W(\gamma,z)=0$ for all $z$ in
-the component. ◻
+the component. 
 :::
 
 ## Singularities
@@ -4003,7 +3914,7 @@ $g'(z_0) = \lim_{z \to z_0} f(z)(z-z_0) = 0$ since $z-z_0 \to 0$ and
 $f(z)$ is bounded near $z_0$. It follows that $g$ has a power series
 expansion $g(z) = \sum_{n=0}^\infty a_n(z-z_0)^n$, and $a_0=a_1=0$. We
 may divide by $(z-z_0)^2$ termwise to find a power series expansion for
-$f(z)$ centered at $a$. ◻
+$f(z)$ centered at $a$. 
 :::
 
 The Riemann Continuation Theorem means that complex function theory has
@@ -4030,7 +3941,7 @@ From prior work, $f$ has a power series expansion with positive
 radius of convergence, and $f(z_0) = a_0$. Thus $1 \leftrightarrow 3$
 follows. Moreover $2 \to 1$ is obvious. For $1 \to 2$, note that $f$ is
 nonzero on some neighborhood $z_0$ by continuity, and on this
-neighborhood $1/f$ is analytic by the quotient rule. ◻
+neighborhood $1/f$ is analytic by the quotient rule. 
 :::
 
 ::: {.definition}
@@ -4080,7 +3991,7 @@ k &  \text{$f$ has a root of order $k$ at $z_0$.}\\
 
 ::: {.proof}
 Directly from the definitions, using properties of $g$ proved
-above. ◻
+above. 
 :::
 
 Just as locally bounded functions must have removable singularities,
@@ -4098,7 +4009,7 @@ After multiplying by $(z-z_0)^k$ we may invoke the Riemann
 Continuation theorem. Subsequently dividing by $(z-z_0)^k$ we get a
 Laurent series whose first nonzero term is $a_{-k}(z-z_0)^{-k}$, which
 indicates a pole of order $k$. The coefficient $a_{-k}$ is nonzero by
-the minimality of $k$. ◻
+the minimality of $k$. 
 :::
 
 ::: {.definition}
@@ -4121,7 +4032,7 @@ field axioms. The point of the proposition is to identify additive and
 multiplicative identities and prove that if $f$ and $g$ are meromorphic,
 then so are $-f$, $f+g$, $fg$. Also, if $g \neq 0$ then $1/g$ must be
 meromorphic. Each part makes a nice exercise. Work locally at each
-singularity $z_0$. ◻
+singularity $z_0$. 
 :::
 
 We have described functions bounded near $z_0$, which have removable
@@ -4147,7 +4058,7 @@ assume $g(z_0)$ exists). Solving for $f$ gives:
 $$f(z) = \frac{1}{g(z)} + b$$ Thus $f$ is meromorphic on some
 neighborhood of $B(z_0, {\varepsilon})$. It follows that
 $f(z)(z-z_0)^n$ is bounded near $z_0$ for some $n$. This proves (the
-contrapositive of) the claim. ◻
+contrapositive of) the claim. 
 :::
 
 ### Generalized Cauchy Integral Formula
@@ -4167,12 +4078,12 @@ Case 1: Assume $g(z_0,w_0) = g_z(z_0,w_0)=0$. By the definition of $g_z$
 we have $\lim_{z \to z_0} \frac{g(z,w_0)}{z-z_0}=0$. Let
 ${\varepsilon}>0$ and choose $r$ so that
 $\overline{B(z_0,2r)} \subseteq U$ and whenever
-$\abs*{z-z_0} \leq 2r$ then
-$\abs*{\frac{g(z,w_0)}{z-z_0}}<{\varepsilon}/2$.
+$\modulus{z-z_0} \leq 2r$ then
+$\modulus{\frac{g(z,w_0)}{z-z_0}}<{\varepsilon}/2$.
 Thus on $B(z_0,2r) \times \{w_0\}$ we have
 $|g(z,w)| < r{\varepsilon}/2$ Notice that Cauchy's bound for
 $f'(z)$ says
-$\abs*{g_z(z_0,w_0)} \leq \frac{\frac{r{\varepsilon}}{2} 1!}{r} = {\varepsilon}/2$,
+$\modulus{g_z(z_0,w_0)} \leq \frac{\frac{r{\varepsilon}}{2} 1!}{r} = {\varepsilon}/2$,
 which of course we already knew. We wish to extend this bound to a
 neighborhood of $(z_0,w_0)$. On the compact region
 $\overline{B(z_0,2r)} \times \overline{B(w_0,r)}$ choose $\delta>0$
@@ -4180,14 +4091,14 @@ $\overline{B(z_0,2r)} \times \overline{B(w_0,r)}$ choose $\delta>0$
 continuity of $g$. We imagine an annulus in $U$ with radii $r-\delta$
 and $r+\delta$, given a thickness $2\delta$ in the $V$-direction. It
 follows by the triangle inequality that if
-$r-\delta < \abs*{z-z_0} < r+\delta$ and
-$\abs*{w-w_0}<\delta$ then
-$|g(z,w)| = \abs*{g(z,w) - g(z,w_0) + g(z,w_0)} \leq  \abs*{g(z,w) - g(z,w_0)} + \abs*{g(z,w_0)} <r{\varepsilon}$.
+$r-\delta < \modulus{z-z_0} < r+\delta$ and
+$\modulus{w-w_0}<\delta$ then
+$|g(z,w)| = \modulus{g(z,w) - g(z,w_0) + g(z,w_0)} \leq  \modulus{g(z,w) - g(z,w_0)} + \modulus{g(z,w_0)} <r{\varepsilon}$.
 This bounds $g$ along the boundary of any ball (in the $U$-direction) of
 radius $r$ around any $(z_1, w_1)$ in the neighborhood
 $B(z_0, \delta) \times B(w_0, \delta)$. Then for any such $(z_1, w_1)$,
 Cauchy's bound gives
-$\abs*{g_z(z_1,w_1)}<{\varepsilon}$ as
+$\modulus{g_z(z_1,w_1)}<{\varepsilon}$ as
 desired. This shows that $g$ is a continuous function of two variables
 at $z_0, w_0$ in this case.
 
@@ -4195,7 +4106,7 @@ Case 2: Apply Case 1 to the function
 $g(z,w) - g_z(z_0,w_0)(z-z_0) - g(z_0,w_0)$, a function of $z$ and $w$
 whose partial with respect to $z$ is $g_z(z,w) - g_z(z_0,w_0)$. This
 shows that $g_z(w,z)$ plus a constant is continuous, thus so is
-$g_z(w,z)$. ◻
+$g_z(w,z)$. 
 :::
 
 ::: {.theorem}
@@ -4217,7 +4128,7 @@ $\overline{B(z_0,{\varepsilon})} \times im(\gamma)$, the
 function $e$ is uniformly continuous, and by
 [4.20](#LimitCommutesIntegral){reference-type="ref"
 reference="LimitCommutesIntegral"} the limit commutes with the integral:
-$$\lim_{z \to z_0} \int_\gamma \frac{e(z,w)}{z-z_0} dw = \int_\gamma \lim_{z \to z_0} \frac{e(z,w)}{z-z_0} dw= 0$$ ◻
+$$\lim_{z \to z_0} \int_\gamma \frac{e(z,w)}{z-z_0} dw = \int_\gamma \lim_{z \to z_0} \frac{e(z,w)}{z-z_0} dw= 0$$ 
 :::
 
 ::: {.definition}
@@ -4264,12 +4175,12 @@ Again this is continuous since $w \neq z$ for $w \in \{\gamma\}$.
 However, for $z$ sufficiently far from the compact set $\{\gamma\}$ (say
 when $d(z, \{\gamma\})>R$) we bound
 $h(z) = \int_\gamma \frac{f(w)}{w-z} dw$ by ML:
-$$\abs*{\int_\gamma \frac{f(w)}{w-z} dw} \leq \max_{w \in \{\gamma\}} \abs*{f(w)} \frac{1}{R}\abs*{v(\gamma)}$$
+$$\modulus{\int_\gamma \frac{f(w)}{w-z} dw} \leq \max_{w \in \{\gamma\}} \modulus{f(w)} \frac{1}{R}\modulus{v(\gamma)}$$
 That is, $h$ is bounded for $\{z\in {\mathbb C}| d(z, \{\gamma\})>R\}$,
 and bounded on $\{z\in {\mathbb C}| d(z, \{\gamma\})\leq R\}$ by
 compactness. It follows that $h$ is constant. Since $R$ is arbitrary in
 the bound
-$\abs*{f(w)} \frac{1}{R}\abs*{v(\gamma)}$,
+$\modulus{f(w)} \frac{1}{R}\modulus{v(\gamma)}$,
 $h$ is the zero function.
 
 Therefore, for all $z \in U$, we have
@@ -4277,7 +4188,7 @@ $$\int_\gamma \frac{f(w)-f(z)}{w-z} dw=0$$
 
 That is,
 
-$$\int_\gamma \frac{f(w)}{w-z} dw=\int_\gamma \frac{f(z)}{w-z} dw = 2 \pi i f(z) W(\gamma,z)$$ ◻
+$$\int_\gamma \frac{f(w)}{w-z} dw=\int_\gamma \frac{f(z)}{w-z} dw = 2 \pi i f(z) W(\gamma,z)$$ 
 :::
 
 ::: {.corollary}
@@ -4287,7 +4198,7 @@ $\int_\gamma f(w) dw=0$.*
 :::
 
 ::: {.proof}
-$f(w) = f(w)(w-z) / (w-z)$. ◻
+$f(w) = f(w)(w-z) / (w-z)$. 
 :::
 
 ::: {.corollary}
@@ -4299,7 +4210,7 @@ Then $\int_\gamma f(w) dw=2\pi i \sum_i W(\gamma,z_i) Res(f,z_i)$.*
 ::: {.proof}
 Subtract off higher negative power terms b/c they have
 antiderivatives. Subtract $\prod R_i/(w-z_i)$ and remove singularities
-to produce analytic function. Apply previous corollary. ◻
+to produce analytic function. Apply previous corollary. 
 :::
 
 ## Using the method of residues to calculate real integrals

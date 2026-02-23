@@ -756,8 +756,7 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <section id="multiple-variables" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="multiple-variables"><span class="header-section-number">6.3</span> Multiple variables</h2>
 <p>We have not yet defined <span class="math inline">\(R[x,y]\)</span>, the polynomial ring in more than one variable. One may imagine that we need an even more complicated definition involving coefficient sets <span class="math inline">\(a_{ij}\)</span> and some messy convolutional multiplication which handles two variables. Fortunately none of this is necessary. Any polynomial in two variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be sorted into powers of <span class="math inline">\(y\)</span>. For example</p>
-<p><span class="math display">\[1+2x+2y+3x^2 + 3xy+3y^2+4x^3+4x^2y+4xy^2+4y^3\]</span> <span class="math display">\[=
-(1+2x+3x^2+4x^3) + (2 + 3x + 4x^2)y + (3 + 4x) y^2 + 4y^3\]</span></p>
+<p><span class="math display">\[1+2x+2y+3x^2 + 3xy+3y^2+4x^3+4x^2y+4xy^2+4y^3\]</span> <span class="math display">\[=(1+2x+3x^2+4x^3) + (2 + 3x + 4x^2)y + (3 + 4x) y^2 + 4y^3\]</span></p>
 <p>In this way a polynomial in both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be regarded as a polynomial in <span class="math inline">\(y\)</span> with coefficients which are themselves polynomials in <span class="math inline">\(x\)</span>. In other words, it can be treated as an element of <span class="math inline">\(R[x][y]\)</span>. This motivates the definition:</p>
 <p><strong>Definition:</strong> The polynomial ring in variables <span class="math inline">\(x_1,\ldots,x_n\)</span> is defined to be <span class="math display">\[R[x_1, \ldots, x_n] = R[x_1][x_2]\ldots[x_n]\]</span></p>
 </section>

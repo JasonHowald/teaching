@@ -762,8 +762,7 @@ The reader may check that $G$ defined by this formula is indeed a homomorphism, 
 We have not yet defined $R[x,y]$, the polynomial ring in more than one variable. One may imagine that we need an even more complicated definition involving coefficient sets $a_{ij}$ and some messy convolutional multiplication which handles two variables. Fortunately none of this is necessary. Any polynomial in two variables $x$ and $y$ can be sorted into powers of $y$. For example
 
 $$1+2x+2y+3x^2 + 3xy+3y^2+4x^3+4x^2y+4xy^2+4y^3$$
-$$=
-(1+2x+3x^2+4x^3) + (2 + 3x + 4x^2)y + (3 + 4x) y^2 + 4y^3$$
+$$=(1+2x+3x^2+4x^3) + (2 + 3x + 4x^2)y + (3 + 4x) y^2 + 4y^3$$
 
 In this way a polynomial in both $x$ and $y$ can be regarded as a polynomial in $y$ with coefficients which are themselves polynomials in $x$. In other words, it can be treated as an element of $R[x][y]$. This motivates the definition:
 

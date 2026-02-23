@@ -514,10 +514,14 @@ without first saying what it applies to is extremely powerful and useful.
 
 To prove a universal statement $\forall x \enspace P(x)$, we consider an arbitrary particular $x$ and demonstrate that that one has the property of interest. Formally:
 
-$$\frac{\begin{matrix}
-  [\text{Let } x]\\
-  P(x)
-  \end{matrix}}{\forall x \enspace P(x)}$$
+$$
+\frac{
+  \begin{matrix}
+    [\text{Let } x]\\
+    P(x)
+  \end{matrix}
+}{\forall x \enspace P(x)}
+$$
 
 Although "Let $x$" is (arguably) not an assumption, there is a certain parallel with the structure of direct proof. The first line "Let $x$" creates a context in which $x$ refers to an individual, without determining which one.
 
@@ -593,38 +597,68 @@ ideas. Proving even an easy statement with deep logical structure can be a chall
 
 **Definition:** In calculus we often say $\lim_{x \to c} f(x) = L$. The formal interpretation of this statement is a lengthy statement called the "epsilon delta definition":
 
-$$\forall \varepsilon > 0 \enspace \exists \delta > 0 \enspace \forall x \enspace
-0 < |x-c| < \delta \to |f(x) - f(c)|<\varepsilon$$
+$$\forall \varepsilon > 0 \enspace \exists \delta > 0 \enspace \forall x \enspace 0 < |x-c| < \delta \to |f(x) - L|<\varepsilon$$
 
 Using this definition, we may have to proof, for example, that $\lim_{x \to 2} 5x + 3 = 13$. 
 It's normal to feel a bit baffled by the statement, at a loss for how to begin. In fact you already know most of what you need. We'll give the proof with reasons for each step. 
 
+### next
 
-| Proof | Explanation |
-|---|---|
-| Goal: $\displaystyle \lim_{x \to 2} 5x + 3 = 13$ |  |
-| Let $\varepsilon > 0$ | The statement begin $\forall \varepsilon > 0 \ldots $ It is universal in form. The basic structure of proof should therefore be to reason about an arbitrary particular $\varepsilon$. |
-| Choose $\delta = \underline{\hspace{1in}}$ | The statement to prove about the given  $\varepsilon$ begins $\exists \delta>0$. To prove something exists, I must provide a single constructed example. However, I don't yet know which choice of $\delta$ is correct, so I will leave it blank for now. |
-| Let $x \in {\mathbb R} | In context (with $\varepsilon$ and $\delta$ chosen), I must prove a universal "$\forall x  \ldots$. This is the only reasonable way to begin to do so.|
-| Assume $0 < |x-c| < \delta$ | In context (having $\varepsilon$, $\delta$, and $x$), we must prove an implication. A direct proof is the most natural way, so we assume the first part with intent to prove the second part. | 
-| $|f(x) - f(c)| = \ldots $ | Our only hope to prove $|f(x) - f(c)|<\varepsilon$ is to calculate the left-hand side in detail and prove that it's (for some reason) less than $\varepsilon$.|
-| 
+<table>
+  <tr>
+    <th style="width: 50%;">Proof</th>
+    <th style="width: 50%;">Explanation</th>
+  </tr>
+  <tr>
+    <td>Goal: $\displaystyle \lim_{x \to 2} 5x + 3 = 13$</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Let $\varepsilon > 0$</td>
+    <td>The statement begins $\forall \varepsilon > 0 \dots$ It is universal in form. The basic structure of proof should therefore be to reason about an arbitrary particular $\varepsilon$.</td>
+  </tr>
+  <tr>
+    <td>Choose $\delta = \underline{\hspace{1in}}$</td>
+    <td>The statement to prove about the given $\varepsilon$ begins $\exists \delta > 0$. To prove something exists, I must provide a single constructed example. 
+    However, I don't yet know which choice of $\delta$ is correct, so I will 
+    leave it blank for now. </td>
+  </tr>
+  <tr>
+    <td>Let $x \in \mathbb{R}$</td>
+    <td>In context, I must prove a universal $\forall x \dots$. This is the only reasonable way to begin.</td>
+  </tr>
+  <tr>
+    <td>Assume $0 < |x-c| < \delta$</td>
+    <td>In context (having $\varepsilon$, $\delta$, and $x$), we must prove an implication. A direct proof is the most natural way, so we assume the first part with intent to prove the second part.</td>
+  </tr>
+  <tr>
+    <td>$|f(x) - f(c)| = \ldots$</td>
+    <td>Our only hope to prove $|f(x) - f(c)|<\varepsilon$ is to calculate the left-hand side in detail and prove that it's (for some reason) less than $\varepsilon$.</td>
+  <tr>
+    <td>
 \begin{align} 
-& |f(x) - f(c)| \\
-& |f(x) - f(2)| \\
-&= | (5x+3) - (5\cdot 2+3)| \\
+|f(x) - f(2)| &= | (5x+3) - (5\cdot 2+3)| \\
 &= | (5x+3) - 13| \\
 &= | 5x - 10 | \\
-&= 5| x - 2 | \\
+&= 5| x - 2 |
 \end{align}
-| Without any special techniques, we expand and simplify, plugging in the known value for $c$, the formula for $f$, and generally applying algebra as we see it.|
-| $\ldots 5| x - 2 | < 5 \delta$ | There is an active assumption after all. |
+    </td>
+    <td>Without any special techniques, we expand and simplify, plugging in the known value for $c$, the formula for $f$, and using algebra.</td>
+  </tr>
+  <tr>
+    <td>$\dots 5| x - 2 | < 5 \delta$</td>
+    <td>There is an active assumption after all.</td>
+  </tr>
+</table>
+
+
 
 All of this is "following the logic" without any real cleverness. But now we are stymied, first by the fact that $|f(x) - f(c)|$ is supposed to be proved $< \varepsilon$, and second by the fact that we cannot continue because we didn't actually choose $\delta$ to be a specific value. We left that blank. These problems solve each other. Retroactively we set $\delta = \varepsilon / 5$, and continue $\ldots 5| x - 2 | < 5 \delta = \varepsilon$.
 
 Now discharging the assumption, our implication is proven. Discharging the choice of $x$, our universal $\forall x$ is proven. By proof-by-example, our $\exists \delta>0$ is proven. Finally discharging the choice of $\varepsilon$, we finish the proof. All of these "clean up" steps are usually left unsaid. 
 
-In summary, if we trust that the syntax of the statement guides the structure of its proof, and if we're comfortable doing a bit of algebra, then the proof is self-authoring except for one fairly simply idea, which is to choose $\delta = \varepsilon/5$. 
+In summary, if we trust that the syntax of the statement guides the structure of its proof, and if we're comfortable doing a bit of algebra, then the proof is self-authoring except for one fairly simply idea, which is to choose $\delta = \varepsilon/5$. To be fair, limit proofs 
+with nonlinear functions $f(x)$ can be quite a lot harder.
 
 ### Modular arithmetic examples
 
@@ -645,8 +679,7 @@ Our next proof example is this claim:
 
 To unpack this into quantified logic, we obtain: 
 
-$$\forall a \enspace \forall b \enspace \forall n \enspace  
-((\exists k \enspace kn = (b-a)) \to (\exists k \enspace kn = (b^2-a^2)))$$
+$$\forall a \enspace \forall b \enspace \forall n \enspace ((\exists k \enspace kn = (b-a)) \to (\exists k \enspace kn = (b^2-a^2)))$$
 
 Let's get started. Much of the beginning is forced:
 
@@ -670,83 +703,261 @@ Now it's just a matter of clean-up. Discharging our assumption, we've proven the
 
 # Set Theory
 
-## Set Builder Notation
-
-**Note on type**
+## Type considerations
 
 It's good practice to think carefully about the **type** of any mathematical objects. For example,
 
 1. 4, 5, and $\pi$ are numbers.
 2. $4 < 5$ is a true statement. If it has a value, the value is $T$ or $\top$.
-3. $\{4,5,\pi\} $ is a set, but $4 \in \{4,5,\pi\}$ is a statement.
+3. $\{4,5,\pi \}$ is a set, but $4 \in \{4,5,\pi\}$ is a statement.
 4. $0 \leq x \leq 4$ is not a set but a statement. Its truth depends on the value of $x$, which is not known in context.
+5. If $f(x) = x^2$, then usually $x$ is a number, $x^2$ is a number, $f(x)$ is a number, and $f$ is a function.
+6. The fibonacci sequence $1, 1, 2, 3, 5, \ldots$ is neither a number nor a set nor a function, but an infinite ordered sequence of numbers. 
 
-It's important to have set theoretical notations to make explicit which sets we mean. Our primary tool for writing a set with clarity and precision is **set builder notation**. Instead of writing a comma-separated list, we place an order for the elements we want, by means of the conditions we're looking for:
+## What is set theory?
+
+A theory like geometry studies complex shapes in terms of simple objects -- usually points, lines, and circles -- and simple relationships between those objects, such as incidence ("lying on" or "passing through"). By analogy, the simple objects of set theory are sets and their members, and the fundamental relationship between them is containment "$\in$". Like geometry, set theory began informally but developed a logical and axiomatic framework of (hopefully) obvious agreed-upon rules from which all other theorems flow.
+
+Working informally, we often imagine that the members of sets are familiar things such as numbers, vectors, words, or even people. They form a base layer (level 0) of available "stuff." The sets form the higher layer (level 1) and express combinations of stuff. This two-layer model is similar to the points and lines of geometry if we treat lines as collections of points, and serves us quite well for a long time. Eventually this model starts to strain as we uncover higher-order sets. For example, the set of all subsets of ${\mathbb N}$ (level 2), or the family of all open intervals $(a,b)$ in ${\mathbb R}$ (also level 2). Another layer (collections of sets) appears, and later another.
+
+In formal set theory, the situation is usually quite different. There is no "base layer" of familiar objects which are not sets. The members of sets are exclusively other sets, and all the complexity is in their subtle interrelationships. This theory may feel hollow, but remember that a set, like a wooden box, can be empty but is still something. A complicated interconnection of nested wooden boxes can be subtle and interesting, even without a gift hidden inside. How can a theory which doesn't even have numbers become a foundation of all mathematics? Formal set theory uses the sets themselves to simulate and represent familiar objects. For example, we interpret $0$ as $\{\}$, $1$ as $\{\{\}\}$, and $2$ as $\{\{\}, \{\{\}\}\}$. Notice that $2 = \{0,1\}$. 
+Functions are represented as sets of ordered pairs, and even ordered pairs $(a,b)$ are represented as unordered sets: $\{\{a\}, \{a,b\}\}$. Complex mathematical ideas boil down in principle to questions of set membership $\in$. 
+
+## Set axioms
+
+Although we won't study formal axiomatic set theory in this course, 
+the axioms of ZFC form a nice guide to the behavior of sets. 
+
+### Ground-Rules Axioms
+
+These axioms describe the baseline behavior of sets. 
+
+#### Extensionality 
+
+The **Axiom of Extensionality** tells us that set are equal if they have the same 
+elements. The prime numbers less than $4$ (i.e., \{2,3\}) and the solutions to $x^2-5x+6$ (i.e., \{2,3\}) are identical sets despite being formed via different ideas. This axiom reassures us that there are no properties of sets (font color, age, creator, etc.) which can distinguish them other than the elements they contain, and justifies our usual method of proving set equality: 
+$$\frac{\forall x \enspace x \in A \to x \in B, \enspace \enspace \forall x \enspace x \in B \to x \in A}{A=B}$$
+
+#### Regularity
+
+Although we accept that sets have members which are sets, which themselves have members which are sets, etc., we do not expect this process to continue forever. Instead, we expect it to ultimately end, not with a level 0 "thing", but with an empty set. The rule which accomplishes this is called the **axiom of regularity** (or **axiom of foundation**). It asserts that any set $x$ contains at least one element $y$ which does not contain other members of $x$. Ultimately, this odd axiom prevents self-membership ($x \in x$), prevents membership loops ($x \in y \in z \in x$), and prevents infinite descending chains of membership.
+
+### Set-making Axioms
+
+These axioms describe valid rules for making sets out of other sets. 
+
+#### Pairing
+
+> Given any sets $x$ and $y$, the set $\{x,y\}$ exists. 
+
+If this seems perfectly incontravertibly obvious, then you agree it's a good axiom. In an axiomatic system, nothing is automatic.
+
+#### Union
+
+> Given any collection of sets, their union exists.
+
+#### Infinity
+
+> An infinite set exists.
+
+#### Power Set
+
+> Given any set $x$, there is a set of all subsets of $x$. 
+
+The power set axiom is a "level-climbing" tool which can generate higher-order collections. 
+The power set of a set $x$ is written ${\mathscr P}(x)$. 
+
+#### Comprehension
+
+> Given any set $z$ and any property $P$, there is a set of exactly those elements of $z$ which satisfy the property. 
+
+This is the foundation for "set-builder notation," discussed later. If we write 
+$\{x \in {\mathbb R} | 2 < x < 3 \}$, implicitly we have invoked the comprehension axiom to declare that the set described actually exists. 
+
+#### Replacement
+
+> Given any set $A$ and a replacement rule $y=\phi(x)$, there is a set which contains all $\phi(y)$ for $x \in A$. 
+
+This is also the foundation for a "set-builder notation", with a slightly different syntax. 
+If we write $\{n^2  | n \in {\mathbb Z}\}$, we have used replacement. 
+
+Notice that the comprehension axiom quantifies over *properties* $P$, and the replacement axiom quantifies over *replacement rules* $\phi$. The first-order logical theory of sets permits quantifiers $\forall x$, but they are always interpreted as ranging over sets, not properties or rules. This makes the comprehension and replacement axioms very hard to express in the natural language of set theory. Just getting them expressed in a technically correct way is a major headache! 
+
+### The controversial axiom
+
+#### Axiom of Choice (AC)
+
+If $x$ is a nonempty set, then obviously it has an element. Inside a proof we are free to arbitrarily choose and discuss an element of $x$, even if we don't have a mechanism for deciding which one. This much is basic logic. But proofs are finite and such choices can only be made a finite number of times within one proof. What if we have an infinite family of sets, each nonempty? Is it possible to choose, with no particular rule, one element from each of them? The Axiom of Choice (AC) says yes:
+
+> Given a family $F$ of nonempty sets, there is a choice function which assigns, to each set in $F$, one of its members. 
+
+Some mathematicians regard AC to be obviously true. Others regard it with suspicion. It has a wide variety of logically equivalent phrasings, some of which sound totally innocuous and some of which sound a bit wild. Like Euclid's fifth postulate, it is treated with caution. Most mathematicians use it without worry, but again many mathematicians make some effort to keep track of which theorems use it and which don't. ("Just in case?") Modern Zermelo-Fraenkel set theory without choice is called ZF. With choice, it's called ZFC. 
+
+### Summary
+
+Informal set theory uses a foundation of basic elements and sets which contain them in levels of complexity. Formal set theory uses no basic elements and formalizes the processes which can create new sets. Two axioms -- Extension and Foundation -- set out basic rules about how sets work. Four axioms -- Pairing, Union, Infinity, and Power Set -- describe ever larger sets. Two axioms -- Comprehension and Replacement -- describe how existing sets can be refined and sculpted. Finally, the Axiom of Choice allows the controversial mechanism of infinite simultaneous arbitrary choice.
+
+## Basic Operations and Notations
+
+### Subset and equality
+Besides the membership relation $A \in B$, the most important relation among sets is the subset relation $A \subseteq B$ (also written $B \supseteq A$). The lower bar on $\subseteq$ reminds us that this includes the possibility $A = B$. We interpret it to mean $\forall x \enspace (x \in A \to x \in B)$. Note that the unbound quantifier $\forall x$ quantifies over *everything*, but only the elements of $A$ are relevant. A proof of $A \subseteq B$ naturally begins "Let $x$. Assume $x \in A$" which is naturally shortened "Let $x \in A$."
+
+Since the implication $x \in \emptyset \to x \in B$ has false premise, it is true by default. This makes $\emptyset$ a subset of every set.
+
+By extensionality, we may convert a claim $A = B$ to the claim that the sets have exactly the same elements, which is then the dual claim $A \subseteq B$ and $B \subseteq A$. Thus a proof of set equality is often given in two parts, labeled "$\subseteq$" and "$\supseteq$". Here's an example: 
+
+> The set of integer solutions to $3x+4y = 0$ is exactly the set of $(x,y)$ pairs which are integer multiples of $(4, -3)$. 
+
+::: {.proof}
+$\subseteq$: Let $(x,y)$ be a solution. Then $3x = -4y$, so $3x$ divisible by $4$, so $x$ is also. Let $n \in {\mathbb Z}$ with $x = 4n$. Then $y = \frac{-3}{4}x = -3n.$ Thus $(x,y) = n(4,-3)$, so $(x,y)$ is an integer multiple of $(4, -3)$. 
+
+$\supseteq$: Let $(x,y)$ be an integer multiple of $(4, -3)$. Let $n \in {\mathbb Z}$ with $(x,y) = n(4,-3)$. Then $x = 4n$ and $y = -3n$ and $3x+4y = 3(4n) + 4(-3n) = 0$, so $(x,y)$ is a solution to the equation. 
+:::
+
+
+
+### Operations among sets
+
+Sets can be combined using several key operations:
+<style>
+  #set_operations td, #set_operations th {padding: 10px;}
+</style>
+<table id="set_operations">.
+  <tr>
+    <th>Name</th>
+    <th>Notation</th>
+    <th>Meaning</th>
+    <th>Logical analogue</th>
+  </tr>
+  <tr>
+    <td>Intersection</td>
+    <td>$A \cap B$</td>
+    <td>$\{x | x \in A \land x \in B\}$</td>
+    <td>and</td>
+  </tr>
+  <tr>
+    <td>Union</td>
+    <td>$A \cup B$</td>
+    <td>$\{x | x \in A \lor x \in B\}$</td>
+    <td>or</td>
+  </tr>
+  <tr>
+    <td>Difference or <br>relative complement</td>
+    <td>$A - B$ or <br>$A \setminus B$</td>
+    <td>$\{x | x \in A \text{ but } x \notin B\}$</td>
+    <td>$\neg \to$</td>
+  </tr>
+  <tr>
+    <td>Complement <br>But see below</td>
+    <td>$A^c$</td>
+    <td>$\{x | x \notin A \}$</td>    
+    <td>$\neg$</td>
+  </tr>
+</table>
+
+The axioms of formal set theory guarantee (with a little work) that the intersection, union, and difference of two sets is always a set. In formal set theory, the complement $A^c$ would mean the set of all things not in $A$, but that collection is not a set. We only use the complement $A^c$ in a context where there is an understood set of "everything" which circumscribes $A$ and its complement. For example, we may say that the open interval $(2,3)$
+has complemennt $(2,3)^c = (\infty, 2] \cup [3, \infty)$, because we understand that in this context "everything" means all real numbers. In a different context we might say that the complement of the set of evens is the set of odds, because we understand that "everything"
+means all integers.  
+
+While proving, we may find ourselves assuming or having to prove a statement $x \in A \cap B$, etc. By default, we unpack the meaning of such a statement using the $\cap$ rule above into $x \in A \land x \in B$, converting set issues to logical issues.
+
+### Proofs with set combinations
+
+1. $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+
+2. $(A \cup B)^c = A^c \cap B^c$
+
+3. $(A \cap B)^c = A^c \cup B^c$
+
+
+Here are the proofs:
+
+::: {.proof}
+#1. 
+
+$\subseteq$: Let $x \in A \cup (B \cap C)$. Then $x \in A$ or $x \in B \cap C$. In case $x \in A$, then $x \in A \cup B$ but also $x \in A \cup C$. Therefore $x \in (A \cup B) \cap (A \cup C)$ as needed. In case $x \in B \cap C$, then $x \in B$ and $x \in C$. Since $x \in B$, also $x \in A \cup B$. Since $x \in C$, also $x \in A \cup C$. Once again $x \in (A \cup B) \cap (A \cup C)$.  In either case we conclude $x \in (A \cup B) \cap (A \cup C)$. 
+
+$\supseteq$: Let $x \in (A \cup B) \cap (A \cup C)$. We conclude $x \in (A \cup B)$ and $x \in (A \cup C)$. That is, $x \in A$ or $x \in B$, and moreover $x \in A$ or $x \in C$. Assume $x \notin A$. Then $x \in B$ and $x \in C$. It follows $x \in B \cap C$. Therefore $x \in A$ or $x \in B \cap C$. That is to say, $x \in A \cup (B \cap C)$. 
+:::
+
+::: {.proof}
+#2. 
+
+$\subseteq$: Let $x \in (A \cup B)^c$. Then $x \notin (A \cup B)$, so it is not true that $x \in A$ or $x \in B$. That is, $x$ is in neither set. So $x \in A^c$ and also $x \in B^c$. Then 
+$x \in A^c \cap B^c$. 
+
+$\supseteq$: Let $x \in A^c \cap B^c$. Then $x \in A^c$ and $x \in B^c$. So $x \notin A$. Also $x \notin B$. It is not true that $x$ is in $A$ or $B$, so $x \notin (A \cup B)$. That is, $x \in (A \cup B)^c$. 
+:::
+
+(#3 is similar)
+
+Perhaps the most important lesson of these proofs is not that they are clever, but that they contain no real ideas at all. We unpack the definition of set equality, unpack the meaning of $\cap$ and $\cup$, and faithfully attend to the rules of natural deduction. These proofs are supposed to feel routine and self-executing. 
+
+
+## Set-builder notation(s)
+
+### Comprehension Notation
+
+The Comprehension axiom assures us that given a set $A$ and a property of interest $P$, 
+there will be a set of exactly those elements of $A$ having the property. **Set-builder notation** is a convenient notation to create that set. The basic format includes set
+braces and a vertical bar "|":
 
 $$\left\{ \text{ [elements we want] }\,\, \Bigm| \,\,\text{ [fine print and conditions.]} \right\}$$
 
-Notice that the elements go on the left, whereas the conditions go on the right. This is important and can cause some confusion. The braces and middle vertical bar should be large enough to be easily seen to be a group.
+Notice that the elements go on the left, whereas the conditions go on the right. This is important and can cause some confusion. The braces and middle vertical bar should be large enough to delimit the contents.
 
 **Examples**
 
 1. $\left\{ x \in {\mathbb R} \Bigm| 0 \leq x \leq 4\right\}$ This would be read aloud "The set of x in the reals such that x is between 0 and 4." It could also be written more simply using interval notation $[0,4]$
 
 2. $\left\{ x \in {\mathbb Z} \Bigm| |x|
- < 4 \right\}$. This makes a finite list which could also be written $\{-3,-2,-1,0,1,2,3\}$
+ < 4 \right\}$. This would be read "The set of all integers $x$ such that the absolute value of $x$ is less than $4$." This makes a finite list which could also be written $\{-3,-2,-1,0,1,2,3\}$
 
-3. $\left\{ p \in {\mathbb N} \Bigm| \text{ $p$ and $p+2$  are prime} \right\}$. This set includes 3, 5, 11, and 17, but not 2, 4, 7, 9, or 13. At present (February 2025) this set is widely believed to be infinite, but we do not have a proof.
+3. $\left\{ p \in {\mathbb N} \Bigm| \text{ $p$ and $p+2$  are prime} \right\}$. This set includes 3, 5, 11, and 17, but not 2, 4, 7, 9, or 13. At present (February 2026) this set is widely believed to be infinite, but we do not have a proof.
 
-Notice that in every example, the left side has the form ``[variable] $\in$ [Set]''. There is a variant in which this can be placed on the right as a condition, allowing more interesting operations upon that variable to appear on the left:
+Notice that in every example, the left side has the form ``[variable] $\in$ [Set]'', and the right hand side describes the property that distinguishes the values we want to collect. 
 
-1. $$\left\{ x \Bigm| x \in {\mathbb R} \text{ and } 0 \leq x \leq 4\right\}$$. This is equivalent to #1, above, and shows how the source of values of $x$ can be placed to the right.
+### Replacement Notation
 
-2. $$\left\{ x^2  \Bigm| x \in {\mathbb Z} \text{ and } |x|
-< 20 \text{ and } x \text{ is prime} \right\}$$ This makes a list of squares of prime numbers less than 20. It could be written $\{4, 9, 25, 49, 121, 169, 289, 361\}$. Technically the conditions include both negative and positive (prime) values of $x$, so for example $9$ appears as $3^2$ and as $(-3)^2$, but it doesn't matter because a set holds each element only once.
+The Replacement Axiom tells us that the elements of a set can be replaced by some sort of 
+rule, forming a new set. In this case, we use a similar notation. Since the set created
+consists of the replacements, that's what we write on the left.
 
-3. $$\left\{ \sin(x) \Bigm| x \in {\mathbb R}\right\}$$
+1. $\left\{ x \Bigm| x \in {\mathbb R} \text{ and } 0 \leq x \leq 4\right\}$ This is equivalent to #1, above, and illustrates how the source (${\mathbb R}$) of values of $x$ can be placed to the right. We're effectively "replacing $x$ with $x$," which is admittedly silly.
+2. $\left\{ x^2  \Bigm| x \in {\mathbb Z} \text{ and } |x| < 20 \text{ and } x \text{ is prime} \right\}$ This makes a list of squares of prime numbers less than 20. It could be written $\{4, 9, 25, 49, 121, 169, 289, 361\}$. Technically the conditions include both negative and positive (prime) values of $x$, so for example $9$ appears as $3^2$ and as $(-3)^2$, but it doesn't matter because a set holds each element only once.
+3. $\left\{ \sin(x) \Bigm| x \in {\mathbb R}\right\}$
 This is another way of asking for the image, or range, of the function $\sin$. You probably already know that the image is the closed interval $[-1,1]$.
 
+### Telling them apart
 
-## Set Notations
+If set builder notation has the form $\{\text{[variable]} \in\text{[set]} | \ldots \}$, then
+it's comprehension notation. Expect the set to be filtered down to a subset. If set builder
+notation has the form $\{\text{[function of a variable]} | \ldots \}$, it's replacement notation. Expect a set (shown to the right of the "|") to be replaced by the functional rule. 
 
-We write $x \in A$ to assert that $x$ is an element of the set $A$. The notation requires that $A$ be a set, but requires nothing of $x$: A set can contain numbers, functions, other sets, or even stranger things.
+### Practice 
 
-We write $A \subseteq B$ to assert that $A$ is a subset of $B$. The lower bar reminds us that this includes the possibility $A = B$. Some mathematicians write $A \subset B$ to assert that $A$ is a subset and not equal, but others prefer the clearer notation $A \subsetneq B$ when we mean to say they are not equal. Confusingly, some use the notation $A \subset B$ to include the possibility of equality and therefore never use the symbol ``$\subseteq$''.
+Explain in words the contents of each set:
 
-**Interpretation/Definition of $\subseteq$**: We often need to translate the statement $A \subseteq B$ into a statement about elements. Of course it means that the elements of $A$ are also in $B$. There are two slightly different styles in which this can be said:
+1. $\{x \in {\mathbb R} | x^2 < 9\}$
+2. $\{x^2 - 9 | x \in {\mathbb R} \}$
+3. $\{A \in {\mathscr P}({\mathbb R}) | 3 \in A\}$
+4. $\{\{n \in {\mathbb N} | n < k\} | k \in {\mathbb N}\}$
 
-**Bound Quantifier Definition of $A \subseteq B$:**
-$$A \subseteq B \text{ means: }\,\, \forall x \in A \enspace x \in B$$
+Use set-builder notation (either type) to write each set:
 
-**Unbound Quantifier Definition of $A \subseteq B$:**
-$$A \subseteq B \text{ means: }\,\, \forall x \left( x \in A \to x \in B\right)$$
-
-The policy choice between bound quantification and unbound quantification is usually so philosophical and esoteric that it doesn't matter, even within formal mathematics. But for a few special purposes in foundational work, it's far better to use **unbound** quantification. Since the course is called "Set Theory and Logic", I feel an obligation to do this "the right way" according to the needs of foundational logic, so we will favor the second interpretation. If you're curious, feel free to ask about the reasons why unbound quantification is your friend.
-
-**The empty set is a subset**
-
-Let $B$ be a set. Is $\emptyset \subseteq B$ true or false? Since we have an official interpretation of $\subseteq$, we should use it. The bound-quantifier interpretation leads us to ask "Is every element of $\emptyset$ an element of $B$?" This remains rather confusing, since $\emptyset$ has no elements to discuss. Does this make the statement true, false, or merely "wrong?"
-
-The unbound-quantifier interpretation, on the other hand, gives us a clear answer: "Is it true, for all $x$, that **If** $x \in \emptyset$, **then** $x \in B$?" Recalling our interpretation of "if... then...", we identify that "$x \in \emptyset$" is invariably false, so the implication is true for all $x$. We conclude that $\emptyset \subseteq B$ is indeed true for any set $B$. Notice we've proven $P \to Q$ without assuming $P$, which is rare.
-
-
-
-
-
-
-Three examples of set equality proofs using sets expressed in various ways
-
-1. Intersect distributes over union. Sets are A B C
-
-2. Interval notation set equals set builder notation set
-
-3. Kernel of f(x,y) by 2x+y is multiples of (1,-2)
+1. $\{2, 7, 12, 17, \ldots\}$
+2. The odd integers
+3. All the integers that are squares of other integers.
+4. The subsets of ${\mathbb N}$ which have exactly two elements.
+5. The powers of $2$, in ${\mathbb N}$. 
 
 # Functions
 
-## Nuances of Function Notation
+## Introduction
 
+Interesting relationships between sets are usually expressed as functions. 
 
+### Nuances of Function Notation
 
 **Where is the function?** We're accustomed to writing a function $y = x^2$ or for example $f(x)=3x+5$ and saying "that's a function." But which part is a function? Variables are not functions. A variable is an ambiguous reference to an individual thing, usually a real number. So $x$ is not a function, and neither is $y$, despite the idiom "$y$ is a function of $x$". We need to clearly consider the difference between a mathematical form and mathematical value. In analytical philosophy, this is called the use-mention distinction. To illustrate:
 
@@ -768,30 +979,39 @@ Now "$3x+5$" is a string of symbols, *different* from "$3x+4+1$", with no numeri
 
 In summary, when we write $f(x) = 3x+5$, the function is not $y$, not $3x+5$, nor even $f(x)$, because these are all notations for an individual output. The function is the mathematical $f$, which holds the potential for evaluation at any input.
 
-Note: The evaluation syntax is $f(x)$, placing $f$ to the left of its input, in parentheses. The function could have ("should have?") gone on the right, but folks chose the left. The parentheses in "f(x)" are not just for grouping. They are *function-evaluation* parentheses. They can (almost) never be omitted even when the input is a single symbol.
+Note: The evaluation syntax is $f(x)$, placing $f$ to the left of its input, in parentheses. The function could have ("should have?") gone on the right, but folks chose the left. The parentheses in "f(x)" are not just for grouping. They are *function-evaluation* parentheses. They can (almost) never be omitted even when the input is a single symbol. 
 
+Many mathematical operations are interpreted as functions but have quirky or nonstandard notation. A quick look through a calculus book will reveal functions such as $\sin x$, 
+$\sqrt{x}$, $|x|$, $e^x$, $x^2$, etc., most of which lack a clear function symbol, 
+violate functional parenthesis syntax, and don't even have the grace to consistently write
+the input "$x$" last. It's no wonder the chain rule is hard -- natural function syntax is a mess. 
 
+### A word on "range".
 
-## How to introduce a function
+The function $\sin$ has real inputs and real outputs. We can say that the domain is 
+${\mathbb R}$ (all real inputs are valid) and the range is ${\mathbb R}$ (potential outputs are real). But the actual, realized outputs lie within the region $[-1,1]$, so we may also say the range is $[-1,1]$. The word "range" suffers a double-meaning, referring sometimes to the larger set of potential outputs and sometimes to the smaller set of actual outputs. In higher mathematics, where the difference can matter a lot, we have suspended the word entirely. We use "codomain" for the larger set of potential outputs and "image" for the smaller set of actual outputs. Typically the codomain is known when the function is created. Calculating the image can be hard. 
 
-A function is a complicated object and needs to be created with care. To specify a function we normally communicate four things:
+### How to introduce a function
 
-1. The letter, symbol, or name
-2. The domain
-3. The range
-4. The rule
+A function is a complicated object and needs to be created with care. 
+To specify a function correctly and completely we normally communicate four things:
+
+1. The letter, symbol, or name representing the function.
+2. The domain.
+3. The codomain.
+4. The rule.
 
 **Examples**
 
 Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 3x+5$.
 
-Let $g:\{2,4,6,8\} \to {\mathbb Z}$ by $g(x) = |x-5]$.
+Let $g:\{2,4,6,8\} \to {\mathbb Z}$ by $g(x) = |x-5|$.
 
-Let $\arcsin: [-1,1] \to [-\pi/2, \pi/2]$ by $\arcsin(x) = \int_0^x \frac{1}{\sqrt{1-x^2}}dx$
+Let $\arcsin: [-1,1] \to [-\pi/2, \pi/2]$ by $\arcsin(x) = \int_0^x \frac{1}{\sqrt{1-t^2}}dt$
 
 Let $d: {\mathbb R}^2 \to {\mathbb R}$ by $d(x,y) = |x-y|$
 
-More generically, we write "Let $f:D \to R$ by $f(x) = \ldots$ to specify a function called $f$ with domain $D$, range $R$, and rule as given.
+More generically, we write "Let $f:D \to R$ by $f(x) = \ldots$ to specify a function called $f$ with domain $D$, codomain $R$, and rule as given.
 
 
 Arguably we have specified also the *input variable* for the function, but this is an illusion. The variable used to specify the rule is a dummy variable and is irrelevant after the function is specified. So for example if we...
@@ -800,7 +1020,7 @@ Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 3x+5$.
 
 Let $g:{\mathbb R} \to {\mathbb R}$ by $g(t) = 3t+5$.
 
-... then $f(x)=g(x)$, $f(t) = g(t)$, and indeed $f=g$.
+... then $f(x)=g(x)$, $f(t) = g(t)$, and indeed $f=g$. However $f(x) \neq g(t)$.
 
 **Recall:** Many students have difficulty using the limit definition of the derivative because it involves plugging in forms which involve variables foreign to the function definition:
 
@@ -815,8 +1035,8 @@ f'(x) &= \lim_{h \to 0 }\frac{f(x+h)-f(x)}{h}\\
  &= \lim_{h \to 0 }\frac{(x+h)^2 + 3(x+h) + 4 - (x^2 + 3x + 4)}{h}\\
  &= \text{etc.}
 \end{align*}
-Somehow the first step is often very tricky. It just requires that the input be carefully plugged in using the formula.
 
+Somehow the first step is often very tricky. It just requires that the input be carefully plugged in using the formula.
 
 **Aside:**
 
@@ -829,10 +1049,9 @@ Which is most precise?
 - The derivative of $\sin(x)$ is $\cos(x)$
 
 
-Functions can be different with the same rule and different domains. Functions can have apparently different rules but be the same. Functions can have same domain and range and be technically different with different ranges. Example: max function, average function, eval at 2 function.
+Functions can be different with the same rule and different domains. Functions can have apparently different rules but be the same. Functions can have same domain and image and be technically different with different codomains. Example: max function, average function, eval at 2 function.
 
 Domain can be literally any set. Example where the set is a set of sets, of vectors, of functions, etc.
-
 
 ## Inverse Functions
 
