@@ -6,3 +6,4 @@ format: revealjs
 ---
 
 {{< include _9_10_mean_variance_standard_deviation.qmd >}}
+  

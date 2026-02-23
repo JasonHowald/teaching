@@ -94,6 +94,12 @@ Prove that $A \cap (B \cup C) \subseteq
 ## Getting even
 Prove that for all integers $n$, $n^2+n$ is even.
 
+## Happy medium
+
+Interpret and prove the statement below. You should pay careful attention to 
+structure of proof. 
+$$ \forall x \enspace \forall y \enspace (x \neq y \to \exists z \enspace (x<z<y \lor y <z<x)) $$
+
 # Set Theory
 
 ## I order a sub with nothing on it.
@@ -101,6 +107,29 @@ Here $A$ is an arbitary set and $\emptyset$ is the empty set.
 
 1. Is the statement "$\forall x (x \in \emptyset \to x \in A)$" true or false? Explain.
 2. Rewrite the statement (without changing its meaning) so that it uses the subset "$\subseteq$" symbol.
+
+## Typing practice
+
+Let $f$ be a function from ${\mathbb R}$ to ${\mathbb R}$ by the formula $f(x) = x^4+1$. Let
+$A$ be the set $\{1,2,3,4,5,6,7\}$ and let $B$ be the set $\{7,8,9,10\}$. What is the **type**
+of each of the mathematical objects below? Your answer in each case should be "number", "function", "truth value", "set", etc.
+
+1. $A \cap B$
+1. $A \cup B$
+1. $\{A,B\}$
+1. $\emptyset = A$
+1. ${\mathbb R}$ 
+1. The image of $f$
+1. $x$
+1. $f(x)$
+1. $f$ 
+1. $f(7)$
+1. $f(2) = f(-2)$
+
+## Three is a crowd
+
+Based on the set-theoretical descriptions of $0$, $1$, and $2$ from section 3.2, what are $3$ and $4$? Writing these sets completely (not using the notation $\emptyset$), how many 
+curly braces are needed to represent $0$, $1$, $2$, $3$, and $4$?
 
 ## Reading set notation
 What are the elements of this set?

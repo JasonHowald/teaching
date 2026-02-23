@@ -19,11 +19,10 @@ Read 2.1.2 (dotplots and mean) and 2.1.4 (variance and standard deviation)
 Find the coast_starlight data on openintro. It has only 16 lines. We want the average travel_time from the dataset.
 
 1. Write instructions for calculating the average. 
-2. Find the average with just a calculator.
-3. Load the data into a spreadsheet and find the average.
-4. Load the data into Jupyter and find the average.
-5. Is this average a statistic or a parameter? 
-6. What symbol is appropriate for this average? Why?
+2. Load the data into a spreadsheet and find the average.
+3. Load the data into Jupyter and find the average.
+4. Is this average a statistic or a parameter? 
+5. What symbol is appropriate for this average? Why?
 
 ## Understanding the average {.activity}
 In everyday English, “average” means “typical” or “usual." In math, it always means 
@@ -108,10 +107,10 @@ of $s$.
 
 Ten children attend a party. Their ages are:
 
-| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | year | 
+| 5 | 7 | 8 | 9 | 9 | 9 | 10 | 10 | 11 | 12 | (Ages) | units | 
 |--|--|--|--|--|--|--|--|--|--|--|--|
-| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | year | 
-| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | year | 
+| 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | 9 | (mean) | years | 
+| -4 | -2 | -1 | 0 | 0 | 0 | 1 | 1 | 2 | 3 | (deviations) | years | 
 | 16 | 4 | 1 | 0 | 0 | 0 | 1 | 1 | 4 | 9 | (square dev) | square years ?!? | 
 
 <br>
@@ -158,7 +157,7 @@ We use $\sigma^2$ and $\sigma$ for population variance and population standard d
 ## Variance and standard deviation, easy way {.activity}
 1. You should have a spreadsheet with your coast_starlight data from earlier. Using the command “STDEV” or “STDEV.S”, find the standard deviation.
 2. You should have a Jupyter notebook with the same data. Use “df.describe” to find the standard deviation.  (Jupyter example)
-3. Is all of the data in the range from $\overline{x} - s$ and $\overline{x}+s$?
+3. Is all of the data in the range from $\overline{x} - s$ and $\overline{x}+s$? If not, what proportion of the data lies in that range?
 
 ## Individual work
 Complete the webwork problem set for this presentation.
