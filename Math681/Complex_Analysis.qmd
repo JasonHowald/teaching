@@ -137,8 +137,8 @@ Note that the trick fails exactly when $a+bi=0$. The number $a-bi$ is
 called the conjugate of $a+bi$. The conjugate function is usually
 written with an overline: $\overline{a+bi} = a-bi$.
 
-::: exercise
-**Exercise 1.1**. (Factoring 13) The Gaussian integers are numbers of
+::: {#exr-factor-13 }
+ (Factoring 13) The Gaussian integers are numbers of
 the form $a+bi$ for $a, b \in {\mathbb Z}$. They form a ring, usually
 written ${\mathbb Z}[i]$. They play the role of integers for the complex
 numbers. Prove that the "prime" number $13$ is the product of two
@@ -146,8 +146,8 @@ smaller Gaussian integers. Here "smaller" means in norm: $w$ is smaller
 than $z$ if $|w|<|z|$.
 :::
 
-::: exercise
-**Exercise 1.2**. (Matrix representation) Show that the system of all
+::: {#exr-matrix-C }
+ (Matrix representation) Show that the system of all
 matrices of the form
 $\left(\begin{array}{cc}\alpha & -\beta \\ \beta & \alpha \end{array}\right)$
 (with $\alpha, \beta \in {\mathbb R}$) with matrix addition and
@@ -189,8 +189,8 @@ For any complex numbers $w$ and $z$:
 4.  $|wz| = |w||z|$.
 :::
 
-::: exercise
-**Exercise 1.3**. Prove the above proposition by writing $z$ in the form
+::: {#exr-prove-mod-re-im }
+ Prove the above proposition by writing $z$ in the form
 $z=a+bi$. (This technique -- proving things by writing $z$ in the form
 $a+bi$ is one we wish to outgrow, and the statement of this proposition
 will help us do so. We do not wish to constantly regard $z$ as two
@@ -201,8 +201,8 @@ So all four special functions can be expressed using the conjugate. What
 makes conjugation so special? To start, it's an automorphism of
 ${\mathbb C}$:
 
-::: exercise
-**Exercise 1.4**. (Conjugation is an automorphism) Verify by direct
+::: {#exr-conjugation-automorphism }
+ (Conjugation is an automorphism) Verify by direct
 calculation, using the definitions of $+$ and $\cdot$, that
 $z \mapsto \overline{z}$ is a field homomorphism from ${\mathbb C}$ to
 ${\mathbb C}$. In order to show that it is bijective, provide its
@@ -210,7 +210,7 @@ inverse function. Verify that conjugation fixes every element of
 ${\mathbb R}$.
 :::
 
-::: {#cor:conjugate-iso .corollary}
+::: {#cor-conjugate-iso .corollary}
 For complex numbers $w$ and $z$:
 
 1.  $\overline{w\pm z} = \overline{w}\pm \overline{z}$
@@ -225,8 +225,8 @@ automorphism fixing ${\mathbb R}$. But there are no other such maps. In
 the language of Galois Theory, conjugation is the single nontrivial
 element of the Galois group of ${\mathbb C}$ over ${\mathbb R}$.
 
-::: exercise
-**Exercise 1.5**. Prove that any field automorphism
+::: {#exr-galois-C-R }
+ Prove that any field automorphism
 $\phi:{\mathbb C}\to {\mathbb C}$ which fixes ${\mathbb R}$ must be
 conjugation or the identity. (Hint: What can $\phi(i)$ be?)
 :::
@@ -244,8 +244,8 @@ real, nonpositive imaginary (i.e., $bi$ for $b \leq 0$), and nonnegative
 imaginary.*
 :::
 
-::: exercise
-**Exercise 1.6**. Prove the previous proposition by writing $z=a+bi$ and
+::: {#exr-prove-re-im-inequalities }
+ Prove the previous proposition by writing $z=a+bi$ and
 using properties of real numbers $a$ and $b$.
 :::
 
@@ -253,7 +253,7 @@ Metric topological reasoning requires a triangle inequality in
 ${\mathbb C}$:
 
 ::: {#prp-triangle-inequality .proposition}
-##Triangle Inequality
+**(Triangle Inequality)**
 Let $w$ and $z$ be complex
 numbers. Then:
 1. $|w \pm z| \leq  |w|+|z|$ with equality if and only if $z=0$ or
@@ -293,8 +293,8 @@ This completes the proof for $|w+z|$. For the case $|w-z|$ simply apply
 the first case with $-z$ in place of $z$. 
 :::
 
-::: exercise
-**Exercise 1.7**. Use the triangle inequality to prove that
+::: {#exr-triangle-inequality-n-ary }
+ Use the triangle inequality to prove that
 $|z_1 + z_2 + \ldots + z_n| \leq |z_1| + |z_2| + \ldots + |z_n|$
 :::
 
@@ -362,21 +362,21 @@ notation, to be replaced later. All of our theorems about
 $\operatorname{cis}$ will be regarded, later, as theorems about
 $e^{i\theta}$.
 
-::: exercise
-**Exercise 1.8**. Use the laws for $\operatorname{cis}(\theta)$ to
+::: {#exr-triple-angle }
+ Use the laws for $\operatorname{cis}(\theta)$ to
 derive "triple angle formulas" for $\sin$ and $\cos$. *Do not* use the
 angle sum formulas directly (although of course the proof of proposition
 @prp-exponent-law-cis depends on them).
 :::
 
-::: exercise
-**Exercise 1.9**. The function $\operatorname{cis}$ is a group
+::: {#exr-cis-group-homomorphism }
+ The function $\operatorname{cis}$ is a group
 homomorphism. What are its domain and range? (Tell each group by telling
 the set and its operation.) What is its kernel?
 :::
 
-::: exercise
-**Exercise 1.10**. Find the sixth roots of unity. Give their values
+::: {#exr-sixth-roots-unity }
+Find the sixth roots of unity. Give their values
 arithmetically and include a picture of them in the complex plane.
 Together they form a group, by proposition
 @prp-exponent-law-cis (do not prove), isomorphic to what
@@ -526,8 +526,8 @@ $p^{-1}$ so identify $p(0,0,1) = \infty$ and $p^{-1}(\infty) = (0,0,1)$,
 we can assign a topology to ${\mathbb C}\cup \{\infty\}$ homeomorphic to
 that of $S^2$, making $p$ a homeomorphism by fiat.
 
-::: exercise
-**Exercise 1.11**. For each of the functions from ${\mathbb C}$ to
+::: {#exr-automorphisms-riemann-sphere }
+For each of the functions from ${\mathbb C}$ to
 ${\mathbb C}$, find a formula for the corresponding function from $S^2$
 to $S^2$ (in $x_1, x_2, x_3$ coordinates.) You can do this by creating
 the composition $p^{-1}\circ f \circ p$ of maps
@@ -544,15 +544,15 @@ interpreted as a geometric motion on the sphere.
 3.  $h(z) = 1/z$
 :::
 
-::: exercise
-**Exercise 1.12** (hard). Prove that circles on $S^2$ correspond, by
+::: {#exr-riemann-sphere-circles}
+(hard) Prove that circles on $S^2$ correspond, by
 stereographic projection, to circles and lines on ${\mathbb C}$. Which
 circles on $S^2$ correspond to lines on ${\mathbb C}$? Explain with
 proof.
 :::
 
-::: exercise
-**Exercise 1.13** (hard). Let $w, z \in {\mathbb C}$ and let $d(w, z)$
+::: {#exr-riemann-sphere-distance }
+(hard). Let $w, z \in {\mathbb C}$ and let $d(w, z)$
 denote the distance between the points corresponding to $w$ and $z$ on
 $S^2$. Prove:
 $$d(w,z) = \frac{2\modulus{w-z}}{\sqrt{1+\modulus{w}^2}\sqrt{1+\modulus{z}^2}}$$
@@ -693,8 +693,8 @@ above and an alternate definition would conflict. This author's position
 
 
 
-::: exercise
-**Exercise 2.1**. Prove the implied equivalence in the previous
+::: {#exr-equivalence-sequence-convergence }
+ Prove the implied equivalence in the previous
 definition
 :::
 
@@ -721,8 +721,8 @@ The **interior** of $A$, written $A^0$ is, equivalently,
 3.  $\{x \in X \,|\, B(x,\varepsilon) \subseteq A \text{ for some $\varepsilon>0$}\}$
 :::
 
-::: exercise
-**Exercise 2.2**. Prove the implied equivalences in the previous
+::: {#exr-equivalences-interior}
+ Prove the implied equivalences in the previous
 definition
 :::
 
@@ -739,8 +739,8 @@ The **closure** of $A$, written $\overline{A}$ is, equivalently,
 4.  $\{x \in X \,|\, x \text{ is the limit of some sequence $(x_n)$ in $A$}\}$
 :::
 
-::: exercise
-**Exercise 2.3**. Prove the implied equivalences in the previous
+::: {#exr-equivalences-closure}
+ Prove the implied equivalences in the previous
 definition
 :::
 
@@ -762,8 +762,8 @@ space to another is **continuous** if, equivalently,
 4.  For any convergent sequence $(x_n)$, $\lim_n f(x_n) = f(\lim_n x_n)$
 :::
 
-::: exercise
-**Exercise 2.4**. Prove the implied equivalences in the previous
+::: {#exr-equivalences-continuity}
+ Prove the implied equivalences in the previous
 definition
 :::
 
@@ -824,7 +824,6 @@ interval.
 :::
 
 ::: {#prp-image-connected .proposition}
-## Continuous image of a connected set is connected.
 Let $f:X \to Y$ be a continuous map of metric spaces, with
 $X$ connected. Then $f(X)$ is connected.
 :::
@@ -847,8 +846,8 @@ If $A \subset X$ is a subset of a larger topological space $X$, we call
 $A$ compact if it is compact in the subspace topology.
 :::
 
-::: exercise
-**Exercise 2.5**. Prove the implied equivalence in the previous
+::: {#exr-equivalences-compactness}
+ Prove the implied equivalence in the previous
 definition
 :::
  
@@ -950,11 +949,11 @@ which may not be known, whereas the Cauchy condition depends only on the
 terms of the sequence.
 
 ::: {#prp-convergent-cauchy .proposition}
-**Proposition 2.26**. *Every convergent sequence is Cauchy.*
+Every convergent sequence is Cauchy.
 :::
 
-::: exercise
-**Exercise 2.6**. Prove the previous proposition.
+::: {#exr-cauchy-convergent }
+Prove the previous proposition.
 :::
 
 Returning to the sequence $x_n = 1/n$, we see that it converges in
@@ -995,8 +994,8 @@ coordinates $n$ Cauchy sequences on ${\mathbb R}$. They converge
 individually, producing a vector to which $(v_n)$ converges. 
 :::
 
-::: exercise
-**Exercise 2.7**. Prove that a closed subset of a complete metric space
+::: {#exr-closed-in-complete }
+ Prove that a closed subset of a complete metric space
 is complete.
 :::
 
@@ -1117,8 +1116,8 @@ $\rho(f(y),f(x)) \leq \rho(f(y),f(z))+ \rho(f(z),f(x)) \leq \varepsilon/2 + \var
 
 
 
-::: exercise
-**Exercise 2.8**. By example, prove that a sequence of uniformly
+::: {#exr-non-uniform-convergent-counterexample }
+By example, prove that a sequence of uniformly
 continuous functions on a compact domain can converge, *not uniformly*,
 to a uniformly continuous function.
 :::
@@ -1194,8 +1193,8 @@ as desired. 
 
 
 
-::: exercise
-**Exercise 2.9**. Let $f(z) = \sum_{n=0}^\infty a_n z^n$ be a power
+::: {#exr-Weierstrass-on-ball }
+ Let $f(z) = \sum_{n=0}^\infty a_n z^n$ be a power
 series whose (complex) coefficients $a_n$ are bounded above in the sense
 that $|a_n| \leq B \in {\mathbb R}$ for some $B$. Prove that the sum
 $\sum_{n=0}^\infty a_n z^n$ is uniformly convergent on any disk
@@ -1335,8 +1334,8 @@ Therefore if $\delta = \min(\frac{x_0}{2}, \frac{{\varepsilon}|x_0|^2}{2})$
 we have our result. 
 :::
 
-::: exercise
-**Exercise 3.1**. Let $f$ be a function and let $g$ be a continuous
+::: {#exr-limit-compositions }
+ Let $f$ be a function and let $g$ be a continuous
 function. Consider the limits $\lim_{x \to x_0} f(g(x))$ and
 $\lim_{y \to g(x_0)} f(y)$. Does either limit's existence imply the
 other's? Explain with proof. If they both exist are they necessarily
@@ -1345,8 +1344,8 @@ equal? Explain with proof.
 
 
 
-::: exercise
-**Exercise 3.2**. Assess whether each function is differentiable. Answer
+::: {#exr-differentiability-conjugate-modulus }
+ Assess whether each function is differentiable. Answer
 with proof.
 
 1.  $f(z) = \overline{z}$, at any point $z\in {\mathbb C}$.
@@ -1388,8 +1387,8 @@ $f'(z) = L'(z)+g'(z) = m + 0 = m$, so $f'(z)$ exists. 
 
 
 
-::: exercise
-**Exercise 3.3**. Compare the following two statements about limits:
+::: {#exr-limit-ratio-linear-approx }
+ Compare the following two statements about limits:
 \begin{align}
     \lim_{w \to z} g(w)  =& 0 \enspace \text{ versus}\\
     \lim_{w \to z} \frac{g(w)}{w-z}  =& 0        
@@ -1493,8 +1492,8 @@ $f'(g(z))$.
 
 
 
-::: exercise
-**Exercise 3.4**. The chain rule makes implicit use of the important
+::: {#exr-q-symmetric-cts-1v }
+ The chain rule makes implicit use of the important
 function $q(w,z)$, which we will revisit in section 3.4.
 
 $$q(w,z) = \left\{
@@ -1513,8 +1512,8 @@ Prove:
     continuous function of $w$ for each fixed $z \in U$ and vice versa.
 :::
 
-::: exercise
-**Exercise 3.5**. Prove parts 2 and 4 of the previous theorem. For the
+::: {#exr-derivative-constant-multiple-quotient-rules }
+ Prove parts 2 and 4 of the previous theorem. For the
 quotient rule, use common denominator and take inspiration from the
 product rule.
 :::
@@ -1610,8 +1609,8 @@ has zero derivative. A different choice of range for $\arg(z)$ gives a
 different square root function, but always one discontinuous on an open
 ray from the origin.
 
-::: exercise
-**Exercise 3.6**. Recall that the kernel of the $\operatorname{cis}$ map
+::: {#exr-argument-sum-law }
+ Recall that the kernel of the $\operatorname{cis}$ map
 is known. Let $w, z \in {\mathbb C}$. By using polar coordinates for $w$
 and $z$, prove that $\arg(wz) = \arg(w)+\arg(z) + 2 \pi n$ for some
 $n \in {\mathbb Z}$. Here the $2 \pi n$ term records the inherent
@@ -1748,7 +1747,7 @@ We sometimes prove convergence or divergence of series by comparison to
 a geometric series. This technique is at the heart of the root test:
 
 ::: {#thm-root-test .theorem}
-## Cauchy's Root Test
+**(Cauchy's Root Test)**
 Let $\sum_{n=0}^\infty a_n$ be a
 series, and let $C=\limsup |a_n|^{1/n}$.
 
@@ -1832,8 +1831,8 @@ Apply @lem-ratio-to-root to the sequence $|a_n|$
 and then use @thm-Cauchy-Hadamard-radius.
 :::
 
-::: exercise
-**Exercise 3.7**. Give examples, with proof, of a power series ...
+::: {#exr-power-series-radii-convergence }
+ Give examples, with proof, of a power series ...
 
 1.  ...with infinite radius of convergence.
 
@@ -1939,8 +1938,8 @@ and)
 All three parts follow from @thm-sum-product-series.
 :::
 
-::: exercise
-**Exercise 3.8**. (Hard) Find series $A = \sum_{n=0}^\infty a_n$ and
+::: {#exr-product-series-counterexample }
+ (Hard) Find series $A = \sum_{n=0}^\infty a_n$ and
 $B=\sum_{n=0}^\infty b_n$, both convergent but neither absolutely
 convergent, for which $\sum_{n=0}^\infty c_n$ does not converge to $AB$.
 (Hints: Choose $\sum a_n$ and $\sum b_n$ real and alternating but
@@ -1951,8 +1950,8 @@ $c_n = \sum_{k=0}^na_kb_{n-k}$ is a sum with positive terms. Bound them
 below, deduce a lower bound for $c_n$, and force $\sum c_n$ to diverge.)
 :::
 
-::: exercise
-**Exercise 3.9**. Calculate a power series for $\frac{1}{(1-z)^2}$ by
+::: {#exr-power-series-multiplication-practice }
+ Calculate a power series for $\frac{1}{(1-z)^2}$ by
 the series multiplication rule, and find its radius of convergence.
 :::
 
@@ -2070,8 +2069,8 @@ Compare the derivative and the formal derivative of the formal
 antiderivative of $f$. 
 :::
 
-::: exercise
-**Exercise 3.10**. @thm-formal-derivative-is-derivative
+::: {#exr-derivative-series-counterexample }
+@thm-formal-derivative-is-derivative
 proves that
 $\lim_{n \to \infty} \frac{d}{dz} s_n(z)$ equals
 $\frac{d}{dz} \lim_{n \to \infty} s_n(z)$ for certain functions $s_n$.
@@ -2083,8 +2082,8 @@ $$\lim_{n \to \infty} \frac{d}{dz} s_n(z) \text{ and } \frac{d}{dz} \lim_{n \to 
 exist and are unequal.
 :::
 
-::: exercise
-**Exercise 3.11**. Calculate a power series for $\frac{1}{(1-z)^2}$ by
+::: {#exr-power-series-via-differentiation }
+Calculate a power series for $\frac{1}{(1-z)^2}$ by
 the series differentiation rule, and find its radius of convergence.
 Compare to the previous problem.
 :::
@@ -2212,8 +2211,8 @@ complex extensions.
 
 
 
-::: exercise
-**Exercise 3.12**. Prove the angle sum formulas for arbitrary complex
+::: {#exr-angle-sum }
+Prove the angle sum formulas for arbitrary complex
 $a$ and $b$ 
 $$\cos(a+b)  = \cos(a)\cos(b)-\sin(a)\sin(b)$$
 $$\sin(a+b)  = \sin(a)\cos(b)+\cos(a)\sin(b)$$
@@ -2303,16 +2302,16 @@ because $\log(z)$ is discontinuous on $(-\infty,0)$. This is the best we
 can do: Later we'll prove $1/z$ has no antiderivative on its entire
 domain.
 
-::: exercise
-**Exercise 3.13**. Let $f(x)$ be a differentiable function. For which
+::: {#exr-logarithmic-derivative }
+Let $f(x)$ be a differentiable function. For which
 $x$ is it true that $\frac{d}{dx} \log(f(x)) = \frac{f'(x)}{f(x)}$?
 Answer with proof.
 :::
 
 
 
-::: exercise
-**Exercise 3.14**. The rules of logarithms are usually stated for
+::: {#exr-log-rules }
+The rules of logarithms are usually stated for
 positive real numbers: For $a, b \in (0, \infty)$:
 
 1.  $\ln_{\mathbb R}(1)=0$
@@ -2341,13 +2340,13 @@ $\ln_{\mathbb R}(ab) = \ln_{\mathbb R}(a)+\ln_{\mathbb R}(b)$.
     agree for all $z$ with $\Re(z)>0$.
 :::
 
-::: exercise
-**Exercise 3.15**. Use the definition of $e^z$ to estimate the value of
+::: {#exr-estimate-e }
+Use the definition of $e^z$ to estimate the value of
 $e$.
 :::
 
-::: exercise
-**Exercise 3.16**. The general exponential function $a^z$ is often
+::: {#exr-general-exponentials }
+The general exponential function $a^z$ is often
 defined by the formula $$a^z \equiv_{def}  e^{z \log(a)}$$ (To remember
 the formula, just apply rules of logarithms to $a^z = e^{\log(a^z)}$.)
 Now let $a$ be an arbitrary complex number. Prove that the exponential
@@ -2512,8 +2511,8 @@ implies the condition $d((w_0,z_0), (w,z))< \delta$. 
 @thm-uniform-approximation-of-q plays a role in our integration theory similar
 to the mean value theorem in a theory based within ${\mathbb R}$. 
 
-::: exercise
-**Exercise 3.17**. A standard example of a function
+::: {#exr-q-discontinuity-counterexample }
+A standard example of a function
 $f:{\mathbb R}\to {\mathbb R}$ with discontinuous derivative is:
 $$f(x) = \begin{cases}x^2 \sin(1/x) & \text{ if } x \neq 0 \\ 0 & \text{ if } x =0 \end{cases}$$
 
@@ -2670,8 +2669,8 @@ $$\int_\gamma f(z) dz \equiv_{\text{def}} \lim_{\norm{P} \to 0} \sum_{i=1}^{m} f
 where the limit is over tagged partitions $P$ of $[a,b]$.
 :::
 
-::: exercise
-**Exercise 4.1**. Prove directly from the previous definition that when
+::: {#exr-path-integral-constant-function }
+ Prove directly from the previous definition that when
 $f$ is the constant function $f(z)=k$, then
 $\int_\gamma f(z) dz = k(\gamma(b)-\gamma(a))$. (You may take for
 granted that the limit in this new sense of a constant is that
@@ -2680,8 +2679,8 @@ constant.)
 
 
 
-::: exercise
-**Exercise 4.2**. Let $\chi_{\mathbb Q}:{\mathbb R}\to {\mathbb R}$ by
+::: {#exr-integrability-chi-Q }
+ Let $\chi_{\mathbb Q}:{\mathbb R}\to {\mathbb R}$ by
 $\chi_{\mathbb Q}(x) = \left\{\begin{array}{lr} 1 & \text{ if } x \in {\mathbb Q}\\ 0 & \text{ if } x \notin {\mathbb Q}\end{array}\right.$
 
 1.  Show that $\chi_{\mathbb Q}$ is integrable (i.e., the integral limit
@@ -2695,8 +2694,8 @@ $\chi_{\mathbb Q}(x) = \left\{\begin{array}{lr} 1 & \text{ if } x \in {\mathbb Q
     where $t_i$ and $\tau_i$ come from the partition $P$.
 :::
 
-::: exercise
-**Exercise 4.3**. Prove that if $f:[a,b] \to {\mathbb R}$ is unbounded,
+::: {#exr-integral-unbounded }
+ Prove that if $f:[a,b] \to {\mathbb R}$ is unbounded,
 then $\int_a^b f(x) dx$ does not exist. (This should bother you when you
 remember your improper integrals!)
 :::
@@ -2743,8 +2742,8 @@ integration.
 
 
 
-::: exercise
-**Exercise 4.4**. Let $\gamma:[0,1] \to {\mathbb C}$ be a straight line
+::: {#exr-integral-examples }
+ Let $\gamma:[0,1] \to {\mathbb C}$ be a straight line
 path from $1$ to $i$. Give an explicit equation for $\gamma$.
 
 1.  Calculate $\int_\gamma |z|^2 dz$, by converting the integrand to a
@@ -2942,8 +2941,8 @@ $\int_a^b f(t) dt$ exists.
 $\gamma(t)=t$ has bounded variation $v(\gamma)=b-a$. 
 :::
 
-::: exercise
-**Exercise 4.5**. A function $h:X \to {\mathbb C}$ (with
+::: {#exr-lipschitz-integrability }
+ A function $h:X \to {\mathbb C}$ (with
 $X \subseteq {\mathbb C}$) is called **Lipschitz** if it has bounded
 difference quotients: That is, there is a constant $M$ so that for all
 $x \neq y \in X$ $\modulus{\frac{h(y)-h(x)}{y-x}}<M$. Prove
@@ -3078,8 +3077,8 @@ $\modulus{\frac{\gamma(t_i)-\gamma(t_{i-1})}{t_{i} - t_{i-1}} - \gamma'(\tau_i)}
 The difference above is then less than ${\varepsilon}/2$. 
 :::
 
-::: exercise
-**Exercise 4.6**. Compute the total variation $v(\gamma)$ for each of
+::: {#exr-compute-variations }
+ Compute the total variation $v(\gamma)$ for each of
 the paths below.
 
 1.  $\gamma(t) = Re^{it}$ on $[0,2\pi]$, where $R>0$.
@@ -3234,37 +3233,34 @@ $F'=f$). Then $$\int_a^b f(x) dx = F(b) - F(a)$$
 
 ::: {.proof}
 Use the identity function for $\gamma:[a,b] \to [a,b]$ in the
-previous theorem. 
+previous theorem.  
 :::
 
-::: exercise
-**Exercise 4.7**. Deduce the real Fundamental Theorem of Calculus
+::: {#exr-real-FTC}
+ Deduce the real Fundamental Theorem of Calculus
 directly from @thm-uniform-approximation-of-q -- 
 without using a path $\gamma$ -- as directly and simply as possible,
 by using @thm-FTC as a guide.
 :::
 
-::: exercise
-**Exercise 4.8**. In this exercise we compute
+::: {#exr-integration-z-inverse}
+In this exercise we compute
 $\int_\gamma \frac{1}{z} dz$ for a circle $\gamma$. Specifically,
 $\gamma(t) = e^{it}$ on the domain $[0, 2\pi]$.
 
 1.  Explain why $\ln(z)$ is not an antiderivative of $\frac{1}{z}$
     suitable for use with the fundamental theorem of calculus for this
     problem.
-
 2.  Breaking the integral into two parts using
     $\gamma_1 = \gamma|_{[0,\pi]}$ and
     $\gamma_2 = \gamma_{[\pi, 2\pi]}$, calculate it using the
     fundamental theorem of calculus for path integrals (twice). Be very
     specific about the choices of antiderivatives. Provide pictures
     illustrating the path decomposition.
-
 3.  Starting over, calculate the integral using 
     @thm-Riemann-Stieltjes-smooth-Riemann
     without breaking it
     into two parts. Your answer should agree with the previous part.
-
 4.  Using the previous parts of this problem and the fundamental
     theorem, prove that $\frac{1}{z}$ does not have an antiderivative on
     (all of) the unit circle.
@@ -3330,8 +3326,8 @@ of the integral, it could remain continuous and would yield $2\pi i$ by
 the fundamental theorem, but of course a function can't do that. (Can
 it?)
 
-::: exercise
-**Exercise 5.1**. In this exercise you'll calculate
+::: {#exr-integral-z-inverse-redux}
+ In this exercise you'll calculate
 $\int_\gamma \frac{1}{z} dz$ in two parts using the Fundamental Theorem
 and both logarithms. Here for convenience
 $\gamma:[-\pi/2,3\pi/2] \to {\mathbb C}$ by $\gamma(t) = e^{it}$. The
@@ -3339,17 +3335,13 @@ altered domain of $\gamma$ doesn't change the answer.
 
 1.  Explain how we know that $f(z) = \frac{1}{z}$ has an antiderivative
     defined on ${\mathbb C}- (-\infty,0]$.
-
 2.  Find an antiderivative for $f(z) = \frac{1}{z}$ defined on
     ${\mathbb C}- [0,\infty)$. (No need to prove correctness.)
-
 3.  Let $\gamma:[-\pi/2,3\pi/2] \to {\mathbb C}$ by
     $\gamma(t) = e^{it}$. Describe the geometry of the path.
-
 4.  Calculate $\int_\gamma \frac{1}{z} dz$ by dividing the integral into
     $\int_{-\pi/2}^{\pi/2} + \int_{\pi/2}^{3\pi/2}$ and using the
     fundamental theorem of calculus, twice.
-
 5.  Deduce *from your previous answer* that $\frac{1}{z}$ cannot have an
     antiderivative on its entire domain.
 :::
@@ -3479,7 +3471,7 @@ ML inequality. 
 
 This brings us to our first version of Cauchy's theorem:
 
-::: {#thm:Cauchys-theorem-convex .theorem}
+::: {#thm-Cauchys-theorem-convex .theorem}
 **(Cauchy's Theorem on a Convex Domain)** Let $f$ be
 differentiable on a convex set $D$. Then $f$ has a primitive on $D$ and
 $\int_\gamma f=0$ for any closed path in $D$.*
@@ -3555,8 +3547,8 @@ Since this can be made arbitrarily small by choice of $\sigma$, we have equality
 
 
 
-::: exercise
-**Exercise 5.2**. Let $\gamma:[0,2\pi] \to {\mathbb C}$ by
+::: {#exr-integrals-zn-sinz}
+ Let $\gamma:[0,2\pi] \to {\mathbb C}$ by
 $\gamma(t) = e^{it}$. Calculate $$\int_\gamma z^n \sin(z) dz$$ for every
 integer $n$. Hints: The answers are not all equal. There is not need to
 integrate by parts.
