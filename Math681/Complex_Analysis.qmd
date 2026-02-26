@@ -2911,11 +2911,12 @@ $f(\tau_i)$ can be expressed as a function of $j$. Thus:
 \begin{align}
     \sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) &= \sum_{i=1}^m \sum_{j=k_{i-1}+1}^{k_i} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1}))\\
     &= \sum_{j=1}^{m'} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1}))\\
-\end{aligned}
+\end{align}
 
 The watchful reader will notice that the sum above is not a normal
 partition estimate to an integral because $\tau'_j$ is not necessarily
 in the range $[s_{j-1},s_j]$. Nevertheless we may combine the two sums:
+
 \begin{align}
     \modulus{\sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) - \sum_{j=1}^{m'} f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))} &= \\
     \modulus{\sum_{j=1}^{m'} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1})) -  f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1}))} &=

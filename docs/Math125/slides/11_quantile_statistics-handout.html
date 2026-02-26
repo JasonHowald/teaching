@@ -211,7 +211,7 @@ window.Quarto = {
 <li>Sort data numerically</li>
 <li>Find the center.</li>
 <li>If count is odd, median is the middle one.</li>
-<li>If count is even, median is average of middel two.</li>
+<li>If count is even, median is average of middle two.</li>
 </ul>
 <p>Example data values: 5, 7, 8, 9, <strong>9</strong>, <strong>9</strong>, 10, 10, 11, 12</p>
 <p><small>Description: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9.</small></p>
@@ -246,7 +246,7 @@ window.Quarto = {
 <p>From this division we can construct the five-number summary:</p>
 <p>Min=5, Q1 = 8, Median = 9, Q3 = 10, Max = 12.</p>
 <p>These numbers can also be obtained using .describe():</p>
-<div id="94da7e0b" class="cell" data-execution_count="1">
+<div id="c58b4d55" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series([<span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>], name<span class="op">=</span><span class="st">'age'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -277,7 +277,7 @@ Name: age, dtype: float64</code></pre>
 <li><p>A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done?</p></li>
 <li><p>A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series:</p></li>
 </ol>
-<div id="df0870cd" class="cell" data-execution_count="2">
+<div id="c787a40b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series([<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">17</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">18</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

@@ -1344,12 +1344,9 @@ $\left | AB - \sum_{n &lt; N} c_n \right | &lt; \varepsilon$ as required.</code>
 <p><span class="math display">\[\begin{align}
     \sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) &amp;= \sum_{i=1}^m \sum_{j=k_{i-1}+1}^{k_i} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1}))\\
     &amp;= \sum_{j=1}^{m'} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1}))\\
-\end{aligned}
-
-The watchful reader will notice that the sum above is not a normal
-partition estimate to an integral because $\tau'_j$ is not necessarily
-in the range $[s_{j-1},s_j]$. Nevertheless we may combine the two sums:
-\begin{align}
+\end{align}\]</span></p>
+<p>The watchful reader will notice that the sum above is not a normal partition estimate to an integral because <span class="math inline">\(\tau'_j\)</span> is not necessarily in the range <span class="math inline">\([s_{j-1},s_j]\)</span>. Nevertheless we may combine the two sums:</p>
+<p><span class="math display">\[\begin{align}
     \left| \sum_{i=1}^{m} f(\tau_i)(\gamma(t_{i}) - \gamma(t_{i-1})) - \sum_{j=1}^{m'} f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1})) \right| &amp;= \\
     \left| \sum_{j=1}^{m'} f(\tau'_j)(\gamma(s_j) - \gamma(s_{j-1})) -  f(\sigma_j)(\gamma(s_{j}) - \gamma(s_{j-1})) \right| &amp;=
     \left| \sum_{j=1}^{m'} (f(\tau'_j)- f(\sigma_j))(\gamma(s_j) - \gamma(s_{j-1})) \right|  \\
