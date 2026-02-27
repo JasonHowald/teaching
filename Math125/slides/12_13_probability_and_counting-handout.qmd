@@ -6,3 +6,4 @@ format: html
 ---
 
 {{< include _12_13_probability_and_counting.qmd >}}
+ 

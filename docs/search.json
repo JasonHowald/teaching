@@ -592,7 +592,7 @@
     "href": "Math125/slides/11_quantile_statistics.html#by-hand-aint-nobody-got-time-for-that",
     "title": "11. Quantile Statistics",
     "section": "By hand? Ain’t nobody got time for that!",
-    "text": "By hand? Ain’t nobody got time for that!\n\nA data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done?\nA certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series:\n\n\nimport pandas as pd\nx = pd.Series([18,19,17,20,25,18])"
+    "text": "By hand? Ain’t nobody got time for that!\n\nA data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. What method should we use?\nA certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series…\n\n\nimport pandas as pd\nx = pd.Series([18,19,17,20,25,18])\n\n…and use describe()\n\nx.describe()"
   },
   {
     "objectID": "Math125/slides/11_quantile_statistics.html#individual-work",
@@ -928,14 +928,14 @@
     "href": "Math125/slides/12_13_probability_and_counting-handout.html#the-language-of-probability-1",
     "title": "12-13. Probability and Counting",
     "section": "3 The Language of Probability",
-    "text": "3 The Language of Probability\nThe Sample Space is the set of outcomes of a random process.\n\nAll possible results of four coin flips.\nAll possible orderings of a standard deck of 52 cards.\nAll possible rolls of two dice.\nAll possible weather patterns today.\n\nAn Event is a single outcome or a collection of outcomes.\n\nAll four coins land heads (single outcome), or more heads than tails (collection of outcomes)\nCards in sorted order, or top card is 2❤️\n\nTwo dice total 12 (one outcome), or total 7 (collection)\nRainy (collection of outcomes)"
+    "text": "3 The Language of Probability\nThe Sample Space is the set of outcomes of a random process.\n\nAll possible results of four coin flips.\nAll possible orderings of a standard deck of 52 cards.\nAll possible rolls of two dice.\nAll possible weather patterns today.\n\nAn Event is a single outcome or a collection of outcomes.\n\nAll four coins land heads (single outcome), or more heads than tails (collection of outcomes)\nCards in sorted order, or top card is 2♡\n\nTwo dice total 12 (one outcome), or total 7 (collection)\nRainy (collection of outcomes)"
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#the-language-of-probability-2",
     "href": "Math125/slides/12_13_probability_and_counting-handout.html#the-language-of-probability-2",
     "title": "12-13. Probability and Counting",
     "section": "4 The Language of Probability",
-    "text": "4 The Language of Probability\nFor any event \\(A\\), \\(P(A)\\) mean its probability.\nIf we flip a coins, \\(P(\\) It lands heads \\() = 1/2\\)\nIf we roll two dice, \\(P(\\) Each lands 6 \\() = 1/36\\)\nOften…\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)"
+    "text": "4 The Language of Probability\nFor any event \\(A\\), \\(P(A)\\) mean its probability.\nIf we flip a coins, \\(P(\\) It lands heads \\() = 1/2\\)\nIf we roll two dice, \\(P(\\) Both dice land 6 \\() = 1/36\\)\nOften…\n\\[P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\]"
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#what-probability-is-implied",
@@ -949,7 +949,7 @@
     "href": "Math125/slides/12_13_probability_and_counting-handout.html#probabilities-by-counting",
     "title": "12-13. Probability and Counting",
     "section": "6 Probabilities by counting",
-    "text": "6 Probabilities by counting\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)\nI rolled three dice and they totaled 5. What are the chances!\n\nIdentify the random process: Roll three dice\nCount all possible outcomes, using multiplication.\nCount all outcomes which lead to a total of \\(5\\). Hint: Just list them. 1+2+2 is different from 2+2+1.\nDivide for the probability."
+    "text": "6 Probabilities by counting\n\\[P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\]\nI rolled three dice and they totaled 5. What are the chances!\n\nIdentify the random process: Roll three dice.\nCount all possible outcomes, using multiplication.\nCount all outcomes which lead to a total of \\(5\\). Hint: Just list them. 1+2+2 is different from 2+2+1.\nDivide for the probability."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#equally-probable-outcomes",
@@ -963,35 +963,35 @@
     "href": "Math125/slides/12_13_probability_and_counting-handout.html#winning-a-contest.",
     "title": "12-13. Probability and Counting",
     "section": "8 Winning a contest.",
-    "text": "8 Winning a contest.\nThe problem: Two sports teams (A and B) are about evenly matched: Any game between them is a 50/50 toss up. They play five games. What is the probability that team A wins at least four?\nStep 1: What are the “outcomes”?\nStep 2: How many outcomes are possible? Multiplication is your friend!\nStep 3: How many outcomes are successes?\nDivide and conclude.\nBonus: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?"
+    "text": "8 Winning a contest.\nThe problem: Two sports teams (A and B) are about evenly matched: Any game between them is a 50/50 toss up. They play five games. What is the probability that team A wins at least four?\nStep 1: What are the “outcomes”?\nStep 2: How many outcomes are possible? Multiplication is your friend!\nStep 3: How many outcomes are successes?\nDivide and conclude.\nReflection: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?"
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#a-flawed-classic",
     "href": "Math125/slides/12_13_probability_and_counting-handout.html#a-flawed-classic",
     "title": "12-13. Probability and Counting",
     "section": "9 A Flawed Classic",
-    "text": "9 A Flawed Classic\nThe problem: A Dad of exactly two kids is asked whether he has a daughter. “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter. What is the probability that he also has a son?\n\n\nOption 1: The other kid\nThe other kid could be male or female. P(son) = 1/2.\n\nOption 2: Family structures\nFour equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate the first. Of the remaining 3, two are “successes.” P(son) = 2/3.\n\n\nWhich argument is more correct?\nThis classic puzzle depends on several oversimplifications about the world. Identify them."
+    "text": "9 A Flawed Classic\nThe problem: A Dad of exactly two kids is asked whether he has a daughter. “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter, maybe two. What is the probability that he also has a son?\n\n\nOption 1: The other kid\nThe other kid could be male or female. P(son) = 1/2.\n\nOption 2: Family structures\nFour equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate the first. Of the remaining 3, two are “successes.” P(son) = 2/3.\n\n\nWhich argument is more correct?\nThis classic puzzle depends on several oversimplifications about the world. Identify some of them."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#the-monty-hall-problem",
     "href": "Math125/slides/12_13_probability_and_counting-handout.html#the-monty-hall-problem",
     "title": "12-13. Probability and Counting",
     "section": "10 The Monty Hall Problem",
-    "text": "10 The Monty Hall Problem\nThis famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.”\n\nYou’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals a door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?\n\n\n\nIt doesn’t matter. A door has been wasted, leaving a 50/50 chance of success with either remaining door.\n\nYou should switch. The initial choice has 1/3 chance, and the remaining door a has 2/3 chance."
+    "text": "10 The Monty Hall Problem\nThis famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.”\n\nYou’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals one other door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?\n\n\n\nIt doesn’t matter. A door has been wasted, leaving a 50/50 chance of success with either remaining door.\n\nYou should switch. The initial choice has 1/3 chance, and the remaining door a has 2/3 chance."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#a-fully-evolved-species",
     "href": "Math125/slides/12_13_probability_and_counting-handout.html#a-fully-evolved-species",
     "title": "12-13. Probability and Counting",
     "section": "11 A fully evolved species",
-    "text": "11 A fully evolved species\nFive alligator eggs hatch from a nest What is the probability all are female? What is the probability of four females and one male?"
+    "text": "11 A fully evolved species\nFive alligator eggs hatch from a nest.\n\nWhat is the probability all are female?\nWhat is the probability of four females and one male?"
   },
   {
-    "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#a-chance-at-magic",
-    "href": "Math125/slides/12_13_probability_and_counting-handout.html#a-chance-at-magic",
+    "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#one-magic-moment",
+    "href": "Math125/slides/12_13_probability_and_counting-handout.html#one-magic-moment",
     "title": "12-13. Probability and Counting",
-    "section": "12 A chance at Magic",
-    "text": "12 A chance at Magic\nA (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land,” making them immediately useful at the game’s beginning. You draw an initial hand of seven cards.\n\nWhat is the probability of getting no land cards among them?\nHow many draws of seven are possible from a deck of 99 cards?\nHow many draws of seven have no land cards?\nDivide to find the probability."
+    "section": "12 One Magic Moment",
+    "text": "12 One Magic Moment\nA (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land” type, making them immediately useful at the game’s beginning. After shuffling, you draw an initial hand of seven cards. We’re concerned about the probability of drawing no land cards.\n\nHow many draws of seven are possible from a deck of 99 cards?\nHow many draws of seven are possible with no land cards?\nDivide to find the probability."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting-handout.html#preparing-victory-a-true-story",
@@ -1824,7 +1824,7 @@
     "href": "Math125/slides/11_quantile_statistics-handout.html#by-hand-aint-nobody-got-time-for-that",
     "title": "11. Quantile Statistics",
     "section": "10 By hand? Ain’t nobody got time for that!",
-    "text": "10 By hand? Ain’t nobody got time for that!\n\nA data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done?\nA certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series:\n\n\nimport pandas as pd\nx = pd.Series([18,19,17,20,25,18])"
+    "text": "10 By hand? Ain’t nobody got time for that!\n\nA data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. What method should we use?\nA certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series…\n\n\nimport pandas as pd\nx = pd.Series([18,19,17,20,25,18])\n\n…and use describe()\n\nx.describe()"
   },
   {
     "objectID": "Math125/slides/11_quantile_statistics-handout.html#individual-work",
@@ -1971,14 +1971,14 @@
     "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-1",
     "title": "12-13. Probability and Counting",
     "section": "The Language of Probability",
-    "text": "The Language of Probability\nThe Sample Space is the set of outcomes of a random process.\n\nAll possible results of four coin flips.\nAll possible orderings of a standard deck of 52 cards.\nAll possible rolls of two dice.\nAll possible weather patterns today.\n\nAn Event is a single outcome or a collection of outcomes.\n\nAll four coins land heads (single outcome), or more heads than tails (collection of outcomes)\nCards in sorted order, or top card is 2❤️\n\nTwo dice total 12 (one outcome), or total 7 (collection)\nRainy (collection of outcomes)"
+    "text": "The Language of Probability\nThe Sample Space is the set of outcomes of a random process.\n\nAll possible results of four coin flips.\nAll possible orderings of a standard deck of 52 cards.\nAll possible rolls of two dice.\nAll possible weather patterns today.\n\nAn Event is a single outcome or a collection of outcomes.\n\nAll four coins land heads (single outcome), or more heads than tails (collection of outcomes)\nCards in sorted order, or top card is 2♡\n\nTwo dice total 12 (one outcome), or total 7 (collection)\nRainy (collection of outcomes)"
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-2",
     "href": "Math125/slides/12_13_probability_and_counting.html#the-language-of-probability-2",
     "title": "12-13. Probability and Counting",
     "section": "The Language of Probability",
-    "text": "The Language of Probability\nFor any event \\(A\\), \\(P(A)\\) mean its probability.\nIf we flip a coins, \\(P(\\) It lands heads \\() = 1/2\\)\nIf we roll two dice, \\(P(\\) Each lands 6 \\() = 1/36\\)\nOften…\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)"
+    "text": "The Language of Probability\nFor any event \\(A\\), \\(P(A)\\) mean its probability.\nIf we flip a coins, \\(P(\\) It lands heads \\() = 1/2\\)\nIf we roll two dice, \\(P(\\) Both dice land 6 \\() = 1/36\\)\nOften…\n\\[P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\]"
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#what-probability-is-implied",
@@ -1992,7 +1992,7 @@
     "href": "Math125/slides/12_13_probability_and_counting.html#probabilities-by-counting",
     "title": "12-13. Probability and Counting",
     "section": "Probabilities by counting",
-    "text": "Probabilities by counting\n\\(P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\)\nI rolled three dice and they totaled 5. What are the chances!\n\nIdentify the random process: Roll three dice\nCount all possible outcomes, using multiplication.\nCount all outcomes which lead to a total of \\(5\\). Hint: Just list them. 1+2+2 is different from 2+2+1.\nDivide for the probability."
+    "text": "Probabilities by counting\n\\[P(A) = \\frac{ \\text{Number of successful outcomes} }{\\text{Number of outcomes}}\\]\nI rolled three dice and they totaled 5. What are the chances!\n\nIdentify the random process: Roll three dice.\nCount all possible outcomes, using multiplication.\nCount all outcomes which lead to a total of \\(5\\). Hint: Just list them. 1+2+2 is different from 2+2+1.\nDivide for the probability."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#equally-probable-outcomes",
@@ -2006,35 +2006,35 @@
     "href": "Math125/slides/12_13_probability_and_counting.html#winning-a-contest.",
     "title": "12-13. Probability and Counting",
     "section": "Winning a contest.",
-    "text": "Winning a contest.\nThe problem: Two sports teams (A and B) are about evenly matched: Any game between them is a 50/50 toss up. They play five games. What is the probability that team A wins at least four?\nStep 1: What are the “outcomes”?\nStep 2: How many outcomes are possible? Multiplication is your friend!\nStep 3: How many outcomes are successes?\nDivide and conclude.\nBonus: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?"
+    "text": "Winning a contest.\nThe problem: Two sports teams (A and B) are about evenly matched: Any game between them is a 50/50 toss up. They play five games. What is the probability that team A wins at least four?\nStep 1: What are the “outcomes”?\nStep 2: How many outcomes are possible? Multiplication is your friend!\nStep 3: How many outcomes are successes?\nDivide and conclude.\nReflection: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?"
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#a-flawed-classic",
     "href": "Math125/slides/12_13_probability_and_counting.html#a-flawed-classic",
     "title": "12-13. Probability and Counting",
     "section": "A Flawed Classic",
-    "text": "A Flawed Classic\nThe problem: A Dad of exactly two kids is asked whether he has a daughter. “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter. What is the probability that he also has a son?\n\n\nOption 1: The other kid\nThe other kid could be male or female. P(son) = 1/2.\n\nOption 2: Family structures\nFour equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate the first. Of the remaining 3, two are “successes.” P(son) = 2/3.\n\nWhich argument is more correct?\nThis classic puzzle depends on several oversimplifications about the world. Identify them."
+    "text": "A Flawed Classic\nThe problem: A Dad of exactly two kids is asked whether he has a daughter. “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter, maybe two. What is the probability that he also has a son?\n\n\nOption 1: The other kid\nThe other kid could be male or female. P(son) = 1/2.\n\nOption 2: Family structures\nFour equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate the first. Of the remaining 3, two are “successes.” P(son) = 2/3.\n\nWhich argument is more correct?\nThis classic puzzle depends on several oversimplifications about the world. Identify some of them."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#the-monty-hall-problem",
     "href": "Math125/slides/12_13_probability_and_counting.html#the-monty-hall-problem",
     "title": "12-13. Probability and Counting",
     "section": "The Monty Hall Problem",
-    "text": "The Monty Hall Problem\nThis famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.”\n\nYou’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals a door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?\n\n\n\nIt doesn’t matter. A door has been wasted, leaving a 50/50 chance of success with either remaining door.\n\nYou should switch. The initial choice has 1/3 chance, and the remaining door a has 2/3 chance."
+    "text": "The Monty Hall Problem\nThis famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.”\n\nYou’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals one other door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?\n\n\n\nIt doesn’t matter. A door has been wasted, leaving a 50/50 chance of success with either remaining door.\n\nYou should switch. The initial choice has 1/3 chance, and the remaining door a has 2/3 chance."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#a-fully-evolved-species",
     "href": "Math125/slides/12_13_probability_and_counting.html#a-fully-evolved-species",
     "title": "12-13. Probability and Counting",
     "section": "A fully evolved species",
-    "text": "A fully evolved species\nFive alligator eggs hatch from a nest What is the probability all are female? What is the probability of four females and one male?"
+    "text": "A fully evolved species\nFive alligator eggs hatch from a nest.\n\nWhat is the probability all are female?\nWhat is the probability of four females and one male?"
   },
   {
-    "objectID": "Math125/slides/12_13_probability_and_counting.html#a-chance-at-magic",
-    "href": "Math125/slides/12_13_probability_and_counting.html#a-chance-at-magic",
+    "objectID": "Math125/slides/12_13_probability_and_counting.html#one-magic-moment",
+    "href": "Math125/slides/12_13_probability_and_counting.html#one-magic-moment",
     "title": "12-13. Probability and Counting",
-    "section": "A chance at Magic",
-    "text": "A chance at Magic\nA (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land,” making them immediately useful at the game’s beginning. You draw an initial hand of seven cards.\n\nWhat is the probability of getting no land cards among them?\nHow many draws of seven are possible from a deck of 99 cards?\nHow many draws of seven have no land cards?\nDivide to find the probability."
+    "section": "One Magic Moment",
+    "text": "One Magic Moment\nA (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land” type, making them immediately useful at the game’s beginning. After shuffling, you draw an initial hand of seven cards. We’re concerned about the probability of drawing no land cards.\n\nHow many draws of seven are possible from a deck of 99 cards?\nHow many draws of seven are possible with no land cards?\nDivide to find the probability."
   },
   {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#preparing-victory-a-true-story",
@@ -2468,7 +2468,7 @@
     "href": "Math125/slides/8_dataviz_boxplot_and_scatterplot-handout.html#box-plot-with-swarm-plot",
     "title": "08. Dataviz: Boxplot and Scatterplot",
     "section": "10 Box plot with Swarm plot",
-    "text": "10 Box plot with Swarm plot\n\nsns.swarmplot(data=df, x='poverty')\nsns.boxplot(data=df, x='poverty')\n\n\n\nMany students find the swarmplot/boxplot helpful to understand what the boxplot is doing. Notice that about a quarter of the points lie within each zone.\n\n\nimport seaborn as sns\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load data \ndf = pd.read_csv(\"../openintro.csv/county.csv\")\n\n# Create plot with clear labels\nsns.swarmplot(data=df.sample(1000), x='poverty')\nsns.boxplot(data=df, x='poverty')\nplt.xlabel(r\"Poverty %\")\nplt.title(r\"Example Boxplot\")\nplt.show()\n\n/Users/howaldja/Authoring/.venv/lib/python3.13/site-packages/seaborn/categorical.py:3399: UserWarning: 5.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.\n  warnings.warn(msg, UserWarning)\n\n\n\n\n\n\n\n\nFigure 5: Boxplot for poverty percent by county, with swarm plot."
+    "text": "10 Box plot with Swarm plot\n\nsns.swarmplot(data=df, x='poverty')\nsns.boxplot(data=df, x='poverty')\n\n\n\nMany students find the swarmplot/boxplot helpful to understand what the boxplot is doing. Notice that about a quarter of the points lie within each zone.\n\n\nimport seaborn as sns\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load data \ndf = pd.read_csv(\"../openintro.csv/county.csv\")\n\n# Create plot with clear labels\nsns.swarmplot(data=df.sample(1000), x='poverty')\nsns.boxplot(data=df, x='poverty')\nplt.xlabel(r\"Poverty %\")\nplt.title(r\"Example Boxplot\")\nplt.show()\n\n/Users/howaldja/Authoring/.venv/lib/python3.13/site-packages/seaborn/categorical.py:3399: UserWarning: 8.3% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.\n  warnings.warn(msg, UserWarning)\n\n\n\n\n\n\n\n\nFigure 5: Boxplot for poverty percent by county, with swarm plot."
   },
   {
     "objectID": "Math125/slides/8_dataviz_boxplot_and_scatterplot-handout.html#whisker-technicalities",
@@ -3140,7 +3140,7 @@
     "href": "Math125/slides/18_19_the_normal_distribution-handout.html#the-empirical-rule-68-95-99.7-1",
     "title": "18-19. The Normal Distribution",
     "section": "11 The empirical rule (68-95-99.7)",
-    "text": "11 The empirical rule (68-95-99.7)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\n# Parameters for the normal distribution\nmu = 0  # Mean\nsigma = 1  # Standard deviation\n\n# Generate data for the normal distribution curve\nx = np.linspace(mu - 4*sigma, mu + 4*sigma, 500)\ny = norm.pdf(x, mu, sigma)\n\n# Calculate exact percentages using CDF\npercent_1std = (norm.cdf(sigma) - norm.cdf(-sigma)) * 100\npercent_2std = (norm.cdf(2*sigma) - norm.cdf(-2*sigma)) * 100\npercent_3std = (norm.cdf(3*sigma) - norm.cdf(-3*sigma)) * 100\n\n# Create the plot\nfig, ax = plt.subplots(figsize=(10, 6))\nax.plot(x, y, color='blue', linewidth=2, label='Normal Distribution PDF')\n\n# Mark the mean\nax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\\mu$) = {mu:.2f}')\n\n# Define the standard deviation ranges\nstd1_left, std1_right = mu - sigma, mu + sigma\nstd2_left, std2_right = mu - 2*sigma, mu + 2*sigma\nstd3_left, std3_right = mu - 3*sigma, mu + 3*sigma\n\n# Shade the areas for 68%, 95%, and 99.7%\n# 99.7% (3 standard deviations)\nx_fill_3std = x[(x &gt;= std3_left) & (x &lt;= std3_right)]\ny_fill_3std = y[(x &gt;= std3_left) & (x &lt;= std3_right)]\nax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n\n# 95% (2 standard deviations)\nx_fill_2std = x[(x &gt;= std2_left) & (x &lt;= std2_right)]\ny_fill_2std = y[(x &gt;= std2_left) & (x &lt;= std2_right)]\nax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n\n# 68% (1 standard deviation)\nx_fill_1std = x[(x &gt;= std1_left) & (x &lt;= std1_right)]\ny_fill_1std = y[(x &gt;= std1_left) & (x &lt;= std1_right)]\nax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n# Add labels for standard deviation marks\nplt.text(mu + sigma, norm.pdf(mu + sigma, mu, sigma) + 0.02, r'$\\mu + \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu - sigma, norm.pdf(mu - sigma, mu, sigma) + 0.02, r'$\\mu - \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu + 2*sigma, norm.pdf(mu + 2*sigma, mu, sigma) + 0.02, r'$\\mu + 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu - 2*sigma, norm.pdf(mu - 2*sigma, mu, sigma) + 0.02, r'$\\mu - 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu + 3*sigma, norm.pdf(mu + 3*sigma, mu, sigma) + 0.02, r'$\\mu + 3\\sigma$', horizontalalignment='center', color='purple')\nplt.text(mu - 3*sigma, norm.pdf(mu - 3*sigma, mu, sigma) + 0.02, r'$\\mu - 3\\sigma$', horizontalalignment='center', color='purple')\n\n# Set title and labels\nax.set_title('Empirical Rule (68-95-99.7) Illustration', fontsize=16)\nax.set_xlabel('Standard Deviations above/below the mean', fontsize=12)\nax.set_ylabel('Probability Density', fontsize=12)\nax.legend(loc='upper right')\nax.grid(True, linestyle='--', alpha=0.6)\nplt.tight_layout()\nplt.show()\n\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_22781/588814348.py:34: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_22781/588814348.py:39: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_22781/588814348.py:44: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n\n\n\n\n\n\n\nFigure 7: Empirical Rule illustration"
+    "text": "11 The empirical rule (68-95-99.7)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\n# Parameters for the normal distribution\nmu = 0  # Mean\nsigma = 1  # Standard deviation\n\n# Generate data for the normal distribution curve\nx = np.linspace(mu - 4*sigma, mu + 4*sigma, 500)\ny = norm.pdf(x, mu, sigma)\n\n# Calculate exact percentages using CDF\npercent_1std = (norm.cdf(sigma) - norm.cdf(-sigma)) * 100\npercent_2std = (norm.cdf(2*sigma) - norm.cdf(-2*sigma)) * 100\npercent_3std = (norm.cdf(3*sigma) - norm.cdf(-3*sigma)) * 100\n\n# Create the plot\nfig, ax = plt.subplots(figsize=(10, 6))\nax.plot(x, y, color='blue', linewidth=2, label='Normal Distribution PDF')\n\n# Mark the mean\nax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\\mu$) = {mu:.2f}')\n\n# Define the standard deviation ranges\nstd1_left, std1_right = mu - sigma, mu + sigma\nstd2_left, std2_right = mu - 2*sigma, mu + 2*sigma\nstd3_left, std3_right = mu - 3*sigma, mu + 3*sigma\n\n# Shade the areas for 68%, 95%, and 99.7%\n# 99.7% (3 standard deviations)\nx_fill_3std = x[(x &gt;= std3_left) & (x &lt;= std3_right)]\ny_fill_3std = y[(x &gt;= std3_left) & (x &lt;= std3_right)]\nax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n\n# 95% (2 standard deviations)\nx_fill_2std = x[(x &gt;= std2_left) & (x &lt;= std2_right)]\ny_fill_2std = y[(x &gt;= std2_left) & (x &lt;= std2_right)]\nax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n\n# 68% (1 standard deviation)\nx_fill_1std = x[(x &gt;= std1_left) & (x &lt;= std1_right)]\ny_fill_1std = y[(x &gt;= std1_left) & (x &lt;= std1_right)]\nax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n# Add labels for standard deviation marks\nplt.text(mu + sigma, norm.pdf(mu + sigma, mu, sigma) + 0.02, r'$\\mu + \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu - sigma, norm.pdf(mu - sigma, mu, sigma) + 0.02, r'$\\mu - \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu + 2*sigma, norm.pdf(mu + 2*sigma, mu, sigma) + 0.02, r'$\\mu + 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu - 2*sigma, norm.pdf(mu - 2*sigma, mu, sigma) + 0.02, r'$\\mu - 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu + 3*sigma, norm.pdf(mu + 3*sigma, mu, sigma) + 0.02, r'$\\mu + 3\\sigma$', horizontalalignment='center', color='purple')\nplt.text(mu - 3*sigma, norm.pdf(mu - 3*sigma, mu, sigma) + 0.02, r'$\\mu - 3\\sigma$', horizontalalignment='center', color='purple')\n\n# Set title and labels\nax.set_title('Empirical Rule (68-95-99.7) Illustration', fontsize=16)\nax.set_xlabel('Standard Deviations above/below the mean', fontsize=12)\nax.set_ylabel('Probability Density', fontsize=12)\nax.legend(loc='upper right')\nax.grid(True, linestyle='--', alpha=0.6)\nplt.tight_layout()\nplt.show()\n\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_52843/588814348.py:34: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_52843/588814348.py:39: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_52843/588814348.py:44: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n\n\n\n\n\n\n\nFigure 7: Empirical Rule illustration"
   },
   {
     "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#percentiles-and-tail-areas",

@@ -101,9 +101,9 @@ Caution: Median, 50%, and Q2 are all synonyms. Q1 and 25% are synonyms.
 
 ## By hand? Ain’t nobody got time for that!
 
-1. A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. How should this would be done? 
+1. A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. What method should we use? 
 
-2. A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series:
+2. A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series...
 
 ```{python}
 #| eval: false
@@ -111,6 +111,16 @@ Caution: Median, 50%, and Q2 are all synonyms. Q1 and 25% are synonyms.
 import pandas as pd
 x = pd.Series([18,19,17,20,25,18])
 ```
+
+...and use describe()
+
+
+```{python}
+#| eval: false
+#| echo: true
+x.describe()
+```
+
 
 ## Individual work
 

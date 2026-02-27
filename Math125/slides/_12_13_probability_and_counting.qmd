@@ -26,7 +26,7 @@ The **Sample Space** is the set of outcomes of a random process.
 An **Event** is a single outcome or a collection of outcomes.
 
 - All four coins land heads (single outcome), or more heads than tails (collection of outcomes)
-- Cards in sorted order, or top card is **2❤️**  
+- Cards in sorted order, or top card is **2♡**  
 - Two dice total 12 (one outcome), or total 7 (collection)
 - Rainy (collection of outcomes)
 
@@ -36,11 +36,11 @@ For any event $A$, $P(A)$ mean its probability.
 
 If we flip a coins, $P($ It lands heads $) = 1/2$
 
-If we roll two dice, $P($ Each lands 6 $) = 1/36$
+If we roll two dice, $P($ Both dice land 6 $) = 1/36$
 
 Often...
 
-$P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}$
+$$P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}$$
 
 
 ## What probability is implied? {.activity}
@@ -60,11 +60,12 @@ A probability is always a number between 0 and 1. For each expression, what prob
 [Bonus] “I give it four-to-one odds.“
 
 ## Probabilities by counting
-$P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}$
+
+$$P(A) = \frac{ \text{Number of successful outcomes} }{\text{Number of outcomes}}$$
 
 I rolled three dice and they totaled 5. What are the chances!
 
-1. Identify the random process: Roll three dice
+1. Identify the random process: Roll three dice.
 2. Count all possible outcomes, using multiplication.
 3. Count all outcomes which lead to a total of $5$. Hint: Just list them. 1+2+2 is 
 different from 2+2+1.
@@ -112,11 +113,11 @@ Step 3: How many outcomes are successes?
 
 Divide and conclude.
 
-Bonus: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?
+Reflection: You watch a contest between two teams, and one team wins four games out of five. How confident should you be that the winning team is actually better?
 
 ## A Flawed Classic {.activity}
 
-The problem: A Dad of exactly two kids is asked whether he has a daughter.  “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter. What is the probability that he also has a son?
+The problem: A Dad of exactly two kids is asked whether he has a daughter.  “Yes” he replies, but does not elaborate. You take this to mean he has at least one daughter, maybe two. What is the probability that he also has a son?
 
 :::: {.columns style="display: flex; gap: 50px;"}
 
@@ -136,12 +137,12 @@ Four equally likely kid-gender outcomes are possible: MM, MF, FM, FF. Eliminate 
 
 Which argument is more correct? 
 
-This classic puzzle depends on several oversimplifications about the world. Identify them. 
+This classic puzzle depends on several oversimplifications about the world. Identify some of them. 
 
 ## The Monty Hall Problem {.activity}
 This famous math problem is named after Monty Hall, the host of an old game show called “Let’s Make a Deal.” 
 
->You’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals a door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?
+>You’re in a game show in which you have to make a choice between three doors. One door hides a prize, and two doors hide nothing of value. Whenever this game is played, the host waits for the contestant to choose, then opens and reveals one other door which has no prize. Afterwards, the contestant may change their choice before the final reveal. Should you switch to the other door before the big reveal?
 
 :::: {.columns style="display: flex; gap: 50px;"}
 
@@ -160,18 +161,18 @@ and the remaining door a has 2/3 chance.
 ::::
 
 ## A fully evolved species {.activity}
-Five alligator eggs hatch from a nest
-What is the probability all are female?
-What is the probability of four females and one male?
+Five alligator eggs hatch from a nest.
+
+1. What is the probability all are female?
+2. What is the probability of four females and one male?
 
 
-## A chance at Magic {.activity}
-A (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land,” making them immediately useful at the game’s beginning. You draw an initial hand of seven cards. 
+## One Magic Moment {.activity}
+A (Magic The Gathering commander-format) deck has 99 cards, of which 36 are “land” type, making them immediately useful at the game’s beginning. After shuffling, you draw an initial hand of seven cards. We're concerned about the probability of drawing no land cards. 
 
-1. What is the probability of getting no land cards among them?
-2. How many draws of seven are possible from a deck of 99 cards?
-3. How many draws of seven have no land cards?
-4. Divide to find the probability.
+1. How many draws of seven are possible from a deck of 99 cards?
+2. How many draws of seven are possible with no land cards?
+3. Divide to find the probability.
 
 ## Preparing Victory, a true story {.activity}
 Francis is playing Monopoly. He has hotels on Boardwalk and Park Place. He gleefully asks “Hey Daddy, what’s the probability that Nana rolls a 4 or a 6 next?” Find the answer.
