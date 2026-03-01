@@ -22,8 +22,7 @@ Read: OpenIntro Statistics Section 5.1 and 5.2
 ## The good news
 
 - Usually, measurement error is not just random, but normal N(0,...) with mean 0 and predictable deviation. 
-- The deviation of the error of a point estimate is called the Standard Error (SE), 
-and it can be predicted.
+- The deviation of the error of a point estimate is called the **Standard Error (SE)**.
 
 ## Visualizing the Standard Error
 
@@ -122,7 +121,7 @@ the number of resamples ($m$) affect the distribution of the mean.
 2. Raise $m$. Why are the red dots close to $10$? Why do they vary? How much do they stray from $10$, typically? *That's* **Standard Error**
 
 3. Keeping $m$ somewhat large, Raise $n$. Do the red dots spread out farther from 
-$10$ or cluster more closely?
+$10$ or cluster more closely? Has standard error gone up or down?
 
 4. With large $m$, set $n=1$. Why does the right-hand plot look like that?
 
@@ -137,7 +136,7 @@ It depends on the deviation in the original population and also depends on $n$.
 the **Law of Large Numbers.**
 
 3. Regardless of the shape of the original distribution, large-sample averages follow
-a normal bell curve. This is the **Central Limit Theorem.** Its mean and variability are described in parts 1 & 2 above.
+a normal bell curve. This is the **Central Limit Theorem.** The bell curve's mean and variability are described in parts 1 & 2 above.
 
 
 ## 🪙 100-Coin Flip-o-matic-inator
@@ -217,7 +216,7 @@ different from your neighbors, even with the same $m$?
 We don't have to calculate standard errors by simulating sampling distributions. There are
 formulas.
 
-| Parameter | Point Estimate | Formula | Variable Type |
+| Parameter | Point Estimate | SE Formula | Variable Type |
 | :--- | :---: | :---: | :--- |
 | Mean $\mu$ | $\bar{x}$ | $\displaystyle \frac{\sigma}{\sqrt{n}}$ | Quantitative |
 | Proportion $p$ | $\hat{p}$ | $\displaystyle \sqrt{\frac{p(1-p)}{n}}$ | Categorical |
@@ -266,10 +265,10 @@ Find the standard error for each point estimate.
 Construct a confidence interval for each point estimate, using 2*SE.
 Do the confidence intervals overlap? What is the significance of this?
 
-Vocabulary
+## Vocabulary recap
 Standard Deviation vs. Standard Error
 Confidence Interval vs. Confidence Level
 Margin of Error (often 2*SE)
 
-Homework
+## Homework
 …on Webwork: “20. Standard Error and Confidence”

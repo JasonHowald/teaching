@@ -1,0 +1,150 @@
+## Preparatory work
+Read: OpenIntro Statistics Section 6.1 and 7.1
+
+## What is hypothesis testing?
+A **hypothesis** is an idea or theory which can be tested. 
+
+**Statistical evidence** is evidence based on data. It's usually subject to measurement error and sampling error.
+
+A **hypothesis test** is a fair, objective procedure for weighing the strength
+of statistical evidence.
+
+These procedures protect the integrity of science. They can't remediate
+the effects of bad faith actors such as liars and tyrants.  
+
+## Why isn't simple observation enough?
+
+1. I'm concerned whether a coin is fair. I flipped it 100 times to check for bias. It landed heads 60 times. How do you interpret this evidence?
+
+2. Does this drug lower blood pressure? In 30 patients on average bp went down 10 units. How strong is this evidence?
+
+## Anatomy of a hypothesis test
+
+1. Formulate hypothesis. Make it a testable, **numerical** statement of difference. 
+2. Collect data. Avoid bias.
+3. Is the data **consistent with hypothesis**? 
+   a. If no, announce *no evidence*.
+   b. If yes, is the measured effect **plausibly due to chance**?
+       i. if yes, announce *inconclusive result.*  
+	   ii. if no, announce *statistically significant result*
+
+3b is the tricky bit. It requires the probability, if the hypothesis
+were wrong, of finding the effect from chance measurement error.
+
+## Hypothesis test, simple example
+
+In the 2012 World Series, the San Francisco Giants swept the Detroit Tigers (4-0) by winning four games in a row.  Which statements best support the claim that the Giants were a better team?
+
+* Hypothesis: In any given game, $P(\text{ Giants win }) > .5$
+* The 4-0 sweep is the data.
+* Is the data consistent with hypothesis? **Yes**
+* Is the effect plausibly due to chance?  If they were only equally good, $P(\text{ four wins }) = 1/16 \approx 6\%$. **Yes,** the result is plausibly due to chance.
+
+Verdict: **Inconclusive**
+
+(Note: The number $1/16$ is the **p-value** of the test. See below.)
+
+## Hypothesis test, second example
+
+You suspect a die is rigged not to roll "1". 
+
+* Hypothesis:  $P(\text{ landing 1 }) < 1/6$
+* The evidence: Out of 30 rolls, the die never lands "1".
+* Is the data consistent with hypothesis? **Yes**
+* Is the effect plausibly due to chance?  The chance of no 1's out of 30 rolls on a fair die is $(5/6)^{30} = 0.00421$. **No,** the result is not plausibly due to chance.
+
+Verdict: **Statistically Significant Evidence.** The die is unfair.
+
+(Note: The number $.00421$ is the **p-value** of the test. See below.)
+
+
+## Changing an idea into a hypothesis
+
+<table>
+  	<colgroup>
+    	<col style="width: 800px;">
+    	<col style="width: auto;">
+  	</colgroup>
+	<tr>
+		<th>Idea</th>
+		<th>Hypothesis</th>
+	</tr>
+	<tr>
+		<td>“Global temperatures are rising.”</td>
+		<td>$\mu_{2026} > \mu_{2006}$</td>
+	</tr>
+	<tr>
+		<td>“These managers will show bias against women in promotion decisions.”</td>
+		<td>$p_m > p_w$</td>
+	</tr>
+	<tr>
+		<td>“Dogs are smarter than cats.”</td>
+		<td>$\mu_d > \mu_c$</td>
+	</tr>
+	<tr>
+		<td>“This machine produces parts that are larger than the specification.”</td>
+		<td>$\mu > 0.75$</td>
+	</tr>
+	<tr>
+		<td>“Ammonium nitrogen fertilizer will improve my tomato yield.”</td>
+		<td>$\mu_1 < \mu_2$</td>
+	</tr>
+	<tr>
+		<td>“This coin is biased.”</td>
+		<td>$p \neq 0.5$</td>
+	</tr>
+</table>
+
+## Notes on hypothesis statements
+
+A good hypothesis statement should:
+
+* Assert a difference or inequality.
+* Refer to parameters, not statistics.
+
+## Typical hypotheses
+
+1. Compare mean to baseline: $\mu >10$
+2. Compare two means $\mu_1 > \mu_2$.
+3. Compare proportion to baseline: $p > 0.5$
+4. Compare two proportions: $p_m > p_w$.
+
+## Two-sided hypotheses
+
+A two-sided hypothesis states a difference but doesn't say which way. 
+Both high and low evidence can support a two-sided hypothesis.
+
+* $\mu \neq 10$
+* $\mu_1 \neq \mu_2$.
+* $p \neq 0.5$
+* $p_m \neq p_w$.
+
+## The Counterpoint – Null Hypothesis
+
+| Hypothesis $H_A$ | Null Hypothesis $H_0$ | 
+|---|---|
+| Global temps are rising | Global temps are constant | 
+| Managers biased vs. women | Managers are fair | 
+| $\mu > 0.75$ | $\mu = 0.75$ | 
+| $p_A > p_B$ | $p_A = p_B$ | 
+
+The job of the Null Hypothesis is to assert no difference, 
+not to reverse the difference.
+
+When we ask "Is the effect plausibly due to chance?" we mean in a
+world where the Null Hypothesis were true.
+
+## P-value and threshold
+
+A hypothesis test hinges on the plausibility that our results are due to chance.
+
+We need the probability, in a Null Hypothesis world, of getting results as strong as those witnessed. This probability is called the **p-value**. If the p-value is large, the results are plausibly due to chance. If the p-value is 
+small, the results are not due to chance and so are statistically significant. 
+
+The cut-off between "large" and "small" p-values is often chosen to be $0.05$, 
+and this choice is called the **threshold of significance.**
+
+## Homework
+
+21. Intro to Hypotheses, on webwork.
+

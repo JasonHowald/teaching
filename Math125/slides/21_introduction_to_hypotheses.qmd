@@ -1,0 +1,11 @@
+---
+title: "21. Introduction to Statistical Hypotheses"
+subtitle: "Using statistics to support a statement of fact."
+description: "Hypothesis testing concepts"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: revealjs
+---
+
+{{< include _21_introduction_to_hypotheses.qmd >}}
+  
+

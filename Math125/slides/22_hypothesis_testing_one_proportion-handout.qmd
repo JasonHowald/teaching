@@ -1,0 +1,9 @@
+---
+title: "22. Hypothesis Testing -- One Proportion"
+description: "Hypothesis testing introduction, four examples testing a single proportion against a baseline value."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _22_hypothesis_testing_one_proportion.qmd >}}
+  

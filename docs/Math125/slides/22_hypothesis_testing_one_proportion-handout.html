@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Calculating and understanding min, 25%, 50%, 75%, and max">
+<meta name="description" content="Hypothesis testing introduction, four examples testing a single proportion against a baseline value.">
 
-<title>11. Quantile Statistics – Teaching</title>
+<title>22. Hypothesis Testing – One Proportion – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,17 +148,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation"><span class="header-section-number">1</span> Preparation</a></li>
-  <li><a href="#true-or-false" id="toc-true-or-false" class="nav-link" data-scroll-target="#true-or-false"><span class="header-section-number">2</span> True or False</a></li>
-  <li><a href="#mean-isnt-typical" id="toc-mean-isnt-typical" class="nav-link" data-scroll-target="#mean-isnt-typical"><span class="header-section-number">3</span> Mean isn’t typical</a></li>
-  <li><a href="#what-is-the-median" id="toc-what-is-the-median" class="nav-link" data-scroll-target="#what-is-the-median"><span class="header-section-number">4</span> What is the median?</a></li>
-  <li><a href="#what-is-the-median-1" id="toc-what-is-the-median-1" class="nav-link" data-scroll-target="#what-is-the-median-1"><span class="header-section-number">5</span> What is the median?</a></li>
-  <li><a href="#using-the-median-to-understand-your-data." id="toc-using-the-median-to-understand-your-data." class="nav-link" data-scroll-target="#using-the-median-to-understand-your-data."><span class="header-section-number">6</span> Using the median to understand your data.</a></li>
-  <li><a href="#median-is-more-informative-than-mean" id="toc-median-is-more-informative-than-mean" class="nav-link" data-scroll-target="#median-is-more-informative-than-mean"><span class="header-section-number">7</span> Median is more informative than Mean</a></li>
-  <li><a href="#quartering-the-data" id="toc-quartering-the-data" class="nav-link" data-scroll-target="#quartering-the-data"><span class="header-section-number">8</span> Quartering the data</a></li>
-  <li><a href="#notes-on-q1-and-q3" id="toc-notes-on-q1-and-q3" class="nav-link" data-scroll-target="#notes-on-q1-and-q3"><span class="header-section-number">9</span> Notes on Q1 and Q3:</a></li>
-  <li><a href="#by-hand-aint-nobody-got-time-for-that" id="toc-by-hand-aint-nobody-got-time-for-that" class="nav-link" data-scroll-target="#by-hand-aint-nobody-got-time-for-that"><span class="header-section-number">10</span> By hand? Ain’t nobody got time for that!</a></li>
-  <li><a href="#individual-work" id="toc-individual-work" class="nav-link" data-scroll-target="#individual-work"><span class="header-section-number">11</span> Individual work</a></li>
+  <li><a href="#preparatory-work" id="toc-preparatory-work" class="nav-link active" data-scroll-target="#preparatory-work"><span class="header-section-number">1</span> Preparatory work</a></li>
+  <li><a href="#a-hot-day-in-phoenix" id="toc-a-hot-day-in-phoenix" class="nav-link" data-scroll-target="#a-hot-day-in-phoenix"><span class="header-section-number">2</span> A hot day in Phoenix</a></li>
+  <li><a href="#a-hot-day-in-phoenix-solution" id="toc-a-hot-day-in-phoenix-solution" class="nav-link" data-scroll-target="#a-hot-day-in-phoenix-solution"><span class="header-section-number">3</span> A hot day in Phoenix (solution)</a></li>
+  <li><a href="#represent" id="toc-represent" class="nav-link" data-scroll-target="#represent"><span class="header-section-number">4</span> Represent</a></li>
+  <li><a href="#a-biased-coin" id="toc-a-biased-coin" class="nav-link" data-scroll-target="#a-biased-coin"><span class="header-section-number">5</span> A biased coin 🪙</a></li>
+  <li><a href="#a-lucky-streak" id="toc-a-lucky-streak" class="nav-link" data-scroll-target="#a-lucky-streak"><span class="header-section-number">6</span> A lucky streak</a></li>
+  <li><a href="#z-scores-vs-z-scores" id="toc-z-scores-vs-z-scores" class="nav-link" data-scroll-target="#z-scores-vs-z-scores"><span class="header-section-number">7</span> Z scores vs Z scores</a></li>
+  <li><a href="#threshold-of-significance" id="toc-threshold-of-significance" class="nav-link" data-scroll-target="#threshold-of-significance"><span class="header-section-number">8</span> Threshold of Significance</a>
+  <ul class="collapse">
+  <li><a href="#how-small-is-small" id="toc-how-small-is-small" class="nav-link" data-scroll-target="#how-small-is-small"><span class="header-section-number">8.1</span> How small is small?</a></li>
+  </ul></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">9</span> Homework</a></li>
   </ul>
 </nav>
     </div>
@@ -167,12 +168,12 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">11. Quantile Statistics</h1>
+<h1 class="title">22. Hypothesis Testing – One Proportion</h1>
 </div>
 
 <div>
   <div class="description">
-    Calculating and understanding min, 25%, 50%, 75%, and max
+    Hypothesis testing introduction, four examples testing a single proportion against a baseline value.
   </div>
 </div>
 
@@ -189,107 +190,109 @@ window.Quarto = {
 </header>
 
 
-<section id="preparation" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">1</span> Preparation</h2>
-<p>Reread 2.1.5 on box plots and quantile statistics. Review vocabulary: Percentile, Quartile, Quintile Median, Q1, Q3, IQR</p>
+<section id="preparatory-work" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="preparatory-work"><span class="header-section-number">1</span> Preparatory work</h2>
+<p>Read: Reread Section 6.1</p>
 </section>
-<section id="true-or-false" class="level2 activity" data-number="2">
-<h2 class="activity anchored" data-number="2" data-anchor-id="true-or-false"><span class="header-section-number">2</span> True or False</h2>
-<p>Among American households, about half earn more than the average income and about half earn less.</p>
-<p>On a very easy ten point assignment, about half of students will score above average, and about half will score below average</p>
-</section>
-<section id="mean-isnt-typical" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="mean-isnt-typical"><span class="header-section-number">3</span> Mean isn’t typical</h2>
-<p><strong>Mean</strong> does a poor job describing “typical,” because it pulls hard toward outliers.</p>
-<p><strong>Median</strong> does a better job describing “typical,” because it mostly ignores outliers.</p>
-</section>
-<section id="what-is-the-median" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="what-is-the-median"><span class="header-section-number">4</span> What is the median?</h2>
-<p>The median is the middle value by count. Roughly speaking, half the data values are less than the median and half are greater.</p>
-<p>Finding the median:</p>
-<ul>
-<li>Sort data numerically</li>
-<li>Find the center.</li>
-<li>If count is odd, median is the middle one.</li>
-<li>If count is even, median is average of middle two.</li>
-</ul>
-<p>Example data values: 5, 7, 8, 9, <strong>9</strong>, <strong>9</strong>, 10, 10, 11, 12</p>
-<p><small>Description: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9.</small></p>
-<p>The median is 9</p>
-</section>
-<section id="what-is-the-median-1" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="what-is-the-median-1"><span class="header-section-number">5</span> What is the median?</h2>
-<p>1, 2, 3, 0, 1, 2, 9 ← Median is not zero. Sort first!</p>
-<p>0, 1, 1, 2, 2, 3, 9 ← Median is 2.</p>
-<p>0, 1, 1, 2, 2, 3, 96 ← Median is still 2.</p>
-<p>The median is insensitive to outliers and individual data errors. The mean is not. This is one reason the median is often preferred.</p>
-</section>
-<section id="using-the-median-to-understand-your-data." class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="using-the-median-to-understand-your-data."><span class="header-section-number">6</span> Using the median to understand your data.</h2>
-<p>What is the median salary of MLB players? Use the mlb.csv dataset.</p>
-<p>What is the median income of Americans? Use the acs12.csv dataset.</p>
-<p>What is the median birth weight of American babies? Use the births14.csv dataset.</p>
-<p>In all these cases, the mean may be deceptive because it’s influenced by outliers. The median better reflects what is typical.</p>
-</section>
-<section id="median-is-more-informative-than-mean" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="median-is-more-informative-than-mean"><span class="header-section-number">7</span> Median is more informative than Mean</h2>
-<p>Most reports on “typical” American finances use quantile statistics – median household income, median net wealth, median rent, median house price, etc.</p>
-<p>In highly unequal societies, measures of wealth are strongly skewed right. Usually median is much smaller than mean.</p>
-<p>In the U.S., <em>median</em> income is currently about 2/3 of the <em>average</em> income (Source: <a href="https://www.ssa.gov/oact/cola/central.html">SSA</a>).</p>
-<p>No single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal.</p>
-</section>
-<section id="quartering-the-data" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="quartering-the-data"><span class="header-section-number">8</span> Quartering the data</h2>
-<p>After sorting a data series, we can make equal quarters by further subdividing each half. Just like cutting an apple:</p>
-<p>5, 7, <strong>8</strong>, 9, <strong>9</strong> | <strong>9</strong>, 10, <strong>10</strong>, 11, 12</p>
-<p><small>Description: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9. The third data point, an 8, central within the left half, is accented. The eighth data point, a 10, central within the right half, is also accented.</small></p>
-<p>From this division we can construct the five-number summary:</p>
-<p>Min=5, Q1 = 8, Median = 9, Q3 = 10, Max = 12.</p>
-<p>These numbers can also be obtained using .describe():</p>
-<div id="3fdcf3e8" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series([<span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>], name<span class="op">=</span><span class="st">'age'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>count    10.00
-mean      9.00
-std       2.00
-min       5.00
-25%       8.25
-50%       9.00
-75%      10.00
-max      12.00
-Name: age, dtype: float64</code></pre>
-</div>
-</div>
-</section>
-<section id="notes-on-q1-and-q3" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="notes-on-q1-and-q3"><span class="header-section-number">9</span> Notes on Q1 and Q3:</h2>
-<p>The five number summary is the foundation of the box plot.</p>
-<p>Odd/even fussiness applies to halves as well.</p>
-<p>It’s not literally true that a quarter of the data lies between Q1 and Q2. If <span class="math inline">\(n=10\)</span>, how could it be? But such statements are usually nearly true for large and continuous datasets.</p>
-<p>Caution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different. Note the 8.25 on the previous slide.</p>
-<p>Caution: Median, 50%, and Q2 are all synonyms. Q1 and 25% are synonyms.</p>
-</section>
-<section id="by-hand-aint-nobody-got-time-for-that" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="by-hand-aint-nobody-got-time-for-that"><span class="header-section-number">10</span> By hand? Ain’t nobody got time for that!</h2>
+<section id="a-hot-day-in-phoenix" class="level2 activity" data-number="2">
+<h2 class="activity anchored" data-number="2" data-anchor-id="a-hot-day-in-phoenix"><span class="header-section-number">2</span> A hot day in Phoenix</h2>
+<p>Over the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test whether the probability of a hot day now exceeds 12/365.</p>
 <ol type="1">
-<li><p>A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. What method should we use?</p></li>
-<li><p>A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series…</p></li>
+<li>Is the data consistent with the hypothesis?</li>
+<li>Find the standard error.</li>
+<li>Find the Z-score of this measurement.</li>
+<li>What is the p-value of this Z-score?</li>
+<li>Is the difference likely due to chance?</li>
 </ol>
-<div id="708370a4" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series([<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">17</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">18</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>…and use describe()</p>
-<div id="f789f6af" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
-<section id="individual-work" class="level2" data-number="11">
-<h2 data-number="11" class="anchored" data-anchor-id="individual-work"><span class="header-section-number">11</span> Individual work</h2>
-<p>Solve Webwork problems in assignment 11.</p>
-<p>Here’s a quantile statistic: The top 1% of Americans control about as much wealth as the bottom 90% [source: Federal Reserve Economic Data (FRED)]. See what you can do about that.</p>
+<section id="a-hot-day-in-phoenix-solution" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="a-hot-day-in-phoenix-solution"><span class="header-section-number">3</span> A hot day in Phoenix (solution)</h2>
+<div id="89fa2eb7" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Square root function needs import</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Null hypothesis theory for p</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">12</span><span class="op">/</span><span class="dv">365</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Observed proportion</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> <span class="dv">27</span><span class="op">/</span><span class="dv">365</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 10*365 days, plus leap days from '12, '16, '20)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">3653</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>SE <span class="op">=</span> sqrt(p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>n) <span class="co">#Canned formula, using null value.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> (p2<span class="op">-</span>p)<span class="op">/</span>SE <span class="co"># (observed - predicted) / SE</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Import "normal distribution" tool</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Find p-value as (left) tail area on normal distribution</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>pvalue <span class="op">=</span> norm.cdf(<span class="op">-</span>Z)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Z)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13.929583127968339
+2.0939634488594107e-44</code></pre>
+</div>
+</div>
+<p>The p-value is miniscule. The effect is not due to chance. The change is statistically significant.</p>
+</section>
+<section id="represent" class="level2 activity" data-number="4">
+<h2 class="activity anchored" data-number="4" data-anchor-id="represent"><span class="header-section-number">4</span> Represent</h2>
+<p>About 50.5% of the US population is female (source: <a href="https://www.census.gov/quickfacts/fact/table/US/LFE046224">US Census</a>). The US Senate (119th congress) has 26 women out of 100 senators (source: <a href="https://cawp.rutgers.edu/data/levels-office/congress">CAWP</a>). We wish to test the theory that the US electoral system elects women with probability <span class="math inline">\(p &lt; .505\)</span>.</p>
+<ol type="1">
+<li>Is the data consistent with the hypothesis?</li>
+<li>Assume that senators’ genders are completely random (post-patriarchal utopia theory? <span class="math inline">\(p = .505\)</span>), and calculate the standard error for such a sample.</li>
+<li>Calculate the Z-score of the measurement <span class="math inline">\(26/100\)</span>.</li>
+<li>Calculate a p-value for that Z-score. Is the discrepancy plausibly due to chance?</li>
+</ol>
+</section>
+<section id="a-biased-coin" class="level2 activity" data-number="5">
+<h2 class="activity anchored" data-number="5" data-anchor-id="a-biased-coin"><span class="header-section-number">5</span> A biased coin 🪙</h2>
+<p>On game night, your friend always conducts coin flips with his “lucky coin,” a huge, heavy, American Silver Eagle. He’s lucky with it. You’re concerned that a coin might be biased. Working together, you perform an experiment with 1000 coin flips. He wins 525 of them.</p>
+<ol type="1">
+<li>Is the data consistent with the hypothesis?</li>
+<li>Calculate the standard error for this experiment.</li>
+<li>Calculate the Z-score of your result.</li>
+<li>Calculate the p-value of the result.</li>
+<li>Conclude: Is your friend busted for unfair play?</li>
+</ol>
+</section>
+<section id="a-lucky-streak" class="level2 activity" data-number="6">
+<h2 class="activity anchored" data-number="6" data-anchor-id="a-lucky-streak"><span class="header-section-number">6</span> A lucky streak</h2>
+<p>In 2020, a gamer called Dream uploaded a world record Minecraft speedrun video. In it, Dream performed a certain randomized action (“trading for ender pearls”) 262 times, with success 42 times, a 16% success rate. Game logic dictates that success should be purely random (skill-independent) with a probability of 4.27%.</p>
+<ol type="1">
+<li>Is the data consistent with the hypothesis?</li>
+<li>Calculate the standard error for this experiment.</li>
+<li>Calculate the Z-score of Dream’s sample.</li>
+<li>Calculate a p-value for that Z-score.</li>
+<li>Is good luck a credible explanation for these events?</li>
+</ol>
+</section>
+<section id="z-scores-vs-z-scores" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="z-scores-vs-z-scores"><span class="header-section-number">7</span> Z scores vs Z scores</h2>
+<ul>
+<li>Z score for the individual: (data value - mean) / σ Used to assess how out of whack one data value is, in relation to its distribution.</li>
+<li>Z score for the experiment: (test statistic - null prediction) / SE Used to assess how strongly different from prediction is the experimental result.</li>
+</ul>
+</section>
+<section id="threshold-of-significance" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="threshold-of-significance"><span class="header-section-number">8</span> Threshold of Significance</h2>
+<section id="how-small-is-small" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="how-small-is-small"><span class="header-section-number">8.1</span> How small is small?</h3>
+<p>If <span class="math inline">\(p\)</span> is small, we have a statistically significant result. If <span class="math inline">\(p\)</span> is large, it’s inconclusive. How small is small?</p>
+<p><span class="math inline">\(\alpha = 0.05\)</span> is a typical <strong>threshold of significance</strong> (or <strong>significance level</strong>). This is a social norm, which means it’s made up and can change.</p>
+<p><span class="math inline">\(\alpha = 0.005\)</span> would be a better, stricter choice, requiring stronger evidence and producing fewer false positives results.</p>
+<p>We must choose the threshold of significance <strong>before</strong> collecting data. Why?</p>
+</section>
+</section>
+<section id="homework" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="homework"><span class="header-section-number">9</span> Homework</h2>
+<ol start="22" type="1">
+<li>Hypothesis Testing One Proportion</li>
+</ol>
 
 
 </section>

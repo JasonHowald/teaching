@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>Teaching – 07. Dataviz: Histogram and Countplot</title>
+  <title>Teaching – 22. Hypothesis Testing – One Proportion</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -202,282 +202,119 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">07. Dataviz: Histogram and Countplot</h1>
+  <h1 class="title">22. Hypothesis Testing – One Proportion</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="preparation" class="slide level2">
-<h2>Preparation</h2>
-<p>Read 2.1.3 (histograms and shape) and 2.2.1 (bar plots) and 2.2.3 (bar plots, continued)</p>
+<section id="preparatory-work" class="slide level2">
+<h2>Preparatory work</h2>
+<p>Read: Reread Section 6.1</p>
 </section>
-<section id="goals" class="slide level2">
-<h2>Goals</h2>
+<section id="a-hot-day-in-phoenix" class="slide level2 activity">
+<h2>A hot day in Phoenix</h2>
+<p>Over the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test whether the probability of a hot day now exceeds 12/365.</p>
+<ol type="1">
+<li>Is the data consistent with the hypothesis?</li>
+<li>Find the standard error.</li>
+<li>Find the Z-score of this measurement.</li>
+<li>What is the p-value of this Z-score?</li>
+<li>Is the difference likely due to chance?</li>
+</ol>
+<div class="absolute" style="bottom: 0px; right: 0px; ">
+<p><img data-src="images/saguaro.png" alt="" width="400"></p>
+</div>
+</section>
+<section id="a-hot-day-in-phoenix-solution" class="slide level2">
+<h2>A hot day in Phoenix (solution)</h2>
+<div id="d526390b" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Square root function needs import</span></span>
+<span id="cb1-2"><a></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co">#Null hypothesis theory for p</span></span>
+<span id="cb1-5"><a></a>p <span class="op">=</span> <span class="dv">12</span><span class="op">/</span><span class="dv">365</span></span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co">#Observed proportion</span></span>
+<span id="cb1-8"><a></a>p2 <span class="op">=</span> <span class="dv">27</span><span class="op">/</span><span class="dv">365</span></span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co"># 10*365 days, plus leap days from '12, '16, '20)</span></span>
+<span id="cb1-11"><a></a>n <span class="op">=</span> <span class="dv">3653</span> </span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a>SE <span class="op">=</span> sqrt(p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>n) <span class="co">#Canned formula, using null value.</span></span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a>Z <span class="op">=</span> (p2<span class="op">-</span>p)<span class="op">/</span>SE <span class="co"># (observed - predicted) / SE</span></span>
+<span id="cb1-16"><a></a></span>
+<span id="cb1-17"><a></a><span class="co"># Import "normal distribution" tool</span></span>
+<span id="cb1-18"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a><span class="co"># Find p-value as (left) tail area on normal distribution</span></span>
+<span id="cb1-21"><a></a>pvalue <span class="op">=</span> norm.cdf(<span class="op">-</span>Z)</span>
+<span id="cb1-22"><a></a></span>
+<span id="cb1-23"><a></a><span class="bu">print</span>(Z)</span>
+<span id="cb1-24"><a></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13.929583127968339
+2.0939634488594107e-44</code></pre>
+</div>
+</div>
+<p>The p-value is miniscule. The effect is not due to chance. The change is statistically significant.</p>
+</section>
+<section id="represent" class="slide level2 activity">
+<h2>Represent</h2>
+<p>About 50.5% of the US population is female (source: <a href="https://www.census.gov/quickfacts/fact/table/US/LFE046224">US Census</a>). The US Senate (119th congress) has 26 women out of 100 senators (source: <a href="https://cawp.rutgers.edu/data/levels-office/congress">CAWP</a>). We wish to test the theory that the US electoral system elects women with probability <span class="math inline">\(p &lt; .505\)</span>.</p>
+<ol type="1">
+<li>Is the data consistent with the hypothesis?</li>
+<li>Assume that senators’ genders are completely random (post-patriarchal utopia theory? <span class="math inline">\(p = .505\)</span>), and calculate the standard error for such a sample.</li>
+<li>Calculate the Z-score of the measurement <span class="math inline">\(26/100\)</span>.</li>
+<li>Calculate a p-value for that Z-score. Is the discrepancy plausibly due to chance?</li>
+</ol>
+</section>
+<section id="a-biased-coin" class="slide level2 activity">
+<h2>A biased coin 🪙</h2>
+<p>On game night, your friend always conducts coin flips with his “lucky coin,” a huge, heavy, American Silver Eagle. He’s lucky with it. You’re concerned that a coin might be biased. Working together, you perform an experiment with 1000 coin flips. He wins 525 of them.</p>
+<ol type="1">
+<li>Is the data consistent with the hypothesis?</li>
+<li>Calculate the standard error for this experiment.</li>
+<li>Calculate the Z-score of your result.</li>
+<li>Calculate the p-value of the result.</li>
+<li>Conclude: Is your friend busted for unfair play?</li>
+</ol>
+</section>
+<section id="a-lucky-streak" class="slide level2 activity">
+<h2>A lucky streak</h2>
+<p>In 2020, a gamer called Dream uploaded a world record Minecraft speedrun video. In it, Dream performed a certain randomized action (“trading for ender pearls”) 262 times, with success 42 times, a 16% success rate. Game logic dictates that success should be purely random (skill-independent) with a probability of 4.27%.</p>
+<ol type="1">
+<li>Is the data consistent with the hypothesis?</li>
+<li>Calculate the standard error for this experiment.</li>
+<li>Calculate the Z-score of Dream’s sample.</li>
+<li>Calculate a p-value for that Z-score.</li>
+<li>Is good luck a credible explanation for these events?</li>
+</ol>
+<div class="absolute" style="bottom: 0px; right: 0px; ">
+<p><img data-src="images/pearl.webp" alt="" width="200"></p>
+</div>
+</section>
+<section id="z-scores-vs-z-scores" class="slide level2">
+<h2>Z scores vs Z scores</h2>
 <ul>
-<li>Read a histogram or bar chart correctly.</li>
-<li>Identify when each plot type is appropriate.</li>
-<li>Describe the shape of a histogram using proper vocabulary.</li>
-<li>Generate your own histograms and bar charts from data using seaborn.</li>
+<li>Z score for the individual: (data value - mean) / σ Used to assess how out of whack one data value is, in relation to its distribution.</li>
+<li>Z score for the experiment: (test statistic - null prediction) / SE Used to assess how strongly different from prediction is the experimental result.</li>
 </ul>
 </section>
-<section id="note-on-accessibility" class="slide level2">
-<h2>Note on Accessibility:</h2>
-<p>Data visualization is the production of charts and graphs that reveal trends and interrelationships to the eye. Although it can be done well by and for low-vision and colorblind users, dataviz is fundamentally visual, so it’s problematic for the blind. Data methods by and for the blind should strongly consider other techniques. Nevertheless, it’s important for both blind and sighted students of statistics to understand the larger discipline. I’ve tried to make these notes useful to everyone, understanding that a histogram might not be.</p>
+<section id="threshold-of-significance" class="slide level2">
+<h2>Threshold of Significance</h2>
+<h3 id="how-small-is-small">How small is small?</h3>
+<p>If <span class="math inline">\(p\)</span> is small, we have a statistically significant result. If <span class="math inline">\(p\)</span> is large, it’s inconclusive. How small is small?</p>
+<p><span class="math inline">\(\alpha = 0.05\)</span> is a typical <strong>threshold of significance</strong> (or <strong>significance level</strong>). This is a social norm, which means it’s made up and can change.</p>
+<p><span class="math inline">\(\alpha = 0.005\)</span> would be a better, stricter choice, requiring stronger evidence and producing fewer false positives results.</p>
+<p>We must choose the threshold of significance <strong>before</strong> collecting data. Why?</p>
 </section>
-<section id="bar-charts-aka-count-plots" class="slide level2">
-<h2>Bar Charts (aka Count Plots)</h2>
-<p>A bar chart represents the distribution of a <strong>categorical</strong> variable, showing how many data cases are in each category. It answers questions like…</p>
-<ol type="1">
-<li>How many of each major do we have on campus?</li>
-<li>What home languages are spoken in Potsdam, and how many households speak each language?</li>
-<li>How many patients are assigned to each nurse?</li>
+<section id="homework" class="slide level2">
+<h2>Homework</h2>
+<ol start="22" type="1">
+<li>Hypothesis Testing One Proportion</li>
 </ol>
-<p>To make a bar chart, place the categories (majors, languages, nurses) on one axis (normally “<span class="math inline">\(x\)</span>”). From each, make a rectangular bar proportional to the number in that category. Leave a gap between the bars. Mark and label the other axis so the counts can be inferred.</p>
-</section>
-<section id="bar-charts-example" class="slide level2">
-<h2>Bar Charts – example</h2>
-<div id="12573704" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-2"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"starbucks.csv"</span>)</span>
-<span id="cb1-3"><a></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'type'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-fig-bar-chart" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div id="fig-bar-chart" class="quarto-float quarto-figure quarto-figure-center" alt="A bar chart. x-axis labels are bakery, bistro box, petite, hot breakfast, salad, sandwich, and parfait. Rectangles extend upwards from each to varying heights. The largest is bakery, whose height is about 40. The smallest is salad, whose height is barely above zero. ">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-bar-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-bar-chart-output-1.png" alt="A bar chart. x-axis labels are bakery, bistro box, petite, hot breakfast, salad, sandwich, and parfait. Rectangles extend upwards from each to varying heights. The largest is bakery, whose height is about 40. The smallest is salad, whose height is barely above zero. " width="808" height="449">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bar-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Bar Chart for Starbucks food item types
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="bar-charts-understanding" class="slide level2 activity">
-<h2>Bar Charts – understanding</h2>
-<ol type="1">
-<li>Can the bars be rearranged on the <span class="math inline">\(x\)</span>-axis? Would that change the meaning of the chart?</li>
-<li>Do the bar colors matter? Should they be the same or different?</li>
-<li>Can a bar chart illustrate the relationship between two different categorical variables? For example, home language related to religious heritage?</li>
-</ol>
-</section>
-<section id="histograms-purpose" class="slide level2">
-<h2>Histograms – purpose</h2>
-<p>A histogram is similar, but represents the distribution of a <strong>quantitative</strong> variable. It answers questions like</p>
-<ol type="1">
-<li>What sorts of GPA’s do students on campus have, and which GPA ranges are most common?</li>
-<li>How much do Potsdam households spend weekly on groceries? Which amounts are common, which are outliers, and which are unheard of?</li>
-<li>Nurses’ visits with patients take a variety of time. How do the durations of visits vary? Are most visits short, or is there a wide variety of times?</li>
-</ol>
-</section>
-<section id="histograms-method" class="slide level2">
-<h2>Histograms – method</h2>
-<p>To draw a histogram, the x-axis is scaled to show the entire range of data values and divided into equal-sized intervals (e.g.&nbsp;5-10, 10-15, 15-20) called “bins.” Rectangular bars are drawn above each bin, showing how frequently the data values fall into that range. The y-axis is labeled “count” or “frequency.” Tall bars indicate common data ranges, and short bars indicate rare data ranges. Unlike a bar chart, the bars touch each other.</p>
-</section>
-<section id="histograms-example" class="slide level2">
-<h2>Histograms – example</h2>
-<div id="7c2fb22e" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb2-2"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">"starbucks.csv"</span>)</span>
-<span id="cb2-3"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'calories'</span>, bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-fig-histogram-chart" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div id="fig-histogram-chart" class="quarto-float quarto-figure quarto-figure-center" alt="A histogram. The x-axis is labeled 'Calories' and extends from 100 to 500. The y-axis is labeled 'count' and extends from 0 to 16. Ten vertical bars extend upward from the x axis to various heights. Those on the right where x is 300 or more are rather tall, whereas those on the left where x is less than 300 are much shorter.">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-histogram-chart-output-1.png" alt="A histogram. The x-axis is labeled 'Calories' and extends from 100 to 500. The y-axis is labeled 'count' and extends from 0 to 16. Ten vertical bars extend upward from the x axis to various heights. Those on the right where x is 300 or more are rather tall, whereas those on the left where x is less than 300 are much shorter." width="470" height="490">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Histogram for Starbucks food item Calorie content
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="histograms-understanding" class="slide level2 activity">
-<h2>Histograms – Understanding</h2>
-<ol type="1">
-<li>Can the bins and rectangles be rearranged on the <span class="math inline">\(x\)</span>-axis? Would that change the meaning of the plot?</li>
-<li>Should the bars be the same color or different colors?</li>
-<li>We’re free to choose the number of bins, which effects the width of the bars. How should we decide how many to use?</li>
-<li>Is it necessary to label the <span class="math inline">\(y\)</span>-axis? Why or why not?</li>
-<li>Can a histogram show the relationship between one variable and another? For example, can we compare the Calorie counts of various categories of food item (bakery, sandwich, etc) using a histogram?</li>
-</ol>
-</section>
-<section id="histograms-and-bar-charts-comparison" class="slide level2">
-<h2>Histograms and Bar Charts – Comparison</h2>
-<p>In common:</p>
-<ul>
-<li>Data values on x-axis.</li>
-<li>Frequency counts on y-axis,</li>
-<li>Rectangles whose height shows the count.</li>
-<li>Applicable to a single variable only (by default).</li>
-</ul>
-<p>Differences:</p>
-<ul>
-<li>Bar for categorical, histogram for quantitative.</li>
-<li>Bar can be freely rearranged, histogram must be in numerical order.</li>
-<li>Bar has gaps, histogram none.</li>
-</ul>
-</section>
-<section id="choosing-the-right-visualization" class="slide level2 activity">
-<h2>Choosing the right visualization</h2>
-<p>In each scenario, should we favor a histogram, a bar chart, or neither? Discuss with your group and share your answers with the class.</p>
-<ol type="1">
-<li>To understand the frequency distribution of six colors of candy.</li>
-<li>To understand the variety of costs of child care in Potsdam.</li>
-<li>To reveal a link between religious identity and political party affiliation.</li>
-<li>To reveal a link between time spent studying and course grade.</li>
-<li>To visualize the variety of total bill prices at a given restaurant.</li>
-<li>To show an answer to the question: How many speakers of each language do we have in this classroom?</li>
-</ol>
-</section>
-<section id="histogram-sense-modality" class="slide level2">
-<h2>Histogram sense – modality</h2>
-<p>A distinct peak or hill in the histogram shows a broad range of common values. A histogram is <strong>unimodal</strong> if it has one main peak, <strong>bimodal</strong> if it has two, <strong>trimodal</strong> if it has three, etc.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="unimodal">Unimodal</h3>
-<div id="c9132224" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'poverty'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-fig-histogram-poverty" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<div id="fig-histogram-poverty" class="quarto-float quarto-figure quarto-figure-center" alt="Unimodal histogram example. The x-axis is labeled 'Poverty Percent by county' and ranges from 0 to 50. The y-axis is labeled 'frequency' and ranges from 0 to 250. Many narrow vertical bars form the shape of a single large hill centered on about x equals 15. To the left and right of 15 the bars gradually decline toward zero.">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-poverty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-histogram-poverty-output-1.png" alt="Unimodal histogram example. The x-axis is labeled 'Poverty Percent by county' and ranges from 0 to 50. The y-axis is labeled 'frequency' and ranges from 0 to 250. Many narrow vertical bars form the shape of a single large hill centered on about x equals 15. To the left and right of 15 the bars gradually decline toward zero." width="470" height="490">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-poverty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Histogram – counties’ poverty rates
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="bimodal">Bimodal</h3>
-<div id="f6125b03" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'SLG'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-fig-histogram-mlb" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="8">
-<div class="cell-output cell-output-display">
-<div id="fig-histogram-mlb" class="quarto-float quarto-figure quarto-figure-center" alt="Bimodal histogram example. The x-axis is labeled 'Slugging Percentage' and ranges from 0 to 2. The y-axis is labeled 'frequency' and ranges from 0 to 250. Many narrow vertical bars form the shape of a single large hill centered on about x equals 0.4. The leftmost bar where x equals 0 towers above the rest, forming a secondary distinct spike.">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-mlb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-histogram-mlb-output-1.png" alt="Bimodal histogram example. The x-axis is labeled 'Slugging Percentage' and ranges from 0 to 2. The y-axis is labeled 'frequency' and ranges from 0 to 250. Many narrow vertical bars form the shape of a single large hill centered on about x equals 0.4. The leftmost bar where x equals 0 towers above the rest, forming a secondary distinct spike." width="470" height="490">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-mlb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Histogram – MLB players’ SLG
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="histogram-sense-skew" class="slide level2">
-<h2>Histogram sense – skew</h2>
-<p><strong>Skew</strong> is an asymmetry showing a longer, heavier tail on one side than the other.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="skewed-left">Skewed Left</h3>
-<div id="93c1f15f" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'homeownership'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-fig-histogram-skewed-left" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="10">
-<div class="cell-output cell-output-display">
-<div id="fig-histogram-skewed-left" class="quarto-float quarto-figure quarto-figure-center" alt="Skewed-left histogram example. The x-axis is labeled 'Homeownership percent by county' and ranges from 0 to 90. The y-axis is labeled 'frequency' and ranges from 0 to 250. A large mode is visible around x=80, tapering off to zero slowly and gradually to the left but steeply to the right.">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-skewed-left-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-histogram-skewed-left-output-1.png" alt="Skewed-left histogram example. The x-axis is labeled 'Homeownership percent by county' and ranges from 0 to 90. The y-axis is labeled 'frequency' and ranges from 0 to 250. A large mode is visible around x=80, tapering off to zero slowly and gradually to the left but steeply to the right." width="470" height="490">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-skewed-left-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Histogram – counties’ homeownership rates
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="skewed-right">Skewed Right</h3>
-<div id="3cdcdfd6" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'salary'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-fig-histogram-skewed-right" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="12">
-<div class="cell-output cell-output-display">
-<div id="fig-histogram-skewed-right" class="quarto-float quarto-figure quarto-figure-center" alt="Skewed right histogram example. The x-axis is labeled 'Salary -- millions of dollars per year' and ranges from 0 to 30. The y-axis is labeled 'frequency' and ranges from 0 to 400. A huge spike is visible near zero, and tapers off to form a long right tail. There is no left tail.">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-skewed-right-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-histogram-skewed-right-output-1.png" alt="Skewed right histogram example. The x-axis is labeled 'Salary -- millions of dollars per year' and ranges from 0 to 30. The y-axis is labeled 'frequency' and ranges from 0 to 400. A huge spike is visible near zero, and tapers off to form a long right tail. There is no left tail." width="470" height="490">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-skewed-right-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Histogram – MLB players’ salary’
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="features-of-a-histogram-mean-average" class="slide level2">
-<h2>Features of a histogram – mean (average)</h2>
-<p>The average value (or mean) of a data variable can be read from its histogram. The mean is the <strong>center of mass</strong>. Imagine balancing the entire histogram (all rectangles as one unit) on your finger from below. The balance point is the mean.</p>
-<div id="cell-fig-histogram-skewed-left-redux" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="13">
-<div class="cell-output cell-output-display">
-<div id="fig-histogram-skewed-left-redux" class="quarto-float quarto-figure quarto-figure-center" alt="Skewed-left histogram example. The x-axis is labeled 'Homeownership percent by county' and ranges from 0 to 90. The y-axis is labeled 'frequency' and ranges from 0 to 250. A large mode is visible around x=80, tapering off to zero slowly and gradually to the left but steeply to the right.">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-skewed-left-redux-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-histogram-skewed-left-redux-output-1.png" alt="Skewed-left histogram example. The x-axis is labeled 'Homeownership percent by county' and ranges from 0 to 90. The y-axis is labeled 'frequency' and ranges from 0 to 250. A large mode is visible around x=80, tapering off to zero slowly and gradually to the left but steeply to the right." width="470" height="490">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-skewed-left-redux-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Histogram – counties’ homeownership rates
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="describe-it" class="slide level2 activity">
-<h2>Describe it!</h2>
-<p>Below is a histogram for a “Gamma(3,1)” random variable. Describe its modality, its skew, and its mean as completely as you can. Confer with your group and share with the class.</p>
-<div id="cell-fig-histogram-gamma" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="14">
-<div class="cell-output cell-output-display">
-<div id="fig-histogram-gamma" class="quarto-float quarto-figure quarto-figure-center" alt="A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The y axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately 3.">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-gamma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="7_dataviz_histogram_and_countplot_files/figure-revealjs/fig-histogram-gamma-output-1.png" alt="A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The y axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately 3." width="667" height="523">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-gamma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Gamma(3,1) random variable.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="make-your-own-plots-basic-process" class="slide level2">
-<h2>Make your own plots – basic process</h2>
-<ol type="1">
-<li>Fetch data with !wget</li>
-<li>Read data with pd.read_csv</li>
-<li>import seaborn as sns</li>
-<li>sns.displot or sns.countplot. See slides 6 &amp; 10 of this slide deck.</li>
-</ol>
-</section>
-<section id="jupyter-notebook-example" class="slide level2 activity">
-<h2>Jupyter Notebook Example</h2>
-<p>Your turn! Reproduce the histogram of baseball players’ salaries. the data is in OpenIntro’s “mlb” dataset. Make sure each teammate can achieve their own success at this task. When things go sideways, ask for help! Find a second dataframe you’re curious about, and make another histogram.</p>
-</section>
-<section id="individual-work" class="slide level2">
-<h2>Individual work</h2>
-<p>On webwork: 7. Dataviz – histogram and countplot</p>
 
 
 </section>

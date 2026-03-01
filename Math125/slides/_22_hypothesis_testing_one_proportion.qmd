@@ -1,0 +1,113 @@
+## Preparatory work
+Read: Reread Section 6.1
+
+## A hot day in Phoenix {.activity}
+
+Over the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test
+whether the probability of a hot day now exceeds 12/365. 
+
+1. Is the data consistent with the hypothesis?
+1. Find the standard error. 
+1. Find the Z-score of this measurement.
+1. What is the p-value of this Z-score?
+1. Is the difference likely due to chance? 
+
+:::: {.content-visible when-format="revealjs"}
+:::  {.absolute bottom=0 right=0}
+![](images/saguaro.png){width="400px" fig-alt=""}
+:::
+::::
+ 
+## A hot day in Phoenix (solution) 
+
+```{python}
+#| eval: true
+#| echo: true
+# Square root function needs import
+from math import sqrt 
+
+#Null hypothesis theory for p
+p = 12/365
+
+#Observed proportion
+p2 = 27/365
+
+# 10*365 days, plus leap days from '12, '16, '20)
+n = 3653 
+
+SE = sqrt(p*(1-p)/n) #Canned formula, using null value.
+
+Z = (p2-p)/SE # (observed - predicted) / SE
+
+# Import "normal distribution" tool
+from scipy.stats import norm
+
+# Find p-value as (left) tail area on normal distribution
+pvalue = norm.cdf(-Z)
+
+print(Z)
+print(pvalue)
+```
+
+The p-value is miniscule. The effect is not due to chance. The change is 
+statistically significant. 
+
+
+## Represent {.activity}
+
+About 50.5% of the US population is female (source: [US Census](https://www.census.gov/quickfacts/fact/table/US/LFE046224)). The US Senate (119th congress) has 26 women out of 100 senators (source: [CAWP](https://cawp.rutgers.edu/data/levels-office/congress)). We wish to test the theory that the 
+US electoral system elects women with probability $p < .505$. 
+
+1. Is the data consistent with the hypothesis?
+1. Assume that senators’ genders are completely random (post-patriarchal utopia theory? $p = .505$), and calculate the standard error for such a sample.
+1. Calculate the Z-score of the measurement $26/100$.
+1. Calculate a p-value for that Z-score.
+Is the discrepancy plausibly due to chance?
+
+## A biased coin 🪙 {.activity}
+On game night, your friend always conducts coin flips with his “lucky coin,” a huge, heavy, American Silver Eagle. He’s lucky with it. You’re concerned that a coin might be biased. Working together, you perform an experiment with 1000 coin flips. He wins 525 of them.
+
+1. Is the data consistent with the hypothesis?
+1. Calculate the standard error for this experiment.
+1. Calculate the Z-score of your result.
+1. Calculate the p-value of the result.
+1. Conclude: Is your friend busted for unfair play?
+
+## A lucky streak {.activity}
+In 2020, a gamer called Dream uploaded a world record Minecraft speedrun video. In it, Dream performed a certain randomized action (“trading for ender pearls”) 262 times, with success 42 times, a 16% success rate. Game logic dictates that success should be purely random (skill-independent) with a probability of 4.27%.
+
+1. Is the data consistent with the hypothesis?
+1. Calculate the standard error for this experiment.
+1. Calculate the Z-score of Dream’s sample.
+1. Calculate a p-value for that Z-score.
+1. Is good luck a credible explanation for these events?
+
+:::: {.content-visible when-format="revealjs"}
+:::  {.absolute bottom=0 right=0}
+![](images/pearl.webp){width="200px" fig-alt=""}
+:::
+::::
+
+## Z scores vs Z scores
+
+* Z score for the individual: (data value - mean) / σ
+Used to assess how out of whack one data value is, in relation to its distribution.
+* Z score for the experiment: (test statistic - null prediction) / SE
+Used to assess how strongly different from prediction is the experimental result.
+
+## Threshold of Significance
+### How small is small?
+
+If $p$ is small, we have a statistically significant result. If $p$ is large, 
+it's inconclusive. How small is small?
+
+$\alpha = 0.05$ is a typical **threshold of significance** (or **significance level**). This is a social norm, which means it's made up and can change.
+
+$\alpha = 0.005$ would be a better, stricter choice, requiring stronger evidence 
+and producing fewer false positives results.
+
+We must choose the threshold of significance **before** collecting data. Why? 
+
+## Homework
+22. Hypothesis Testing One Proportion 
+

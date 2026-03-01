@@ -1,0 +1,10 @@
+---
+title: "23. Hypothesis Testing -- Two Proportions"
+description: "Hypothesis testing with two proportions, four examples testing for a difference between two proportions, with pooling, standard error, z-score and p value."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+           
+{{< include _23_hypothesis_testing_two_proportions.qmd >}}
+  
+

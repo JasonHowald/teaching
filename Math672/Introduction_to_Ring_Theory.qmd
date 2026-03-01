@@ -229,6 +229,7 @@ If $x=0$ and $x$ is not a zero divisor, we call $x$ a non-zero-divisor (sometime
 **proof:** If $xa=xb$ then $x(a-b)=0$, so $a-b=0$, so $a=b$.
 
 **Examples:**
+
 - The rings ${\mathbb Z}$, ${\mathbb Q}$, ${\mathbb R}$, and ${\mathbb C}$ are domains and have no zerodivisors.
 - The polynomial rings ${\mathbb Z}[x]$, ${\mathbb R}[x,y]$, and ${\mathbb C}[x,y,z]$, etc. are also domains and have no zerodivisors.
 - In ${\mathbb Z}/n$, the elements $x$ which are not relatively prime to $n$ are zerodivisors. For example, in ${\mathbb Z}/60$, the element $16$ is a zerodivisor as $16 \cdot 15 = 240 = 0$.

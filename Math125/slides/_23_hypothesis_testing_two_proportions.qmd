@@ -1,0 +1,112 @@
+## Preparatory work
+Read: Reread Section 6.2
+
+## Bias assessment
+Managers recommend for promotion 14/24 women, but 21/24 men. Is this statistically significant evidence of gender bias?
+
+1. Is the data consistent with the hypothesis of bias? If so, continue.
+2. Find the **pooled proportion**. This is our best guess of the 
+promotion rate if the managers were fair.
+3. Find the standard error, in three steps.
+   - SE for the men
+   - SE for the women
+   - SE for the difference.
+4. Find the Z-score for the difference of proportions
+5. Find the p-value using the normal distribution.
+
+## Bias assessment -- solutions
+```{python}
+#| eval: true
+#| echo: true
+#Import sqrt and norm functions for later
+from math import sqrt 
+from scipy.stats import norm
+
+#Pooled proportion and standard errors
+p = 35/48  #all candidates
+n = 24 #number in each category
+SE1 = sqrt(p*(1-p)/n) #For the women
+SE2 = sqrt(p*(1-p)/n) #For the men
+SE = sqrt(SE1**2 + SE2**2) #SE of the difference
+
+# Z-score and p-value
+Z = (21/24 - 14/24) / SE 
+pvalue = norm.cdf(-Z)
+
+print(Z)
+print(pvalue)
+```
+
+
+
+## Risk Reduction
+Treatment X intends to reduce risk of death from gunshot wound. Is the data below statistically significant evidence?
+
+:::: {.columns}
+::: {.column width=55%}
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>With X</th>
+            <th>No X</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tr>
+        <th scope="row">Death</th>
+        <td>120</td>
+        <td>200</td>
+        <td>320</td>
+    </tr>
+    <tr>
+        <th scope="row">Survival</th>
+        <td>680</td>
+        <td>800</td>
+        <td>1480</td>
+    </tr>
+    <tr>
+        <th scope="row">Total</th>
+        <td>800</td>
+        <td>1000</td>
+        <td>1800</td>
+    </tr>
+</table>
+:::
+
+::: {.column width=45%}
+1. Find the proportions...
+   - within each group.
+   - as a pooled proportion.
+2. Calculate standard error...
+   - within each group.
+   - of the difference.
+3. Find the Z-score
+4. Find the p-value.
+5. Is it statistically significant?
+:::
+::::
+
+
+## Premature births
+
+1. Load the “births14” data from openintro. 
+2. Make a crosstab of prematurity vs. smoking habit:
+```{python}
+#| eval: false
+#| echo: true
+pd.crosstab(df.premie, df.habit, margins=True)
+```
+
+3. Perform a hypothesis test comparing the proportion of premature births among smokers and among nonsmokers. Does it give statistically significant evidence that smoking increases the probability of premature birth?
+
+
+## Planning ahead
+You believe Method A succeeds 70% of the time, whereas Method B succeeds 80% of the time. Others aren't convinced. How many trials of each method must you do to prove (with statistical significance) that method B is better? 
+
+1. In a Jupyter notebook, guess a sample size $n=40$. 
+2. Set the values of each proportion and the pooled proportion.
+3. Calculate all three standard errors.
+4. Find the Z-score.
+5. Find the p-value for the difference of proportions.
+6. Adjust $n$ and recompute the p-value shows statistical significance.
