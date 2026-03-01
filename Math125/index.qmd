@@ -33,5 +33,8 @@ format: html
 | **14-15:** Probability Laws | [Slides [for Prob Laws]{.visually-hidden}](slides/14_15_probability_laws.html) | [Handout [for Prob Laws]{.visually-hidden}](slides/14_15_probability_laws-handout.html) |
 | **16-17:** Conditional Probability | [Slides [for Conditional Prob]{.visually-hidden}](slides/16_17_conditional_probability.html) | [Handout [for Conditional Prob]{.visually-hidden}](slides/16_17_conditional_probability-handout.html) |
 | **18-19:** Normal Distribution | [Slides [for Normal Dist]{.visually-hidden}](slides/18_19_the_normal_distribution.html) | [Handout [for Normal Dist]{.visually-hidden}](slides/18_19_the_normal_distribution-handout.html) |
-| **20:** Standard Error & Confidence | [Slides [for Normal Dist]{.visually-hidden}](slides/20_Standard_Error_and_Confidence.html) | [Handout [for Normal Dist]{.visually-hidden}](slides/20_Standard_Error_and_Confidence-handout.html) |
+| **20:** Standard Error & Confidence | [Slides [for Standard Error]{.visually-hidden}](slides/20_Standard_Error_and_Confidence.html) | [Handout [for Normal Dist]{.visually-hidden}](slides/20_Standard_Error_and_Confidence-handout.html) |
+| **21:** Introduction to Hypotheses | [Slides [for Intro Hypotheses]{.visually-hidden}](slides/21_introduction_to_hypotheses.html) | [Handout [for Intro Hypotheses]{.visually-hidden}](slides/21_introduction_to_hypotheses-handout.html) |
+| **22:** Hypotheses testing - one proportion | [Slides [for one proportion]{.visually-hidden}](slides/22_hypothesis_testing_one_proportion.html) | [Handout [for one proportion]{.visually-hidden}](slides/22_hypothesis_testing_one_proportion-handout.html) |
+| **23:** Hypotheses testing - two proportions | [Slides [for two proportions]{.visually-hidden}](slides/23_hypothesis_testing_two_proportions.html) | [Handout [for two proportions]{.visually-hidden}](slides/23_hypothesis_testing_two_proportions-handout.html) |
 
