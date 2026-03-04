@@ -237,11 +237,11 @@ Algebra is powerful, but we wish to study the analysis of ${\mathbb C}$.
 Analysis begins with inequalities.
 
 ::: {#thm-rebounds .prop}
-**Proposition 1.7**. *For any complex number $z$:
+For any complex number $z$:
 $$-|z| \leq Re(z) \leq |z| \hspace{3em}\text{ and}\hspace{3em} -|z| \leq Im(z) \leq |z|$$
 ...with equality, respectively, if $z$ is nonpositive real, nonnegative
 real, nonpositive imaginary (i.e., $bi$ for $b \leq 0$), and nonnegative
-imaginary.*
+imaginary.
 :::
 
 ::: {#exr-prove-re-im-inequalities }
@@ -1868,45 +1868,45 @@ Let $A_N = \sum_{n=0}^N a_n$ and $B_N = \sum_{n=0}^N b_n$.
     &= \left | \sum_{i < N}  \left ( a_i \sum_{j \geq N-i} b_j  \right ) + \sum_{i \geq N} a_i B  \right | \\
     & \leq  \sum_{i \leq N}   |a_i| \left | \sum_{j \geq N-i} b_j  \right | + \sum_{i \geq N} |a_i| |B|
 \end{align}
+ 
+In the right term, $|B|$ is a fixed value and the tail
+$\sum_{i \geq N} |a_i|$ is small for large $N$ by absolute
+convergence. In the left term, we can control $|a_i|$ if $i$ is
+large and $|\sum_{j \geq N-i} b_j |$ if $i$ is small (so that $j$ is
+large). Therefore we split the sum in half. Let $0 \leq M < N$. Here
+$M$ will also be specifically chosen later. We continue\...
 
-    In the right term, $|B|$ is a fixed value and the tail
-    $\sum_{i \geq N} |a_i|$ is small for large $N$ by absolute
-    convergence. In the left term, we can control $|a_i|$ if $i$ is
-    large and $|\sum_{j \geq N-i} b_j |$ if $i$ is small (so that $j$ is
-    large). Therefore we split the sum in half. Let $0 \leq M < N$. Here
-    $M$ will also be specifically chosen later. We continue\...
+$$=  \overbrace{\sum_{0 \leq i < M}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\alpha} + \overbrace{\sum_{M \leq i < N}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\beta} + \overbrace{\sum_{i \geq N} |a_i| |B|  \\}^{\gamma}$$
 
-    $$=  \overbrace{\sum_{0 \leq i < M}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\alpha} + \overbrace{\sum_{M \leq i < N}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\beta} + \overbrace{\sum_{i \geq N} |a_i| |B|  \\}^{\gamma}$$
+Without further delay let $\varepsilon > 0$.
 
-    Without further delay let $\varepsilon > 0$.
+We control term $\beta$ first. The sequence
+$\left |\sum_{j \geq N-i} b_j\right|$ (as a function of $N$) converges
+to $0$, so it has an upper bound $U_B$ , independent of $N$ and $M$.
+As a function of $N$, the convergent sequence
+$\sum_{i \geq N} |a_i|$ is Cauchy, so its differences
+$\sum_{M \leq i < N} |a_i|$ can be made small by choosing $M$
+sufficiently large. Choose $M$ so that (for all $N>M$) we have
+$\sum_{M \leq i < N} |a_i| < \frac{\varepsilon}{3U_B}$. For this $M$
+and for any $N>M$ we have $\beta < \frac{\varepsilon}{3}$
 
-    We control term $\beta$ first. The sequence
-    $\left |\sum_{j \geq N-i} b_j\right|$ (as a function of $N$) converges
-    to $0$, so it has an upper bound $U_B$ , independent of $N$ and $M$.
-    As a function of $N$, the convergent sequence
-    $\sum_{i \geq N} |a_i|$ is Cauchy, so its differences
-    $\sum_{M \leq i < N} |a_i|$ can be made small by choosing $M$
-    sufficiently large. Choose $M$ so that (for all $N>M$) we have
-    $\sum_{M \leq i < N} |a_i| < \frac{\varepsilon}{3U_B}$. For this $M$
-    and for any $N>M$ we have $\beta < \frac{\varepsilon}{3}$
+Next we control term $\alpha$. Having chosen $M$ we may treat
+$\sum_{0 \leq i < M}  |a_i|$ as a constant $V_A$. Again because the
+sequence $\left |\sum_{j \geq N-i} b_j\right|$ converges to $0$, we may
+choose $K$ so that if $N-i>K$ then
+$\left | \sum_{j \geq N-i} b_j\right|<\frac{\varepsilon}{3V_A}$. Now
+for any $N>K+M$, we have $N-i>K$ and so
+$\alpha < \frac{\varepsilon}{3}$.
 
-    Next we control term $\alpha$. Having chosen $M$ we may treat
-    $\sum_{0 \leq i < M}  |a_i|$ as a constant $V_A$. Again because the
-    sequence $\left |\sum_{j \geq N-i} b_j\right|$ converges to $0$, we may
-    choose $K$ so that if $N-i>K$ then
-    $\left | \sum_{j \geq N-i} b_j\right|<\frac{\varepsilon}{3V_A}$. Now
-    for any $N>K+M$, we have $N-i>K$ and so
-    $\alpha < \frac{\varepsilon}{3}$.
+Finally we control term $\gamma$, in which $|B|$ is a fixed
+constant. We assume $|B| \neq 0$, the contrary case being trivial.
+Since the series $\sum a_i$ is absolutely convergent there is some
+$G$ so that if $N>G$ then
+$\sum_{i \geq N} |a_i| < \frac{\varepsilon}{3|B|}$, and
+$\gamma < \frac{\varepsilon}{3}$.
 
-    Finally we control term $\gamma$, in which $|B|$ is a fixed
-    constant. We assume $|B| \neq 0$, the contrary case being trivial.
-    Since the series $\sum a_i$ is absolutely convergent there is some
-    $G$ so that if $N>G$ then
-    $\sum_{i \geq N} |a_i| < \frac{\varepsilon}{3|B|}$, and
-    $\gamma < \frac{\varepsilon}{3}$.
-
-    If $N > \max(K+M, G)$ then
-    $\left | AB - \sum_{n < N} c_n \right | < \varepsilon$ as required.
+If $N > \max(K+M, G)$ then
+$\left | AB - \sum_{n < N} c_n \right | < \varepsilon$ as required.
 :::
 
 

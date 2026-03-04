@@ -281,7 +281,7 @@ $
 <h2 data-number="2.3" class="anchored" data-anchor-id="basic-inequalities-and-relations"><span class="header-section-number">2.3</span> Basic Inequalities and relations</h2>
 <p>Algebra is powerful, but we wish to study the analysis of <span class="math inline">\({\mathbb C}\)</span>. Analysis begins with inequalities.</p>
 <div id="thm-rebounds" class="prop theorem">
-<p><span class="theorem-title"><strong>Theorem 2</strong></span> <strong>Proposition 1.7</strong>. <em>For any complex number <span class="math inline">\(z\)</span>: <span class="math display">\[-|z| \leq Re(z) \leq |z| \hspace{3em}\text{ and}\hspace{3em} -|z| \leq Im(z) \leq |z|\]</span> …with equality, respectively, if <span class="math inline">\(z\)</span> is nonpositive real, nonnegative real, nonpositive imaginary (i.e., <span class="math inline">\(bi\)</span> for <span class="math inline">\(b \leq 0\)</span>), and nonnegative imaginary.</em></p>
+<p><span class="theorem-title"><strong>Theorem 2</strong></span> For any complex number <span class="math inline">\(z\)</span>: <span class="math display">\[-|z| \leq Re(z) \leq |z| \hspace{3em}\text{ and}\hspace{3em} -|z| \leq Im(z) \leq |z|\]</span> …with equality, respectively, if <span class="math inline">\(z\)</span> is nonpositive real, nonnegative real, nonpositive imaginary (i.e., <span class="math inline">\(bi\)</span> for <span class="math inline">\(b \leq 0\)</span>), and nonnegative imaginary.</p>
 </div>
 <div id="exr-prove-re-im-inequalities" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> Prove the previous proposition by writing <span class="math inline">\(z=a+bi\)</span> and using properties of real numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
@@ -938,44 +938,13 @@ f'(g(z))&amp; \text{ if $g(w) = g(z)$} \end{array} \right\} \cdot \frac{g(w)-g(z
     &amp;= \left | \sum_{i &lt; N}  \left ( a_i \sum_{j \geq N-i} b_j  \right ) + \sum_{i \geq N} a_i B  \right | \\
     &amp; \leq  \sum_{i \leq N}   |a_i| \left | \sum_{j \geq N-i} b_j  \right | + \sum_{i \geq N} |a_i| |B|
 \end{align}\]</span></p>
-<pre><code>In the right term, $|B|$ is a fixed value and the tail
-$\sum_{i \geq N} |a_i|$ is small for large $N$ by absolute
-convergence. In the left term, we can control $|a_i|$ if $i$ is
-large and $|\sum_{j \geq N-i} b_j |$ if $i$ is small (so that $j$ is
-large). Therefore we split the sum in half. Let $0 \leq M &lt; N$. Here
-$M$ will also be specifically chosen later. We continue\...
-
-$$=  \overbrace{\sum_{0 \leq i &lt; M}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\alpha} + \overbrace{\sum_{M \leq i &lt; N}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\beta} + \overbrace{\sum_{i \geq N} |a_i| |B|  \\}^{\gamma}$$
-
-Without further delay let $\varepsilon &gt; 0$.
-
-We control term $\beta$ first. The sequence
-$\left |\sum_{j \geq N-i} b_j\right|$ (as a function of $N$) converges
-to $0$, so it has an upper bound $U_B$ , independent of $N$ and $M$.
-As a function of $N$, the convergent sequence
-$\sum_{i \geq N} |a_i|$ is Cauchy, so its differences
-$\sum_{M \leq i &lt; N} |a_i|$ can be made small by choosing $M$
-sufficiently large. Choose $M$ so that (for all $N&gt;M$) we have
-$\sum_{M \leq i &lt; N} |a_i| &lt; \frac{\varepsilon}{3U_B}$. For this $M$
-and for any $N&gt;M$ we have $\beta &lt; \frac{\varepsilon}{3}$
-
-Next we control term $\alpha$. Having chosen $M$ we may treat
-$\sum_{0 \leq i &lt; M}  |a_i|$ as a constant $V_A$. Again because the
-sequence $\left |\sum_{j \geq N-i} b_j\right|$ converges to $0$, we may
-choose $K$ so that if $N-i&gt;K$ then
-$\left | \sum_{j \geq N-i} b_j\right|&lt;\frac{\varepsilon}{3V_A}$. Now
-for any $N&gt;K+M$, we have $N-i&gt;K$ and so
-$\alpha &lt; \frac{\varepsilon}{3}$.
-
-Finally we control term $\gamma$, in which $|B|$ is a fixed
-constant. We assume $|B| \neq 0$, the contrary case being trivial.
-Since the series $\sum a_i$ is absolutely convergent there is some
-$G$ so that if $N&gt;G$ then
-$\sum_{i \geq N} |a_i| &lt; \frac{\varepsilon}{3|B|}$, and
-$\gamma &lt; \frac{\varepsilon}{3}$.
-
-If $N &gt; \max(K+M, G)$ then
-$\left | AB - \sum_{n &lt; N} c_n \right | &lt; \varepsilon$ as required.</code></pre>
+<p>In the right term, <span class="math inline">\(|B|\)</span> is a fixed value and the tail <span class="math inline">\(\sum_{i \geq N} |a_i|\)</span> is small for large <span class="math inline">\(N\)</span> by absolute convergence. In the left term, we can control <span class="math inline">\(|a_i|\)</span> if <span class="math inline">\(i\)</span> is large and <span class="math inline">\(|\sum_{j \geq N-i} b_j |\)</span> if <span class="math inline">\(i\)</span> is small (so that <span class="math inline">\(j\)</span> is large). Therefore we split the sum in half. Let <span class="math inline">\(0 \leq M &lt; N\)</span>. Here <span class="math inline">\(M\)</span> will also be specifically chosen later. We continue...</p>
+<p><span class="math display">\[=  \overbrace{\sum_{0 \leq i &lt; M}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\alpha} + \overbrace{\sum_{M \leq i &lt; N}   |a_i| \left | \sum_{j \geq N-i} b_j  \right |}^{\beta} + \overbrace{\sum_{i \geq N} |a_i| |B|  \\}^{\gamma}\]</span></p>
+<p>Without further delay let <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
+<p>We control term <span class="math inline">\(\beta\)</span> first. The sequence <span class="math inline">\(\left |\sum_{j \geq N-i} b_j\right|\)</span> (as a function of <span class="math inline">\(N\)</span>) converges to <span class="math inline">\(0\)</span>, so it has an upper bound <span class="math inline">\(U_B\)</span> , independent of <span class="math inline">\(N\)</span> and <span class="math inline">\(M\)</span>. As a function of <span class="math inline">\(N\)</span>, the convergent sequence <span class="math inline">\(\sum_{i \geq N} |a_i|\)</span> is Cauchy, so its differences <span class="math inline">\(\sum_{M \leq i &lt; N} |a_i|\)</span> can be made small by choosing <span class="math inline">\(M\)</span> sufficiently large. Choose <span class="math inline">\(M\)</span> so that (for all <span class="math inline">\(N&gt;M\)</span>) we have <span class="math inline">\(\sum_{M \leq i &lt; N} |a_i| &lt; \frac{\varepsilon}{3U_B}\)</span>. For this <span class="math inline">\(M\)</span> and for any <span class="math inline">\(N&gt;M\)</span> we have <span class="math inline">\(\beta &lt; \frac{\varepsilon}{3}\)</span></p>
+<p>Next we control term <span class="math inline">\(\alpha\)</span>. Having chosen <span class="math inline">\(M\)</span> we may treat <span class="math inline">\(\sum_{0 \leq i &lt; M}  |a_i|\)</span> as a constant <span class="math inline">\(V_A\)</span>. Again because the sequence <span class="math inline">\(\left |\sum_{j \geq N-i} b_j\right|\)</span> converges to <span class="math inline">\(0\)</span>, we may choose <span class="math inline">\(K\)</span> so that if <span class="math inline">\(N-i&gt;K\)</span> then <span class="math inline">\(\left | \sum_{j \geq N-i} b_j\right|&lt;\frac{\varepsilon}{3V_A}\)</span>. Now for any <span class="math inline">\(N&gt;K+M\)</span>, we have <span class="math inline">\(N-i&gt;K\)</span> and so <span class="math inline">\(\alpha &lt; \frac{\varepsilon}{3}\)</span>.</p>
+<p>Finally we control term <span class="math inline">\(\gamma\)</span>, in which <span class="math inline">\(|B|\)</span> is a fixed constant. We assume <span class="math inline">\(|B| \neq 0\)</span>, the contrary case being trivial. Since the series <span class="math inline">\(\sum a_i\)</span> is absolutely convergent there is some <span class="math inline">\(G\)</span> so that if <span class="math inline">\(N&gt;G\)</span> then <span class="math inline">\(\sum_{i \geq N} |a_i| &lt; \frac{\varepsilon}{3|B|}\)</span>, and <span class="math inline">\(\gamma &lt; \frac{\varepsilon}{3}\)</span>.</p>
+<p>If <span class="math inline">\(N &gt; \max(K+M, G)\)</span> then <span class="math inline">\(\left | AB - \sum_{n &lt; N} c_n \right | &lt; \varepsilon\)</span> as required.</p>
 </div>
 <div id="thm-sum-product-power-series" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 19</strong></span> Let <span class="math inline">\(f(z) = \sum_{n=0}^\infty a_n(z-a)^n\)</span> and <span class="math inline">\(g(z)= \sum_{n=0}^\infty b_n(z-a)^n\)</span> be power series with radius of convergence at least <span class="math inline">\(R\)</span>. Then (the series below converge on <span class="math inline">\(B(a,R)\)</span> and)</p>
