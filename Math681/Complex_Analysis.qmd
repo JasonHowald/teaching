@@ -466,7 +466,7 @@ ways:
 5.  We use coordinatized analytic geometry to compare the sphere to the
     Riemann Sphere in a nontrivial way.
 
-### The projection**
+### The projection
 
 We define a map $p$ from $S^2 - \{(0,0,1)\}$ to ${\mathbb C}$ by
 projection from the north pole, identifying ${\mathbb C}$ with the $x-y$
@@ -668,8 +668,6 @@ it anticipates a statement involving $x$, but a statement
 $\iota x  P(x)$ is grammatically a noun
 clause, not a complete statement.
 
-.5
-
 ::: {#def-sequence-convergence .definition}
 **(Sequence convergence)**
 Let $(x_n)_{n \in {\mathbb N}}$ be a sequence in a metric space $X$. The
@@ -678,8 +676,6 @@ $$\lim_{n\to \infty} x_n \equiv \iota L \enspace \forall \varepsilon>0 \enspace 
 equivalently,
 $$\lim_{n\to \infty} x_n \equiv \iota L \enspace\forall \text{ open } U \ni L \enspace \exists N \enspace \forall n>N \enspace x_n \in U$$ 
 :::
-
-.7
 
 Of course the limit of a
 sequence may or may not exist. If it exists we say that $x_n$ is
@@ -750,7 +746,7 @@ its interior, and any closed set equals its closure.
 ## Continuity
 
 ::: {#def-continuous .definition}
-**Definition 2.11**. A function $f: (X,d) \to (Y,\rho)$ from one metric
+A function $f: (X,d) \to (Y,\rho)$ from one metric
 space to another is **continuous** if, equivalently,
 
 1.  $\forall x_0 \in X \enspace \forall \varepsilon>0 \enspace \exists \delta>0 \enspace \forall x\in X \enspace d(x,x_0)<\delta \to \rho(f(x),f(x_0)) < \varepsilon$
@@ -866,17 +862,17 @@ subcover of that yields a ball $B(x,\varepsilon)$ disjoint from $K$.
 :::
 
 ::: {#prp-closed-in-compact .proposition}
-**Proposition 2.20**. If $C \subseteq K \subseteq X$, with $C$ closed
+If $C \subseteq K \subseteq X$, with $C$ closed
 and $K$ compact, then $C$ is compact.
 :::
 
 ::: {#prp-image-compact .proposition}
-**Proposition 2.21**. Let $f:X \to Y$ be a continuous function, and
+Let $f:X \to Y$ be a continuous function, and
 $K \subseteq X$ compact. Then $f(K)$ is compact.
 :::
 
 ::: {#prp-product-compact .proposition}
-**Proposition 2.22**. The product $X \times Y$ (in the product
+The product $X \times Y$ (in the product
 topology) of two compact spaces $X$ and $Y$ is compact.
 :::
 
@@ -1051,8 +1047,6 @@ functions is continuous:
 Let $(f_n)$ be a sequence of continuous functions
 converging uniformly to $f$. Then $f$ is continuous.
 :::
-
-.5
 
 ::: {.proof}
 In spirit, continuity boils down to the estimation
@@ -1562,8 +1556,6 @@ legitimate to write $w = \sqrt{z}$. Since $(\sqrt{z})^2 = z$, we appear
 to be in the situation of 
 @thm-derivative-inverse, but only if we can say $\sqrt{z}$ is
 continuous.
-
-
 
 Notice that $\operatorname{cis}(\theta) = \cos(\theta) + i\sin(\theta)$
 is continuous by sum and multiple rules, since $\cos$ and $\sin$ are
