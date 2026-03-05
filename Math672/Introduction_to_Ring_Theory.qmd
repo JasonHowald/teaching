@@ -711,7 +711,7 @@ By the universal property of the quotient map, there is a unique isomorphism mak
 
 **Definition:** Let $R$ be a commutative ring. The **polynomial ring over $R$ in the variable $x$**, pronounced "R adjoin x", and written $R[x]$, is $\ldots$
 
-1. The set of all finite sequences $a = (a_0, a_1, \ldots, a_n, \ldots)$, where each $a_i \in R$ and all but finitely many are zero, with
+1. The set of all sequences $a = (a_0, a_1, \ldots, a_n, \ldots)$, where each $a_i \in R$ and all but finitely many are zero, with
 2. Distinguished zero: $(0,0,0,\ldots)$
 3. Distinguished one: $(1,0,0,\ldots)$
 4. Coordinatewise addition: $(a+b)_i = a_i+b_i$
@@ -749,7 +749,7 @@ Once this theorem is proved, we usually wish to switch to the "normal" polynomia
 
 We like to think of the polynomial ring $R[x]$ as a modification of $R$ by adding a single element $x$. Unlike $Z[i]$ or $Q[\sqrt{-5}]$ however, the element $x$ has "no algebraic properties" other than what is demanded by ring theory. It can therefore be mapped via a homomorphism onto anything at all. To make this precise we state the universal property of $R[x]$.
 
-**Theorem:** Given the structure of $R[x]$, we have a canonical homomorphism $f:R \to R[x]$, and a single element $x \in R[x]$. Given any other homomorphism $g:R \to S$ and chosen element $s \in S$, there is a unique homomorphism $G:R[x] \to S$ making the diagram commute and sending $x$ to $s$.
+**Theorem:** Given the structure of $R[x]$, we have a canonical homomorphism $f:R \to R[x]$, and a single element $x \in R[x]$. Given any other homomorphism $g:R \to S$ and chosen element $s \in S$, there is a unique homomorphism $G:R[x] \to S$ making the diagram commute (meaning $Gf = g$) and sending $x$ to $s$.
 
 **proof:** As for uniqueness, if $Gf = g$, $G(x)=s$, and $G$ is a ring homomorphism, then the equation for $G$ is forced:
 $$G(\sum_i a_ix^i) = \sum_i g(a_i)s^i$$
@@ -778,7 +778,7 @@ Polynomial rings are often used in constructed examples because they give us the
 
 1. Suppose we want a ring $R$ which contains an isomorphic copy of ${\mathbb Q}$ but also contains some zerodivisors. There are lots of ways to do this, including the direct product of rings ${\mathbb Q} \times {\mathbb Q}$. Another trick is to manufacture two new elements and impose the condition that they multiply to zero. Thus $R = {\mathbb Q}[x,y] / (xy)$. Now neither $x$ nor $y$ is in the ideal, so they form nonzero cosets in the quotient, but their product becomes zero.
 
-2. Suppose we want a ring with a nilpotent element which must be raised to the power $10$ before it yields zero. Of course ${\mathbb Z}/(2^{10})$ would work. Another idea is to start with any base ring $R$ and construct $R[x]/(x^10)$.
+2. Suppose we want a ring with a nilpotent element which must be raised to the power $10$ before it yields zero. Of course ${\mathbb Z}/(2^{10})$ would work. Another idea is to start with any base ring $R$ and construct $R[x]/(x^{10})$.
 
 3. Suppose we want a finite field in which $2=0$ but we also want an element of high multiplicative order. The ring ${\mathbb Z}/(2)[x]$ has $2=0$ and an element $x$ of infinite order, but it's not a field. We can make it one by modding out by a maximal ideal, so the challenge is to find a maximal ideal $I \subseteq {\mathbb Z}/(2)[x]$. All ideals in the ring ${\mathbb Z}/(2)[x]$ are principal (we'll see why later), so this boils down to finding a suitable polynomial $p(x)\in {\mathbb Z}/(2)[x]$, and constructing the ring ${\mathbb Z}/(2)[x]/(p(x))$. This construction is surprisingly common in computer science.
 
@@ -810,7 +810,7 @@ The Euclidean function $f$ is meant to generalize the absolute value function on
 
 
 
-To prove unique factorization in ${\mathbb Z}$, we first prove that every ideal is principal, then use that fact to prove uniqueness of factorizations. The sames strategy works for rings. Of course even in ${\mathbb Z}$ factorizations differ cosmetically in their ordering and unit multiplication. So for example $30 = 2 \cdot 3 \cdot 5 = 3 \cdot (-5) \cdot (-2)$. Our definition of "unique" needs to allow for such silliness.
+To prove unique factorization in ${\mathbb Z}$, we first prove that every ideal is principal, then use that fact to prove uniqueness of factorizations. The same strategy works more generally if all ideals are principal. Of course even in ${\mathbb Z}$ factorizations differ cosmetically in their ordering and unit multiplication. So for example $30 = 2 \cdot 3 \cdot 5 = 3 \cdot (-5) \cdot (-2)$. Our definition of "unique" needs to allow for such silliness.
 
 **Definition:** A **Principal Ideal Domain** is an integral domain in which every ideal is principal.
 
@@ -821,13 +821,20 @@ To prove unique factorization in ${\mathbb Z}$, we first prove that every ideal 
 $$ua_1a_2 \ldots a_m = vb_1b_2\ldots b_n$$
 where $u, v$ are units and $a_i, b_j$ are irreducibles, then $m=n$ and (after possible rearrangement of the order of the product) each $a_i$ is some unit multiple of each $b_i$.
 
+## $K[x] \to ED$
+
+**Theorem:** Let $K$ be a field. Then $K[x]$ is a Euclidean domain. 
+
+**Proof:** Define Euclidean function $f(p) = deg(p)+1$. Now let $a, b \in K[x]$. Since the leading coefficients cannot be zerodivisors, the degree of the product $ab$ is the sum of the degrees, so $f(a) \leq f(ab)$.  For the second property, we induct on the degree of $a$. If $deg(a) < deg(b)$ we may choose $q=0$ and $r=a$. Next let $b$ have leading term $b_k x^k$ and let $a$ have leading term $a_n x^n$, with $n \geq k$. Let $q_1 = \frac{a_n}{b_k}x^{n-k}$, so that $q_1 b$ has leading term $a_nx^n$. Then $a - q_1b$ has degree less than $n$, so it may be written 
+$q_2b+r$, with $deg(r) < k$, by induction. Finally $a = q_1b + q_2b + r = (q_1+q_2)b+ r$ as desired. 
+
+**Note:** The field $K$ itself is also a Euclidean domain. It suffices to choose the function $f:K - \{0\} \to {\mathbb N} - \{0\}$ given by $f(x)=1$. Long division is easy in a field because true division is possible.
+
 ## ED $\to$ PID
 
 **Theorem:** (ED $\to$ PID) Every Euclidean Domain is a Principal Ideal Domain
 
-**Proof:** We need only rewrite the proof for ${\mathbb Z}$ in the new context. Let $R$ be a Euclidean domain with function $f$. Let $I$ be an ideal. If $I=(0)$ there's nothing to do. Choose $a \in I$, nonzero, to minimize $f(a)$. Let $b \in I$. Apply long division, so that $b = qa+r$. Now $r = b-qa \in I$. This will contradicts the minimality of $a$ if $r$ is nonzero, so $r=0$. It follows that $b$ is divisible by $a$, and since $b$ was arbitrary $I = (a)$.
-
-We also wish to show that
+**Proof:** We need only rewrite the proof for ${\mathbb Z}$ in the new context. Let $R$ be a Euclidean domain with function $f$. Let $I$ be an ideal. If $I=(0)$ there's nothing to do. Choose $a \in I$, nonzero, to minimize $f(a)$. Let $b \in I$. Apply long division, so that $b = qa+r$. Now $r = b-qa \in I$. This will contradict the minimality of $a$ if $r$ is nonzero, so $r=0$. It follows that $b$ is divisible by $a$, and since $b$ was arbitrary $I = (a)$.
 
 ## PID $\to$ UFD
 
@@ -871,13 +878,13 @@ obtaining, impossibly, a smaller nonunique factorization. This concludes the pro
 
 ### Discussion
 
-This would be a strange place to conclude, because it stands to reason that larger polynomial rings like ${\mathbb R}[x,y,z]$ or ${\mathbb Z}[x] also have unique factorization. Since they are not principal ideal domains, some other proof method is needed. We intend to prove:
+This would be a strange place to conclude, because it stands to reason that larger polynomial rings like ${\mathbb R}[x,y,z]$ or ${\mathbb Z}[x]$ also have unique factorization. Since they are not principal ideal domains, some other proof method is needed. We intend to prove:
 
 **Theorem:** Let $R$ be a UFD. Then $R[x]$ is a UFD.
 
 The first interesting case is ${\mathbb Z}[x]$. In that case, we need to consider a delicate interplay between polynomials of ${\mathbb Z}[x]$ (not a PID) and those of ${\mathbb Q}[x]$ (an ED/PID). In the more general case, we must find a tool to compare a domain $R$ to a field containing it. This brings us to the ideal of a **fraction field**, which is the next section. Please read the next section and return.
 
-Let $R$ be a UFD, and let $K$ be its fraction field. Our strategy is to compare polynomials factorizations of $f \in R[x]$ to similar factorizations of $f \in K[x]$. This is fraught and requires great care, because conversation will center on which polynomials are "units" and which are "irreducible", but these notions are relative to the ring under discussion. For example, the constant polynomial $f(x) = 2$ is an irreducible nonunit in ${\mathbb Z}[x]$, because $2$ is prime and has no reciprocal there. But the same polynomial in ${\mathbb Q}[x]$ is a unit, because an inverse $1/2$ exists. The polynomial $f(x) = 4x^2+4 = 4(x^2+1)$ is reducible in ${\mathbb Z}[x]$ with factorization $2 \cdot 2 \cdot (1+x^2)$. But in ${\mathbb Q}[x]$ it's irreducible, because $4$ is merely a unit factor. (As an aside, over ${\mathbb C}[x]$ it's reducible for a new reason: Although $4$ is a unit, the polynomial is now $4(x-i)(i+i)$.)
+Let $R$ be a UFD, and let $K$ be its fraction field. Our strategy is to compare polynomial factorizations of $f \in R[x]$ to similar factorizations of $f \in K[x]$. This is fraught and requires great care, because the conversation will center on which polynomials are "units" and which are "irreducible", but these notions are relative to the ring under discussion. For example, the constant polynomial $f(x) = 2$ is an irreducible nonunit in ${\mathbb Z}[x]$, because $2$ is prime and has no reciprocal there. But the same polynomial in ${\mathbb Q}[x]$ is a unit, because an inverse $1/2$ exists. The polynomial $f(x) = 4x^2+4 = 4(x^2+1)$ is reducible in ${\mathbb Z}[x]$ with factorization $2 \cdot 2 \cdot (1+x^2)$. But in ${\mathbb Q}[x]$ it's irreducible, because $4$ is merely a unit factor. (As an aside, over ${\mathbb C}[x]$ it's reducible for a new reason: Although $4$ is a unit, the polynomial is now $4(x-i)(i+i)$.)
 
 To navigate these hazards, we must be in the habit of saying "unit in $R$" or "irreducible in $K[x]$" or "reducible over $R[x]$", etc.
 
