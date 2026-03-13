@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Probability and Statistics">
+<meta name="description" content="Hypothesis testing with one mean">
 
-<title>Math 125 – Teaching</title>
+<title>24. Hypothesis Testing – One Mean – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +104,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -84,8 +148,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link active" data-scroll-target="#syllabus"><span class="header-section-number">1</span> Syllabus:</a></li>
-  <li><a href="#lectures-handouts" id="toc-lectures-handouts" class="nav-link" data-scroll-target="#lectures-handouts"><span class="header-section-number">2</span> Lectures &amp; Handouts</a></li>
+  <li><a href="#one-sample-test-for-mean-overview" id="toc-one-sample-test-for-mean-overview" class="nav-link active" data-scroll-target="#one-sample-test-for-mean-overview"><span class="header-section-number">1</span> One-sample test for mean, overview</a></li>
+  <li><a href="#the-t-test-an-added-wrinkle" id="toc-the-t-test-an-added-wrinkle" class="nav-link" data-scroll-target="#the-t-test-an-added-wrinkle"><span class="header-section-number">2</span> The T-test, an added wrinkle</a></li>
+  <li><a href="#identifying-a-t-test." id="toc-identifying-a-t-test." class="nav-link" data-scroll-target="#identifying-a-t-test."><span class="header-section-number">3</span> Identifying a t-test.</a></li>
+  <li><a href="#example-1-a-fishy-discrepancy" id="toc-example-1-a-fishy-discrepancy" class="nav-link" data-scroll-target="#example-1-a-fishy-discrepancy"><span class="header-section-number">4</span> Example 1 – a fishy discrepancy</a></li>
+  <li><a href="#example-2---deep-breath" id="toc-example-2---deep-breath" class="nav-link" data-scroll-target="#example-2---deep-breath"><span class="header-section-number">5</span> Example 2 - deep breath</a></li>
+  <li><a href="#example-3-beths-baking" id="toc-example-3-beths-baking" class="nav-link" data-scroll-target="#example-3-beths-baking"><span class="header-section-number">6</span> Example 3 – Beth’s baking</a></li>
   </ul>
 </nav>
     </div>
@@ -94,12 +162,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 125</h1>
+<h1 class="title">24. Hypothesis Testing – One Mean</h1>
 </div>
 
 <div>
   <div class="description">
-    Probability and Statistics
+    Hypothesis testing with one mean
   </div>
 </div>
 
@@ -116,123 +184,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="syllabus" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="syllabus"><span class="header-section-number">1</span> Syllabus:</h2>
-<p><a href="syllabus.html">Math 125 Syllabus</a></p>
+<section id="one-sample-test-for-mean-overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="one-sample-test-for-mean-overview"><span class="header-section-number">1</span> One-sample test for mean, overview</h2>
+<p>The <strong>parameter of interest</strong> is <span class="math inline">\(\mu\)</span>, a population mean.</p>
+<p>The <strong>statistic</strong> is <span class="math inline">\(\bar{x}\)</span>, a sample mean.</p>
+<p>The <strong>alternative hypothesis</strong> is <span class="math inline">\(\mu &gt; k\)</span> or <span class="math inline">\(\mu &lt; k\)</span> or <span class="math inline">\(\mu \neq k\)</span>.</p>
+<p>The <strong>null hypothesis</strong> is <span class="math inline">\(\mu=k\)</span></p>
+<p>The <strong>standard error</strong> is <span class="math inline">\(SE = \frac{s}{\sqrt{n}}\)</span></p>
+<p>The <strong>test statistic</strong> is <span class="math inline">\(t = \frac{\bar{x}-k}{SE}\)</span></p>
 </section>
-<section id="lectures-handouts" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="lectures-handouts"><span class="header-section-number">2</span> Lectures &amp; Handouts</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Topic</th>
-<th style="text-align: center;">Slides (Interactive)</th>
-<th style="text-align: center;">Handout (Printable)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>0:</strong> Welcome &amp; Intro</td>
-<td style="text-align: center;"><a href="slides/0_welcome.html">Slides <span class="visually-hidden">for Welcome</span></a></td>
-<td style="text-align: center;"><a href="slides/0_welcome-handout.html">Handout <span class="visually-hidden">for Welcome</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>1:</strong> The Shape of Data</td>
-<td style="text-align: center;"><a href="slides/1_the_shape_of_data.html">Slides <span class="visually-hidden">for Shape of Data</span></a></td>
-<td style="text-align: center;"><a href="slides/1_the_shape_of_data-handout.html">Handout <span class="visually-hidden">for Shape of Data</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>2:</strong> Association &amp; Correlation</td>
-<td style="text-align: center;"><a href="slides/2_association_and_correlation.html">Slides <span class="visually-hidden">for Association</span></a></td>
-<td style="text-align: center;"><a href="slides/2_association_and_correlation-handout.html">Handout <span class="visually-hidden">for Association</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>3:</strong> Correlation &amp; Causation</td>
-<td style="text-align: center;"><a href="slides/3_correlation_is_not_causation.html">Slides <span class="visually-hidden">for Correlation</span></a></td>
-<td style="text-align: center;"><a href="slides/3_correlation_is_not_causation-handout.html">Handout <span class="visually-hidden">for Correlation</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>4-5:</strong> Sampling &amp; Bias</td>
-<td style="text-align: center;"><a href="slides/4-5_samping_and_sample_bias.html">Slides <span class="visually-hidden">for Sampling</span></a></td>
-<td style="text-align: center;"><a href="slides/4-5_samping_and_sample_bias-handout.html">Handout <span class="visually-hidden">for Sampling</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>6:</strong> Controlled Experiments</td>
-<td style="text-align: center;"><a href="slides/6_controlled_experiments.html">Slides <span class="visually-hidden">for Experiments</span></a></td>
-<td style="text-align: center;"><a href="slides/6_controlled_experiments-handout.html">Handout <span class="visually-hidden">for Experiments</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>7:</strong> Histograms &amp; Countplots</td>
-<td style="text-align: center;"><a href="slides/7_dataviz_histogram_and_countplot.html">Slides <span class="visually-hidden">for Histograms</span></a></td>
-<td style="text-align: center;"><a href="slides/7_dataviz_histogram_and_countplot-handout.html">Handout <span class="visually-hidden">for Histograms</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>8:</strong> Boxplots &amp; Scatterplots</td>
-<td style="text-align: center;"><a href="slides/8_dataviz_boxplot_and_scatterplot.html">Slides <span class="visually-hidden">for Boxplots</span></a></td>
-<td style="text-align: center;"><a href="slides/8_dataviz_boxplot_and_scatterplot-handout.html">Handout <span class="visually-hidden">for Boxplots</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>9-10:</strong> Mean &amp; Variance</td>
-<td style="text-align: center;"><a href="slides/9_10_mean_variance_standard_deviation.html">Slides <span class="visually-hidden">for Mean/Variance</span></a></td>
-<td style="text-align: center;"><a href="slides/9_10_mean_variance_standard_deviation-handout.html">Handout <span class="visually-hidden">for Mean/Variance</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>11:</strong> Quantile Statistics</td>
-<td style="text-align: center;"><a href="slides/11_quantile_statistics.html">Slides <span class="visually-hidden">for Quantiles</span></a></td>
-<td style="text-align: center;"><a href="slides/11_quantile_statistics-handout.html">Handout <span class="visually-hidden">for Quantiles</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>12-13:</strong> Probability &amp; Counting</td>
-<td style="text-align: center;"><a href="slides/12_13_probability_and_counting.html">Slides <span class="visually-hidden">for Prob/Counting</span></a></td>
-<td style="text-align: center;"><a href="slides/12_13_probability_and_counting-handout.html">Handout <span class="visually-hidden">for Prob/Counting</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>14-15:</strong> Probability Laws</td>
-<td style="text-align: center;"><a href="slides/14_15_probability_laws.html">Slides <span class="visually-hidden">for Prob Laws</span></a></td>
-<td style="text-align: center;"><a href="slides/14_15_probability_laws-handout.html">Handout <span class="visually-hidden">for Prob Laws</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>16-17:</strong> Conditional Probability</td>
-<td style="text-align: center;"><a href="slides/16_17_conditional_probability.html">Slides <span class="visually-hidden">for Conditional Prob</span></a></td>
-<td style="text-align: center;"><a href="slides/16_17_conditional_probability-handout.html">Handout <span class="visually-hidden">for Conditional Prob</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>18-19:</strong> Normal Distribution</td>
-<td style="text-align: center;"><a href="slides/18_19_the_normal_distribution.html">Slides <span class="visually-hidden">for Normal Dist</span></a></td>
-<td style="text-align: center;"><a href="slides/18_19_the_normal_distribution-handout.html">Handout <span class="visually-hidden">for Normal Dist</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>20:</strong> Standard Error &amp; Confidence</td>
-<td style="text-align: center;"><a href="slides/20_Standard_Error_and_Confidence.html">Slides <span class="visually-hidden">for Standard Error</span></a></td>
-<td style="text-align: center;"><a href="slides/20_Standard_Error_and_Confidence-handout.html">Handout <span class="visually-hidden">for Normal Dist</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>21:</strong> Introduction to Hypotheses</td>
-<td style="text-align: center;"><a href="slides/21_introduction_to_hypotheses.html">Slides <span class="visually-hidden">for Intro Hypotheses</span></a></td>
-<td style="text-align: center;"><a href="slides/21_introduction_to_hypotheses-handout.html">Handout <span class="visually-hidden">for Intro Hypotheses</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>22:</strong> Hypotheses testing - one proportion</td>
-<td style="text-align: center;"><a href="slides/22_hypothesis_testing_one_proportion.html">Slides <span class="visually-hidden">for one proportion</span></a></td>
-<td style="text-align: center;"><a href="slides/22_hypothesis_testing_one_proportion-handout.html">Handout <span class="visually-hidden">for one proportion</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>23:</strong> Hypotheses testing - two proportions</td>
-<td style="text-align: center;"><a href="slides/23_hypothesis_testing_two_proportions.html">Slides <span class="visually-hidden">for two proportions</span></a></td>
-<td style="text-align: center;"><a href="slides/23_hypothesis_testing_two_proportions-handout.html">Handout <span class="visually-hidden">for two proportions</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>24:</strong> Hypotheses testing - one average</td>
-<td style="text-align: center;"><a href="slides/24_hypothesis_testing_one_average.html">Slides <span class="visually-hidden">for one average</span></a></td>
-<td style="text-align: center;"><a href="slides/24_hypothesis_testing_one_average-handout.html">Handout <span class="visually-hidden">for one average</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>25:</strong> Hypotheses testing - two averages</td>
-<td style="text-align: center;"><a href="slides/25_hypothesis_testing_two_averages.html">Slides <span class="visually-hidden">for two averages</span></a></td>
-<td style="text-align: center;"><a href="slides/25_hypothesis_testing_two_averages-handout.html">Handout <span class="visually-hidden">for two averages</span></a></td>
-</tr>
-</tbody>
-</table>
+<section id="the-t-test-an-added-wrinkle" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-t-test-an-added-wrinkle"><span class="header-section-number">2</span> The T-test, an added wrinkle</h2>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li>The standard error in this case “should be” <span class="math inline">\(SE = \frac{\sigma}{\sqrt{n}}\)</span>, but we almost never know <span class="math inline">\(\sigma\)</span>. The sample stdev <span class="math inline">\(s\)</span> is what we know, and it’s close.</li>
+<li>The <span class="math inline">\(Z\)</span>-score <span class="math inline">\(Z = \frac{\bar{x}-k}{\sigma / \sqrt{n}}\)</span> would be a normally distributed estimation error but our substitute <span class="math inline">\(t = \frac{\bar{x}-k}{s / \sqrt{n}}\)</span> is not, because the denominator is subtly data-dependent.</li>
+<li>We shouldn’t compare a t-score to the normal distribution. We must use a “modified normal” distribution called a t-distribution, which accounts for the problem <span class="math inline">\(s \neq \sigma\)</span>.</li>
+<li>The “fix” depends on sample size. The <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(n-1\)</span> “degrees of freedom” is the right one.</li>
+</ol>
+</div>
+</section>
+<section id="identifying-a-t-test." class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="identifying-a-t-test."><span class="header-section-number">3</span> Identifying a t-test.</h2>
+<p>A restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?</p>
+<ol type="1">
+<li>A mean (not a proportion) is compared.</li>
+<li>There is a hypothesis to check comparing the mean to baseline or another mean.</li>
+<li>We have a standard deviation from the dataset but no population standard deviation.</li>
+</ol>
+</section>
+<section id="example-1-a-fishy-discrepancy" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="example-1-a-fishy-discrepancy"><span class="header-section-number">4</span> Example 1 – a fishy discrepancy</h2>
+<p>A restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?</p>
+<div id="281c384c" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Square root function needs import</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Record givens</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">600</span>  <span class="co"># Null hypothesis theory</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">580</span>  <span class="co"># Observed mean</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span>  <span class="co"># sample size</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="dv">30</span>   <span class="co"># SAMPLE standard deviation.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>SE <span class="op">=</span> s <span class="op">/</span> sqrt(n) </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (x <span class="op">-</span> k)<span class="op">/</span>SE <span class="co"># (observed - predicted) / SE</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Import stats for "t distribution" tool, not normal!</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Find p-value as (left) tail area on t distribution</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>pvalue <span class="op">=</span> stats.t.cdf(t, <span class="dv">99</span>) </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Note t was negative so I didn't negate it.</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-6.666666666666667
+7.50614450498516e-10</code></pre>
+</div>
+</div>
+</section>
+<section id="example-2---deep-breath" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="example-2---deep-breath"><span class="header-section-number">5</span> Example 2 - deep breath</h2>
+<p>An intervention reduced patients’ blood pressure by, on average, 5 units, with a standard deviation of 16 units. Only ten people participated in the study. Is it safe to conclude that the treatment is effective at lowering blood pressure?</p>
+<ol type="1">
+<li>Calculate the standard error.</li>
+<li>Calculate the t-score.</li>
+<li>Identify the “degrees of freedom”.</li>
+<li>Find the p-value using stats.t.cdf</li>
+<li>Conclude.</li>
+</ol>
+</section>
+<section id="example-3-beths-baking" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="example-3-beths-baking"><span class="header-section-number">6</span> Example 3 – Beth’s baking</h2>
+<p>Beth is not a very precise baker. She measures out three “cups” of flour, but they are 120g, 135g, and 145g in mass.</p>
+<ol type="1">
+<li>Is it safe to say that on average, Beth’s “cups” of flour will weigh more than 120g? Perform the hypothesis test.</li>
+</ol>
+<div id="aa29314d" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recommended data input </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series([<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">145</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>What if the data were <strong>150g</strong>, 135g, 145g instead?</li>
+<li>Is it possible to make statistically valid inferences from a sample size of only three?</li>
+</ol>
 
 
 </section>

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Probability and Statistics">
+<meta name="description" content="Hypothesis testing with two means">
 
-<title>Math 125 – Teaching</title>
+<title>25. Hypothesis Testing – Two Means – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +104,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -84,8 +148,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link active" data-scroll-target="#syllabus"><span class="header-section-number">1</span> Syllabus:</a></li>
-  <li><a href="#lectures-handouts" id="toc-lectures-handouts" class="nav-link" data-scroll-target="#lectures-handouts"><span class="header-section-number">2</span> Lectures &amp; Handouts</a></li>
+  <li><a href="#two-sample-test-for-mean-overview" id="toc-two-sample-test-for-mean-overview" class="nav-link active" data-scroll-target="#two-sample-test-for-mean-overview"><span class="header-section-number">1</span> Two-sample test for mean, overview</a>
+  <ul class="collapse">
+  <li><a href="#welchs-unequal-variance-t-test" id="toc-welchs-unequal-variance-t-test" class="nav-link" data-scroll-target="#welchs-unequal-variance-t-test"><span class="header-section-number">1.1</span> (Welch’s unequal-variance t-test))</a></li>
+  </ul></li>
+  <li><a href="#the-t-distribution-for-a-two-sample-test." id="toc-the-t-distribution-for-a-two-sample-test." class="nav-link" data-scroll-target="#the-t-distribution-for-a-two-sample-test."><span class="header-section-number">2</span> The T distribution for a two-sample test.</a></li>
+  <li><a href="#example-1-learning-theory" id="toc-example-1-learning-theory" class="nav-link" data-scroll-target="#example-1-learning-theory"><span class="header-section-number">3</span> Example 1 – Learning theory</a></li>
+  <li><a href="#example-2-blood-test" id="toc-example-2-blood-test" class="nav-link" data-scroll-target="#example-2-blood-test"><span class="header-section-number">4</span> Example 2 – Blood test</a></li>
+  <li><a href="#example-3-a-long-commute" id="toc-example-3-a-long-commute" class="nav-link" data-scroll-target="#example-3-a-long-commute"><span class="header-section-number">5</span> Example 3 – A long commute</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4"><span class="header-section-number">6</span> Example 4</a>
+  <ul class="collapse">
+  <li><a href="#an-age-gap-foreshadowing-the-paired-t-test" id="toc-an-age-gap-foreshadowing-the-paired-t-test" class="nav-link" data-scroll-target="#an-age-gap-foreshadowing-the-paired-t-test"><span class="header-section-number">6.1</span> (An age gap, foreshadowing the paired t-test)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -94,12 +168,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 125</h1>
+<h1 class="title">25. Hypothesis Testing – Two Means</h1>
 </div>
 
 <div>
   <div class="description">
-    Probability and Statistics
+    Hypothesis testing with two means
   </div>
 </div>
 
@@ -116,125 +190,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="syllabus" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="syllabus"><span class="header-section-number">1</span> Syllabus:</h2>
-<p><a href="syllabus.html">Math 125 Syllabus</a></p>
+<section id="two-sample-test-for-mean-overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="two-sample-test-for-mean-overview"><span class="header-section-number">1</span> Two-sample test for mean, overview</h2>
+<section id="welchs-unequal-variance-t-test" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="welchs-unequal-variance-t-test"><span class="header-section-number">1.1</span> (Welch’s unequal-variance t-test))</h3>
+<p>The <strong>parameters of interest</strong> are <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span>, means of two populations.</p>
+<p>The <strong>statistics of interest</strong> are <span class="math inline">\(\bar{x_1}\)</span> and <span class="math inline">\(\bar{x_2}\)</span>, sample means.</p>
+<p>The <strong>alternative hypothesis</strong> is <span class="math inline">\(\mu_2 &gt; \mu_1\)</span> or <span class="math inline">\(\mu_2 \neq \mu_1\)</span>.</p>
+<p>The <strong>null hypothesis</strong> is <span class="math inline">\(\mu_1=\mu_2\)</span></p>
+<p>The <strong>standard errors</strong> are</p>
+<p><span class="math display">\[SE_1 = \frac{s_1}{\sqrt{n_1}}, \enspace\enspace SE_2 = \frac{s_2}{\sqrt{n_2}}, \text{ and } \enspace SE = \sqrt{SE_1^2 + SE_2^2}\]</span></p>
+<p>The <strong>test statistic</strong> is <span class="math inline">\(t = \frac{(\bar{x_1}- \bar{x_2})-0}{SE}\)</span></p>
 </section>
-<section id="lectures-handouts" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="lectures-handouts"><span class="header-section-number">2</span> Lectures &amp; Handouts</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Topic</th>
-<th style="text-align: center;">Slides (Interactive)</th>
-<th style="text-align: center;">Handout (Printable)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>0:</strong> Welcome &amp; Intro</td>
-<td style="text-align: center;"><a href="slides/0_welcome.html">Slides <span class="visually-hidden">for Welcome</span></a></td>
-<td style="text-align: center;"><a href="slides/0_welcome-handout.html">Handout <span class="visually-hidden">for Welcome</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>1:</strong> The Shape of Data</td>
-<td style="text-align: center;"><a href="slides/1_the_shape_of_data.html">Slides <span class="visually-hidden">for Shape of Data</span></a></td>
-<td style="text-align: center;"><a href="slides/1_the_shape_of_data-handout.html">Handout <span class="visually-hidden">for Shape of Data</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>2:</strong> Association &amp; Correlation</td>
-<td style="text-align: center;"><a href="slides/2_association_and_correlation.html">Slides <span class="visually-hidden">for Association</span></a></td>
-<td style="text-align: center;"><a href="slides/2_association_and_correlation-handout.html">Handout <span class="visually-hidden">for Association</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>3:</strong> Correlation &amp; Causation</td>
-<td style="text-align: center;"><a href="slides/3_correlation_is_not_causation.html">Slides <span class="visually-hidden">for Correlation</span></a></td>
-<td style="text-align: center;"><a href="slides/3_correlation_is_not_causation-handout.html">Handout <span class="visually-hidden">for Correlation</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>4-5:</strong> Sampling &amp; Bias</td>
-<td style="text-align: center;"><a href="slides/4-5_samping_and_sample_bias.html">Slides <span class="visually-hidden">for Sampling</span></a></td>
-<td style="text-align: center;"><a href="slides/4-5_samping_and_sample_bias-handout.html">Handout <span class="visually-hidden">for Sampling</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>6:</strong> Controlled Experiments</td>
-<td style="text-align: center;"><a href="slides/6_controlled_experiments.html">Slides <span class="visually-hidden">for Experiments</span></a></td>
-<td style="text-align: center;"><a href="slides/6_controlled_experiments-handout.html">Handout <span class="visually-hidden">for Experiments</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>7:</strong> Histograms &amp; Countplots</td>
-<td style="text-align: center;"><a href="slides/7_dataviz_histogram_and_countplot.html">Slides <span class="visually-hidden">for Histograms</span></a></td>
-<td style="text-align: center;"><a href="slides/7_dataviz_histogram_and_countplot-handout.html">Handout <span class="visually-hidden">for Histograms</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>8:</strong> Boxplots &amp; Scatterplots</td>
-<td style="text-align: center;"><a href="slides/8_dataviz_boxplot_and_scatterplot.html">Slides <span class="visually-hidden">for Boxplots</span></a></td>
-<td style="text-align: center;"><a href="slides/8_dataviz_boxplot_and_scatterplot-handout.html">Handout <span class="visually-hidden">for Boxplots</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>9-10:</strong> Mean &amp; Variance</td>
-<td style="text-align: center;"><a href="slides/9_10_mean_variance_standard_deviation.html">Slides <span class="visually-hidden">for Mean/Variance</span></a></td>
-<td style="text-align: center;"><a href="slides/9_10_mean_variance_standard_deviation-handout.html">Handout <span class="visually-hidden">for Mean/Variance</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>11:</strong> Quantile Statistics</td>
-<td style="text-align: center;"><a href="slides/11_quantile_statistics.html">Slides <span class="visually-hidden">for Quantiles</span></a></td>
-<td style="text-align: center;"><a href="slides/11_quantile_statistics-handout.html">Handout <span class="visually-hidden">for Quantiles</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>12-13:</strong> Probability &amp; Counting</td>
-<td style="text-align: center;"><a href="slides/12_13_probability_and_counting.html">Slides <span class="visually-hidden">for Prob/Counting</span></a></td>
-<td style="text-align: center;"><a href="slides/12_13_probability_and_counting-handout.html">Handout <span class="visually-hidden">for Prob/Counting</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>14-15:</strong> Probability Laws</td>
-<td style="text-align: center;"><a href="slides/14_15_probability_laws.html">Slides <span class="visually-hidden">for Prob Laws</span></a></td>
-<td style="text-align: center;"><a href="slides/14_15_probability_laws-handout.html">Handout <span class="visually-hidden">for Prob Laws</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>16-17:</strong> Conditional Probability</td>
-<td style="text-align: center;"><a href="slides/16_17_conditional_probability.html">Slides <span class="visually-hidden">for Conditional Prob</span></a></td>
-<td style="text-align: center;"><a href="slides/16_17_conditional_probability-handout.html">Handout <span class="visually-hidden">for Conditional Prob</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>18-19:</strong> Normal Distribution</td>
-<td style="text-align: center;"><a href="slides/18_19_the_normal_distribution.html">Slides <span class="visually-hidden">for Normal Dist</span></a></td>
-<td style="text-align: center;"><a href="slides/18_19_the_normal_distribution-handout.html">Handout <span class="visually-hidden">for Normal Dist</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>20:</strong> Standard Error &amp; Confidence</td>
-<td style="text-align: center;"><a href="slides/20_Standard_Error_and_Confidence.html">Slides <span class="visually-hidden">for Standard Error</span></a></td>
-<td style="text-align: center;"><a href="slides/20_Standard_Error_and_Confidence-handout.html">Handout <span class="visually-hidden">for Normal Dist</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>21:</strong> Introduction to Hypotheses</td>
-<td style="text-align: center;"><a href="slides/21_introduction_to_hypotheses.html">Slides <span class="visually-hidden">for Intro Hypotheses</span></a></td>
-<td style="text-align: center;"><a href="slides/21_introduction_to_hypotheses-handout.html">Handout <span class="visually-hidden">for Intro Hypotheses</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>22:</strong> Hypotheses testing - one proportion</td>
-<td style="text-align: center;"><a href="slides/22_hypothesis_testing_one_proportion.html">Slides <span class="visually-hidden">for one proportion</span></a></td>
-<td style="text-align: center;"><a href="slides/22_hypothesis_testing_one_proportion-handout.html">Handout <span class="visually-hidden">for one proportion</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>23:</strong> Hypotheses testing - two proportions</td>
-<td style="text-align: center;"><a href="slides/23_hypothesis_testing_two_proportions.html">Slides <span class="visually-hidden">for two proportions</span></a></td>
-<td style="text-align: center;"><a href="slides/23_hypothesis_testing_two_proportions-handout.html">Handout <span class="visually-hidden">for two proportions</span></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>24:</strong> Hypotheses testing - one average</td>
-<td style="text-align: center;"><a href="slides/24_hypothesis_testing_one_average.html">Slides <span class="visually-hidden">for one average</span></a></td>
-<td style="text-align: center;"><a href="slides/24_hypothesis_testing_one_average-handout.html">Handout <span class="visually-hidden">for one average</span></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>25:</strong> Hypotheses testing - two averages</td>
-<td style="text-align: center;"><a href="slides/25_hypothesis_testing_two_averages.html">Slides <span class="visually-hidden">for two averages</span></a></td>
-<td style="text-align: center;"><a href="slides/25_hypothesis_testing_two_averages-handout.html">Handout <span class="visually-hidden">for two averages</span></a></td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="the-t-distribution-for-a-two-sample-test." class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-t-distribution-for-a-two-sample-test."><span class="header-section-number">2</span> The T distribution for a two-sample test.</h2>
+<ol type="1">
+<li>As before, a <span class="math inline">\(t\)</span>-score must be compared to a <span class="math inline">\(t\)</span>-distribution with appropriate degree-of-freedom.</li>
+<li>We use the <em>lesser</em> of <span class="math inline">\(n_1-1\)</span> and <span class="math inline">\(n_2-1\)</span> for the degrees of freedom, or the much more complicated Welch-Satterthwaite equation:</li>
+</ol>
+<p><span class="math display">\[df = \frac{SE^4}{\frac{SE_1^4}{n_1-1} + \frac{SE_2^4}{n_2-1} }\]</span></p>
+</section>
+<section id="example-1-learning-theory" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="example-1-learning-theory"><span class="header-section-number">3</span> Example 1 – Learning theory</h2>
+<p>A psychologist wants to test memory and distractedness. In condition A, 24 participants can memorize <span class="math inline">\(12\)</span> words on average (stdev = <span class="math inline">\(7\)</span>), but in condition <span class="math inline">\(B\)</span>, 21 participants can memorize <span class="math inline">\(8\)</span> words on average (stdev = <span class="math inline">\(6\)</span>). Is there statistically significant evidence that condition <span class="math inline">\(A\)</span> is better?</p>
+<ol type="1">
+<li>Find all three standard errors.</li>
+<li>Find the t-score.</li>
+<li>Determine the degrees of freedom.</li>
+<li>Find a p-value for this test.</li>
+<li>Conclude.</li>
+</ol>
+</section>
+<section id="example-2-blood-test" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="example-2-blood-test"><span class="header-section-number">4</span> Example 2 – Blood test</h2>
+<p>Older mice are given blood transfusions, receiving the blood of older or younger mice. Data is here: https://www.lock5stat.com/datasets3e/YoungBlood.csv. Will younger blood increase their activity level?</p>
+<ol type="1">
+<li>Fetch, read, regroup, and describe the data.</li>
+</ol>
+<div id="311e4cd5" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'YoungBlood.csv'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'Plasma'</span>).describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>Find three standard errors.</li>
+<li>Find the t-score.</li>
+<li>Determine the degrees of freedom.</li>
+<li>Find a p-value for this test.</li>
+<li>Conclude.</li>
+</ol>
+</section>
+<section id="example-3-a-long-commute" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="example-3-a-long-commute"><span class="header-section-number">5</span> Example 3 – A long commute</h2>
+<p>In the acs12 dataset (on openintro), do the men have, on average, a longer time_to_work than the women? Is the difference statistically significant?</p>
+<p>You will need a regrouping/describing trick:</p>
+<div id="e041756c" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'gender'</span>)[<span class="st">'time_to_work'</span>].describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="example-4" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="example-4"><span class="header-section-number">6</span> Example 4</h2>
+<section id="an-age-gap-foreshadowing-the-paired-t-test" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="an-age-gap-foreshadowing-the-paired-t-test"><span class="header-section-number">6.1</span> (An age gap, foreshadowing the paired t-test)</h3>
+<p>Are husbands older than their wives? (Using heterosexual marriage age data from Locke.) This is paired data, which may suggest a new idea. For now, perform the usual two-sample t-test.</p>
+<p>http://www.lock5stat.com/datasets3e/MarriageAges.csv</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -212,6 +212,15 @@
 <h2>Preparatory work</h2>
 <p>Read: Reread Section 6.1</p>
 </section>
+<section id="one-sample-test-for-proportion-overview" class="slide level2">
+<h2>One-sample test for proportion, overview</h2>
+<p>The <strong>parameter of interest</strong> is <span class="math inline">\(p\)</span>, a population proportion.</p>
+<p>The <strong>statistic</strong> is <span class="math inline">\(\hat{p}\)</span>, a sample proportion.</p>
+<p>The <strong>Alternative hypothesis</strong> is <span class="math inline">\(p &gt; k\)</span> or <span class="math inline">\(p &lt; k\)</span> or <span class="math inline">\(p \neq k\)</span>.</p>
+<p>The <strong>Null hypothesis</strong> is <span class="math inline">\(p=k\)</span></p>
+<p>The <strong>Standard Error</strong> is <span class="math inline">\(SE = \sqrt{\frac{k(1-k)}{n}}\)</span>.</p>
+<p>The <strong>test statistic</strong> is <span class="math inline">\(Z = \frac{\hat{p}-k}{SE}\)</span></p>
+</section>
 <section id="a-hot-day-in-phoenix" class="slide level2 activity">
 <h2>A hot day in Phoenix</h2>
 <p>Over the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test whether the probability of a hot day now exceeds 12/365.</p>
@@ -228,7 +237,7 @@
 </section>
 <section id="a-hot-day-in-phoenix-solution" class="slide level2">
 <h2>A hot day in Phoenix (solution)</h2>
-<div id="1693fa7c" class="cell" data-execution_count="1">
+<div id="0f80ad91" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Square root function needs import</span></span>
 <span id="cb1-2"><a></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
 <span id="cb1-3"><a></a></span>
@@ -245,11 +254,11 @@
 <span id="cb1-14"><a></a></span>
 <span id="cb1-15"><a></a>Z <span class="op">=</span> (p2<span class="op">-</span>p)<span class="op">/</span>SE <span class="co"># (observed - predicted) / SE</span></span>
 <span id="cb1-16"><a></a></span>
-<span id="cb1-17"><a></a><span class="co"># Import "normal distribution" tool</span></span>
-<span id="cb1-18"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb1-17"><a></a><span class="co"># Import stats for "normal distribution" tool</span></span>
+<span id="cb1-18"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-19"><a></a></span>
 <span id="cb1-20"><a></a><span class="co"># Find p-value as (left) tail area on normal distribution</span></span>
-<span id="cb1-21"><a></a>pvalue <span class="op">=</span> norm.cdf(<span class="op">-</span>Z)</span>
+<span id="cb1-21"><a></a>pvalue <span class="op">=</span> stats.norm.cdf(<span class="op">-</span>Z)</span>
 <span id="cb1-22"><a></a></span>
 <span id="cb1-23"><a></a><span class="bu">print</span>(Z)</span>
 <span id="cb1-24"><a></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

@@ -1,6 +1,24 @@
 ## Preparatory work
 Read: Reread Section 6.2
 
+## Overview
+
+The **parameters of interest** are $p_1$ and $p_2$, population proportions. 
+
+The **statistics of interest** are $\hat{p_1}$ and $\hat{p_2}$, sample proportions. 
+
+The **alternative hypothesis** is usually $p_1 < p_2$ or $p_1 \neq p_2$. 
+
+The **null hypothesis** is $p_1=p_2$ (or $p_2-p_1 =0$)
+
+The **pooled proportion** is $\hat{p} = \frac{X_1+X_2}{n_1+n_2}$
+
+The **standard errors** are 
+
+$$SE_1 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_1}} \text{ and } SE_2 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_2}} \text{ and } SE = \sqrt{SE_1^2 + SE_2^2}$$
+
+The **test statistic** is $Z = \frac{(\hat{p_1} - \hat{p_2})-0}{SE}$
+
 ## Bias assessment
 Managers recommend for promotion 14/24 women, but 21/24 men. Is this statistically significant evidence of gender bias?
 
@@ -18,9 +36,9 @@ promotion rate if the managers were fair.
 ```{python}
 #| eval: true
 #| echo: true
-#Import sqrt and norm functions for later
+#Import sqrt and stats for later
 from math import sqrt 
-from scipy.stats import norm
+from scipy import stats
 
 #Pooled proportion and standard errors
 p = 35/48  #all candidates
@@ -31,7 +49,7 @@ SE = sqrt(SE1**2 + SE2**2) #SE of the difference
 
 # Z-score and p-value
 Z = (21/24 - 14/24) / SE 
-pvalue = norm.cdf(-Z)
+pvalue = stats.norm.cdf(-Z)
 
 print(Z)
 print(pvalue)

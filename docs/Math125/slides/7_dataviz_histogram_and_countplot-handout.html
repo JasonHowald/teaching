@@ -226,7 +226,7 @@ window.Quarto = {
 </section>
 <section id="bar-charts-example" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="bar-charts-example"><span class="header-section-number">5</span> Bar Charts – example</h2>
-<div id="7b6a6a84" class="cell" data-execution_count="1">
+<div id="a91d7652" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"starbucks.csv"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'type'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -282,7 +282,7 @@ Figure&nbsp;1: Bar Chart for Starbucks food item types
 </section>
 <section id="histograms-example" class="level2" data-number="9">
 <h2 data-number="9" class="anchored" data-anchor-id="histograms-example"><span class="header-section-number">9</span> Histograms – example</h2>
-<div id="26efafb0" class="cell" data-execution_count="3">
+<div id="9465f306" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"starbucks.csv"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'calories'</span>, bins<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -359,7 +359,7 @@ Figure&nbsp;2: Histogram for Starbucks food item Calorie content
 <div class="column" style="width:50%;">
 <section id="unimodal" class="level3" data-number="13.1">
 <h3 data-number="13.1" class="anchored" data-anchor-id="unimodal"><span class="header-section-number">13.1</span> Unimodal</h3>
-<div id="2c434d3b" class="cell" data-execution_count="5">
+<div id="97409322" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'poverty'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-poverty" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="6">
@@ -392,7 +392,7 @@ Figure&nbsp;3: Histogram – counties’ poverty rates
 </div><div class="column" style="width:50%;">
 <section id="bimodal" class="level3" data-number="13.2">
 <h3 data-number="13.2" class="anchored" data-anchor-id="bimodal"><span class="header-section-number">13.2</span> Bimodal</h3>
-<div id="4587868f" class="cell" data-execution_count="7">
+<div id="cae1dcd1" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'SLG'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-mlb" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="8">
@@ -432,7 +432,7 @@ Figure&nbsp;4: Histogram – MLB players’ SLG
 <div class="column" style="width:50%;">
 <section id="skewed-left" class="level3" data-number="14.1">
 <h3 data-number="14.1" class="anchored" data-anchor-id="skewed-left"><span class="header-section-number">14.1</span> Skewed Left</h3>
-<div id="61eddb6d" class="cell" data-execution_count="9">
+<div id="dbdb3bea" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span> <span class="st">'homeownership'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-skewed-left" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="10">
@@ -465,7 +465,7 @@ Figure&nbsp;5: Histogram – counties’ homeownership rates
 </div><div class="column" style="width:50%;">
 <section id="skewed-right" class="level3" data-number="14.2">
 <h3 data-number="14.2" class="anchored" data-anchor-id="skewed-right"><span class="header-section-number">14.2</span> Skewed Right</h3>
-<div id="c20d7751" class="cell" data-execution_count="11">
+<div id="6611bd11" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'salary'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-histogram-skewed-right" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="12">
@@ -551,7 +551,7 @@ Figure&nbsp;7: Histogram – counties’ homeownership rates
 <div id="fig-histogram-gamma" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The y axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately 3.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-histogram-gamma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="7_dataviz_histogram_and_countplot-handout_files/figure-html/fig-histogram-gamma-output-1.png" alt="A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The y axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately 3." width="671" height="523" class="figure-img">
+<img src="7_dataviz_histogram_and_countplot-handout_files/figure-html/fig-histogram-gamma-output-1.png" alt="A histogram is shown. The x-axis is labeled 'Value' and goes from 0 to about 10. The y axis is labeled 'frequency' and goes from 0 to about 120. The graph is unimodal, slightly skewed right, and has a mean of approximately 3." width="667" height="523" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-gamma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Gamma(3,1) random variable.

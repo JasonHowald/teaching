@@ -1,6 +1,20 @@
 ## Preparatory work
 Read: Reread Section 6.1
 
+## One-sample test for proportion, overview
+
+The **parameter of interest** is $p$, a population proportion. 
+
+The **statistic** is $\hat{p}$, a sample proportion. 
+
+The **Alternative hypothesis** is $p > k$ or $p < k$ or $p \neq k$. 
+
+The **Null hypothesis** is $p=k$
+
+The **Standard Error** is $SE = \sqrt{\frac{k(1-k)}{n}}$. 
+
+The **test statistic** is $Z = \frac{\hat{p}-k}{SE}$
+
 ## A hot day in Phoenix {.activity}
 
 Over the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test
@@ -39,11 +53,11 @@ SE = sqrt(p*(1-p)/n) #Canned formula, using null value.
 
 Z = (p2-p)/SE # (observed - predicted) / SE
 
-# Import "normal distribution" tool
-from scipy.stats import norm
+# Import stats for "normal distribution" tool
+from scipy import stats
 
 # Find p-value as (left) tail area on normal distribution
-pvalue = norm.cdf(-Z)
+pvalue = stats.norm.cdf(-Z)
 
 print(Z)
 print(pvalue)
@@ -51,7 +65,6 @@ print(pvalue)
 
 The p-value is miniscule. The effect is not due to chance. The change is 
 statistically significant. 
-
 
 ## Represent {.activity}
 

@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>Teaching – 23. Hypothesis Testing – Two Proportions</title>
+  <title>Teaching – 24. Hypothesis Testing – One Mean</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -202,174 +202,95 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">23. Hypothesis Testing – Two Proportions</h1>
+  <h1 class="title">24. Hypothesis Testing – One Mean</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="preparatory-work" class="slide level2">
-<h2>Preparatory work</h2>
-<p>Read: Reread Section 6.2</p>
+<section id="one-sample-test-for-mean-overview" class="slide level2">
+<h2>One-sample test for mean, overview</h2>
+<p>The <strong>parameter of interest</strong> is <span class="math inline">\(\mu\)</span>, a population mean.</p>
+<p>The <strong>statistic</strong> is <span class="math inline">\(\bar{x}\)</span>, a sample mean.</p>
+<p>The <strong>alternative hypothesis</strong> is <span class="math inline">\(\mu &gt; k\)</span> or <span class="math inline">\(\mu &lt; k\)</span> or <span class="math inline">\(\mu \neq k\)</span>.</p>
+<p>The <strong>null hypothesis</strong> is <span class="math inline">\(\mu=k\)</span></p>
+<p>The <strong>standard error</strong> is <span class="math inline">\(SE = \frac{s}{\sqrt{n}}\)</span></p>
+<p>The <strong>test statistic</strong> is <span class="math inline">\(t = \frac{\bar{x}-k}{SE}\)</span></p>
 </section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
-<p>The <strong>parameters of interest</strong> are <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>, population proportions.</p>
-<p>The <strong>statistics of interest</strong> are <span class="math inline">\(\hat{p_1}\)</span> and <span class="math inline">\(\hat{p_2}\)</span>, sample proportions.</p>
-<p>The <strong>alternative hypothesis</strong> is usually <span class="math inline">\(p_1 &lt; p_2\)</span> or <span class="math inline">\(p_1 \neq p_2\)</span>.</p>
-<p>The <strong>null hypothesis</strong> is <span class="math inline">\(p_1=p_2\)</span> (or <span class="math inline">\(p_2-p_1 =0\)</span>)</p>
-<p>The <strong>pooled proportion</strong> is <span class="math inline">\(\hat{p} = \frac{X_1+X_2}{n_1+n_2}\)</span></p>
-<p>The <strong>standard errors</strong> are</p>
-<p><span class="math display">\[SE_1 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_1}} \text{ and } SE_2 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_2}} \text{ and } SE = \sqrt{SE_1^2 + SE_2^2}\]</span></p>
-<p>The <strong>test statistic</strong> is <span class="math inline">\(Z = \frac{(\hat{p_1} - \hat{p_2})-0}{SE}\)</span></p>
-</section>
-<section id="bias-assessment" class="slide level2">
-<h2>Bias assessment</h2>
-<p>Managers recommend for promotion 14/24 women, but 21/24 men. Is this statistically significant evidence of gender bias?</p>
+<section id="the-t-test-an-added-wrinkle" class="slide level2">
+<h2>The T-test, an added wrinkle</h2>
 <ol type="1">
-<li>Is the data consistent with the hypothesis of bias? If so, continue.</li>
-<li>Find the <strong>pooled proportion</strong>. This is our best guess of the promotion rate if the managers were fair.</li>
-<li>Find the standard error, in three steps.
-<ul>
-<li>SE for the men</li>
-<li>SE for the women</li>
-<li>SE for the difference.</li>
-</ul></li>
-<li>Find the Z-score for the difference of proportions</li>
-<li>Find the p-value using the normal distribution.</li>
+<li class="fragment">The standard error in this case “should be” <span class="math inline">\(SE = \frac{\sigma}{\sqrt{n}}\)</span>, but we almost never know <span class="math inline">\(\sigma\)</span>. The sample stdev <span class="math inline">\(s\)</span> is what we know, and it’s close.</li>
+<li class="fragment">The <span class="math inline">\(Z\)</span>-score <span class="math inline">\(Z = \frac{\bar{x}-k}{\sigma / \sqrt{n}}\)</span> would be a normally distributed estimation error but our substitute <span class="math inline">\(t = \frac{\bar{x}-k}{s / \sqrt{n}}\)</span> is not, because the denominator is subtly data-dependent.</li>
+<li class="fragment">We shouldn’t compare a t-score to the normal distribution. We must use a “modified normal” distribution called a t-distribution, which accounts for the problem <span class="math inline">\(s \neq \sigma\)</span>.</li>
+<li class="fragment">The “fix” depends on sample size. The <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(n-1\)</span> “degrees of freedom” is the right one.</li>
 </ol>
 </section>
-<section id="bias-assessment-solutions" class="slide level2">
-<h2>Bias assessment – solutions</h2>
-<div id="1b23068d" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co">#Import sqrt and stats for later</span></span>
+<section id="identifying-a-t-test." class="slide level2">
+<h2>Identifying a t-test.</h2>
+<p>A restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?</p>
+<ol type="1">
+<li>A mean (not a proportion) is compared.</li>
+<li>There is a hypothesis to check comparing the mean to baseline or another mean.</li>
+<li>We have a standard deviation from the dataset but no population standard deviation.</li>
+</ol>
+</section>
+<section id="example-1-a-fishy-discrepancy" class="slide level2">
+<h2>Example 1 – a fishy discrepancy</h2>
+<p>A restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?</p>
+<div id="466c3968" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Square root function needs import</span></span>
 <span id="cb1-2"><a></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
-<span id="cb1-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="co">#Pooled proportion and standard errors</span></span>
-<span id="cb1-6"><a></a>p <span class="op">=</span> <span class="dv">35</span><span class="op">/</span><span class="dv">48</span>  <span class="co">#all candidates</span></span>
-<span id="cb1-7"><a></a>n <span class="op">=</span> <span class="dv">24</span> <span class="co">#number in each category</span></span>
-<span id="cb1-8"><a></a>SE1 <span class="op">=</span> sqrt(p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>n) <span class="co">#For the women</span></span>
-<span id="cb1-9"><a></a>SE2 <span class="op">=</span> sqrt(p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>n) <span class="co">#For the men</span></span>
-<span id="cb1-10"><a></a>SE <span class="op">=</span> sqrt(SE1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> SE2<span class="op">**</span><span class="dv">2</span>) <span class="co">#SE of the difference</span></span>
-<span id="cb1-11"><a></a></span>
-<span id="cb1-12"><a></a><span class="co"># Z-score and p-value</span></span>
-<span id="cb1-13"><a></a>Z <span class="op">=</span> (<span class="dv">21</span><span class="op">/</span><span class="dv">24</span> <span class="op">-</span> <span class="dv">14</span><span class="op">/</span><span class="dv">24</span>) <span class="op">/</span> SE </span>
-<span id="cb1-14"><a></a>pvalue <span class="op">=</span> stats.norm.cdf(<span class="op">-</span>Z)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co">#Record givens</span></span>
+<span id="cb1-5"><a></a>k <span class="op">=</span> <span class="dv">600</span>  <span class="co"># Null hypothesis theory</span></span>
+<span id="cb1-6"><a></a>x <span class="op">=</span> <span class="dv">580</span>  <span class="co"># Observed mean</span></span>
+<span id="cb1-7"><a></a>n <span class="op">=</span> <span class="dv">100</span>  <span class="co"># sample size</span></span>
+<span id="cb1-8"><a></a>s <span class="op">=</span> <span class="dv">30</span>   <span class="co"># SAMPLE standard deviation.</span></span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a>SE <span class="op">=</span> s <span class="op">/</span> sqrt(n) </span>
+<span id="cb1-11"><a></a>t <span class="op">=</span> (x <span class="op">-</span> k)<span class="op">/</span>SE <span class="co"># (observed - predicted) / SE</span></span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a><span class="co"># Import stats for "t distribution" tool, not normal!</span></span>
+<span id="cb1-14"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-15"><a></a></span>
-<span id="cb1-16"><a></a><span class="bu">print</span>(Z)</span>
-<span id="cb1-17"><a></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-16"><a></a><span class="co"># Find p-value as (left) tail area on t distribution</span></span>
+<span id="cb1-17"><a></a>pvalue <span class="op">=</span> stats.t.cdf(t, <span class="dv">99</span>) </span>
+<span id="cb1-18"><a></a><span class="co"># Note t was negative so I didn't negate it.</span></span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a><span class="bu">print</span>(t)</span>
+<span id="cb1-21"><a></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2.2735942402352203
-0.011495197046232447</code></pre>
+<pre><code>-6.666666666666667
+7.50614450498516e-10</code></pre>
 </div>
 </div>
 </section>
-<section id="risk-reduction" class="slide level2">
-<h2>Risk Reduction</h2>
-<p>Treatment X intends to reduce risk of death from gunshot wound. Is the data below statistically significant evidence?</p>
-<div class="columns">
-<div class="column" style="width:55%;">
-<table>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-With X
-</th>
-<th>
-No X
-</th>
-<th>
-Total
-</th>
-</tr>
-</thead>
-<tbody><tr>
-<th scope="row">
-Death
-</th>
-<td>
-120
-</td>
-<td>
-200
-</td>
-<td>
-320
-</td>
-</tr>
-<tr>
-<th scope="row">
-Survival
-</th>
-<td>
-680
-</td>
-<td>
-800
-</td>
-<td>
-1480
-</td>
-</tr>
-<tr>
-<th scope="row">
-Total
-</th>
-<td>
-800
-</td>
-<td>
-1000
-</td>
-<td>
-1800
-</td>
-</tr>
-</tbody></table>
-</div><div class="column" style="width:45%;">
+<section id="example-2---deep-breath" class="slide level2">
+<h2>Example 2 - deep breath</h2>
+<p>An intervention reduced patients’ blood pressure by, on average, 5 units, with a standard deviation of 16 units. Only ten people participated in the study. Is it safe to conclude that the treatment is effective at lowering blood pressure?</p>
 <ol type="1">
-<li>Find the proportions…
-<ul>
-<li>within each group.</li>
-<li>as a pooled proportion.</li>
-</ul></li>
-<li>Calculate standard error…
-<ul>
-<li>within each group.</li>
-<li>of the difference.</li>
-</ul></li>
-<li>Find the Z-score</li>
-<li>Find the p-value.</li>
-<li>Is it statistically significant?</li>
+<li>Calculate the standard error.</li>
+<li>Calculate the t-score.</li>
+<li>Identify the “degrees of freedom”.</li>
+<li>Find the p-value using stats.t.cdf</li>
+<li>Conclude.</li>
 </ol>
-</div></div>
 </section>
-<section id="premature-births" class="slide level2">
-<h2>Premature births</h2>
+<section id="example-3-beths-baking" class="slide level2">
+<h2>Example 3 – Beth’s baking</h2>
+<p>Beth is not a very precise baker. She measures out three “cups” of flour, but they are 120g, 135g, and 145g in mass.</p>
 <ol type="1">
-<li>Load the “births14” data from openintro.</li>
-<li>Make a crosstab of prematurity vs.&nbsp;smoking habit:</li>
+<li>Is it safe to say that on average, Beth’s “cups” of flour will weigh more than 120g? Perform the hypothesis test.</li>
 </ol>
-<div id="34010262" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>pd.crosstab(df.premie, df.habit, margins<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="94c78e79" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Recommended data input </span></span>
+<span id="cb3-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a></a>x <span class="op">=</span> pd.Series([<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">145</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ol start="3" type="1">
-<li>Perform a hypothesis test comparing the proportion of premature births among smokers and among nonsmokers. Does it give statistically significant evidence that smoking increases the probability of premature birth?</li>
-</ol>
-</section>
-<section id="planning-ahead" class="slide level2">
-<h2>Planning ahead</h2>
-<p>You believe Method A succeeds 70% of the time, whereas Method B succeeds 80% of the time. Others aren’t convinced. How many trials of each method must you do to prove (with statistical significance) that method B is better?</p>
-<ol type="1">
-<li>In a Jupyter notebook, guess a sample size <span class="math inline">\(n=40\)</span>.</li>
-<li>Set the values of each proportion and the pooled proportion.</li>
-<li>Calculate all three standard errors.</li>
-<li>Find the Z-score.</li>
-<li>Find the p-value for the difference of proportions.</li>
-<li>Adjust <span class="math inline">\(n\)</span> and recompute the p-value shows statistical significance.</li>
+<ol start="2" type="1">
+<li>What if the data were <strong>150g</strong>, 135g, 145g instead?</li>
+<li>Is it possible to make statistically valid inferences from a sample size of only three?</li>
 </ol>
 
 

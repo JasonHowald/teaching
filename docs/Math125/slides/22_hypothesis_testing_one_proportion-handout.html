@@ -149,17 +149,18 @@ window.Quarto = {
    
   <ul>
   <li><a href="#preparatory-work" id="toc-preparatory-work" class="nav-link active" data-scroll-target="#preparatory-work"><span class="header-section-number">1</span> Preparatory work</a></li>
-  <li><a href="#a-hot-day-in-phoenix" id="toc-a-hot-day-in-phoenix" class="nav-link" data-scroll-target="#a-hot-day-in-phoenix"><span class="header-section-number">2</span> A hot day in Phoenix</a></li>
-  <li><a href="#a-hot-day-in-phoenix-solution" id="toc-a-hot-day-in-phoenix-solution" class="nav-link" data-scroll-target="#a-hot-day-in-phoenix-solution"><span class="header-section-number">3</span> A hot day in Phoenix (solution)</a></li>
-  <li><a href="#represent" id="toc-represent" class="nav-link" data-scroll-target="#represent"><span class="header-section-number">4</span> Represent</a></li>
-  <li><a href="#a-biased-coin" id="toc-a-biased-coin" class="nav-link" data-scroll-target="#a-biased-coin"><span class="header-section-number">5</span> A biased coin 🪙</a></li>
-  <li><a href="#a-lucky-streak" id="toc-a-lucky-streak" class="nav-link" data-scroll-target="#a-lucky-streak"><span class="header-section-number">6</span> A lucky streak</a></li>
-  <li><a href="#z-scores-vs-z-scores" id="toc-z-scores-vs-z-scores" class="nav-link" data-scroll-target="#z-scores-vs-z-scores"><span class="header-section-number">7</span> Z scores vs Z scores</a></li>
-  <li><a href="#threshold-of-significance" id="toc-threshold-of-significance" class="nav-link" data-scroll-target="#threshold-of-significance"><span class="header-section-number">8</span> Threshold of Significance</a>
+  <li><a href="#one-sample-test-for-proportion-overview" id="toc-one-sample-test-for-proportion-overview" class="nav-link" data-scroll-target="#one-sample-test-for-proportion-overview"><span class="header-section-number">2</span> One-sample test for proportion, overview</a></li>
+  <li><a href="#a-hot-day-in-phoenix" id="toc-a-hot-day-in-phoenix" class="nav-link" data-scroll-target="#a-hot-day-in-phoenix"><span class="header-section-number">3</span> A hot day in Phoenix</a></li>
+  <li><a href="#a-hot-day-in-phoenix-solution" id="toc-a-hot-day-in-phoenix-solution" class="nav-link" data-scroll-target="#a-hot-day-in-phoenix-solution"><span class="header-section-number">4</span> A hot day in Phoenix (solution)</a></li>
+  <li><a href="#represent" id="toc-represent" class="nav-link" data-scroll-target="#represent"><span class="header-section-number">5</span> Represent</a></li>
+  <li><a href="#a-biased-coin" id="toc-a-biased-coin" class="nav-link" data-scroll-target="#a-biased-coin"><span class="header-section-number">6</span> A biased coin 🪙</a></li>
+  <li><a href="#a-lucky-streak" id="toc-a-lucky-streak" class="nav-link" data-scroll-target="#a-lucky-streak"><span class="header-section-number">7</span> A lucky streak</a></li>
+  <li><a href="#z-scores-vs-z-scores" id="toc-z-scores-vs-z-scores" class="nav-link" data-scroll-target="#z-scores-vs-z-scores"><span class="header-section-number">8</span> Z scores vs Z scores</a></li>
+  <li><a href="#threshold-of-significance" id="toc-threshold-of-significance" class="nav-link" data-scroll-target="#threshold-of-significance"><span class="header-section-number">9</span> Threshold of Significance</a>
   <ul class="collapse">
-  <li><a href="#how-small-is-small" id="toc-how-small-is-small" class="nav-link" data-scroll-target="#how-small-is-small"><span class="header-section-number">8.1</span> How small is small?</a></li>
+  <li><a href="#how-small-is-small" id="toc-how-small-is-small" class="nav-link" data-scroll-target="#how-small-is-small"><span class="header-section-number">9.1</span> How small is small?</a></li>
   </ul></li>
-  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">9</span> Homework</a></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">10</span> Homework</a></li>
   </ul>
 </nav>
     </div>
@@ -194,8 +195,17 @@ window.Quarto = {
 <h2 data-number="1" class="anchored" data-anchor-id="preparatory-work"><span class="header-section-number">1</span> Preparatory work</h2>
 <p>Read: Reread Section 6.1</p>
 </section>
-<section id="a-hot-day-in-phoenix" class="level2 activity" data-number="2">
-<h2 class="activity anchored" data-number="2" data-anchor-id="a-hot-day-in-phoenix"><span class="header-section-number">2</span> A hot day in Phoenix</h2>
+<section id="one-sample-test-for-proportion-overview" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="one-sample-test-for-proportion-overview"><span class="header-section-number">2</span> One-sample test for proportion, overview</h2>
+<p>The <strong>parameter of interest</strong> is <span class="math inline">\(p\)</span>, a population proportion.</p>
+<p>The <strong>statistic</strong> is <span class="math inline">\(\hat{p}\)</span>, a sample proportion.</p>
+<p>The <strong>Alternative hypothesis</strong> is <span class="math inline">\(p &gt; k\)</span> or <span class="math inline">\(p &lt; k\)</span> or <span class="math inline">\(p \neq k\)</span>.</p>
+<p>The <strong>Null hypothesis</strong> is <span class="math inline">\(p=k\)</span></p>
+<p>The <strong>Standard Error</strong> is <span class="math inline">\(SE = \sqrt{\frac{k(1-k)}{n}}\)</span>.</p>
+<p>The <strong>test statistic</strong> is <span class="math inline">\(Z = \frac{\hat{p}-k}{SE}\)</span></p>
+</section>
+<section id="a-hot-day-in-phoenix" class="level2 activity" data-number="3">
+<h2 class="activity anchored" data-number="3" data-anchor-id="a-hot-day-in-phoenix"><span class="header-section-number">3</span> A hot day in Phoenix</h2>
 <p>Over the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test whether the probability of a hot day now exceeds 12/365.</p>
 <ol type="1">
 <li>Is the data consistent with the hypothesis?</li>
@@ -205,9 +215,9 @@ window.Quarto = {
 <li>Is the difference likely due to chance?</li>
 </ol>
 </section>
-<section id="a-hot-day-in-phoenix-solution" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="a-hot-day-in-phoenix-solution"><span class="header-section-number">3</span> A hot day in Phoenix (solution)</h2>
-<div id="fbaa4fbb" class="cell" data-execution_count="1">
+<section id="a-hot-day-in-phoenix-solution" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="a-hot-day-in-phoenix-solution"><span class="header-section-number">4</span> A hot day in Phoenix (solution)</h2>
+<div id="00c18d58" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Square root function needs import</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -224,11 +234,11 @@ window.Quarto = {
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> (p2<span class="op">-</span>p)<span class="op">/</span>SE <span class="co"># (observed - predicted) / SE</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Import "normal distribution" tool</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Import stats for "normal distribution" tool</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Find p-value as (left) tail area on normal distribution</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>pvalue <span class="op">=</span> norm.cdf(<span class="op">-</span>Z)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>pvalue <span class="op">=</span> stats.norm.cdf(<span class="op">-</span>Z)</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Z)</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -239,8 +249,8 @@ window.Quarto = {
 </div>
 <p>The p-value is miniscule. The effect is not due to chance. The change is statistically significant.</p>
 </section>
-<section id="represent" class="level2 activity" data-number="4">
-<h2 class="activity anchored" data-number="4" data-anchor-id="represent"><span class="header-section-number">4</span> Represent</h2>
+<section id="represent" class="level2 activity" data-number="5">
+<h2 class="activity anchored" data-number="5" data-anchor-id="represent"><span class="header-section-number">5</span> Represent</h2>
 <p>About 50.5% of the US population is female (source: <a href="https://www.census.gov/quickfacts/fact/table/US/LFE046224">US Census</a>). The US Senate (119th congress) has 26 women out of 100 senators (source: <a href="https://cawp.rutgers.edu/data/levels-office/congress">CAWP</a>). We wish to test the theory that the US electoral system elects women with probability <span class="math inline">\(p &lt; .505\)</span>.</p>
 <ol type="1">
 <li>Is the data consistent with the hypothesis?</li>
@@ -249,8 +259,8 @@ window.Quarto = {
 <li>Calculate a p-value for that Z-score. Is the discrepancy plausibly due to chance?</li>
 </ol>
 </section>
-<section id="a-biased-coin" class="level2 activity" data-number="5">
-<h2 class="activity anchored" data-number="5" data-anchor-id="a-biased-coin"><span class="header-section-number">5</span> A biased coin 🪙</h2>
+<section id="a-biased-coin" class="level2 activity" data-number="6">
+<h2 class="activity anchored" data-number="6" data-anchor-id="a-biased-coin"><span class="header-section-number">6</span> A biased coin 🪙</h2>
 <p>On game night, your friend always conducts coin flips with his “lucky coin,” a huge, heavy, American Silver Eagle. He’s lucky with it. You’re concerned that a coin might be biased. Working together, you perform an experiment with 1000 coin flips. He wins 525 of them.</p>
 <ol type="1">
 <li>Is the data consistent with the hypothesis?</li>
@@ -260,8 +270,8 @@ window.Quarto = {
 <li>Conclude: Is your friend busted for unfair play?</li>
 </ol>
 </section>
-<section id="a-lucky-streak" class="level2 activity" data-number="6">
-<h2 class="activity anchored" data-number="6" data-anchor-id="a-lucky-streak"><span class="header-section-number">6</span> A lucky streak</h2>
+<section id="a-lucky-streak" class="level2 activity" data-number="7">
+<h2 class="activity anchored" data-number="7" data-anchor-id="a-lucky-streak"><span class="header-section-number">7</span> A lucky streak</h2>
 <p>In 2020, a gamer called Dream uploaded a world record Minecraft speedrun video. In it, Dream performed a certain randomized action (“trading for ender pearls”) 262 times, with success 42 times, a 16% success rate. Game logic dictates that success should be purely random (skill-independent) with a probability of 4.27%.</p>
 <ol type="1">
 <li>Is the data consistent with the hypothesis?</li>
@@ -271,25 +281,25 @@ window.Quarto = {
 <li>Is good luck a credible explanation for these events?</li>
 </ol>
 </section>
-<section id="z-scores-vs-z-scores" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="z-scores-vs-z-scores"><span class="header-section-number">7</span> Z scores vs Z scores</h2>
+<section id="z-scores-vs-z-scores" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="z-scores-vs-z-scores"><span class="header-section-number">8</span> Z scores vs Z scores</h2>
 <ul>
 <li>Z score for the individual: (data value - mean) / σ Used to assess how out of whack one data value is, in relation to its distribution.</li>
 <li>Z score for the experiment: (test statistic - null prediction) / SE Used to assess how strongly different from prediction is the experimental result.</li>
 </ul>
 </section>
-<section id="threshold-of-significance" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="threshold-of-significance"><span class="header-section-number">8</span> Threshold of Significance</h2>
-<section id="how-small-is-small" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="how-small-is-small"><span class="header-section-number">8.1</span> How small is small?</h3>
+<section id="threshold-of-significance" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="threshold-of-significance"><span class="header-section-number">9</span> Threshold of Significance</h2>
+<section id="how-small-is-small" class="level3" data-number="9.1">
+<h3 data-number="9.1" class="anchored" data-anchor-id="how-small-is-small"><span class="header-section-number">9.1</span> How small is small?</h3>
 <p>If <span class="math inline">\(p\)</span> is small, we have a statistically significant result. If <span class="math inline">\(p\)</span> is large, it’s inconclusive. How small is small?</p>
 <p><span class="math inline">\(\alpha = 0.05\)</span> is a typical <strong>threshold of significance</strong> (or <strong>significance level</strong>). This is a social norm, which means it’s made up and can change.</p>
 <p><span class="math inline">\(\alpha = 0.005\)</span> would be a better, stricter choice, requiring stronger evidence and producing fewer false positives results.</p>
 <p>We must choose the threshold of significance <strong>before</strong> collecting data. Why?</p>
 </section>
 </section>
-<section id="homework" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="homework"><span class="header-section-number">9</span> Homework</h2>
+<section id="homework" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="homework"><span class="header-section-number">10</span> Homework</h2>
 <ol start="22" type="1">
 <li>Hypothesis Testing One Proportion</li>
 </ol>

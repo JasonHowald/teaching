@@ -1,0 +1,10 @@
+---
+title: "26. Hypothesis Testing -- Structure and Planning"
+description: "Assessing the hypothesis type and planning for a proper test."
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: revealjs
+---
+  
+{{< include _26_hypothesis_structure_and_planning.qmd >}}
+
+

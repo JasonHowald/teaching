@@ -37,4 +37,7 @@ format: html
 | **21:** Introduction to Hypotheses | [Slides [for Intro Hypotheses]{.visually-hidden}](slides/21_introduction_to_hypotheses.html) | [Handout [for Intro Hypotheses]{.visually-hidden}](slides/21_introduction_to_hypotheses-handout.html) |
 | **22:** Hypotheses testing - one proportion | [Slides [for one proportion]{.visually-hidden}](slides/22_hypothesis_testing_one_proportion.html) | [Handout [for one proportion]{.visually-hidden}](slides/22_hypothesis_testing_one_proportion-handout.html) |
 | **23:** Hypotheses testing - two proportions | [Slides [for two proportions]{.visually-hidden}](slides/23_hypothesis_testing_two_proportions.html) | [Handout [for two proportions]{.visually-hidden}](slides/23_hypothesis_testing_two_proportions-handout.html) |
+| **24:** Hypotheses testing - one average | [Slides [for one average]{.visually-hidden}](slides/24_hypothesis_testing_one_average.html) | [Handout [for one average]{.visually-hidden}](slides/24_hypothesis_testing_one_average-handout.html) |
+| **25:** Hypotheses testing - two averages | [Slides [for two averages]{.visually-hidden}](slides/25_hypothesis_testing_two_averages.html) | [Handout [for two averages]{.visually-hidden}](slides/25_hypothesis_testing_two_averages-handout.html) |
 
+ 

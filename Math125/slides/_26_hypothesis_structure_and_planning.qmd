@@ -1,0 +1,23 @@
+26. Hypothesis –  structure and planning
+
+## Classify each hypothesis test and plan a solution.
+
+1. After measuring 250 M&M’s, you find that they have an average weight of .96 grams and a standard deviation of .08 grams. Do you have enough evidence to conclude that M&M’s generally weigh less than 1 gram?
+2. An experimental treatment is supposed to reduce the risk of stroke. Out of 200 recipients, 5 had stroke, but out of 200 in a control group, 10 had stroke. Is this a statistically significant difference?
+3. I won 10 out of 28 games of ping pong. Is this statistically significant evidence that I am a worse player?
+
+## Classify each hypothesis test and plan a solution.
+4. Two species of swallow are identified. Data (including mass and species) is collected in a csv file from 100 birds from both species. Determine whether there is a statistically significant difference in their masses. 
+5. A random sample of 10 men has an average diastolic blood pressure of 90, with standard deviation 15. A sample of 25 women has an average diastolic blood pressure of 82, with standard deviation 13. Is this sufficient evidence that men and women have different blood pressure, on average? Use a threshold of significance of  𝛼=0.01 
+6. Is the mere presence of a cell phone distracting, in the sense that it will cause students to take longer to solve a puzzle? Ten students were asked to solve a puzzle undistracted, or to solve the same puzzle with a cell phone unused on the table.
+phone	count	mean	std
+N		10.0		10.68	1.91
+Y		10.0		12.4		1.87
+
+
+## Categorize the hypothesis test and plan a solution
+7. The Standard Model predicts a certain particle decay to happen with probability 10-6. Under novel experimental conditions, the decay happens 30 times out of ten million events. Is this a statistically significant deviation from prediction? Use threshold of significance 𝛼=0.000001 for particle physics.
+8. The Standard Model predicts that a particle should have mass 4.4 MeV/c2. Analyze data from a csv file, and decide whether the data is consistent with prediction. 
+https://docs.google.com/spreadsheets/d/1KqbyvihbeSzF20mlVXYkU7LYYdYPpVh3IbZcD7-rNy8/export?format=csv
+9. In January 2020 (!), scientists studying Wuhan infections of Covid-19 estimated the average infection rate to be R0 = 2.2. There were about 425 cases in the study. Is this statistically significantly greater than 1?
+Categorize the hypothesis test and plan a solution

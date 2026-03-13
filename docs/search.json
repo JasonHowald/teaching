@@ -1155,6 +1155,55 @@
     "text": "Individually – Homework\n\nComplete homework: “1. The Shape of Data”, on Webwork and available through Brightspace. You will:\n\nUse a colab notebook to download and manipulate data.\nCalculate basic descriptive statistics including correlation coefficients.\nAnswer questions about data.\n\nAs always, find the next slide deck and do preparatory work (usually reading)"
   },
   {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages-handout.html",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages-handout.html",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "",
+    "text": "The parameters of interest are \\(\\mu_1\\) and \\(\\mu_2\\), means of two populations.\nThe statistics of interest are \\(\\bar{x_1}\\) and \\(\\bar{x_2}\\), sample means.\nThe alternative hypothesis is \\(\\mu_2 &gt; \\mu_1\\) or \\(\\mu_2 \\neq \\mu_1\\).\nThe null hypothesis is \\(\\mu_1=\\mu_2\\)\nThe standard errors are\n\\[SE_1 = \\frac{s_1}{\\sqrt{n_1}}, \\enspace\\enspace SE_2 = \\frac{s_2}{\\sqrt{n_2}}, \\text{ and } \\enspace SE = \\sqrt{SE_1^2 + SE_2^2}\\]\nThe test statistic is \\(t = \\frac{(\\bar{x_1}- \\bar{x_2})-0}{SE}\\)"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#two-sample-test-for-mean-overview",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#two-sample-test-for-mean-overview",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "",
+    "text": "The parameters of interest are \\(\\mu_1\\) and \\(\\mu_2\\), means of two populations.\nThe statistics of interest are \\(\\bar{x_1}\\) and \\(\\bar{x_2}\\), sample means.\nThe alternative hypothesis is \\(\\mu_2 &gt; \\mu_1\\) or \\(\\mu_2 \\neq \\mu_1\\).\nThe null hypothesis is \\(\\mu_1=\\mu_2\\)\nThe standard errors are\n\\[SE_1 = \\frac{s_1}{\\sqrt{n_1}}, \\enspace\\enspace SE_2 = \\frac{s_2}{\\sqrt{n_2}}, \\text{ and } \\enspace SE = \\sqrt{SE_1^2 + SE_2^2}\\]\nThe test statistic is \\(t = \\frac{(\\bar{x_1}- \\bar{x_2})-0}{SE}\\)"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#the-t-distribution-for-a-two-sample-test.",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#the-t-distribution-for-a-two-sample-test.",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "2 The T distribution for a two-sample test.",
+    "text": "2 The T distribution for a two-sample test.\n\nAs before, a \\(t\\)-score must be compared to a \\(t\\)-distribution with appropriate degree-of-freedom.\nWe use the lesser of \\(n_1-1\\) and \\(n_2-1\\) for the degrees of freedom, or the much more complicated Welch-Satterthwaite equation:\n\n\\[df = \\frac{SE^4}{\\frac{SE_1^4}{n_1-1} + \\frac{SE_2^4}{n_2-1} }\\]"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-1-learning-theory",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-1-learning-theory",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "3 Example 1 – Learning theory",
+    "text": "3 Example 1 – Learning theory\nA psychologist wants to test memory and distractedness. In condition A, 24 participants can memorize \\(12\\) words on average (stdev = \\(7\\)), but in condition \\(B\\), 21 participants can memorize \\(8\\) words on average (stdev = \\(6\\)). Is there statistically significant evidence that condition \\(A\\) is better?\n\nFind all three standard errors.\nFind the t-score.\nDetermine the degrees of freedom.\nFind a p-value for this test.\nConclude."
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-2-blood-test",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-2-blood-test",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "4 Example 2 – Blood test",
+    "text": "4 Example 2 – Blood test\nOlder mice are given blood transfusions, receiving the blood of older or younger mice. Data is here: https://www.lock5stat.com/datasets3e/YoungBlood.csv. Will younger blood increase their activity level?\n\nFetch, read, regroup, and describe the data.\n\n\nimport pandas as pd\ndf = pd.read_csv('YoungBlood.csv')\ndf.groupby('Plasma').describe()\n\n\nFind three standard errors.\nFind the t-score.\nDetermine the degrees of freedom.\nFind a p-value for this test.\nConclude."
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-3-a-long-commute",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-3-a-long-commute",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "5 Example 3 – A long commute",
+    "text": "5 Example 3 – A long commute\nIn the acs12 dataset (on openintro), do the men have, on average, a longer time_to_work than the women? Is the difference statistically significant?\nYou will need a regrouping/describing trick:\n\ndf.groupby('gender')['time_to_work'].describe()"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-4",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages-handout.html#example-4",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "6 Example 4",
+    "text": "6 Example 4\n\n6.1 (An age gap, foreshadowing the paired t-test)\nAre husbands older than their wives? (Using heterosexual marriage age data from Locke.) This is paired data, which may suggest a new idea. For now, perform the usual two-sample t-test.\nhttp://www.lock5stat.com/datasets3e/MarriageAges.csv"
+  },
+  {
     "objectID": "Math125/slides/4-5_samping_and_sample_bias-handout.html",
     "href": "Math125/slides/4-5_samping_and_sample_bias-handout.html",
     "title": "04-5. Sampling and Sample Bias",
@@ -2275,27 +2324,6 @@
     "text": "Homework\nOn Webwork, assignment 4-5: Sampling and Sample Bias."
   },
   {
-    "objectID": "Math125/index.html",
-    "href": "Math125/index.html",
-    "title": "Math 125",
-    "section": "",
-    "text": "Math 125 Syllabus"
-  },
-  {
-    "objectID": "Math125/index.html#syllabus",
-    "href": "Math125/index.html#syllabus",
-    "title": "Math 125",
-    "section": "",
-    "text": "Math 125 Syllabus"
-  },
-  {
-    "objectID": "Math125/index.html#lectures-handouts",
-    "href": "Math125/index.html#lectures-handouts",
-    "title": "Math 125",
-    "section": "2 Lectures & Handouts",
-    "text": "2 Lectures & Handouts\n\n\n\nTopic\nSlides (Interactive)\nHandout (Printable)\n\n\n\n\n0: Welcome & Intro\nSlides for Welcome\nHandout for Welcome\n\n\n1: The Shape of Data\nSlides for Shape of Data\nHandout for Shape of Data\n\n\n2: Association & Correlation\nSlides for Association\nHandout for Association\n\n\n3: Correlation & Causation\nSlides for Correlation\nHandout for Correlation\n\n\n4-5: Sampling & Bias\nSlides for Sampling\nHandout for Sampling\n\n\n6: Controlled Experiments\nSlides for Experiments\nHandout for Experiments\n\n\n7: Histograms & Countplots\nSlides for Histograms\nHandout for Histograms\n\n\n8: Boxplots & Scatterplots\nSlides for Boxplots\nHandout for Boxplots\n\n\n9-10: Mean & Variance\nSlides for Mean/Variance\nHandout for Mean/Variance\n\n\n11: Quantile Statistics\nSlides for Quantiles\nHandout for Quantiles\n\n\n12-13: Probability & Counting\nSlides for Prob/Counting\nHandout for Prob/Counting\n\n\n14-15: Probability Laws\nSlides for Prob Laws\nHandout for Prob Laws\n\n\n16-17: Conditional Probability\nSlides for Conditional Prob\nHandout for Conditional Prob\n\n\n18-19: Normal Distribution\nSlides for Normal Dist\nHandout for Normal Dist\n\n\n20: Standard Error & Confidence\nSlides for Standard Error\nHandout for Normal Dist\n\n\n21: Introduction to Hypotheses\nSlides for Intro Hypotheses\nHandout for Intro Hypotheses\n\n\n22: Hypotheses testing - one proportion\nSlides for one proportion\nHandout for one proportion\n\n\n23: Hypotheses testing - two proportions\nSlides for two proportions\nHandout for two proportions"
-  },
-  {
     "objectID": "Math125/slides/12_13_probability_and_counting.html#preparation",
     "href": "Math125/slides/12_13_probability_and_counting.html#preparation",
     "title": "12-13. Probability and Counting",
@@ -2401,6 +2429,69 @@
     "text": "Homework\nLabeled 12-13, Probability on Webwork."
   },
   {
+    "objectID": "Math125/index.html",
+    "href": "Math125/index.html",
+    "title": "Math 125",
+    "section": "",
+    "text": "Math 125 Syllabus"
+  },
+  {
+    "objectID": "Math125/index.html#syllabus",
+    "href": "Math125/index.html#syllabus",
+    "title": "Math 125",
+    "section": "",
+    "text": "Math 125 Syllabus"
+  },
+  {
+    "objectID": "Math125/index.html#lectures-handouts",
+    "href": "Math125/index.html#lectures-handouts",
+    "title": "Math 125",
+    "section": "2 Lectures & Handouts",
+    "text": "2 Lectures & Handouts\n\n\n\nTopic\nSlides (Interactive)\nHandout (Printable)\n\n\n\n\n0: Welcome & Intro\nSlides for Welcome\nHandout for Welcome\n\n\n1: The Shape of Data\nSlides for Shape of Data\nHandout for Shape of Data\n\n\n2: Association & Correlation\nSlides for Association\nHandout for Association\n\n\n3: Correlation & Causation\nSlides for Correlation\nHandout for Correlation\n\n\n4-5: Sampling & Bias\nSlides for Sampling\nHandout for Sampling\n\n\n6: Controlled Experiments\nSlides for Experiments\nHandout for Experiments\n\n\n7: Histograms & Countplots\nSlides for Histograms\nHandout for Histograms\n\n\n8: Boxplots & Scatterplots\nSlides for Boxplots\nHandout for Boxplots\n\n\n9-10: Mean & Variance\nSlides for Mean/Variance\nHandout for Mean/Variance\n\n\n11: Quantile Statistics\nSlides for Quantiles\nHandout for Quantiles\n\n\n12-13: Probability & Counting\nSlides for Prob/Counting\nHandout for Prob/Counting\n\n\n14-15: Probability Laws\nSlides for Prob Laws\nHandout for Prob Laws\n\n\n16-17: Conditional Probability\nSlides for Conditional Prob\nHandout for Conditional Prob\n\n\n18-19: Normal Distribution\nSlides for Normal Dist\nHandout for Normal Dist\n\n\n20: Standard Error & Confidence\nSlides for Standard Error\nHandout for Normal Dist\n\n\n21: Introduction to Hypotheses\nSlides for Intro Hypotheses\nHandout for Intro Hypotheses\n\n\n22: Hypotheses testing - one proportion\nSlides for one proportion\nHandout for one proportion\n\n\n23: Hypotheses testing - two proportions\nSlides for two proportions\nHandout for two proportions\n\n\n24: Hypotheses testing - one average\nSlides for one average\nHandout for one average\n\n\n25: Hypotheses testing - two averages\nSlides for two averages\nHandout for two averages"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages.html#two-sample-test-for-mean-overview",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages.html#two-sample-test-for-mean-overview",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "Two-sample test for mean, overview",
+    "text": "Two-sample test for mean, overview\n(Welch’s unequal-variance t-test))\nThe parameters of interest are \\(\\mu_1\\) and \\(\\mu_2\\), means of two populations.\nThe statistics of interest are \\(\\bar{x_1}\\) and \\(\\bar{x_2}\\), sample means.\nThe alternative hypothesis is \\(\\mu_2 &gt; \\mu_1\\) or \\(\\mu_2 \\neq \\mu_1\\).\nThe null hypothesis is \\(\\mu_1=\\mu_2\\)\nThe standard errors are\n\\[SE_1 = \\frac{s_1}{\\sqrt{n_1}}, \\enspace\\enspace SE_2 = \\frac{s_2}{\\sqrt{n_2}}, \\text{ and } \\enspace SE = \\sqrt{SE_1^2 + SE_2^2}\\]\nThe test statistic is \\(t = \\frac{(\\bar{x_1}- \\bar{x_2})-0}{SE}\\)"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages.html#the-t-distribution-for-a-two-sample-test.",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages.html#the-t-distribution-for-a-two-sample-test.",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "The T distribution for a two-sample test.",
+    "text": "The T distribution for a two-sample test.\n\nAs before, a \\(t\\)-score must be compared to a \\(t\\)-distribution with appropriate degree-of-freedom.\nWe use the lesser of \\(n_1-1\\) and \\(n_2-1\\) for the degrees of freedom, or the much more complicated Welch-Satterthwaite equation:\n\n\\[df = \\frac{SE^4}{\\frac{SE_1^4}{n_1-1} + \\frac{SE_2^4}{n_2-1} }\\]"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages.html#example-1-learning-theory",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages.html#example-1-learning-theory",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "Example 1 – Learning theory",
+    "text": "Example 1 – Learning theory\nA psychologist wants to test memory and distractedness. In condition A, 24 participants can memorize \\(12\\) words on average (stdev = \\(7\\)), but in condition \\(B\\), 21 participants can memorize \\(8\\) words on average (stdev = \\(6\\)). Is there statistically significant evidence that condition \\(A\\) is better?\n\nFind all three standard errors.\nFind the t-score.\nDetermine the degrees of freedom.\nFind a p-value for this test.\nConclude."
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages.html#example-2-blood-test",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages.html#example-2-blood-test",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "Example 2 – Blood test",
+    "text": "Example 2 – Blood test\nOlder mice are given blood transfusions, receiving the blood of older or younger mice. Data is here: https://www.lock5stat.com/datasets3e/YoungBlood.csv. Will younger blood increase their activity level?\n\nFetch, read, regroup, and describe the data.\n\n\nimport pandas as pd\ndf = pd.read_csv('YoungBlood.csv')\ndf.groupby('Plasma').describe()\n\n\nFind three standard errors.\nFind the t-score.\nDetermine the degrees of freedom.\nFind a p-value for this test.\nConclude."
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages.html#example-3-a-long-commute",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages.html#example-3-a-long-commute",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "Example 3 – A long commute",
+    "text": "Example 3 – A long commute\nIn the acs12 dataset (on openintro), do the men have, on average, a longer time_to_work than the women? Is the difference statistically significant?\nYou will need a regrouping/describing trick:\n\ndf.groupby('gender')['time_to_work'].describe()"
+  },
+  {
+    "objectID": "Math125/slides/25_hypothesis_testing_two_averages.html#example-4",
+    "href": "Math125/slides/25_hypothesis_testing_two_averages.html#example-4",
+    "title": "25. Hypothesis Testing – Two Means",
+    "section": "Example 4",
+    "text": "Example 4\n(An age gap, foreshadowing the paired t-test)\nAre husbands older than their wives? (Using heterosexual marriage age data from Locke.) This is paired data, which may suggest a new idea. For now, perform the usual two-sample t-test.\nhttp://www.lock5stat.com/datasets3e/MarriageAges.csv"
+  },
+  {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html",
     "href": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html",
     "title": "23. Hypothesis Testing – Two Proportions",
@@ -2415,39 +2506,46 @@
     "text": "Read: Reread Section 6.2"
   },
   {
+    "objectID": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#overview",
+    "href": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#overview",
+    "title": "23. Hypothesis Testing – Two Proportions",
+    "section": "2 Overview",
+    "text": "2 Overview\nThe parameters of interest are \\(p_1\\) and \\(p_2\\), population proportions.\nThe statistics of interest are \\(\\hat{p_1}\\) and \\(\\hat{p_2}\\), sample proportions.\nThe alternative hypothesis is usually \\(p_1 &lt; p_2\\) or \\(p_1 \\neq p_2\\).\nThe null hypothesis is \\(p_1=p_2\\) (or \\(p_2-p_1 =0\\))\nThe pooled proportion is \\(\\hat{p} = \\frac{X_1+X_2}{n_1+n_2}\\)\nThe standard errors are\n\\[SE_1 = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n_1}} \\text{ and } SE_2 = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n_2}} \\text{ and } SE = \\sqrt{SE_1^2 + SE_2^2}\\]\nThe test statistic is \\(Z = \\frac{(\\hat{p_1} - \\hat{p_2})-0}{SE}\\)"
+  },
+  {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#bias-assessment",
     "href": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#bias-assessment",
     "title": "23. Hypothesis Testing – Two Proportions",
-    "section": "2 Bias assessment",
-    "text": "2 Bias assessment\nManagers recommend for promotion 14/24 women, but 21/24 men. Is this statistically significant evidence of gender bias?\n\nIs the data consistent with the hypothesis of bias? If so, continue.\nFind the pooled proportion. This is our best guess of the promotion rate if the managers were fair.\nFind the standard error, in three steps.\n\nSE for the men\nSE for the women\nSE for the difference.\n\nFind the Z-score for the difference of proportions\nFind the p-value using the normal distribution."
+    "section": "3 Bias assessment",
+    "text": "3 Bias assessment\nManagers recommend for promotion 14/24 women, but 21/24 men. Is this statistically significant evidence of gender bias?\n\nIs the data consistent with the hypothesis of bias? If so, continue.\nFind the pooled proportion. This is our best guess of the promotion rate if the managers were fair.\nFind the standard error, in three steps.\n\nSE for the men\nSE for the women\nSE for the difference.\n\nFind the Z-score for the difference of proportions\nFind the p-value using the normal distribution."
   },
   {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#bias-assessment-solutions",
     "href": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#bias-assessment-solutions",
     "title": "23. Hypothesis Testing – Two Proportions",
-    "section": "3 Bias assessment – solutions",
-    "text": "3 Bias assessment – solutions\n\n#Import sqrt and norm functions for later\nfrom math import sqrt \nfrom scipy.stats import norm\n\n#Pooled proportion and standard errors\np = 35/48  #all candidates\nn = 24 #number in each category\nSE1 = sqrt(p*(1-p)/n) #For the women\nSE2 = sqrt(p*(1-p)/n) #For the men\nSE = sqrt(SE1**2 + SE2**2) #SE of the difference\n\n# Z-score and p-value\nZ = (21/24 - 14/24) / SE \npvalue = norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n2.2735942402352203\n0.011495197046232447"
+    "section": "4 Bias assessment – solutions",
+    "text": "4 Bias assessment – solutions\n\n#Import sqrt and stats for later\nfrom math import sqrt \nfrom scipy import stats\n\n#Pooled proportion and standard errors\np = 35/48  #all candidates\nn = 24 #number in each category\nSE1 = sqrt(p*(1-p)/n) #For the women\nSE2 = sqrt(p*(1-p)/n) #For the men\nSE = sqrt(SE1**2 + SE2**2) #SE of the difference\n\n# Z-score and p-value\nZ = (21/24 - 14/24) / SE \npvalue = stats.norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n2.2735942402352203\n0.011495197046232447"
   },
   {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#risk-reduction",
     "href": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#risk-reduction",
     "title": "23. Hypothesis Testing – Two Proportions",
-    "section": "4 Risk Reduction",
-    "text": "4 Risk Reduction\nTreatment X intends to reduce risk of death from gunshot wound. Is the data below statistically significant evidence?\n\n\n\n\n\n\n\n\nWith X\n\n\nNo X\n\n\nTotal\n\n\n\n\n\nDeath\n\n\n120\n\n\n200\n\n\n320\n\n\n\n\nSurvival\n\n\n680\n\n\n800\n\n\n1480\n\n\n\n\nTotal\n\n\n800\n\n\n1000\n\n\n1800\n\n\n\n\n\nFind the proportions…\n\nwithin each group.\nas a pooled proportion.\n\nCalculate standard error…\n\nwithin each group.\nof the difference.\n\nFind the Z-score\nFind the p-value.\nIs it statistically significant?"
+    "section": "5 Risk Reduction",
+    "text": "5 Risk Reduction\nTreatment X intends to reduce risk of death from gunshot wound. Is the data below statistically significant evidence?\n\n\n\n\n\n\n\n\nWith X\n\n\nNo X\n\n\nTotal\n\n\n\n\n\nDeath\n\n\n120\n\n\n200\n\n\n320\n\n\n\n\nSurvival\n\n\n680\n\n\n800\n\n\n1480\n\n\n\n\nTotal\n\n\n800\n\n\n1000\n\n\n1800\n\n\n\n\n\nFind the proportions…\n\nwithin each group.\nas a pooled proportion.\n\nCalculate standard error…\n\nwithin each group.\nof the difference.\n\nFind the Z-score\nFind the p-value.\nIs it statistically significant?"
   },
   {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#premature-births",
     "href": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#premature-births",
     "title": "23. Hypothesis Testing – Two Proportions",
-    "section": "5 Premature births",
-    "text": "5 Premature births\n\nLoad the “births14” data from openintro.\nMake a crosstab of prematurity vs. smoking habit:\n\n\npd.crosstab(df.premie, df.habit, margins=True)\n\n\nPerform a hypothesis test comparing the proportion of premature births among smokers and among nonsmokers. Does it give statistically significant evidence that smoking increases the probability of premature birth?"
+    "section": "6 Premature births",
+    "text": "6 Premature births\n\nLoad the “births14” data from openintro.\nMake a crosstab of prematurity vs. smoking habit:\n\n\npd.crosstab(df.premie, df.habit, margins=True)\n\n\nPerform a hypothesis test comparing the proportion of premature births among smokers and among nonsmokers. Does it give statistically significant evidence that smoking increases the probability of premature birth?"
   },
   {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#planning-ahead",
     "href": "Math125/slides/23_hypothesis_testing_two_proportions-handout.html#planning-ahead",
     "title": "23. Hypothesis Testing – Two Proportions",
-    "section": "6 Planning ahead",
-    "text": "6 Planning ahead\nYou believe Method A succeeds 70% of the time, whereas Method B succeeds 80% of the time. Others aren’t convinced. How many trials of each method must you do to prove (with statistical significance) that method B is better?\n\nIn a Jupyter notebook, guess a sample size \\(n=40\\).\nSet the values of each proportion and the pooled proportion.\nCalculate all three standard errors.\nFind the Z-score.\nFind the p-value for the difference of proportions.\nAdjust \\(n\\) and recompute the p-value shows statistical significance."
+    "section": "7 Planning ahead",
+    "text": "7 Planning ahead\nYou believe Method A succeeds 70% of the time, whereas Method B succeeds 80% of the time. Others aren’t convinced. How many trials of each method must you do to prove (with statistical significance) that method B is better?\n\nIn a Jupyter notebook, guess a sample size \\(n=40\\).\nSet the values of each proportion and the pooled proportion.\nCalculate all three standard errors.\nFind the Z-score.\nFind the p-value for the difference of proportions.\nAdjust \\(n\\) and recompute the p-value shows statistical significance."
   },
   {
     "objectID": "Math125/slides/11_quantile_statistics-handout.html",
@@ -2702,6 +2800,48 @@
     "text": "Individual work\nOn Webwork, called “Dataviz Box and Scatter.”"
   },
   {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average.html#one-sample-test-for-mean-overview",
+    "href": "Math125/slides/24_hypothesis_testing_one_average.html#one-sample-test-for-mean-overview",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "One-sample test for mean, overview",
+    "text": "One-sample test for mean, overview\nThe parameter of interest is \\(\\mu\\), a population mean.\nThe statistic is \\(\\bar{x}\\), a sample mean.\nThe alternative hypothesis is \\(\\mu &gt; k\\) or \\(\\mu &lt; k\\) or \\(\\mu \\neq k\\).\nThe null hypothesis is \\(\\mu=k\\)\nThe standard error is \\(SE = \\frac{s}{\\sqrt{n}}\\)\nThe test statistic is \\(t = \\frac{\\bar{x}-k}{SE}\\)"
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average.html#the-t-test-an-added-wrinkle",
+    "href": "Math125/slides/24_hypothesis_testing_one_average.html#the-t-test-an-added-wrinkle",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "The T-test, an added wrinkle",
+    "text": "The T-test, an added wrinkle\n\nThe standard error in this case “should be” \\(SE = \\frac{\\sigma}{\\sqrt{n}}\\), but we almost never know \\(\\sigma\\). The sample stdev \\(s\\) is what we know, and it’s close.\nThe \\(Z\\)-score \\(Z = \\frac{\\bar{x}-k}{\\sigma / \\sqrt{n}}\\) would be a normally distributed estimation error but our substitute \\(t = \\frac{\\bar{x}-k}{s / \\sqrt{n}}\\) is not, because the denominator is subtly data-dependent.\nWe shouldn’t compare a t-score to the normal distribution. We must use a “modified normal” distribution called a t-distribution, which accounts for the problem \\(s \\neq \\sigma\\).\nThe “fix” depends on sample size. The \\(t\\)-distribution with \\(n-1\\) “degrees of freedom” is the right one."
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average.html#identifying-a-t-test.",
+    "href": "Math125/slides/24_hypothesis_testing_one_average.html#identifying-a-t-test.",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "Identifying a t-test.",
+    "text": "Identifying a t-test.\nA restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?\n\nA mean (not a proportion) is compared.\nThere is a hypothesis to check comparing the mean to baseline or another mean.\nWe have a standard deviation from the dataset but no population standard deviation."
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average.html#example-1-a-fishy-discrepancy",
+    "href": "Math125/slides/24_hypothesis_testing_one_average.html#example-1-a-fishy-discrepancy",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "Example 1 – a fishy discrepancy",
+    "text": "Example 1 – a fishy discrepancy\nA restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?\n\n# Square root function needs import\nfrom math import sqrt \n\n#Record givens\nk = 600  # Null hypothesis theory\nx = 580  # Observed mean\nn = 100  # sample size\ns = 30   # SAMPLE standard deviation.\n\nSE = s / sqrt(n) \nt = (x - k)/SE # (observed - predicted) / SE\n\n# Import stats for \"t distribution\" tool, not normal!\nfrom scipy import stats\n\n# Find p-value as (left) tail area on t distribution\npvalue = stats.t.cdf(t, 99) \n# Note t was negative so I didn't negate it.\n\nprint(t)\nprint(pvalue)\n\n-6.666666666666667\n7.50614450498516e-10"
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average.html#example-2---deep-breath",
+    "href": "Math125/slides/24_hypothesis_testing_one_average.html#example-2---deep-breath",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "Example 2 - deep breath",
+    "text": "Example 2 - deep breath\nAn intervention reduced patients’ blood pressure by, on average, 5 units, with a standard deviation of 16 units. Only ten people participated in the study. Is it safe to conclude that the treatment is effective at lowering blood pressure?\n\nCalculate the standard error.\nCalculate the t-score.\nIdentify the “degrees of freedom”.\nFind the p-value using stats.t.cdf\nConclude."
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average.html#example-3-beths-baking",
+    "href": "Math125/slides/24_hypothesis_testing_one_average.html#example-3-beths-baking",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "Example 3 – Beth’s baking",
+    "text": "Example 3 – Beth’s baking\nBeth is not a very precise baker. She measures out three “cups” of flour, but they are 120g, 135g, and 145g in mass.\n\nIs it safe to say that on average, Beth’s “cups” of flour will weigh more than 120g? Perform the hypothesis test.\n\n\n# Recommended data input \nimport pandas as pd\nx = pd.Series([120, 135, 145])\n\n\nWhat if the data were 150g, 135g, 145g instead?\nIs it possible to make statistically valid inferences from a sample size of only three?"
+  },
+  {
     "objectID": "Math125/slides/16_17_conditional_probability-handout.html",
     "href": "Math125/slides/16_17_conditional_probability-handout.html",
     "title": "16-17. Conditional Probability",
@@ -2807,6 +2947,13 @@
     "text": "Preparatory work\nRead: Reread Section 6.1"
   },
   {
+    "objectID": "Math125/slides/22_hypothesis_testing_one_proportion.html#one-sample-test-for-proportion-overview",
+    "href": "Math125/slides/22_hypothesis_testing_one_proportion.html#one-sample-test-for-proportion-overview",
+    "title": "22. Hypothesis Testing – One Proportion",
+    "section": "One-sample test for proportion, overview",
+    "text": "One-sample test for proportion, overview\nThe parameter of interest is \\(p\\), a population proportion.\nThe statistic is \\(\\hat{p}\\), a sample proportion.\nThe Alternative hypothesis is \\(p &gt; k\\) or \\(p &lt; k\\) or \\(p \\neq k\\).\nThe Null hypothesis is \\(p=k\\)\nThe Standard Error is \\(SE = \\sqrt{\\frac{k(1-k)}{n}}\\).\nThe test statistic is \\(Z = \\frac{\\hat{p}-k}{SE}\\)"
+  },
+  {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion.html#a-hot-day-in-phoenix",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion.html#a-hot-day-in-phoenix",
     "title": "22. Hypothesis Testing – One Proportion",
@@ -2818,7 +2965,7 @@
     "href": "Math125/slides/22_hypothesis_testing_one_proportion.html#a-hot-day-in-phoenix-solution",
     "title": "22. Hypothesis Testing – One Proportion",
     "section": "A hot day in Phoenix (solution)",
-    "text": "A hot day in Phoenix (solution)\n\n# Square root function needs import\nfrom math import sqrt \n\n#Null hypothesis theory for p\np = 12/365\n\n#Observed proportion\np2 = 27/365\n\n# 10*365 days, plus leap days from '12, '16, '20)\nn = 3653 \n\nSE = sqrt(p*(1-p)/n) #Canned formula, using null value.\n\nZ = (p2-p)/SE # (observed - predicted) / SE\n\n# Import \"normal distribution\" tool\nfrom scipy.stats import norm\n\n# Find p-value as (left) tail area on normal distribution\npvalue = norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n13.929583127968339\n2.0939634488594107e-44\n\n\nThe p-value is miniscule. The effect is not due to chance. The change is statistically significant."
+    "text": "A hot day in Phoenix (solution)\n\n# Square root function needs import\nfrom math import sqrt \n\n#Null hypothesis theory for p\np = 12/365\n\n#Observed proportion\np2 = 27/365\n\n# 10*365 days, plus leap days from '12, '16, '20)\nn = 3653 \n\nSE = sqrt(p*(1-p)/n) #Canned formula, using null value.\n\nZ = (p2-p)/SE # (observed - predicted) / SE\n\n# Import stats for \"normal distribution\" tool\nfrom scipy import stats\n\n# Find p-value as (left) tail area on normal distribution\npvalue = stats.norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n13.929583127968339\n2.0939634488594107e-44\n\n\nThe p-value is miniscule. The effect is not due to chance. The change is statistically significant."
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion.html#represent",
@@ -3199,6 +3346,13 @@
     "text": "Preparatory work\nRead: Reread Section 6.2"
   },
   {
+    "objectID": "Math125/slides/23_hypothesis_testing_two_proportions.html#overview",
+    "href": "Math125/slides/23_hypothesis_testing_two_proportions.html#overview",
+    "title": "23. Hypothesis Testing – Two Proportions",
+    "section": "Overview",
+    "text": "Overview\nThe parameters of interest are \\(p_1\\) and \\(p_2\\), population proportions.\nThe statistics of interest are \\(\\hat{p_1}\\) and \\(\\hat{p_2}\\), sample proportions.\nThe alternative hypothesis is usually \\(p_1 &lt; p_2\\) or \\(p_1 \\neq p_2\\).\nThe null hypothesis is \\(p_1=p_2\\) (or \\(p_2-p_1 =0\\))\nThe pooled proportion is \\(\\hat{p} = \\frac{X_1+X_2}{n_1+n_2}\\)\nThe standard errors are\n\\[SE_1 = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n_1}} \\text{ and } SE_2 = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n_2}} \\text{ and } SE = \\sqrt{SE_1^2 + SE_2^2}\\]\nThe test statistic is \\(Z = \\frac{(\\hat{p_1} - \\hat{p_2})-0}{SE}\\)"
+  },
+  {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions.html#bias-assessment",
     "href": "Math125/slides/23_hypothesis_testing_two_proportions.html#bias-assessment",
     "title": "23. Hypothesis Testing – Two Proportions",
@@ -3210,7 +3364,7 @@
     "href": "Math125/slides/23_hypothesis_testing_two_proportions.html#bias-assessment-solutions",
     "title": "23. Hypothesis Testing – Two Proportions",
     "section": "Bias assessment – solutions",
-    "text": "Bias assessment – solutions\n\n#Import sqrt and norm functions for later\nfrom math import sqrt \nfrom scipy.stats import norm\n\n#Pooled proportion and standard errors\np = 35/48  #all candidates\nn = 24 #number in each category\nSE1 = sqrt(p*(1-p)/n) #For the women\nSE2 = sqrt(p*(1-p)/n) #For the men\nSE = sqrt(SE1**2 + SE2**2) #SE of the difference\n\n# Z-score and p-value\nZ = (21/24 - 14/24) / SE \npvalue = norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n2.2735942402352203\n0.011495197046232447"
+    "text": "Bias assessment – solutions\n\n#Import sqrt and stats for later\nfrom math import sqrt \nfrom scipy import stats\n\n#Pooled proportion and standard errors\np = 35/48  #all candidates\nn = 24 #number in each category\nSE1 = sqrt(p*(1-p)/n) #For the women\nSE2 = sqrt(p*(1-p)/n) #For the men\nSE = sqrt(SE1**2 + SE2**2) #SE of the difference\n\n# Z-score and p-value\nZ = (21/24 - 14/24) / SE \npvalue = stats.norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n2.2735942402352203\n0.011495197046232447"
   },
   {
     "objectID": "Math125/slides/23_hypothesis_testing_two_proportions.html#risk-reduction",
@@ -3232,6 +3386,55 @@
     "title": "23. Hypothesis Testing – Two Proportions",
     "section": "Planning ahead",
     "text": "Planning ahead\nYou believe Method A succeeds 70% of the time, whereas Method B succeeds 80% of the time. Others aren’t convinced. How many trials of each method must you do to prove (with statistical significance) that method B is better?\n\nIn a Jupyter notebook, guess a sample size \\(n=40\\).\nSet the values of each proportion and the pooled proportion.\nCalculate all three standard errors.\nFind the Z-score.\nFind the p-value for the difference of proportions.\nAdjust \\(n\\) and recompute the p-value shows statistical significance."
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average-handout.html",
+    "href": "Math125/slides/24_hypothesis_testing_one_average-handout.html",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "",
+    "text": "The parameter of interest is \\(\\mu\\), a population mean.\nThe statistic is \\(\\bar{x}\\), a sample mean.\nThe alternative hypothesis is \\(\\mu &gt; k\\) or \\(\\mu &lt; k\\) or \\(\\mu \\neq k\\).\nThe null hypothesis is \\(\\mu=k\\)\nThe standard error is \\(SE = \\frac{s}{\\sqrt{n}}\\)\nThe test statistic is \\(t = \\frac{\\bar{x}-k}{SE}\\)"
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average-handout.html#one-sample-test-for-mean-overview",
+    "href": "Math125/slides/24_hypothesis_testing_one_average-handout.html#one-sample-test-for-mean-overview",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "",
+    "text": "The parameter of interest is \\(\\mu\\), a population mean.\nThe statistic is \\(\\bar{x}\\), a sample mean.\nThe alternative hypothesis is \\(\\mu &gt; k\\) or \\(\\mu &lt; k\\) or \\(\\mu \\neq k\\).\nThe null hypothesis is \\(\\mu=k\\)\nThe standard error is \\(SE = \\frac{s}{\\sqrt{n}}\\)\nThe test statistic is \\(t = \\frac{\\bar{x}-k}{SE}\\)"
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average-handout.html#the-t-test-an-added-wrinkle",
+    "href": "Math125/slides/24_hypothesis_testing_one_average-handout.html#the-t-test-an-added-wrinkle",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "2 The T-test, an added wrinkle",
+    "text": "2 The T-test, an added wrinkle\n\n\nThe standard error in this case “should be” \\(SE = \\frac{\\sigma}{\\sqrt{n}}\\), but we almost never know \\(\\sigma\\). The sample stdev \\(s\\) is what we know, and it’s close.\nThe \\(Z\\)-score \\(Z = \\frac{\\bar{x}-k}{\\sigma / \\sqrt{n}}\\) would be a normally distributed estimation error but our substitute \\(t = \\frac{\\bar{x}-k}{s / \\sqrt{n}}\\) is not, because the denominator is subtly data-dependent.\nWe shouldn’t compare a t-score to the normal distribution. We must use a “modified normal” distribution called a t-distribution, which accounts for the problem \\(s \\neq \\sigma\\).\nThe “fix” depends on sample size. The \\(t\\)-distribution with \\(n-1\\) “degrees of freedom” is the right one."
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average-handout.html#identifying-a-t-test.",
+    "href": "Math125/slides/24_hypothesis_testing_one_average-handout.html#identifying-a-t-test.",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "3 Identifying a t-test.",
+    "text": "3 Identifying a t-test.\nA restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?\n\nA mean (not a proportion) is compared.\nThere is a hypothesis to check comparing the mean to baseline or another mean.\nWe have a standard deviation from the dataset but no population standard deviation."
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average-handout.html#example-1-a-fishy-discrepancy",
+    "href": "Math125/slides/24_hypothesis_testing_one_average-handout.html#example-1-a-fishy-discrepancy",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "4 Example 1 – a fishy discrepancy",
+    "text": "4 Example 1 – a fishy discrepancy\nA restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?\n\n# Square root function needs import\nfrom math import sqrt \n\n#Record givens\nk = 600  # Null hypothesis theory\nx = 580  # Observed mean\nn = 100  # sample size\ns = 30   # SAMPLE standard deviation.\n\nSE = s / sqrt(n) \nt = (x - k)/SE # (observed - predicted) / SE\n\n# Import stats for \"t distribution\" tool, not normal!\nfrom scipy import stats\n\n# Find p-value as (left) tail area on t distribution\npvalue = stats.t.cdf(t, 99) \n# Note t was negative so I didn't negate it.\n\nprint(t)\nprint(pvalue)\n\n-6.666666666666667\n7.50614450498516e-10"
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average-handout.html#example-2---deep-breath",
+    "href": "Math125/slides/24_hypothesis_testing_one_average-handout.html#example-2---deep-breath",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "5 Example 2 - deep breath",
+    "text": "5 Example 2 - deep breath\nAn intervention reduced patients’ blood pressure by, on average, 5 units, with a standard deviation of 16 units. Only ten people participated in the study. Is it safe to conclude that the treatment is effective at lowering blood pressure?\n\nCalculate the standard error.\nCalculate the t-score.\nIdentify the “degrees of freedom”.\nFind the p-value using stats.t.cdf\nConclude."
+  },
+  {
+    "objectID": "Math125/slides/24_hypothesis_testing_one_average-handout.html#example-3-beths-baking",
+    "href": "Math125/slides/24_hypothesis_testing_one_average-handout.html#example-3-beths-baking",
+    "title": "24. Hypothesis Testing – One Mean",
+    "section": "6 Example 3 – Beth’s baking",
+    "text": "6 Example 3 – Beth’s baking\nBeth is not a very precise baker. She measures out three “cups” of flour, but they are 120g, 135g, and 145g in mass.\n\nIs it safe to say that on average, Beth’s “cups” of flour will weigh more than 120g? Perform the hypothesis test.\n\n\n# Recommended data input \nimport pandas as pd\nx = pd.Series([120, 135, 145])\n\n\nWhat if the data were 150g, 135g, 145g instead?\nIs it possible to make statistically valid inferences from a sample size of only three?"
   },
   {
     "objectID": "Math125/slides/20_Standard_Error_and_Confidence.html#preparatory-work",
@@ -3504,7 +3707,7 @@
     "href": "Math125/slides/18_19_the_normal_distribution-handout.html#the-empirical-rule-68-95-99.7-1",
     "title": "18-19. The Normal Distribution",
     "section": "11 The empirical rule (68-95-99.7)",
-    "text": "11 The empirical rule (68-95-99.7)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\n# Parameters for the normal distribution\nmu = 0  # Mean\nsigma = 1  # Standard deviation\n\n# Generate data for the normal distribution curve\nx = np.linspace(mu - 4*sigma, mu + 4*sigma, 500)\ny = norm.pdf(x, mu, sigma)\n\n# Calculate exact percentages using CDF\npercent_1std = (norm.cdf(sigma) - norm.cdf(-sigma)) * 100\npercent_2std = (norm.cdf(2*sigma) - norm.cdf(-2*sigma)) * 100\npercent_3std = (norm.cdf(3*sigma) - norm.cdf(-3*sigma)) * 100\n\n# Create the plot\nfig, ax = plt.subplots(figsize=(10, 6))\nax.plot(x, y, color='blue', linewidth=2, label='Normal Distribution PDF')\n\n# Mark the mean\nax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\\mu$) = {mu:.2f}')\n\n# Define the standard deviation ranges\nstd1_left, std1_right = mu - sigma, mu + sigma\nstd2_left, std2_right = mu - 2*sigma, mu + 2*sigma\nstd3_left, std3_right = mu - 3*sigma, mu + 3*sigma\n\n# Shade the areas for 68%, 95%, and 99.7%\n# 99.7% (3 standard deviations)\nx_fill_3std = x[(x &gt;= std3_left) & (x &lt;= std3_right)]\ny_fill_3std = y[(x &gt;= std3_left) & (x &lt;= std3_right)]\nax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n\n# 95% (2 standard deviations)\nx_fill_2std = x[(x &gt;= std2_left) & (x &lt;= std2_right)]\ny_fill_2std = y[(x &gt;= std2_left) & (x &lt;= std2_right)]\nax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n\n# 68% (1 standard deviation)\nx_fill_1std = x[(x &gt;= std1_left) & (x &lt;= std1_right)]\ny_fill_1std = y[(x &gt;= std1_left) & (x &lt;= std1_right)]\nax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n# Add labels for standard deviation marks\nplt.text(mu + sigma, norm.pdf(mu + sigma, mu, sigma) + 0.02, r'$\\mu + \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu - sigma, norm.pdf(mu - sigma, mu, sigma) + 0.02, r'$\\mu - \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu + 2*sigma, norm.pdf(mu + 2*sigma, mu, sigma) + 0.02, r'$\\mu + 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu - 2*sigma, norm.pdf(mu - 2*sigma, mu, sigma) + 0.02, r'$\\mu - 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu + 3*sigma, norm.pdf(mu + 3*sigma, mu, sigma) + 0.02, r'$\\mu + 3\\sigma$', horizontalalignment='center', color='purple')\nplt.text(mu - 3*sigma, norm.pdf(mu - 3*sigma, mu, sigma) + 0.02, r'$\\mu - 3\\sigma$', horizontalalignment='center', color='purple')\n\n# Set title and labels\nax.set_title('Empirical Rule (68-95-99.7) Illustration', fontsize=16)\nax.set_xlabel('Standard Deviations above/below the mean', fontsize=12)\nax.set_ylabel('Probability Density', fontsize=12)\nax.legend(loc='upper right')\nax.grid(True, linestyle='--', alpha=0.6)\nplt.tight_layout()\nplt.show()\n\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_84971/588814348.py:34: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_84971/588814348.py:39: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_84971/588814348.py:44: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n\n\n\n\n\n\n\nFigure 7: Empirical Rule illustration"
+    "text": "11 The empirical rule (68-95-99.7)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\n\n# Parameters for the normal distribution\nmu = 0  # Mean\nsigma = 1  # Standard deviation\n\n# Generate data for the normal distribution curve\nx = np.linspace(mu - 4*sigma, mu + 4*sigma, 500)\ny = norm.pdf(x, mu, sigma)\n\n# Calculate exact percentages using CDF\npercent_1std = (norm.cdf(sigma) - norm.cdf(-sigma)) * 100\npercent_2std = (norm.cdf(2*sigma) - norm.cdf(-2*sigma)) * 100\npercent_3std = (norm.cdf(3*sigma) - norm.cdf(-3*sigma)) * 100\n\n# Create the plot\nfig, ax = plt.subplots(figsize=(10, 6))\nax.plot(x, y, color='blue', linewidth=2, label='Normal Distribution PDF')\n\n# Mark the mean\nax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\\mu$) = {mu:.2f}')\n\n# Define the standard deviation ranges\nstd1_left, std1_right = mu - sigma, mu + sigma\nstd2_left, std2_right = mu - 2*sigma, mu + 2*sigma\nstd3_left, std3_right = mu - 3*sigma, mu + 3*sigma\n\n# Shade the areas for 68%, 95%, and 99.7%\n# 99.7% (3 standard deviations)\nx_fill_3std = x[(x &gt;= std3_left) & (x &lt;= std3_right)]\ny_fill_3std = y[(x &gt;= std3_left) & (x &lt;= std3_right)]\nax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n\n# 95% (2 standard deviations)\nx_fill_2std = x[(x &gt;= std2_left) & (x &lt;= std2_right)]\ny_fill_2std = y[(x &gt;= std2_left) & (x &lt;= std2_right)]\nax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n\n# 68% (1 standard deviation)\nx_fill_1std = x[(x &gt;= std1_left) & (x &lt;= std1_right)]\ny_fill_1std = y[(x &gt;= std1_left) & (x &lt;= std1_right)]\nax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n# Add labels for standard deviation marks\nplt.text(mu + sigma, norm.pdf(mu + sigma, mu, sigma) + 0.02, r'$\\mu + \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu - sigma, norm.pdf(mu - sigma, mu, sigma) + 0.02, r'$\\mu - \\sigma$', horizontalalignment='center', color='red')\nplt.text(mu + 2*sigma, norm.pdf(mu + 2*sigma, mu, sigma) + 0.02, r'$\\mu + 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu - 2*sigma, norm.pdf(mu - 2*sigma, mu, sigma) + 0.02, r'$\\mu - 2\\sigma$', horizontalalignment='center', color='green')\nplt.text(mu + 3*sigma, norm.pdf(mu + 3*sigma, mu, sigma) + 0.02, r'$\\mu + 3\\sigma$', horizontalalignment='center', color='purple')\nplt.text(mu - 3*sigma, norm.pdf(mu - 3*sigma, mu, sigma) + 0.02, r'$\\mu - 3\\sigma$', horizontalalignment='center', color='purple')\n\n# Set title and labels\nax.set_title('Empirical Rule (68-95-99.7) Illustration', fontsize=16)\nax.set_xlabel('Standard Deviations above/below the mean', fontsize=12)\nax.set_ylabel('Probability Density', fontsize=12)\nax.legend(loc='upper right')\nax.grid(True, linestyle='--', alpha=0.6)\nplt.tight_layout()\nplt.show()\n\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\\m'\n&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\\m'\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_98577/588814348.py:34: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\\mu \\pm 3\\sigma$ ({percent_3std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_98577/588814348.py:39: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\\mu \\pm 2\\sigma$ ({percent_2std:.2f}%)')\n/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_98577/588814348.py:44: SyntaxWarning: invalid escape sequence '\\m'\n  ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\\mu \\pm 1\\sigma$ ({percent_1std:.2f}%)')\n\n\n\n\n\n\n\n\nFigure 7: Empirical Rule illustration"
   },
   {
     "objectID": "Math125/slides/18_19_the_normal_distribution-handout.html#percentiles-and-tail-areas",
@@ -3829,60 +4032,67 @@
     "text": "Read: Reread Section 6.1"
   },
   {
+    "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#one-sample-test-for-proportion-overview",
+    "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#one-sample-test-for-proportion-overview",
+    "title": "22. Hypothesis Testing – One Proportion",
+    "section": "2 One-sample test for proportion, overview",
+    "text": "2 One-sample test for proportion, overview\nThe parameter of interest is \\(p\\), a population proportion.\nThe statistic is \\(\\hat{p}\\), a sample proportion.\nThe Alternative hypothesis is \\(p &gt; k\\) or \\(p &lt; k\\) or \\(p \\neq k\\).\nThe Null hypothesis is \\(p=k\\)\nThe Standard Error is \\(SE = \\sqrt{\\frac{k(1-k)}{n}}\\).\nThe test statistic is \\(Z = \\frac{\\hat{p}-k}{SE}\\)"
+  },
+  {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-hot-day-in-phoenix",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-hot-day-in-phoenix",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "2 A hot day in Phoenix",
-    "text": "2 A hot day in Phoenix\nOver the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test whether the probability of a hot day now exceeds 12/365.\n\nIs the data consistent with the hypothesis?\nFind the standard error.\nFind the Z-score of this measurement.\nWhat is the p-value of this Z-score?\nIs the difference likely due to chance?"
+    "section": "3 A hot day in Phoenix",
+    "text": "3 A hot day in Phoenix\nOver the previous century (1911-2011), the proportion of days above 110°F in Phoenix, Arizona was 12/365. Consider this proportion a baseline for comparison. In the decade 2011-20, the proportion was 27/365. (Source, NOAA.) We wish to test whether the probability of a hot day now exceeds 12/365.\n\nIs the data consistent with the hypothesis?\nFind the standard error.\nFind the Z-score of this measurement.\nWhat is the p-value of this Z-score?\nIs the difference likely due to chance?"
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-hot-day-in-phoenix-solution",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-hot-day-in-phoenix-solution",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "3 A hot day in Phoenix (solution)",
-    "text": "3 A hot day in Phoenix (solution)\n\n# Square root function needs import\nfrom math import sqrt \n\n#Null hypothesis theory for p\np = 12/365\n\n#Observed proportion\np2 = 27/365\n\n# 10*365 days, plus leap days from '12, '16, '20)\nn = 3653 \n\nSE = sqrt(p*(1-p)/n) #Canned formula, using null value.\n\nZ = (p2-p)/SE # (observed - predicted) / SE\n\n# Import \"normal distribution\" tool\nfrom scipy.stats import norm\n\n# Find p-value as (left) tail area on normal distribution\npvalue = norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n13.929583127968339\n2.0939634488594107e-44\n\n\nThe p-value is miniscule. The effect is not due to chance. The change is statistically significant."
+    "section": "4 A hot day in Phoenix (solution)",
+    "text": "4 A hot day in Phoenix (solution)\n\n# Square root function needs import\nfrom math import sqrt \n\n#Null hypothesis theory for p\np = 12/365\n\n#Observed proportion\np2 = 27/365\n\n# 10*365 days, plus leap days from '12, '16, '20)\nn = 3653 \n\nSE = sqrt(p*(1-p)/n) #Canned formula, using null value.\n\nZ = (p2-p)/SE # (observed - predicted) / SE\n\n# Import stats for \"normal distribution\" tool\nfrom scipy import stats\n\n# Find p-value as (left) tail area on normal distribution\npvalue = stats.norm.cdf(-Z)\n\nprint(Z)\nprint(pvalue)\n\n13.929583127968339\n2.0939634488594107e-44\n\n\nThe p-value is miniscule. The effect is not due to chance. The change is statistically significant."
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#represent",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#represent",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "4 Represent",
-    "text": "4 Represent\nAbout 50.5% of the US population is female (source: US Census). The US Senate (119th congress) has 26 women out of 100 senators (source: CAWP). We wish to test the theory that the US electoral system elects women with probability \\(p &lt; .505\\).\n\nIs the data consistent with the hypothesis?\nAssume that senators’ genders are completely random (post-patriarchal utopia theory? \\(p = .505\\)), and calculate the standard error for such a sample.\nCalculate the Z-score of the measurement \\(26/100\\).\nCalculate a p-value for that Z-score. Is the discrepancy plausibly due to chance?"
+    "section": "5 Represent",
+    "text": "5 Represent\nAbout 50.5% of the US population is female (source: US Census). The US Senate (119th congress) has 26 women out of 100 senators (source: CAWP). We wish to test the theory that the US electoral system elects women with probability \\(p &lt; .505\\).\n\nIs the data consistent with the hypothesis?\nAssume that senators’ genders are completely random (post-patriarchal utopia theory? \\(p = .505\\)), and calculate the standard error for such a sample.\nCalculate the Z-score of the measurement \\(26/100\\).\nCalculate a p-value for that Z-score. Is the discrepancy plausibly due to chance?"
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-biased-coin",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-biased-coin",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "5 A biased coin 🪙",
-    "text": "5 A biased coin 🪙\nOn game night, your friend always conducts coin flips with his “lucky coin,” a huge, heavy, American Silver Eagle. He’s lucky with it. You’re concerned that a coin might be biased. Working together, you perform an experiment with 1000 coin flips. He wins 525 of them.\n\nIs the data consistent with the hypothesis?\nCalculate the standard error for this experiment.\nCalculate the Z-score of your result.\nCalculate the p-value of the result.\nConclude: Is your friend busted for unfair play?"
+    "section": "6 A biased coin 🪙",
+    "text": "6 A biased coin 🪙\nOn game night, your friend always conducts coin flips with his “lucky coin,” a huge, heavy, American Silver Eagle. He’s lucky with it. You’re concerned that a coin might be biased. Working together, you perform an experiment with 1000 coin flips. He wins 525 of them.\n\nIs the data consistent with the hypothesis?\nCalculate the standard error for this experiment.\nCalculate the Z-score of your result.\nCalculate the p-value of the result.\nConclude: Is your friend busted for unfair play?"
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-lucky-streak",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#a-lucky-streak",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "6 A lucky streak",
-    "text": "6 A lucky streak\nIn 2020, a gamer called Dream uploaded a world record Minecraft speedrun video. In it, Dream performed a certain randomized action (“trading for ender pearls”) 262 times, with success 42 times, a 16% success rate. Game logic dictates that success should be purely random (skill-independent) with a probability of 4.27%.\n\nIs the data consistent with the hypothesis?\nCalculate the standard error for this experiment.\nCalculate the Z-score of Dream’s sample.\nCalculate a p-value for that Z-score.\nIs good luck a credible explanation for these events?"
+    "section": "7 A lucky streak",
+    "text": "7 A lucky streak\nIn 2020, a gamer called Dream uploaded a world record Minecraft speedrun video. In it, Dream performed a certain randomized action (“trading for ender pearls”) 262 times, with success 42 times, a 16% success rate. Game logic dictates that success should be purely random (skill-independent) with a probability of 4.27%.\n\nIs the data consistent with the hypothesis?\nCalculate the standard error for this experiment.\nCalculate the Z-score of Dream’s sample.\nCalculate a p-value for that Z-score.\nIs good luck a credible explanation for these events?"
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#z-scores-vs-z-scores",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#z-scores-vs-z-scores",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "7 Z scores vs Z scores",
-    "text": "7 Z scores vs Z scores\n\nZ score for the individual: (data value - mean) / σ Used to assess how out of whack one data value is, in relation to its distribution.\nZ score for the experiment: (test statistic - null prediction) / SE Used to assess how strongly different from prediction is the experimental result."
+    "section": "8 Z scores vs Z scores",
+    "text": "8 Z scores vs Z scores\n\nZ score for the individual: (data value - mean) / σ Used to assess how out of whack one data value is, in relation to its distribution.\nZ score for the experiment: (test statistic - null prediction) / SE Used to assess how strongly different from prediction is the experimental result."
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#threshold-of-significance",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#threshold-of-significance",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "8 Threshold of Significance",
-    "text": "8 Threshold of Significance\n\n8.1 How small is small?\nIf \\(p\\) is small, we have a statistically significant result. If \\(p\\) is large, it’s inconclusive. How small is small?\n\\(\\alpha = 0.05\\) is a typical threshold of significance (or significance level). This is a social norm, which means it’s made up and can change.\n\\(\\alpha = 0.005\\) would be a better, stricter choice, requiring stronger evidence and producing fewer false positives results.\nWe must choose the threshold of significance before collecting data. Why?"
+    "section": "9 Threshold of Significance",
+    "text": "9 Threshold of Significance\n\n9.1 How small is small?\nIf \\(p\\) is small, we have a statistically significant result. If \\(p\\) is large, it’s inconclusive. How small is small?\n\\(\\alpha = 0.05\\) is a typical threshold of significance (or significance level). This is a social norm, which means it’s made up and can change.\n\\(\\alpha = 0.005\\) would be a better, stricter choice, requiring stronger evidence and producing fewer false positives results.\nWe must choose the threshold of significance before collecting data. Why?"
   },
   {
     "objectID": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#homework",
     "href": "Math125/slides/22_hypothesis_testing_one_proportion-handout.html#homework",
     "title": "22. Hypothesis Testing – One Proportion",
-    "section": "9 Homework",
-    "text": "9 Homework\n\nHypothesis Testing One Proportion"
+    "section": "10 Homework",
+    "text": "10 Homework\n\nHypothesis Testing One Proportion"
   },
   {
     "objectID": "Math125/syllabus.html",

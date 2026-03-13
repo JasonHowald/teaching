@@ -6,4 +6,4 @@ format: html
 ---
 
 {{< include _22_hypothesis_testing_one_proportion.qmd >}}
-  
+     

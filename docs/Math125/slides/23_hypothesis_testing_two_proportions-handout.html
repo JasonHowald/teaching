@@ -149,11 +149,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#preparatory-work" id="toc-preparatory-work" class="nav-link active" data-scroll-target="#preparatory-work"><span class="header-section-number">1</span> Preparatory work</a></li>
-  <li><a href="#bias-assessment" id="toc-bias-assessment" class="nav-link" data-scroll-target="#bias-assessment"><span class="header-section-number">2</span> Bias assessment</a></li>
-  <li><a href="#bias-assessment-solutions" id="toc-bias-assessment-solutions" class="nav-link" data-scroll-target="#bias-assessment-solutions"><span class="header-section-number">3</span> Bias assessment – solutions</a></li>
-  <li><a href="#risk-reduction" id="toc-risk-reduction" class="nav-link" data-scroll-target="#risk-reduction"><span class="header-section-number">4</span> Risk Reduction</a></li>
-  <li><a href="#premature-births" id="toc-premature-births" class="nav-link" data-scroll-target="#premature-births"><span class="header-section-number">5</span> Premature births</a></li>
-  <li><a href="#planning-ahead" id="toc-planning-ahead" class="nav-link" data-scroll-target="#planning-ahead"><span class="header-section-number">6</span> Planning ahead</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">2</span> Overview</a></li>
+  <li><a href="#bias-assessment" id="toc-bias-assessment" class="nav-link" data-scroll-target="#bias-assessment"><span class="header-section-number">3</span> Bias assessment</a></li>
+  <li><a href="#bias-assessment-solutions" id="toc-bias-assessment-solutions" class="nav-link" data-scroll-target="#bias-assessment-solutions"><span class="header-section-number">4</span> Bias assessment – solutions</a></li>
+  <li><a href="#risk-reduction" id="toc-risk-reduction" class="nav-link" data-scroll-target="#risk-reduction"><span class="header-section-number">5</span> Risk Reduction</a></li>
+  <li><a href="#premature-births" id="toc-premature-births" class="nav-link" data-scroll-target="#premature-births"><span class="header-section-number">6</span> Premature births</a></li>
+  <li><a href="#planning-ahead" id="toc-planning-ahead" class="nav-link" data-scroll-target="#planning-ahead"><span class="header-section-number">7</span> Planning ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -188,8 +189,19 @@ window.Quarto = {
 <h2 data-number="1" class="anchored" data-anchor-id="preparatory-work"><span class="header-section-number">1</span> Preparatory work</h2>
 <p>Read: Reread Section 6.2</p>
 </section>
-<section id="bias-assessment" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="bias-assessment"><span class="header-section-number">2</span> Bias assessment</h2>
+<section id="overview" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="overview"><span class="header-section-number">2</span> Overview</h2>
+<p>The <strong>parameters of interest</strong> are <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>, population proportions.</p>
+<p>The <strong>statistics of interest</strong> are <span class="math inline">\(\hat{p_1}\)</span> and <span class="math inline">\(\hat{p_2}\)</span>, sample proportions.</p>
+<p>The <strong>alternative hypothesis</strong> is usually <span class="math inline">\(p_1 &lt; p_2\)</span> or <span class="math inline">\(p_1 \neq p_2\)</span>.</p>
+<p>The <strong>null hypothesis</strong> is <span class="math inline">\(p_1=p_2\)</span> (or <span class="math inline">\(p_2-p_1 =0\)</span>)</p>
+<p>The <strong>pooled proportion</strong> is <span class="math inline">\(\hat{p} = \frac{X_1+X_2}{n_1+n_2}\)</span></p>
+<p>The <strong>standard errors</strong> are</p>
+<p><span class="math display">\[SE_1 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_1}} \text{ and } SE_2 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_2}} \text{ and } SE = \sqrt{SE_1^2 + SE_2^2}\]</span></p>
+<p>The <strong>test statistic</strong> is <span class="math inline">\(Z = \frac{(\hat{p_1} - \hat{p_2})-0}{SE}\)</span></p>
+</section>
+<section id="bias-assessment" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="bias-assessment"><span class="header-section-number">3</span> Bias assessment</h2>
 <p>Managers recommend for promotion 14/24 women, but 21/24 men. Is this statistically significant evidence of gender bias?</p>
 <ol type="1">
 <li>Is the data consistent with the hypothesis of bias? If so, continue.</li>
@@ -204,12 +216,12 @@ window.Quarto = {
 <li>Find the p-value using the normal distribution.</li>
 </ol>
 </section>
-<section id="bias-assessment-solutions" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="bias-assessment-solutions"><span class="header-section-number">3</span> Bias assessment – solutions</h2>
-<div id="d7337e8a" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Import sqrt and norm functions for later</span></span>
+<section id="bias-assessment-solutions" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="bias-assessment-solutions"><span class="header-section-number">4</span> Bias assessment – solutions</h2>
+<div id="142973f0" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Import sqrt and stats for later</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Pooled proportion and standard errors</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">35</span><span class="op">/</span><span class="dv">48</span>  <span class="co">#all candidates</span></span>
@@ -220,7 +232,7 @@ window.Quarto = {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Z-score and p-value</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> (<span class="dv">21</span><span class="op">/</span><span class="dv">24</span> <span class="op">-</span> <span class="dv">14</span><span class="op">/</span><span class="dv">24</span>) <span class="op">/</span> SE </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>pvalue <span class="op">=</span> norm.cdf(<span class="op">-</span>Z)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>pvalue <span class="op">=</span> stats.norm.cdf(<span class="op">-</span>Z)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Z)</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -230,8 +242,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="risk-reduction" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="risk-reduction"><span class="header-section-number">4</span> Risk Reduction</h2>
+<section id="risk-reduction" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="risk-reduction"><span class="header-section-number">5</span> Risk Reduction</h2>
 <p>Treatment X intends to reduce risk of death from gunshot wound. Is the data below statistically significant evidence?</p>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -313,21 +325,21 @@ Total
 </div>
 </div>
 </section>
-<section id="premature-births" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="premature-births"><span class="header-section-number">5</span> Premature births</h2>
+<section id="premature-births" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="premature-births"><span class="header-section-number">6</span> Premature births</h2>
 <ol type="1">
 <li>Load the “births14” data from openintro.</li>
 <li>Make a crosstab of prematurity vs.&nbsp;smoking habit:</li>
 </ol>
-<div id="088d3551" class="cell" data-execution_count="2">
+<div id="bb0dfd03" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pd.crosstab(df.premie, df.habit, margins<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>Perform a hypothesis test comparing the proportion of premature births among smokers and among nonsmokers. Does it give statistically significant evidence that smoking increases the probability of premature birth?</li>
 </ol>
 </section>
-<section id="planning-ahead" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="planning-ahead"><span class="header-section-number">6</span> Planning ahead</h2>
+<section id="planning-ahead" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="planning-ahead"><span class="header-section-number">7</span> Planning ahead</h2>
 <p>You believe Method A succeeds 70% of the time, whereas Method B succeeds 80% of the time. Others aren’t convinced. How many trials of each method must you do to prove (with statistical significance) that method B is better?</p>
 <ol type="1">
 <li>In a Jupyter notebook, guess a sample size <span class="math inline">\(n=40\)</span>.</li>

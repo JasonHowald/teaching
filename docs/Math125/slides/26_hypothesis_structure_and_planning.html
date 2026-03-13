@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>Teaching – 23. Hypothesis Testing – Two Proportions</title>
+  <title>Teaching – 26. Hypothesis Testing – Structure and Planning</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,72 +27,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-04337884fe53f40bfb5c351e269af635.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -202,174 +136,23 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">23. Hypothesis Testing – Two Proportions</h1>
+  <h1 class="title">26. Hypothesis Testing – Structure and Planning</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="preparatory-work" class="slide level2">
-<h2>Preparatory work</h2>
-<p>Read: Reread Section 6.2</p>
-</section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
-<p>The <strong>parameters of interest</strong> are <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>, population proportions.</p>
-<p>The <strong>statistics of interest</strong> are <span class="math inline">\(\hat{p_1}\)</span> and <span class="math inline">\(\hat{p_2}\)</span>, sample proportions.</p>
-<p>The <strong>alternative hypothesis</strong> is usually <span class="math inline">\(p_1 &lt; p_2\)</span> or <span class="math inline">\(p_1 \neq p_2\)</span>.</p>
-<p>The <strong>null hypothesis</strong> is <span class="math inline">\(p_1=p_2\)</span> (or <span class="math inline">\(p_2-p_1 =0\)</span>)</p>
-<p>The <strong>pooled proportion</strong> is <span class="math inline">\(\hat{p} = \frac{X_1+X_2}{n_1+n_2}\)</span></p>
-<p>The <strong>standard errors</strong> are</p>
-<p><span class="math display">\[SE_1 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_1}} \text{ and } SE_2 = \sqrt{\frac{\hat{p}(1-\hat{p})}{n_2}} \text{ and } SE = \sqrt{SE_1^2 + SE_2^2}\]</span></p>
-<p>The <strong>test statistic</strong> is <span class="math inline">\(Z = \frac{(\hat{p_1} - \hat{p_2})-0}{SE}\)</span></p>
-</section>
-<section id="bias-assessment" class="slide level2">
-<h2>Bias assessment</h2>
-<p>Managers recommend for promotion 14/24 women, but 21/24 men. Is this statistically significant evidence of gender bias?</p>
-<ol type="1">
-<li>Is the data consistent with the hypothesis of bias? If so, continue.</li>
-<li>Find the <strong>pooled proportion</strong>. This is our best guess of the promotion rate if the managers were fair.</li>
-<li>Find the standard error, in three steps.
-<ul>
-<li>SE for the men</li>
-<li>SE for the women</li>
-<li>SE for the difference.</li>
-</ul></li>
-<li>Find the Z-score for the difference of proportions</li>
-<li>Find the p-value using the normal distribution.</li>
+<section class="slide level2">
+
+<ol start="26" type="1">
+<li>Hypothesis – structure and planning</li>
 </ol>
-</section>
-<section id="bias-assessment-solutions" class="slide level2">
-<h2>Bias assessment – solutions</h2>
-<div id="1b23068d" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co">#Import sqrt and stats for later</span></span>
-<span id="cb1-2"><a></a><span class="im">from</span> math <span class="im">import</span> sqrt </span>
-<span id="cb1-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="co">#Pooled proportion and standard errors</span></span>
-<span id="cb1-6"><a></a>p <span class="op">=</span> <span class="dv">35</span><span class="op">/</span><span class="dv">48</span>  <span class="co">#all candidates</span></span>
-<span id="cb1-7"><a></a>n <span class="op">=</span> <span class="dv">24</span> <span class="co">#number in each category</span></span>
-<span id="cb1-8"><a></a>SE1 <span class="op">=</span> sqrt(p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>n) <span class="co">#For the women</span></span>
-<span id="cb1-9"><a></a>SE2 <span class="op">=</span> sqrt(p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>n) <span class="co">#For the men</span></span>
-<span id="cb1-10"><a></a>SE <span class="op">=</span> sqrt(SE1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> SE2<span class="op">**</span><span class="dv">2</span>) <span class="co">#SE of the difference</span></span>
-<span id="cb1-11"><a></a></span>
-<span id="cb1-12"><a></a><span class="co"># Z-score and p-value</span></span>
-<span id="cb1-13"><a></a>Z <span class="op">=</span> (<span class="dv">21</span><span class="op">/</span><span class="dv">24</span> <span class="op">-</span> <span class="dv">14</span><span class="op">/</span><span class="dv">24</span>) <span class="op">/</span> SE </span>
-<span id="cb1-14"><a></a>pvalue <span class="op">=</span> stats.norm.cdf(<span class="op">-</span>Z)</span>
-<span id="cb1-15"><a></a></span>
-<span id="cb1-16"><a></a><span class="bu">print</span>(Z)</span>
-<span id="cb1-17"><a></a><span class="bu">print</span>(pvalue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2.2735942402352203
-0.011495197046232447</code></pre>
-</div>
-</div>
-</section>
-<section id="risk-reduction" class="slide level2">
-<h2>Risk Reduction</h2>
-<p>Treatment X intends to reduce risk of death from gunshot wound. Is the data below statistically significant evidence?</p>
-<div class="columns">
-<div class="column" style="width:55%;">
-<table>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-With X
-</th>
-<th>
-No X
-</th>
-<th>
-Total
-</th>
-</tr>
-</thead>
-<tbody><tr>
-<th scope="row">
-Death
-</th>
-<td>
-120
-</td>
-<td>
-200
-</td>
-<td>
-320
-</td>
-</tr>
-<tr>
-<th scope="row">
-Survival
-</th>
-<td>
-680
-</td>
-<td>
-800
-</td>
-<td>
-1480
-</td>
-</tr>
-<tr>
-<th scope="row">
-Total
-</th>
-<td>
-800
-</td>
-<td>
-1000
-</td>
-<td>
-1800
-</td>
-</tr>
-</tbody></table>
-</div><div class="column" style="width:45%;">
-<ol type="1">
-<li>Find the proportions…
-<ul>
-<li>within each group.</li>
-<li>as a pooled proportion.</li>
-</ul></li>
-<li>Calculate standard error…
-<ul>
-<li>within each group.</li>
-<li>of the difference.</li>
-</ul></li>
-<li>Find the Z-score</li>
-<li>Find the p-value.</li>
-<li>Is it statistically significant?</li>
-</ol>
-</div></div>
-</section>
-<section id="premature-births" class="slide level2">
-<h2>Premature births</h2>
-<ol type="1">
-<li>Load the “births14” data from openintro.</li>
-<li>Make a crosstab of prematurity vs.&nbsp;smoking habit:</li>
-</ol>
-<div id="34010262" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>pd.crosstab(df.premie, df.habit, margins<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ol start="3" type="1">
-<li>Perform a hypothesis test comparing the proportion of premature births among smokers and among nonsmokers. Does it give statistically significant evidence that smoking increases the probability of premature birth?</li>
-</ol>
-</section>
-<section id="planning-ahead" class="slide level2">
-<h2>Planning ahead</h2>
-<p>You believe Method A succeeds 70% of the time, whereas Method B succeeds 80% of the time. Others aren’t convinced. How many trials of each method must you do to prove (with statistical significance) that method B is better?</p>
-<ol type="1">
-<li>In a Jupyter notebook, guess a sample size <span class="math inline">\(n=40\)</span>.</li>
-<li>Set the values of each proportion and the pooled proportion.</li>
-<li>Calculate all three standard errors.</li>
-<li>Find the Z-score.</li>
-<li>Find the p-value for the difference of proportions.</li>
-<li>Adjust <span class="math inline">\(n\)</span> and recompute the p-value shows statistical significance.</li>
+<p>Categorize the hypothesis test and plan a solution After measuring 250 M&amp;M’s, you find that they have an average weight of .96 grams and a standard deviation of .08 grams. Do you have enough evidence to conclude that M&amp;M’s generally weigh less than 1 gram? An experimental treatment is supposed to reduce the risk of stroke. Out of 200 recipients, 5 had stroke, but out of 200 in a control group, 10 had stroke. Is this a statistically significant difference? I won 10 out of 28 games of ping pong. Is this statistically significant evidence that I am a worse player?</p>
+<p>Categorize the hypothesis test and plan a solution 4. Two species of swallow are identified. Data (including mass and species) is collected in a csv file from 100 birds from both species. Determine whether there is a statistically significant difference in their masses. 5. A random sample of 10 men has an average diastolic blood pressure of 90, with standard deviation 15. A sample of 25 women has an average diastolic blood pressure of 82, with standard deviation 13. Is this sufficient evidence that men and women have different blood pressure, on average? Use a threshold of significance of 𝛼=0.01</p>
+<p>Categorize the hypothesis test and plan a solution 6. Is the mere presence of a cell phone distracting, in the sense that it will cause students to take longer to solve a puzzle? Ten students were asked to solve a puzzle undistracted, or to solve the same puzzle with a cell phone unused on the table. phone count mean std N 10.0 10.68 1.91 Y 10.0 12.4 1.87</p>
+<p>Categorize the hypothesis test and plan a solution 7. The Standard Model predicts a certain particle decay to happen with probability 10-6. Under novel experimental conditions, the decay happens 30 times out of ten million events. Is this a statistically significant deviation from prediction? Use threshold of significance 𝛼=0.000001 for particle physics. 8. The Standard Model predicts that a particle should have mass 4.4 MeV/c2. Analyze data from a csv file, and decide whether the data is consistent with prediction. https://docs.google.com/spreadsheets/d/1KqbyvihbeSzF20mlVXYkU7LYYdYPpVh3IbZcD7-rNy8/export?format=csv</p>
+<ol start="9" type="1">
+<li>In January 2020 (!), scientists studying Wuhan infections of Covid-19 estimated the average infection rate to be R0 = 2.2. There were about 425 cases in the study. Is this statistically significantly greater than 1? Categorize the hypothesis test and plan a solution</li>
 </ol>
 
 

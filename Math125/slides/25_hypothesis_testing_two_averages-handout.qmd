@@ -1,0 +1,11 @@
+---
+title: "25. Hypothesis Testing -- Two Means"
+description: "Hypothesis testing with two means"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+  
+{{< include _25_hypothesis_testing_two_averages.qmd >}}
+  
+
+   

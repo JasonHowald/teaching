@@ -1,0 +1,90 @@
+## One-sample test for mean, overview
+
+The **parameter of interest** is $\mu$, a population mean. 
+
+The **statistic** is $\bar{x}$, a sample mean. 
+
+The **alternative hypothesis** is $\mu > k$ or $\mu < k$ or $\mu \neq k$. 
+
+The **null hypothesis** is $\mu=k$
+
+The **standard error** is $SE = \frac{s}{\sqrt{n}}$
+
+The **test statistic** is $t = \frac{\bar{x}-k}{SE}$
+
+## The T-test, an added wrinkle
+
+::: {.incremental}
+1. The standard error in this case "should be" $SE = \frac{\sigma}{\sqrt{n}}$, but we almost never know $\sigma$. The sample stdev $s$ is
+what we know, and it's close.
+2. The $Z$-score $Z = \frac{\bar{x}-k}{\sigma / \sqrt{n}}$ would be a normally distributed estimation error but our substitute  $t = \frac{\bar{x}-k}{s / \sqrt{n}}$ is not, because the denominator is subtly data-dependent.
+3. We shouldn't compare a t-score to the normal distribution. We must use a "modified normal" distribution called a t-distribution, which accounts for the problem $s \neq \sigma$.
+4. The "fix" depends on sample size. The $t$-distribution with $n-1$ "degrees of freedom" is the right one.
+:::
+
+## Identifying a t-test.
+A restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?
+
+1. A mean (not a proportion) is compared.
+1. There is a hypothesis to check comparing the mean to baseline or another mean.
+1. We have a standard deviation from the dataset but no population standard deviation.
+
+
+## Example 1 -- a fishy discrepancy
+A restaurant supplier predicts delivery of salmon fillets with an average mass of 600 grams. This week’s average is only 580 with a standard deviation of 30 (n=100). This is smaller than the agreed average size. Is this statistically significantly smaller?
+
+```{python}
+#| eval: true
+#| echo: true
+# Square root function needs import
+from math import sqrt 
+
+#Record givens
+k = 600  # Null hypothesis theory
+x = 580  # Observed mean
+n = 100  # sample size
+s = 30   # SAMPLE standard deviation.
+
+SE = s / sqrt(n) 
+t = (x - k)/SE # (observed - predicted) / SE
+
+# Import stats for "t distribution" tool, not normal!
+from scipy import stats
+
+# Find p-value as (left) tail area on t distribution
+pvalue = stats.t.cdf(t, 99) 
+# Note t was negative so I didn't negate it.
+
+print(t)
+print(pvalue)
+```
+
+
+## Example 2 - deep breath
+
+An intervention reduced patients’ blood pressure by, on average, 5 units, with a standard deviation of 16 units. Only ten people participated in the study. Is it safe to conclude that the treatment is effective at lowering blood pressure?
+
+1. Calculate the standard error.
+2. Calculate the t-score. 
+3. Identify the "degrees of freedom".
+3. Find the p-value using stats.t.cdf
+4. Conclude. 
+
+## Example 3 – Beth’s baking
+
+Beth is not a very precise baker. She measures out three “cups” of flour, but they are 120g, 135g, and 145g in mass.
+
+1. Is it safe to say that on average, Beth’s “cups” of flour will weigh more than 120g? Perform the hypothesis test.
+
+```{python}
+#| eval: true
+#| echo: true
+
+# Recommended data input 
+import pandas as pd
+x = pd.Series([120, 135, 145])
+```
+
+2. What if the data were **150g**, 135g, 145g instead?
+3. Is it possible to make statistically valid inferences from a sample size of only three?
+

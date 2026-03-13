@@ -1,0 +1,11 @@
+---
+title: "24. Hypothesis Testing -- One Mean"
+description: "Hypothesis testing with one mean"
+engine: jupyter #Force jupyter notebook to invalidate cache.
+format: html
+---
+
+{{< include _24_hypothesis_testing_one_average.qmd >}}
+  
+ 
+    

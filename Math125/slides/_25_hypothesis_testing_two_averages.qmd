@@ -1,0 +1,72 @@
+## Two-sample test for mean, overview
+### (Welch's unequal-variance t-test))
+
+The **parameters of interest** are $\mu_1$ and $\mu_2$, means of two populations.
+
+The **statistics of interest** are $\bar{x_1}$ and $\bar{x_2}$, sample means. 
+
+The **alternative hypothesis** is $\mu_2 > \mu_1$ or $\mu_2 \neq \mu_1$. 
+
+The **null hypothesis** is $\mu_1=\mu_2$
+
+The **standard errors** are 
+
+$$SE_1 = \frac{s_1}{\sqrt{n_1}}, \enspace\enspace SE_2 = \frac{s_2}{\sqrt{n_2}}, \text{ and } \enspace SE = \sqrt{SE_1^2 + SE_2^2}$$
+
+The **test statistic** is $t = \frac{(\bar{x_1}- \bar{x_2})-0}{SE}$
+
+## The T distribution for a two-sample test.
+
+1. As before, a $t$-score must be compared to a $t$-distribution with appropriate degree-of-freedom.
+2. We use the *lesser* of $n_1-1$ and $n_2-1$ for the degrees of freedom, 
+or the much more complicated Welch-Satterthwaite equation:
+
+$$df = \frac{SE^4}{\frac{SE_1^4}{n_1-1} + \frac{SE_2^4}{n_2-1} }$$
+
+
+## Example 1 – Learning theory
+
+A psychologist wants to test memory and distractedness. In condition
+A, 24 participants can memorize $12$ words on average (stdev = $7$), but in condition $B$, 21 participants can memorize $8$ words on average (stdev = $6$). Is there statistically significant evidence that condition $A$ is better?
+
+1. Find all three standard errors. 
+2. Find the t-score.
+3. Determine the degrees of freedom. 
+4. Find a p-value for this test. 
+5. Conclude.
+
+## Example 2 -- Blood test
+Older mice are given blood transfusions, receiving the blood of older or younger mice. Data is here: https://www.lock5stat.com/datasets3e/YoungBlood.csv. Will younger blood increase their activity level?  
+
+1. Fetch, read, regroup, and describe the data.
+```{python}
+#| echo: true
+#| eval: false
+import pandas as pd
+df = pd.read_csv('YoungBlood.csv')
+df.groupby('Plasma').describe()
+```
+
+2. Find three standard errors.
+3. Find the t-score.
+3. Determine the degrees of freedom. 
+4. Find a p-value for this test. 
+5. Conclude.
+
+## Example 3 -- A long commute
+In the acs12 dataset (on openintro), do the men have, on average, a longer time_to_work than the women? Is the difference statistically significant?
+
+You will need a regrouping/describing trick:
+```{python}
+#| eval: false
+#| echo: true
+df.groupby('gender')['time_to_work'].describe()
+```
+
+## Example 4 
+### (An age gap, foreshadowing the paired t-test)
+Are husbands older than their wives? (Using heterosexual marriage age data from Locke.) This is paired data, which may suggest a new idea. For now, perform the usual two-sample t-test.
+
+http://www.lock5stat.com/datasets3e/MarriageAges.csv
+
+
