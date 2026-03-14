@@ -199,13 +199,25 @@ window.Quarto = {
   </ul></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">4</span> Functions</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">4.1</span> Introduction</a>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">4.1</span> Basics</a>
   <ul class="collapse">
-  <li><a href="#nuances-of-function-notation" id="toc-nuances-of-function-notation" class="nav-link" data-scroll-target="#nuances-of-function-notation"><span class="header-section-number">4.1.1</span> Nuances of Function Notation</a></li>
-  <li><a href="#a-word-on-range." id="toc-a-word-on-range." class="nav-link" data-scroll-target="#a-word-on-range."><span class="header-section-number">4.1.2</span> A word on “range”.</a></li>
-  <li><a href="#how-to-introduce-a-function" id="toc-how-to-introduce-a-function" class="nav-link" data-scroll-target="#how-to-introduce-a-function"><span class="header-section-number">4.1.3</span> How to introduce a function</a></li>
+  <li><a href="#what-is-a-function" id="toc-what-is-a-function" class="nav-link" data-scroll-target="#what-is-a-function"><span class="header-section-number">4.1.1</span> What is a function?</a></li>
+  <li><a href="#definition-of-a-function" id="toc-definition-of-a-function" class="nav-link" data-scroll-target="#definition-of-a-function"><span class="header-section-number">4.1.2</span> Definition of a function</a></li>
+  <li><a href="#a-word-on-range." id="toc-a-word-on-range." class="nav-link" data-scroll-target="#a-word-on-range."><span class="header-section-number">4.1.3</span> A word on “range”.</a></li>
+  <li><a href="#how-to-introduce-a-function" id="toc-how-to-introduce-a-function" class="nav-link" data-scroll-target="#how-to-introduce-a-function"><span class="header-section-number">4.1.4</span> How to introduce a function</a></li>
+  <li><a href="#proving-functions-equal" id="toc-proving-functions-equal" class="nav-link" data-scroll-target="#proving-functions-equal"><span class="header-section-number">4.1.5</span> Proving functions equal</a></li>
   </ul></li>
-  <li><a href="#inverse-functions" id="toc-inverse-functions" class="nav-link" data-scroll-target="#inverse-functions"><span class="header-section-number">4.2</span> Inverse Functions</a></li>
+  <li><a href="#composition" id="toc-composition" class="nav-link" data-scroll-target="#composition"><span class="header-section-number">4.2</span> Composition</a></li>
+  <li><a href="#injective-surjective-bijective" id="toc-injective-surjective-bijective" class="nav-link" data-scroll-target="#injective-surjective-bijective"><span class="header-section-number">4.3</span> Injective / Surjective / Bijective</a>
+  <ul class="collapse">
+  <li><a href="#injectivity" id="toc-injectivity" class="nav-link" data-scroll-target="#injectivity"><span class="header-section-number">4.3.1</span> Injectivity</a></li>
+  <li><a href="#surjectivity" id="toc-surjectivity" class="nav-link" data-scroll-target="#surjectivity"><span class="header-section-number">4.3.2</span> Surjectivity</a></li>
+  <li><a href="#bijectivity" id="toc-bijectivity" class="nav-link" data-scroll-target="#bijectivity"><span class="header-section-number">4.3.3</span> Bijectivity</a></li>
+  </ul></li>
+  <li><a href="#invertibility" id="toc-invertibility" class="nav-link" data-scroll-target="#invertibility"><span class="header-section-number">4.4</span> Invertibility</a>
+  <ul class="collapse">
+  <li><a href="#definitions-1" id="toc-definitions-1" class="nav-link" data-scroll-target="#definitions-1"><span class="header-section-number">4.4.1</span> Definitions</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -1230,59 +1242,133 @@ Complement <br>But see below
 </section>
 <section id="functions" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Functions</h1>
-<section id="introduction" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> Introduction</h2>
-<p>Interesting relationships between sets are usually expressed as functions.</p>
-<section id="nuances-of-function-notation" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="nuances-of-function-notation"><span class="header-section-number">4.1.1</span> Nuances of Function Notation</h3>
-<p><strong>Where is the function?</strong> We’re accustomed to writing a function <span class="math inline">\(y = x^2\)</span> or for example <span class="math inline">\(f(x)=3x+5\)</span> and saying “that’s a function.” But which part is a function? Variables are not functions. A variable is an ambiguous reference to an individual thing, usually a real number. So <span class="math inline">\(x\)</span> is not a function, and neither is <span class="math inline">\(y\)</span>, despite the idiom “<span class="math inline">\(y\)</span> is a function of <span class="math inline">\(x\)</span>”. We need to clearly consider the difference between a mathematical form and mathematical value. In analytical philosophy, this is called the use-mention distinction. To illustrate:</p>
-<p><strong>Use:</strong> Half of eleven is 5.5</p>
-<p><strong>Mention:</strong> Half of “eleven” is the letter “e”.</p>
-<p>We <em>use</em> 3x+5 when we reason about its numerical value. We <em>mention</em> 3x+5 when we comment on its form as a combination of symbols:</p>
-<table class="caption-top table">
+<section id="basics" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">4.1</span> Basics</h2>
+<p>We rarely study sets one at a time. Usually we want to observe and study interrelationships between sets. These are usually expressed as functions. Functions are the bonds which make the chemistry of set theory interesting.</p>
+<section id="what-is-a-function" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored"><span class="header-section-number">4.1.1</span> What is a function?</h3>
+<section id="various-perspectives" class="level4" data-number="4.1.1.1">
+<h4 data-number="4.1.1.1" class="anchored"><span class="header-section-number">4.1.1.1</span> Various Perspectives</h4>
+<p>Historically, a function is nothing more than a formula which depends on a free variable. So for example, <span class="math inline">\(f(x)= x^2+1\)</span> is a function because <span class="math inline">\(x^2+1\)</span> is a formula. This simple perspective has a few drawbacks. First, it can’t easily distinguish between versions of <span class="math inline">\(f(x) = x^2+1\)</span> operating on different domains. For example, we might wish to consider <span class="math inline">\(x \in {\mathbb R}\)</span>, or <span class="math inline">\(x \in (0,\infty)\)</span>, or even <span class="math inline">\(x \in {\mathbb Z}\)</span>. More seriously, lots of constructions in serious mathematics seem to create functions which don’t have a formula or strain the definition of “formula”. For example,</p>
+<ul>
+<li><span class="math inline">\(F(x) = \int_0^x f(t) dt\)</span>. Is this a “formula”?</li>
+<li>Let <span class="math inline">\(p(n)\)</span> be the <span class="math inline">\(n\)</span>’th prime number. Is this a “formula”?</li>
+<li>Let <span class="math inline">\(f(x)\)</span> be the solution to the (pendulum) differential equation <span class="math inline">\(y'' + \sin(y) = 0\)</span>.</li>
+<li>Let <span class="math inline">\(f(x) = \sum_{n=1}^\infty \frac{x^n}{n}\)</span>. Does an infinite sum count as a “formula”? What if it doesn’t converge?</li>
+</ul>
+<p>Finally, the formulaic definition of a function makes functions not sets. This is only a problem if we want <em>everything</em> in mathematics to be officially a set. If we’re doing formal set theory, well, we do!</p>
+<p>Moving beyond “formulas,” we may regard a function to be a table of values. For example, consider the function:</p>
+<table border="1" style="border-collapse: collapse; text-align: center;">
 <thead>
-<tr class="header">
-<th><strong>Mention = form = syntax</strong></th>
-<th><strong>Use = value = Semantics</strong></th>
+<tr>
+<th style="padding: 10px; background-color: #f2f2f2;">
+<span class="math inline">\(x\)</span>
+</th>
+<td style="padding: 10px;">
+<span class="math inline">\(-3\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(-2\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(-1\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(1\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(2\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(3\)</span>
+</td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>“3x+5”</td>
-<td>3x+5</td>
-</tr>
-<tr class="even">
-<td>type: text string</td>
-<td>type: real number</td>
-</tr>
-<tr class="odd">
-<td>has an x in it</td>
-<td>depends on x</td>
-</tr>
-<tr class="even">
-<td>has four symbols</td>
-<td>has one value</td>
-</tr>
-<tr class="odd">
-<td><strong>is not</strong> “5+3x”</td>
-<td><strong>is</strong> 5+3x</td>
+<tr>
+<th style="padding: 10px; background-color: #f2f2f2;">
+<span class="math inline">\(f(x) = x^{2} + 1\)</span>
+</th>
+<td style="padding: 10px;">
+<span class="math inline">\(10\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(5\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(2\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(1\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(2\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(5\)</span>
+</td>
+<td style="padding: 10px;">
+<span class="math inline">\(10\)</span>
+</td>
 </tr>
 </tbody>
 </table>
-<p>Now “<span class="math inline">\(3x+5\)</span>” is a string of symbols, <em>different</em> from “<span class="math inline">\(3x+4+1\)</span>”, with no numerical value. It is neither a number nor a function. On the other hand, <span class="math inline">\(3x+5\)</span> is a single real number which will be known if the value of <span class="math inline">\(x\)</span> is known. It is also not a function. If for example <span class="math inline">\(f(x) = 3x+5\)</span>, even <span class="math inline">\(f(x)\)</span> is not a function. The only function here is <span class="math inline">\(f\)</span>, not the letter “f” but what it stands for in this context: A mathematical object which knows its potential inputs, its potential outputs, and its method for attaching outputs to inputs, an object which can be “evaluated” at an input using the notation for example <span class="math inline">\(f(10)\)</span> to produce the associated output <span class="math inline">\(35\)</span>.</p>
-<p>In summary, when we write <span class="math inline">\(f(x) = 3x+5\)</span>, the function is not <span class="math inline">\(y\)</span>, not <span class="math inline">\(3x+5\)</span>, nor even <span class="math inline">\(f(x)\)</span>, because these are all notations for an individual output. The function is the mathematical <span class="math inline">\(f\)</span>, which holds the potential for evaluation at any input.</p>
-<p>Note: The evaluation syntax is <span class="math inline">\(f(x)\)</span>, placing <span class="math inline">\(f\)</span> to the left of its input, in parentheses. The function could have (“should have?”) gone on the right, but folks chose the left. The parentheses in “f(x)” are not just for grouping. They are <em>function-evaluation</em> parentheses. They can (almost) never be omitted even when the input is a single symbol.</p>
-<p>Many mathematical operations are interpreted as functions but have quirky or nonstandard notation. A quick look through a calculus book will reveal functions such as <span class="math inline">\(\sin x\)</span>, <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(|x|\)</span>, <span class="math inline">\(e^x\)</span>, <span class="math inline">\(x^2\)</span>, etc., most of which lack a clear function symbol, violate functional parenthesis syntax, and don’t even have the grace to consistently write the input “<span class="math inline">\(x\)</span>” last. It’s no wonder the chain rule is hard – natural function syntax is a mess.</p>
-</section>
-<section id="a-word-on-range." class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="a-word-on-range."><span class="header-section-number">4.1.2</span> A word on “range”.</h3>
-<p>The function <span class="math inline">\(\sin\)</span> has real inputs and real outputs. We can say that the domain is <span class="math inline">\({\mathbb R}\)</span> (all real inputs are valid) and the range is <span class="math inline">\({\mathbb R}\)</span> (potential outputs are real). But the actual, realized outputs lie within the region <span class="math inline">\([-1,1]\)</span>, so we may also say the range is <span class="math inline">\([-1,1]\)</span>. The word “range” suffers a double-meaning, referring sometimes to the larger set of potential outputs and sometimes to the smaller set of actual outputs. In higher mathematics, where the difference can matter a lot, we have suspended the word entirely. We use “codomain” for the larger set of potential outputs and “image” for the smaller set of actual outputs. Typically the codomain is known when the function is created. Calculating the image can be hard.</p>
-</section>
-<section id="how-to-introduce-a-function" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="how-to-introduce-a-function"><span class="header-section-number">4.1.3</span> How to introduce a function</h3>
+<p>This viewpoint directly shows the x-y relationship, but isn’t a good basis for functions. It’s inherently finite, and leaves the pattern to be discovered by careful inspection instead of centralizing the formula.</p>
+<p>Next, we could consider a function to be its graph. This is reasonable for calculus, but strains when we consider more exotic functions.</p>
+<p>Our most general perspective on functions centralizes the input/output relationship and makes a function a kind of set:</p><section id="definition-of-a-function" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="definition-of-a-function"><span class="header-section-number">4.1.2</span> Definition of a function</h3>
+<p>A <strong>function</strong> is three pieces of information:</p>
+<ol type="1">
+<li>A <strong>domain</strong> set <span class="math inline">\(A\)</span>,</li>
+<li>A <strong>codomain</strong> set <span class="math inline">\(B\)</span>, and</li>
+<li>A <strong>collection</strong> of ordered pairs <span class="math inline">\((x,y)\)</span>, where
+<ul>
+<li><span class="math inline">\(x \in A\)</span></li>
+<li><span class="math inline">\(y \in B\)</span></li>
+<li>for every <span class="math inline">\(x \in A\)</span>, there is exactly one pair <span class="math inline">\((x,y)\)</span> in the function.</li>
+</ul></li>
+</ol>
+<!--
+Nuances of Function Notation
+
+**Where is the function?** We're accustomed to writing a function $y = x^2$ or for example $f(x)=3x+5$ and saying "that's a function." But which part is a function? Variables are not functions. A variable is an ambiguous reference to an individual thing, usually a real number. So $x$ is not a function, and neither is $y$, despite the idiom "$y$ is a function of $x$". We need to clearly consider the difference between a mathematical form and mathematical value. In analytical philosophy, this is called the use-mention distinction. To illustrate:
+
+**Use:** Half of eleven is 5.5
+
+**Mention:** Half of "eleven" is the letter "e".
+
+We *use* 3x+5 when we reason about its numerical value. We *mention* 3x+5 when we comment on its form as a combination of symbols:
+
+**Mention = form = syntax** | **Use = value = Semantics**
+---|---
+"3x+5" | 3x+5
+type: text string | type: real number
+has an x in it | depends on x
+has four symbols | has one value
+**is not** "5+3x" | **is** 5+3x
+
+Now "$3x+5$" is a string of symbols, *different* from "$3x+4+1$", with no numerical value. It is neither a number nor a function. On the other hand, $3x+5$ is a single real number which will be known if the value of $x$ is known. It is also not a function. If for example $f(x) = 3x+5$, even $f(x)$ is not a function. The only function here is $f$, not the letter "f" but what it stands for in this context: A mathematical object which knows its potential inputs, its potential outputs, and its method for attaching outputs to inputs, an object which can be "evaluated" at an input using the notation for example $f(10)$ to produce the associated output $35$.
+
+In summary, when we write $f(x) = 3x+5$, the function is not $y$, not $3x+5$, nor even $f(x)$, because these are all notations for an individual output. The function is the mathematical $f$, which holds the potential for evaluation at any input.
+
+Note: The evaluation syntax is $f(x)$, placing $f$ to the left of its input, in parentheses. The function could have ("should have?") gone on the right, but folks chose the left. The parentheses in "f(x)" are not just for grouping. They are *function-evaluation* parentheses. They can (almost) never be omitted even when the input is a single symbol. 
+
+Many mathematical operations are interpreted as functions but have quirky or nonstandard notation. A quick look through a calculus book will reveal functions such as $\sin x$, 
+$\sqrt{x}$, $|x|$, $e^x$, $x^2$, etc., most of which lack a clear function symbol, 
+violate functional parenthesis syntax, and don't even have the grace to consistently write
+the input "$x$" last. It's no wonder the chain rule is hard -- natural function syntax is a mess. 
+-->
+</section><section id="a-word-on-range." class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="a-word-on-range."><span class="header-section-number">4.1.3</span> A word on “range”.</h3>
+<p>The function <span class="math inline">\(\sin\)</span> has real inputs and real outputs. We can say that the domain is <span class="math inline">\({\mathbb R}\)</span> (all real inputs are valid) and the range is <span class="math inline">\({\mathbb R}\)</span> (potential outputs are real). But the actual, realized outputs lie within the region <span class="math inline">\([-1,1]\)</span>, so we may also say the range is <span class="math inline">\([-1,1]\)</span>. The word “range” suffers a double-meaning, referring sometimes to the larger set of potential outputs and sometimes to the smaller set of actual outputs. In higher mathematics, where the difference can matter a lot, we have placed the word “range” on probation for ambiguity. We use “codomain” for the larger set of potential outputs and “image” for the smaller set of actual outputs. Typically the codomain is known when the function is created. Calculating the image can be hard.</p>
+</section><section id="how-to-introduce-a-function" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="how-to-introduce-a-function"><span class="header-section-number">4.1.4</span> How to introduce a function</h3>
 <p>A function is a complicated object and needs to be created with care. To specify a function correctly and completely we normally communicate four things:</p>
 <ol type="1">
-<li>The letter, symbol, or name representing the function.</li>
+<li>The letter, symbol, or name representing the function. (Unnamed “anonymous” functions are possible but extremely rare.)</li>
 <li>The domain.</li>
 <li>The codomain.</li>
 <li>The rule.</li>
@@ -1292,7 +1378,7 @@ Complement <br>But see below
 <p>Let <span class="math inline">\(g:\{2,4,6,8\} \to {\mathbb Z}\)</span> by <span class="math inline">\(g(x) = |x-5|\)</span>.</p>
 <p>Let <span class="math inline">\(\arcsin: [-1,1] \to [-\pi/2, \pi/2]\)</span> by <span class="math inline">\(\arcsin(x) = \int_0^x \frac{1}{\sqrt{1-t^2}}dt\)</span></p>
 <p>Let <span class="math inline">\(d: {\mathbb R}^2 \to {\mathbb R}\)</span> by <span class="math inline">\(d(x,y) = |x-y|\)</span></p>
-<p>More generically, we write “Let <span class="math inline">\(f:D \to R\)</span> by <span class="math inline">\(f(x) = \ldots\)</span> to specify a function called <span class="math inline">\(f\)</span> with domain <span class="math inline">\(D\)</span>, codomain <span class="math inline">\(R\)</span>, and rule as given.</p>
+<p>More generically, we write “Let <span class="math inline">\(f:D \to R\)</span> by <span class="math inline">\(f(x) = \ldots\)</span> to specify a function called <span class="math inline">\(f\)</span> with domain <span class="math inline">\(D\)</span>, codomain <span class="math inline">\(R\)</span>, and rule as given. Note that the function is <span class="math inline">\(f\)</span>, not <span class="math inline">\(f(x)\)</span>.</p>
 <p>Arguably we have specified also the <em>input variable</em> for the function, but this is an illusion. The variable used to specify the rule is a dummy variable and is irrelevant after the function is specified. So for example if we…</p>
 <p>Let <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 3x+5\)</span>.</p>
 <p>Let <span class="math inline">\(g:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(g(t) = 3t+5\)</span>.</p>
@@ -1310,37 +1396,205 @@ f'(x) &amp;= \lim_{h \to 0 }\frac{f(x+h)-f(x)}{h}\\
 <p><strong>Aside:</strong></p>
 <p>You may have studied sequences in Calc II. A sequence <span class="math inline">\(\{a_n\}\)</span> is just a function <span class="math inline">\(a:{\mathbb N} \to {\mathbb R}\)</span>. It doesn’t “feel” like one because we use the funny subscript notation “<span class="math inline">\(a_n\)</span>” instead of the parenthesis notation <span class="math inline">\(a(n)\)</span>.</p>
 <p><strong>Test your understanding</strong>:</p>
-<p>Which is most precise? - The derivative of <span class="math inline">\(\sin\)</span> is <span class="math inline">\(\cos\)</span> - The derivative of <span class="math inline">\(\sin(x)\)</span> is <span class="math inline">\(\cos(x)\)</span></p>
-<p>Functions can be different with the same rule and different domains. Functions can have apparently different rules but be the same. Functions can have same domain and image and be technically different with different codomains. Example: max function, average function, eval at 2 function.</p>
-<p>Domain can be literally any set. Example where the set is a set of sets, of vectors, of functions, etc.</p>
+<p>Which is most precise?</p>
+<ul>
+<li>The derivative of <span class="math inline">\(\sin\)</span> is <span class="math inline">\(\cos\)</span></li>
+<li>The derivative of <span class="math inline">\(\sin(x)\)</span> is <span class="math inline">\(\cos(x)\)</span></li>
+</ul>
+</section><section id="proving-functions-equal" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="proving-functions-equal"><span class="header-section-number">4.1.5</span> Proving functions equal</h3>
+<p>A function comprises three pieces of data (domain, codomain, rule). Proving two functions equal is a matter of comparing all three features. In general, to prove <span class="math inline">\(f=g\)</span> we must check that the functions have the same domain, the same codomain, and the same rule. Normally, checking domains and codomains is easy and the real work is checking the formula.</p>
+<p><strong>Example:</strong></p>
+<p>Let <span class="math inline">\(f:{\mathbb Z} \to {\mathbb Z}\)</span> by <span class="math inline">\(f(n) = 2n+1\)</span>.</p>
+<p>Let <span class="math inline">\(g:{\mathbb Z} \to {\mathbb Z}\)</span> by <span class="math inline">\(g(n) = 2(n+1)-1\)</span>.</p>
+<p><strong>Proof of equality</strong>: Trivially, the domains and codomains agree. There’s nothing to do there. The rest is a matter of algebra:</p>
+<p><span class="math display">\[g(n) = 2(n+1)-1 = 2n+2-1 = 2n+1 = f(n)\]</span></p>
+</section><section id="composition" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="composition"><span class="header-section-number">4.2</span> Composition</h2>
+<p>From precalculus and Calculus we may feel that functions can always be composed. But once we’re in the business of formally declaring a domain and codomain for each function, their composition depends on having agreeable domains and codomains. Thus the composition <span class="math inline">\(f \circ g\)</span> (i.e.&nbsp;<span class="math inline">\(f(g(x))\)</span>) is defined only when the set of potential outputs of <span class="math inline">\(g\)</span> agrees with the set of inputs of <span class="math inline">\(f\)</span>.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(g:A \to B\)</span> and <span class="math inline">\(f:B \to C\)</span> be functions. Then their <strong>composition</strong> <span class="math inline">\(f \circ g\)</span> is defined by <span class="math inline">\(f \circ g : A \to C\)</span> by <span class="math inline">\((f \circ g)(a) = f(g(a))\)</span>.</p>
+<p><strong>Notes:</strong></p>
+<ol type="1">
+<li>We’ve defined <span class="math inline">\(f \circ g\)</span> as a compound symbol which plays the role of a function symbol. Thus, it can be evaluated at <span class="math inline">\(a\)</span> by writing “<span class="math inline">\((f \circ g)(a)\)</span>”. We’ve parenthesized <span class="math inline">\((f \circ g)\)</span> itself to clarify that we do not mean <span class="math inline">\(f \circ (g(a))\)</span>. The definition of it follows the general structure of function definition. It describes the domain (A), codomain (C), and rule <span class="math inline">\((f \circ g)(a) = f(g(a))\)</span>.</li>
+<li>We’ve defined <span class="math inline">\(f \circ g\)</span> via the rule <span class="math inline">\((f \circ g)(a) = f(g(a))\)</span>. We do not need to define <span class="math inline">\(f(g(a))\)</span>:<br>
+<span class="math inline">\(g\)</span> is a function which admits any input <span class="math inline">\(a \in A\)</span>, and <span class="math inline">\(f\)</span> is a function which admits any input from <span class="math inline">\(B\)</span>, and <span class="math inline">\(g(a) \in B\)</span>.</li>
+<li>This definition is quite strict about codomains and domains. For example, the function <span class="math inline">\(\ln:(0,\infty) \to {\mathbb R}\)</span> does not allow self-composition <span class="math inline">\(\ln \circ \ln\)</span>, because of the mismatch between codomain and domain. These technicalities can sometimes but not always be ignored.</li>
+</ol>
+<p><strong>Examples:</strong> Many examples should already be familiar from practice with the chain rule.</p>
+<ol type="1">
+<li>Let <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = x^2\)</span>. Let <span class="math inline">\(g:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(g(x) = \sin(x)\)</span>. Then <span class="math inline">\(f(g(x)) = (\sin(x))^2\)</span>, often written <span class="math inline">\(\sin^2(x)\)</span>, but <span class="math inline">\(g(x) = \sin(x^2)\)</span>. Based on the specifics of <span class="math inline">\(x^2\)</span> and <span class="math inline">\(\sin(x)\)</span>, we cheated in specifying the codomains of these functions?</li>
+<li>Let <span class="math inline">\(S = {\mathscr P}_{fin}({\mathbb N})\)</span> be the set of <em>finite</em> subsets of <span class="math inline">\({\mathbb N}\)</span>. Let <span class="math inline">\(g:S \to {\mathbb N}\)</span> by <span class="math inline">\(g(x) =\)</span> the cardinality of <span class="math inline">\(x\)</span>. Let <span class="math inline">\(f:{\mathbb N} \to \{0,1\}\)</span> by <span class="math inline">\(f(n) = n\)</span> mod 2. Then <span class="math inline">\(f(g(x)) = 1\)</span> when <span class="math inline">\(x\)</span> has an odd number of elements, and <span class="math inline">\(f(g(x)) = 0\)</span> if <span class="math inline">\(x\)</span> has an even number of elements.</li>
+<li>Let <span class="math inline">\(f:{\mathbb N} \to {\mathbb N}\)</span> be the successor map <span class="math inline">\(f(n) = n+1\)</span>. Then <span class="math inline">\(f \circ f\)</span> is the map which takes <span class="math inline">\(n\)</span> to <span class="math inline">\(n+2\)</span>.</li>
+<li>Let <span class="math inline">\(min:{\mathscr P}({\mathbb N}) \to {\mathbb N}\)</span> be the minimum function. Let <span class="math inline">\(g:{\mathbb N} \to {\mathscr P}({\mathbb N})\)</span> by <span class="math inline">\(g(x) = \{x\}\)</span>. Then <span class="math inline">\(min \circ g\)</span> is the identity function on <span class="math inline">\({\mathbb N}\)</span>.</li>
+</ol>
+</section><section id="injective-surjective-bijective" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="injective-surjective-bijective"><span class="header-section-number">4.3</span> Injective / Surjective / Bijective</h2>
+<section id="injectivity" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="injectivity"><span class="header-section-number">4.3.1</span> Injectivity</h3>
+<section id="definitions" class="level4" data-number="4.3.1.1">
+<h4 data-number="4.3.1.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">4.3.1.1</span> Definitions</h4>
+<p>Many students are tempted to “cancel” functions from equations in various circumstances:</p>
+<ol type="1">
+<li><span class="math inline">\(\sin(x) = \sin(\pi)\)</span>, so <span class="math inline">\(x=\pi\)</span>. (cancelling <span class="math inline">\(\sin\)</span>)</li>
+<li><span class="math inline">\(x^2 = 3^2\)</span>, so <span class="math inline">\(x=3\)</span> (cancelling the squaring function)</li>
+<li><span class="math inline">\(\ln(x+1) = \ln(2)\)</span>, so <span class="math inline">\(x+1 = 2\)</span>.</li>
+<li><span class="math inline">\(\sqrt{x^2+y^2} = \sqrt{25}\)</span>, so <span class="math inline">\(x^2+y^2 = 25\)</span>.</li>
+<li><span class="math inline">\(f(x) = f(y)\)</span>, so <span class="math inline">\(x=y\)</span>.</li>
+</ol>
+<p>Cancelling functions in this way is dangerous and usually wrong. Three of the five examples are wrong. Why are such mistakes tempting? Sometimes we misread a function application <span class="math inline">\(\ln(x+1)\)</span> as multiplication, treating <span class="math inline">\(\ln\)</span> as multiple. This probably comes from the notational similarity with <span class="math inline">\(3(x+1)\)</span>, but it’s completely wrong. Sometimes we forget that a function <span class="math inline">\(y=f(x)\)</span> can have two distinct <span class="math inline">\(x\)</span> values which map to the same <span class="math inline">\(y\)</span> value. For example, <span class="math inline">\(\sin(0) = 0 = \sin(\pi)\)</span>, <span class="math inline">\((-3)^2 = 3^2\)</span>, etc. This phenomenon is sometimes called a “collision.”</p>
+<p>There are, however, certain functions which have no collisions. For example, <span class="math inline">\(\sqrt{-}:{\mathbb R} \to {\mathbb R}\)</span>, or <span class="math inline">\(\ln:(0,\infty) \to {\mathbb R}\)</span>, or <span class="math inline">\(f(x) = 5x+3\)</span>. These are called <strong>injective</strong> and they permit us the luxury of cancellation. In fact, the cancellation property is the very definition of injectivity:</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(f:X \to Y\)</span> be a function. We call <span class="math inline">\(f\)</span> <strong>injective</strong> (or <strong>one-to-one</strong>) if: <span class="math display">\[\forall a, b \in X, \enspace  f(a) = f(b) \to a=b\]</span></p>
+<p>How do we prove injectivity? As usual, the structure of the proof should be modeled on the structure of the statement: First we let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be arbitrary in the domain. Next we <em>assume</em> <span class="math inline">\(f(a) = f(b)\)</span>. Then we apply some clever algebra to conclude <span class="math inline">\(a=b\)</span>, and we conclude.</p>
+</section>
+<section id="proving-injectivity" class="level4" data-number="4.3.1.2">
+<h4 data-number="4.3.1.2" class="anchored" data-anchor-id="proving-injectivity"><span class="header-section-number">4.3.1.2</span> Proving Injectivity</h4>
+<p><strong>Example 1</strong> Let <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 5x+7\)</span>. We’ll show that <span class="math inline">\(f\)</span> is injective. Let <span class="math inline">\(a, b \in {\mathbb R}\)</span>. Assume <span class="math inline">\(f(a) = f(b)\)</span>. Then <span class="math inline">\(5a+7 = 5b+7\)</span>. Subtracting <span class="math inline">\(7\)</span> we have <span class="math inline">\(5a = 5b\)</span>. Dividing we learn <span class="math inline">\(a=b\)</span>. This completes the proof.</p>
+<p><strong>Example 2</strong> Let <span class="math inline">\(f: {\mathbb Z}_7 \to {\mathbb Z}_7\)</span> by <span class="math inline">\(f(x) = 2x\)</span> (mod 7). We’ll show <span class="math inline">\(f\)</span> is injective. Let <span class="math inline">\(a, b \in {\mathbb Z}_7\)</span>. Assume <span class="math inline">\(f(a) = f(b)\)</span>. Then <span class="math inline">\(2a = 2b\)</span> (mod 7). Because we’re working with integers mod 7, we shouldn’t simply trust that we can divide by <span class="math inline">\(2\)</span>. But we can multiply by <span class="math inline">\(4\)</span>: <span class="math inline">\(8a = 8b\)</span> (mod 7). Now both <span class="math inline">\(7a\)</span> and <span class="math inline">\(7b\)</span> are multiples of <span class="math inline">\(7\)</span>, so separately they can be omitted from both sides: <span class="math inline">\(a = b\)</span> (mod 7). This concludes the proof.</p>
+<p><strong>Example 3</strong>: Let <span class="math inline">\(f:[0,\infty) \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = \sqrt{x}\)</span>. Note the restricted domain. Let’s proof that <span class="math inline">\(f\)</span> is injective. Let <span class="math inline">\(a, b \in [0,\infty)\)</span> and assume <span class="math inline">\(f(a) = f(b)\)</span>. That is, <span class="math inline">\(\sqrt{a} = \sqrt{b}\)</span>. We may square both sides to learn <span class="math inline">\((\sqrt{a})^2 = (\sqrt{b})^2\)</span>. But <span class="math inline">\((\sqrt{a})^2 = a\)</span> and <span class="math inline">\((\sqrt{b})^2 =b\)</span>. This is in fact the definition of the square root! Therefore <span class="math inline">\(a= b\)</span> as desired.</p>
+<p><strong>Nonexample 4</strong>: Let <span class="math inline">\(f: {\mathbb R} \to [0,\infty)\)</span> by <span class="math inline">\(f(x) = x^2\)</span>. Then <span class="math inline">\(f\)</span> is not injective. Any collision proves its failure: <span class="math inline">\(f(5) = f(-5)\)</span>. To see where a proof of injectivity would go wrong, let <span class="math inline">\(a, b \in {\mathbb R}\)</span> and assume <span class="math inline">\(f(a)=f(b)\)</span>. Then <span class="math inline">\(a^2 = b^2\)</span>. Naturally we wish to take square roots of both sides: <span class="math inline">\(\sqrt{a^2} = \sqrt{b^2}\)</span>. It’s tempting to conclude that <span class="math inline">\(a=b\)</span>, but this is wrong: <span class="math inline">\(\sqrt{a^2}\)</span> simplifies to <span class="math inline">\(a\)</span> only if <span class="math inline">\(a\)</span> is nonnegative. There’s no valid way to deduce <span class="math inline">\(a=b\)</span>.</p>
+</section>
+<section id="injectivity-and-inverses" class="level4" data-number="4.3.1.3">
+<h4 data-number="4.3.1.3" class="anchored" data-anchor-id="injectivity-and-inverses"><span class="header-section-number">4.3.1.3</span> Injectivity and inverses</h4>
+<p>Most of our proofs of injectivity implicitly rely on inverting the function rule. The first proof for <span class="math inline">\(f(x)=5x+7\)</span> relies on subtracting <span class="math inline">\(7\)</span> then dividing by <span class="math inline">\(5\)</span>. We’ve implicitly used the function <span class="math inline">\(g(x) = \frac{x-7}{5}\)</span>, the inverse function of <span class="math inline">\(f\)</span>. The third example uses the squaring function in relation to square root. Even the attempt in the fourth example is based on the inverse function (not square root) of the squaring function, but this time it fails. Why? The secret lies in the peculiarly complicated relationship between the square root and square functions. Let’s write <span class="math inline">\(Sq\)</span> for the squaring function and <span class="math inline">\(Sqrt\)</span> for the square root function. Then</p>
+<p><span class="math display">\[\forall x \in [0,\infty) \enspace Sq(Sqrt(x)) = x \enspace \text{ but sometimes } \enspace Sqrt(Sq(x)) \neq x\]</span></p>
+<p>As inverse functions, these two work one way, and fail the other way around. In this circumstance we call <span class="math inline">\(Sq\)</span> a <strong>right inverse</strong> of <span class="math inline">\(Sqrt\)</span> and we call <span class="math inline">\(Sqrt\)</span> a <strong>left inverse</strong> of <span class="math inline">\(Sq\)</span>. As a general principal, any function with a left inverse function is invertible. See the section on inverse functions.</p>
 </section>
 </section>
-<section id="inverse-functions" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="inverse-functions"><span class="header-section-number">4.2</span> Inverse Functions</h2>
-<p>Proving functions equal - domain, range, f(x) = g(x) for all x.</p>
-<p>Injective functions</p>
-<p>Examples and non example</p>
-<p>What’s it for,Cancelling from equations</p>
-<p>Proving injective</p>
-<p>Theorem: left invertible iff</p>
-<p>Surjective functions</p>
-<p>Examples and non</p>
-<p>Depends on range</p>
-<p>Proving surjective</p>
-<p>Right invertible iff</p>
-<p>Bijective</p>
-<p>One to one correspondence</p>
+<section id="surjectivity" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="surjectivity"><span class="header-section-number">4.3.2</span> Surjectivity</h3>
+<section id="definition" class="level4" data-number="4.3.2.1">
+<h4 data-number="4.3.2.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">4.3.2.1</span> Definition</h4>
+<p>We’ve distinguished between the <strong>codomain</strong> and the <strong>image</strong> of a function <span class="math inline">\(f:X \to Y\)</span>. The codomain is the set of potential outputs, <span class="math inline">\(Y\)</span>. The image is the set of realized outputs – that is, the set <span class="math inline">\(\{f(x) \,|\, x \in X\}\)</span>. Of course it may happen that these sets are the same. For example, the <span class="math inline">\(\ln: (0,\infty) \to {\mathbb R}\)</span> produces every real number as an output, as does the function <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 5x+7\)</span>. In this situation, we call the function <strong>surjective</strong></p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(f:X \to Y\)</span> be a function. We call <span class="math inline">\(f\)</span> <strong>surjective</strong> if:</p>
+<p><span class="math display">\[\forall y \in Y \enspace \exists x \in X \enspace f(x) = y\]</span></p>
+<p>As usual, the proof technique follows the logical form: First, let <span class="math inline">\(y \in Y\)</span> be an arbitrary element of the codomain. Next, apply some special cleverness to choose, depending on <span class="math inline">\(y\)</span>, a good value of <span class="math inline">\(x\)</span>. Finally, prove <span class="math inline">\(f(x)=y\)</span>. Naturally, the “special cleverness” is the hard part, but usually involves first solving for <span class="math inline">\(x\)</span> in the equation <span class="math inline">\(f(x)=y\)</span>.</p>
+</section>
+<section id="proving-surjectivity" class="level4" data-number="4.3.2.2">
+<h4 data-number="4.3.2.2" class="anchored" data-anchor-id="proving-surjectivity"><span class="header-section-number">4.3.2.2</span> Proving Surjectivity</h4>
+<p><strong>Example 1</strong> Let <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 5x+7\)</span>. We’ll show that <span class="math inline">\(f\)</span> is surjective. Let <span class="math inline">\(b \in {\mathbb R}\)</span>. Choose <span class="math inline">\(a = \frac{b-7}{5}\)</span>. Then <span class="math inline">\(f(a) = f(\frac{b-7}{5}) = 5 \frac{b-7}{5} + 7 = b-7+7 = b\)</span> as desired. This completes the proof. Note that the proof does not explain the choice of <span class="math inline">\(a\)</span>, which comes out of the blue. In practice, it comes from solving <span class="math inline">\(5a+7=b\)</span> for <span class="math inline">\(a\)</span>.</p>
+<p><strong>Example 2</strong>: Let <span class="math inline">\(f: {\mathbb R} \to [0,\infty)\)</span> by <span class="math inline">\(f(x) = x^2\)</span>. We’ll show <span class="math inline">\(f\)</span> is surjective. Let <span class="math inline">\(b \in [0,\infty)\)</span>. Choose <span class="math inline">\(a = \sqrt{b}\)</span> (which exists because <span class="math inline">\(b\)</span> is not negative). Then <span class="math inline">\(f(a) = (\sqrt{b})^2 = b\)</span> as needed.</p>
+<p><strong>Nonexample 3</strong>: Let <span class="math inline">\(f:[0,\infty) \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = \sqrt{x}\)</span>. Then <span class="math inline">\(f\)</span> is not surjective: There is a <span class="math inline">\(b\)</span> (for example <span class="math inline">\(b=-4\)</span>) for which no <span class="math inline">\(a\)</span> can be found with <span class="math inline">\(f(a)=b\)</span>.</p>
+<p><strong>Example 4</strong>: Let <span class="math inline">\(S = {\mathscr P}_{fin}({\mathbb N})\)</span> be the set of <em>finite</em> subsets of <span class="math inline">\({\mathbb N}\)</span>. Let <span class="math inline">\(g:S \to {\mathbb N}\)</span> be the maximum function. We’ll show <span class="math inline">\(g\)</span> is surjective. Let <span class="math inline">\(b \in {\mathbb N}\)</span>. Choose <span class="math inline">\(a = \{b\} \in S\)</span>. Then <span class="math inline">\(g(a) = \max(\{b\}) = b\)</span> as needed.</p>
+<p>Notice that in examples 1 and 2, the inverse functions <span class="math inline">\(\frac{b-7}{5}\)</span> and <span class="math inline">\(\sqrt{x}\)</span> again play a key role. Once more, this suggests that invertibility is related to surjectivity.</p>
+</section>
+<section id="a-question-of-codomain" class="level4" data-number="4.3.2.3">
+<h4 data-number="4.3.2.3" class="anchored" data-anchor-id="a-question-of-codomain"><span class="header-section-number">4.3.2.3</span> A question of codomain</h4>
+<p>Whether a function <span class="math inline">\(f:X \to Y\)</span> is <em>in</em>jective is a question of which input-output pairs <span class="math inline">\((x,y)\)</span> it includes, which is normally a question of its formula. But the matter of <em>sur</em>jectivity depends only on whether the codomain <span class="math inline">\(Y\)</span> is larger than the image <span class="math inline">\(\{f(x) \,|\, x \in X\}\)</span>. In many cases, this is a matter of choice, because the codomain can be chosen larger or smaller without affecting the formula. Thus for example <span class="math inline">\(f:[0,\infty) \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = \sqrt{x}\)</span> is not surjective, but change the codomain to <span class="math inline">\([0,\infty)\)</span> and it is. Again, the function <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 5x+7\)</span> is surjective, but change the codomain to the complex numbers <span class="math inline">\({\mathbb C}\)</span> and it’s not.</p>
+</section>
+</section>
+<section id="bijectivity" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="bijectivity"><span class="header-section-number">4.3.3</span> Bijectivity</h3>
+<p>A function is called <strong>bijective</strong> if it’s both injective and surjective. This is often called a <strong>one-to-one correspondence</strong>. Naturally we can prove bijectivity by proving injectivity and surjectivity in two steps, but the right way to address bijectivity is through inverse functions.</p>
+</section>
+</section><section id="invertibility" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="invertibility"><span class="header-section-number">4.4</span> Invertibility</h2>
+<section id="definitions-1" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="definitions-1"><span class="header-section-number">4.4.1</span> Definitions</h3>
+<p>In Calculus we compute inverse functions by solving for the independent variable. For example, if <span class="math inline">\(y = 5x+7\)</span>, we may solve <span class="math inline">\(x = \frac{y-7}{5}\)</span>. We have two functions <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 5x+7\)</span> and <span class="math inline">\(g:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(g(x) = \frac{x-7}{5}\)</span>. Because they express the same relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we have <span class="math inline">\(f(g(x)) = x\)</span> and likewise <span class="math inline">\(g(f(x))=x\)</span>. As we’ve seen, the functions <span class="math inline">\(x^2\)</span> and <span class="math inline">\(\sqrt{x}\)</span> are nearly inverse, but not quite. The same can be said for <span class="math inline">\(\sin\)</span> and <span class="math inline">\(\arcsin\)</span>.</p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(f:B \to A\)</span> and <span class="math inline">\(g:A \to B\)</span> be functions.</p>
+<ol type="1">
+<li>If <span class="math inline">\(f(g(a))=a\)</span> for all <span class="math inline">\(a \in A\)</span>, then we call <span class="math inline">\(f\)</span> a <strong>left inverse</strong> for <span class="math inline">\(g\)</span>, and we call <span class="math inline">\(g\)</span> a <strong>right inverse</strong> for <span class="math inline">\(f\)</span>. If such an <span class="math inline">\(f\)</span> exists, we call <span class="math inline">\(g\)</span> <strong>left invertible</strong>, and similarly if such a <span class="math inline">\(g\)</span> exists we call <span class="math inline">\(f\)</span> <strong>right invertible</strong>.</li>
+<li>If instead <span class="math inline">\(g(f(b))=b\)</span> for all <span class="math inline">\(b \in B\)</span>, then this is the same situation with letters reversed – <span class="math inline">\(g\)</span> is the left inverse and <span class="math inline">\(f\)</span> is the right inverse, etc.</li>
+<li>If <strong>both</strong> equations hold – <span class="math inline">\(f(g(a))=a\)</span> for all <span class="math inline">\(a \in A\)</span> and <span class="math inline">\(g(f(b))=b\)</span> for all <span class="math inline">\(b \in B\)</span> – then we call <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> <strong>(two sided) inverse functions</strong>, and we call each <strong>invertible.</strong> In this situation we write <span class="math inline">\(f^{-1}\)</span> for <span class="math inline">\(g\)</span>.</li>
+</ol>
+<p><strong>Examples</strong></p>
+<ol type="1">
+<li>Because <span class="math inline">\((\sqrt{x})^2=x\)</span> but not the other way around, the squaring function is left inverse of the square root. The inverse notation <span class="math inline">\(f^{-1}\)</span> is not appropriate for either function.</li>
+<li>If we regard <span class="math inline">\(\sin:[-\pi/2, \pi/2] \to [-1,1]\)</span> and <span class="math inline">\(\arcsin:[-1,1] \to [-\pi/2, \pi/2]\)</span>, then these functions are two-sided inverses of one another, and <span class="math inline">\(\arcsin = \sin^{-1}\)</span>. However, if we treat the <span class="math inline">\(\sin\)</span> function normally, then <span class="math inline">\(\sin:{\mathbb R} \to [-1,1]\)</span>. In this case, <span class="math inline">\(\sin(\arcsin(x))=x\)</span> is always true but <span class="math inline">\(\arcsin(\sin(\theta))=\theta\)</span> is not, so <span class="math inline">\(\sin\)</span> is a left inverse of <span class="math inline">\(\arcsin\)</span> and <span class="math inline">\(\arcsin\)</span> is a right inverse of <span class="math inline">\(\sin\)</span>. The other inverse trigonometric functions are similar.</li>
+<li>Let <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 5x+7\)</span> and let <span class="math inline">\(g:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(g(x) = \frac{x-7}{5}\)</span>. Then both equations <span class="math inline">\(f(g(x))=x\)</span> and <span class="math inline">\(g(f(x))=x\)</span> are always true, so these functions are two-sided inverses. It’s correct to write <span class="math inline">\(g = f^{-1}\)</span>.</li>
+<li>Let <span class="math inline">\(\ln:(0,\infty) \to {\mathbb R}\)</span> be the natural logarithm and <span class="math inline">\(\exp:{\mathbb R} \to (0,\infty)\)</span> by <span class="math inline">\(\exp(x) = e^x\)</span>. Both relevant equations <span class="math inline">\(\ln(e^x)=x\)</span> and <span class="math inline">\(e^{\ln(x)}=x\)</span> are true for all (valid) inputs, so these functions are inverses. It’s nonstandard but correct to write <span class="math inline">\(\ln = \exp^{-1}\)</span> and <span class="math inline">\(\exp = \ln^{-1}\)</span>.</li>
+<li>Let <span class="math inline">\(f:{\mathbb R} - \{0\} \to {\mathbb R} - \{0\}\)</span> be the reciprocal function <span class="math inline">\(f(x) = 1/x\)</span>. Then <span class="math inline">\(f(f(x))=x\)</span> for all <span class="math inline">\(x\)</span> in the domain, so <span class="math inline">\(f\)</span> is its own (two-sided) inverse. The same is true for <span class="math inline">\(f(x) = -x\)</span>, <span class="math inline">\(f(x) = 1-x\)</span>, and <span class="math inline">\(f(x) = \sqrt{1-x^2}\)</span> if the domain is adjusted. Such functions are called <strong>involutions.</strong></li>
+<li>Let <span class="math inline">\(f:\{1,2,3\} \to \{1,2,3,4\}\)</span> by <span class="math inline">\(f(x) = x\)</span>, and let <span class="math inline">\(g:\{1,2,3,4\} \to \{1,2,3\}\)</span> by <span class="math inline">\(g(x) = \begin{cases} x &amp; \text{ if } x&lt;4\\ 1 &amp; \text{ if } x=4 \end{cases}\)</span>. Then <span class="math inline">\(g(f(x))=x\)</span> for all <span class="math inline">\(x\)</span>, so <span class="math inline">\(f\)</span> is the right inverse and <span class="math inline">\(g\)</span> is the left. It’s not true that <span class="math inline">\(f(g(4))=4\)</span>, so these are not two-sided inverses.</li>
+</ol>
+<p>There is a very tight connection between invertibility and injectivity/surjectivity</p>
+<p><strong>Theorem:</strong> Let <span class="math inline">\(f:X \to Y\)</span> be a function. Assume <span class="math inline">\(X \neq \emptyset\)</span>.</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is injective if and only if <span class="math inline">\(f\)</span> has a left inverse.</li>
+<li><span class="math inline">\(f\)</span> is surjective if and only if <span class="math inline">\(f\)</span> has a right inverse.</li>
+<li><span class="math inline">\(f\)</span> is bijective if and only if <span class="math inline">\(f\)</span> has a two-sided inverse.</li>
+</ol>
+<p>This theorem includes six separate implications. None are hard, but one implication depends on the Axiom of Choice. Because of this oddity we’ll take our time carefully.</p>
+<p><strong>Proof:</strong> Let <span class="math inline">\(f:X \to Y\)</span> be a function with nonempty domain.</p>
+<ol type="1">
+<li><p><span class="math inline">\(\leftarrow\)</span>: Assume <span class="math inline">\(f\)</span> has a left inverse. Let’s call it <span class="math inline">\(g\)</span>. Let <span class="math inline">\(a, b \in X\)</span> and suppose <span class="math inline">\(f(a)=f(b)\)</span>. Then <span class="math inline">\(g(f(a)) = g(f(b))\)</span>, so <span class="math inline">\(a=b\)</span>. This proves injectivity.</p></li>
+<li><p><span class="math inline">\(\leftarrow\)</span>: Assume <span class="math inline">\(f\)</span> has a right inverse. Let’s call it <span class="math inline">\(h\)</span>. Let <span class="math inline">\(y \in Y\)</span>. Choose <span class="math inline">\(x = h(y)\)</span>. Then <span class="math inline">\(f(x) = f(h(y)) = y\)</span>. This proves that <span class="math inline">\(f\)</span> is surjective.</p></li>
+<li><p><span class="math inline">\(\leftarrow\)</span>: Just invoke the previous two parts.</p></li>
+<li><p><span class="math inline">\(\rightarrow\)</span>: Let <span class="math inline">\(f\)</span> be a bijection. Let <span class="math inline">\(g:Y \to X\)</span> be defined by the rule <span class="math display">\[g(y) = \text{ the } x \text{ so that } f(x)=y\]</span></p></li>
+</ol>
+<p>For this rule to make sense, we must verify that there is such an <span class="math inline">\(x\)</span>, and that it’s unique. The existence of such an <span class="math inline">\(x\)</span> is the surjectivity of <span class="math inline">\(f\)</span>, and its uniqueness is the injectivity of <span class="math inline">\(f\)</span>. Thus <span class="math inline">\(g\)</span> is a function and of course satisfies the equations <span class="math inline">\(g(f(x)) = x\)</span> and <span class="math inline">\(f(g(y)) = y\)</span>.</p>
+<ol type="1">
+<li><p><span class="math inline">\(\rightarrow\)</span>: If we define <span class="math inline">\(g\)</span> exactly as above without the surjectivity assumption, then <span class="math inline">\(g\)</span> may not be a function because it fails to assign a value when <span class="math inline">\(y \in Y - \operatorname{image}(f)\)</span>. But anyway <span class="math inline">\(X\)</span> is nonempty and we can fix some fallback value <span class="math inline">\(x_0 \in X\)</span>: <span class="math display">\[g(y) = \begin{cases} \text{ the } x \text{ so that } f(x)=y &amp; \text{ if } \exists x \enspace f(x)=y \\ x_0 &amp; \text{ otherwise} \end{cases}\]</span> Injectivity tells us that <span class="math inline">\(x\)</span> (satisfying <span class="math inline">\(f(x)=y\)</span>) is unique if it exists at all, so <span class="math inline">\(g\)</span> is a function. To see that it’s a left inverse of <span class="math inline">\(f\)</span>, we calculate <span class="math inline">\(g(f(x)) = \text{ the } x \text{ so that } f(x)=f(x) = x\)</span> as required.</p></li>
+<li><p><span class="math inline">\(\rightarrow\)</span>: Again copying the definition of <span class="math inline">\(g\)</span> from (3. <span class="math inline">\(\rightarrow\)</span>), this time we have a different problem. Such an <span class="math inline">\(x\)</span> exists by surjectivity, but without injectivity, <span class="math inline">\(x\)</span> may not be unique. Nevermind, just choose any <span class="math inline">\(x\)</span> that works. We define <span class="math inline">\(g:Y
+to X\)</span> by <span class="math display">\[g(y) = \text{ any} } x \text{ so that } f(x)=y\]</span></p></li>
+</ol>
+<p>Now we calculate: <span class="math inline">\(f(g(y)) = f(\text{ some } x \text{ so that } f(x)=y) = y\)</span> as needed, so <span class="math inline">\(g\)</span> serves as an inverse function.</p>
+<p>This completes the proof.</p>
+<p>Notice that the definition of <span class="math inline">\(g\)</span> in the last part potentially requires infinitely many arbitrary simultaneous choices, selecting an <span class="math inline">\(x\)</span> for each <span class="math inline">\(y\)</span>. This step alone require the axiom of choice. In fact, the statement (2. <span class="math inline">\(\rightarrow\)</span>) also implies the axiom of choice, so it can be treated as an alternative statement of that axiom.</p>
+<p>Using the previous theorem, we have alternate paths for proving that <span class="math inline">\(f\)</span> is injective, surjective, or bijective: Construct a one-sided or two-sided inverse function and prove that it works. Especially for a bijection, this proof technique is superior, because it results in not only bijectivity but also a formula for a known inverse function. Anyone working with a functions should want that too!</p>
+<p>The notation f^{-1}</p>
 <p>Equinumerous</p>
-<p>Prove injective and surjective… But</p>
-<p>Theorem invertible iff</p>
-<p>When proving bijective, construct the inverse cause honestly you’re going to need it</p>
-<p>Proving a calculation of image.</p>
 
 
 </section>
-</section>
+</section><table>
+<tbody><tr>
+<th>
+notion
+</th>
+<th>
+pros
+</th>
+<th>
+cons
+</th>
+</tr>
+<tr>
+<td>
+Formula
+</td>
+<td>
+Simple, historical
+</td>
+<td>
+Doesn’t declare a domain. Not a set. What is a formula?
+</td>
+</tr>
+<tr>
+<td>
+table
+</td>
+<td>
+direct
+</td>
+<td>
+doesn’t declare the pattern, is finite.
+</td>
+</tr>
+<tr>
+<td>
+graph
+</td>
+<td>
+geometric, visual
+</td>
+<td>
+doesn’t declare the pattern, difficult to use precisely, strains in many dimensions
+</td>
+</tr>
 
-</main> <!-- /main -->
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1741,10 +1995,10 @@ f'(x) &amp;= \lim_{h \to 0 }\frac{f(x+h)-f(x)}{h}\\
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</tbody></table></section></section></section></section></main></div><script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

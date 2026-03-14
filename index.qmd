@@ -3,6 +3,9 @@ title: "Professor Howald's Teaching Portal"
 format: html
 listing:
   contents: 
+    - path: typeset/index.qmd
+      title: "Typesetting for accessibility"
+      description: "latex, quarto, html, etc."
     - path: Math125/index.qmd
       title: "Math 125"
       description: "Probability and Statistics"

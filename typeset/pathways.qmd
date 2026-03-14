@@ -1,0 +1,84 @@
+---
+title: "Typesetting pathways"
+description: "Overview of some authorship technologies and tools"
+format: html
+engine: jupyter #Force jupyter notebook to invalidate cache.
+
+---
+
+## Diagram form
+
+```{mermaid}
+flowchart LR
+    H1["**INPUTS**"] ~~~ H2{{"**ENGINES**"}} ~~~ H3(("**OUTPUTS**"))
+    %% Input Sources
+
+    MD[Markdown + LaTeX <br> + Python + etc.]
+    LaTeX[LaTeX]
+    Word[Word/Google Docs]
+ 
+    %% Engines
+    Web_Engine{{Pandoc/MathJax <br> or make4ht}}
+    PDF_Engine{{latex/pdflatex/lualatex}}
+    Quarto{{Quarto Engine}}
+    Notebook{{Jupyter / Colab}}
+    EXPORT{{Export }}
+
+    %% To Engines
+    LaTeX --> Web_Engine
+    LaTeX ==> PDF_Engine
+    MD ==> Notebook
+    MD ==> Quarto
+    Word --> EXPORT
+
+    %% Final Output Formats
+    SharedNB((Shared Notebook <br> on Colab))
+    HTML((".html page <br>brightspace/github"))
+    PDF(("Shared .pdf"))
+    DOCX(("Shared Doc"))
+
+    %% To Outputs
+    Notebook ==> SharedNB
+    Notebook ~~~ HTML
+    Quarto --> PDF
+    Quarto ==> HTML
+    Quarto --> SharedNB
+    PDF_Engine ==> PDF
+    Web_Engine --> HTML 
+    EXPORT --> PDF
+    Word ===> DOCX
+
+    %% Styling
+    style SharedNB fill:#ffd, stroke:#000
+    style PDF fill:#ffd,stroke:#000
+    style HTML fill:#dfd,stroke:#000
+    style DOCX fill:#ffd,stroke:#000
+```
+
+## Verbal form: 
+
+The diagram depicts several interlocking paths of authorship. 
+
+### Authoring in mixed latex, markdown, python
+
+Using Jupyter/Colab, such writing can be shared as such on the web. 
+
+Using Quarto, such writing can be compiled into Jupyter notebook, pdf, or html.
+
+### Authoring in latex
+
+Using pandoc, we can compile into html. A solid option.
+
+Using tex/latex/pdflatex/lualatex/etc we can compile into pdf. This can produce
+a decent outcome, but not as good as html. 
+
+### Authoring in word
+
+Such files can be shared as they are, or exported to pdf. This format 
+is probably not suitable for complex mathematics. 
+
+### Recommendations
+
+For accessible mathematics, avoid word and pdf if possible. Our best option is to 
+write in markdown/latex, and compile via Quarto into html. 
+

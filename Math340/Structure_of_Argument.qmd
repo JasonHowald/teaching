@@ -953,11 +953,98 @@ Use set-builder notation (either type) to write each set:
 
 # Functions
 
-## Introduction
+## Basics
 
-Interesting relationships between sets are usually expressed as functions. 
+We rarely study sets one at a time. Usually we want to observe and 
+study interrelationships between sets. These are usually expressed as functions. Functions are the bonds which make the chemistry of  set theory interesting. 
 
-### Nuances of Function Notation
+### What is a function?
+
+#### Various Perspectives
+
+Historically, a function is nothing more than a formula which depends on a free variable. So for example, $f(x)= x^2+1$ is a function because $x^2+1$ is a formula. This simple perspective has a few drawbacks. First, it can't easily distinguish between versions of $f(x) = x^2+1$ operating on different domains. For example, we might wish to consider $x \in {\mathbb R}$, or $x \in (0,\infty)$, or even $x \in {\mathbb Z}$. More seriously, lots of constructions in serious mathematics seem to create functions which don't have a formula or strain the definition of "formula". For example, 
+
+- $F(x) = \int_0^x f(t) dt$. Is this a "formula"?
+- Let $p(n)$ be the $n$'th prime number. Is this a "formula"?
+- Let $f(x)$ be the solution to the (pendulum) differential equation $y'' + \sin(y) = 0$.
+- Let $f(x) = \sum_{n=1}^\infty \frac{x^n}{n}$. Does an infinite sum count as a "formula"? What if it doesn't converge?
+
+Finally, the formulaic definition of a function makes functions not sets. This is only a problem if we want *everything* in mathematics to be officially a set. If we're doing formal set theory, well, we do!
+
+Moving beyond "formulas," we may regard a function to be a table of values. For example, consider the function:
+
+<table border="1" style="border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr>
+      <th style="padding: 10px; background-color: #f2f2f2;">$x$</th>
+      <td style="padding: 10px;">$-3$</td>
+      <td style="padding: 10px;">$-2$</td>
+      <td style="padding: 10px;">$-1$</td>
+      <td style="padding: 10px;">$0$</td>
+      <td style="padding: 10px;">$1$</td>
+      <td style="padding: 10px;">$2$</td>
+      <td style="padding: 10px;">$3$</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th style="padding: 10px; background-color: #f2f2f2;">$f(x) = x^{2} + 1$</th>
+      <td style="padding: 10px;">$10$</td>
+      <td style="padding: 10px;">$5$</td>
+      <td style="padding: 10px;">$2$</td>
+      <td style="padding: 10px;">$1$</td>
+      <td style="padding: 10px;">$2$</td>
+      <td style="padding: 10px;">$5$</td>
+      <td style="padding: 10px;">$10$</td>
+    </tr>
+  </tbody>
+</table>
+
+This viewpoint directly shows the x-y relationship, but isn't a good basis
+for functions. It's inherently finite, and leaves the pattern to be discovered 
+by careful inspection instead of centralizing the formula. 
+
+Next, we could consider a function to be its graph. This is reasonable for calculus, 
+but strains when we consider more exotic functions. 
+
+<table>
+  <tr>
+    <th>notion</th>
+    <th>pros</th>
+    <th>cons</th>
+  </tr> 
+  <tr>
+    <td>Formula</td>
+    <td>Simple, historical</td>
+    <td>Doesn't declare a domain. Not a set. What is a formula?  </td>
+  </tr> 
+  <tr>
+    <td>table</td>
+    <td>direct</td>
+    <td>doesn't declare the pattern, is finite.</td>
+  </tr> 
+  <tr>
+    <td>graph</td>
+    <td>geometric, visual</td>
+    <td>doesn't declare the pattern, difficult to use precisely, strains in many dimensions</td>
+  </tr> 
+
+Our most general perspective on functions centralizes the input/output relationship and makes
+a function a kind of set:
+
+### Definition of a function
+
+A **function** is three pieces of information:
+
+1. A **domain** set $A$,
+2. A **codomain** set $B$, and
+3. A **collection** of ordered pairs $(x,y)$, where 
+   - $x \in A$
+   - $y \in B$
+   - for every $x \in A$, there is exactly one pair $(x,y)$ in the function.
+
+<!--
+Nuances of Function Notation
 
 **Where is the function?** We're accustomed to writing a function $y = x^2$ or for example $f(x)=3x+5$ and saying "that's a function." But which part is a function? Variables are not functions. A variable is an ambiguous reference to an individual thing, usually a real number. So $x$ is not a function, and neither is $y$, despite the idiom "$y$ is a function of $x$". We need to clearly consider the difference between a mathematical form and mathematical value. In analytical philosophy, this is called the use-mention distinction. To illustrate:
 
@@ -985,18 +1072,19 @@ Many mathematical operations are interpreted as functions but have quirky or non
 $\sqrt{x}$, $|x|$, $e^x$, $x^2$, etc., most of which lack a clear function symbol, 
 violate functional parenthesis syntax, and don't even have the grace to consistently write
 the input "$x$" last. It's no wonder the chain rule is hard -- natural function syntax is a mess. 
+-->
 
 ### A word on "range".
 
 The function $\sin$ has real inputs and real outputs. We can say that the domain is 
-${\mathbb R}$ (all real inputs are valid) and the range is ${\mathbb R}$ (potential outputs are real). But the actual, realized outputs lie within the region $[-1,1]$, so we may also say the range is $[-1,1]$. The word "range" suffers a double-meaning, referring sometimes to the larger set of potential outputs and sometimes to the smaller set of actual outputs. In higher mathematics, where the difference can matter a lot, we have suspended the word entirely. We use "codomain" for the larger set of potential outputs and "image" for the smaller set of actual outputs. Typically the codomain is known when the function is created. Calculating the image can be hard. 
+${\mathbb R}$ (all real inputs are valid) and the range is ${\mathbb R}$ (potential outputs are real). But the actual, realized outputs lie within the region $[-1,1]$, so we may also say the range is $[-1,1]$. The word "range" suffers a double-meaning, referring sometimes to the larger set of potential outputs and sometimes to the smaller set of actual outputs. In higher mathematics, where the difference can matter a lot, we have placed the word "range" on probation for ambiguity. We use "codomain" for the larger set of potential outputs and "image" for the smaller set of actual outputs. Typically the codomain is known when the function is created. Calculating the image can be hard. 
 
 ### How to introduce a function
 
 A function is a complicated object and needs to be created with care. 
 To specify a function correctly and completely we normally communicate four things:
 
-1. The letter, symbol, or name representing the function.
+1. The letter, symbol, or name representing the function. (Unnamed "anonymous" functions are possible but extremely rare.)
 2. The domain.
 3. The codomain.
 4. The rule.
@@ -1011,8 +1099,7 @@ Let $\arcsin: [-1,1] \to [-\pi/2, \pi/2]$ by $\arcsin(x) = \int_0^x \frac{1}{\sq
 
 Let $d: {\mathbb R}^2 \to {\mathbb R}$ by $d(x,y) = |x-y|$
 
-More generically, we write "Let $f:D \to R$ by $f(x) = \ldots$ to specify a function called $f$ with domain $D$, codomain $R$, and rule as given.
-
+More generically, we write "Let $f:D \to R$ by $f(x) = \ldots$ to specify a function called $f$ with domain $D$, codomain $R$, and rule as given. Note that the function is $f$, not $f(x)$. 
 
 Arguably we have specified also the *input variable* for the function, but this is an illusion. The variable used to specify the rule is a dummy variable and is irrelevant after the function is specified. So for example if we...
 
@@ -1045,53 +1132,205 @@ You may have studied sequences in Calc II. A sequence $\{a_n\}$ is just a functi
 **Test your understanding**:
 
 Which is most precise?
+
 - The derivative of $\sin$ is $\cos$
 - The derivative of $\sin(x)$ is $\cos(x)$
 
+### Proving functions equal
 
-Functions can be different with the same rule and different domains. Functions can have apparently different rules but be the same. Functions can have same domain and image and be technically different with different codomains. Example: max function, average function, eval at 2 function.
+A function comprises three pieces of data (domain, codomain, rule). Proving two functions equal is a matter of comparing all three features. In general, to prove $f=g$ we must check 
+that the functions have the same domain, the same codomain, and the same rule. Normally, 
+checking domains and codomains is easy and the real work is checking the formula. 
 
-Domain can be literally any set. Example where the set is a set of sets, of vectors, of functions, etc.
+**Example:**
 
-## Inverse Functions
+Let $f:{\mathbb Z} \to {\mathbb Z}$ by $f(n) = 2n+1$. 
+
+Let $g:{\mathbb Z} \to {\mathbb Z}$ by $g(n) = 2(n+1)-1$. 
+
+**Proof of equality**: Trivially, the domains and codomains agree. There's nothing to do there. The rest is a matter of algebra:
+
+$$g(n) = 2(n+1)-1 = 2n+2-1 = 2n+1 = f(n)$$
+
+## Composition
+
+From precalculus and Calculus we may feel that functions can always be composed. But once we're in the business of formally declaring a domain and codomain for each function, their composition depends on having agreeable domains and codomains. Thus the composition $f \circ g$ (i.e. $f(g(x))$) is defined only when the set of potential outputs of $g$ agrees with the set of inputs of $f$.
+
+**Definition:** Let $g:A \to B$ and $f:B \to C$ be functions. Then their **composition** $f \circ g$ is defined by 
+$f \circ g : A \to C$ by $(f \circ g)(a) = f(g(a))$. 
+
+**Notes:**
+
+1. We've defined $f \circ g$ as a compound symbol which plays the role of a function symbol. Thus, it can be 
+evaluated at $a$ by writing "$(f \circ g)(a)$". We've parenthesized $(f \circ g)$ itself to clarify 
+that we do not mean $f \circ (g(a))$. The definition of it follows the general structure of function definition. 
+It describes the domain (A), codomain (C), and rule $(f \circ g)(a) = f(g(a))$. 
+1. We've defined $f \circ g$ via the rule $(f \circ g)(a) = f(g(a))$. We do not need to define $f(g(a))$:  
+$g$ is a function which admits any input $a \in A$, and $f$ is a function which admits any input from $B$, 
+and $g(a) \in B$.
+1. This definition is quite strict about codomains and domains. For example, the function
+$\ln:(0,\infty) \to {\mathbb R}$ does not allow self-composition $\ln \circ \ln$, because of the mismatch between 
+codomain and domain. These technicalities can sometimes but not always be ignored. 
+
+**Examples:** Many examples should already be familiar from practice with the chain rule. 
+
+1. Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = x^2$. Let $g:{\mathbb R} \to {\mathbb R}$ by $g(x) = \sin(x)$. 
+Then $f(g(x)) = (\sin(x))^2$, often written $\sin^2(x)$, but $g(x) = \sin(x^2)$. Based on the specifics of $x^2$ and 
+$\sin(x)$, we cheated in specifying the codomains of these functions?
+1. Let $S = {\mathscr P}_{fin}({\mathbb N})$ be the set of *finite* subsets of ${\mathbb N}$. Let $g:S \to {\mathbb N}$ by $g(x) =$ the cardinality of $x$.
+Let $f:{\mathbb N} \to \{0,1\}$ by $f(n) = n$ mod 2. Then $f(g(x)) = 1$ when $x$ has an odd number of elements, and $f(g(x)) = 0$ if $x$ has an even number of elements. 
+1. Let $f:{\mathbb N} \to {\mathbb N}$ be the successor map $f(n) = n+1$. Then $f \circ f$ is the map which takes $n$ to $n+2$. 
+1. Let $min:{\mathscr P}({\mathbb N}) \to {\mathbb N}$ be the minimum function. Let $g:{\mathbb N} \to {\mathscr P}({\mathbb N})$ by $g(x) = \{x\}$. Then $min \circ g$ is the identity function on ${\mathbb N}$. 
 
 
 
-Proving functions equal - domain, range, f(x) = g(x) for all x.
+## Injective / Surjective / Bijective
 
-Injective functions
+### Injectivity 
 
-Examples and non example
+#### Definitions
 
-What's it for,Cancelling from equations
+Many students are tempted to "cancel" functions from equations in various 
+circumstances:
 
-Proving injective
+1. $\sin(x) = \sin(\pi)$, so $x=\pi$. (cancelling $\sin$)
+1. $x^2 = 3^2$, so $x=3$ (cancelling the squaring function)
+1. $\ln(x+1) = \ln(2)$, so $x+1 = 2$.
+1. $\sqrt{x^2+y^2} = \sqrt{25}$, so $x^2+y^2 = 25$. 
+1. $f(x) = f(y)$, so $x=y$. 
 
-Theorem: left invertible iff
+Cancelling functions in this way is dangerous and usually wrong. Three of the five examples are wrong. Why are such mistakes tempting? Sometimes we misread a function application $\ln(x+1)$ as multiplication, treating $\ln$ as multiple. This probably comes from the notational similarity with $3(x+1)$, but it's completely wrong. Sometimes we forget that a function $y=f(x)$ can have two distinct $x$ values which map to the same $y$ value. For example, $\sin(0) = 0 = \sin(\pi)$, $(-3)^2 = 3^2$, etc. This phenomenon is sometimes called a "collision."
 
-Surjective functions
+There are, however, certain functions which have no collisions. For example, $\sqrt{-}:{\mathbb R} \to {\mathbb R}$, or $\ln:(0,\infty) \to {\mathbb R}$, or $f(x) = 5x+3$. These are called **injective** and they permit us the luxury of cancellation. In fact, the cancellation property is the very definition of injectivity:
 
-Examples and non
+**Definition:** Let $f:X \to Y$ be a function. We call $f$ **injective** (or **one-to-one**) if:
+$$\forall a, b \in X, \enspace  f(a) = f(b) \to a=b$$
 
-Depends on range
+How do we prove injectivity? As usual, the structure of the proof should be modeled on the structure of the 
+statement: First we let $a$ and $b$ be arbitrary in the domain. Next we *assume* $f(a) = f(b)$. Then we apply 
+some clever algebra to conclude $a=b$, and we conclude. 
 
-Proving surjective
+#### Proving Injectivity
 
-Right invertible iff
+**Example 1** Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$. We'll show that $f$ is injective. Let $a, b \in {\mathbb R}$. Assume $f(a) = f(b)$. Then $5a+7 = 5b+7$. Subtracting $7$ we have $5a = 5b$. Dividing we learn $a=b$. This completes the proof.
 
-Bijective
+**Example 2** Let $f: {\mathbb Z}_7 \to {\mathbb Z}_7$ by $f(x) = 2x$ (mod 7). We'll show $f$ is injective. Let $a, b \in {\mathbb Z}_7$. Assume $f(a) = f(b)$. Then $2a = 2b$ (mod 7). Because we're working with integers mod 7, we shouldn't simply trust that we can divide by $2$. But we can multiply by $4$: $8a = 8b$ (mod 7). Now both $7a$ and $7b$ are multiples of $7$, so separately they can be omitted from both sides: $a = b$ (mod 7). This concludes the proof.
 
-One to one correspondence
+**Example 3**: Let $f:[0,\infty) \to {\mathbb R}$ by $f(x) = \sqrt{x}$. Note the restricted domain. Let's proof that $f$ is injective. Let $a, b \in [0,\infty)$ and assume $f(a) = f(b)$. That is, $\sqrt{a} = \sqrt{b}$. We may square both sides to learn $(\sqrt{a})^2 = (\sqrt{b})^2$. But $(\sqrt{a})^2 = a$ and $(\sqrt{b})^2 =b$. This is in fact the definition of the square root!
+Therefore $a= b$ as desired. 
+
+**Nonexample 4**: Let $f: {\mathbb R} \to [0,\infty)$ by $f(x) = x^2$. Then $f$ is not injective. Any collision proves its failure: $f(5) = f(-5)$. To see where a proof of injectivity would go wrong, let $a, b \in {\mathbb R}$ and assume $f(a)=f(b)$. Then $a^2 = b^2$. Naturally we wish to take square roots of both sides: $\sqrt{a^2} = \sqrt{b^2}$. It's tempting to conclude that $a=b$, but this is wrong: $\sqrt{a^2}$ simplifies to $a$ only if $a$ is nonnegative. There's no valid way to deduce $a=b$. 
+
+#### Injectivity and inverses
+
+Most of our proofs of injectivity implicitly rely on inverting the function rule. The first proof for $f(x)=5x+7$ relies on subtracting $7$ then dividing by $5$. We've implicitly used the function $g(x) = \frac{x-7}{5}$, the inverse function of $f$. The third example uses the squaring function in relation to square root. Even the attempt in the fourth example is based on the inverse function (not square root) of the squaring function, but this time it fails. Why? The secret lies in the peculiarly complicated relationship between the square root and square functions. Let's write $Sq$ for the squaring function and $Sqrt$ for the square root function. Then 
+
+$$\forall x \in [0,\infty) \enspace Sq(Sqrt(x)) = x \enspace \text{ but sometimes } \enspace Sqrt(Sq(x)) \neq x$$
+
+As inverse functions, these two work one way, and fail the other way around. In this circumstance we call 
+$Sq$ a **right inverse** of $Sqrt$ and we call $Sqrt$ a **left inverse** of $Sq$. As a general principal, any function with a left inverse function is invertible. See the section on inverse functions. 
+
+### Surjectivity 
+
+#### Definition
+
+We've distinguished between the **codomain** and the **image** of a function $f:X \to Y$. The codomain is the set of potential outputs, $Y$. The image is the set of realized outputs -- that is, the set $\{f(x) \,|\, x \in X\}$. Of course it may happen that these sets are the same. For example, the $\ln: (0,\infty) \to {\mathbb R}$ produces every real number as an output, as does the function $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$. In this situation, we call the function **surjective**
+
+**Definition:** Let $f:X \to Y$ be a function. We call $f$ **surjective** if:
+
+$$\forall y \in Y \enspace \exists x \in X \enspace f(x) = y$$
+
+As usual, the proof technique follows the logical form: First, let $y \in Y$ be an arbitrary element of the codomain. Next, apply some special cleverness to choose, depending on $y$, a good value of $x$. Finally, prove $f(x)=y$. Naturally, the "special cleverness" is the hard part, but usually involves first solving for $x$ in the equation $f(x)=y$.
+
+#### Proving Surjectivity
+
+**Example 1** Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$. We'll show that $f$ is surjective. Let $b \in {\mathbb R}$. Choose $a = \frac{b-7}{5}$. Then $f(a) = f(\frac{b-7}{5}) = 5 \frac{b-7}{5} + 7 = b-7+7 = b$ as desired. This completes the proof.
+Note that the proof does not explain the choice of $a$, which comes out of the blue. In practice, it comes from solving $5a+7=b$ for $a$.
+
+**Example 2**: Let $f: {\mathbb R} \to [0,\infty)$ by $f(x) = x^2$. We'll show $f$ is surjective. Let $b \in [0,\infty)$. Choose 
+$a = \sqrt{b}$ (which exists because $b$ is not negative). Then $f(a) = (\sqrt{b})^2 = b$ as needed.
+
+**Nonexample 3**: Let $f:[0,\infty) \to {\mathbb R}$ by $f(x) = \sqrt{x}$. Then $f$ is not surjective: There is a $b$ (for example $b=-4$) for which no $a$ can be found with $f(a)=b$.  
+
+**Example 4**: Let $S = {\mathscr P}_{fin}({\mathbb N})$ be the set of *finite* subsets of ${\mathbb N}$. Let $g:S \to {\mathbb N}$ be the maximum function. We'll show $g$ is surjective. Let $b \in {\mathbb N}$. Choose $a = \{b\} \in S$. Then $g(a) = \max(\{b\}) = b$ as needed.
+
+Notice that in examples 1 and 2, the inverse functions $\frac{b-7}{5}$ and $\sqrt{x}$ again play a key role. Once
+more, this suggests that invertibility is related to surjectivity. 
+
+#### A question of codomain
+
+Whether a function $f:X \to Y$ is *in*jective is a question of which input-output pairs $(x,y)$ it includes, which is normally a question of its formula. But the matter of *sur*jectivity depends only on whether the codomain $Y$ is larger than the image $\{f(x) \,|\, x \in X\}$. In many cases, this is a matter of choice, because the codomain can be chosen larger or smaller without affecting the formula. Thus for example $f:[0,\infty) \to {\mathbb R}$ by $f(x) = \sqrt{x}$ is not surjective, but change the codomain to $[0,\infty)$ and it is. Again, the function $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$ is surjective, 
+but change the codomain to the complex numbers ${\mathbb C}$ and it's not. 
+
+
+### Bijectivity 
+
+A function is called **bijective** if it's both injective and surjective. This is often called a **one-to-one correspondence**. Naturally we can prove bijectivity by proving injectivity and surjectivity in two steps, but the right way to address bijectivity is through inverse functions. 
+
+## Invertibility 
+
+### Definitions
+
+In Calculus we compute inverse functions by solving for the independent variable. For example, if $y = 5x+7$, we may solve $x = \frac{y-7}{5}$. We have two functions $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$ and $g:{\mathbb R} \to {\mathbb R}$ by $g(x) = \frac{x-7}{5}$. Because they express the same relationship between $x$ and $y$, we have $f(g(x)) = x$ and likewise $g(f(x))=x$. As we've seen, the functions $x^2$ and $\sqrt{x}$ are nearly inverse, but not quite. The same can be said for $\sin$ and $\arcsin$. 
+
+**Definition:** Let $f:B \to A$ and $g:A \to B$ be functions. 
+
+1. If $f(g(a))=a$ for all $a \in A$, then we call $f$ a **left inverse** for $g$, and we call $g$ a **right inverse** for $f$. If such an $f$ exists, we call $g$ **left invertible**, and similarly if such a $g$ exists we call $f$ **right invertible**. 
+2. If instead $g(f(b))=b$ for all $b \in B$, then this is the same situation with letters reversed -- $g$ is the left inverse and $f$ is the right inverse, etc.
+3. If **both** equations hold -- $f(g(a))=a$ for all $a \in A$ and $g(f(b))=b$ for all $b \in B$ -- then we call $f$ and $g$ **(two sided) inverse functions**, and we call each **invertible.** In this situation we write $f^{-1}$ for $g$.
+
+**Examples**
+
+1. Because $(\sqrt{x})^2=x$ but not the other way around, the squaring function is left inverse of the square root. The inverse notation $f^{-1}$ is not appropriate for either function. 
+2. If we regard $\sin:[-\pi/2, \pi/2] \to [-1,1]$ and $\arcsin:[-1,1] \to [-\pi/2, \pi/2]$, then these functions are two-sided inverses of one another, and $\arcsin = \sin^{-1}$. However, if we treat the $\sin$ function normally, then $\sin:{\mathbb R} \to [-1,1]$. In this case, $\sin(\arcsin(x))=x$ is always true but $\arcsin(\sin(\theta))=\theta$ is not, so $\sin$ is a left inverse of $\arcsin$ and $\arcsin$ is a right inverse of $\sin$. The other inverse trigonometric functions are similar. 
+3. Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$ and let $g:{\mathbb R} \to {\mathbb R}$ by $g(x) = \frac{x-7}{5}$. Then both equations $f(g(x))=x$ and $g(f(x))=x$ are always true, so these functions are two-sided inverses. It's correct to write $g = f^{-1}$. 
+4. Let $\ln:(0,\infty) \to {\mathbb R}$ be the natural logarithm and $\exp:{\mathbb R} \to (0,\infty)$ by $\exp(x) = e^x$. Both relevant equations $\ln(e^x)=x$ and $e^{\ln(x)}=x$ are true for all (valid) inputs, so these functions are inverses. It's nonstandard but correct to write $\ln = \exp^{-1}$ and $\exp = \ln^{-1}$.
+5. Let $f:{\mathbb R} - \{0\} \to {\mathbb R} - \{0\}$ be the reciprocal function $f(x) = 1/x$. Then $f(f(x))=x$ for all $x$ in the domain, so $f$ is its own (two-sided) inverse. The same is true for $f(x) = -x$, $f(x) = 1-x$, and $f(x) = \sqrt{1-x^2}$ if the domain is adjusted. Such functions are called **involutions.**
+6. Let $f:\{1,2,3\} \to \{1,2,3,4\}$ by $f(x) = x$, and let $g:\{1,2,3,4\} \to \{1,2,3\}$ by $g(x) = \begin{cases} x & \text{ if } x<4\\ 1 & \text{ if } x=4 \end{cases}$. Then $g(f(x))=x$ for all $x$, so $f$ is the right inverse and $g$ is the left. It's not true that $f(g(4))=4$, so these are not two-sided inverses.  
+
+There is a very tight connection between invertibility and injectivity/surjectivity
+
+**Theorem:** Let $f:X \to Y$ be a function. Assume $X \neq \emptyset$. 
+
+1. $f$ is injective if and only if $f$ has a left inverse.
+2. $f$ is surjective if and only if $f$ has a right inverse. 
+3. $f$ is bijective if and only if $f$ has a two-sided inverse. 
+
+This theorem includes six separate implications. None are hard, but one implication depends on the Axiom of Choice. Because of this oddity we'll take our time carefully. 
+
+**Proof:** Let $f:X \to Y$ be a function with nonempty domain. 
+
+1. $\leftarrow$: Assume $f$ has a left inverse. Let's call it $g$. Let $a, b \in X$ and suppose $f(a)=f(b)$. Then $g(f(a)) = g(f(b))$, so $a=b$. This proves injectivity.
+2. $\leftarrow$: Assume $f$ has a right inverse. Let's call it $h$. Let $y \in Y$. Choose $x = h(y)$. Then $f(x) = f(h(y)) = y$. This proves that $f$ is surjective. 
+3. $\leftarrow$: Just invoke the previous two parts. 
+
+3. $\rightarrow$: Let $f$ be a bijection. Let $g:Y \to X$ be defined by the rule 
+$$g(y) = \text{ the } x \text{ so that } f(x)=y$$
+
+For this rule to make sense, we must verify that there is such an $x$, and that it's unique. The existence of such an $x$ is the surjectivity of $f$, and its uniqueness is the injectivity of $f$. Thus $g$ is a function and of course satisfies the equations $g(f(x)) = x$ and $f(g(y)) = y$. 
+
+1. $\rightarrow$: If we define $g$ exactly as above without the surjectivity assumption, then $g$ may not be a function because it fails to assign a value when $y \in Y - \operatorname{image}(f)$. But anyway $X$ is nonempty and we can fix some fallback value $x_0 \in X$:
+$$g(y) = \begin{cases} \text{ the } x \text{ so that } f(x)=y & \text{ if } \exists x \enspace f(x)=y \\ x_0 & \text{ otherwise} \end{cases}$$
+Injectivity tells us that $x$ (satisfying $f(x)=y$) is unique if it exists at all, so $g$ is a function. To see that it's a left inverse of $f$, we calculate $g(f(x)) = \text{ the } x \text{ so that } f(x)=f(x) = x$ as required. 
+
+2. $\rightarrow$: Again copying the definition of $g$ from (3. $\rightarrow$), this time we have a different problem. Such an $x$ exists by surjectivity, but without injectivity, $x$ may not be unique. Nevermind, just choose any $x$ that works. We define $g:Y 
+to X$ by 
+$$g(y) = \text{ any} } x \text{ so that } f(x)=y$$
+
+Now we calculate: $f(g(y)) = f(\text{ some } x \text{ so that } f(x)=y) = y$ as needed, so $g$ serves as an inverse function. 
+
+This completes the proof.
+
+Notice that the definition of $g$ in the last part potentially requires infinitely many arbitrary simultaneous choices, selecting an $x$ for each $y$. This step alone require the axiom of choice. In fact, the statement (2. $\rightarrow$) also implies the axiom of choice, so it can be treated as an alternative statement of that axiom. 
+
+Using the previous theorem, we have alternate paths for proving that $f$ is injective, surjective, or bijective: Construct a one-sided or two-sided inverse function and prove that it works. Especially for a bijection, this proof technique is superior, because it results in not only bijectivity but also a formula for a known inverse function. Anyone working with a functions should want that too!
+
+
+
+
+
+
+The notation f^{-1}
+
 
 Equinumerous
-
-Prove injective and surjective... But
-
-Theorem invertible iff
-
-When proving bijective, construct the inverse cause honestly you're going to need it
-
-Proving a calculation of image.
-
-
-

@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Calculating and understanding min, 25%, 50%, 75%, and max">
+<meta name="author" content="jason howald, SUNY Potsdam. (howaldja@potsdam.edu)">
+<meta name="description" content="Getting started with quarto and github for accessible math publishing.">
 
-<title>11. Quantile Statistics – Teaching</title>
+<title>Setting up Quarto and Git – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,23 +60,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,35 +105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -148,17 +120,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation"><span class="header-section-number">1</span> Preparation</a></li>
-  <li><a href="#true-or-false" id="toc-true-or-false" class="nav-link" data-scroll-target="#true-or-false"><span class="header-section-number">2</span> True or False</a></li>
-  <li><a href="#mean-isnt-typical" id="toc-mean-isnt-typical" class="nav-link" data-scroll-target="#mean-isnt-typical"><span class="header-section-number">3</span> Mean isn’t typical</a></li>
-  <li><a href="#what-is-the-median" id="toc-what-is-the-median" class="nav-link" data-scroll-target="#what-is-the-median"><span class="header-section-number">4</span> What is the median?</a></li>
-  <li><a href="#what-is-the-median-1" id="toc-what-is-the-median-1" class="nav-link" data-scroll-target="#what-is-the-median-1"><span class="header-section-number">5</span> What is the median?</a></li>
-  <li><a href="#using-the-median-to-understand-your-data." id="toc-using-the-median-to-understand-your-data." class="nav-link" data-scroll-target="#using-the-median-to-understand-your-data."><span class="header-section-number">6</span> Using the median to understand your data.</a></li>
-  <li><a href="#median-is-more-informative-than-mean" id="toc-median-is-more-informative-than-mean" class="nav-link" data-scroll-target="#median-is-more-informative-than-mean"><span class="header-section-number">7</span> Median is more informative than Mean</a></li>
-  <li><a href="#quartering-the-data" id="toc-quartering-the-data" class="nav-link" data-scroll-target="#quartering-the-data"><span class="header-section-number">8</span> Quartering the data</a></li>
-  <li><a href="#notes-on-q1-and-q3" id="toc-notes-on-q1-and-q3" class="nav-link" data-scroll-target="#notes-on-q1-and-q3"><span class="header-section-number">9</span> Notes on Q1 and Q3:</a></li>
-  <li><a href="#by-hand-aint-nobody-got-time-for-that" id="toc-by-hand-aint-nobody-got-time-for-that" class="nav-link" data-scroll-target="#by-hand-aint-nobody-got-time-for-that"><span class="header-section-number">10</span> By hand? Ain’t nobody got time for that!</a></li>
-  <li><a href="#individual-work" id="toc-individual-work" class="nav-link" data-scroll-target="#individual-work"><span class="header-section-number">11</span> Individual work</a></li>
+  <li><a href="#goal-of-the-guide" id="toc-goal-of-the-guide" class="nav-link active" data-scroll-target="#goal-of-the-guide"><span class="header-section-number">1</span> Goal of the Guide</a></li>
+  <li><a href="#gathering-tools-one-time-setup" id="toc-gathering-tools-one-time-setup" class="nav-link" data-scroll-target="#gathering-tools-one-time-setup"><span class="header-section-number">2</span> Gathering tools (one-time setup)</a></li>
+  <li><a href="#create-a-shared-project-one-time-setup" id="toc-create-a-shared-project-one-time-setup" class="nav-link" data-scroll-target="#create-a-shared-project-one-time-setup"><span class="header-section-number">3</span> Create a shared project (one-time setup)</a></li>
+  <li><a href="#make-the-quarto-project-one-time-setup" id="toc-make-the-quarto-project-one-time-setup" class="nav-link" data-scroll-target="#make-the-quarto-project-one-time-setup"><span class="header-section-number">4</span> Make the quarto project (one-time setup)</a></li>
+  <li><a href="#start-the-engines-whenever-developing" id="toc-start-the-engines-whenever-developing" class="nav-link" data-scroll-target="#start-the-engines-whenever-developing"><span class="header-section-number">5</span> Start the engines (whenever developing)</a></li>
+  <li><a href="#after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes" id="toc-after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes" class="nav-link" data-scroll-target="#after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes"><span class="header-section-number">6</span> After editing, upload to github. (at end of each session, to deploy changes)</a></li>
+  <li><a href="#tips-moving-forward" id="toc-tips-moving-forward" class="nav-link" data-scroll-target="#tips-moving-forward"><span class="header-section-number">7</span> Tips moving forward</a></li>
   </ul>
 </nav>
     </div>
@@ -167,18 +135,24 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">11. Quantile Statistics</h1>
+<h1 class="title">Setting up Quarto and Git</h1>
 </div>
 
 <div>
   <div class="description">
-    Calculating and understanding min, 25%, 50%, 75%, and max
+    Getting started with quarto and github for accessible math publishing.
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>jason howald, SUNY Potsdam. (<a href="mailto:howaldja@potsdam.edu">howaldja@potsdam.edu</a>) </p>
+          </div>
+  </div>
     
   
     
@@ -189,107 +163,177 @@ window.Quarto = {
 </header>
 
 
-<section id="preparation" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">1</span> Preparation</h2>
-<p>Reread 2.1.5 on box plots and quantile statistics. Review vocabulary: Percentile, Quartile, Quintile Median, Q1, Q3, IQR</p>
+<section id="goal-of-the-guide" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="goal-of-the-guide"><span class="header-section-number">1</span> Goal of the Guide</h2>
+<p><strong>The Who:</strong> A mathematician on MacOS (probably without admin privileges), comfortable with latex editing.</p>
+<p><strong>The What:</strong> To set up vscode, quarto, and git for editing and online publishing.</p>
+<p><strong>The Why:</strong> To write using latex with markdown. To compile into html. To set up a streamlined, easy workflow. To reach gold-standard accessibility goals by default.</p>
 </section>
-<section id="true-or-false" class="level2 activity" data-number="2">
-<h2 class="activity anchored" data-number="2" data-anchor-id="true-or-false"><span class="header-section-number">2</span> True or False</h2>
-<p>Among American households, about half earn more than the average income and about half earn less.</p>
-<p>On a very easy ten point assignment, about half of students will score above average, and about half will score below average</p>
-</section>
-<section id="mean-isnt-typical" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="mean-isnt-typical"><span class="header-section-number">3</span> Mean isn’t typical</h2>
-<p><strong>Mean</strong> does a poor job describing “typical,” because it pulls hard toward outliers.</p>
-<p><strong>Median</strong> does a better job describing “typical,” because it mostly ignores outliers.</p>
-</section>
-<section id="what-is-the-median" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="what-is-the-median"><span class="header-section-number">4</span> What is the median?</h2>
-<p>The median is the middle value by count. Roughly speaking, half the data values are less than the median and half are greater.</p>
-<p>Finding the median:</p>
-<ul>
-<li>Sort data numerically</li>
-<li>Find the center.</li>
-<li>If count is odd, median is the middle one.</li>
-<li>If count is even, median is average of middle two.</li>
-</ul>
-<p>Example data values: 5, 7, 8, 9, <strong>9</strong>, <strong>9</strong>, 10, 10, 11, 12</p>
-<p><small>Description: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9.</small></p>
-<p>The median is 9</p>
-</section>
-<section id="what-is-the-median-1" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="what-is-the-median-1"><span class="header-section-number">5</span> What is the median?</h2>
-<p>1, 2, 3, 0, 1, 2, 9 ← Median is not zero. Sort first!</p>
-<p>0, 1, 1, 2, 2, 3, 9 ← Median is 2.</p>
-<p>0, 1, 1, 2, 2, 3, 96 ← Median is still 2.</p>
-<p>The median is insensitive to outliers and individual data errors. The mean is not. This is one reason the median is often preferred.</p>
-</section>
-<section id="using-the-median-to-understand-your-data." class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="using-the-median-to-understand-your-data."><span class="header-section-number">6</span> Using the median to understand your data.</h2>
-<p>What is the median salary of MLB players? Use the mlb.csv dataset.</p>
-<p>What is the median income of Americans? Use the acs12.csv dataset.</p>
-<p>What is the median birth weight of American babies? Use the births14.csv dataset.</p>
-<p>In all these cases, the mean may be deceptive because it’s influenced by outliers. The median better reflects what is typical.</p>
-</section>
-<section id="median-is-more-informative-than-mean" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="median-is-more-informative-than-mean"><span class="header-section-number">7</span> Median is more informative than Mean</h2>
-<p>Most reports on “typical” American finances use quantile statistics – median household income, median net wealth, median rent, median house price, etc.</p>
-<p>In highly unequal societies, measures of wealth are strongly skewed right. Usually median is much smaller than mean.</p>
-<p>In the U.S., <em>median</em> income is currently about 2/3 of the <em>average</em> income (Source: <a href="https://www.ssa.gov/oact/cola/central.html">SSA</a>).</p>
-<p>No single statistic describes the distribution fully, but the median often does a better job capturing what’s typical or normal.</p>
-</section>
-<section id="quartering-the-data" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="quartering-the-data"><span class="header-section-number">8</span> Quartering the data</h2>
-<p>After sorting a data series, we can make equal quarters by further subdividing each half. Just like cutting an apple:</p>
-<p>5, 7, <strong>8</strong>, 9, <strong>9</strong> | <strong>9</strong>, 10, <strong>10</strong>, 11, 12</p>
-<p><small>Description: Ten data points are presented in sorted order, starting with 5 and ending with 12. The middle two are accented in bold and are both 9. The third data point, an 8, central within the left half, is accented. The eighth data point, a 10, central within the right half, is also accented.</small></p>
-<p>From this division we can construct the five-number summary:</p>
-<p>Min=5, Q1 = 8, Median = 9, Q3 = 10, Max = 12.</p>
-<p>These numbers can also be obtained using .describe():</p>
-<div id="48246e9e" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series([<span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>], name<span class="op">=</span><span class="st">'age'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>count    10.00
-mean      9.00
-std       2.00
-min       5.00
-25%       8.25
-50%       9.00
-75%      10.00
-max      12.00
-Name: age, dtype: float64</code></pre>
-</div>
-</div>
-</section>
-<section id="notes-on-q1-and-q3" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="notes-on-q1-and-q3"><span class="header-section-number">9</span> Notes on Q1 and Q3:</h2>
-<p>The five number summary is the foundation of the box plot.</p>
-<p>Odd/even fussiness applies to halves as well.</p>
-<p>It’s not literally true that a quarter of the data lies between Q1 and Q2. If <span class="math inline">\(n=10\)</span>, how could it be? But such statements are usually nearly true for large and continuous datasets.</p>
-<p>Caution: Jupyter (pandas) uses a slightly fancier policy for quartering the apple. This can cause confusion. Lecture, textbook, and homework are in sync, but pandas is different. Note the 8.25 on the previous slide.</p>
-<p>Caution: Median, 50%, and Q2 are all synonyms. Q1 and 25% are synonyms.</p>
-</section>
-<section id="by-hand-aint-nobody-got-time-for-that" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="by-hand-aint-nobody-got-time-for-that"><span class="header-section-number">10</span> By hand? Ain’t nobody got time for that!</h2>
+<section id="gathering-tools-one-time-setup" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="gathering-tools-one-time-setup"><span class="header-section-number">2</span> Gathering tools (one-time setup)</h2>
 <ol type="1">
-<li><p>A data analyst needs to calculate Min, Q1, Median, Q3, and Max easily, quickly, and reliably, even for large datasets. What method should we use?</p></li>
-<li><p>A certain online homework problem asks for Q1 and Q3 for a list of 27 numbers. There is no .csv file. How can we make Jupyter solve the problem? Construct a Series…</p></li>
+<li>(5 min) Install “Quarto CLI” from quarto.org. Google it, download the <code>.pkg</code> installer, and run.
+<ul>
+<li>Select “Install for me only” because you don’t have admin.</li>
+</ul></li>
+<li>(5 min) Install “Visual Studio Code” (VSCode), a nice editor.
+<ul>
+<li>Google it, download the <code>.dmg</code> file, and open.</li>
+<li>There’s a drag-to-Applications installer view. Don’t do that. You don’t have admin.</li>
+<li>Drag the app (“Visual Studio Code”) to <code>[your user directory]/Applications</code> instead.</li>
+<li>After it’s copied there, drag the app from <code>[your user directory]/Applications</code> to the dock for easy access.</li>
+<li>Open VSCode from the dock.</li>
+</ul></li>
+<li>(5 min) Install appropriate extensions for VSCode.
+<ul>
+<li>Within VSCode app, open menu Code &gt; Settings &gt; Extensions.</li>
+<li>Search for Quarto extension and install that.</li>
+<li>Search for Python extension and install that. If it complains “No python found” ignore that.</li>
+</ul></li>
+<li>(1 min + 15 min waiting) Install xcode-select command line tools
+<ul>
+<li>From terminal, type <code>xcode-select --install</code></li>
+<li>A dialog window should pop up, offering to install the tools. Click install.</li>
+<li>Make a cup of tea? This installation has a long unreliable progress bar.</li>
+</ul></li>
 </ol>
-<div id="74312975" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series([<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">17</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">18</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>…and use describe()</p>
-<div id="58baebfd" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
-<section id="individual-work" class="level2" data-number="11">
-<h2 data-number="11" class="anchored" data-anchor-id="individual-work"><span class="header-section-number">11</span> Individual work</h2>
-<p>Solve Webwork problems in assignment 11.</p>
-<p>Here’s a quantile statistic: The top 1% of Americans control about as much wealth as the bottom 90% [source: Federal Reserve Economic Data (FRED)]. See what you can do about that.</p>
+<section id="create-a-shared-project-one-time-setup" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="create-a-shared-project-one-time-setup"><span class="header-section-number">3</span> Create a shared project (one-time setup)</h2>
+<ol type="1">
+<li>(10 minutes) <strong>Set up github, on the web</strong>
+<ul>
+<li>Go to github.com.</li>
+<li>Create a free account. You can use a google account.</li>
+<li>Create a new repo (also called a repository or project). I suggest “teaching” or some other generic catch-all name. Later, the name will be visible in public URLs. Free hosting is available for <em>public</em> repos only. Unless you pay for private hosting, keep exams off github!</li>
+<li>After creating the repo, keep that tab open. It has setup instructions for your local repo folder.</li>
+<li>In another tab, create a PAT (Personal Access Token). It’s a specialized temporary password to securely authenticate from terminal to github later.
+<ul>
+<li>Log in to GitHub in your browser.</li>
+<li>Navigate to [Your Account Icon (upper right)] &gt; Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Tokens (classic)</li>
+<li>Generate a new “classic” token.</li>
+<li>Note: Call it “Lifecycle”</li>
+<li>Expiration: Set it to 90 days.</li>
+<li>Scopes: Check the box for repo (this is the only one you need).</li>
+<li>Click Generate token.</li>
+<li>Keep that page open! You’ll need that token soon.</li>
+</ul></li>
+<li>On github.com, use “Pages” to prepare your project for public web hosting
+<ul>
+<li>find project-level Settings.</li>
+<li>Go to Pages (under “Code and Automation”).</li>
+<li>Under Source, choose “Deploy from Branch”.</li>
+<li>Under Branch, choose “main” and “/docs”, then Save. [Note: If you don’t see the /docs folder in the dropdown yet, skip this and come back to it after your first ‘git push’ at the end of the guide.]</li>
+</ul></li>
+</ul></li>
+<li>(10 minutes) <strong>Set up your repo, on your computer</strong>
+<ul>
+<li>Create a local folder for your project. For example, <code>[user directory]/teaching</code></li>
+<li>From inside the directory, follow the instructions (also on github.com) to create the repo:
+<ul>
+<li><code>echo "# Teaching" &gt;&gt; README.md</code> (This makes a readme file)</li>
+<li><code>git init</code> (This initializes the repo)</li>
+<li><code>git add README.md</code> (The readme file becomes part of the repo)</li>
+<li><code>git commit -m "first commit"</code> (Commit takes a “snapshot” of the repo, identifying the status we want to save and sync. The quoted part is a commit message describing it.)
+<ul>
+<li>Probably returns “please tell me who you are” error. Follow instructions in that error to set user email and name using <code>git config</code>. Then try again.</li>
+</ul></li>
+<li><code>git branch -M main</code></li>
+<li><code>git remote add origin [copy url from github.com tab I asked you to save]</code> This command links the local folder to the online repo.</li>
+<li><code>git push -u origin main</code> This uploads changes and syncs the online version.
+<ul>
+<li>Username: Your username on github.com</li>
+<li>Password: Copy the Personal Access Token you generated above. Nothing will appear and the cursor won’t move.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="make-the-quarto-project-one-time-setup" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="make-the-quarto-project-one-time-setup"><span class="header-section-number">4</span> Make the quarto project (one-time setup)</h2>
+<ol type="1">
+<li>(10 minutes) Create a quarto project. From the terminal, run: <code>quarto create-project --type website</code>
+<ul>
+<li><p>You’ll get <code>.gitignore</code>, which tells git which helper files not to track as part of the project. Accepting the default will probably work. If you want, you can modify it to copy mine:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore system files</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">**/.DS_Store</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore the hidden Quarto work folders everywhere</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">**/.quarto/</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">**/_freeze/</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore the local copy of the openintro data repository</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">**/openintro.csv/</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore the "rendered" output in source folders</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># (since we are sending it to /docs instead)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">**/_site/</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Only ignore folders that end in _files</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">**/*_files/</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># DO NOT ignore the docs folder</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ex">!docs/</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ex">!docs/**/*_files/</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ex">/.quarto/</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ex">**/*.quarto_ipynb</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>You’ll get <code>index.qmd</code>, which represents the root of the website. Don’t change its name. Later it can develop into site navigation.</p></li>
+<li><p>You’ll get <code>about.qmd</code>, which you can ignore.</p></li>
+<li><p>You’ll get <code>styles.css</code>, which is empty but can hold custom styling info. Safe to ignore.</p></li>
+<li><p>You’ll get <code>_quarto.yml</code>, a key configuration file which tells the quarto engine how to behave. You can mostly ignore this file, for now, but you need to make a quick edit first, declaring the docs/ folder as your web root. The top section should look something like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul></li>
+</ol>
+</section>
+<section id="start-the-engines-whenever-developing" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="start-the-engines-whenever-developing"><span class="header-section-number">5</span> Start the engines (whenever developing)</h2>
+<ol type="1">
+<li>In VSCode, create a new file if needed for your resource. It should end with .qmd. You can copy the “about.qmd” file to get started.</li>
+<li>From terminal, inside the project folder, type <code>quarto preview</code>
+<ul>
+<li>Quarto will watch files within your project. Whenever a .qmd file is saved, quarto will render it to html and open it in browser for you to view.</li>
+<li>Leave the terminal window open and running. You can minimize it.</li>
+</ul></li>
+<li>Edit <code>.qmd</code> files in VSCode. Save as you go. View in browser to check your work.
+<ul>
+<li>If you’re ambitious, you can test with Voiceover. Everything should work by default.</li>
+</ul></li>
+</ol>
+</section>
+<section id="after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes"><span class="header-section-number">6</span> After editing, upload to github. (at end of each session, to deploy changes)</h2>
+<ol type="1">
+<li>(2 minutes) From terminal, in your project folder, type commands
+<ul>
+<li><code>quarto render</code> This will render the entire project, compiling <code>.qmd</code> files to <code>.html</code> files in your <code>docs/</code> directory.</li>
+<li><code>git add .</code> (The final space and period are part of the command!) This will add everything (with exceptions in .gitignore) currently in your project directory to the git repository. Essentially telling git “everything in this folder matters to the project.”</li>
+<li><code>git commit -m "Description of edits"</code> Telling git to produce a snapshot of the repo as it is now, with commit message describing (to yourself) what changes you made.</li>
+<li><code>git push</code> Upload files to github, sharing them with the world.</li>
+<li>(If you couldn’t setting up github Pages (hosting) because you had no <code>docs/</code> option, now’s the time to revisit that. Once and done.)</li>
+</ul></li>
+<li>View your repo online. The URL should be <code>[github-username].github.io/[projectname]</code>
+<ul>
+<li><strong>Caution</strong> After <code>git push</code> completes, deployment takes about two minutes. Be patient. There’s a way to monitor it if you’re impatient.</li>
+</ul></li>
+</ol>
+</section>
+<section id="tips-moving-forward" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="tips-moving-forward"><span class="header-section-number">7</span> Tips moving forward</h2>
+<ol type="1">
+<li>Avoid spaces in file names within a quarto project.</li>
+<li>If Quarto complains it’s missing Python packages, you can install them without admin. From terminal:
+<ul>
+<li><code>python3 -m pip install jupyter</code> Install the jupyter engine for python.</li>
+<li><code>python3 -m pip install pandas</code> pandas is statistical processing.</li>
+<li>etc. for other packages as you need them.</li>
+</ul></li>
+<li>Reach out to jason if you’re stuck.</li>
+</ol>
 
 
 </section>

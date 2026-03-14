@@ -8,6 +8,13 @@
     ]
   },
   {
+    "listing": "/typeset/index.html",
+    "items": [
+      "/typeset/setup.html",
+      "/typeset/pathways.html"
+    ]
+  },
+  {
     "listing": "/Math681/index.html",
     "items": [
       "/Math681/Complex_Analysis.html",
@@ -28,7 +35,8 @@
       "/Math125/index.html",
       "/Math340/index.html",
       "/Math672/index.html",
-      "/Math681/index.html"
+      "/Math681/index.html",
+      "/typeset/index.html"
     ]
   }
 ]
