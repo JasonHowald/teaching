@@ -228,7 +228,7 @@ window.Quarto = {
 <ol type="1">
 <li>Fetch, read, regroup, and describe the data.</li>
 </ol>
-<div id="4b685ec5" class="cell" data-execution_count="1">
+<div id="a02c0355" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'YoungBlood.csv'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'Plasma'</span>).describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -245,7 +245,7 @@ window.Quarto = {
 <h2 data-number="5" class="anchored" data-anchor-id="example-3-a-long-commute"><span class="header-section-number">5</span> Example 3 – A long commute</h2>
 <p>In the acs12 dataset (on openintro), do the men have, on average, a longer time_to_work than the women? Is the difference statistically significant?</p>
 <p>You will need a regrouping/describing trick:</p>
-<div id="26c3bc7f" class="cell" data-execution_count="2">
+<div id="f18cafc4" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'gender'</span>)[<span class="st">'time_to_work'</span>].describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>

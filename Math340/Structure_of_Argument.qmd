@@ -1028,6 +1028,7 @@ but strains when we consider more exotic functions.
     <td>geometric, visual</td>
     <td>doesn't declare the pattern, difficult to use precisely, strains in many dimensions</td>
   </tr> 
+</table>
 
 Our most general perspective on functions centralizes the input/output relationship and makes
 a function a kind of set:
@@ -1108,6 +1109,20 @@ Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 3x+5$.
 Let $g:{\mathbb R} \to {\mathbb R}$ by $g(t) = 3t+5$.
 
 ... then $f(x)=g(x)$, $f(t) = g(t)$, and indeed $f=g$. However $f(x) \neq g(t)$.
+
+**An empty function** Let $f: \emptyset \to {\mathbb Z}$ by $f(x) = x^2$.
+
+- Does the formula apply to every element of the domain? Yes, vacuously.
+- Does the formula yield an integer for every element of the domain? Yes, vacuously.
+- Does any element of the domain map to two elements of the codomain? No. There are none.
+
+It follows that this is a valid function definition. The formula is actually irrelevant. 
+We call this an **empty function**. For any codomain set $B$, there is exactly one empty function 
+$f:\emptyset \to B$. 
+
+**Identity Function:** Let $A$ be any set. Let $f:A \to A$ by $f(x)=x$. This function is 
+called the **identity function on $A$** and often written $id_A$. It's useful the way the number
+$1$ is useful -- not worth much on its own, but critical in relation to others. 
 
 **Recall:** Many students have difficulty using the limit definition of the derivative because it involves plugging in forms which involve variables foreign to the function definition:
 
@@ -1201,14 +1216,12 @@ circumstances:
 
 Cancelling functions in this way is dangerous and usually wrong. Three of the five examples are wrong. Why are such mistakes tempting? Sometimes we misread a function application $\ln(x+1)$ as multiplication, treating $\ln$ as multiple. This probably comes from the notational similarity with $3(x+1)$, but it's completely wrong. Sometimes we forget that a function $y=f(x)$ can have two distinct $x$ values which map to the same $y$ value. For example, $\sin(0) = 0 = \sin(\pi)$, $(-3)^2 = 3^2$, etc. This phenomenon is sometimes called a "collision."
 
-There are, however, certain functions which have no collisions. For example, $\sqrt{-}:{\mathbb R} \to {\mathbb R}$, or $\ln:(0,\infty) \to {\mathbb R}$, or $f(x) = 5x+3$. These are called **injective** and they permit us the luxury of cancellation. In fact, the cancellation property is the very definition of injectivity:
+There are, however, certain functions which have no collisions. For example, $\sqrt{-}:[0,\infty) \to {\mathbb R}$, or $\ln:(0,\infty) \to {\mathbb R}$, or $f(x) = 5x+3$. These are called **injective** and they permit us the luxury of cancellation. In fact, the cancellation property is the very definition of injectivity:
 
 **Definition:** Let $f:X \to Y$ be a function. We call $f$ **injective** (or **one-to-one**) if:
 $$\forall a, b \in X, \enspace  f(a) = f(b) \to a=b$$
 
-How do we prove injectivity? As usual, the structure of the proof should be modeled on the structure of the 
-statement: First we let $a$ and $b$ be arbitrary in the domain. Next we *assume* $f(a) = f(b)$. Then we apply 
-some clever algebra to conclude $a=b$, and we conclude. 
+How do we prove injectivity? As usual, the structure of the proof should be modeled on the structure of the statement: First we let $a$ and $b$ be arbitrary in the domain. Next we *assume* $f(a) = f(b)$. Then we apply some clever algebra to deduce $a=b$, and we conclude. 
 
 #### Proving Injectivity
 
@@ -1223,12 +1236,11 @@ Therefore $a= b$ as desired.
 
 #### Injectivity and inverses
 
-Most of our proofs of injectivity implicitly rely on inverting the function rule. The first proof for $f(x)=5x+7$ relies on subtracting $7$ then dividing by $5$. We've implicitly used the function $g(x) = \frac{x-7}{5}$, the inverse function of $f$. The third example uses the squaring function in relation to square root. Even the attempt in the fourth example is based on the inverse function (not square root) of the squaring function, but this time it fails. Why? The secret lies in the peculiarly complicated relationship between the square root and square functions. Let's write $Sq$ for the squaring function and $Sqrt$ for the square root function. Then 
+Most of our proofs of injectivity implicitly rely on inverting the function rule. The first proof for $f(x)=5x+7$ relies on subtracting $7$ then dividing by $5$. We've implicitly used the function $g(x) = \frac{x-7}{5}$, the inverse function of $f$. The third example uses the squaring function in relation to square root. Even the attempt in the fourth example is based on the inverse function (square root) of the squaring function, but this time it fails. Why? The secret lies in the peculiarly complicated relationship between the square root and square functions. Let's write $Sq$ for the squaring function and $Sqrt$ for the square root function. Then 
 
 $$\forall x \in [0,\infty) \enspace Sq(Sqrt(x)) = x \enspace \text{ but sometimes } \enspace Sqrt(Sq(x)) \neq x$$
 
-As inverse functions, these two work one way, and fail the other way around. In this circumstance we call 
-$Sq$ a **right inverse** of $Sqrt$ and we call $Sqrt$ a **left inverse** of $Sq$. As a general principal, any function with a left inverse function is invertible. See the section on inverse functions. 
+As inverse functions, these two work one way, and fail the other way around. In this circumstance we call $Sq$ a **left inverse** of $Sqrt$ and we call $Sqrt$ a **right inverse** of $Sq$. As a general principal, any function with a left inverse function is injective. See the section on inverse functions. 
 
 ### Surjectivity 
 
@@ -1244,8 +1256,7 @@ As usual, the proof technique follows the logical form: First, let $y \in Y$ be 
 
 #### Proving Surjectivity
 
-**Example 1** Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$. We'll show that $f$ is surjective. Let $b \in {\mathbb R}$. Choose $a = \frac{b-7}{5}$. Then $f(a) = f(\frac{b-7}{5}) = 5 \frac{b-7}{5} + 7 = b-7+7 = b$ as desired. This completes the proof.
-Note that the proof does not explain the choice of $a$, which comes out of the blue. In practice, it comes from solving $5a+7=b$ for $a$.
+**Example 1** Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$. We'll show that $f$ is surjective. Let $b \in {\mathbb R}$. Choose $a = \frac{b-7}{5}$. Then $f(a) = f(\frac{b-7}{5}) = 5 \frac{b-7}{5} + 7 = b-7+7 = b$ as desired. This completes the proof. Note that the proof does not explain the choice of $a$, which comes out of the blue. In practice, it comes from solving $5a+7=b$ for $a$, but this work is not strictly speaking part of the proof. Many mathematicians call it "scratch work" -- necessary to discover the proof but not part of it.
 
 **Example 2**: Let $f: {\mathbb R} \to [0,\infty)$ by $f(x) = x^2$. We'll show $f$ is surjective. Let $b \in [0,\infty)$. Choose 
 $a = \sqrt{b}$ (which exists because $b$ is not negative). Then $f(a) = (\sqrt{b})^2 = b$ as needed.
@@ -1265,7 +1276,7 @@ but change the codomain to the complex numbers ${\mathbb C}$ and it's not.
 
 ### Bijectivity 
 
-A function is called **bijective** if it's both injective and surjective. This is often called a **one-to-one correspondence**. Naturally we can prove bijectivity by proving injectivity and surjectivity in two steps, but the right way to address bijectivity is through inverse functions. 
+A function is called **bijective** if it's both injective and surjective. This is often called a **one-to-one correspondence**. Naturally we can prove bijectivity by proving injectivity and surjectivity in two steps, but the efficient way to address bijectivity is through inverse functions. 
 
 ## Invertibility 
 
@@ -1275,8 +1286,8 @@ In Calculus we compute inverse functions by solving for the independent variable
 
 **Definition:** Let $f:B \to A$ and $g:A \to B$ be functions. 
 
-1. If $f(g(a))=a$ for all $a \in A$, then we call $f$ a **left inverse** for $g$, and we call $g$ a **right inverse** for $f$. If such an $f$ exists, we call $g$ **left invertible**, and similarly if such a $g$ exists we call $f$ **right invertible**. 
-2. If instead $g(f(b))=b$ for all $b \in B$, then this is the same situation with letters reversed -- $g$ is the left inverse and $f$ is the right inverse, etc.
+1. If $f(g(a))=a$ for all $a \in A$ (i.e., if $f \circ g = id_A$) then we call $f$ a **left inverse** for $g$, and we call $g$ a **right inverse** for $f$. If such an $f$ exists, we call $g$ **left invertible**, and similarly if such a $g$ exists we call $f$ **right invertible**. 
+2. If instead $g(f(b))=b$ for all $b \in B$ (i.e. if $g \circ f = id_B$) then this is the same situation with letters reversed -- $g$ is the left inverse and $f$ is the right inverse, etc.
 3. If **both** equations hold -- $f(g(a))=a$ for all $a \in A$ and $g(f(b))=b$ for all $b \in B$ -- then we call $f$ and $g$ **(two sided) inverse functions**, and we call each **invertible.** In this situation we write $f^{-1}$ for $g$.
 
 **Examples**
@@ -1284,7 +1295,7 @@ In Calculus we compute inverse functions by solving for the independent variable
 1. Because $(\sqrt{x})^2=x$ but not the other way around, the squaring function is left inverse of the square root. The inverse notation $f^{-1}$ is not appropriate for either function. 
 2. If we regard $\sin:[-\pi/2, \pi/2] \to [-1,1]$ and $\arcsin:[-1,1] \to [-\pi/2, \pi/2]$, then these functions are two-sided inverses of one another, and $\arcsin = \sin^{-1}$. However, if we treat the $\sin$ function normally, then $\sin:{\mathbb R} \to [-1,1]$. In this case, $\sin(\arcsin(x))=x$ is always true but $\arcsin(\sin(\theta))=\theta$ is not, so $\sin$ is a left inverse of $\arcsin$ and $\arcsin$ is a right inverse of $\sin$. The other inverse trigonometric functions are similar. 
 3. Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 5x+7$ and let $g:{\mathbb R} \to {\mathbb R}$ by $g(x) = \frac{x-7}{5}$. Then both equations $f(g(x))=x$ and $g(f(x))=x$ are always true, so these functions are two-sided inverses. It's correct to write $g = f^{-1}$. 
-4. Let $\ln:(0,\infty) \to {\mathbb R}$ be the natural logarithm and $\exp:{\mathbb R} \to (0,\infty)$ by $\exp(x) = e^x$. Both relevant equations $\ln(e^x)=x$ and $e^{\ln(x)}=x$ are true for all (valid) inputs, so these functions are inverses. It's nonstandard but correct to write $\ln = \exp^{-1}$ and $\exp = \ln^{-1}$.
+4. Let $\ln:(0,\infty) \to {\mathbb R}$ be the natural logarithm and $\exp:{\mathbb R} \to (0,\infty)$ by $\exp(x) = e^x$. Both relevant equations $\ln(e^x)=x$ and $e^{\ln(x)}=x$ are true for all (valid) inputs, so these functions are inverses. It's unusual but correct to write $\ln = \exp^{-1}$ and $\exp = \ln^{-1}$.
 5. Let $f:{\mathbb R} - \{0\} \to {\mathbb R} - \{0\}$ be the reciprocal function $f(x) = 1/x$. Then $f(f(x))=x$ for all $x$ in the domain, so $f$ is its own (two-sided) inverse. The same is true for $f(x) = -x$, $f(x) = 1-x$, and $f(x) = \sqrt{1-x^2}$ if the domain is adjusted. Such functions are called **involutions.**
 6. Let $f:\{1,2,3\} \to \{1,2,3,4\}$ by $f(x) = x$, and let $g:\{1,2,3,4\} \to \{1,2,3\}$ by $g(x) = \begin{cases} x & \text{ if } x<4\\ 1 & \text{ if } x=4 \end{cases}$. Then $g(f(x))=x$ for all $x$, so $f$ is the right inverse and $g$ is the left. It's not true that $f(g(4))=4$, so these are not two-sided inverses.  
 
@@ -1300,37 +1311,70 @@ This theorem includes six separate implications. None are hard, but one implicat
 
 **Proof:** Let $f:X \to Y$ be a function with nonempty domain. 
 
-1. $\leftarrow$: Assume $f$ has a left inverse. Let's call it $g$. Let $a, b \in X$ and suppose $f(a)=f(b)$. Then $g(f(a)) = g(f(b))$, so $a=b$. This proves injectivity.
-2. $\leftarrow$: Assume $f$ has a right inverse. Let's call it $h$. Let $y \in Y$. Choose $x = h(y)$. Then $f(x) = f(h(y)) = y$. This proves that $f$ is surjective. 
-3. $\leftarrow$: Just invoke the previous two parts. 
+$1, \leftarrow$: Assume $f$ has a left inverse. Let's call it $g$. Let $a, b \in X$ and suppose $f(a)=f(b)$. Then $g(f(a)) = g(f(b))$, so $a=b$. This proves injectivity.
 
-3. $\rightarrow$: Let $f$ be a bijection. Let $g:Y \to X$ be defined by the rule 
+$2, \leftarrow$: Assume $f$ has a right inverse. Let's call it $h$. Let $y \in Y$. Choose $x = h(y)$. Then $f(x) = f(h(y)) = y$. This proves that $f$ is surjective. 
+
+$3, \leftarrow$: Just invoke the previous two parts. 
+
+$3, \rightarrow$: Let $f$ be a bijection. Let $g:Y \to X$ be defined by the rule 
 $$g(y) = \text{ the } x \text{ so that } f(x)=y$$
 
 For this rule to make sense, we must verify that there is such an $x$, and that it's unique. The existence of such an $x$ is the surjectivity of $f$, and its uniqueness is the injectivity of $f$. Thus $g$ is a function and of course satisfies the equations $g(f(x)) = x$ and $f(g(y)) = y$. 
 
-1. $\rightarrow$: If we define $g$ exactly as above without the surjectivity assumption, then $g$ may not be a function because it fails to assign a value when $y \in Y - \operatorname{image}(f)$. But anyway $X$ is nonempty and we can fix some fallback value $x_0 \in X$:
+$1, \rightarrow$: If we define $g$ exactly as above without the surjectivity assumption, then $g$ may not be a function because it fails to assign a value when $y \in Y - \operatorname{image}(f)$. But anyway $X$ is nonempty and we can fix some fallback value $x_0 \in X$:
 $$g(y) = \begin{cases} \text{ the } x \text{ so that } f(x)=y & \text{ if } \exists x \enspace f(x)=y \\ x_0 & \text{ otherwise} \end{cases}$$
-Injectivity tells us that $x$ (satisfying $f(x)=y$) is unique if it exists at all, so $g$ is a function. To see that it's a left inverse of $f$, we calculate $g(f(x)) = \text{ the } x \text{ so that } f(x)=f(x) = x$ as required. 
+Injectivity tells us that $x$ (satisfying $f(x)=y$) is unique if it exists at all, so $g$ is a function. To see that it's a left inverse of $f$, we calculate $g(f(x)) = (\text{ the } x \text{ so that } f(x)=f(x) )= x$ as required. 
 
-2. $\rightarrow$: Again copying the definition of $g$ from (3. $\rightarrow$), this time we have a different problem. Such an $x$ exists by surjectivity, but without injectivity, $x$ may not be unique. Nevermind, just choose any $x$ that works. We define $g:Y 
-to X$ by 
-$$g(y) = \text{ any} } x \text{ so that } f(x)=y$$
+$2, \rightarrow$: Again copying the definition of $g$ from (3. $\rightarrow$), this time we have a different problem. Such an $x$ exists by surjectivity, but without injectivity, $x$ may not be unique. Nevermind, just choose any $x$ that works. We define $g:Y \to X$ by 
+$$g(y) = \text{ any } x \text{ so that } f(x)=y$$
 
 Now we calculate: $f(g(y)) = f(\text{ some } x \text{ so that } f(x)=y) = y$ as needed, so $g$ serves as an inverse function. 
 
 This completes the proof.
 
-Notice that the definition of $g$ in the last part potentially requires infinitely many arbitrary simultaneous choices, selecting an $x$ for each $y$. This step alone require the axiom of choice. In fact, the statement (2. $\rightarrow$) also implies the axiom of choice, so it can be treated as an alternative statement of that axiom. 
+Notice that the definition of $g$ in the last part potentially requires infinitely many arbitrary simultaneous choices, selecting an $x$ for each $y$. Of all six steps, only this one requires the Axiom of Choice. In fact, the statement ($2, \rightarrow$) also implies the axiom of choice, so it can be treated as an alternative formulation of that axiom. 
 
 Using the previous theorem, we have alternate paths for proving that $f$ is injective, surjective, or bijective: Construct a one-sided or two-sided inverse function and prove that it works. Especially for a bijection, this proof technique is superior, because it results in not only bijectivity but also a formula for a known inverse function. Anyone working with a functions should want that too!
 
+**Example**
 
+1. Let's prove that $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 1-7x$ is a bijection. After some scratch work solving for $x$, we let $g:{\mathbb R} \to {\mathbb R}$ by $g(x) = \frac{1-x}{7}$. Now 
+$f(g(x)) = 1-7(\frac{1-x}{7}) = x$ and $g(f(x)) = \frac{1-(1-7x)}{7} = x$. Thus $g$ is a two-sided inverse and $f$ is a bijection.
 
+## Counting across functions
 
+An function $f:A \to B$ often gives us an opportunity to compare the number of elements of in each set. If $f$ is a bijection, then $A$ and $B$ must have the same number of elements. Conversely, if any sets $A$ and $B$ have the same number of elements, then there must be some bijection which connects them. It was Cantor's insight to rely on bijections as the basis for the meaning of "same number of elements", even when the sets $A$ and $B$ are infinite. 
 
+**Definition:** Let $A$ and $B$ be sets. We call them **equinumerous** (i.e., "same number") if there is some bijection $f:A \to B$. 
 
-The notation f^{-1}
+In other words, the idea of "bijection" comes first, and the ideas "number of elements" and "same number of elements" are secondary and depend on "bijection." This is quite natural for finite sets, but rather odd for infinite sets. If there were infinite sets not connected by any bijection, this definition would identify multiple distinct "infinite numbers." That's precisely what Cantor proved, and it caused quite a stir. 
 
+**Theorem:** (Cantor's diagonalization) For any set $S$, there is no surjection from $S$ to ${\mathscr P}(S)$. 
 
-Equinumerous
+**proof:** Suppose $f:S \to {\mathscr P}(S)$ were a surjection. Let $C = \{s \in S \,|\, s \notin f(s) \}$. The definition of $C$ means $s \in C \Leftrightarrow s \notin f(s)$. Since $C$ is a member of the codomain, there must be some $s \in S$ so that $f(s)= C$. For that $s$, the statement $s \in C \Leftrightarrow  s \notin f(s)$ is a contradiction. Thus no surjection can exist. 
+
+If $S$ is a finite set with $n$ elements, then ${\mathscr P}(S)$ has $2^n$, which is more, so of course there's no surjection. But the consequences of Cantor's proof for infinite sets are philosophically groundbreaking. If $S$ is any infinite set, then $S$, ${\mathscr P}(S)$, ${\mathscr P}({\mathscr P}(S))$, etc. form an unending list of distinctly infinite sets, each with more elements than the previous! We have to surrender the notion of "infinity" as an absolute or ultimate, and reimagine "infinity" as a category of numbers which are subject to less-than and greater-than relationships.
+
+### Cardinality
+
+**Definition:** Let $S$ be a set. The **cardinality** of $S$, written $|S|$, is the number
+of elements of $S$. 
+
+If $S$ is finite, then $|S|$ is a natural number. If $S$ is infinite, its cardinality is far
+more difficult to define and somewhat beyond the scope of the course. But in any case, 
+cardinality behaves mostly as expected from finite sets:
+
+**Theorem:** Let $A$ and $B$ be sets. 
+
+1. Cardinalities are comparable: $|A|=|B|$ or $|A|<|B|$ or $|B|<|A|$. 
+1. $|A|=|B|$ if and only if there is a bijection $f:A \to B$. 
+1. If there is an injection $f:A \to B$, then $|A| \leq |B|$.
+1. If there is a surjection $f:A \to B$, then $|A| \geq |B|$.
+
+**Some early cardinalities:**
+
+1. The cardinalities of finite sets are ordinary whole numbers. So for example $7$ is a cardinality. 
+2. The cardinality of the infinite set ${\mathbb N}$ is called $\omega$ (or sometimes $\omega_0$ or $\aleph_0$). This cardinality is called the "countable infinity" because ${\mathbb N}$ contains the "counting" numbers. Any set with the same cardinality is called "countably infinite" or "denumerable" (or sometimes "countable"). It is known that $\omega$ is the smallest of the many infinities.
+3. The cardinality of the set ${\mathbb R}$ is called $c$ or sometimes $2^\omega$ (or $2^{\aleph_0}$). It is known that $\omega \neq c$. There's a bijection between ${\mathbb R}$ and ${\mathscr P}({\mathbb N})$, so $c = |{\mathscr P}({\mathbb N})|$ as well. (The bijection is a bit tricky but not really deep.)
+4. Among the infinite cardinals which exceed $\omega$, there is a smallest one, called $\omega_1$. That is, $\omega_1$ is the smallest uncountable infinite cardinal. Certainly $\omega < \omega_1 \leq c$, but it is not known whether $\omega_1 = c$. For all we know, $c$ might be $\omega_5$. The hypothesis that  $\omega_1=c$ is called the "Continuum Hypothesis" or CH. It has been proven to be *independent* of the axioms of set theory (Gödel 1940, Cohen 1963). That is, CH cannot possibly be proven from the axioms of ZFC, but it also cannot be refuted by the same axioms. 

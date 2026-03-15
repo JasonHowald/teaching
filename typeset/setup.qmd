@@ -57,6 +57,7 @@ engine: jupyter #Force jupyter notebook to invalidate cache.
 
 1. (10 minutes) **Set up your repo, on your computer**
    - Create a local folder for your project. For example, `[user directory]/teaching`
+      - Recommended: Choose a location which will not sync to the cloud (e.g. via OneDrive).
    - From inside the directory, follow the instructions (also on github.com) to create the repo:
       - `echo "# Teaching" >> README.md` (This makes a readme file)
       - `git init` (This initializes the repo)
