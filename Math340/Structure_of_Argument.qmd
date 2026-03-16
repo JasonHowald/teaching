@@ -1124,7 +1124,7 @@ $f:\emptyset \to B$.
 called the **identity function on $A$** and often written $id_A$. It's useful the way the number
 $1$ is useful -- not worth much on its own, but critical in relation to others. 
 
-**Recall:** Many students have difficulty using the limit definition of the derivative because it involves plugging in forms which involve variables foreign to the function definition:
+<!--**Recall:** Many students have difficulty using the limit definition of the derivative because it involves plugging in forms which involve variables foreign to the function definition:
 
 $$ f'(x) = \lim_{h \to 0 }\frac{f(x+h)-f(x)}{h}$$
 
@@ -1138,7 +1138,7 @@ f'(x) &= \lim_{h \to 0 }\frac{f(x+h)-f(x)}{h}\\
  &= \text{etc.}
 \end{align*}
 
-Somehow the first step is often very tricky. It just requires that the input be carefully plugged in using the formula.
+Somehow the first step is often very tricky. It just requires that the input be carefully plugged in using the formula.-->
 
 **Aside:**
 
