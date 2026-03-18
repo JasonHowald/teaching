@@ -150,7 +150,9 @@ $$ \left \{ q^2 \Bigm| q \in {\mathbb R}, -3\leq q \leq 3  \right\} $$
 
 ## Integers and <
 
-$ \left \{ x \in {\mathbb N}  \Bigm|  \exists y \in {\mathbb N}\,\, y < x \right\} $
+Explain what is in this set, and why.
+
+$$\left \{ x \in {\mathbb N}  \,|\,  \exists y \in {\mathbb N}\,\, y < x \right\}$$
 
 # Functions
 
