@@ -86,3 +86,31 @@ Find an infinite repeating pattern of points which, when removed from the lattic
 ## "the light gleams an instant, then it's night once more.” 
 
 Prove that $R = {\mathbb Z}[x]/(x)$ is isomorphic to ${\mathbb Z}$
+
+## Making a prime ideal
+
+Let $R$ be a ring and let $f \in R$ be a nonzero nonnilpotent element. Let $S = \{1, f, f^2, f^3, \ldots\}$. Let $P$ be an ideal maximal among all ideals of $R$ disjoint from $S$. Prove that $P$ is a prime ideal. (Hint: Don't try to prove that $P$ is maximal.)
+
+## Not prime any more
+
+1. Give an example of a ring homomorphism $f:R \to S$ and a prime ideal $P$ of $R$, so that the extension $P^e$ is the unit ideal. 
+
+2. Give an example of a ring homomorphism $f:R \to S$ and a prime ideal $P$ of $R$, so that the extension $P^e$ is a proper ideal (i.e., not the unit ideal), but is not prime. 
+
+## Maximal implies prime
+
+The notes give a rather roundabout demonstration that every maximal ideal $I$ of a commutative ring $R$ 
+is prime. It depends on reasoning about the quotient $R/I$. Give a direct proof that every maximal ideal 
+is prime, without resorting to the quotient ring $R/I$.
+
+## cecece
+
+Prove this proposition, which is given in the notes without careful proof: Let $f:R \to S$ be a ring homomorphism. Let $I$ be an ideal of $R$ and let $J$ be an ideal of $S$. Then
+
+1. $I \subseteq I^{ec}$.
+2. $J^{ce} \subseteq J$.
+3. $I^{ece} = I^{e}$.
+4. $J^{cec} = J^c$.
+
+Hint: You may assume if $I_1 \subseteq I_2$ then $I_1^e \subseteq I_2^e$ and similarly 
+if $J_1 \subseteq J_2$ then $J_1^c \subseteq J_2^c$. You should be able to deduce 3&4 from 1&2. 

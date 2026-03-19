@@ -126,6 +126,10 @@ window.Quarto = {
   <li><a href="#ri-ji" id="toc-ri-ji" class="nav-link" data-scroll-target="#ri-ji"><span class="header-section-number">1.8</span> <span class="math inline">\((R/I) / (J/I)\)</span></a></li>
   <li><a href="#patterns-in-mathbb-zi" id="toc-patterns-in-mathbb-zi" class="nav-link" data-scroll-target="#patterns-in-mathbb-zi"><span class="header-section-number">1.9</span> Patterns in <span class="math inline">\({\mathbb Z}[i]\)</span></a></li>
   <li><a href="#the-light-gleams-an-instant-then-its-night-once-more." id="toc-the-light-gleams-an-instant-then-its-night-once-more." class="nav-link" data-scroll-target="#the-light-gleams-an-instant-then-its-night-once-more."><span class="header-section-number">1.10</span> “the light gleams an instant, then it’s night once more.”</a></li>
+  <li><a href="#making-a-prime-ideal" id="toc-making-a-prime-ideal" class="nav-link" data-scroll-target="#making-a-prime-ideal"><span class="header-section-number">1.11</span> Making a prime ideal</a></li>
+  <li><a href="#not-prime-any-more" id="toc-not-prime-any-more" class="nav-link" data-scroll-target="#not-prime-any-more"><span class="header-section-number">1.12</span> Not prime any more</a></li>
+  <li><a href="#maximal-implies-prime" id="toc-maximal-implies-prime" class="nav-link" data-scroll-target="#maximal-implies-prime"><span class="header-section-number">1.13</span> Maximal implies prime</a></li>
+  <li><a href="#cecece" id="toc-cecece" class="nav-link" data-scroll-target="#cecece"><span class="header-section-number">1.14</span> cecece</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -286,6 +290,32 @@ window.Quarto = {
 <section id="the-light-gleams-an-instant-then-its-night-once-more." class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="the-light-gleams-an-instant-then-its-night-once-more."><span class="header-section-number">1.10</span> “the light gleams an instant, then it’s night once more.”</h2>
 <p>Prove that <span class="math inline">\(R = {\mathbb Z}[x]/(x)\)</span> is isomorphic to <span class="math inline">\({\mathbb Z}\)</span></p>
+</section>
+<section id="making-a-prime-ideal" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="making-a-prime-ideal"><span class="header-section-number">1.11</span> Making a prime ideal</h2>
+<p>Let <span class="math inline">\(R\)</span> be a ring and let <span class="math inline">\(f \in R\)</span> be a nonzero nonnilpotent element. Let <span class="math inline">\(S = \{1, f, f^2, f^3, \ldots\}\)</span>. Let <span class="math inline">\(P\)</span> be an ideal maximal among all ideals of <span class="math inline">\(R\)</span> disjoint from <span class="math inline">\(S\)</span>. Prove that <span class="math inline">\(P\)</span> is a prime ideal. (Hint: Don’t try to prove that <span class="math inline">\(P\)</span> is maximal.)</p>
+</section>
+<section id="not-prime-any-more" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="not-prime-any-more"><span class="header-section-number">1.12</span> Not prime any more</h2>
+<ol type="1">
+<li><p>Give an example of a ring homomorphism <span class="math inline">\(f:R \to S\)</span> and a prime ideal <span class="math inline">\(P\)</span> of <span class="math inline">\(R\)</span>, so that the extension <span class="math inline">\(P^e\)</span> is the unit ideal.</p></li>
+<li><p>Give an example of a ring homomorphism <span class="math inline">\(f:R \to S\)</span> and a prime ideal <span class="math inline">\(P\)</span> of <span class="math inline">\(R\)</span>, so that the extension <span class="math inline">\(P^e\)</span> is a proper ideal (i.e., not the unit ideal), but is not prime.</p></li>
+</ol>
+</section>
+<section id="maximal-implies-prime" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="maximal-implies-prime"><span class="header-section-number">1.13</span> Maximal implies prime</h2>
+<p>The notes give a rather roundabout demonstration that every maximal ideal <span class="math inline">\(I\)</span> of a commutative ring <span class="math inline">\(R\)</span> is prime. It depends on reasoning about the quotient <span class="math inline">\(R/I\)</span>. Give a direct proof that every maximal ideal is prime, without resorting to the quotient ring <span class="math inline">\(R/I\)</span>.</p>
+</section>
+<section id="cecece" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="cecece"><span class="header-section-number">1.14</span> cecece</h2>
+<p>Prove this proposition, which is given in the notes without careful proof: Let <span class="math inline">\(f:R \to S\)</span> be a ring homomorphism. Let <span class="math inline">\(I\)</span> be an ideal of <span class="math inline">\(R\)</span> and let <span class="math inline">\(J\)</span> be an ideal of <span class="math inline">\(S\)</span>. Then</p>
+<ol type="1">
+<li><span class="math inline">\(I \subseteq I^{ec}\)</span>.</li>
+<li><span class="math inline">\(J^{ce} \subseteq J\)</span>.</li>
+<li><span class="math inline">\(I^{ece} = I^{e}\)</span>.</li>
+<li><span class="math inline">\(J^{cec} = J^c\)</span>.</li>
+</ol>
+<p>Hint: You may assume if <span class="math inline">\(I_1 \subseteq I_2\)</span> then <span class="math inline">\(I_1^e \subseteq I_2^e\)</span> and similarly if <span class="math inline">\(J_1 \subseteq J_2\)</span> then <span class="math inline">\(J_1^c \subseteq J_2^c\)</span>. You should be able to deduce 3&amp;4 from 1&amp;2.</p>
 
 
 </section>
