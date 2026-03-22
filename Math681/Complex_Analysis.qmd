@@ -1336,6 +1336,12 @@ other's? Explain with proof. If they both exist are they necessarily
 equal? Explain with proof.
 :::
 
+<!--No, no, and no. 
+Consider
+    a. f = chi(nonnegatives), g(x)=x^2. Then f(g(x)) limit exists but f(x) not.
+    b. f = chi({0}), g(x) = x*sin(1/x). Then lim f(x) exists but f(g(x)) does not.
+    c. f = chi({0}), g(x) = 0. Then limits exist and differ.
+-->
 
 
 ::: {#exr-differentiability-conjugate-modulus }
@@ -1512,6 +1518,10 @@ quotient rule, use common denominator and take inspiration from the
 product rule.
 :::
 
+::: {#exr-power-rule }
+Prove that the derivative of $z^n$ is $nz^{n-1}$ for all integers $n \geq 1$. (Hint: Induct on the product rule.) Then prove the same law for integers $n \leq -1$. Is the law correct for $n=0$?
+:::
+
 
 
 Our last derivative rule is for inverse functions:
@@ -1524,13 +1534,23 @@ right hand side exists.
 
 ::: {.proof}
 The chain rule suffices if we assume $f'(z)$ exists, but we
-wish to prove it exists. We need to partly mimic that proof:
-$$1 = \frac{d}{dz} g(f(z)) = \lim_{w \to z} \frac{g(f(w))-g(f(z))}{w-z} = \lim_{w \to z} \frac{g(f(w))-g(f(z))}{f(w)-f(z)}\frac{f(w)-f(z)}{w-z}$$
-Note: Since $g(f(z))=z$ in $G$, we know $f$ is injective on $G$ (open),
-so the introduced denominator $f(w)-f(z)$ is nonzero. Now
-$\lim_{w \to z} \frac{g(f(w))-g(f(z))}{f(w)-f(z)}$ is $g'(f(z))$, as in
-the chain rule proof, and is presumed nonzero. We may divide both sides
-by this limit and apply the quotient law for limits to conclude. 
+wish to prove it exists. Instead we directly manipulate the limit using an $\epsilon-\delta$
+argument.
+
+\begin{align}
+f'(z) &= \lim_{w \to z} \frac{f(w)-f(z)}{w-z} \\
+&= 1 / \lim_{w \to z} \frac{w-z}{f(w)-f(z)} \text{ (provided that limit exists and is nonzero)}\\
+&= 1 / \lim_{w \to z} \frac{g(f(w))-g(f(z))}{f(w)-f(z)} \\
+\end{align}
+
+By assumption, the limit $g'(f(z)) = \lim_{v \to f(z)} \frac{g(v)-g(f(z))}{v-f(z)}$ 
+exists and equals, say, $L \neq 0$. If $\epsilon > 0$, we may choose $\delta>0$ so that 
+whenever $0<|v-f(z)|<\delta$ then $|\frac{g(v)-g(f(z))}{v-f(z)} - L| < \epsilon$. Since 
+$f$ is continuous, we may furthermore choose $\rho>0$ so that if $|w -z|<\rho$ then 
+$|f(w)-f(z)|<\delta$. But $f$ is also locally injective, so we may furthermore say if 
+$0<|w -z|<\rho$ then $0<|f(w)-f(z)|<\delta$. Using $f(w)$ for $v$, we have if 
+$0<|w -z|<\rho$ then $|\frac{g(f(w))-g(f(z))}{f(w)-f(z)} - L| < \epsilon$ as needed. 
+This shows that the limit above exists and equals $g'(f(z))$. 
 :::
 
 ::: {#cor-derivative-inverse .corollary}
@@ -1608,6 +1628,11 @@ and $z$, prove that $\arg(wz) = \arg(w)+\arg(z) + 2 \pi n$ for some
 $n \in {\mathbb Z}$. Here the $2 \pi n$ term records the inherent
 ambiguity of angle measure. Except for this term, the law should remind
 you of a logarithmic function.
+:::
+
+::: {#exr-homotopy-square}
+The map $f(z)=z^2$, restricted to the unit circle $S^1 = \{z\in {\mathbb C} \,|\, 1=|z|\}$, 
+is a map from $S^1$ to itself. What is its homotopy class?
 :::
 
 ## Cauchy Riemann Equations and Harmonic Functions

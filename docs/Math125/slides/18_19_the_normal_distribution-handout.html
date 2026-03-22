@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-77c7294430203c7b7838d4cd9bbb41f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-136a1b66a05597a1323701be652edf4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -236,7 +236,7 @@ window.Quarto = {
 <div id="fig-bell-curve" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A histogram illustrating the shape of the bell curve. The curve is bell-shaped with a large central prominent mode. It is completely symmetrical. The graph tapers into natural thin tails on the left and the right.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bell-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="18_19_the_normal_distribution-handout_files/figure-html/fig-bell-curve-output-1.png" alt="A histogram illustrating the shape of the bell curve. The curve is bell-shaped with a large central prominent mode. It is completely symmetrical. The graph tapers into natural thin tails on the left and the right." width="676" height="523" class="figure-img">
+<img src="18_19_the_normal_distribution-handout_files/figure-html/fig-bell-curve-output-1.png" alt="A histogram illustrating the shape of the bell curve. The curve is bell-shaped with a large central prominent mode. It is completely symmetrical. The graph tapers into natural thin tails on the left and the right." width="667" height="523" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bell-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: A standard normal distribution
@@ -552,7 +552,7 @@ Figure&nbsp;6: Time-to-work distribution
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<div id="75aeb622" class="cell" data-execution_count="7">
+<div id="0d48ae96" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -649,11 +649,11 @@ Name: time_to_work, dtype: float64</code></pre>
 &lt;&gt;:34: SyntaxWarning: invalid escape sequence '\m'
 &lt;&gt;:39: SyntaxWarning: invalid escape sequence '\m'
 &lt;&gt;:44: SyntaxWarning: invalid escape sequence '\m'
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_41566/588814348.py:34: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_99677/588814348.py:34: SyntaxWarning: invalid escape sequence '\m'
   ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\mu \pm 3\sigma$ ({percent_3std:.2f}%)')
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_41566/588814348.py:39: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_99677/588814348.py:39: SyntaxWarning: invalid escape sequence '\m'
   ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\mu \pm 2\sigma$ ({percent_2std:.2f}%)')
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_41566/588814348.py:44: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_99677/588814348.py:44: SyntaxWarning: invalid escape sequence '\m'
   ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\mu \pm 1\sigma$ ({percent_1std:.2f}%)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -685,7 +685,7 @@ Figure&nbsp;7: Empirical Rule illustration
 <li>Using a graphical tool, like <a href="https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html">Bognar’s normal CDF calculator</a></li>
 <li>Using Jupyter:</li>
 </ol>
-<div id="a33c463a" class="cell" data-execution_count="9">
+<div id="66015b27" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stats.norm.cdf(<span class="op">-</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">

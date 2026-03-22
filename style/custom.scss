@@ -19,3 +19,21 @@ blockquote p {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+.matrix-anchor {
+  color: teal;
+  font-weight: bold;
+}
+/* The screen reader signal */
+.matrix-anchor::before {
+  content: "Anchor: ";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

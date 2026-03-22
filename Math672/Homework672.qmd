@@ -114,3 +114,9 @@ Prove this proposition, which is given in the notes without careful proof: Let $
 
 Hint: You may assume if $I_1 \subseteq I_2$ then $I_1^e \subseteq I_2^e$ and similarly 
 if $J_1 \subseteq J_2$ then $J_1^c \subseteq J_2^c$. You should be able to deduce 3&4 from 1&2. 
+
+## Polynomial Ring is a ring
+
+Prove that the polynomial ring is a ring by proving the eight axioms. By far the hardest 
+axiom is multiplicative associativity, which uses the convolutional multiplication rule 
+twice. 

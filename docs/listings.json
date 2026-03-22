@@ -15,10 +15,17 @@
     ]
   },
   {
-    "listing": "/Math681/index.html",
+    "listing": "/Math375/index.html",
+    "items": []
+  },
+  {
+    "listing": "/index.html",
     "items": [
-      "/Math681/Complex_Analysis.html",
-      "/Math681/syllabus.html"
+      "/Math125/index.html",
+      "/Math340/index.html",
+      "/Math672/index.html",
+      "/Math681/index.html",
+      "/typeset/index.html"
     ]
   },
   {
@@ -30,13 +37,10 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/Math681/index.html",
     "items": [
-      "/Math125/index.html",
-      "/Math340/index.html",
-      "/Math672/index.html",
-      "/Math681/index.html",
-      "/typeset/index.html"
+      "/Math681/Complex_Analysis.html",
+      "/Math681/syllabus.html"
     ]
   }
 ]

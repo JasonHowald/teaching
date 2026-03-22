@@ -1,0 +1,11 @@
+---
+title: "Testing binomial coefficient."
+description: "service for Joel F"
+format: html
+---
+
+## Testing
+
+Here is a fraction: $\frac{a}{b}$
+
+Here is a binomial: $\binom{n}{k}$

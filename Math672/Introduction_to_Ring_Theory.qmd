@@ -784,6 +784,9 @@ Polynomial rings are often used in constructed examples because they give us the
 
 4. Suppose we are used to working with ${\mathbb R}$ but wish to add an element whose square is $-1$ without creating a philosophical argument. We construct the ring ${\mathbb R}[x]/(x^2+1)$, which contains a new element called "$x$" for which $x^2+1=0$. We may choose to use the symbol $i$ for $x$. This is a great way to construct the ring ${\mathbb C}$.
 
+5. More generally, if we have a field $K$ and an important polynomial $p(x)$ with coefficients from $K$, 
+we may be interested in whether $p$ has a root $\alpha \in K$ -- that is, an element $\alpha \in K$ so that $p(\alpha)=0$. If there is no root, we may create one by introducing the larger ring $K[x]/(p(x))$, in which $x$ itself is now a root. As long as the ideal $(p(x))$ is maximal, we call the new ring an **extension field** of $K$ by adjoining a root of the polynomial. 
+
 # Unique Factorization: ED $\to$ PID $\to$ UFD
 
 ## Definitions
@@ -888,11 +891,7 @@ Let $R$ be a UFD, and let $K$ be its fraction field. Our strategy is to compare 
 
 To navigate these hazards, we must be in the habit of saying "unit in $R$" or "irreducible in $K[x]$" or "reducible over $R[x]$", etc.
 
-
-
 ### Proof of Theorem
-
-
 
 **Proposition:** Let $R$ be a domain. The units of $R[x]$ are exactly the units of $R$.
 
@@ -948,7 +947,6 @@ Let $R$ be a domain. We wish to construct a field which contains $R$ as a subrin
 5. The multiplication rule $(a,b)(c,d) = (ac,bd)$
 
 There is so much to check: the equivalence relation claim, the well definedness of addition and multiplication, and of course the ring axioms. It's no good to do the work twice, but this construction is too specialized. There is a more general tool called localization which we'll also need. We'll bite the bullet and do the proper generality first.
-
 
 ## Localization
 

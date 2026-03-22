@@ -1,0 +1,12 @@
+---
+title: "Math 375"
+description: "Linear Algebra"
+format: html
+listing:
+  contents: 
+    - "Linear Algebra.qmd"
+  type: table
+  fields: [title, description]
+---
+
+Welcome to Math 375 with Professor Jason Howald.

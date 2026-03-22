@@ -129,7 +129,7 @@ of each of the mathematical objects below? Your answer in each case should be "n
 ## Three is a crowd
 
 Based on the set-theoretical descriptions of $0$, $1$, and $2$ from section 3.2, what are $3$ and $4$? Writing these sets completely (not using the notation $\emptyset$), how many 
-curly braces are needed to represent $0$, $1$, $2$, $3$, and $4$?
+curly braces are needed to represent each of $0$, $1$, $2$, $3$, and $4$?
 
 ## Reading set notation
 What are the elements of this set?
