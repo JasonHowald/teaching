@@ -12,6 +12,9 @@ listing:
     - path: Math340/index.qmd
       title: "Math 340"
       description: "Set Theory and Logic"
+    - path: Math375/index.qmd
+      title: "Math 375"
+      description: "Linear Algebra"
     - path: Math672/index.qmd
       title: "Math 672"
       description: "Abstract Algebra II"

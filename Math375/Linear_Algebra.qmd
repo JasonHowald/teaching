@@ -77,30 +77,33 @@ On the other hand, maybe a vector $v = [6,2,8,2,4]$ is just five numbers in a ro
 Linear algebra is not just for undergraduates. It continues into higher mathematics with further abstractions. We accept coordinates values from alternate number systems or abstract away the coordinates themselves. Then what remains of a "vector" is a context ("vector space") in which 
 it can be added to other vectors and multiplied by scalars. It's quite abstract, but it's also incredibly useful. You can learn it all later!
 
-### Exercises on vectors, Due 2024-09-06
+### Exercises on vectors
 
 
-1. **2D vectors, operations, and geometry:**  Let $v = [7,4]$ and let $w = [1,-1]$.  
+::: {#exr-vectors-intro-geometry}
+Let $v = [7,4]$ and let $w = [1,-1]$.  
 
-  a. Using carefully marked x-y coordinates, plot the vectors $w$, $v$, $v+w$, and $v-w$.  The point is to see the geometric significance of addition and subtraction of vectors.
+1. Using carefully marked x-y coordinates, plot the vectors $w$, $v$, $v+w$, and $v-w$.  The point is to see the geometric significance of addition and subtraction of vectors.
+1. Using carefully marked x-y coordinates, plot the vectors $v$, $2v$, $3v$, and $-2v$.
+1. Using the Pythagorean theorem, calculate the *length* of the vector $v$.  The length of a vector is written using absolute value signs: $|v|$.
+:::
 
-  b. Using carefully marked x-y coordinates, plot the vectors $v$, $2v$, $3v$, and $-2v$.
+::: {#exr-physics-ideas}
+1. A car on a ramp is subject to a gravitational force (0,0,-10), a normal force (-4,0,8). Add these vectors to find the total force on the car.
+1. Two pool balls have momentum $(2,3,0)$ and $(5,-4,0)$. Find the total momentum. After they collide, the first one of them has momentum $(3,-4,0)$ What is the momentum of the second ball? (Hint: Assume that momentum is conserved. That means that the vector sum before the collision matches the vector sum after the collision.)
+:::
 
-  c. Using the Pythagorean theorem, calculate the *length* of the vector $v$.  The length of a vector is written using absolute value signs: $|v|$.
+::: {#exr-dimensions}
+The **dimension** of a vector means the number of coordinates within it. 
 
-2. **Physics-related ideas**
-  a. A car on a ramp is subject to a gravitational force (0,0,-10), a normal force (-4,0,8). Add these vectors to find the total force on the car.
+1. What is the dimension of a typical force or momentum vector in physics, as in the previous problem?
+1. A standard high quality $1920 \times 1080$ greyscale image is used as an image vector. It is a record with one coordinate entry (the brightness value) for each pixel. What is the *dimension* of such a vector?
+1. A **conic equation** is an equation of the form 
 
-  b. Two pool balls have momentum $(2,3,0)$ and $(5,-4,0)$. Find the total momentum. After they collide, the first one of them has momentum $(3,-4,0)$ What is the momentum of the second ball? (Hint: Assume that momentum is conserved. That means that the vector sum before the collision matches the vector sum after the collision.)
+$$ax^2 + bxy + cy^2 + dx + ey + f = 0$$ 
 
-3. **Dimension questions**
-
-  a.  What is the dimension of a typical force or momentum vector in physics, as in the previous problem?
-
-  b. A standard high quality $1920 \times 1080$ greyscale image is used as an image vector. It is a record with one coordinate entry (the brightness value) for each pixel. What is the *dimension* of such a vector?
-
-  c. A **conic equation** is an equation of the form $$ax^2 + bxy + cy^2 + dx + ey + f = 0$$
 If the unknown coefficients are used to represent a vector, what is the dimension of that vector?
+:::
 
 ## What are Matrices?
 
@@ -323,31 +326,50 @@ Notes:
 
 Any (row)(column) product is interpreted as dot product and requires equal length inputs. Any other case is expanded into a multiplication table, whose individual entries are calculated as (row)(column) products. These component products still must be equal length inner products.
 
-### Individual Exercises (Due 2024-09-16)
+### Individual Exercises
 
 Use the matrices $M$, $N$, and $v$ below for the next few problems:
-$$
-M = \begin{bmatrix}1&2\\3&4\end{bmatrix}
-\, \text{ and } \,
-N = \begin{bmatrix}5&0\\-1&10\end{bmatrix}
-\, \text{ and } \,
-v = \begin{bmatrix}4\\5 \end{bmatrix}
-$$
+$$ M = \begin{bmatrix}1&2\\3&4\end{bmatrix} \, \text{ and } \, N = \begin{bmatrix}5&0\\-1&10\end{bmatrix} \, \text{ and } \, w = \begin{bmatrix} 5 & 100 \end{bmatrix}  \text{ and } \, v = \begin{bmatrix}4\\5 \end{bmatrix}$$
 
-1. Calculate $MN$. Show work.
-2. Calculate $Nv$. Show work.
-3. Multiply $MN$ (from #1) by $v$, producing $(MN)v$. Show work.
-4. Multiply $M$ by $Nv$ (from #2), producing $M(Nv)$. Show work.
+::: {#exr-vector-products}
+Of the products $wv$ and $vw$, one should be interpreted as an inner product and one as an outer product. Which is which, and why? Calculate both. 
+:::
 
-5. Similarly, calculate $Mv$, $Nv$, and $(M+N)v$. (For $(M+N)v$, first add the matrices, then multiply the result by $v$.) Are they related as you would expect?
+::: {#exr-vector-products-illegal}
+Explain why the implicit product $vv$ is a notational error. Nevertheless $v.v$ and $v \otimes v$ are possible. Calculate both. 
+:::
 
-6. Suppose that $A$ and $B$ are matrices. The shape of $A$ is $4 \times 5$. If the product $AB$ is possible, what shape(s) could $B$ have?
+::: {#exr-MN} 
+Calculate $MN$. Show work. 
+:::
 
-7. Suppose $D = EF$, where $E$ is $10 \times 3$ and $F$ is $3 \times 20$. What is the shape of $D$? How many entries altogether does $D$ have? What about $E$? What about $F$? Would it be faster to read off all of the entries of both $E$ and $F$, or all of the entries of $D$?
+::: {#exr-Nv} 
+Calculate $Nv$. Show work. 
+:::
+
+::: {#exr-MNv-1} 
+Multiply $MN$ (from @exr-MN) by $v$, producing $(MN)v$. Show work.
+:::
+
+::: {#exr-MNv-2} 
+Multiply $M$ by $Nv$ (from @exr-Nv), producing $M(Nv)$. Show work.
+:::
+
+::: {#exr-distribution-calc} 
+Calculate $Mv$, $Nv$, and $(M+N)v$. (For $(M+N)v$, first add the matrices, then multiply the result by $v$.) Are they related as you would expect?
+:::
+
+::: {#exr-shape-logic} 
+Suppose that $A$ and $B$ are matrices. The shape of $A$ is $4 \times 5$. If the product $AB$ is possible, what shape(s) could $B$ have?
+:::
+
+::: {#exr-factor-efficiency-check} 
+Suppose $D = EF$, where $E$ is $10 \times 3$ and $F$ is $3 \times 20$. What is the shape of $D$? How many entries altogether does $D$ have? What about $E$? What about $F$? Would it be faster to read off all of the entries of both $E$ and $F$, or all of the entries of $D$?
+:::
 
 [Grader notes](https://colab.research.google.com/drive/15_tbRT0IACyYN7Te1OsEbPH9COcIhtld?usp=sharing)
 
-# Three Key Algorithms
+# Foundational Algorithms
 
 We introduce three key algorithms which underpin both practical and theoretical linear algebra. They are Gaussian Elimination, Gauss-Jordan Elimination, and the Echelon Rank Factorization.
 
@@ -512,7 +534,7 @@ $$ M = \begin{bmatrix} 1&2&3&12\\ 4&5&6&24\\ 7&8&9&36\\ \end{bmatrix} = \begin{b
 
 5. The "Rank Echelon Factorization" is similar, but not identical to G. Strang's "CR decomposition." It's connected to the "LU decomposition." It can be called a "rank factorization" but it's far more specific.
 
-### A larger example
+### A larger example -- Rank Echelon Factorization
 
 Consider a much larger example, with a few more complications. 
 
@@ -595,13 +617,17 @@ def echelon_step(M):
     return Remainder
 ```
 
+We apply Rank-Echelon to the matrix:
+
 ```{python}
 #| output: asis
 #| echo: false
 import sympy as sp
-C = sp.Matrix([[3,0,2,0,4],[0,0,0,5,6],[0,2,1,2,3]]).transpose()
+C = sp.Matrix([[3,-3,2,2,4],[0,0,0,5,6],[0,2,1,2,3]]).transpose()
 R = sp.Matrix([[1,2,2,-3,5],[0,0,1,-2,3],[0,0,0,1,10]])
 M = C*R
+print(f"$$M = {sp.latex(M)}$$")
+print("Treating the top left $3$ as anchor...")
 M1 = echelon_step(M)
 print("Continue with anchor $5$. It's the highest nonzero entry in the leftmost nonzero row. \n\n")
 M2 = echelon_step(M1)
@@ -615,65 +641,75 @@ before, this can be expressed in a matrix equation.
 ```{python}
 #| output: asis
 #| echo: false
-print(f'$${sp.latex(M)} = \\begin{{bmatrix}}\\boxed{{3}}&0&0 \\\\ 0&0&\\boxed{{2}} \\\\2&0&1 \\\\ 0&\\boxed{{5}}&0\\\\ 4&6&\\frac{{3}}{{5}} \\end{{bmatrix}} \\begin{{bmatrix}} \\boxed{{1}}&2&2&-3&5\\\\0&0&\\boxed{{1}}&-\\frac{{8}}{{5}}&7 \\\\ 0&0&0&\\boxed{{1}}&10 \\end{{bmatrix}}$$')
+print(f'$${sp.latex(M)} = \\begin{{bmatrix}}\\boxed{{3}}&0&0 \\\\ -3&0&\\boxed{{2}} \\\\2&0&1 \\\\ 2&\\boxed{{5}}&0\\\\ 4&6&\\frac{{3}}{{5}} \\end{{bmatrix}} \\begin{{bmatrix}} \\boxed{{1}}&2&2&-3&5\\\\0&0&\\boxed{{1}}&-\\frac{{8}}{{5}}&7 \\\\ 0&0&0&\\boxed{{1}}&10 \\end{{bmatrix}}$$')
 ```
 
-Here the right factor is in row echelon form. The left factor is certainly not, but based on its construction we can at least guarantee:
+Here the right factor is in row echelon form. The left factor is certainly not, but it does have some commonalities. Notice that to the right of the $\boxed{3}$, we have only zeroes. This is because our first operation completely zeroed the top row. Right of $\boxed{5}$, we have another zero for the same reason. In summary, the left factor satisfies:
 
 1. Each column has a topmost nonzero entry, which we have identified as a pivot. 
 2. All entries to the *right* of a pivot must be zero. 
 
 As we'll see much later, these two features are enough to guarantee the solvability of 
-certain equations.
+certain important equations.
 
-## Individual Exercises (Due 2024-09-20)
+## Individual Exercises
 
-1. Using this matrix:
+::: {#exr-gauss-jordan-rank-echelon-1}
+Using this matrix:
 $$M = \begin{bmatrix}
 2 & 4 & 8 & 6 \\
 -1 & -4 & 2 & 11 \\
 -1 & 0 & -10 & 4
 \end{bmatrix}
 $$
-  a. Perform Gaussian Elimination. Identify pivots. Identify zeroes below pivots.
 
-  b. Continue to finish Gauss-Jordan Elimination. Identify Pivots. Identify zeroes above and below pivots.
-  
-  c. Perform Echelon Rank Factorization. One of your matrices should be strongly related to the result of part a.
+1. Perform Gaussian Elimination. Identify pivots. Identify zeroes below pivots.
+2. Continue to finish Gauss-Jordan Elimination. Identify Pivots. Identify zeroes above and below pivots.
+3. Perform Echelon Rank Factorization. One of your matrices should be strongly related to the result of part 1.
+:::
 
-
-2. Repeat all steps of #1, using the matrix:
+::: {#exr-gauss-jordan-rank-echelon-2}
+As above (@exr-gauss-jordan-rank-echelon-1), using the matrix:
 $$ N = \begin{bmatrix}
 3 & 12 & 9 & 6 \\
 2 & 10 & 12 & 8 \\
 5 & 22 & 22 & 14
 \end{bmatrix}
 $$
+:::
+
+::: {#exr-gauss-jordan-rank-echelon-3}
+As above (@exr-gauss-jordan-rank-echelon-1), using the matrix:
+$$ P = \begin{bmatrix}
+4 & 6 & 4 \\
+6 & 12 & 8 \\
+8 & 12 & 6 \\
+12 & 30 & 20 \\
+20 & 30 & 12 \\
+\end{bmatrix}
+$$
+:::
 
 [Grader Notes](https://colab.research.google.com/drive/17cOenTwvXYRR08awhjAfQ8Gsf33Bree9?usp=sharing)
 
-# Solving an SLE
+## Solving an SLE
 
 
 An SLE, or **System of Linear Equations** is a collection of (*linear* -- see below) equations in several variables. Solving a system means using several equations to find the values of several variables at once.
 
 
-##Examples of SLE's
+### Examples of SLE's
 
 
 1. The ages of Luisa and Karl add to 23 and differ by three. How old are they?
-
 2. A quadratic equation $f(x) = ax^2+bx+c$ has $f(1) = 1$, $f(2) = 3$, and $f(3) = -1$. What are $a$, $b$, and $c$?
-
 3. I have pennies, nickels, and dimes. I have 41 coins, worth \$1.43, weighting 131 grams. How many of each do I have? (The coins weigh 2.5g, 5g, and 2.25g, respectivly.)
 
 In every case we have two or three unknowns satisfying multiple equations. All of the equations can be expressed in the form: weighted sum of unknowns = value. This is what we mean by **linear** equations.
 
-## Solving an SLE using Gaussian elimination
+### Solving an SLE using Gaussian elimination
 
-### Example 1
-
-
+::: {#exm-SLE-fav .example}
 We want to introduce a general technique for solving an SLE. Suppose we have three equations in three unknowns:
 
 $$
@@ -684,6 +720,7 @@ $$
 $$
 
 **Questions:**
+
 1. Do the solutions change if I double all the numbers across one row?
 2. Do the solutions change if I change one equation by adding another, or a multiple of another?
 3. Do the solutions change if I reorganize the equations?
@@ -716,14 +753,10 @@ y+2z = 8 \\
 \end{matrix}
 $$
 
-The third equation is useless, and the first two don't carry enough information to determine $z$. In fact, for any choice of $z$, values of $x$ and $y$ can be easily determined which make the equation true. We say this system is **underdetermined** and has **infinitely many solutions**. Notice that the "free" variable $z$ is the variable associated to the column which lacks a pivot. This is typical.
+The third equation is useless, and the first two don't carry enough information to determine $z$. In fact, for any choice of $z$, values of $x$ and $y$ can be easily determined which make the equation true. We say this system is **underdetermined** and has **infinitely many solutions**. Notice that the "free" variable $z$ is the variable associated to the column which lacks a pivot. As a rule, columns with pivot correspond to variables whose values are determined, and columns without pivot correspond to variables which can be set to any value. 
+:::
 
-
-
-
-### Example 2
-
-
+::: {#exm-SLE-fit-quadratic .example}
 > A quadratic equation $f(x) = ax^2+bx+c$ has $f(1) = 1$, $f(2) = 3$, and $f(3) = -1$. Find $a$, $b$, and $c$.
 
 It's less clear that we have three equations. Plugging in the given points, we have
@@ -771,16 +804,16 @@ which leaves no mystery. The function is $f(x) = -3x^2 + 11x -7$.
 As a check on our work, we'll code the function and evaluate at the key x values:
 
 ```{python}
-#echo:true
+#| echo: true
 def f(x):
   return -3*x*x + 11*x - 7
 f(1),f(2),f(3)
 ```
 
 ...as prescribed.
+:::
 
-### Example 3
-
+::: {#exm-SLE-balance-reaction .example}
 Sulphur can react with nitric acid to make sulphuric acid, nitrogen dioxide, and water. Chemists often need to know how many instances of each molecule are involved in the reaction. Figuring this out is called *balancing the reaction*.  Specifically, we need to find integers v, w, x, y, z in the equation below.
 
 $$v S + w HNO_3 \to
@@ -838,9 +871,9 @@ $$1 S + 6 HNO_3 \to
 1 H_2SO_4 + 6 NO_2 + 2 H_2O$$
 
 It's worth checking that each side of the equation has 1 S, 6 N, 18 O, and 6 H.
+:::
 
-## SLE Summary
-
+### SLE Summary
 
 Gauss-Jordan elimination is a powerful, universal, and fast method for simplifying a matrix. It's often worth bending over backwards to repackage problems as SLE's, and further translate them to matrix form in order to apply elimination, either by hand or by computer.  With a bit of experience, solving a system of ten linear equations in ten variables is no more challenging than a data entry chore. On a computer, solving for millions of variables is feasible.
 
@@ -848,45 +881,48 @@ Gauss-Jordan elimination is a powerful, universal, and fast method for simplifyi
 
 Let's solve some SLE's by hand and by computer.
 
-#### 1. The small one.
-
+::: {#exr-SLE-polly-precise-produce}
 Polly's Precise Produce sells precisely calibrated fruit. Every apple is $180$ grams, and every orange is $150$ grams. You like apples and oranges, so you buy 20 altogether. They weigh $3150$g. How many of each did you buy?
+
 1. Identify two unknowns. Set up two equations for them. One should represent the count, and the other the weight.
 2. Repackage as a $2 \times 3$ matrix.
 3. Row reduce.
 4. Solve and check.
+:::
 
+::: {#exr-SLE-fit-cubic}
+Find a cubic function (an equation of the form $y=ax^3+bx^2+cx+d$) through the points $(1,3)$ and $(3,2)$, $(6,4)$, and $(7,10)$.
 
-
-#### 2. The cubic:
-Find a cubic function (an equation of the form $y=ax^3+bx^2+cx+d$) through the points $(1,3)$ and $(3,2)$,
-$(6,4)$, and $(7,10)$.  
   1. Plug in each point to produce an equation involving unknowns $a$, $b$, $c$, $d$.  Using all four points, find four equations in four unknowns.
   2. Package your equations as a $4 \times 5$ matrix.
   3. Plug in the matrix to colab, row reduce, and find the solution.
   4. Write your solution as a function $y = ...$, and verify that it passes through the five goal points.
+:::
 
-#### 3. The Checkerboard
-Heat has a tendency to spread out uniformly over materials, so that every part of an object will
-eventually reach the same temperature.  If one part of an object is kept warmer, and another
-part is kept colder, this uniformity cannot occur, but the object nevertheless reaches a kind of equilibrium,
-in which, roughly speaking, the temperature of each part of the material is approximately the average of the
-temperatures of the surrounding parts.  Naturally, the parts directly heated or cooled are exceptions
-to this averaging rule.   
+::: {#exr-SLE-checkerboard}
+Heat has a tendency to spread out uniformly over materials, so that every part of an object will eventually reach the same temperature.  If one part of an object is kept warmer, and another part is kept colder, this uniformity cannot occur, but the object nevertheless reaches a kind of equilibrium, in which, roughly speaking, the temperature of each part of the material is approximately the average of the temperatures of the surrounding parts.  Naturally, the parts directly heated or cooled are exceptions to this averaging rule.   
 
-Consider a $4 \times 4$ checkerboard.  Each square has some temperature, and we assume for simplicity
-that the temperature does not vary within an individual square.  If the top left and bottom right squares are
-kept cool (say, $0^\circ$C), while the top right and bottom left squares are kept warm (say $99^\circ$C),
-we expect each of the twelve other squares will reach an equilibrium temperature.  Each of the four interior
-squares will reach a temperature which is the average of the temperatures of its four neighbors, while
-each of the eight edge squares will reach a temperature which is the average of its three neighbors.  
-(The four corner squares will remain fixed at $0^\circ$C and $99^\circ$C.)  What will be the temperature
-of each square when the checkerboard reaches this equilibrium state?
+Consider a $4 \times 4$ checkerboard.  Each square has some temperature, and we assume for simplicity that the temperature does not vary within an individual square.  If the top left and bottom right squares are kept cool (say, $0^\circ$C), while the top right and bottom left squares are kept warm (say $99^\circ$C), we expect each of the twelve other squares will reach an equilibrium temperature.  Each of the four interior squares will reach a temperature which is the average of the temperatures of its four neighbors, while each of the eight edge squares will reach a temperature which is the average of its three neighbors.  (The four corner squares will remain fixed at $0^\circ$C and $99^\circ$C.)  What will be the temperature of each square when the checkerboard reaches this equilibrium state?
+
 1. Introduce twelve variables.
 2. Write twelve equations they satisfy.
 3. Arrange your equations into a $12 \times 13$ augmented matrix.
 4. Enter the matrix into colab, and row reduce, as illustrated above.
 5. Deduce the values of all twelve variables. Check that it works.
+:::
+
+::: {#exr-SLE-reaction-phosphoric}
+Fill in the blanks to balance the reaction:
+
+$$\underline{\hspace{1cm}} \ce{H3PO4} + \underline{\hspace{1cm}} \ce{Ca(OH)2 ->} \underline{\hspace{1cm}} \ce{Ca3(PO4)2} + \underline{\hspace{1cm}} \ce{H2O}$$
+
+1. Write an equation for each element (hydrogen, phosphorus, oxygen, calcium). 
+2. Compile these equations into augmented matrix form. Your matrix should be $4 \times 5$ and homogeneous. 
+3. Row reduce the matrix, by hand or by computer. 
+4. Rewrite in equation form. Identify the non-pivot ("free") variable and set it to a positive value which causes all variables to be positive integers. 
+5. Solve for all variables. 
+6. Report your answer. 
+:::
 
 [Solutions](https://colab.research.google.com/drive/1EjEpyX9J-wF6cYO093IExF5eUxSNvmf2?authuser=0#scrollTo=WeZiibDQ1Nla) for professors
 

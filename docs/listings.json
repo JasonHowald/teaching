@@ -16,13 +16,16 @@
   },
   {
     "listing": "/Math375/index.html",
-    "items": []
+    "items": [
+      "/Math375/Linear_Algebra.html"
+    ]
   },
   {
     "listing": "/index.html",
     "items": [
       "/Math125/index.html",
       "/Math340/index.html",
+      "/Math375/index.html",
       "/Math672/index.html",
       "/Math681/index.html",
       "/typeset/index.html"

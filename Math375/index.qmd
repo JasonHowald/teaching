@@ -4,7 +4,7 @@ description: "Linear Algebra"
 format: html
 listing:
   contents: 
-    - "Linear Algebra.qmd"
+    - "Linear_Algebra.qmd"
   type: table
   fields: [title, description]
 ---
