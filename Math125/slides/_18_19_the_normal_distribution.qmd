@@ -132,7 +132,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| label: fig-example-data-not-normal2
-#| fig-cap: "A suspiciously normal data distribution"
+#| fig-cap: "A strongly right skewed, non-normal distribution"
 #| fig-alt: "A histogram for the variable income from the file acs12.csv. The x-axis is labeled income and ranges from 0 to about four hundred thousand. The y-axis is labeled frequency. The graph is completely asymmetrical, with a huge spike near x=0 and a long right tail, looking nothing like the bell curve. "
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -313,7 +313,7 @@ In range $(26 - 2*22.3, 25+2*22.3)$: 96% of data points.
 ```{python}
 #| label: fig-empirical
 #| fig-cap: "Empirical Rule illustration"
-#| fig-alt: "An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure."
+#| fig-alt: "An illustration of the Empirical Rule. The standard bell curve density function is shown. It has mean 0 and standard deviation 1. Shaded ranges plus or minus one, plus or minus two, and plus or minus three standard deviations are shown in color. The regions take up 68%, 95%, and 99.7% of the area of the figure."
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
@@ -336,7 +336,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(x, y, color='blue', linewidth=2, label='Normal Distribution PDF')
 
 # Mark the mean
-ax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\mu$) = {mu:.2f}')
+ax.axvline(mu, color='black', linestyle='--', label=r'Mean ($\mu$) = 0')
 
 # Define the standard deviation ranges
 std1_left, std1_right = mu - sigma, mu + sigma

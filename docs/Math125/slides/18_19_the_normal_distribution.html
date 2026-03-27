@@ -305,7 +305,7 @@ Figure&nbsp;4: A far-from-normal data distribution
 <img data-src="18_19_the_normal_distribution_files/figure-revealjs/fig-example-data-not-normal2-output-1.png" alt="A histogram for the variable income from the file acs12.csv. The x-axis is labeled income and ranges from 0 to about four hundred thousand. The y-axis is labeled frequency. The graph is completely asymmetrical, with a huge spike near x=0 and a long right tail, looking nothing like the bell curve. " width="676" height="523">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-data-not-normal2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: A suspiciously normal data distribution
+Figure&nbsp;5: A strongly right skewed, non-normal distribution
 </figcaption>
 </figure>
 </div>
@@ -451,7 +451,7 @@ Figure&nbsp;6: Time-to-work distribution
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<div id="3d7d2ca4" class="cell" data-execution_count="7">
+<div id="571d92ab" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>count    783.000000
 mean      25.997446
@@ -471,10 +471,10 @@ Name: time_to_work, dtype: float64</code></pre>
 <h2>The empirical rule (68-95-99.7)</h2>
 <div id="cell-fig-empirical" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
-<div id="fig-empirical" class="quarto-float quarto-figure quarto-figure-center" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure.">
+<div id="fig-empirical" class="quarto-float quarto-figure quarto-figure-center" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. It has mean 0 and standard deviation 1. Shaded ranges plus or minus one, plus or minus two, and plus or minus three standard deviations are shown in color. The regions take up 68%, 95%, and 99.7% of the area of the figure.">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-empirical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="18_19_the_normal_distribution_files/figure-revealjs/fig-empirical-output-1.png" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure." width="951" height="567">
+<img data-src="18_19_the_normal_distribution_files/figure-revealjs/fig-empirical-output-1.png" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. It has mean 0 and standard deviation 1. Shaded ranges plus or minus one, plus or minus two, and plus or minus three standard deviations are shown in color. The regions take up 68%, 95%, and 99.7% of the area of the figure." width="951" height="567">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-empirical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Empirical Rule illustration
@@ -499,7 +499,7 @@ Figure&nbsp;7: Empirical Rule illustration
 <li>Using a graphical tool, like <a href="https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html">Bognar’s normal CDF calculator</a></li>
 <li>Using Jupyter:</li>
 </ol>
-<div id="f56cee35" class="cell" data-execution_count="9">
+<div id="b5014659" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb4-2"><a></a>stats.norm.cdf(<span class="op">-</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">

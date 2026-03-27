@@ -24,5 +24,3 @@ listing:
   type: table
   fields: [title, description]
 ---
-
-Please select a course.

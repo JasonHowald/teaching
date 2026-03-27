@@ -237,7 +237,7 @@ window.Quarto = {
 <div id="fig-bell-curve" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A histogram illustrating the shape of the bell curve. The curve is bell-shaped with a large central prominent mode. It is completely symmetrical. The graph tapers into natural thin tails on the left and the right.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bell-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="18_19_the_normal_distribution-handout_files/figure-html/fig-bell-curve-output-1.png" alt="A histogram illustrating the shape of the bell curve. The curve is bell-shaped with a large central prominent mode. It is completely symmetrical. The graph tapers into natural thin tails on the left and the right." width="676" height="523" class="figure-img">
+<img src="18_19_the_normal_distribution-handout_files/figure-html/fig-bell-curve-output-1.png" alt="A histogram illustrating the shape of the bell curve. The curve is bell-shaped with a large central prominent mode. It is completely symmetrical. The graph tapers into natural thin tails on the left and the right." width="667" height="523" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bell-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: A standard normal distribution
@@ -387,7 +387,7 @@ Figure&nbsp;4: A far-from-normal data distribution
 <img src="18_19_the_normal_distribution-handout_files/figure-html/fig-example-data-not-normal2-output-1.png" alt="A histogram for the variable income from the file acs12.csv. The x-axis is labeled income and ranges from 0 to about four hundred thousand. The y-axis is labeled frequency. The graph is completely asymmetrical, with a huge spike near x=0 and a long right tail, looking nothing like the bell curve. " width="676" height="523" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-data-not-normal2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: A suspiciously normal data distribution
+Figure&nbsp;5: A strongly right skewed, non-normal distribution
 </figcaption>
 </figure>
 </div>
@@ -553,7 +553,7 @@ Figure&nbsp;6: Time-to-work distribution
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<div id="b4c1704e" class="cell" data-execution_count="7">
+<div id="d3a0a8f9" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -604,7 +604,7 @@ Name: time_to_work, dtype: float64</code></pre>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, color<span class="op">=</span><span class="st">'blue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Normal Distribution PDF'</span>)</span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Mark the mean</span></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>ax.axvline(mu, color<span class="op">=</span><span class="st">'black'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="vs">r'Mean </span><span class="kw">(</span><span class="dv">$\m</span><span class="vs">u</span><span class="dv">$</span><span class="kw">)</span><span class="vs"> = {mu:</span><span class="dv">.</span><span class="vs">2f}'</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>ax.axvline(mu, color<span class="op">=</span><span class="st">'black'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="vs">r'Mean </span><span class="kw">(</span><span class="dv">$\m</span><span class="vs">u</span><span class="dv">$</span><span class="kw">)</span><span class="vs"> = 0'</span>)</span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the standard deviation ranges</span></span>
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>std1_left, std1_right <span class="op">=</span> mu <span class="op">-</span> sigma, mu <span class="op">+</span> sigma</span>
@@ -650,18 +650,18 @@ Name: time_to_work, dtype: float64</code></pre>
 &lt;&gt;:34: SyntaxWarning: invalid escape sequence '\m'
 &lt;&gt;:39: SyntaxWarning: invalid escape sequence '\m'
 &lt;&gt;:44: SyntaxWarning: invalid escape sequence '\m'
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_90945/588814348.py:34: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_25955/1246851014.py:34: SyntaxWarning: invalid escape sequence '\m'
   ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\mu \pm 3\sigma$ ({percent_3std:.2f}%)')
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_90945/588814348.py:39: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_25955/1246851014.py:39: SyntaxWarning: invalid escape sequence '\m'
   ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\mu \pm 2\sigma$ ({percent_2std:.2f}%)')
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_90945/588814348.py:44: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_25955/1246851014.py:44: SyntaxWarning: invalid escape sequence '\m'
   ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\mu \pm 1\sigma$ ({percent_1std:.2f}%)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div id="fig-empirical" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure.">
+<div id="fig-empirical" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. It has mean 0 and standard deviation 1. Shaded ranges plus or minus one, plus or minus two, and plus or minus three standard deviations are shown in color. The regions take up 68%, 95%, and 99.7% of the area of the figure.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-empirical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="18_19_the_normal_distribution-handout_files/figure-html/fig-empirical-output-2.png" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. Shaded regions indicating plus or minus one, two, and three standard deviations are indicated, each taking up 68%, 95%, and 99.7% of the area of the figure." width="951" height="567" class="figure-img">
+<img src="18_19_the_normal_distribution-handout_files/figure-html/fig-empirical-output-2.png" alt="An illustration of the Empirical Rule. The standard bell curve density function is shown. It has mean 0 and standard deviation 1. Shaded ranges plus or minus one, plus or minus two, and plus or minus three standard deviations are shown in color. The regions take up 68%, 95%, and 99.7% of the area of the figure." width="951" height="567" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-empirical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Empirical Rule illustration
@@ -686,7 +686,7 @@ Figure&nbsp;7: Empirical Rule illustration
 <li>Using a graphical tool, like <a href="https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html">Bognar’s normal CDF calculator</a></li>
 <li>Using Jupyter:</li>
 </ol>
-<div id="f150d290" class="cell" data-execution_count="9">
+<div id="05beafb1" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stats.norm.cdf(<span class="op">-</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
