@@ -7,6 +7,10 @@ engine: jupyter #Force jupyter notebook to invalidate cache.
 
 --- 
 
+For help with software installation, contact your local IT support person.
+
+<!-- 
+
 ## Goal of the Guide
 
 **The Who:** A mathematician on MacOS (probably without admin privileges), comfortable with latex editing. 
@@ -145,3 +149,5 @@ engine: jupyter #Force jupyter notebook to invalidate cache.
    - `python3 -m pip install pandas` pandas is statistical processing.
    - etc. for other packages as you need them.
 1. Reach out to jason if you're stuck.
+
+-->

@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -116,20 +81,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#goal-of-the-guide" id="toc-goal-of-the-guide" class="nav-link active" data-scroll-target="#goal-of-the-guide"><span class="header-section-number">1</span> Goal of the Guide</a></li>
-  <li><a href="#gathering-tools-one-time-setup" id="toc-gathering-tools-one-time-setup" class="nav-link" data-scroll-target="#gathering-tools-one-time-setup"><span class="header-section-number">2</span> Gathering tools (one-time setup)</a></li>
-  <li><a href="#create-a-shared-project-one-time-setup" id="toc-create-a-shared-project-one-time-setup" class="nav-link" data-scroll-target="#create-a-shared-project-one-time-setup"><span class="header-section-number">3</span> Create a shared project (one-time setup)</a></li>
-  <li><a href="#make-the-quarto-project-one-time-setup" id="toc-make-the-quarto-project-one-time-setup" class="nav-link" data-scroll-target="#make-the-quarto-project-one-time-setup"><span class="header-section-number">4</span> Make the quarto project (one-time setup)</a></li>
-  <li><a href="#start-the-engines-whenever-developing" id="toc-start-the-engines-whenever-developing" class="nav-link" data-scroll-target="#start-the-engines-whenever-developing"><span class="header-section-number">5</span> Start the engines (whenever developing)</a></li>
-  <li><a href="#after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes" id="toc-after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes" class="nav-link" data-scroll-target="#after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes"><span class="header-section-number">6</span> After editing, upload to github. (at end of each session, to deploy changes)</a></li>
-  <li><a href="#tips-moving-forward" id="toc-tips-moving-forward" class="nav-link" data-scroll-target="#tips-moving-forward"><span class="header-section-number">7</span> Tips moving forward</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -164,183 +117,151 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="goal-of-the-guide" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="goal-of-the-guide"><span class="header-section-number">1</span> Goal of the Guide</h2>
-<p><strong>The Who:</strong> A mathematician on MacOS (probably without admin privileges), comfortable with latex editing.</p>
-<p><strong>The What:</strong> To set up vscode, quarto, and git for editing and online publishing.</p>
-<p><strong>The Why:</strong> To write using latex with markdown. To compile into html. To set up a streamlined, easy workflow. To reach gold-standard accessibility goals by default.</p>
-</section>
-<section id="gathering-tools-one-time-setup" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="gathering-tools-one-time-setup"><span class="header-section-number">2</span> Gathering tools (one-time setup)</h2>
-<ol type="1">
-<li>(5 min) Install “Quarto CLI” from quarto.org. Google it, download the <code>.pkg</code> installer, and run.
-<ul>
-<li>Select “Install for me only” because you don’t have admin.</li>
-</ul></li>
-<li>(5 min) Install “Visual Studio Code” (VSCode), a nice editor.
-<ul>
-<li>Google it, download the <code>.dmg</code> file, and open.</li>
-<li>There’s a drag-to-Applications installer view. Don’t do that. You don’t have admin.</li>
-<li>Drag the app (“Visual Studio Code”) to <code>[your user directory]/Applications</code> instead.</li>
-<li>After it’s copied there, drag the app from <code>[your user directory]/Applications</code> to the dock for easy access.</li>
-<li>Open VSCode from the dock.</li>
-</ul></li>
-<li>(5 min) Install appropriate extensions for VSCode.
-<ul>
-<li>Within VSCode app, open menu Code &gt; Settings &gt; Extensions.</li>
-<li>Search for Quarto extension and install that.</li>
-<li>Search for Python extension and install that. If it complains “No python found” ignore that.</li>
-</ul></li>
-<li>(1 min + 15 min waiting) Install xcode-select command line tools
-<ul>
-<li>From terminal, type <code>xcode-select --install</code></li>
-<li>A dialog window should pop up, offering to install the tools. Click install.</li>
-<li>Make a cup of tea? This installation has a long unreliable progress bar.</li>
-</ul></li>
-</ol>
-</section>
-<section id="create-a-shared-project-one-time-setup" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="create-a-shared-project-one-time-setup"><span class="header-section-number">3</span> Create a shared project (one-time setup)</h2>
-<ol type="1">
-<li>(10 minutes) <strong>Set up github, on the web</strong>
-<ul>
-<li>Go to github.com.</li>
-<li>Create a free account. You can use a google account.</li>
-<li>Create a new repo (also called a repository or project). I suggest “teaching” or some other generic catch-all name. Later, the name will be visible in public URLs. Free hosting is available for <em>public</em> repos only. Unless you pay for private hosting, keep exams off github!</li>
-<li>After creating the repo, keep that tab open. It has setup instructions for your local repo folder.</li>
-<li>In another tab, create a PAT (Personal Access Token). It’s a specialized temporary password to securely authenticate from terminal to github later.
-<ul>
-<li>Log in to GitHub in your browser.</li>
-<li>Navigate to [Your Account Icon (upper right)] &gt; Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Tokens (classic)</li>
-<li>Generate a new “classic” token.</li>
-<li>Note: Call it “Lifecycle”</li>
-<li>Expiration: Set it to 90 days.</li>
-<li>Scopes: Check the box for repo (this is the only one you need).</li>
-<li>Click Generate token.</li>
-<li>Keep that page open! You’ll need that token soon.</li>
-</ul></li>
-<li>On github.com, use “Pages” to prepare your project for public web hosting
-<ul>
-<li>find project-level Settings.</li>
-<li>Go to Pages (under “Code and Automation”).</li>
-<li>Under Source, choose “Deploy from Branch”.</li>
-<li>Under Branch, choose “main” and “/docs”, then Save. [Note: If you don’t see the /docs folder in the dropdown yet, skip this and come back to it after your first ‘git push’ at the end of the guide.]</li>
-</ul></li>
-</ul></li>
-<li>(10 minutes) <strong>Set up your repo, on your computer</strong>
-<ul>
-<li>Create a local folder for your project. For example, <code>[user directory]/teaching</code>
-<ul>
-<li>Recommended: Choose a location which will not sync to the cloud (e.g.&nbsp;via OneDrive).</li>
-</ul></li>
-<li>From inside the directory, follow the instructions (also on github.com) to create the repo:
-<ul>
-<li><code>echo "# Teaching" &gt;&gt; README.md</code> (This makes a readme file)</li>
-<li><code>git init</code> (This initializes the repo)</li>
-<li><code>git add README.md</code> (The readme file becomes part of the repo)</li>
-<li><code>git commit -m "first commit"</code> (Commit takes a “snapshot” of the repo, identifying the status we want to save and sync. The quoted part is a commit message describing it.)
-<ul>
-<li>Probably returns “please tell me who you are” error. Follow instructions in that error to set user email and name using <code>git config</code>. Then try again.</li>
-</ul></li>
-<li><code>git branch -M main</code></li>
-<li><code>git remote add origin [copy url from github.com tab I asked you to save]</code> This command links the local folder to the online repo.</li>
-<li><code>git push -u origin main</code> This uploads changes and syncs the online version.
-<ul>
-<li>Username: Your username on github.com</li>
-<li>Password: Copy the Personal Access Token you generated above. Nothing will appear and the cursor won’t move.</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ol>
-</section>
-<section id="make-the-quarto-project-one-time-setup" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="make-the-quarto-project-one-time-setup"><span class="header-section-number">4</span> Make the quarto project (one-time setup)</h2>
-<ol type="1">
-<li>(10 minutes) Create a quarto project. From the terminal, run: <code>quarto create-project --type website</code>
-<ul>
-<li><p>You’ll get <code>.gitignore</code>, which tells git which helper files not to track as part of the project. Accepting the default will probably work. If you want, you can modify it to copy mine:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore system files</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">**/.DS_Store</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore the hidden Quarto work folders everywhere</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">**/.quarto/</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">**/_freeze/</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore the local copy of the openintro data repository</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">**/openintro.csv/</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignore the "rendered" output in source folders</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># (since we are sending it to /docs instead)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">**/_site/</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Only ignore folders that end in _files</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ex">**/*_files/</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># DO NOT ignore the docs folder</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ex">!docs/</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ex">!docs/**/*_files/</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ex">/.quarto/</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ex">**/*.quarto_ipynb</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>You’ll get <code>index.qmd</code>, which represents the root of the website. Don’t change its name. Later it can develop into site navigation.</p></li>
-<li><p>You’ll get <code>about.qmd</code>, which you can ignore.</p></li>
-<li><p>You’ll get <code>styles.css</code>, which is empty but can hold custom styling info. Safe to ignore.</p></li>
-<li><p>You’ll get <code>_quarto.yml</code>, a key configuration file which tells the quarto engine how to behave. You can mostly ignore this file, for now, but you need to make a quick edit first, declaring the docs/ folder as your web root. The top section should look something like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website </span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul></li>
-</ol>
-</section>
-<section id="start-the-engines-whenever-developing" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="start-the-engines-whenever-developing"><span class="header-section-number">5</span> Start the engines (whenever developing)</h2>
-<ol type="1">
-<li>In VSCode, create a new file if needed for your resource. It should end with .qmd. You can copy the “about.qmd” file to get started.</li>
-<li>From terminal, inside the project folder, type <code>quarto preview</code>
-<ul>
-<li>Quarto will watch files within your project. Whenever a .qmd file is saved, quarto will render it to html and open it in browser for you to view.</li>
-<li>Leave the terminal window open and running. You can minimize it.</li>
-</ul></li>
-<li>Edit <code>.qmd</code> files in VSCode. Save as you go. View in browser to check your work.
-<ul>
-<li>If you’re ambitious, you can test with Voiceover. Everything should work by default.</li>
-</ul></li>
-</ol>
-</section>
-<section id="after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="after-editing-upload-to-github.-at-end-of-each-session-to-deploy-changes"><span class="header-section-number">6</span> After editing, upload to github. (at end of each session, to deploy changes)</h2>
-<ol type="1">
-<li>(2 minutes) From terminal, in your project folder, type commands
-<ul>
-<li><code>quarto render</code> This will render the entire project, compiling <code>.qmd</code> files to <code>.html</code> files in your <code>docs/</code> directory.</li>
-<li><code>git add .</code> (The final space and period are part of the command!) This will add everything (with exceptions in .gitignore) currently in your project directory to the git repository. Essentially telling git “everything in this folder matters to the project.”</li>
-<li><code>git commit -m "Description of edits"</code> Telling git to produce a snapshot of the repo as it is now, with commit message describing (to yourself) what changes you made.</li>
-<li><code>git push</code> Upload files to github, sharing them with the world.</li>
-<li>(If you couldn’t setting up github Pages (hosting) because you had no <code>docs/</code> option, now’s the time to revisit that. Once and done.)</li>
-</ul></li>
-<li>View your repo online. The URL should be <code>[github-username].github.io/[projectname]</code>
-<ul>
-<li><strong>Caution</strong> After <code>git push</code> completes, deployment takes about two minutes. Be patient. There’s a way to monitor it if you’re impatient.</li>
-</ul></li>
-</ol>
-</section>
-<section id="tips-moving-forward" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="tips-moving-forward"><span class="header-section-number">7</span> Tips moving forward</h2>
-<ol type="1">
-<li>Avoid spaces in file names within a quarto project.</li>
-<li>If Quarto complains it’s missing Python packages, you can install them without admin. From terminal:
-<ul>
-<li><code>python3 -m pip install jupyter</code> Install the jupyter engine for python.</li>
-<li><code>python3 -m pip install pandas</code> pandas is statistical processing.</li>
-<li>etc. for other packages as you need them.</li>
-</ul></li>
-<li>Reach out to jason if you’re stuck.</li>
-</ol>
+<p>For help with software installation, contact your local IT support person.</p>
+<!-- 
+
+## Goal of the Guide
+
+**The Who:** A mathematician on MacOS (probably without admin privileges), comfortable with latex editing. 
+
+**The What:** To set up vscode, quarto, and git for editing and online publishing.
+
+**The Why:** To write using latex with markdown. To compile into html. To set up a streamlined, easy workflow. To reach gold-standard accessibility goals by default. 
+
+## Gathering tools (one-time setup)
+
+1. (5 min) Install "Quarto CLI" from quarto.org. Google it, download the `.pkg` installer, and run.
+   - Select "Install for me only" because you don't have admin.
+1. (5 min) Install "Visual Studio Code" (VSCode), a nice editor. 
+   - Google it, download the `.dmg` file, and open.
+   - There's a drag-to-Applications installer view. Don't do that. You don't have admin.
+   - Drag the app ("Visual Studio Code") to `[your user directory]/Applications` instead. 
+   - After it's copied there, drag the app from `[your user directory]/Applications` to the dock for easy access.
+   - Open VSCode from the dock. 
+1. (5 min) Install appropriate extensions for VSCode.
+   - Within VSCode app, open menu Code > Settings > Extensions.
+   - Search for Quarto extension and install that.
+   - Search for Python extension and install that. If it complains "No python found" ignore that.
+1. (1 min + 15 min waiting) Install xcode-select command line tools
+   - From terminal, type `xcode-select --install`
+   - A dialog window should pop up, offering to install the tools. Click install.
+   - Make a cup of tea? This installation has a long unreliable progress bar. 
+
+## Create a shared project (one-time setup)
+1. (10 minutes) **Set up github, on the web**
+   - Go to github.com. 
+   - Create a free account. You can use a google account. 
+   - Create a new repo (also called a repository or project). I suggest "teaching" or some other generic catch-all name. Later, the name will be visible in public URLs. Free hosting is available for *public* repos only. Unless you pay for private hosting, keep exams off github!
+   - After creating the repo, keep that tab open. It has setup instructions for your local repo folder. 
+   - In another tab, create a PAT (Personal Access Token). It's a specialized temporary password to securely authenticate from terminal to github later.
+      - Log in to GitHub in your browser.
+      - Navigate to [Your Account Icon (upper right)] > Settings > Developer Settings > Personal Access Tokens > Tokens (classic)
+      - Generate a new "classic" token. 
+      - Note: Call it "Lifecycle"
+      - Expiration: Set it to 90 days. 
+      - Scopes: Check the box for repo (this is the only one you need).
+      - Click Generate token.
+      - Keep that page open! You'll need that token soon. 
+   - On github.com, use "Pages" to prepare your project for public web hosting
+      - find project-level Settings. 
+      - Go to Pages (under "Code and Automation"). 
+      - Under Source, choose "Deploy from Branch". 
+      - Under Branch, choose "main" and "/docs", then Save. [Note: If you don't see the /docs folder in the dropdown yet, skip this and come back to it after your first 'git push' at the end of the guide.]
+
+1. (10 minutes) **Set up your repo, on your computer**
+   - Create a local folder for your project. For example, `[user directory]/teaching`
+      - Recommended: Choose a location which will not sync to the cloud (e.g. via OneDrive).
+   - From inside the directory, follow the instructions (also on github.com) to create the repo:
+      - `echo "# Teaching" >> README.md` (This makes a readme file)
+      - `git init` (This initializes the repo)
+      - `git add README.md` (The readme file becomes part of the repo)
+      - `git commit -m "first commit"` (Commit takes a "snapshot" of the repo, identifying the status we want to save and sync. The quoted part is a commit message describing it.)
+         - Probably returns "please tell me who you are" error. Follow instructions in that error to set user email and name using `git config`. Then try again.
+      - `git branch -M main` 
+      - `git remote add origin [copy url from github.com tab I asked you to save]` This command links the local folder to the online repo. 
+      - `git push -u origin main` This uploads changes and syncs the online version.
+         - Username: Your username on github.com
+         - Password: Copy the Personal Access Token you generated above. Nothing will appear
+         and the cursor won't move. 
+
+## Make the quarto project (one-time setup)
+
+1. (10 minutes) Create a quarto project. From the terminal, run: `quarto create-project --type website`
+    - You'll get `.gitignore`, which tells git which helper files not to track as part of the project. Accepting the default will probably work. If you want, you can modify it to copy mine:
+
+        ```bash
+        # Ignore system files
+        .DS_Store
+        **/.DS_Store
+
+        # Ignore the hidden Quarto work folders everywhere
+        **/.quarto/
+        **/_freeze/
+
+        # Ignore the local copy of the openintro data repository
+        **/openintro.csv/
+
+        # Ignore the "rendered" output in source folders
+        # (since we are sending it to /docs instead)
+        **/_site/
+
+        # Only ignore folders that end in _files
+        **/*_files/
+
+        # DO NOT ignore the docs folder
+        !docs/
+        !docs/**/*_files/
+
+        /.quarto/
+        **/*.quarto_ipynb
+        ```
+
+    - You'll get `index.qmd`, which represents the root of the website. Don't change its name. Later it can develop into site navigation. 
+    - You'll get `about.qmd`, which you can ignore.
+    - You'll get `styles.css`, which is empty but can hold custom styling info. Safe to ignore.
+    - You'll get `_quarto.yml`, a key configuration file which tells the quarto engine how to behave. You can mostly ignore this file, for now, but you need to make a quick edit first, declaring the docs/ folder as your web root. The top section should look something like this:
+
+        ```yaml
+        project:
+          title: "Teaching"
+          type: website 
+          output-dir: docs/
+        ```
 
 
-</section>
+
+## Start the engines (whenever developing)
+
+1. In VSCode, create a new file if needed for your resource. It should end with .qmd. You can copy the "about.qmd" file to get started. 
+1. From terminal, inside the project folder, type `quarto preview` 
+   - Quarto will watch files within your project. Whenever a .qmd file is saved, quarto will render it to html and open it in browser for you to view.
+   - Leave the terminal window open and running. You can minimize it.
+1. Edit `.qmd` files in VSCode. Save as you go. View in browser to check your work. 
+   - If you're ambitious, you can test with Voiceover. Everything should work by default. 
+
+
+## After editing, upload to github. (at end of each session, to deploy changes)
+
+1. (2 minutes) From terminal, in your project folder, type commands
+   - `quarto render` This will render the entire project, compiling `.qmd` files to `.html` files in your `docs/` directory.
+   - `git add .` (The final space and period are part of the command!) This will add everything (with exceptions in .gitignore) currently in your project directory to the git repository. Essentially telling git "everything in this folder matters to the project."
+   - `git commit -m "Description of edits"` Telling git to produce a snapshot of the repo as it is now, with commit message describing (to yourself) what changes you made.
+   - `git push` Upload files to github, sharing them with the world. 
+   - (If you couldn't setting up github Pages (hosting) because you had no `docs/` option, now's the time to revisit that. Once and done.)
+1. View your repo online. The URL should be `[github-username].github.io/[projectname]`
+   - **Caution** After `git push` completes, deployment takes about two minutes. Be patient. There's a way to monitor it if you're impatient.
+
+## Tips moving forward
+1. Avoid spaces in file names within a quarto project. 
+1. If Quarto complains it's missing Python packages, you can install them without admin. From terminal:
+   - `python3 -m pip install jupyter` Install the jupyter engine for python. 
+   - `python3 -m pip install pandas` pandas is statistical processing.
+   - etc. for other packages as you need them.
+1. Reach out to jason if you're stuck.
+
+-->
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
