@@ -39,7 +39,7 @@ plt.show()
 1. Shaped like a bell
 2. Unimodal
 3. Symmetric
-4. Unskewedx
+4. Unskewed
 
 :::
 

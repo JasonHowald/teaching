@@ -120,3 +120,20 @@ if $J_1 \subseteq J_2$ then $J_1^c \subseteq J_2^c$. You should be able to deduc
 Prove that the polynomial ring is a ring by proving the eight axioms. By far the hardest 
 axiom is multiplicative associativity, which uses the convolutional multiplication rule 
 twice. 
+
+## Eisenstein Integers
+
+The **Eisenstein Integers** ${\mathbb Z}[\omega] = \{x+y\omega | x, y \in {\mathbb Z}\}$ where $\omega = \frac{\sqrt{-3}+1}{2}$. Notice that the angle of the complex number $\omega$ is $60^\circ$. 
+
+For this problem you may freely use the multiplicativity of complex norm: $|wz| = |w||z|$ for all complex numbers $w$, $z$. 
+
+1. Sketch the set ${\mathbb Z}[\omega]$ in the plane, including various positive and negative values of $x$ and $y$. You should get a regular lattice of points. 
+2. Let $f:{\mathbb Z}[\omega] - \{0\} \to {\mathbb N}$ by $f(a+bi) = a^2+b^2$. Calculate 
+a formula for $f(x+y\omega)$ in terms of $x$ and $y$. 
+3. Explain why $f(r) \geq 1$ for elements of this ring. 
+4. Explain why $f(rs) \geq f(r)$. The symmetric statement $f(rs) \geq f(s)$ follows from commutativity.
+5. What is the maximal distance between any point in the plane and the closest point on the lattice ${\mathbb Z}[\omega]$? Prove your answer geometrically. 
+6. Let $a, b$ be nonzero elements of ${\mathbb Z}[\omega]$. Let $q = \left[\frac{b}{a}\right]$ and let $r = b-qa$. The notation $[z]$ means "the closest Eisenstein integer to $z$." Prove that 
+   - $b = qa+r$
+   - $r=0$ or $|r| < |a|$.  
+7. Conclude -- what type of ring is ${\mathbb Z}[\omega]$?

@@ -217,7 +217,7 @@ window.Quarto = {
 </section>
 <section id="the-scatter-plot-example" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="the-scatter-plot-example"><span class="header-section-number">5</span> The Scatter Plot – Example</h2>
-<div id="3993223d" class="cell" data-execution_count="1">
+<div id="857efa08" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"county.csv"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'homeownership'</span>, y<span class="op">=</span><span class="st">'multi_unit'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -252,7 +252,7 @@ Figure&nbsp;1: Scatterplot Comparing homeownership to multi-unit dwelling by U.S
 </section>
 <section id="the-scatter-plot-interpretation" class="level2 activity" data-number="6">
 <h2 class="activity anchored" data-number="6" data-anchor-id="the-scatter-plot-interpretation"><span class="header-section-number">6</span> The Scatter Plot – interpretation</h2>
-<div id="5b1dc02b" class="cell" data-execution_count="3">
+<div id="5a241ffb" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'homeownership'</span>, y<span class="op">=</span><span class="st">'multi_unit'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="columns">
@@ -296,7 +296,7 @@ Figure&nbsp;2: Scatterplot Comparing homeownership to multi-unit dwelling by U.S
 </section>
 <section id="scatterplot-example-with-hue" class="level2 activity" data-number="7">
 <h2 class="activity anchored" data-number="7" data-anchor-id="scatterplot-example-with-hue"><span class="header-section-number">7</span> Scatterplot – example with hue</h2>
-<div id="1d539d98" class="cell" data-execution_count="5">
+<div id="50cd3616" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(data<span class="op">=</span>iris, x<span class="op">=</span><span class="st">'petal_width'</span>, y<span class="op">=</span><span class="st">'sepal_width'</span>, hue <span class="op">=</span> <span class="st">'species'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="columns">
@@ -354,7 +354,7 @@ Figure&nbsp;3: Scatterplot petal width to sepal width for Fisher’s irises.
 </section>
 <section id="box--and-whisker-plot-example" class="level2" data-number="9">
 <h2 data-number="9" class="anchored" data-anchor-id="box--and-whisker-plot-example"><span class="header-section-number">9</span> Box (-and-whisker) plot – Example</h2>
-<div id="2aeab1ee" class="cell" data-execution_count="7">
+<div id="725f1d74" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'poverty'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="columns">
@@ -395,7 +395,7 @@ Figure&nbsp;4: Boxplot for poverty percent by county.
 </section>
 <section id="box-plot-with-swarm-plot" class="level2" data-number="10">
 <h2 data-number="10" class="anchored" data-anchor-id="box-plot-with-swarm-plot"><span class="header-section-number">10</span> Box plot with Swarm plot</h2>
-<div id="3d64e50c" class="cell" data-execution_count="9">
+<div id="4e2b2ed6" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'poverty'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'poverty'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -441,7 +441,7 @@ Figure&nbsp;5: Boxplot for poverty percent by county, with swarm plot.
 <section id="box--and-whisker-plot-rich-example" class="level2" data-number="12">
 <h2 data-number="12" class="anchored" data-anchor-id="box--and-whisker-plot-rich-example"><span class="header-section-number">12</span> Box (-and-whisker) plot – Rich Example</h2>
 <p>Since a boxplot is so narrow, it can be stacked together to compare many related distributions across categories:</p>
-<div id="6e8cbcfb" class="cell" data-execution_count="11">
+<div id="dee6a13d" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'Attack'</span>, y<span class="op">=</span><span class="st">'Type'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-fig-box-rich" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="12">
@@ -474,7 +474,7 @@ Figure&nbsp;6: Boxplot for Attack value of various pokemon, separated by type.
 </section>
 <section id="the-box-plot-more-serious-example" class="level2 activity" data-number="13">
 <h2 class="activity anchored" data-number="13" data-anchor-id="the-box-plot-more-serious-example"><span class="header-section-number">13</span> The Box Plot – more serious example</h2>
-<div id="7cba99a3" class="cell" data-execution_count="13">
+<div id="f0c4a166" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'salary'</span>, y <span class="op">=</span> <span class="st">'team'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="columns">
@@ -520,7 +520,7 @@ Figure&nbsp;7: Boxplot for MLB salary by team.
 <h2 data-number="14" class="anchored" data-anchor-id="plotting-yourself"><span class="header-section-number">14</span> Plotting yourself</h2>
 <!-- Every boxplot in these notes has creation code.-->
 <p>Once a dataframe is loaded, it’s not hard to make a scatterplot or boxplot:</p>
-<div id="b8f21bb0" class="cell" data-execution_count="15">
+<div id="c2aba434" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd    <span class="co">#Needed once, not for every plot </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co">#Needed once, not for every plot</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"filename.csv"</span>)</span>

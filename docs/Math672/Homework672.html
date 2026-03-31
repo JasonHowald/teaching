@@ -132,6 +132,7 @@ window.Quarto = {
   <li><a href="#maximal-implies-prime" id="toc-maximal-implies-prime" class="nav-link" data-scroll-target="#maximal-implies-prime"><span class="header-section-number">1.13</span> Maximal implies prime</a></li>
   <li><a href="#cecece" id="toc-cecece" class="nav-link" data-scroll-target="#cecece"><span class="header-section-number">1.14</span> cecece</a></li>
   <li><a href="#polynomial-ring-is-a-ring" id="toc-polynomial-ring-is-a-ring" class="nav-link" data-scroll-target="#polynomial-ring-is-a-ring"><span class="header-section-number">1.15</span> Polynomial Ring is a ring</a></li>
+  <li><a href="#eisenstein-integers" id="toc-eisenstein-integers" class="nav-link" data-scroll-target="#eisenstein-integers"><span class="header-section-number">1.16</span> Eisenstein Integers</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -322,6 +323,25 @@ window.Quarto = {
 <section id="polynomial-ring-is-a-ring" class="level2" data-number="1.15">
 <h2 data-number="1.15" class="anchored" data-anchor-id="polynomial-ring-is-a-ring"><span class="header-section-number">1.15</span> Polynomial Ring is a ring</h2>
 <p>Prove that the polynomial ring is a ring by proving the eight axioms. By far the hardest axiom is multiplicative associativity, which uses the convolutional multiplication rule twice.</p>
+</section>
+<section id="eisenstein-integers" class="level2" data-number="1.16">
+<h2 data-number="1.16" class="anchored" data-anchor-id="eisenstein-integers"><span class="header-section-number">1.16</span> Eisenstein Integers</h2>
+<p>The <strong>Eisenstein Integers</strong> <span class="math inline">\({\mathbb Z}[\omega] = \{x+y\omega | x, y \in {\mathbb Z}\}\)</span> where <span class="math inline">\(\omega = \frac{\sqrt{-3}+1}{2}\)</span>. Notice that the angle of the complex number <span class="math inline">\(\omega\)</span> is <span class="math inline">\(60^\circ\)</span>.</p>
+<p>For this problem you may freely use the multiplicativity of complex norm: <span class="math inline">\(|wz| = |w||z|\)</span> for all complex numbers <span class="math inline">\(w\)</span>, <span class="math inline">\(z\)</span>.</p>
+<ol type="1">
+<li>Sketch the set <span class="math inline">\({\mathbb Z}[\omega]\)</span> in the plane, including various positive and negative values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. You should get a regular lattice of points.</li>
+<li>Let <span class="math inline">\(f:{\mathbb Z}[\omega] - \{0\} \to {\mathbb N}\)</span> by <span class="math inline">\(f(a+bi) = a^2+b^2\)</span>. Calculate a formula for <span class="math inline">\(f(x+y\omega)\)</span> in terms of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</li>
+<li>Explain why <span class="math inline">\(f(r) \geq 1\)</span> for elements of this ring.</li>
+<li>Explain why <span class="math inline">\(f(rs) \geq f(r)\)</span>. The symmetric statement <span class="math inline">\(f(rs) \geq f(s)\)</span> follows from commutativity.</li>
+<li>What is the maximal distance between any point in the plane and the closest point on the lattice <span class="math inline">\({\mathbb Z}[\omega]\)</span>? Prove your answer geometrically.</li>
+<li>Let <span class="math inline">\(a, b\)</span> be nonzero elements of <span class="math inline">\({\mathbb Z}[\omega]\)</span>. Let <span class="math inline">\(q = \left[\frac{b}{a}\right]\)</span> and let <span class="math inline">\(r = b-qa\)</span>. The notation <span class="math inline">\([z]\)</span> means “the closest Eisenstein integer to <span class="math inline">\(z\)</span>.” Prove that
+<ul>
+<li><span class="math inline">\(b = qa+r\)</span></li>
+<li><span class="math inline">\(r=0\)</span> or <span class="math inline">\(|r| &lt; |a|\)</span>.<br>
+</li>
+</ul></li>
+<li>Conclude – what type of ring is <span class="math inline">\({\mathbb Z}[\omega]\)</span>?</li>
+</ol>
 
 
 </section>
