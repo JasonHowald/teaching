@@ -14,7 +14,7 @@ $
 \newcommand{\abs}[1]{\left| #1 \right|}
 \newcommand{\modulus}[1]{\left| #1 \right|}
 \newcommand{\norm}[1]{\left\| #1 \right\|}
-\newcommand{\innerProd}[1]{\langle #1 \rangle}
+\newcommand{\innerprod}[1]{\langle #1 \rangle}
 $
 </div>
 
@@ -2179,14 +2179,12 @@ The alert reader may worry that we are
 equivocating by using the symbols $\sin(x)$, $\cos(x)$ and $e^x$ with
 two different meanings, especially in 2b.,
 where $\operatorname{cis}(t)$ is defined in terms of prior knowledge
-$\sin$ and $\cos$. Writing the "new" functions in bold, we calculate the
-derivatives of the functions:
-$$\frac{\bm{e^t}}{e^t} \,\, \text{ and } \,\, \frac{\bm{\cos(t)} + i \bm{\sin(t)}}{\cos(t) + i \sin(t)}$$
+$\sin$ and $\cos$. If we distinguish our "new" functions with a subscript $n$, we calculate the derivatives of the ratios:
+$$\frac{e_n^t}{e^t} \,\, \text{ and } \,\, \frac{\cos_n(t) + i \sin_n(t)}{\cos(t) + i \sin(t)}$$
+
 Derivative laws give zero in each case, so each ratio is constant.
-Evaluating at $t=0$ shows the constant is $1$, so the functions agree.
-This shows that the newly defined complex exponential and trigonometric
-functions, restricted to ${\mathbb R}$, agree with their original
-versions.
+Evaluating at $t=0$ shows the constant is $1$, so the functions agree on 
+their common domain of definition ${\mathbb R}$.
 
 Parts 1b.  and 2a. 
 are the most significant, and most of the
@@ -2199,7 +2197,7 @@ Note the use of the binomial formula and @thm-sum-product-power-series.
 To prove 2a., simply insert $iz$ into the series for $e^z$
 and substitute $i^2 = -1$, $i^3 = -i$, $i^4 = 1$, etc. The even terms
 make $\cos(z)$, and the odd terms make $i\sin(z)$. Notice that this
-requires Theorem
+requires
 @thm-sum-product-power-series for the validity of
 term-by-term addition of series.
 
@@ -2717,7 +2715,7 @@ then $\int_a^b f(x) dx$ does not exist. (This should bother you when you
 remember your improper integrals!)
 :::
 
-Since the function $f:{\mathbb C}\to {\mathbb C}$ enters into the right
+Since in @def-path-integral the function $f:{\mathbb C}\to {\mathbb C}$ enters into the right
 hand side only to form the composition
 $f \circ \gamma:[a,b] \to {\mathbb C}$, we have an obvious
 generalization in which $f \circ \gamma$ is replaced with an arbitrary
