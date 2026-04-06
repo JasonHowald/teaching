@@ -137,3 +137,17 @@ a formula for $f(x+y\omega)$ in terms of $x$ and $y$.
    - $b = qa+r$
    - $r=0$ or $|r| < |a|$.  
 7. Conclude -- what type of ring is ${\mathbb Z}[\omega]$?
+
+## PID instability
+
+Give an example of a PID $R$ and subring $S \subseteq R$ which is not a PID.
+
+## UFD instability
+
+1. Give an example of a UFD $R$ and a subring $S \subseteq R$ which is not a UFD.
+2. Give an example of a UFD $R$ and a quotient ring $R/I$ which is not a UFD.
+
+## Relatively prime in $K[x]$
+
+Let $a(x)$, $b(x)$ be irreducible elements of $K[x]$, neither a multiple of the other. Prove that there exist $f(x)$, $g(x)$ in $K[x]$ so that 
+$f(x)a(x)+g(x)b(x)=1$. (This is a polynomial identity, not an identity for one value of $x$.)

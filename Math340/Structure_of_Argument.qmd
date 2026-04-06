@@ -1378,3 +1378,204 @@ cardinality behaves mostly as expected from finite sets:
 2. The cardinality of the infinite set ${\mathbb N}$ is called $\omega$ (or sometimes $\omega_0$ or $\aleph_0$). This cardinality is called the "countable infinity" because ${\mathbb N}$ contains the "counting" numbers. Any set with the same cardinality is called "countably infinite" or "denumerable" (or sometimes "countable"). It is known that $\omega$ is the smallest of the many infinities.
 3. The cardinality of the set ${\mathbb R}$ is called $c$ or sometimes $2^\omega$ (or $2^{\aleph_0}$). It is known that $\omega \neq c$. There's a bijection between ${\mathbb R}$ and ${\mathscr P}({\mathbb N})$, so $c = |{\mathscr P}({\mathbb N})|$ as well. (The bijection is a bit tricky but not really deep.)
 4. Among the infinite cardinals which exceed $\omega$, there is a smallest one, called $\omega_1$. That is, $\omega_1$ is the smallest uncountable infinite cardinal. Certainly $\omega < \omega_1 \leq c$, but it is not known whether $\omega_1 = c$. For all we know, $c$ might be $\omega_5$. The hypothesis that  $\omega_1=c$ is called the "Continuum Hypothesis" or CH. It has been proven to be *independent* of the axioms of set theory (Gödel 1940, Cohen 1963). That is, CH cannot possibly be proven from the axioms of ZFC, but it also cannot be refuted by the same axioms. 
+
+# Induction
+
+## Introduction
+
+It often happens that we discover a pattern, equality, or relationship that works for every natural $n\in {\mathbb N}$. For example
+
+1. $1+2+\ldots + n = \frac{n(n+1)}{2}$
+1. $n < 2^n$ 
+1. $8^n - 3^n$ is divisible by $5$. 
+1. $n$ lines in the plane (no two parallel, no three concurrent) form $\frac{n^2+n+2}{2}$ regions
+1. $(n^4-n^2)$ is divisible by $4$.
+1. Every number $n>1$ can be factored into primes.
+1. Every number $n \geq 12$ can be written as the sum of fours and fives.
+1. $1^3+2^3+\ldots + n^3 = \frac{n^2(n+1)^2}{4}$ 
+1. Bernoulli's inequality: If $x>-1$ and $n \in {\mathbb N}$ then $(1+x)^n \geq 1+nx$
+1. The power set $\mathscr{P}(\{1,2,\ldots,n\})$ has cardinality $2^n$.
+1. A $2^n \times 2^n$ checkerboard can be tiled by L-shaped trominoes. 
+1. The derivative of $x^n$ is $nx^{n-1}$
+1. $(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^ky^{n-k}$
+
+Now occasionally we find a quick proof which works for arbitrary $n$, and we can prove these straight away. In harder cases, we may find reasons why it's true for $n=0$ and $n=1$ and $n=2$, but the argument gets harder and harder as $n$ increases. When we're unable to produce a generic argument for all $n$, we may
+try instead to prove that the claim is true in case $n$, provided it's true for the immediately previous case (or all previous cases). This is often written $P(n-1) \to P(n)$ or $P(n) \to P(n+1)$, where $P$ is the statement itself. If we can prove a "base case" $P(0)$ and also prove such an implication for all $n$, then all the various statements $P(n)$ fall like dominoes to a neverending modus ponens.
+
+There is a technical problem here that the "domino deduction" requires infinitely many steps of proof. It's impossible with a finite proof to deduce all statements $P(n)$. Therefore we have a special principle, called the Principle of Mathematical Induction, which allows us to skip to the end of this infinite proof chain: 
+
+## Weak induction
+
+**Principle of (weak) Mathematical Induction (PMI):** Let $P$ be any claim depending on $n \in {\mathbb N}$. Then the following is a valid deduction law:
+
+$$\frac{P(0), \enspace\enspace  \forall n \enspace (P(n) \to P(n+1))}{\forall n \enspace P(n)}$$
+
+In this context the statement $P(0)$ is called the **base case:** It's what gets the chain of deductions started. The step $P(n) \to P(n+1)$ is called the **induction step,** and within a direct proof of it, the assumption $P(n)$ is called the **induction hypothesis.** We often allow the base case to be $P(1)$ or
+even higher, especially for example when a formula involves $1/n$ so $P(0)$ is undefined. In such cases the conclusion would be $\forall n \geq 1 \enspace P(n)$. Generally it's advisable to keep the base case as small as possible, so that the final result is as comprehensive as possible. 
+
+It's difficult to give a complete formal treatment of this principle, because it's needed in essentially every interesting mathematical theory, from geometry to algebra to number theory to set theory, and also in every meta-theory used to analyze formal logics themselves. It's also tricky to formalize because it's true for any statement or property $P()$, but quantification over "statements" or "properties" is not how most formal logics work. I think of it as a fundamental principle of natural logic, like modus ponens. 
+
+Induction proofs can be quite confusing for the beginner. They often feel unsatisfying and circular. Examples will help. Mathematical tradition demands that our first example is the rising sum problem.
+
+::: {#exm-gauss-sum .example}
+$$1+2+ \ldots + n = \frac{n(n+1)}{2}$$
+:::
+
+::: {.proof}
+The base case $P(0)$ is a bit odd. When $n=0$, the left hand side has no terms at all, so it sums to $0$. The right hand side is $\frac{0 \cdot 1}{2}=0$. Since these agree, $P(0)$ is proven. 
+
+For the induction step, let $n \in {\mathbb N}$, and assume $1+2+ \ldots + n = \frac{n(n+1)}{2}$. [At this point, you may feel we've assumed the whole theorem away, but we haven't. This is the correct setup for a proof of "$\forall n \enspace (P(n) \to P(n+1)$".]
+
+Now we calculate: 
+
+\begin{align*}
+1+2+ \ldots + (n+1) &= (1+2+ \ldots n) + (n+1)  \\
+&= \frac{n(n+1)}{2} + (n+1) \enspace \text{by the induction hypothesis}\\
+&= \frac{n(n+1)}{2} + \frac{2(n+1)}{2} \\
+&= \frac{n(n+1) + 2(n+1)}{2} \\
+&= \frac{(n+1)(n+2)}{2} \\
+&= \frac{(n+1)((n+1)+1)}{2} \\
+\end{align*}
+
+This establishes the statement $P(n+1)$ (having assumed $P(n)$). By induction
+we conclude $\forall n P(n)$.
+::: 
+
+There are many interesting inductions for summation formulas, but it's important not to give the impression that induction is for sums. Let's prove an inequality
+
+:::  {#exm-power-2-inductin .example}
+$$\forall n\in {\mathbb N} \enspace n < 2^n$$
+:::
+
+:::{.proof}
+The base case $n=0$ asserts $0<2^0$, which is obvious. 
+
+Let $n \in {\mathbb N}$ and assume $n < 2^n$. 
+Then $n+1 < 2^n+1 \leq 2^n + 2^n = 2^{n+1}$. 
+[The first is by the induction hypothesis. The second is because $1<2^n$. The whole thing establishes $P(n+1)$ as needed.]
+Therefore by induction $\forall n \enspace P(n)$. 
+:::
+
+::: {#exm-divisibility .example}
+For all $n \in {\mathbb N}$,  $8^n - 3^n$ is divisible by $5$.
+::: 
+
+::: {.proof}
+Once again the base case $n=0$ is trivial. $8^0-3^0=1-1=0$, which is divisible by $5$.  Now let $n \in {\mathbb N}$ and assume $8^n - 3^n = 5k$ for some integer $k$. Then $8^{n+1} - 3^{n+1} = 8 \cdot 8^n - 3 \cdot 3^n = 5 \cdot 8^n + 3 \cdot 8^n - 3 \cdot 3^n = 5 \cdot 8^n + 3(5k)$, which 
+is clearly a multiple of $5$. By induction, $\forall n \enspace P(n)$.
+[The reader should pay special care to understand how we have assumed $P(n)$ and how we have used that assumption, and how we proved $P(n+1)$.]
+:::
+
+::: {#exm-linear-division .example}
+Any $n$ lines in the plane (no two parallel, no three concurrent) form $\frac{n^2+n+2}{2}$ regions.
+:::
+
+::: {.proof}
+The reader may verify that the formula for $n=0$ yields $1$ and for $n=1$ yields $4/2 = 2$. These numbers are correct. 
+
+We now let $n \in {\mathbb N}$, and assume that the statement is true for $n$ lines. Now we consider $n+1$ lines, and especially consider how the last line intersects the others. Since none are parallel and no three meet at a point, the last line intersects the first $n$ at exactly $n$ locations, dividing the line itself into $n+1$ intervals. Each such interval divides one region into two, so altogether they are responsible for $n+1$ new regions. The number of regions for $n+1$ lines is then $\frac{n^2+n+2}{2} + (n+1)$. A bit of algebra shows: 
+
+$$\frac{n^2+n+2}{2} + (n+1) = \frac{n(n+1)+2 + 2(n+1)}{2} = \frac{(n+1)(n+1) + (n+1)+2}{2} $$
+
+as needed.
+:::
+
+Let's turn our attention to Bernoulli's inequality next. 
+
+::: {#exm-bernoulli-inequality .example}
+**(Bernoulli's inequality)** 
+If $x>-1$ and $n \in {\mathbb N}$ then $(1+x)^n \geq 1+nx$
+:::
+
+::: {.proof}
+Checking the base case $n=0$, we have $(1+x)^0 = 1 = 1+0x$, so the inequality holds. Let $n \in {\mathbb N}$ and assume $(1+x)^n \geq 1+nx$. Since $x>-1$, 
+$(1+x)$ is positive and we may multiply both sides by it without changing the direction of the inequality:
+
+$$(1+x)^{n+1} = (1+x)^n(1+x) \geq (1+nx)(1+x) = 1+nx + x + nx^2 = 1+(n+1)x + nx^2$$
+
+This is almost the statement $P(n+1)$ we're looking for, but what do we do with the $nx^2$ term? Remember that we're trying to prove an inequality. Since $nx^2$ is itself positive (or zero), we just drop it, adding one more "$\geq$" link to the chain: 
+
+$$(1+x)^{n+1} \geq \ldots = 1+(n+1)x + nx^2 \geq 1+(n+1)x$$
+
+...as needed. By induction, the statement is true for all $n$. 
+:::
+
+
+## Strong induction
+
+In all the previous examples, the method is to compare one case $P(n+1)$ to the immediately previous case $P(n)$. (Equivalently, compare $P(n)$ to $P(n-1)$.) Sometimes we need the help of the previous dominoes, assuming earlier cases too. For example, consider the statement that every number has a prime factorization. 
+
+There's no obvious relationship between the factorization of $40 = 4 \times 10$ and that of $39 = 3 \times 13$, but without a doubt the prime factorization of $40$ is related to the prime factorizations of the smaller numbers $4$ and $10$. The strong principle of mathematical induction allows us to assume all previous values, not just the immediately prior one. 
+
+**Principle of (strong) Mathematical Induction (PMI):** Let $P$ be any claim depending on $n \in {\mathbb N}$. Then the following is a valid deduction law:
+
+$$\frac{\forall n \enspace ((\forall k<n \enspace P(k)) \to P(n))}{\forall n \enspace P(n)}$$
+
+Notice that the base case $P(0)$ is missing. If we can accomplish the induction step for all $n$ including $n=0$, the base case $P(0)$ will follow because the induction assumption $\forall k<0 \enspace P(k)$ is vacuously true. Let's use the strong principle to prove the existence of factorizations.
+
+::: {#exm-factorization-existence .example}
+Every natural number $n>1$ can be written as a product of primes. 
+:::
+
+::: {.proof}
+Let $n \in {\mathbb N}$ with $n>1$. Assume every smaller number has a prime factorization. If $n$ is prime, then it has the factorization $n = n$. If not, then it factors $n=ab$, where $1<a<n$ and $1<b<n$. By the strong induction hypothesis, $a$ and $b$ (may not be prime but) have prime factorizations, and they combine to yield a prime factorization of $n$. 
+:::
+
+This next example is often phrased as a "postage stamp" problem, though this may be a bit old fashioned. 
+
+::: {#exm-postage-stamps .example}
+Every number $n \geq 12$ can be written as the sum of fours and fives.
+:::
+
+::: {.proof}
+Before we can use strong induction, we need to begin 
+with quite a few special cases. $12 = 4+4+4$, $13 = 4+4+5$, $14 = 4+5+5$,
+$15 = 5+5+5$. Now let $n \in {\mathbb N}$ and assume that the statement is true
+for all smaller values. If $n<12$ there is nothing to prove, and if $12 \leq n \leq 15$ our special cases apply. If $16 \leq n$, then $12 \leq n-4$, so $n-4$ can be written as the sum of 4's and 5's. Just add one more $4$. 
+:::
+
+## Equivalence and well ordering
+
+In most cases, weak induction is the simplest solution. For a few, strong induction is better. But from a theoretical perspective, they are equally powerful methods: Any theorem which can be proved by strong induction also can be solved by weak induction, and vice versa. In fact there is a third equivalent statement called **well ordering** which is also sometimes useful:
+
+::: {#def-well-ordering .definition}
+An ordered set is called **well ordered** if every nonempty subset of it has a minimal element.
+:::
+
+This brings us to our third version of the PMI: 
+
+**Well ordering principle:** ${\mathbb N}$ is well ordered. 
+
+The reader may feel this is obviously true but unrelated to induction. Where's the connection? In theory, any proof built to use induction can be carried out using the well ordering principle instead:
+
+:::{.proof} 
+0. (Base case) Prove $P(0)$ 
+1. (Induction step) Prove $\forall n \enspace P(n) \to P(n+1)$. 
+2. Let $S = \{n \in {\mathbb N} \,|\, \neg P(n)\}$ be the set of counterexamples to the desired conclusion. Suppose $S$ is nonempty.
+3. Let $s$ be the minimal counterexample, by the **well ordering principle.**
+4. Is $s=0$?
+   - If $s=0$ this contradicts the base case. 
+   - If $s>0$, then $P(s-1)$ is true (by minimality), contradicting the induction step for $n=s-1$. 
+5. Thus $S$ is empty after all. That is, $\forall n \enspace P(n)$ as desired.
+:::
+
+Conversely, the well ordering principle itself can be deduced from the principle of induction. 
+
+::: {.proof}
+1. Let $S$ be any nonempty set of natural numbers. 
+2. Let $P(n)$ be the statement $n \notin S$.
+3. Since $\foral n \enspace P(n)$ is false, it follows that 
+$\forall n \enspace ((\forall k<n \enspace P(k)) \to P(n))$ is also false. In other words, $\exists n \enspace ((\forall k<n \enspace P(k)) \land \neg P(n))$, or equivalently $\exists n \enspace ((\forall k<n \enspace k \notin S) \land n \in S)$. Such an $n$ is a minimal element of $S$.
+:::
+
+Sometimes it's convenient to construct proofs by induction based on the well ordering principle. They often take the flavor of contradiction. We'll explore this method for the prime factorization principle: 
+
+::: {#exm-factorization-existence .example}
+Every natural number $n>1$ can be written as a product of primes. 
+:::
+
+::: {.proof}
+Suppose some number greater than 1 is *not* the product of primes, and let $n$ be 
+the smallest such counterexample, by the well ordering principle. If $n$ were prime, it would be trivially a product of one prime, so $n=ab$, where $1<a<n$ and $1<b<n$. Since $n$ is minimal, both $a$ and $b$ are products of primes. Then those products can be assembled into a prime factorization of $n$. This contradiction
+shows that every number is a product of primes. 
+:::

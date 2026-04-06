@@ -199,8 +199,23 @@ Let $f: {\mathbb R}^3 \to {\mathbb R}$ by $f([x,y,z]) = x+y+z$.
 ## Surjective, inverse optional.
 Let $h:{\mathbb R} \to {\mathbb R}$ by $h(x) = x^3 - 3x^2 + 3x - 1$. Prove that $h$ is surjective. (Hint: Although there might be another way, I expect that factoring the polynomial will be enormously useful!)
 
-## Injective $\to$ left invertible
-Let $f:A \to B$ be a function, and assume both $A$ and $B$ are nonempty. We've proven that if $f$ has a left inverse, then it is injective. Prove, conversely, that if $f$ is injective, it has a left inverse.
+## Bijective via inverse. 
+Let $f:{\mathbb R} \to {\mathbb R}$ by $f(x) = 7x+2$. Find an inverse function, then prove it's an inverse function, then infer that $f$ is a bijection. 
+
+## Bijection via inverse
+Let $f:{\mathbb Z}_{11} \to {\mathbb Z}_{11}$ by $f(x) = 3x$. For example $f(5) = 15 = 4$. Find an inverse function $g:{\mathbb Z}_{11} \to {\mathbb Z}_{11}$. (A simple multiplication formula is possible.) Prove that they are inverse functions, 
+and infer that $f$ is a bijection. 
+
+## Functions to 2
+Let $X$ be a set. Let $\mathscr{P}(X)$ be its power set, and let $2^X$ be 
+the set of all functions $f: X \to \{0,1\}$.
+1. Provide a function $h:\mathscr{P}(X) \to 2^X$.
+2. Provide a function $k:2^X \to h:\mathscr{P}(X)$.
+3. Prove that $h$ and $k$ are inverse functions. 
+
+## A surprise injection
+Find an injection from ${\mathbb N} \times {\mathbb N}$ to ${\mathbb N}$. Prove
+that it is an injection. 
 
 ## There is no surjectivity.
 Some say that if a function is truly nothing more than a set of ordered (input/output) pairs, then surjectivity is meaningless. Explain.

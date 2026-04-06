@@ -33,7 +33,7 @@ subject to fixed rules of manipulation, such as
 
 > *There are other sorts of things, besides numbers, which can be represented abstractly (e.g., "x"), added, multiplied, put in equations, and found to satisfy algebraic laws.*
 
-**Example -- Numbers modulo 12:** The numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, excluding all other numbers, form a closed system which admits a form of addition modulo 12 ($3+4=7$, $8+9=5$) and multiplication  modulo 12 ($3*2=6$, $4*5=8$), permits equation solving ($x+5=3$ so $x=3-5 = 10$), and obeys basic algebraic laws.
+:::{#exm-modulo-12 .example} **(Numbers modulo 12)** The numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, excluding all other numbers, form a closed system which admits a form of addition modulo 12 ($3+4=7$, $8+9=5$) and multiplication  modulo 12 ($3*2=6$, $4*5=8$), permits equation solving ($x+5=3$ so $x=3-5 = 10$), and obeys basic algebraic laws.
 
 Thus, the second word of Linear Algebra describes the methodology of algebraic manipulation of unknown quantities, particularly to solve equations, with the understanding that the objects of the equations might not be numbers.  
 
@@ -122,7 +122,6 @@ The horizontal elements such as $[1, \, 2, \, 3]$ and $[10, \, 0, \, -10, \, 17]
 
 
 To distinguish from vectors and matrices, ordinary numbers can be called **scalars**.
-
 
 ### What are Matrices for?
 
@@ -629,7 +628,7 @@ M = C*R
 print(f"$$M = {sp.latex(M)}$$")
 print("Treating the top left $3$ as anchor...")
 M1 = echelon_step(M)
-print("Continue with anchor $5$. It's the highest nonzero entry in the leftmost nonzero row. \n\n")
+print("Continue with anchor $5$. It's the highest nonzero entry in the leftmost nonzero column. \n\n")
 M2 = echelon_step(M1)
 print("The final anchor will be the $2$.\n\n")
 M3 = echelon_step(M2)
@@ -646,7 +645,7 @@ print(f'$${sp.latex(M)} = \\begin{{bmatrix}}\\boxed{{3}}&0&0 \\\\ -3&0&\\boxed{{
 
 Here the right factor is in row echelon form. The left factor is certainly not, but it does have some commonalities. Notice that to the right of the $\boxed{3}$, we have only zeroes. This is because our first operation completely zeroed the top row. Right of $\boxed{5}$, we have another zero for the same reason. In summary, the left factor satisfies:
 
-1. Each column has a topmost nonzero entry, which we have identified as a pivot. 
+1. Each column has a topmost nonzero entry, not necessarily 1, which we have identified as a pivot. 
 2. All entries to the *right* of a pivot must be zero. 
 
 As we'll see much later, these two features are enough to guarantee the solvability of 
@@ -858,17 +857,18 @@ M.rref()[0]
 
 ... and convert back to equations:  
 
-\begin{matrix}
+
+$$\begin{matrix}
 v = z/2\\
 w = 3z\\
 x = z/2\\
 y = 3z\\
 \end{matrix}
+$$
 
 As before, a solution can be found for any conceivable choice of z, even $z=0$. (To be fair, $z=0$ represents the usual amount of nitric acid being converted to sulphuric acid in any given test tube!) But we want a nontrivial solution without half-atoms, so we choose $z=2$. This gives the balanced reaction equation:
 
-$$1 S + 6 HNO_3 \to
-1 H_2SO_4 + 6 NO_2 + 2 H_2O$$
+$$1 S + 6 HNO_3 \to 1 H_2SO_4 + 6 NO_2 + 2 H_2O$$
 
 It's worth checking that each side of the equation has 1 S, 6 N, 18 O, and 6 H.
 :::
@@ -914,7 +914,7 @@ Consider a $4 \times 4$ checkerboard.  Each square has some temperature, and we 
 ::: {#exr-SLE-reaction-phosphoric}
 Fill in the blanks to balance the reaction:
 
-$$\underline{\hspace{1cm}} \ce{H3PO4} + \underline{\hspace{1cm}} \ce{Ca(OH)2 ->} \underline{\hspace{1cm}} \ce{Ca3(PO4)2} + \underline{\hspace{1cm}} \ce{H2O}$$
+$$\underline{\hspace{1cm}} {H_3PO_4} + \underline{\hspace{1cm}} {Ca(OH)_2 \to } \underline{\hspace{1cm}} {Ca_3(PO_4)_2} + \underline{\hspace{1cm}} {H_2O}$$
 
 1. Write an equation for each element (hydrogen, phosphorus, oxygen, calcium). 
 2. Compile these equations into augmented matrix form. Your matrix should be $4 \times 5$ and homogeneous. 
@@ -931,10 +931,8 @@ $$\underline{\hspace{1cm}} \ce{H3PO4} + \underline{\hspace{1cm}} \ce{Ca(OH)2 ->}
 In this section we take the physicist's perspective that a vector $v=[3,4]$ is not merely a short list of numbers, but a quantity with direction and magnitude. We think of vectors either as locations in the x-y plane, or as directed arrows, from the origin to that location. So vectors "look like" arrows in 2D or 3D space:
 
 ```{python}
-#| colab: {base_uri: https://localhost:8080/, height: 452}
-#| cellView: form
-# @title
-#This code draws the figure below. Ignore the code. Enjoy the picture!
+#| echo: false
+#| eval: true
 import numpy as np
 import matplotlib.pyplot as plt
 V = np.array([[3,4],[-2,2],[1,-6]])
@@ -956,8 +954,8 @@ If we starting from $[0,0]$, we can move 3 units right and 4 up, arriving at v. 
 
 
 ```{python}
-#| colab: {base_uri: https://localhost:8080/, height: 452}
-# @title
+#| echo: false
+#| eval: true
 V = np.array([[3,4],[1,-6],[4,-2],[1,-6]])
 plt.quiver([0, 0, 0,3],[0, 0, 0,4], V[:,0], V[:,1], color=['g','b','r','b'], angles='xy', scale_units='xy', scale=1)
 plt.axis('scaled'), plt.xlim(-7, 7), plt.ylim(-7, 7), plt.title("Sum of two vectors (triangle view)")
@@ -968,9 +966,8 @@ plt.show()
 But we could just as well have transported $v$ to the head of the vector $w$. If we do this, which leads us to the "parallelogram rule", because it creates a parallelogram in red and blue:
 
 ```{python}
-#| colab: {base_uri: https://localhost:8080/, height: 452}
-#| cellView: form
-# @title
+#| echo: false
+#| eval: true
 V = np.array([[3,4],[1,-6],[4,-2],[1,-6],[3,4]])
 plt.quiver([0, 0, 0,3,1],[0, 0, 0,4,-6], V[:,0], V[:,1], color=['g','b','r','b','g'], angles='xy', scale_units='xy', scale=1)
 plt.axis('scaled'), plt.xlim(-7, 7), plt.ylim(-7, 7), plt.title("Sum of two vectors (parallelogram view)")
@@ -984,9 +981,8 @@ If $v+w$ is best pictured by transporting the tail of $w$ to the head of $v$, wh
 
 
 ```{python}
-#| colab: {base_uri: https://localhost:8080/, height: 452}
-#| cellView: form
-# @title
+#| echo: false
+#| eval: true
 V = np.array([[3,4],[1,-6],[2,10]])
 plt.quiver([0, 0, 1],[0, 0, -6], V[:,0], V[:,1], color=['g','b','r'], angles='xy', scale_units='xy', scale=1)
 plt.axis('scaled'), plt.xlim(-7, 7), plt.ylim(-7, 7), plt.title("Difference of two vectors (triangle view)")
@@ -999,9 +995,8 @@ plt.show()
 Multiplying $v$ by a scalar multiple has a simple geometry -- just scale the length and leave the direction unchanged. If the scalar is negative, the direction reverses.
 
 ```{python}
-#| colab: {base_uri: https://localhost:8080/, height: 452}
-#| cellView: form
-# @title
+#| echo: false
+#| eval: true
 V = np.array([[3,4],[-3,-4],[6,8],[1.5,2]])
 plt.quiver([0, 0.2, .4, .6],[0,0,0,0], V[:,0], V[:,1], color=['g','r','r','r'], angles='xy', scale_units='xy', scale=1)
 plt.axis('scaled'), plt.xlim(-9, 9), plt.ylim(-9, 9), plt.title("Scalar multiples of (3,4)")
@@ -1019,7 +1014,7 @@ In a right triangle with legs $a$ and $b$ and hypotenuse $c$, $$c^2 = a^2 + b^2$
 
 This theorem applies to any triangle whose angle at $C$ (labeled $\gamma$) is **right** (i.e., $90^\circ$).
 
-<img height = "200" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Triangle_with_notations_2.svg/440px-Triangle_with_notations_2.svg.png">
+<img height = "200" src = "https://upload.wikimedia.org/wikipedia/commons/4/49/Triangle_with_notations_2.svg">
 
 (Image source: Wikipedia)
 
@@ -1033,9 +1028,8 @@ What does all this have to do with vectors? A vector $v = [3,4]$ records a horiz
 
 
 ```{python}
-#| colab: {base_uri: https://localhost:8080/, height: 452}
-#| cellView: form
-# @title
+#| eval: true
+#| echo: false
 V = np.array([[3,0],[0,4],[3,4]])
 plt.quiver([0, 3, 0],[0, 0, 0,], V[:,0], V[:,1], color=['g','b','r'], angles='xy', scale_units='xy', scale=1)
 plt.axis('scaled'), plt.xlim(-1, 5), plt.ylim(-1, 5), plt.title("Any vector makes a right triangle")
@@ -1049,7 +1043,7 @@ $$c^2 = 3^2 + 4^2$$
 
 where $c$ is just the length of $v$ itself. Moreover the right hand side $3 \times 3 + 4 \times 4$ is nothing more than the dot product of $v$ with itself: $v.v$. In general:
 
-> **The square length of $v$ is $v.v$**
+> **The square length of $v$ is $v.v$**  
 
 **Notation:** We write $|v|$ for the length of the vector $v$. In this notation we write:  $|v|^2 = v.v$, or $|v| = \sqrt{v.v}$
 
@@ -1063,15 +1057,14 @@ Remarkably, this rule works not only in two dimensions, but in three and even mo
 
 
 ```{python}
-#| colab: {base_uri: https://localhost:8080/, height: 452}
-#| cellView: form
-# @title
+#| eval: true
+#| echo: false
 V = np.array([[3,4],[1,-6],[2,10]])
 plt.quiver([0, 0, 1],[0, 0, -6], V[:,0], V[:,1], color=['g','b','r'], angles='xy', scale_units='xy', scale=1)
 plt.axis('scaled'), plt.xlim(-7, 7), plt.ylim(-7, 7), plt.title("Triangle view of vector difference, with lengths")
 plt.text(3.1,4.1,'v',color='g'), plt.text(1,-6.4,'w',color='b')
 plt.text(1.0,2.4,'|v|',color='g'), plt.text(-.5,-3,'|w|',color='b'),plt.text(2.4,-1,'|v-w|',color='r'),
-plt.text(.4,-.2,'$\gamma$',color='black')
+plt.text(.4,-.2,'$\\gamma$',color='black')
 plt.show()
 ```
 
@@ -1216,20 +1209,29 @@ That dummy variable always appears twice -- once on each multiplicand, and alway
   - $(4 \times 5)*(4 \times 7)$ Forget it.
 
 For example, to remember the formula for $(MN)_{ij}$, we say
+
 > Well, it's a dot product style multiplication, so put a summation with a new variable, say $k$. Then $k$ has to appear on both $M$ and $N$, as close together as possible (second index of $M$ and first of $N$). This leaves two positions for the $i$ and $j$, which anyway can't trade places, so I guess it's $\sum_k M_{ik}N_{kj}$.
 
 You too can be a master of subscriptology!
 
 
-## Individual Exercises (Due 2024-10-14)
+## Individual Exercises
 
-1. Prove that the dot product is distributive in the sense that $$u.(v+w) = u.v + u.w$$
+::: {#exr-dot-distribution .exercise} 
+Prove that the dot product is distributive in the sense that $$u.(v+w) = u.v + u.w$$
+:::
 
-2. Does the triple dot product $u.v.w$ ever make sense? Explain.
+::: {#exr-triple-dot .exercise} 
+Does the triple dot product $u.v.w$ ever make sense? Explain.
+:::
 
-3. Give an general expression, using summation and indices, for the length of a vector $v$.
+::: {#exr-length-sum .exercise} 
+Give an general expression, using summation and indices, for the length of a vector $v$.
+:::
 
-4. In class we have proven the distribution law $A(B+C)=AB+AC$. Prove the "other" distribution law: $(A+B)C = AC+BC$
+::: {#exr-distribution-II .exercise} 
+In class we have proven the distribution law $A(B+C)=AB+AC$. Prove the "other" distribution law: $(A+B)C = AC+BC$
+:::
 
 ## Zero-based vs One-based indexing.
 
@@ -1237,29 +1239,54 @@ Until now we've assumed that a subscript $1$ means the first, initial, frontmost
 
 When some early computer programming languages were invented in the 1960's and 1970's, language designers made a careful decision to number sequences starting from 0, so that the numbering within a list would correspond to the amount of displacement in memory from the start of the list. Almost all modern computer languages retain this policy, so that the index expression $v[0]$ is correct, and means the initial, beginning entry of the vector $v$. Similarly, the matrix expression $M[0,0]$ or $M[0][0]$ means the initial element of the initial row, which we have called $M_{11}$. A vector of length 4, then, can be indexed $v[0], v[1], v[2], v[3]$, but has no $v[4]$.
 
-Obviously, having two policies for indexing creates all sorts of confusion. First, we need to clarify which policy is active at any moment. We call them **zero-based** and **one-based** indexing. Zero-based is standard in computer science. One-based is standard everywhere else. When using zero-based indexing, we avoid the terms like "first entry" or "first row", because "first" is ambiguous: Is it $v_1$ or $v_0$?  Some people (author included) refer to the initial entry as the "zeroeth," but terms like "first" and "second" are nevertheless confusing and to be avoided in this context.
+Obviously, having two policies for indexing creates all sorts of confusion. First, we need to clarify which policy is active at any moment. We call them **zero-based** and **one-based** indexing. Zero-based is standard in computer science. One-based is standard everywhere else. When using zero-based indexing, we avoid the terms like "first entry" or "first row", because "first" is ambiguous: Is it $v_1$ or $v_0$?  Some people (author included) refer to the initial entry as the "zeroeth."
 
 Note that the index policy doesn't affect dimension. A $3 \times 3$ matrix still three rows of three things, with nine elements altogether, but their labels are 0-2 instead of 1-3. Summation formulas such as $\sum_k v_kw_k$ and $\sum_k A_{ik}B_{kj}$ need adjustment, but it's easy: Make $k$ take all possible values for that index, starting from 0 and ending "early" if necessary.
 
-It's tempting for a student of mathematics to disparage the CS designers for causing all this fuss, but zero-based numbering is efficient, useful, internally consistent, and in some cases superior to one-based. Like Americans' difficulty going metric, the problem is not that zero-based is hard, but that one-based is culturally dominant (across nearly the entire world!), and that the conversions are confusing.
+It's tempting for a student of mathematics to disparage the CS designers for causing all this fuss, but zero-based numbering is efficient, useful, internally consistent, and in some cases superior to one-based. Like Americans' difficulty going metric, the problem is not that zero-based is hard, but that one-based is culturally dominant (across nearly the entire world!), and conversions are confusing.
 
 ## Proofs of algebraic properties
 
-### Associativity
+Ordinary algebraic manipulations depend upon properties such as distribution, commutativity, associativity, etc. In the same way, matrix algebra depends on analogous properties for matrix/vector operations. We state and prove some key 
+algebraic laws.
+
+1. **Additive identity:** $v+\overline{0} = v$, where $\overline{0}$ is a zero vector.
+1. **Additive associativity:** $u+(v+w) = (u+v)+w$.
+1. **Additive commutativity:** $v+w = w+v$ and $M+N = N+M$.
+1. **Additive inverse:** Every vector and matrix has an additive inverse.
+1. **Multiplicative Identity:** $IM = M$ and $MI = M$. See @sec-inverse
+1. **Multiplicative Associativity:** $A(BC) = (AB)C$.
+1. **Distribution I:** $A(B+C) = AB+AC$.
+1. **Distribution II:** $(A+B)C = AC+BC$.
+
+These identities are true only where defined, in the sense that the matrix and vector operations can fail to be defined. Addition and multiplication only apply for suitably shaped vectors and matrices. There are several more associativity and distribution laws for matrices multiplying vectors, inner products, and outer products. 
+
+Our main goal for this section is to illustrate the techniques required to prove these laws, beginning with the easiest and moving to the most difficult. In all cases, we prove an equality of matrices or vectors by proving that 
+
+### Additive Commutativity
+
+We'll prove that $A+B = B+A$ for matrices $A$ and $B$ (provided that they can be added). This identity is rather obvious but illustrates the method.
+
+Now $A$ and $B$ can be added if they have the same shape, and in that case $A+B$ and $B+A$ share that shape. It suffices to show that every entry of $A+B$ agrees with the corresponding entry of $B+A$. Let $ij$ be an index position. Then
 
 \begin{align*}
-(A(BC))_{ij} &= \sum_{k} A_{ik}(BC)_{kj} & \text{ by Defn of matrix product}\\
-&=  \sum_{k} A_{ik}\left(\sum_{l} B_{kl}C_{lj}\right) & \text{ by Defn of matrix product}\\
-&=  \sum_{k} \sum_{l} (A_{ik} B_{kl}C_{lj}) & \text{Scalar distribution across a sum} \\
-&=  \sum_{l} \sum_{k}  (A_{ik} B_{kl}C_{lj}) & \text{Changing summation order}\\
-&=  \sum_{l} \left(\sum_{k} A_{ik} B_{kl}\right)C_{lj} & \text{ Factoring} \\
-&=  \sum_{l} \left((AB)_{il}\right)C_{lj} & \text{Definition of matrix multiplication}\\
-&=  ((AB)C)_{ij}\\
+(A + B)_{ij} &= A_{ij} + B_{ij} \enspace \text{ by definition of matrix sum}\\
+&= B_{ij} + A_{ij} \enspace \text{ by commutativity (see below)}\\
+&= (B + A)_{ij} \enspace \text{ by definition of matrix sum}\\
 \end{align*}
 
-Because $i$ and $j$ were arbitrary, it follows that $A(BC) = (AB)C$
+Since the position $ij$ was arbitrary, we conclude $A+B = B+A$.
+
+#### Notes
+
+1. Notice that we cited commutativity while proving commutativity, which may sound like an invalid circular proof. We're proving commutativity of matrix addition, but we're citing commutativity of ordinary real number addition. 
+2. The equations above are equalities of real numbers, not matrices, because we have subscripted the matrix $A+B$. It's generally easier to reduce matrix equalities to real number equalities this way. 
+3. The "distribution" of the index $ij$ is the definition of matrix sum.
 
 ### Distribution I
+
+This case is substantially harder but we follow the same method. In order to show that $A(B+C) = AB + AC$ we check that the two matrices have the same $ij$ entry, for arbitrary position $ij$: 
+
 \begin{align}
   (A(B+C))_{ij}
   =& \sum_k A_{ik} (B+C)_{kj} & \text{ Def of matrix product} \\
@@ -1270,10 +1297,34 @@ Because $i$ and $j$ were arbitrary, it follows that $A(BC) = (AB)C$
   =& (AB+AC)_{ij} & \text{ Def of matrix sum} \\
 \end{align}
 
+Again, since $ij$ was an arbitrary position, the matrices agree at every $ij$ and are equal. 
 
+The other distribution makes a good exercise for the student.
 
-### Distribution II (Individual Exercise, due 2023-10-20)
-Prove:   $(A+B)C = AC+BC$
+### Multiplicative Associativity
+
+Certainly the hardest of the basic matrix identities, this requires some finesse with summation, but relies on the same basic logic. We check $ij$ entry for arbitrary $ij$. 
+
+\begin{align*}
+(A(BC))_{ij} &= \sum_{k} A_{ik}(BC)_{kj} & \text{ Defn of matrix product}\\
+&=  \sum_{k} A_{ik}\left(\sum_{l} B_{kl}C_{lj}\right) & \text{ Defn of matrix product}\\
+&=  \sum_{k} \sum_{l} (A_{ik} B_{kl}C_{lj}) & \text{Scalar distribution across a sum} \\
+&=  \sum_{l} \sum_{k}  (A_{ik} B_{kl}C_{lj}) & \text{Changing summation order}\\
+&=  \sum_{l} \left(\sum_{k} A_{ik} B_{kl}\right)C_{lj} & \text{ Factoring} \\
+&=  \sum_{l} \left((AB)_{il}\right)C_{lj} & \text{Defn of matrix product}\\
+&=  ((AB)C)_{ij} & \text{Defn of matrix product}\\
+\end{align*}
+
+Because $i$ and $j$ were arbitrary, it follows that $A(BC) = (AB)C$
+
+#### Notes
+
+1. The subscripts are sort of the point. Zoom in and focus on them.
+1. Each term of each matrix product is expanded by means of the summation formula for $AB$, so multiple sums appear. 
+1. The first sum introduces a dummy variable $k$. In the context of the second summation, $k$ is already defined and the new dummy variable must use a different letter. This is why we have $\sum_l$.
+1. A term may be factored out of a summation $sum$ sign, but only when it does not depend on the summation index. So for example we could factor $A_{ij}$ out of 
+$\sum_{l} (A_{ik} B_{kl}C_{lj})$, or $C_{lj}$ out of $\sum_{k} (A_{ik} B_{kl}C_{lj})$, but not vice versa. The term $B_{kl}$ could not be factored from either summation. This is one reason for interchanging the summation signs.
+
 
 # Matrix Algebra, a deeper look
 
@@ -1327,10 +1378,12 @@ $$
 $$Mv=b $$
 
 
-where of course $ M = \begin{bmatrix} 1 & 2 & 3 \\
+where of course 
+
+$$M = \begin{bmatrix} 1 & 2 & 3 \\
 4 & 5 & 6  \\
 7 & 8 & 9
-\end{bmatrix}$ and $b =  \begin{bmatrix}12 \\ 24 \\ 36\end{bmatrix} $
+\end{bmatrix} \enspace \text{ and } \enspace b =  \begin{bmatrix}12 \\ 24 \\ 36\end{bmatrix} $$
 
 We have converted a $3 \times 3$ SLE to a single matrix equation involving a $3 \times 3$ matrix and a length $3$ vector.
 
@@ -1356,7 +1409,7 @@ Consider the simple equation $4x = 20$. Can you solve it without dividing? Of co
 
 $$\frac14 (4x) = \frac14 20$$
 
-Notice the parentheses: 4x was multiplied originally. The fraction $\frac14$ came later.
+Notice the parentheses: $4x$ was multiplied originally. The fraction $\frac14$ came later.
 
 3. Reassociate (move parentheses):
 
@@ -1393,7 +1446,7 @@ $$v=Nb$$
 
 as desired. This is not "division by $M$", but it's the next best thing.
 
-## Identity Matrix
+## Identity Matrix {.sec-identity}
 
 ## Inverse, Left Inverse, and Right Inverse
 

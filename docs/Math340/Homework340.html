@@ -150,11 +150,14 @@ window.Quarto = {
   <li><a href="#domain-range-arctan" id="toc-domain-range-arctan" class="nav-link" data-scroll-target="#domain-range-arctan"><span class="header-section-number">3.5</span> Domain, range, arctan</a></li>
   <li><a href="#sum-and-inverse" id="toc-sum-and-inverse" class="nav-link" data-scroll-target="#sum-and-inverse"><span class="header-section-number">3.6</span> Sum and inverse</a></li>
   <li><a href="#surjective-inverse-optional." id="toc-surjective-inverse-optional." class="nav-link" data-scroll-target="#surjective-inverse-optional."><span class="header-section-number">3.7</span> Surjective, inverse optional.</a></li>
-  <li><a href="#injective-to-left-invertible" id="toc-injective-to-left-invertible" class="nav-link" data-scroll-target="#injective-to-left-invertible"><span class="header-section-number">3.8</span> Injective <span class="math inline">\(\to\)</span> left invertible</a></li>
-  <li><a href="#there-is-no-surjectivity." id="toc-there-is-no-surjectivity." class="nav-link" data-scroll-target="#there-is-no-surjectivity."><span class="header-section-number">3.9</span> There is no surjectivity.</a></li>
-  <li><a href="#induction-hard-to-say." id="toc-induction-hard-to-say." class="nav-link" data-scroll-target="#induction-hard-to-say."><span class="header-section-number">3.10</span> Induction? Hard to say.</a></li>
-  <li><a href="#powers-of-2-equivalence" id="toc-powers-of-2-equivalence" class="nav-link" data-scroll-target="#powers-of-2-equivalence"><span class="header-section-number">3.11</span> Powers of 2 equivalence</a></li>
-  <li><a href="#ordering-tasks." id="toc-ordering-tasks." class="nav-link" data-scroll-target="#ordering-tasks."><span class="header-section-number">3.12</span> Ordering tasks.</a></li>
+  <li><a href="#bijective-via-inverse." id="toc-bijective-via-inverse." class="nav-link" data-scroll-target="#bijective-via-inverse."><span class="header-section-number">3.8</span> Bijective via inverse.</a></li>
+  <li><a href="#bijection-via-inverse" id="toc-bijection-via-inverse" class="nav-link" data-scroll-target="#bijection-via-inverse"><span class="header-section-number">3.9</span> Bijection via inverse</a></li>
+  <li><a href="#functions-to-2" id="toc-functions-to-2" class="nav-link" data-scroll-target="#functions-to-2"><span class="header-section-number">3.10</span> Functions to 2</a></li>
+  <li><a href="#a-surprise-injection" id="toc-a-surprise-injection" class="nav-link" data-scroll-target="#a-surprise-injection"><span class="header-section-number">3.11</span> A surprise injection</a></li>
+  <li><a href="#there-is-no-surjectivity." id="toc-there-is-no-surjectivity." class="nav-link" data-scroll-target="#there-is-no-surjectivity."><span class="header-section-number">3.12</span> There is no surjectivity.</a></li>
+  <li><a href="#induction-hard-to-say." id="toc-induction-hard-to-say." class="nav-link" data-scroll-target="#induction-hard-to-say."><span class="header-section-number">3.13</span> Induction? Hard to say.</a></li>
+  <li><a href="#powers-of-2-equivalence" id="toc-powers-of-2-equivalence" class="nav-link" data-scroll-target="#powers-of-2-equivalence"><span class="header-section-number">3.14</span> Powers of 2 equivalence</a></li>
+  <li><a href="#ordering-tasks." id="toc-ordering-tasks." class="nav-link" data-scroll-target="#ordering-tasks."><span class="header-section-number">3.15</span> Ordering tasks.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -398,24 +401,36 @@ x = 2  \,\,\underline{\hspace{1in}}\,\, x = 1\\
 <h2 data-number="3.7" class="anchored" data-anchor-id="surjective-inverse-optional."><span class="header-section-number">3.7</span> Surjective, inverse optional.</h2>
 <p>Let <span class="math inline">\(h:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(h(x) = x^3 - 3x^2 + 3x - 1\)</span>. Prove that <span class="math inline">\(h\)</span> is surjective. (Hint: Although there might be another way, I expect that factoring the polynomial will be enormously useful!)</p>
 </section>
-<section id="injective-to-left-invertible" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="injective-to-left-invertible"><span class="header-section-number">3.8</span> Injective <span class="math inline">\(\to\)</span> left invertible</h2>
-<p>Let <span class="math inline">\(f:A \to B\)</span> be a function, and assume both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are nonempty. We’ve proven that if <span class="math inline">\(f\)</span> has a left inverse, then it is injective. Prove, conversely, that if <span class="math inline">\(f\)</span> is injective, it has a left inverse.</p>
+<section id="bijective-via-inverse." class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="bijective-via-inverse."><span class="header-section-number">3.8</span> Bijective via inverse.</h2>
+<p>Let <span class="math inline">\(f:{\mathbb R} \to {\mathbb R}\)</span> by <span class="math inline">\(f(x) = 7x+2\)</span>. Find an inverse function, then prove it’s an inverse function, then infer that <span class="math inline">\(f\)</span> is a bijection.</p>
 </section>
-<section id="there-is-no-surjectivity." class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="there-is-no-surjectivity."><span class="header-section-number">3.9</span> There is no surjectivity.</h2>
+<section id="bijection-via-inverse" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="bijection-via-inverse"><span class="header-section-number">3.9</span> Bijection via inverse</h2>
+<p>Let <span class="math inline">\(f:{\mathbb Z}_{11} \to {\mathbb Z}_{11}\)</span> by <span class="math inline">\(f(x) = 3x\)</span>. For example <span class="math inline">\(f(5) = 15 = 4\)</span>. Find an inverse function <span class="math inline">\(g:{\mathbb Z}_{11} \to {\mathbb Z}_{11}\)</span>. (A simple multiplication formula is possible.) Prove that they are inverse functions, and infer that <span class="math inline">\(f\)</span> is a bijection.</p>
+</section>
+<section id="functions-to-2" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="functions-to-2"><span class="header-section-number">3.10</span> Functions to 2</h2>
+<p>Let <span class="math inline">\(X\)</span> be a set. Let <span class="math inline">\(\mathscr{P}(X)\)</span> be its power set, and let <span class="math inline">\(2^X\)</span> be the set of all functions <span class="math inline">\(f: X \to \{0,1\}\)</span>. 1. Provide a function <span class="math inline">\(h:\mathscr{P}(X) \to 2^X\)</span>. 2. Provide a function <span class="math inline">\(k:2^X \to h:\mathscr{P}(X)\)</span>. 3. Prove that <span class="math inline">\(h\)</span> and <span class="math inline">\(k\)</span> are inverse functions.</p>
+</section>
+<section id="a-surprise-injection" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="a-surprise-injection"><span class="header-section-number">3.11</span> A surprise injection</h2>
+<p>Find an injection from <span class="math inline">\({\mathbb N} \times {\mathbb N}\)</span> to <span class="math inline">\({\mathbb N}\)</span>. Prove that it is an injection.</p>
+</section>
+<section id="there-is-no-surjectivity." class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="there-is-no-surjectivity."><span class="header-section-number">3.12</span> There is no surjectivity.</h2>
 <p>Some say that if a function is truly nothing more than a set of ordered (input/output) pairs, then surjectivity is meaningless. Explain.</p>
 </section>
-<section id="induction-hard-to-say." class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="induction-hard-to-say."><span class="header-section-number">3.10</span> Induction? Hard to say.</h2>
+<section id="induction-hard-to-say." class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="induction-hard-to-say."><span class="header-section-number">3.13</span> Induction? Hard to say.</h2>
 <p>Explain in your own words why the principle of mathematical induction is problematic within a simple number theory in which the only mathematical objects of relevance are natural numbers.</p>
 </section>
-<section id="powers-of-2-equivalence" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="powers-of-2-equivalence"><span class="header-section-number">3.11</span> Powers of 2 equivalence</h2>
+<section id="powers-of-2-equivalence" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="powers-of-2-equivalence"><span class="header-section-number">3.14</span> Powers of 2 equivalence</h2>
 <p>Let <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> be natural numbers, we write <span class="math inline">\(x \sim y\)</span> to mean <span class="math inline">\(y/x\)</span> is a power of <span class="math inline">\(2\)</span>. (Powers of <span class="math inline">\(2\)</span> are numbers <span class="math inline">\(2^n\)</span> for all <span class="math inline">\(n \in {\mathbb Z}\)</span>, including <span class="math inline">\(1\)</span>, <span class="math inline">\(1/2\)</span>, etc.) Prove that <span class="math inline">\(x \sim y\)</span> is an equivalence relation.</p>
 </section>
-<section id="ordering-tasks." class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="ordering-tasks."><span class="header-section-number">3.12</span> Ordering tasks.</h2>
+<section id="ordering-tasks." class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="ordering-tasks."><span class="header-section-number">3.15</span> Ordering tasks.</h2>
 <p>A complex to-do list contains many tasks. We use variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> to range over the tasks themselves. For example, <span class="math inline">\(x=\)</span>(repair faucet) and <span class="math inline">\(y=\)</span>(rake leaves). Some tasks have interdependencies. We write <span class="math inline">\(x \le y\)</span> to mean <span class="math inline">\(x=y\)</span> or <span class="math inline">\(x\)</span> must be completed before <span class="math inline">\(y\)</span> can begin. For example (buy brake light replacement) <span class="math inline">\(\le\)</span> (install brake light replacement). Discuss each of the five order axioms in this context. Which are true? Is this system a partial order? total order? well order?</p>
 
 

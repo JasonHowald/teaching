@@ -224,6 +224,13 @@ window.Quarto = {
   <li><a href="#cardinality" id="toc-cardinality" class="nav-link" data-scroll-target="#cardinality"><span class="header-section-number">4.5.1</span> Cardinality</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#induction" id="toc-induction" class="nav-link" data-scroll-target="#induction"><span class="header-section-number">5</span> Induction</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#weak-induction" id="toc-weak-induction" class="nav-link" data-scroll-target="#weak-induction"><span class="header-section-number">5.2</span> Weak induction</a></li>
+  <li><a href="#strong-induction" id="toc-strong-induction" class="nav-link" data-scroll-target="#strong-induction"><span class="header-section-number">5.3</span> Strong induction</a></li>
+  <li><a href="#equivalence-and-well-ordering" id="toc-equivalence-and-well-ordering" class="nav-link" data-scroll-target="#equivalence-and-well-ordering"><span class="header-section-number">5.4</span> Equivalence and well ordering</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1632,9 +1639,154 @@ Somehow the first step is often very tricky. It just requires that the input be 
 <li>The cardinality of the set <span class="math inline">\({\mathbb R}\)</span> is called <span class="math inline">\(c\)</span> or sometimes <span class="math inline">\(2^\omega\)</span> (or <span class="math inline">\(2^{\aleph_0}\)</span>). It is known that <span class="math inline">\(\omega \neq c\)</span>. There’s a bijection between <span class="math inline">\({\mathbb R}\)</span> and <span class="math inline">\({\mathscr P}({\mathbb N})\)</span>, so <span class="math inline">\(c = |{\mathscr P}({\mathbb N})|\)</span> as well. (The bijection is a bit tricky but not really deep.)</li>
 <li>Among the infinite cardinals which exceed <span class="math inline">\(\omega\)</span>, there is a smallest one, called <span class="math inline">\(\omega_1\)</span>. That is, <span class="math inline">\(\omega_1\)</span> is the smallest uncountable infinite cardinal. Certainly <span class="math inline">\(\omega &lt; \omega_1 \leq c\)</span>, but it is not known whether <span class="math inline">\(\omega_1 = c\)</span>. For all we know, <span class="math inline">\(c\)</span> might be <span class="math inline">\(\omega_5\)</span>. The hypothesis that <span class="math inline">\(\omega_1=c\)</span> is called the “Continuum Hypothesis” or CH. It has been proven to be <em>independent</em> of the axioms of set theory (Gödel 1940, Cohen 1963). That is, CH cannot possibly be proven from the axioms of ZFC, but it also cannot be refuted by the same axioms.</li>
 </ol>
-
-
 </section>
+</section>
+</section>
+<section id="induction" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Induction</h1>
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>It often happens that we discover a pattern, equality, or relationship that works for every natural <span class="math inline">\(n\in {\mathbb N}\)</span>. For example</p>
+<ol type="1">
+<li><span class="math inline">\(1+2+\ldots + n = \frac{n(n+1)}{2}\)</span></li>
+<li><span class="math inline">\(n &lt; 2^n\)</span></li>
+<li><span class="math inline">\(8^n - 3^n\)</span> is divisible by <span class="math inline">\(5\)</span>.</li>
+<li><span class="math inline">\(n\)</span> lines in the plane (no two parallel, no three concurrent) form <span class="math inline">\(\frac{n^2+n+2}{2}\)</span> regions</li>
+<li><span class="math inline">\((n^4-n^2)\)</span> is divisible by <span class="math inline">\(4\)</span>.</li>
+<li>Every number <span class="math inline">\(n&gt;1\)</span> can be factored into primes.</li>
+<li>Every number <span class="math inline">\(n \geq 12\)</span> can be written as the sum of fours and fives.</li>
+<li><span class="math inline">\(1^3+2^3+\ldots + n^3 = \frac{n^2(n+1)^2}{4}\)</span></li>
+<li>Bernoulli’s inequality: If <span class="math inline">\(x&gt;-1\)</span> and <span class="math inline">\(n \in {\mathbb N}\)</span> then <span class="math inline">\((1+x)^n \geq 1+nx\)</span></li>
+<li>The power set <span class="math inline">\(\mathscr{P}(\{1,2,\ldots,n\})\)</span> has cardinality <span class="math inline">\(2^n\)</span>.</li>
+<li>A <span class="math inline">\(2^n \times 2^n\)</span> checkerboard can be tiled by L-shaped trominoes.</li>
+<li>The derivative of <span class="math inline">\(x^n\)</span> is <span class="math inline">\(nx^{n-1}\)</span></li>
+<li><span class="math inline">\((x+y)^n = \sum_{k=0}^n \binom{n}{k} x^ky^{n-k}\)</span></li>
+</ol>
+<p>Now occasionally we find a quick proof which works for arbitrary <span class="math inline">\(n\)</span>, and we can prove these straight away. In harder cases, we may find reasons why it’s true for <span class="math inline">\(n=0\)</span> and <span class="math inline">\(n=1\)</span> and <span class="math inline">\(n=2\)</span>, but the argument gets harder and harder as <span class="math inline">\(n\)</span> increases. When we’re unable to produce a generic argument for all <span class="math inline">\(n\)</span>, we may try instead to prove that the claim is true in case <span class="math inline">\(n\)</span>, provided it’s true for the immediately previous case (or all previous cases). This is often written <span class="math inline">\(P(n-1) \to P(n)\)</span> or <span class="math inline">\(P(n) \to P(n+1)\)</span>, where <span class="math inline">\(P\)</span> is the statement itself. If we can prove a “base case” <span class="math inline">\(P(0)\)</span> and also prove such an implication for all <span class="math inline">\(n\)</span>, then all the various statements <span class="math inline">\(P(n)\)</span> fall like dominoes to a neverending modus ponens.</p>
+<p>There is a technical problem here that the “domino deduction” requires infinitely many steps of proof. It’s impossible with a finite proof to deduce all statements <span class="math inline">\(P(n)\)</span>. Therefore we have a special principle, called the Principle of Mathematical Induction, which allows us to skip to the end of this infinite proof chain:</p>
+</section>
+<section id="weak-induction" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="weak-induction"><span class="header-section-number">5.2</span> Weak induction</h2>
+<p><strong>Principle of (weak) Mathematical Induction (PMI):</strong> Let <span class="math inline">\(P\)</span> be any claim depending on <span class="math inline">\(n \in {\mathbb N}\)</span>. Then the following is a valid deduction law:</p>
+<p><span class="math display">\[\frac{P(0), \enspace\enspace  \forall n \enspace (P(n) \to P(n+1))}{\forall n \enspace P(n)}\]</span></p>
+<p>In this context the statement <span class="math inline">\(P(0)\)</span> is called the <strong>base case:</strong> It’s what gets the chain of deductions started. The step <span class="math inline">\(P(n) \to P(n+1)\)</span> is called the <strong>induction step,</strong> and within a direct proof of it, the assumption <span class="math inline">\(P(n)\)</span> is called the <strong>induction hypothesis.</strong> We often allow the base case to be <span class="math inline">\(P(1)\)</span> or even higher, especially for example when a formula involves <span class="math inline">\(1/n\)</span> so <span class="math inline">\(P(0)\)</span> is undefined. In such cases the conclusion would be <span class="math inline">\(\forall n \geq 1 \enspace P(n)\)</span>. Generally it’s advisable to keep the base case as small as possible, so that the final result is as comprehensive as possible.</p>
+<p>It’s difficult to give a complete formal treatment of this principle, because it’s needed in essentially every interesting mathematical theory, from geometry to algebra to number theory to set theory, and also in every meta-theory used to analyze formal logics themselves. It’s also tricky to formalize because it’s true for any statement or property <span class="math inline">\(P()\)</span>, but quantification over “statements” or “properties” is not how most formal logics work. I think of it as a fundamental principle of natural logic, like modus ponens.</p>
+<p>Induction proofs can be quite confusing for the beginner. They often feel unsatisfying and circular. Examples will help. Mathematical tradition demands that our first example is the rising sum problem.</p>
+<div id="exm-gauss-sum" class="example theorem">
+<p><span class="theorem-title"><strong>Example 1</strong></span> <span class="math display">\[1+2+ \ldots + n = \frac{n(n+1)}{2}\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The base case <span class="math inline">\(P(0)\)</span> is a bit odd. When <span class="math inline">\(n=0\)</span>, the left hand side has no terms at all, so it sums to <span class="math inline">\(0\)</span>. The right hand side is <span class="math inline">\(\frac{0 \cdot 1}{2}=0\)</span>. Since these agree, <span class="math inline">\(P(0)\)</span> is proven.</p>
+<p>For the induction step, let <span class="math inline">\(n \in {\mathbb N}\)</span>, and assume <span class="math inline">\(1+2+ \ldots + n = \frac{n(n+1)}{2}\)</span>. [At this point, you may feel we’ve assumed the whole theorem away, but we haven’t. This is the correct setup for a proof of “<span class="math inline">\(\forall n \enspace (P(n) \to P(n+1)\)</span>”.]</p>
+<p>Now we calculate:</p>
+<p><span class="math display">\[\begin{align*}
+1+2+ \ldots + (n+1) &amp;= (1+2+ \ldots n) + (n+1)  \\
+&amp;= \frac{n(n+1)}{2} + (n+1) \enspace \text{by the induction hypothesis}\\
+&amp;= \frac{n(n+1)}{2} + \frac{2(n+1)}{2} \\
+&amp;= \frac{n(n+1) + 2(n+1)}{2} \\
+&amp;= \frac{(n+1)(n+2)}{2} \\
+&amp;= \frac{(n+1)((n+1)+1)}{2} \\
+\end{align*}\]</span></p>
+<p>This establishes the statement <span class="math inline">\(P(n+1)\)</span> (having assumed <span class="math inline">\(P(n)\)</span>). By induction we conclude <span class="math inline">\(\forall n P(n)\)</span>.</p>
+</div>
+<p>There are many interesting inductions for summation formulas, but it’s important not to give the impression that induction is for sums. Let’s prove an inequality</p>
+<div id="exm-power-2-inductin" class="example theorem">
+<p><span class="theorem-title"><strong>Example 2</strong></span> <span class="math display">\[\forall n\in {\mathbb N} \enspace n &lt; 2^n\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The base case <span class="math inline">\(n=0\)</span> asserts <span class="math inline">\(0&lt;2^0\)</span>, which is obvious.</p>
+<p>Let <span class="math inline">\(n \in {\mathbb N}\)</span> and assume <span class="math inline">\(n &lt; 2^n\)</span>. Then <span class="math inline">\(n+1 &lt; 2^n+1 \leq 2^n + 2^n = 2^{n+1}\)</span>. [The first is by the induction hypothesis. The second is because <span class="math inline">\(1&lt;2^n\)</span>. The whole thing establishes <span class="math inline">\(P(n+1)\)</span> as needed.] Therefore by induction <span class="math inline">\(\forall n \enspace P(n)\)</span>.</p>
+</div>
+<div id="exm-divisibility" class="example theorem">
+<p><span class="theorem-title"><strong>Example 3</strong></span> For all <span class="math inline">\(n \in {\mathbb N}\)</span>, <span class="math inline">\(8^n - 3^n\)</span> is divisible by <span class="math inline">\(5\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Once again the base case <span class="math inline">\(n=0\)</span> is trivial. <span class="math inline">\(8^0-3^0=1-1=0\)</span>, which is divisible by <span class="math inline">\(5\)</span>. Now let <span class="math inline">\(n \in {\mathbb N}\)</span> and assume <span class="math inline">\(8^n - 3^n = 5k\)</span> for some integer <span class="math inline">\(k\)</span>. Then <span class="math inline">\(8^{n+1} - 3^{n+1} = 8 \cdot 8^n - 3 \cdot 3^n = 5 \cdot 8^n + 3 \cdot 8^n - 3 \cdot 3^n = 5 \cdot 8^n + 3(5k)\)</span>, which is clearly a multiple of <span class="math inline">\(5\)</span>. By induction, <span class="math inline">\(\forall n \enspace P(n)\)</span>. [The reader should pay special care to understand how we have assumed <span class="math inline">\(P(n)\)</span> and how we have used that assumption, and how we proved <span class="math inline">\(P(n+1)\)</span>.]</p>
+</div>
+<div id="exm-linear-division" class="example theorem">
+<p><span class="theorem-title"><strong>Example 4</strong></span> Any <span class="math inline">\(n\)</span> lines in the plane (no two parallel, no three concurrent) form <span class="math inline">\(\frac{n^2+n+2}{2}\)</span> regions.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The reader may verify that the formula for <span class="math inline">\(n=0\)</span> yields <span class="math inline">\(1\)</span> and for <span class="math inline">\(n=1\)</span> yields <span class="math inline">\(4/2 = 2\)</span>. These numbers are correct.</p>
+<p>We now let <span class="math inline">\(n \in {\mathbb N}\)</span>, and assume that the statement is true for <span class="math inline">\(n\)</span> lines. Now we consider <span class="math inline">\(n+1\)</span> lines, and especially consider how the last line intersects the others. Since none are parallel and no three meet at a point, the last line intersects the first <span class="math inline">\(n\)</span> at exactly <span class="math inline">\(n\)</span> locations, dividing the line itself into <span class="math inline">\(n+1\)</span> intervals. Each such interval divides one region into two, so altogether they are responsible for <span class="math inline">\(n+1\)</span> new regions. The number of regions for <span class="math inline">\(n+1\)</span> lines is then <span class="math inline">\(\frac{n^2+n+2}{2} + (n+1)\)</span>. A bit of algebra shows:</p>
+<p><span class="math display">\[\frac{n^2+n+2}{2} + (n+1) = \frac{n(n+1)+2 + 2(n+1)}{2} = \frac{(n+1)(n+1) + (n+1)+2}{2} \]</span></p>
+<p>as needed.</p>
+</div>
+<p>Let’s turn our attention to Bernoulli’s inequality next.</p>
+<div id="exm-bernoulli-inequality" class="example theorem">
+<p><span class="theorem-title"><strong>Example 5</strong></span> <strong>(Bernoulli’s inequality)</strong> If <span class="math inline">\(x&gt;-1\)</span> and <span class="math inline">\(n \in {\mathbb N}\)</span> then <span class="math inline">\((1+x)^n \geq 1+nx\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Checking the base case <span class="math inline">\(n=0\)</span>, we have <span class="math inline">\((1+x)^0 = 1 = 1+0x\)</span>, so the inequality holds. Let <span class="math inline">\(n \in {\mathbb N}\)</span> and assume <span class="math inline">\((1+x)^n \geq 1+nx\)</span>. Since <span class="math inline">\(x&gt;-1\)</span>, <span class="math inline">\((1+x)\)</span> is positive and we may multiply both sides by it without changing the direction of the inequality:</p>
+<p><span class="math display">\[(1+x)^{n+1} = (1+x)^n(1+x) \geq (1+nx)(1+x) = 1+nx + x + nx^2 = 1+(n+1)x + nx^2\]</span></p>
+<p>This is almost the statement <span class="math inline">\(P(n+1)\)</span> we’re looking for, but what do we do with the <span class="math inline">\(nx^2\)</span> term? Remember that we’re trying to prove an inequality. Since <span class="math inline">\(nx^2\)</span> is itself positive (or zero), we just drop it, adding one more “<span class="math inline">\(\geq\)</span>” link to the chain:</p>
+<p><span class="math display">\[(1+x)^{n+1} \geq \ldots = 1+(n+1)x + nx^2 \geq 1+(n+1)x\]</span></p>
+<p>…as needed. By induction, the statement is true for all <span class="math inline">\(n\)</span>.</p>
+</div>
+</section>
+<section id="strong-induction" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="strong-induction"><span class="header-section-number">5.3</span> Strong induction</h2>
+<p>In all the previous examples, the method is to compare one case <span class="math inline">\(P(n+1)\)</span> to the immediately previous case <span class="math inline">\(P(n)\)</span>. (Equivalently, compare <span class="math inline">\(P(n)\)</span> to <span class="math inline">\(P(n-1)\)</span>.) Sometimes we need the help of the previous dominoes, assuming earlier cases too. For example, consider the statement that every number has a prime factorization.</p>
+<p>There’s no obvious relationship between the factorization of <span class="math inline">\(40 = 4 \times 10\)</span> and that of <span class="math inline">\(39 = 3 \times 13\)</span>, but without a doubt the prime factorization of <span class="math inline">\(40\)</span> is related to the prime factorizations of the smaller numbers <span class="math inline">\(4\)</span> and <span class="math inline">\(10\)</span>. The strong principle of mathematical induction allows us to assume all previous values, not just the immediately prior one.</p>
+<p><strong>Principle of (strong) Mathematical Induction (PMI):</strong> Let <span class="math inline">\(P\)</span> be any claim depending on <span class="math inline">\(n \in {\mathbb N}\)</span>. Then the following is a valid deduction law:</p>
+<p><span class="math display">\[\frac{\forall n \enspace ((\forall k&lt;n \enspace P(k)) \to P(n))}{\forall n \enspace P(n)}\]</span></p>
+<p>Notice that the base case <span class="math inline">\(P(0)\)</span> is missing. If we can accomplish the induction step for all <span class="math inline">\(n\)</span> including <span class="math inline">\(n=0\)</span>, the base case <span class="math inline">\(P(0)\)</span> will follow because the induction assumption <span class="math inline">\(\forall k&lt;0 \enspace P(k)\)</span> is vacuously true. Let’s use the strong principle to prove the existence of factorizations.</p>
+<div id="exm-factorization-existence" class="example theorem">
+<p><span class="theorem-title"><strong>Example 6</strong></span> Every natural number <span class="math inline">\(n&gt;1\)</span> can be written as a product of primes.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(n \in {\mathbb N}\)</span> with <span class="math inline">\(n&gt;1\)</span>. Assume every smaller number has a prime factorization. If <span class="math inline">\(n\)</span> is prime, then it has the factorization <span class="math inline">\(n = n\)</span>. If not, then it factors <span class="math inline">\(n=ab\)</span>, where <span class="math inline">\(1&lt;a&lt;n\)</span> and <span class="math inline">\(1&lt;b&lt;n\)</span>. By the strong induction hypothesis, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (may not be prime but) have prime factorizations, and they combine to yield a prime factorization of <span class="math inline">\(n\)</span>.</p>
+</div>
+<p>This next example is often phrased as a “postage stamp” problem, though this may be a bit old fashioned.</p>
+<div id="exm-postage-stamps" class="example theorem">
+<p><span class="theorem-title"><strong>Example 7</strong></span> Every number <span class="math inline">\(n \geq 12\)</span> can be written as the sum of fours and fives.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Before we can use strong induction, we need to begin with quite a few special cases. <span class="math inline">\(12 = 4+4+4\)</span>, <span class="math inline">\(13 = 4+4+5\)</span>, <span class="math inline">\(14 = 4+5+5\)</span>, <span class="math inline">\(15 = 5+5+5\)</span>. Now let <span class="math inline">\(n \in {\mathbb N}\)</span> and assume that the statement is true for all smaller values. If <span class="math inline">\(n&lt;12\)</span> there is nothing to prove, and if <span class="math inline">\(12 \leq n \leq 15\)</span> our special cases apply. If <span class="math inline">\(16 \leq n\)</span>, then <span class="math inline">\(12 \leq n-4\)</span>, so <span class="math inline">\(n-4\)</span> can be written as the sum of 4’s and 5’s. Just add one more <span class="math inline">\(4\)</span>.</p>
+</div>
+</section>
+<section id="equivalence-and-well-ordering" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="equivalence-and-well-ordering"><span class="header-section-number">5.4</span> Equivalence and well ordering</h2>
+<p>In most cases, weak induction is the simplest solution. For a few, strong induction is better. But from a theoretical perspective, they are equally powerful methods: Any theorem which can be proved by strong induction also can be solved by weak induction, and vice versa. In fact there is a third equivalent statement called <strong>well ordering</strong> which is also sometimes useful:</p>
+<div id="def-well-ordering" class="definition theorem">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> An ordered set is called <strong>well ordered</strong> if every nonempty subset of it has a minimal element.</p>
+</div>
+<p>This brings us to our third version of the PMI:</p>
+<p><strong>Well ordering principle:</strong> <span class="math inline">\({\mathbb N}\)</span> is well ordered.</p>
+<p>The reader may feel this is obviously true but unrelated to induction. Where’s the connection? In theory, any proof built to use induction can be carried out using the well ordering principle instead:</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<ol start="0" type="1">
+<li>(Base case) Prove <span class="math inline">\(P(0)\)</span></li>
+<li>(Induction step) Prove <span class="math inline">\(\forall n \enspace P(n) \to P(n+1)\)</span>.</li>
+<li>Let <span class="math inline">\(S = \{n \in {\mathbb N} \,|\, \neg P(n)\}\)</span> be the set of counterexamples to the desired conclusion. Suppose <span class="math inline">\(S\)</span> is nonempty.</li>
+<li>Let <span class="math inline">\(s\)</span> be the minimal counterexample, by the <strong>well ordering principle.</strong></li>
+<li>Is <span class="math inline">\(s=0\)</span>?
+<ul>
+<li>If <span class="math inline">\(s=0\)</span> this contradicts the base case.</li>
+<li>If <span class="math inline">\(s&gt;0\)</span>, then <span class="math inline">\(P(s-1)\)</span> is true (by minimality), contradicting the induction step for <span class="math inline">\(n=s-1\)</span>.</li>
+</ul></li>
+<li>Thus <span class="math inline">\(S\)</span> is empty after all. That is, <span class="math inline">\(\forall n \enspace P(n)\)</span> as desired.</li>
+</ol>
+</div>
+<p>Conversely, the well ordering principle itself can be deduced from the principle of induction.</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<ol type="1">
+<li>Let <span class="math inline">\(S\)</span> be any nonempty set of natural numbers.</li>
+<li>Let <span class="math inline">\(P(n)\)</span> be the statement <span class="math inline">\(n \notin S\)</span>.</li>
+<li>Since <span class="math inline">\(\foral n \enspace P(n)\)</span> is false, it follows that <span class="math inline">\(\forall n \enspace ((\forall k&lt;n \enspace P(k)) \to P(n))\)</span> is also false. In other words, <span class="math inline">\(\exists n \enspace ((\forall k&lt;n \enspace P(k)) \land \neg P(n))\)</span>, or equivalently <span class="math inline">\(\exists n \enspace ((\forall k&lt;n \enspace k \notin S) \land n \in S)\)</span>. Such an <span class="math inline">\(n\)</span> is a minimal element of <span class="math inline">\(S\)</span>.</li>
+</ol>
+</div>
+<p>Sometimes it’s convenient to construct proofs by induction based on the well ordering principle. They often take the flavor of contradiction. We’ll explore this method for the prime factorization principle:</p>
+<div id="exm-factorization-existence" class="example theorem">
+<p><span class="theorem-title"><strong>Example 8</strong></span> Every natural number <span class="math inline">\(n&gt;1\)</span> can be written as a product of primes.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose some number greater than 1 is <em>not</em> the product of primes, and let <span class="math inline">\(n\)</span> be the smallest such counterexample, by the well ordering principle. If <span class="math inline">\(n\)</span> were prime, it would be trivially a product of one prime, so <span class="math inline">\(n=ab\)</span>, where <span class="math inline">\(1&lt;a&lt;n\)</span> and <span class="math inline">\(1&lt;b&lt;n\)</span>. Since <span class="math inline">\(n\)</span> is minimal, both <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are products of primes. Then those products can be assembled into a prime factorization of <span class="math inline">\(n\)</span>. This contradiction shows that every number is a product of primes.</p>
+</div>
+
+
 </section>
 </section>
 

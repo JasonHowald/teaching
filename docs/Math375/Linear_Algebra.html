@@ -224,13 +224,13 @@ window.Quarto = {
   <li><a href="#mn-matrix-times-matrix-1" id="toc-mn-matrix-times-matrix-1" class="nav-link" data-scroll-target="#mn-matrix-times-matrix-1"><span class="header-section-number">4.2.6</span> MN, Matrix times Matrix</a></li>
   <li><a href="#keeping-it-organized-unifying-principles" id="toc-keeping-it-organized-unifying-principles" class="nav-link" data-scroll-target="#keeping-it-organized-unifying-principles"><span class="header-section-number">4.2.7</span> Keeping it organized – unifying principles</a></li>
   </ul></li>
-  <li><a href="#individual-exercises-due-2024-10-14" id="toc-individual-exercises-due-2024-10-14" class="nav-link" data-scroll-target="#individual-exercises-due-2024-10-14"><span class="header-section-number">4.3</span> Individual Exercises (Due 2024-10-14)</a></li>
+  <li><a href="#individual-exercises-2" id="toc-individual-exercises-2" class="nav-link" data-scroll-target="#individual-exercises-2"><span class="header-section-number">4.3</span> Individual Exercises</a></li>
   <li><a href="#zero-based-vs-one-based-indexing." id="toc-zero-based-vs-one-based-indexing." class="nav-link" data-scroll-target="#zero-based-vs-one-based-indexing."><span class="header-section-number">4.4</span> Zero-based vs One-based indexing.</a></li>
   <li><a href="#proofs-of-algebraic-properties" id="toc-proofs-of-algebraic-properties" class="nav-link" data-scroll-target="#proofs-of-algebraic-properties"><span class="header-section-number">4.5</span> Proofs of algebraic properties</a>
   <ul class="collapse">
-  <li><a href="#associativity" id="toc-associativity" class="nav-link" data-scroll-target="#associativity"><span class="header-section-number">4.5.1</span> Associativity</a></li>
+  <li><a href="#additive-commutativity" id="toc-additive-commutativity" class="nav-link" data-scroll-target="#additive-commutativity"><span class="header-section-number">4.5.1</span> Additive Commutativity</a></li>
   <li><a href="#distribution-i" id="toc-distribution-i" class="nav-link" data-scroll-target="#distribution-i"><span class="header-section-number">4.5.2</span> Distribution I</a></li>
-  <li><a href="#distribution-ii-individual-exercise-due-2023-10-20" id="toc-distribution-ii-individual-exercise-due-2023-10-20" class="nav-link" data-scroll-target="#distribution-ii-individual-exercise-due-2023-10-20"><span class="header-section-number">4.5.3</span> Distribution II (Individual Exercise, due 2023-10-20)</a></li>
+  <li><a href="#multiplicative-associativity" id="toc-multiplicative-associativity" class="nav-link" data-scroll-target="#multiplicative-associativity"><span class="header-section-number">4.5.3</span> Multiplicative Associativity</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#matrix-algebra-a-deeper-look" id="toc-matrix-algebra-a-deeper-look" class="nav-link" data-scroll-target="#matrix-algebra-a-deeper-look"><span class="header-section-number">5</span> Matrix Algebra, a deeper look</a>
@@ -343,7 +343,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><em>There are other sorts of things, besides numbers, which can be represented abstractly (e.g., “x”), added, multiplied, put in equations, and found to satisfy algebraic laws.</em></p>
 </blockquote>
-<p><strong>Example – Numbers modulo 12:</strong> The numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, excluding all other numbers, form a closed system which admits a form of addition modulo 12 (<span class="math inline">\(3+4=7\)</span>, <span class="math inline">\(8+9=5\)</span>) and multiplication modulo 12 (<span class="math inline">\(3*2=6\)</span>, <span class="math inline">\(4*5=8\)</span>), permits equation solving (<span class="math inline">\(x+5=3\)</span> so <span class="math inline">\(x=3-5 = 10\)</span>), and obeys basic algebraic laws.</p>
+<p>:::{#exm-modulo-12 .example} <strong>(Numbers modulo 12)</strong> The numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, excluding all other numbers, form a closed system which admits a form of addition modulo 12 (<span class="math inline">\(3+4=7\)</span>, <span class="math inline">\(8+9=5\)</span>) and multiplication modulo 12 (<span class="math inline">\(3*2=6\)</span>, <span class="math inline">\(4*5=8\)</span>), permits equation solving (<span class="math inline">\(x+5=3\)</span> so <span class="math inline">\(x=3-5 = 10\)</span>), and obeys basic algebraic laws.</p>
 <p>Thus, the second word of Linear Algebra describes the methodology of algebraic manipulation of unknown quantities, particularly to solve equations, with the understanding that the objects of the equations might not be numbers.</p>
 <p>The word “Linear,” taken literally, refers to the type of equations involved – a <strong>linear equation</strong> such as <span class="math inline">\(3x+5y+7z=12\)</span> is one in which every term is either a constant or a constant times a variable, and the terms are simply added or subtracted. Taken more suggestively, “linear” refers more broadly to the topic of study. “Linear” means we study vectors and matrices.</p>
 </section>
@@ -745,7 +745,7 @@ The tensor, or outer product is also simple but very different. To multiply <spa
 2 &amp; 2 &amp; 4 &amp; 4 &amp; -6 &amp; 10 \\
 4 &amp; 4 &amp; 8 &amp; 8 &amp; -12 &amp; 20 \\ \end{array} \]</span> <strong>Subtract:</strong> <span class="math display">\[ \begin{bmatrix} \class{matrix-anchor}{3} &amp; 6 &amp; 6 &amp; -9 &amp; 15 \\ -3 &amp; -6 &amp; -6 &amp; 11 &amp; 5 \\ 2 &amp; 4 &amp; 4 &amp; -5 &amp; 20 \\ 2 &amp; 4 &amp; 9 &amp; -14 &amp; 45 \\ 4 &amp; 8 &amp; 14 &amp; -21 &amp; 68 \end{bmatrix} - \left[\begin{matrix}3 &amp; 6 &amp; 6 &amp; -9 &amp; 15\\-3 &amp; -6 &amp; -6 &amp; 9 &amp; -15\\2 &amp; 4 &amp; 4 &amp; -6 &amp; 10\\2 &amp; 4 &amp; 4 &amp; -6 &amp; 10\\4 &amp; 8 &amp; 8 &amp; -12 &amp; 20\end{matrix}\right] = \left[\begin{matrix}0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 2 &amp; 20\\0 &amp; 0 &amp; 0 &amp; 1 &amp; 10\\0 &amp; 0 &amp; 5 &amp; -8 &amp; 35\\0 &amp; 0 &amp; 6 &amp; -9 &amp; 48\end{matrix}\right] \]</span></p>
 <hr>
-<p>Continue with anchor <span class="math inline">\(5\)</span>. It’s the highest nonzero entry in the leftmost nonzero row.</p>
+<p>Continue with anchor <span class="math inline">\(5\)</span>. It’s the highest nonzero entry in the leftmost nonzero column.</p>
 <p><strong>Construct the Outer Product:</strong> <span class="math display">\[ \begin{array}{c|ccccc}  &amp; 0 &amp; 0 &amp; \boxed{1} &amp; - \frac{8}{5} &amp; 7 \\ \hline
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -765,7 +765,7 @@ The tensor, or outer product is also simple but very different. To multiply <spa
 <p><span class="math display">\[\left[\begin{matrix}3 &amp; 6 &amp; 6 &amp; -9 &amp; 15\\-3 &amp; -6 &amp; -6 &amp; 11 &amp; 5\\2 &amp; 4 &amp; 4 &amp; -5 &amp; 20\\2 &amp; 4 &amp; 9 &amp; -14 &amp; 45\\4 &amp; 8 &amp; 14 &amp; -21 &amp; 68\end{matrix}\right] = \begin{bmatrix}\boxed{3}&amp;0&amp;0 \\ -3&amp;0&amp;\boxed{2} \\2&amp;0&amp;1 \\ 2&amp;\boxed{5}&amp;0\\ 4&amp;6&amp;\frac{3}{5} \end{bmatrix} \begin{bmatrix} \boxed{1}&amp;2&amp;2&amp;-3&amp;5\\0&amp;0&amp;\boxed{1}&amp;-\frac{8}{5}&amp;7 \\ 0&amp;0&amp;0&amp;\boxed{1}&amp;10 \end{bmatrix}\]</span></p>
 <p>Here the right factor is in row echelon form. The left factor is certainly not, but it does have some commonalities. Notice that to the right of the <span class="math inline">\(\boxed{3}\)</span>, we have only zeroes. This is because our first operation completely zeroed the top row. Right of <span class="math inline">\(\boxed{5}\)</span>, we have another zero for the same reason. In summary, the left factor satisfies:</p>
 <ol type="1">
-<li>Each column has a topmost nonzero entry, which we have identified as a pivot.</li>
+<li>Each column has a topmost nonzero entry, not necessarily 1, which we have identified as a pivot.</li>
 <li>All entries to the <em>right</em> of a pivot must be zero.</li>
 </ol>
 <p>As we’ll see much later, these two features are enough to guarantee the solvability of certain important equations.</p>
@@ -877,7 +877,7 @@ a*3^2 + b*3 + c = -1\\
 \end{bmatrix}
 \]</span></p>
 <p>Let’s cheat a bit and get the computer to row reduce:</p>
-<div id="b48b4fe4" class="cell" data-execution_count="4">
+<div id="cfbaf6e3" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>],[<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>]])</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>M.rref()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -895,7 +895,7 @@ c = -7\\
 \]</span></p>
 <p>which leaves no mystery. The function is <span class="math inline">\(f(x) = -3x^2 + 11x -7\)</span>.</p>
 <p>As a check on our work, we’ll code the function and evaluate at the key x values:</p>
-<div id="c30952af" class="cell" data-execution_count="5">
+<div id="0650026b" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>x<span class="op">*</span>x <span class="op">+</span> <span class="dv">11</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">7</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>f(<span class="dv">1</span>),f(<span class="dv">2</span>),f(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -928,7 +928,7 @@ v &amp;&amp; - x&amp;&amp; &amp;= &amp;  0\\
 <p>We convert to matrix form:</p>
 <p><span class="math display">\[M = \begin{bmatrix}1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0 &amp; -1 &amp; 0 &amp; 0\\0 &amp; -3 &amp; 4 &amp; 2 &amp; 1 &amp; 0\\0 &amp; -1 &amp; 2 &amp; 0 &amp; 2 &amp; 0\end{bmatrix}\]</span></p>
 <p>We use Gauss-Jordan elimination to convert to reduced row echelon form, or rather we make the computer do it:</p>
-<div id="efb3274d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:98}}" data-execution_count="6">
+<div id="df4c0751" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:98}}" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>]])</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>M.rref()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -937,15 +937,15 @@ v &amp;&amp; - x&amp;&amp; &amp;= &amp;  0\\
 </div>
 </div>
 <p>… and convert back to equations:</p>
-<span class="math display">\[\begin{matrix}
+<p><span class="math display">\[\begin{matrix}
 v = z/2\\
 w = 3z\\
 x = z/2\\
 y = 3z\\
-\end{matrix}\]</span>
+\end{matrix}
+\]</span></p>
 <p>As before, a solution can be found for any conceivable choice of z, even <span class="math inline">\(z=0\)</span>. (To be fair, <span class="math inline">\(z=0\)</span> represents the usual amount of nitric acid being converted to sulphuric acid in any given test tube!) But we want a nontrivial solution without half-atoms, so we choose <span class="math inline">\(z=2\)</span>. This gives the balanced reaction equation:</p>
-<p><span class="math display">\[1 S + 6 HNO_3 \to
-1 H_2SO_4 + 6 NO_2 + 2 H_2O\]</span></p>
+<p><span class="math display">\[1 S + 6 HNO_3 \to 1 H_2SO_4 + 6 NO_2 + 2 H_2O\]</span></p>
 <p>It’s worth checking that each side of the equation has 1 S, 6 N, 18 O, and 6 H.</p>
 </div>
 </section>
@@ -987,7 +987,7 @@ y = 3z\\
 </div>
 <div id="exr-SLE-reaction-phosphoric" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 19</strong></span> Fill in the blanks to balance the reaction:</p>
-<p><span class="math display">\[\underline{\hspace{1cm}} \ce{H3PO4} + \underline{\hspace{1cm}} \ce{Ca(OH)2 -&gt;} \underline{\hspace{1cm}} \ce{Ca3(PO4)2} + \underline{\hspace{1cm}} \ce{H2O}\]</span></p>
+<p><span class="math display">\[\underline{\hspace{1cm}} {H_3PO_4} + \underline{\hspace{1cm}} {Ca(OH)_2 \to } \underline{\hspace{1cm}} {Ca_3(PO_4)_2} + \underline{\hspace{1cm}} {H_2O}\]</span></p>
 <ol type="1">
 <li>Write an equation for each element (hydrogen, phosphorus, oxygen, calcium).</li>
 <li>Compile these equations into augmented matrix form. Your matrix should be <span class="math inline">\(4 \times 5\)</span> and homogeneous.</li>
@@ -1004,15 +1004,7 @@ y = 3z\\
 <section id="the-geometry-of-vectors" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> The Geometry of Vectors</h1>
 <p>In this section we take the physicist’s perspective that a vector <span class="math inline">\(v=[3,4]\)</span> is not merely a short list of numbers, but a quantity with direction and magnitude. We think of vectors either as locations in the x-y plane, or as directed arrows, from the origin to that location. So vectors “look like” arrows in 2D or 3D space:</p>
-<div id="a54df277" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#This code draws the figure below. Ignore the code. Enjoy the picture!</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.array([[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">6</span>]])</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.quiver([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>],[<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>], V[:,<span class="dv">0</span>], V[:,<span class="dv">1</span>], color<span class="op">=</span>[<span class="st">'b'</span>,<span class="st">'black'</span>,<span class="st">'g'</span>], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'scaled'</span>), plt.xlim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.ylim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.title(<span class="st">"Three vectors in the plane"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2324bc77" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1028,13 +1020,7 @@ y = 3z\\
 <p>How does geometry help us understand vector operations? How does linear algebra help us understand geometric relationships?</p>
 <p><strong>Question 1:</strong> How is <span class="math inline">\(v+w\)</span> geometrically predicted from <span class="math inline">\(v\)</span> and <span class="math inline">\(w\)</span>? Suppose we have vectors <span class="math inline">\(v = [3,4]\)</span>, <span class="math inline">\(w = [1,-6]\)</span>, and their sum <span class="math inline">\(v+w = [4, -2]\)</span>. What is their geometric relationship?</p>
 <p>If we starting from <span class="math inline">\([0,0]\)</span>, we can move 3 units right and 4 up, arriving at v. If <em>from there</em> we move 1 unit right and 6 down, we will arrive at <span class="math inline">\([4,-2]\)</span>. This suggests we need to redraw <span class="math inline">\(w\)</span> so that its base point is at the endpoint of <span class="math inline">\(v\)</span>, then follow it. If we’ve do this we have a triangle rule for vector sum:</p>
-<div id="15b8db4a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.array([[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">6</span>],[<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">6</span>]])</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.quiver([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">3</span>],[<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">4</span>], V[:,<span class="dv">0</span>], V[:,<span class="dv">1</span>], color<span class="op">=</span>[<span class="st">'g'</span>,<span class="st">'b'</span>,<span class="st">'r'</span>,<span class="st">'b'</span>], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'scaled'</span>), plt.xlim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.ylim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.title(<span class="st">"Sum of two vectors (triangle view)"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">3.1</span>,<span class="fl">4.1</span>,<span class="st">'v'</span>,color<span class="op">=</span><span class="st">'g'</span>), plt.text(<span class="dv">1</span>,<span class="op">-</span><span class="fl">6.4</span>,<span class="st">'w'</span>,color<span class="op">=</span><span class="st">'b'</span>),plt.text(<span class="fl">4.2</span>,<span class="op">-</span><span class="fl">2.1</span>,<span class="st">'v+w'</span>,color<span class="op">=</span><span class="st">'r'</span>),</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="511f22d8" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1044,13 +1030,7 @@ y = 3z\\
 </div>
 </div>
 <p>But we could just as well have transported <span class="math inline">\(v\)</span> to the head of the vector <span class="math inline">\(w\)</span>. If we do this, which leads us to the “parallelogram rule”, because it creates a parallelogram in red and blue:</p>
-<div id="c85018d9" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.array([[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">6</span>],[<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">6</span>],[<span class="dv">3</span>,<span class="dv">4</span>]])</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.quiver([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">1</span>],[<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">6</span>], V[:,<span class="dv">0</span>], V[:,<span class="dv">1</span>], color<span class="op">=</span>[<span class="st">'g'</span>,<span class="st">'b'</span>,<span class="st">'r'</span>,<span class="st">'b'</span>,<span class="st">'g'</span>], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'scaled'</span>), plt.xlim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.ylim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.title(<span class="st">"Sum of two vectors (parallelogram view)"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">3.1</span>,<span class="fl">4.1</span>,<span class="st">'v'</span>,color<span class="op">=</span><span class="st">'g'</span>), plt.text(<span class="dv">1</span>,<span class="op">-</span><span class="fl">6.4</span>,<span class="st">'w'</span>,color<span class="op">=</span><span class="st">'b'</span>),plt.text(<span class="fl">4.2</span>,<span class="op">-</span><span class="fl">2.1</span>,<span class="st">'v+w'</span>,color<span class="op">=</span><span class="st">'r'</span>),</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d2657ce0" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1063,13 +1043,7 @@ y = 3z\\
 <section id="difference-of-vectors-modified-triangle" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="difference-of-vectors-modified-triangle"><span class="header-section-number">3.1.2</span> Difference of vectors – modified triangle</h3>
 <p>If <span class="math inline">\(v+w\)</span> is best pictured by transporting the tail of <span class="math inline">\(w\)</span> to the head of <span class="math inline">\(v\)</span>, what about <span class="math inline">\(v-w\)</span>? We already know that <span class="math inline">\((v-w)+w = v\)</span>, so it follow that <span class="math inline">\((v-w)\)</span> is the vector which, when placed at the head of <span class="math inline">\(w\)</span>, reaches to <span class="math inline">\(v\)</span>. That is, simply connect the head of <span class="math inline">\(w\)</span> to the head of <span class="math inline">\(v\)</span>:</p>
-<div id="01a5bb9a" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.array([[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">6</span>],[<span class="dv">2</span>,<span class="dv">10</span>]])</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.quiver([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>],[<span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">6</span>], V[:,<span class="dv">0</span>], V[:,<span class="dv">1</span>], color<span class="op">=</span>[<span class="st">'g'</span>,<span class="st">'b'</span>,<span class="st">'r'</span>], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'scaled'</span>), plt.xlim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.ylim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.title(<span class="st">"Difference of two vectors (triangle view)"</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">3.1</span>,<span class="fl">4.1</span>,<span class="st">'v'</span>,color<span class="op">=</span><span class="st">'g'</span>), plt.text(<span class="dv">1</span>,<span class="op">-</span><span class="fl">6.4</span>,<span class="st">'w'</span>,color<span class="op">=</span><span class="st">'b'</span>),plt.text(<span class="dv">3</span>,<span class="fl">2.1</span>,<span class="st">'v-w'</span>,color<span class="op">=</span><span class="st">'r'</span>),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a0820b41" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1082,13 +1056,7 @@ y = 3z\\
 <section id="scalar-multiple" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="scalar-multiple"><span class="header-section-number">3.1.3</span> Scalar Multiple</h3>
 <p>Multiplying <span class="math inline">\(v\)</span> by a scalar multiple has a simple geometry – just scale the length and leave the direction unchanged. If the scalar is negative, the direction reverses.</p>
-<div id="60964709" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.array([[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>],[<span class="dv">6</span>,<span class="dv">8</span>],[<span class="fl">1.5</span>,<span class="dv">2</span>]])</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.quiver([<span class="dv">0</span>, <span class="fl">0.2</span>, <span class="fl">.4</span>, <span class="fl">.6</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>], V[:,<span class="dv">0</span>], V[:,<span class="dv">1</span>], color<span class="op">=</span>[<span class="st">'g'</span>,<span class="st">'r'</span>,<span class="st">'r'</span>,<span class="st">'r'</span>], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'scaled'</span>), plt.xlim(<span class="op">-</span><span class="dv">9</span>, <span class="dv">9</span>), plt.ylim(<span class="op">-</span><span class="dv">9</span>, <span class="dv">9</span>), plt.title(<span class="st">"Scalar multiples of (3,4)"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">2.9</span>,<span class="fl">4.3</span>,<span class="st">'v'</span>,color<span class="op">=</span><span class="st">'g'</span>), plt.text(<span class="fl">6.1</span>,<span class="fl">8.1</span>,<span class="st">'2v'</span>,color<span class="op">=</span><span class="st">'r'</span>),plt.text(<span class="fl">2.2</span>,<span class="fl">2.1</span>,<span class="st">'.5v'</span>,color<span class="op">=</span><span class="st">'r'</span>),plt.text(<span class="op">-</span><span class="fl">3.1</span>,<span class="op">-</span><span class="fl">4.5</span>,<span class="st">'(-1)v'</span>,color<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9f2e7a40" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1106,19 +1074,13 @@ y = 3z\\
 <p>You probably know the <strong>Pythagorean Theorem:</strong></p>
 <p>In a right triangle with legs <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> and hypotenuse <span class="math inline">\(c\)</span>, <span class="math display">\[c^2 = a^2 + b^2\]</span></p>
 <p>This theorem applies to any triangle whose angle at <span class="math inline">\(C\)</span> (labeled <span class="math inline">\(\gamma\)</span>) is <strong>right</strong> (i.e., <span class="math inline">\(90^\circ\)</span>).</p>
-<p><img height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Triangle_with_notations_2.svg/440px-Triangle_with_notations_2.svg.png"></p>
+<p><img height="200" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Triangle_with_notations_2.svg"></p>
 <p>(Image source: Wikipedia)</p>
 <p>Less well known is the <strong>Law of Cosines</strong>, which adds a correction term and works even when the angle is not right:</p>
 <p><span class="math display">\[c^2 = a^2 + b^2 - 2ab \cos(\gamma)\]</span></p>
 <p>The proof is pretty easy using the Pythagorean Theorem itself and a bit of trigonometry. See the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of Cosines on Wikipedia</a></p>
 <p>What does all this have to do with vectors? A vector <span class="math inline">\(v = [3,4]\)</span> records a horizontal displacement (3 right) and a vertical displacement (4 up), which are always perpendicular. The Pythagorean theorem applies to the triangle made up of these individual displacements:</p>
-<div id="12e98ef2" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.array([[<span class="dv">3</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">4</span>],[<span class="dv">3</span>,<span class="dv">4</span>]])</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.quiver([<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>],[<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,], V[:,<span class="dv">0</span>], V[:,<span class="dv">1</span>], color<span class="op">=</span>[<span class="st">'g'</span>,<span class="st">'b'</span>,<span class="st">'r'</span>], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'scaled'</span>), plt.xlim(<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>), plt.ylim(<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>), plt.title(<span class="st">"Any vector makes a right triangle"</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">1.5</span>,<span class="op">-</span><span class="fl">.4</span>,<span class="st">'a = 3'</span>,color<span class="op">=</span><span class="st">'g'</span>), plt.text(<span class="fl">3.4</span>,<span class="dv">2</span>,<span class="st">'b=4'</span>,color<span class="op">=</span><span class="st">'b'</span>),plt.text(<span class="fl">0.8</span>,<span class="fl">2.3</span>,<span class="st">'c = |v|'</span>,color<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="04549c78" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1138,25 +1100,11 @@ y = 3z\\
 <section id="dot-product-angle-and-perpendicularity" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="dot-product-angle-and-perpendicularity"><span class="header-section-number">3.2.2</span> Dot product, angle, and perpendicularity</h3>
 <p><strong>Recall:</strong> Any two vectors <span class="math inline">\(v\)</span> and <span class="math inline">\(w\)</span> extending from the origin form two sides of a triangle whose third side is <span class="math inline">\(v-w\)</span>.</p>
-<div id="4df649b4" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.array([[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">6</span>],[<span class="dv">2</span>,<span class="dv">10</span>]])</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.quiver([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>],[<span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">6</span>], V[:,<span class="dv">0</span>], V[:,<span class="dv">1</span>], color<span class="op">=</span>[<span class="st">'g'</span>,<span class="st">'b'</span>,<span class="st">'r'</span>], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'scaled'</span>), plt.xlim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.ylim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">7</span>), plt.title(<span class="st">"Triangle view of vector difference, with lengths"</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">3.1</span>,<span class="fl">4.1</span>,<span class="st">'v'</span>,color<span class="op">=</span><span class="st">'g'</span>), plt.text(<span class="dv">1</span>,<span class="op">-</span><span class="fl">6.4</span>,<span class="st">'w'</span>,color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">1.0</span>,<span class="fl">2.4</span>,<span class="st">'|v|'</span>,color<span class="op">=</span><span class="st">'g'</span>), plt.text(<span class="op">-</span><span class="fl">.5</span>,<span class="op">-</span><span class="dv">3</span>,<span class="st">'|w|'</span>,color<span class="op">=</span><span class="st">'b'</span>),plt.text(<span class="fl">2.4</span>,<span class="op">-</span><span class="dv">1</span>,<span class="st">'|v-w|'</span>,color<span class="op">=</span><span class="st">'r'</span>),</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">.4</span>,<span class="op">-</span><span class="fl">.2</span>,<span class="st">'$</span><span class="er">\</span><span class="st">gamma$'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\g'
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\g'
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_31572/2359030132.py:7: SyntaxWarning: invalid escape sequence '\g'
-  plt.text(.4,-.2,'$\gamma$',color='black')</code></pre>
-</div>
+<div id="44fff594" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Linear_Algebra_files/figure-html/cell-14-output-2.png" width="420" height="431" class="figure-img"></p>
+<p><img src="Linear_Algebra_files/figure-html/cell-14-output-1.png" width="420" height="431" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1249,44 +1197,73 @@ y = 3z\\
 <li><span class="math inline">\((4 \times 5)*(5 \times 7)\)</span> Go for it. Five matches 5.</li>
 <li><span class="math inline">\((4 \times 5)*(4 \times 7)\)</span> Forget it.</li>
 </ul>
-<p>For example, to remember the formula for <span class="math inline">\((MN)_{ij}\)</span>, we say &gt; Well, it’s a dot product style multiplication, so put a summation with a new variable, say <span class="math inline">\(k\)</span>. Then <span class="math inline">\(k\)</span> has to appear on both <span class="math inline">\(M\)</span> and <span class="math inline">\(N\)</span>, as close together as possible (second index of <span class="math inline">\(M\)</span> and first of <span class="math inline">\(N\)</span>). This leaves two positions for the <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, which anyway can’t trade places, so I guess it’s <span class="math inline">\(\sum_k M_{ik}N_{kj}\)</span>.</p>
+<p>For example, to remember the formula for <span class="math inline">\((MN)_{ij}\)</span>, we say</p>
+<blockquote class="blockquote">
+<p>Well, it’s a dot product style multiplication, so put a summation with a new variable, say <span class="math inline">\(k\)</span>. Then <span class="math inline">\(k\)</span> has to appear on both <span class="math inline">\(M\)</span> and <span class="math inline">\(N\)</span>, as close together as possible (second index of <span class="math inline">\(M\)</span> and first of <span class="math inline">\(N\)</span>). This leaves two positions for the <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, which anyway can’t trade places, so I guess it’s <span class="math inline">\(\sum_k M_{ik}N_{kj}\)</span>.</p>
+</blockquote>
 <p>You too can be a master of subscriptology!</p>
 </section>
 </section>
-<section id="individual-exercises-due-2024-10-14" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="individual-exercises-due-2024-10-14"><span class="header-section-number">4.3</span> Individual Exercises (Due 2024-10-14)</h2>
-<ol type="1">
-<li><p>Prove that the dot product is distributive in the sense that <span class="math display">\[u.(v+w) = u.v + u.w\]</span></p></li>
-<li><p>Does the triple dot product <span class="math inline">\(u.v.w\)</span> ever make sense? Explain.</p></li>
-<li><p>Give an general expression, using summation and indices, for the length of a vector <span class="math inline">\(v\)</span>.</p></li>
-<li><p>In class we have proven the distribution law <span class="math inline">\(A(B+C)=AB+AC\)</span>. Prove the “other” distribution law: <span class="math inline">\((A+B)C = AC+BC\)</span></p></li>
-</ol>
+<section id="individual-exercises-2" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="individual-exercises-2"><span class="header-section-number">4.3</span> Individual Exercises</h2>
+<div id="exr-dot-distribution" class="exercise theorem">
+<p><span class="theorem-title"><strong>Exercise 20</strong></span> Prove that the dot product is distributive in the sense that <span class="math display">\[u.(v+w) = u.v + u.w\]</span></p>
+</div>
+<div id="exr-triple-dot" class="exercise theorem">
+<p><span class="theorem-title"><strong>Exercise 21</strong></span> Does the triple dot product <span class="math inline">\(u.v.w\)</span> ever make sense? Explain.</p>
+</div>
+<div id="exr-length-sum" class="exercise theorem">
+<p><span class="theorem-title"><strong>Exercise 22</strong></span> Give an general expression, using summation and indices, for the length of a vector <span class="math inline">\(v\)</span>.</p>
+</div>
+<div id="exr-distribution-II" class="exercise theorem">
+<p><span class="theorem-title"><strong>Exercise 23</strong></span> In class we have proven the distribution law <span class="math inline">\(A(B+C)=AB+AC\)</span>. Prove the “other” distribution law: <span class="math inline">\((A+B)C = AC+BC\)</span></p>
+</div>
 </section>
 <section id="zero-based-vs-one-based-indexing." class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="zero-based-vs-one-based-indexing."><span class="header-section-number">4.4</span> Zero-based vs One-based indexing.</h2>
 <p>Until now we’ve assumed that a subscript <span class="math inline">\(1\)</span> means the first, initial, frontmost element, and similarly <span class="math inline">\(M_{11}\)</span> means the first element of the first row. How could it be otherwise?</p>
 <p>When some early computer programming languages were invented in the 1960’s and 1970’s, language designers made a careful decision to number sequences starting from 0, so that the numbering within a list would correspond to the amount of displacement in memory from the start of the list. Almost all modern computer languages retain this policy, so that the index expression <span class="math inline">\(v[0]\)</span> is correct, and means the initial, beginning entry of the vector <span class="math inline">\(v\)</span>. Similarly, the matrix expression <span class="math inline">\(M[0,0]\)</span> or <span class="math inline">\(M[0][0]\)</span> means the initial element of the initial row, which we have called <span class="math inline">\(M_{11}\)</span>. A vector of length 4, then, can be indexed <span class="math inline">\(v[0], v[1], v[2], v[3]\)</span>, but has no <span class="math inline">\(v[4]\)</span>.</p>
-<p>Obviously, having two policies for indexing creates all sorts of confusion. First, we need to clarify which policy is active at any moment. We call them <strong>zero-based</strong> and <strong>one-based</strong> indexing. Zero-based is standard in computer science. One-based is standard everywhere else. When using zero-based indexing, we avoid the terms like “first entry” or “first row”, because “first” is ambiguous: Is it <span class="math inline">\(v_1\)</span> or <span class="math inline">\(v_0\)</span>? Some people (author included) refer to the initial entry as the “zeroeth,” but terms like “first” and “second” are nevertheless confusing and to be avoided in this context.</p>
+<p>Obviously, having two policies for indexing creates all sorts of confusion. First, we need to clarify which policy is active at any moment. We call them <strong>zero-based</strong> and <strong>one-based</strong> indexing. Zero-based is standard in computer science. One-based is standard everywhere else. When using zero-based indexing, we avoid the terms like “first entry” or “first row”, because “first” is ambiguous: Is it <span class="math inline">\(v_1\)</span> or <span class="math inline">\(v_0\)</span>? Some people (author included) refer to the initial entry as the “zeroeth.”</p>
 <p>Note that the index policy doesn’t affect dimension. A <span class="math inline">\(3 \times 3\)</span> matrix still three rows of three things, with nine elements altogether, but their labels are 0-2 instead of 1-3. Summation formulas such as <span class="math inline">\(\sum_k v_kw_k\)</span> and <span class="math inline">\(\sum_k A_{ik}B_{kj}\)</span> need adjustment, but it’s easy: Make <span class="math inline">\(k\)</span> take all possible values for that index, starting from 0 and ending “early” if necessary.</p>
-<p>It’s tempting for a student of mathematics to disparage the CS designers for causing all this fuss, but zero-based numbering is efficient, useful, internally consistent, and in some cases superior to one-based. Like Americans’ difficulty going metric, the problem is not that zero-based is hard, but that one-based is culturally dominant (across nearly the entire world!), and that the conversions are confusing.</p>
+<p>It’s tempting for a student of mathematics to disparage the CS designers for causing all this fuss, but zero-based numbering is efficient, useful, internally consistent, and in some cases superior to one-based. Like Americans’ difficulty going metric, the problem is not that zero-based is hard, but that one-based is culturally dominant (across nearly the entire world!), and conversions are confusing.</p>
 </section>
 <section id="proofs-of-algebraic-properties" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="proofs-of-algebraic-properties"><span class="header-section-number">4.5</span> Proofs of algebraic properties</h2>
-<section id="associativity" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="associativity"><span class="header-section-number">4.5.1</span> Associativity</h3>
+<p>Ordinary algebraic manipulations depend upon properties such as distribution, commutativity, associativity, etc. In the same way, matrix algebra depends on analogous properties for matrix/vector operations. We state and prove some key algebraic laws.</p>
+<ol type="1">
+<li><strong>Additive identity:</strong> <span class="math inline">\(v+\overline{0} = v\)</span>, where <span class="math inline">\(\overline{0}\)</span> is a zero vector.</li>
+<li><strong>Additive associativity:</strong> <span class="math inline">\(u+(v+w) = (u+v)+w\)</span>.</li>
+<li><strong>Additive commutativity:</strong> <span class="math inline">\(v+w = w+v\)</span> and <span class="math inline">\(M+N = N+M\)</span>.</li>
+<li><strong>Additive inverse:</strong> Every vector and matrix has an additive inverse.</li>
+<li><strong>Multiplicative Identity:</strong> <span class="math inline">\(IM = M\)</span> and <span class="math inline">\(MI = M\)</span>. See <strong>?@sec-inverse</strong></li>
+<li><strong>Multiplicative Associativity:</strong> <span class="math inline">\(A(BC) = (AB)C\)</span>.</li>
+<li><strong>Distribution I:</strong> <span class="math inline">\(A(B+C) = AB+AC\)</span>.</li>
+<li><strong>Distribution II:</strong> <span class="math inline">\((A+B)C = AC+BC\)</span>.</li>
+</ol>
+<p>These identities are true only where defined, in the sense that the matrix and vector operations can fail to be defined. Addition and multiplication only apply for suitably shaped vectors and matrices. There are several more associativity and distribution laws for matrices multiplying vectors, inner products, and outer products.</p>
+<p>Our main goal for this section is to illustrate the techniques required to prove these laws, beginning with the easiest and moving to the most difficult. In all cases, we prove an equality of matrices or vectors by proving that</p>
+<section id="additive-commutativity" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="additive-commutativity"><span class="header-section-number">4.5.1</span> Additive Commutativity</h3>
+<p>We’ll prove that <span class="math inline">\(A+B = B+A\)</span> for matrices <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> (provided that they can be added). This identity is rather obvious but illustrates the method.</p>
+<p>Now <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> can be added if they have the same shape, and in that case <span class="math inline">\(A+B\)</span> and <span class="math inline">\(B+A\)</span> share that shape. It suffices to show that every entry of <span class="math inline">\(A+B\)</span> agrees with the corresponding entry of <span class="math inline">\(B+A\)</span>. Let <span class="math inline">\(ij\)</span> be an index position. Then</p>
 <p><span class="math display">\[\begin{align*}
-(A(BC))_{ij} &amp;= \sum_{k} A_{ik}(BC)_{kj} &amp; \text{ by Defn of matrix product}\\
-&amp;=  \sum_{k} A_{ik}\left(\sum_{l} B_{kl}C_{lj}\right) &amp; \text{ by Defn of matrix product}\\
-&amp;=  \sum_{k} \sum_{l} (A_{ik} B_{kl}C_{lj}) &amp; \text{Scalar distribution across a sum} \\
-&amp;=  \sum_{l} \sum_{k}  (A_{ik} B_{kl}C_{lj}) &amp; \text{Changing summation order}\\
-&amp;=  \sum_{l} \left(\sum_{k} A_{ik} B_{kl}\right)C_{lj} &amp; \text{ Factoring} \\
-&amp;=  \sum_{l} \left((AB)_{il}\right)C_{lj} &amp; \text{Definition of matrix multiplication}\\
-&amp;=  ((AB)C)_{ij}\\
+(A + B)_{ij} &amp;= A_{ij} + B_{ij} \enspace \text{ by definition of matrix sum}\\
+&amp;= B_{ij} + A_{ij} \enspace \text{ by commutativity (see below)}\\
+&amp;= (B + A)_{ij} \enspace \text{ by definition of matrix sum}\\
 \end{align*}\]</span></p>
-<p>Because <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> were arbitrary, it follows that <span class="math inline">\(A(BC) = (AB)C\)</span></p>
+<p>Since the position <span class="math inline">\(ij\)</span> was arbitrary, we conclude <span class="math inline">\(A+B = B+A\)</span>.</p>
+<section id="notes" class="level4" data-number="4.5.1.1">
+<h4 data-number="4.5.1.1" class="anchored" data-anchor-id="notes"><span class="header-section-number">4.5.1.1</span> Notes</h4>
+<ol type="1">
+<li>Notice that we cited commutativity while proving commutativity, which may sound like an invalid circular proof. We’re proving commutativity of matrix addition, but we’re citing commutativity of ordinary real number addition.</li>
+<li>The equations above are equalities of real numbers, not matrices, because we have subscripted the matrix <span class="math inline">\(A+B\)</span>. It’s generally easier to reduce matrix equalities to real number equalities this way.</li>
+<li>The “distribution” of the index <span class="math inline">\(ij\)</span> is the definition of matrix sum.</li>
+</ol>
+</section>
 </section>
 <section id="distribution-i" class="level3" data-number="4.5.2">
 <h3 data-number="4.5.2" class="anchored" data-anchor-id="distribution-i"><span class="header-section-number">4.5.2</span> Distribution I</h3>
+<p>This case is substantially harder but we follow the same method. In order to show that <span class="math inline">\(A(B+C) = AB + AC\)</span> we check that the two matrices have the same <span class="math inline">\(ij\)</span> entry, for arbitrary position <span class="math inline">\(ij\)</span>:</p>
 <p><span class="math display">\[\begin{align}
   (A(B+C))_{ij}
   =&amp; \sum_k A_{ik} (B+C)_{kj} &amp; \text{ Def of matrix product} \\
@@ -1296,10 +1273,31 @@ y = 3z\\
   =&amp; (AB)_{ij} + (AC)_{ij} &amp; \text{ Def of matrix product} \\
   =&amp; (AB+AC)_{ij} &amp; \text{ Def of matrix sum} \\
 \end{align}\]</span></p>
+<p>Again, since <span class="math inline">\(ij\)</span> was an arbitrary position, the matrices agree at every <span class="math inline">\(ij\)</span> and are equal.</p>
+<p>The other distribution makes a good exercise for the student.</p>
 </section>
-<section id="distribution-ii-individual-exercise-due-2023-10-20" class="level3" data-number="4.5.3">
-<h3 data-number="4.5.3" class="anchored" data-anchor-id="distribution-ii-individual-exercise-due-2023-10-20"><span class="header-section-number">4.5.3</span> Distribution II (Individual Exercise, due 2023-10-20)</h3>
-<p>Prove: <span class="math inline">\((A+B)C = AC+BC\)</span></p>
+<section id="multiplicative-associativity" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="multiplicative-associativity"><span class="header-section-number">4.5.3</span> Multiplicative Associativity</h3>
+<p>Certainly the hardest of the basic matrix identities, this requires some finesse with summation, but relies on the same basic logic. We check <span class="math inline">\(ij\)</span> entry for arbitrary <span class="math inline">\(ij\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+(A(BC))_{ij} &amp;= \sum_{k} A_{ik}(BC)_{kj} &amp; \text{ Defn of matrix product}\\
+&amp;=  \sum_{k} A_{ik}\left(\sum_{l} B_{kl}C_{lj}\right) &amp; \text{ Defn of matrix product}\\
+&amp;=  \sum_{k} \sum_{l} (A_{ik} B_{kl}C_{lj}) &amp; \text{Scalar distribution across a sum} \\
+&amp;=  \sum_{l} \sum_{k}  (A_{ik} B_{kl}C_{lj}) &amp; \text{Changing summation order}\\
+&amp;=  \sum_{l} \left(\sum_{k} A_{ik} B_{kl}\right)C_{lj} &amp; \text{ Factoring} \\
+&amp;=  \sum_{l} \left((AB)_{il}\right)C_{lj} &amp; \text{Defn of matrix product}\\
+&amp;=  ((AB)C)_{ij} &amp; \text{Defn of matrix product}\\
+\end{align*}\]</span></p>
+<p>Because <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> were arbitrary, it follows that <span class="math inline">\(A(BC) = (AB)C\)</span></p>
+<section id="notes-1" class="level4" data-number="4.5.3.1">
+<h4 data-number="4.5.3.1" class="anchored" data-anchor-id="notes-1"><span class="header-section-number">4.5.3.1</span> Notes</h4>
+<ol type="1">
+<li>The subscripts are sort of the point. Zoom in and focus on them.</li>
+<li>Each term of each matrix product is expanded by means of the summation formula for <span class="math inline">\(AB\)</span>, so multiple sums appear.</li>
+<li>The first sum introduces a dummy variable <span class="math inline">\(k\)</span>. In the context of the second summation, <span class="math inline">\(k\)</span> is already defined and the new dummy variable must use a different letter. This is why we have <span class="math inline">\(\sum_l\)</span>.</li>
+<li>A term may be factored out of a summation <span class="math inline">\(sum\)</span> sign, but only when it does not depend on the summation index. So for example we could factor <span class="math inline">\(A_{ij}\)</span> out of <span class="math inline">\(\sum_{l} (A_{ik} B_{kl}C_{lj})\)</span>, or <span class="math inline">\(C_{lj}\)</span> out of <span class="math inline">\(\sum_{k} (A_{ik} B_{kl}C_{lj})\)</span>, but not vice versa. The term <span class="math inline">\(B_{kl}\)</span> could not be factored from either summation. This is one reason for interchanging the summation signs.</li>
+</ol>
+</section>
 </section>
 </section>
 </section>
@@ -1341,14 +1339,11 @@ y = 3z\\
 =
 \begin{bmatrix}12 \\ 24 \\ 36\end{bmatrix}
 \]</span> …or… <span class="math display">\[Mv=b \]</span></p>
-where of course $ M =
-<span class="math display">\[\begin{bmatrix} 1 &amp; 2 &amp; 3 \\
+<p>where of course</p>
+<p><span class="math display">\[M = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\
 4 &amp; 5 &amp; 6  \\
 7 &amp; 8 &amp; 9
-\end{bmatrix}\]</span>
-$ and $b =
-<span class="math display">\[\begin{bmatrix}12 \\ 24 \\ 36\end{bmatrix}\]</span>
-<p>$</p>
+\end{bmatrix} \enspace \text{ and } \enspace b =  \begin{bmatrix}12 \\ 24 \\ 36\end{bmatrix} \]</span></p>
 <p>We have converted a <span class="math inline">\(3 \times 3\)</span> SLE to a single matrix equation involving a <span class="math inline">\(3 \times 3\)</span> matrix and a length <span class="math inline">\(3\)</span> vector.</p>
 <p><strong>Why is that better?</strong></p>
 <p>If our only goal is to find <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span>, our new conversion doesn’t help much. We should have gone ahead with row reduction.</p>
@@ -1366,7 +1361,7 @@ $ and $b =
 <li><p>Multiply both sides by the multiplicative inverse:</p></li>
 </ol>
 <p><span class="math display">\[\frac14 (4x) = \frac14 20\]</span></p>
-<p>Notice the parentheses: 4x was multiplied originally. The fraction <span class="math inline">\(\frac14\)</span> came later.</p>
+<p>Notice the parentheses: <span class="math inline">\(4x\)</span> was multiplied originally. The fraction <span class="math inline">\(\frac14\)</span> came later.</p>
 <ol start="3" type="1">
 <li>Reassociate (move parentheses):</li>
 </ol>
@@ -1394,8 +1389,8 @@ $ and $b =
 <p><span class="math display">\[Mv = b\]</span> <span class="math display">\[N(Mv)=Nb\]</span> <span class="math display">\[(NM)v=Nb\]</span> <span class="math display">\[Iv=Nb\]</span> <span class="math display">\[v=Nb\]</span></p>
 <p>as desired. This is not “division by <span class="math inline">\(M\)</span>”, but it’s the next best thing.</p>
 </section>
-<section id="identity-matrix" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="identity-matrix"><span class="header-section-number">5.4</span> Identity Matrix</h2>
+<section id="identity-matrix" class="level2 sec-identity" data-number="5.4">
+<h2 class="sec-identity anchored" data-number="5.4" data-anchor-id="identity-matrix"><span class="header-section-number">5.4</span> Identity Matrix</h2>
 </section>
 <section id="inverse-left-inverse-and-right-inverse" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="inverse-left-inverse-and-right-inverse"><span class="header-section-number">5.5</span> Inverse, Left Inverse, and Right Inverse</h2>
@@ -1481,17 +1476,17 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <p>This matrix has no left inverse, but has a right inverse, namely <span class="math display">\[N =
 \begin{bmatrix}- \frac{17}{18} &amp; \frac{4}{9}\\- \frac{1}{9} &amp; \frac{1}{9}\\\frac{13}{18} &amp; - \frac{2}{9}\end{bmatrix}\]</span></p>
 <p>The solution <span class="math inline">\(v = Nb = \left[\begin{matrix}10/3\\10/3\\10/3\end{matrix}\right]\)</span> is definitely a solution (reader should check!), but there may be others. In fact it’s not hard to verify that <span class="math inline">\([0,10,0]\)</span> is another solution.</p>
-<div id="cb3f5f11" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Supporting code for previous examples</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]])</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#A clever trick we haven't learned calculates the right inverse:</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> sp.transpose(M)<span class="op">*</span>(M<span class="op">*</span>sp.transpose(M)).inv()</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>M<span class="op">*</span>N <span class="co">#Verify identity</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(N))</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sp.Matrix([<span class="dv">20</span>,<span class="dv">50</span>])</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(N<span class="op">*</span>b)) <span class="co">#Solution.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2562378e" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Supporting code for previous examples</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]])</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#A clever trick we haven't learned calculates the right inverse:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> sp.transpose(M)<span class="op">*</span>(M<span class="op">*</span>sp.transpose(M)).inv()</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>M<span class="op">*</span>N <span class="co">#Verify identity</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(N))</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sp.Matrix([<span class="dv">20</span>,<span class="dv">50</span>])</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(N<span class="op">*</span>b)) <span class="co">#Solution.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>\left[\begin{matrix}- \frac{17}{18} &amp; \frac{4}{9}\\- \frac{1}{9} &amp; \frac{1}{9}\\\frac{13}{18} &amp; - \frac{2}{9}\end{matrix}\right]
 \left[\begin{matrix}\frac{10}{3}\\\frac{10}{3}\\\frac{10}{3}\end{matrix}\right]</code></pre>
@@ -1514,31 +1509,31 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 \left[\begin{matrix}\frac{40}{9}\\\frac{86}{9}\\\frac{92}{9}\end{matrix}\right]
 \]</span></p>
 <p>which is assuredly <strong>not</strong> a solution to our original equation. What gives? the left inverse strategy only guarantees us that <span class="math inline">\(v = Mb\)</span> is the correct solution if a solution exists, which in this case it doesn’t. Our solution strategy yields a failed <span class="math inline">\(v\)</span>, but our effort isn’t meaningless. Notice how close it is to being correct. For example, <span class="math inline">\(92/9\)</span> is very nearly the <span class="math inline">\(10\)</span> we expected. <span class="math inline">\(Mv\)</span> is not <span class="math inline">\(b\)</span> but it’s as close as possible for this problem. This advantage depends on hidden details about how we chose to calculate a left inverse of <span class="math inline">\(M\)</span>. We’ll return to these ideas much later.</p>
-<div id="1e3dbb1c" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Find a (candidate) solution via left inverse</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">1</span>,<span class="dv">4</span>],[<span class="dv">0</span>,<span class="dv">4</span>]])</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> (sp.transpose(M)<span class="op">*</span>M).inv()<span class="op">*</span>sp.transpose(M)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print(sp.latex(N))</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sp.Matrix([<span class="dv">4</span>,<span class="dv">10</span>,<span class="dv">10</span>])</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> N<span class="op">*</span>b</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(M<span class="op">*</span>v))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5d0c4e71" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Find a (candidate) solution via left inverse</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">1</span>,<span class="dv">4</span>],[<span class="dv">0</span>,<span class="dv">4</span>]])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> (sp.transpose(M)<span class="op">*</span>M).inv()<span class="op">*</span>sp.transpose(M)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print(sp.latex(N))</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sp.Matrix([<span class="dv">4</span>,<span class="dv">10</span>,<span class="dv">10</span>])</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> N<span class="op">*</span>b</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(M<span class="op">*</span>v))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>\left[\begin{matrix}\frac{40}{9}\\\frac{86}{9}\\\frac{92}{9}\end{matrix}\right]</code></pre>
 </div>
 </div>
-<div id="856bb9e9" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Verify the distance claim for pseudoinverse in a neighborhood of solution</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="fl">.01</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.arange(<span class="dv">2</span>,<span class="dv">3</span>,<span class="fl">.01</span>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dist(x,y):</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  err <span class="op">=</span> M<span class="op">*</span>sp.Matrix([x,y]) <span class="op">-</span> b</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="bu">float</span>(err[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="bu">float</span>(err[<span class="dv">1</span>])<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="bu">float</span>(err[<span class="dv">2</span>])<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="fl">.5</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>([dist(x,y)  <span class="cf">for</span> x <span class="kw">in</span> X <span class="cf">for</span> y <span class="kw">in</span> Y]), dist(<span class="op">-</span><span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">23</span><span class="op">/</span><span class="dv">9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ccd614fd" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Verify the distance claim for pseudoinverse in a neighborhood of solution</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="fl">.01</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.arange(<span class="dv">2</span>,<span class="dv">3</span>,<span class="fl">.01</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dist(x,y):</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  err <span class="op">=</span> M<span class="op">*</span>sp.Matrix([x,y]) <span class="op">-</span> b</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="bu">float</span>(err[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="bu">float</span>(err[<span class="dv">1</span>])<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="bu">float</span>(err[<span class="dv">2</span>])<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="fl">.5</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>([dist(x,y)  <span class="cf">for</span> x <span class="kw">in</span> X <span class="cf">for</span> y <span class="kw">in</span> Y]), dist(<span class="op">-</span><span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">23</span><span class="op">/</span><span class="dv">9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>(0.6669332800213212, 0.6666666666666661)</code></pre>
 </div>
@@ -1557,16 +1552,16 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <p><span class="math display">\[v = Nb = \left[\begin{matrix}5\\-5\end{matrix}\right]\]</span></p>
 <p>Because the inverse is two-sided, we may trust that this solution is both correct and unique.</p>
 <p>Certainly the two-sided inverse is most convenient. It’s also the least likely to exist! We’ll prove later that only square matrices can have two-sided inverses, and not even all of those.</p>
-<div id="3d061d24" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Solve previous problem</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">6</span>,<span class="dv">5</span>],[<span class="dv">5</span>,<span class="dv">3</span>]])</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sp.Matrix([<span class="dv">5</span>,<span class="dv">10</span>])</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> M.inv()</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> N<span class="op">*</span>b</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(N))</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(v))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="74f0002a" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Solve previous problem</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">6</span>,<span class="dv">5</span>],[<span class="dv">5</span>,<span class="dv">3</span>]])</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> sp.Matrix([<span class="dv">5</span>,<span class="dv">10</span>])</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> M.inv()</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> N<span class="op">*</span>b</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(N))</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sp.latex(v))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>\left[\begin{matrix}- \frac{3}{7} &amp; \frac{5}{7}\\\frac{5}{7} &amp; - \frac{6}{7}\end{matrix}\right]
 \left[\begin{matrix}5\\-5\end{matrix}\right]</code></pre>
@@ -1579,11 +1574,11 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <p>In this section we’ll showcase two strategies for calculating a two-sided inverse of a matrix, if it exists.</p>
 <p><strong>By computer</strong></p>
 <p>The first and fastest is to make the computer do it. There are thousands of computational options, but we’ll focus on using Python within colab. You just need to know the right syntax. First we create a sympy matrix, then we invoke the .inv() method to invert it. This will throw a “<code>NonInvertibleMatrixError</code>” if the matrix is not invertible, which make sense.</p>
-<div id="9b16bdc3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:58}}" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">6</span>,<span class="dv">5</span>],[<span class="dv">5</span>,<span class="dv">3</span>]])</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> M.inv()</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>N</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d59ba9d8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:58}}" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">6</span>,<span class="dv">5</span>],[<span class="dv">5</span>,<span class="dv">3</span>]])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> M.inv()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>N</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="18">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}- \frac{3}{7} &amp; \frac{5}{7}\\\frac{5}{7} &amp; - \frac{6}{7}\end{matrix}\right]\)</span></p>
 </div>
@@ -1830,10 +1825,10 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <li><p>Apply rank-echelon factorization and simply note the inner dimension of the matrix factorization <span class="math inline">\(M = CR\)</span>.</p></li>
 <li><p>Use the .rank() command on a matrix in the computer (illustrated below in the code cell).</p></li>
 </ol>
-<div id="5baed69a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Matrix</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> Matrix([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">12</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">24</span>],[<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">36</span>]])</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>M.rank()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7c466a63" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Matrix</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> Matrix([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">12</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">24</span>],[<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">36</span>]])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>M.rank()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>2</code></pre>
 </div>
@@ -2086,13 +2081,13 @@ w + 4 x + 16 y + 64 z = 40\end{matrix}
 <li>Row reduction can produce a zero row of <span class="math inline">\(A\)</span>.</li>
 <li>Some nonzero vector <span class="math inline">\(w\)</span> has <span class="math inline">\(wA=0\)</span>. (i.e., <span class="math inline">\(A\)</span> has <strong>nontrivial left kernel</strong>)</li>
 </ol>
-<div id="7268ccdc" class="cell" data-cellview="form" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>w,x,y,z <span class="op">=</span> sp.symbols(<span class="st">"w,x,y,z"</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>],[<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">27</span>],[<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">16</span>,<span class="dv">64</span>]])</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> sp.Matrix([w,x,y,z])</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print(sp.latex(M*v))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d9b39d46" class="cell" data-cellview="form" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>w,x,y,z <span class="op">=</span> sp.symbols(<span class="st">"w,x,y,z"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>],[<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">27</span>],[<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">16</span>,<span class="dv">64</span>]])</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> sp.Matrix([w,x,y,z])</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print(sp.latex(M*v))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="individual-exercises-due-2024-12-06" class="level2" data-number="10.3">
