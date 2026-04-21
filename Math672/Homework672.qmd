@@ -151,3 +151,26 @@ Give an example of a PID $R$ and subring $S \subseteq R$ which is not a PID.
 
 Let $a(x)$, $b(x)$ be irreducible elements of $K[x]$, neither a multiple of the other. Prove that there exist $f(x)$, $g(x)$ in $K[x]$ so that 
 $f(x)a(x)+g(x)b(x)=1$. (This is a polynomial identity, not an identity for one value of $x$.)
+
+## Think globally...
+
+Let $R$ be a commutative ring and let $p$ be a prime ideal. Let $S = R-p$ be the complement. Prove...
+
+1. $S$ is a multiplicatively closed set. 
+1. The ideal $p^e$ (i.e., the extension of $p$ to $S^{-1}R$) is a proper ideal of $S^{-1}R$.
+1. Every element $x \in S^{-1}R - p^e$ is a unit. 
+1. $p^e$ is a maximal ideal of $S^{-1}R$.
+1. Every proper ideal of $S^{-1}R$ is a subset of $p^e$. 
+1. $S^{-1}R$ has exactly one maximal ideal. (In other words, $S^{-1}R$ is a **local** ring.)
+
+## Close enough...
+
+Let $R = {\mathbb R}[x]$. Let $c = 3$. Let $p = (x-3)$. Notice this is a prime ideal. 
+As above let $S = R-p$.
+
+1. Describe the elements of $R_p$ (i.e. $S^{-1}R$) in this case.
+2. Are the elements of $R$ functions on ${\mathbb R}$? 
+3. Are the elements of $R_p$ functions on ${\mathbb R}$? Explain.
+4. Does each element of $R_p$ have a well defined value at the input $3$? Explain.
+5. Does each element of $R_p$ have well defined values on an open neighborhood of $3$? Explain.
+6. Do all elements of $R_p$ have well defined values on the same open neighborhood of $3$?  Explain.

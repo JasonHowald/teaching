@@ -553,7 +553,7 @@ Figure&nbsp;6: Time-to-work distribution
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<div id="15aa9081" class="cell" data-execution_count="7">
+<div id="88eda640" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -644,17 +644,17 @@ Name: time_to_work, dtype: float64</code></pre>
 <span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\m'
-&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\m'
-&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\m'
-&lt;&gt;:34: SyntaxWarning: invalid escape sequence '\m'
-&lt;&gt;:39: SyntaxWarning: invalid escape sequence '\m'
-&lt;&gt;:44: SyntaxWarning: invalid escape sequence '\m'
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_13783/1246851014.py:34: SyntaxWarning: invalid escape sequence '\m'
+<pre><code>&lt;&gt;:34: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
+&lt;&gt;:39: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
+&lt;&gt;:44: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
+&lt;&gt;:34: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
+&lt;&gt;:39: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
+&lt;&gt;:44: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_75232/1246851014.py:34: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
   ax.fill_between(x_fill_3std, 0, y_fill_3std, color='purple', alpha=0.1, label=f'$\mu \pm 3\sigma$ ({percent_3std:.2f}%)')
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_13783/1246851014.py:39: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_75232/1246851014.py:39: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
   ax.fill_between(x_fill_2std, 0, y_fill_2std, color='green', alpha=0.2, label=f'$\mu \pm 2\sigma$ ({percent_2std:.2f}%)')
-/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_13783/1246851014.py:44: SyntaxWarning: invalid escape sequence '\m'
+/var/folders/6h/6_fj2gy14g10x70rglc3hjyht0s9t4/T/ipykernel_75232/1246851014.py:44: SyntaxWarning: "\m" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\m"? A raw string is also an option.
   ax.fill_between(x_fill_1std, 0, y_fill_1std, color='red', alpha=0.3, label=f'$\mu \pm 1\sigma$ ({percent_1std:.2f}%)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -683,10 +683,10 @@ Figure&nbsp;7: Empirical Rule illustration
 <h2 data-number="13" class="anchored" data-anchor-id="ways-to-calculate-tail-areas-and-percentiles"><span class="header-section-number">13</span> Ways to calculate tail areas and percentiles</h2>
 <ol type="1">
 <li>Geometrically, using empirical rule (for <span class="math inline">\(\pm 1, 2, 3\)</span> only!)</li>
-<li>Using a graphical tool, like <a href="https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html">Bognar’s normal CDF calculator</a></li>
+<li>Using a graphical tool, like <a href="https://mabognar.github.io/apps/normal.html">Bognar’s normal CDF calculator</a></li>
 <li>Using Jupyter:</li>
 </ol>
-<div id="10675210" class="cell" data-execution_count="9">
+<div id="810e8c98" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stats.norm.cdf(<span class="op">-</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">

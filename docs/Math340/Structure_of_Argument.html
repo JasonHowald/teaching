@@ -1775,7 +1775,7 @@ Somehow the first step is often very tricky. It just requires that the input be 
 <ol type="1">
 <li>Let <span class="math inline">\(S\)</span> be any nonempty set of natural numbers.</li>
 <li>Let <span class="math inline">\(P(n)\)</span> be the statement <span class="math inline">\(n \notin S\)</span>.</li>
-<li>Since <span class="math inline">\(\foral n \enspace P(n)\)</span> is false, it follows that <span class="math inline">\(\forall n \enspace ((\forall k&lt;n \enspace P(k)) \to P(n))\)</span> is also false. In other words, <span class="math inline">\(\exists n \enspace ((\forall k&lt;n \enspace P(k)) \land \neg P(n))\)</span>, or equivalently <span class="math inline">\(\exists n \enspace ((\forall k&lt;n \enspace k \notin S) \land n \in S)\)</span>. Such an <span class="math inline">\(n\)</span> is a minimal element of <span class="math inline">\(S\)</span>.</li>
+<li>Since <span class="math inline">\(\forall n \enspace P(n)\)</span> is false, it follows that <span class="math inline">\(\forall n \enspace ((\forall k&lt;n \enspace P(k)) \to P(n))\)</span> is also false. In other words, <span class="math inline">\(\exists n \enspace ((\forall k&lt;n \enspace P(k)) \land \neg P(n))\)</span>, or equivalently <span class="math inline">\(\exists n \enspace ((\forall k&lt;n \enspace k \notin S) \land n \in S)\)</span>. Such an <span class="math inline">\(n\)</span> is a minimal element of <span class="math inline">\(S\)</span>.</li>
 </ol>
 </div>
 <p>Sometimes it’s convenient to construct proofs by induction based on the well ordering principle. They often take the flavor of contradiction. We’ll explore this method for the prime factorization principle:</p>

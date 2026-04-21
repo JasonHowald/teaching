@@ -18,8 +18,6 @@ $
 $
 </div>
 
-# Dedication
-
 To Dad,
 
 my best teacher and my favorite student
@@ -2102,7 +2100,7 @@ exist and are unequal.
 ::: {#exr-power-series-via-differentiation }
 Calculate a power series for $\frac{1}{(1-z)^2}$ by
 the series differentiation rule, and find its radius of convergence.
-Compare to the previous problem.
+Compare to @exr-power-series-multiplication-practice
 :::
 
 Power series give us a versatile example of analytic functions. We will

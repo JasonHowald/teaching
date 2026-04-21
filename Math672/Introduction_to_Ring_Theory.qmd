@@ -588,7 +588,7 @@ Often we have some condition on ideals, such "ideals of ${\mathbb Z}[x]$ which d
 
 Imagine we have a complicated ring $R$ and a strange condition $P$ on ideals of $R$. We wish to find an ideal $I$ maximal with the condition. Choose any ideal with property $P$. If it's maximal, great. If not, choose a strictly larger one. If it's maximal great. If not, continue. Maybe we continue forever. Even then, we produce a chain. Take the union of the chain. Irritatingly, even this is not necessarily maximal. Choose a larger. And larger. And maybe union again. Maybe use the union step infinitely many times and eventually do some sort of super-union. Does this process end?
 
-This scenario is taylor made for Zorn's Lemma:
+This scenario is tailor made for Zorn's Lemma:
 
 **Zorn's Lemma:** Let $P$ be a poset, ordered by $\preccurlyeq$. Assume that for every chain $\mathscr C$ in $P$, there is upper bound $z$ in the sense that $x \preccurlyeq z$ for all $x \in \mathscr C$. Then $P$ has a maximal element.
 
@@ -770,7 +770,7 @@ In this way a polynomial in both $x$ and $y$ can be regarded as a polynomial in 
 **Definition:** The polynomial ring in variables $x_1,\ldots,x_n$ is defined to be
 $$R[x_1, \ldots, x_n] = R[x_1][x_2]\ldots[x_n]$$
 
-## Taylor Made Elements
+## Tailor-Made Elements
 
 Polynomial rings are often used in constructed examples because they give us the freedom to append new elements to known rings. By modding out by an appropriate ideal, those new elements can be endowed with desired algebraic properties.  
 
@@ -940,6 +940,7 @@ Of course we can induct on the theorem, to conclude, for example that ${\mathbb 
 Let $R$ be a domain. We wish to construct a field which contains $R$ as a subring, called the **field of fraction**, or **fraction field** of $R$. If $R={\mathbb Z}$, the fraction field will be ${\mathbb Q}$. If $R = {\mathbb R}[x]$, the fraction field will be the field of rational functions $\frac{p(x)}{q(x)}$.
 
 **Definition:** Let $R$ be a domain. The **fraction field** of $R$ is $\ldots$
+
 1. The set of ordered pairs $(a,b)$ (thought of as formal fractions $\frac{a}{b}$) where $a,b \in R$, $b \neq 0$, modulo the equivalence relation $(a,b) \sim (c,d)$ iff $ad-bc=0$,
 2. The zero $(0_R,1_R)$
 3. The one $(1_R,1_R)$
@@ -960,6 +961,7 @@ The more general construction is to set up a collection $S$ of elements $s \in S
 **Definition:** A **Multiplicatively closed set** (mcs) in a commutative ring $R$ is a set which includes $1$, excludes $0$, and is closed under multiplication.
 
 **Definition:** Let $R$ be a commutative ring and let $S$ be an mcs. The **localization** of $R$ by $S$, written $S^{-1}R$, is $\ldots$
+
 1. The set of ordered pairs $(a,b)$ (thought of as formal fractions $\frac{a}{b}$) where $a \in R$, $b \in S$, modulo the equivalence relation $(a,b) \sim (c,d)$ iff $\exists s \enspace s(ad-bc)=0$,
 2. The zero $(0_R,1_R)$
 3. The one $(1_R,1_R)$
@@ -981,7 +983,6 @@ We start with the claim that $\sim$ is an equivalence relation.
 - Transitivity: Assume $(a,b) \sim (c,d) \sim (e,f)$. Then we have $s, t$ so that $s(ad-bc)=t(cf-de)=0$. Multiplying the first equation by $ft$ yields
 $adfst = bcfst$. Multiplying the second by $bs$ yields
 $bcfst = bdest$. We conclude $adfst = bdest$, so $dst(af-be)$ as desired. (Note $d, s, t \in S$ and $S$ is mcs.)
-\
 
 
 #### Well definedness...
@@ -1107,9 +1108,41 @@ Is it possible to both mod out by $I$ and also localize at $S$? Does it matter w
 
 **Theorem:** (Localization and Quotient Commute)
 Let $R$ be a ring with multiplicatively closed set $S$ and ideal $I$ disjoint from $S$. Let $S^{-1}I$ denote the extension of $I$ to $S^{-1}R$ and let $S/I$ denote $\{s+I \,|\, s \in S\}$. Then
+
 1. $S^{-1}I$ is an ideal of $S^{-1}R$
-2. $S/I$ is a multiplicatively closed set of $R/I$
-3. $(S/I)^{-1}(R/I) \cong (S^{-1}R) / (S^{-1}I)$ via a homomorphism $\frac{r+I}{s+I} \mapsto \frac{r}{s} + (S^{-1}I)$
+1. $S/I$ is a multiplicatively closed set of $R/I$
+1. $(S/I)^{-1}(R/I) \cong (S^{-1}R) / (S^{-1}I)$ via a homomorphism $\frac{r+I}{s+I} \mapsto \frac{r}{s} + (S^{-1}I)$
+
+```{mermaid}
+%%| fig-cap: "Commutativity of localization and quotient"
+%%| fig-alt: ""
+
+graph TD
+    %% Accessibility tags
+    accTitle: Commutativity of Quotient and Localization
+    accDescr: A diagram showing that taking a quotient then localizing is isomorphic to localizing then taking a quotient.
+
+    %% Nodes
+    R["$R$"]
+    RI["$R / I$"]
+    RS["$R[S^{-1}]$"]
+%%    RIS["$$(S/I)^{-1}(R/I)$$"]
+%%    RSI["$$S^{-1}R / S^{-1}I$$"]
+
+    %% Arrows
+    R -- "p (Quotient)" --> RI
+    R -- "i (Local)" --> RS
+
+%%    RI -- "Localization" --> RIS
+%%    RS -- "Quotient" --> RSI
+
+    %%RIS <--"Isomorphic"--> RSI
+
+    %% Enforce alignments
+    RI ~~~ RS
+%%    RIS ~~~ RSI
+
+```
 
 
 **Proof:** We've established that $S^{-1}I = I^e$ is an ideal, and it's elementary that $S/I$ is multiplicatively closed.

@@ -387,7 +387,7 @@ plt.show()
 ## Ways to calculate tail areas and percentiles
 
 1. Geometrically, using empirical rule (for $\pm 1, 2, 3$ only!)
-2. Using a graphical tool, like [Bognar's normal CDF calculator](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html)
+2. Using a graphical tool, like [Bognar's normal CDF calculator](https://mabognar.github.io/apps/normal.html)
 3. Using Jupyter:
 
 ```{python}

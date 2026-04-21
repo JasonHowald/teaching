@@ -155,11 +155,11 @@ flip100Coins = () => {
   return heads/100;
 }
 
-// Reactive data array
-flipData = {
-  const _trigger = m;
-  return Array.from({ length: m }, flip100Coins);
-}
+// Constant long list of results
+masterPool = Array.from({ length: 1000 }, flip100Coins)
+
+// This variable IS reactive.
+flipData = masterPool.slice(0, m)
 ```
 
  
@@ -266,9 +266,10 @@ Construct a confidence interval for each point estimate, using 2*SE.
 Do the confidence intervals overlap? What is the significance of this?
 
 ## Vocabulary recap
-Standard Deviation vs. Standard Error
-Confidence Interval vs. Confidence Level
-Margin of Error (often 2*SE)
+
+- Standard Deviation vs. Standard Error
+- Confidence Interval vs. Confidence Level
+- Margin of Error (often 2*SE)
 
 ## Homework
 …on Webwork: “20. Standard Error and Confidence”

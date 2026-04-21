@@ -136,6 +136,8 @@ window.Quarto = {
   <li><a href="#pid-instability" id="toc-pid-instability" class="nav-link" data-scroll-target="#pid-instability"><span class="header-section-number">1.17</span> PID instability</a></li>
   <li><a href="#ufd-instability" id="toc-ufd-instability" class="nav-link" data-scroll-target="#ufd-instability"><span class="header-section-number">1.18</span> UFD instability</a></li>
   <li><a href="#relatively-prime-in-kx" id="toc-relatively-prime-in-kx" class="nav-link" data-scroll-target="#relatively-prime-in-kx"><span class="header-section-number">1.19</span> Relatively prime in <span class="math inline">\(K[x]\)</span></a></li>
+  <li><a href="#think-globally" id="toc-think-globally" class="nav-link" data-scroll-target="#think-globally"><span class="header-section-number">1.20</span> Think globally…</a></li>
+  <li><a href="#close-enough" id="toc-close-enough" class="nav-link" data-scroll-target="#close-enough"><span class="header-section-number">1.21</span> Close enough…</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -360,6 +362,30 @@ window.Quarto = {
 <section id="relatively-prime-in-kx" class="level2" data-number="1.19">
 <h2 data-number="1.19" class="anchored" data-anchor-id="relatively-prime-in-kx"><span class="header-section-number">1.19</span> Relatively prime in <span class="math inline">\(K[x]\)</span></h2>
 <p>Let <span class="math inline">\(a(x)\)</span>, <span class="math inline">\(b(x)\)</span> be irreducible elements of <span class="math inline">\(K[x]\)</span>, neither a multiple of the other. Prove that there exist <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g(x)\)</span> in <span class="math inline">\(K[x]\)</span> so that <span class="math inline">\(f(x)a(x)+g(x)b(x)=1\)</span>. (This is a polynomial identity, not an identity for one value of <span class="math inline">\(x\)</span>.)</p>
+</section>
+<section id="think-globally" class="level2" data-number="1.20">
+<h2 data-number="1.20" class="anchored" data-anchor-id="think-globally"><span class="header-section-number">1.20</span> Think globally…</h2>
+<p>Let <span class="math inline">\(R\)</span> be a commutative ring and let <span class="math inline">\(p\)</span> be a prime ideal. Let <span class="math inline">\(S = R-p\)</span> be the complement. Prove…</p>
+<ol type="1">
+<li><span class="math inline">\(S\)</span> is a multiplicatively closed set.</li>
+<li>The ideal <span class="math inline">\(p^e\)</span> (i.e., the extension of <span class="math inline">\(p\)</span> to <span class="math inline">\(S^{-1}R\)</span>) is a proper ideal of <span class="math inline">\(S^{-1}R\)</span>.</li>
+<li>Every element <span class="math inline">\(x \in S^{-1}R - p^e\)</span> is a unit.</li>
+<li><span class="math inline">\(p^e\)</span> is a maximal ideal of <span class="math inline">\(S^{-1}R\)</span>.</li>
+<li>Every proper ideal of <span class="math inline">\(S^{-1}R\)</span> is a subset of <span class="math inline">\(p^e\)</span>.</li>
+<li><span class="math inline">\(S^{-1}R\)</span> has exactly one maximal ideal. (In other words, <span class="math inline">\(S^{-1}R\)</span> is a <strong>local</strong> ring.)</li>
+</ol>
+</section>
+<section id="close-enough" class="level2" data-number="1.21">
+<h2 data-number="1.21" class="anchored" data-anchor-id="close-enough"><span class="header-section-number">1.21</span> Close enough…</h2>
+<p>Let <span class="math inline">\(R = {\mathbb R}[x]\)</span>. Let <span class="math inline">\(c = 3\)</span>. Let <span class="math inline">\(p = (x-3)\)</span>. Notice this is a prime ideal. As above let <span class="math inline">\(S = R-p\)</span>.</p>
+<ol type="1">
+<li>Describe the elements of <span class="math inline">\(R_p\)</span> (i.e.&nbsp;<span class="math inline">\(S^{-1}R\)</span>) in this case.</li>
+<li>Are the elements of <span class="math inline">\(R\)</span> functions on <span class="math inline">\({\mathbb R}\)</span>?</li>
+<li>Are the elements of <span class="math inline">\(R_p\)</span> functions on <span class="math inline">\({\mathbb R}\)</span>? Explain.</li>
+<li>Does each element of <span class="math inline">\(R_p\)</span> have a well defined value at the input <span class="math inline">\(3\)</span>? Explain.</li>
+<li>Does each element of <span class="math inline">\(R_p\)</span> have well defined values on an open neighborhood of <span class="math inline">\(3\)</span>? Explain.</li>
+<li>Do all elements of <span class="math inline">\(R_p\)</span> have well defined values on the same open neighborhood of <span class="math inline">\(3\)</span>? Explain.</li>
+</ol>
 
 
 </section>

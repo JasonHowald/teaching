@@ -1564,7 +1564,7 @@ Conversely, the well ordering principle itself can be deduced from the principle
 ::: {.proof}
 1. Let $S$ be any nonempty set of natural numbers. 
 2. Let $P(n)$ be the statement $n \notin S$.
-3. Since $\foral n \enspace P(n)$ is false, it follows that 
+3. Since $\forall n \enspace P(n)$ is false, it follows that 
 $\forall n \enspace ((\forall k<n \enspace P(k)) \to P(n))$ is also false. In other words, $\exists n \enspace ((\forall k<n \enspace P(k)) \land \neg P(n))$, or equivalently $\exists n \enspace ((\forall k<n \enspace k \notin S) \land n \in S)$. Such an $n$ is a minimal element of $S$.
 :::
 

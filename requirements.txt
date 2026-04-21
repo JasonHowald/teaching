@@ -1,0 +1,8 @@
+jupyter
+sympy
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+great_tables

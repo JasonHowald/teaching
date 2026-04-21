@@ -877,7 +877,7 @@ a*3^2 + b*3 + c = -1\\
 \end{bmatrix}
 \]</span></p>
 <p>Let’s cheat a bit and get the computer to row reduce:</p>
-<div id="cfbaf6e3" class="cell" data-execution_count="4">
+<div id="4ebc2dcb" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>],[<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>]])</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>M.rref()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -895,7 +895,7 @@ c = -7\\
 \]</span></p>
 <p>which leaves no mystery. The function is <span class="math inline">\(f(x) = -3x^2 + 11x -7\)</span>.</p>
 <p>As a check on our work, we’ll code the function and evaluate at the key x values:</p>
-<div id="0650026b" class="cell" data-execution_count="5">
+<div id="26768601" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>x<span class="op">*</span>x <span class="op">+</span> <span class="dv">11</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">7</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>f(<span class="dv">1</span>),f(<span class="dv">2</span>),f(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -928,7 +928,7 @@ v &amp;&amp; - x&amp;&amp; &amp;= &amp;  0\\
 <p>We convert to matrix form:</p>
 <p><span class="math display">\[M = \begin{bmatrix}1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0 &amp; -1 &amp; 0 &amp; 0\\0 &amp; -3 &amp; 4 &amp; 2 &amp; 1 &amp; 0\\0 &amp; -1 &amp; 2 &amp; 0 &amp; 2 &amp; 0\end{bmatrix}\]</span></p>
 <p>We use Gauss-Jordan elimination to convert to reduced row echelon form, or rather we make the computer do it:</p>
-<div id="df4c0751" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:98}}" data-execution_count="6">
+<div id="bf44f04c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:98}}" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>]])</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>M.rref()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1004,7 +1004,7 @@ y = 3z\\
 <section id="the-geometry-of-vectors" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> The Geometry of Vectors</h1>
 <p>In this section we take the physicist’s perspective that a vector <span class="math inline">\(v=[3,4]\)</span> is not merely a short list of numbers, but a quantity with direction and magnitude. We think of vectors either as locations in the x-y plane, or as directed arrows, from the origin to that location. So vectors “look like” arrows in 2D or 3D space:</p>
-<div id="2324bc77" class="cell" data-execution_count="7">
+<div id="a82e40bc" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1020,7 +1020,7 @@ y = 3z\\
 <p>How does geometry help us understand vector operations? How does linear algebra help us understand geometric relationships?</p>
 <p><strong>Question 1:</strong> How is <span class="math inline">\(v+w\)</span> geometrically predicted from <span class="math inline">\(v\)</span> and <span class="math inline">\(w\)</span>? Suppose we have vectors <span class="math inline">\(v = [3,4]\)</span>, <span class="math inline">\(w = [1,-6]\)</span>, and their sum <span class="math inline">\(v+w = [4, -2]\)</span>. What is their geometric relationship?</p>
 <p>If we starting from <span class="math inline">\([0,0]\)</span>, we can move 3 units right and 4 up, arriving at v. If <em>from there</em> we move 1 unit right and 6 down, we will arrive at <span class="math inline">\([4,-2]\)</span>. This suggests we need to redraw <span class="math inline">\(w\)</span> so that its base point is at the endpoint of <span class="math inline">\(v\)</span>, then follow it. If we’ve do this we have a triangle rule for vector sum:</p>
-<div id="511f22d8" class="cell" data-execution_count="8">
+<div id="8d72726c" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1030,7 +1030,7 @@ y = 3z\\
 </div>
 </div>
 <p>But we could just as well have transported <span class="math inline">\(v\)</span> to the head of the vector <span class="math inline">\(w\)</span>. If we do this, which leads us to the “parallelogram rule”, because it creates a parallelogram in red and blue:</p>
-<div id="d2657ce0" class="cell" data-execution_count="9">
+<div id="20f2eba2" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1043,7 +1043,7 @@ y = 3z\\
 <section id="difference-of-vectors-modified-triangle" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="difference-of-vectors-modified-triangle"><span class="header-section-number">3.1.2</span> Difference of vectors – modified triangle</h3>
 <p>If <span class="math inline">\(v+w\)</span> is best pictured by transporting the tail of <span class="math inline">\(w\)</span> to the head of <span class="math inline">\(v\)</span>, what about <span class="math inline">\(v-w\)</span>? We already know that <span class="math inline">\((v-w)+w = v\)</span>, so it follow that <span class="math inline">\((v-w)\)</span> is the vector which, when placed at the head of <span class="math inline">\(w\)</span>, reaches to <span class="math inline">\(v\)</span>. That is, simply connect the head of <span class="math inline">\(w\)</span> to the head of <span class="math inline">\(v\)</span>:</p>
-<div id="a0820b41" class="cell" data-execution_count="10">
+<div id="7be9a747" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1056,7 +1056,7 @@ y = 3z\\
 <section id="scalar-multiple" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="scalar-multiple"><span class="header-section-number">3.1.3</span> Scalar Multiple</h3>
 <p>Multiplying <span class="math inline">\(v\)</span> by a scalar multiple has a simple geometry – just scale the length and leave the direction unchanged. If the scalar is negative, the direction reverses.</p>
-<div id="9f2e7a40" class="cell" data-execution_count="11">
+<div id="0f6ab0b7" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1080,7 +1080,7 @@ y = 3z\\
 <p><span class="math display">\[c^2 = a^2 + b^2 - 2ab \cos(\gamma)\]</span></p>
 <p>The proof is pretty easy using the Pythagorean Theorem itself and a bit of trigonometry. See the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of Cosines on Wikipedia</a></p>
 <p>What does all this have to do with vectors? A vector <span class="math inline">\(v = [3,4]\)</span> records a horizontal displacement (3 right) and a vertical displacement (4 up), which are always perpendicular. The Pythagorean theorem applies to the triangle made up of these individual displacements:</p>
-<div id="04549c78" class="cell" data-execution_count="12">
+<div id="c6842644" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1100,7 +1100,7 @@ y = 3z\\
 <section id="dot-product-angle-and-perpendicularity" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="dot-product-angle-and-perpendicularity"><span class="header-section-number">3.2.2</span> Dot product, angle, and perpendicularity</h3>
 <p><strong>Recall:</strong> Any two vectors <span class="math inline">\(v\)</span> and <span class="math inline">\(w\)</span> extending from the origin form two sides of a triangle whose third side is <span class="math inline">\(v-w\)</span>.</p>
-<div id="44fff594" class="cell" data-execution_count="13">
+<div id="e6bbe936" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1476,7 +1476,7 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <p>This matrix has no left inverse, but has a right inverse, namely <span class="math display">\[N =
 \begin{bmatrix}- \frac{17}{18} &amp; \frac{4}{9}\\- \frac{1}{9} &amp; \frac{1}{9}\\\frac{13}{18} &amp; - \frac{2}{9}\end{bmatrix}\]</span></p>
 <p>The solution <span class="math inline">\(v = Nb = \left[\begin{matrix}10/3\\10/3\\10/3\end{matrix}\right]\)</span> is definitely a solution (reader should check!), but there may be others. In fact it’s not hard to verify that <span class="math inline">\([0,10,0]\)</span> is another solution.</p>
-<div id="2562378e" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="14">
+<div id="eb460cc3" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Supporting code for previous examples</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
@@ -1509,7 +1509,7 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 \left[\begin{matrix}\frac{40}{9}\\\frac{86}{9}\\\frac{92}{9}\end{matrix}\right]
 \]</span></p>
 <p>which is assuredly <strong>not</strong> a solution to our original equation. What gives? the left inverse strategy only guarantees us that <span class="math inline">\(v = Mb\)</span> is the correct solution if a solution exists, which in this case it doesn’t. Our solution strategy yields a failed <span class="math inline">\(v\)</span>, but our effort isn’t meaningless. Notice how close it is to being correct. For example, <span class="math inline">\(92/9\)</span> is very nearly the <span class="math inline">\(10\)</span> we expected. <span class="math inline">\(Mv\)</span> is not <span class="math inline">\(b\)</span> but it’s as close as possible for this problem. This advantage depends on hidden details about how we chose to calculate a left inverse of <span class="math inline">\(M\)</span>. We’ll return to these ideas much later.</p>
-<div id="5d0c4e71" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="15">
+<div id="176d6003" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Find a (candidate) solution via left inverse</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
@@ -1523,7 +1523,7 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <pre><code>\left[\begin{matrix}\frac{40}{9}\\\frac{86}{9}\\\frac{92}{9}\end{matrix}\right]</code></pre>
 </div>
 </div>
-<div id="ccd614fd" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="16">
+<div id="b1bf8d5b" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Verify the distance claim for pseudoinverse in a neighborhood of solution</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1552,7 +1552,7 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <p><span class="math display">\[v = Nb = \left[\begin{matrix}5\\-5\end{matrix}\right]\]</span></p>
 <p>Because the inverse is two-sided, we may trust that this solution is both correct and unique.</p>
 <p>Certainly the two-sided inverse is most convenient. It’s also the least likely to exist! We’ll prove later that only square matrices can have two-sided inverses, and not even all of those.</p>
-<div id="74f0002a" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="17">
+<div id="efeab6d8" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Solve previous problem</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
@@ -1574,7 +1574,7 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <p>In this section we’ll showcase two strategies for calculating a two-sided inverse of a matrix, if it exists.</p>
 <p><strong>By computer</strong></p>
 <p>The first and fastest is to make the computer do it. There are thousands of computational options, but we’ll focus on using Python within colab. You just need to know the right syntax. First we create a sympy matrix, then we invoke the .inv() method to invert it. This will throw a “<code>NonInvertibleMatrixError</code>” if the matrix is not invertible, which make sense.</p>
-<div id="d59ba9d8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:58}}" data-execution_count="18">
+<div id="729738da" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:58}}" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> sp.Matrix([[<span class="dv">6</span>,<span class="dv">5</span>],[<span class="dv">5</span>,<span class="dv">3</span>]])</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> M.inv()</span>
@@ -1825,7 +1825,7 @@ Mv &amp;= b &amp; \text{ multiplicative identity property}
 <li><p>Apply rank-echelon factorization and simply note the inner dimension of the matrix factorization <span class="math inline">\(M = CR\)</span>.</p></li>
 <li><p>Use the .rank() command on a matrix in the computer (illustrated below in the code cell).</p></li>
 </ol>
-<div id="7c466a63" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="19">
+<div id="88aeac2a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Matrix</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> Matrix([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">12</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">24</span>],[<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">36</span>]])</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>M.rank()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2081,7 +2081,7 @@ w + 4 x + 16 y + 64 z = 40\end{matrix}
 <li>Row reduction can produce a zero row of <span class="math inline">\(A\)</span>.</li>
 <li>Some nonzero vector <span class="math inline">\(w\)</span> has <span class="math inline">\(wA=0\)</span>. (i.e., <span class="math inline">\(A\)</span> has <strong>nontrivial left kernel</strong>)</li>
 </ol>
-<div id="d9b39d46" class="cell" data-cellview="form" data-execution_count="20">
+<div id="53f81610" class="cell" data-cellview="form" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>w,x,y,z <span class="op">=</span> sp.symbols(<span class="st">"w,x,y,z"</span>)</span>

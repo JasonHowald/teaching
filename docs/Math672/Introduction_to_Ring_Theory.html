@@ -70,6 +70,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -169,7 +172,7 @@ window.Quarto = {
   <li><a href="#basic-definitions-1" id="toc-basic-definitions-1" class="nav-link" data-scroll-target="#basic-definitions-1"><span class="header-section-number">6.1</span> Basic Definitions</a></li>
   <li><a href="#universal-property" id="toc-universal-property" class="nav-link" data-scroll-target="#universal-property"><span class="header-section-number">6.2</span> Universal Property</a></li>
   <li><a href="#multiple-variables" id="toc-multiple-variables" class="nav-link" data-scroll-target="#multiple-variables"><span class="header-section-number">6.3</span> Multiple variables</a></li>
-  <li><a href="#taylor-made-elements" id="toc-taylor-made-elements" class="nav-link" data-scroll-target="#taylor-made-elements"><span class="header-section-number">6.4</span> Taylor Made Elements</a></li>
+  <li><a href="#tailor-made-elements" id="toc-tailor-made-elements" class="nav-link" data-scroll-target="#tailor-made-elements"><span class="header-section-number">6.4</span> Tailor-Made Elements</a></li>
   </ul></li>
   <li><a href="#unique-factorization-ed-to-pid-to-ufd" id="toc-unique-factorization-ed-to-pid-to-ufd" class="nav-link" data-scroll-target="#unique-factorization-ed-to-pid-to-ufd"><span class="header-section-number">7</span> Unique Factorization: ED <span class="math inline">\(\to\)</span> PID <span class="math inline">\(\to\)</span> UFD</a>
   <ul class="collapse">
@@ -640,7 +643,7 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <h2 data-number="4.3" class="anchored" data-anchor-id="existence-of-maximal-ideals"><span class="header-section-number">4.3</span> Existence of Maximal Ideals</h2>
 <p>Often we have some condition on ideals, such “ideals of <span class="math inline">\({\mathbb Z}[x]\)</span> which do not contain some element”, or “ideals of <span class="math inline">\(R\)</span> which are not the unit ideal”, and we wish to choose one as large as possible under that restraint. Depending on the condition, an ideal “maximal among desired ideals” may or may not be maximal, but it will often be useful or interesting.</p>
 <p>Imagine we have a complicated ring <span class="math inline">\(R\)</span> and a strange condition <span class="math inline">\(P\)</span> on ideals of <span class="math inline">\(R\)</span>. We wish to find an ideal <span class="math inline">\(I\)</span> maximal with the condition. Choose any ideal with property <span class="math inline">\(P\)</span>. If it’s maximal, great. If not, choose a strictly larger one. If it’s maximal great. If not, continue. Maybe we continue forever. Even then, we produce a chain. Take the union of the chain. Irritatingly, even this is not necessarily maximal. Choose a larger. And larger. And maybe union again. Maybe use the union step infinitely many times and eventually do some sort of super-union. Does this process end?</p>
-<p>This scenario is taylor made for Zorn’s Lemma:</p>
+<p>This scenario is tailor made for Zorn’s Lemma:</p>
 <p><strong>Zorn’s Lemma:</strong> Let <span class="math inline">\(P\)</span> be a poset, ordered by <span class="math inline">\(\preccurlyeq\)</span>. Assume that for every chain <span class="math inline">\(\mathscr C\)</span> in <span class="math inline">\(P\)</span>, there is upper bound <span class="math inline">\(z\)</span> in the sense that <span class="math inline">\(x \preccurlyeq z\)</span> for all <span class="math inline">\(x \in \mathscr C\)</span>. Then <span class="math inline">\(P\)</span> has a maximal element.</p>
 <p><a href="https://colab.research.google.com/drive/17gpaRMu_bMyHb4HTrHiU_7j9u3r9UXw5?usp=sharing">Proof of Zorn’s Lemma</a></p>
 <p>How does this help? As long as the property of interest on ideals <span class="math inline">\(I \subseteq R\)</span> is preserved by unions of chains of ideals, Zorn’s Lemma can be applied to the poset of ideals having the property, and it produces an ideal maximal among them. (But again, not necessarily “maximal” in the prior sense.)</p>
@@ -769,8 +772,8 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <p>In this way a polynomial in both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be regarded as a polynomial in <span class="math inline">\(y\)</span> with coefficients which are themselves polynomials in <span class="math inline">\(x\)</span>. In other words, it can be treated as an element of <span class="math inline">\(R[x][y]\)</span>. This motivates the definition:</p>
 <p><strong>Definition:</strong> The polynomial ring in variables <span class="math inline">\(x_1,\ldots,x_n\)</span> is defined to be <span class="math display">\[R[x_1, \ldots, x_n] = R[x_1][x_2]\ldots[x_n]\]</span></p>
 </section>
-<section id="taylor-made-elements" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="taylor-made-elements"><span class="header-section-number">6.4</span> Taylor Made Elements</h2>
+<section id="tailor-made-elements" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="tailor-made-elements"><span class="header-section-number">6.4</span> Tailor-Made Elements</h2>
 <p>Polynomial rings are often used in constructed examples because they give us the freedom to append new elements to known rings. By modding out by an appropriate ideal, those new elements can be endowed with desired algebraic properties.</p>
 <p><strong>Examples</strong></p>
 <ol type="1">
@@ -874,7 +877,14 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <section id="fields-of-fractions-definition" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="fields-of-fractions-definition"><span class="header-section-number">8.1</span> Fields of Fractions, definition</h2>
 <p>Let <span class="math inline">\(R\)</span> be a domain. We wish to construct a field which contains <span class="math inline">\(R\)</span> as a subring, called the <strong>field of fraction</strong>, or <strong>fraction field</strong> of <span class="math inline">\(R\)</span>. If <span class="math inline">\(R={\mathbb Z}\)</span>, the fraction field will be <span class="math inline">\({\mathbb Q}\)</span>. If <span class="math inline">\(R = {\mathbb R}[x]\)</span>, the fraction field will be the field of rational functions <span class="math inline">\(\frac{p(x)}{q(x)}\)</span>.</p>
-<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a domain. The <strong>fraction field</strong> of <span class="math inline">\(R\)</span> is <span class="math inline">\(\ldots\)</span> 1. The set of ordered pairs <span class="math inline">\((a,b)\)</span> (thought of as formal fractions <span class="math inline">\(\frac{a}{b}\)</span>) where <span class="math inline">\(a,b \in R\)</span>, <span class="math inline">\(b \neq 0\)</span>, modulo the equivalence relation <span class="math inline">\((a,b) \sim (c,d)\)</span> iff <span class="math inline">\(ad-bc=0\)</span>, 2. The zero <span class="math inline">\((0_R,1_R)\)</span> 3. The one <span class="math inline">\((1_R,1_R)\)</span> 4. The addition rule <span class="math inline">\((a,b)+(c,d) = (ad+bc,bd)\)</span> 5. The multiplication rule <span class="math inline">\((a,b)(c,d) = (ac,bd)\)</span></p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a domain. The <strong>fraction field</strong> of <span class="math inline">\(R\)</span> is <span class="math inline">\(\ldots\)</span></p>
+<ol type="1">
+<li>The set of ordered pairs <span class="math inline">\((a,b)\)</span> (thought of as formal fractions <span class="math inline">\(\frac{a}{b}\)</span>) where <span class="math inline">\(a,b \in R\)</span>, <span class="math inline">\(b \neq 0\)</span>, modulo the equivalence relation <span class="math inline">\((a,b) \sim (c,d)\)</span> iff <span class="math inline">\(ad-bc=0\)</span>,</li>
+<li>The zero <span class="math inline">\((0_R,1_R)\)</span></li>
+<li>The one <span class="math inline">\((1_R,1_R)\)</span></li>
+<li>The addition rule <span class="math inline">\((a,b)+(c,d) = (ad+bc,bd)\)</span></li>
+<li>The multiplication rule <span class="math inline">\((a,b)(c,d) = (ac,bd)\)</span></li>
+</ol>
 <p>There is so much to check: the equivalence relation claim, the well definedness of addition and multiplication, and of course the ring axioms. It’s no good to do the work twice, but this construction is too specialized. There is a more general tool called localization which we’ll also need. We’ll bite the bullet and do the proper generality first.</p>
 </section>
 <section id="localization" class="level2" data-number="8.2">
@@ -884,7 +894,14 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <p>The field of fractions makes denominators out of all the nonzero elements of <span class="math inline">\(R\)</span>. Sometimes we wish to make denominators out of only <em>some</em> of the ring elements. Of course we must exclude <span class="math inline">\(0\)</span>. Considering that the fraction addition and multiplication rules introduce the denominator <span class="math inline">\(bd\)</span>, the set of elements scheduled to become denominators must be closed under multiplication. In fact this is the only reason why <span class="math inline">\(R\)</span> must be a domain, above. Otherwise the product <span class="math inline">\(bd\)</span> could create a <span class="math inline">\(0\)</span> denominator.</p>
 <p>The more general construction is to set up a collection <span class="math inline">\(S\)</span> of elements <span class="math inline">\(s \in S\)</span> which we want to invert, and then use them as the denominators.</p>
 <p><strong>Definition:</strong> A <strong>Multiplicatively closed set</strong> (mcs) in a commutative ring <span class="math inline">\(R\)</span> is a set which includes <span class="math inline">\(1\)</span>, excludes <span class="math inline">\(0\)</span>, and is closed under multiplication.</p>
-<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a commutative ring and let <span class="math inline">\(S\)</span> be an mcs. The <strong>localization</strong> of <span class="math inline">\(R\)</span> by <span class="math inline">\(S\)</span>, written <span class="math inline">\(S^{-1}R\)</span>, is <span class="math inline">\(\ldots\)</span> 1. The set of ordered pairs <span class="math inline">\((a,b)\)</span> (thought of as formal fractions <span class="math inline">\(\frac{a}{b}\)</span>) where <span class="math inline">\(a \in R\)</span>, <span class="math inline">\(b \in S\)</span>, modulo the equivalence relation <span class="math inline">\((a,b) \sim (c,d)\)</span> iff <span class="math inline">\(\exists s \enspace s(ad-bc)=0\)</span>, 2. The zero <span class="math inline">\((0_R,1_R)\)</span> 3. The one <span class="math inline">\((1_R,1_R)\)</span> 4. The addition rule <span class="math inline">\((a,b)+(c,d) = (ad+bc,bd)\)</span> 5. The multiplication rule <span class="math inline">\((a,b)(c,d) = (ac,bd)\)</span></p>
+<p><strong>Definition:</strong> Let <span class="math inline">\(R\)</span> be a commutative ring and let <span class="math inline">\(S\)</span> be an mcs. The <strong>localization</strong> of <span class="math inline">\(R\)</span> by <span class="math inline">\(S\)</span>, written <span class="math inline">\(S^{-1}R\)</span>, is <span class="math inline">\(\ldots\)</span></p>
+<ol type="1">
+<li>The set of ordered pairs <span class="math inline">\((a,b)\)</span> (thought of as formal fractions <span class="math inline">\(\frac{a}{b}\)</span>) where <span class="math inline">\(a \in R\)</span>, <span class="math inline">\(b \in S\)</span>, modulo the equivalence relation <span class="math inline">\((a,b) \sim (c,d)\)</span> iff <span class="math inline">\(\exists s \enspace s(ad-bc)=0\)</span>,</li>
+<li>The zero <span class="math inline">\((0_R,1_R)\)</span></li>
+<li>The one <span class="math inline">\((1_R,1_R)\)</span></li>
+<li>The addition rule <span class="math inline">\((a,b)+(c,d) = (ad+bc,bd)\)</span></li>
+<li>The multiplication rule <span class="math inline">\((a,b)(c,d) = (ac,bd)\)</span></li>
+</ol>
 <p>The equivalence relation needs some justification. We identify <span class="math inline">\((a,b) \sim (c,d)\)</span> when the fractions <span class="math inline">\(\frac{a}{b}\)</span> and <span class="math inline">\(\frac{c}{d}\)</span> “should” be treated as equal. Considering that their difference “should be” <span class="math inline">\(\frac{ad-bc}{bd}\)</span>, it makes sense to regard them as equal when <span class="math inline">\(ad-bc=0\)</span>. Why worry if <span class="math inline">\(s(ad-bc)=0\)</span>? Aren’t nonzero zero-divisors tolerated anymore? In that case, once <span class="math inline">\(s\)</span> becomes a valid denominator, the difference will also be equal to <span class="math inline">\(\frac{s(ad-bc)}{sbd}\)</span>, which <em>must</em> be zero because its numerator is zero. This is only happens when a zerodivisor in <span class="math inline">\(S\)</span> gets contorted by the process into a unit.</p>
 </section>
 <section id="many-many-checks" class="level3" data-number="8.2.2">
@@ -895,8 +912,7 @@ x (x+y)^n &amp; \text{ Induction hypothesis} \\
 <ul>
 <li>Reflexivity: Note <span class="math inline">\(1 \in S\)</span>, and <span class="math inline">\(1(ab-ab)=0\)</span>, so <span class="math inline">\((a,b) \sim (a,b)\)</span></li>
 <li>Symmetry: If <span class="math inline">\((a,b) \sim (c,d)\)</span> then for some <span class="math inline">\(s\)</span>, <span class="math inline">\(s(ad-bc)=0\)</span>. Negating, <span class="math inline">\(s(cb-da)=0\)</span>, so <span class="math inline">\((c,d) \sim (a,b)\)</span>.</li>
-<li>Transitivity: Assume <span class="math inline">\((a,b) \sim (c,d) \sim (e,f)\)</span>. Then we have <span class="math inline">\(s, t\)</span> so that <span class="math inline">\(s(ad-bc)=t(cf-de)=0\)</span>. Multiplying the first equation by <span class="math inline">\(ft\)</span> yields <span class="math inline">\(adfst = bcfst\)</span>. Multiplying the second by <span class="math inline">\(bs\)</span> yields <span class="math inline">\(bcfst = bdest\)</span>. We conclude <span class="math inline">\(adfst = bdest\)</span>, so <span class="math inline">\(dst(af-be)\)</span> as desired. (Note <span class="math inline">\(d, s, t \in S\)</span> and <span class="math inline">\(S\)</span> is mcs.)<br>
-</li>
+<li>Transitivity: Assume <span class="math inline">\((a,b) \sim (c,d) \sim (e,f)\)</span>. Then we have <span class="math inline">\(s, t\)</span> so that <span class="math inline">\(s(ad-bc)=t(cf-de)=0\)</span>. Multiplying the first equation by <span class="math inline">\(ft\)</span> yields <span class="math inline">\(adfst = bcfst\)</span>. Multiplying the second by <span class="math inline">\(bs\)</span> yields <span class="math inline">\(bcfst = bdest\)</span>. We conclude <span class="math inline">\(adfst = bdest\)</span>, so <span class="math inline">\(dst(af-be)\)</span> as desired. (Note <span class="math inline">\(d, s, t \in S\)</span> and <span class="math inline">\(S\)</span> is mcs.)</li>
 </ul>
 </section>
 <section id="well-definedness" class="level4" data-number="8.2.2.2">
@@ -982,7 +998,48 @@ sta_1c_1b_2d_2 &amp;= sta_2c_1b_1d_2 &amp; \text{ (Using E1)}\\
 <section id="quotient-ring-and-localization" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="quotient-ring-and-localization"><span class="header-section-number">8.4</span> Quotient Ring and Localization</h2>
 <p>Is it possible to both mod out by <span class="math inline">\(I\)</span> and also localize at <span class="math inline">\(S\)</span>? Does it matter which of these operations comes first?</p>
-<p><strong>Theorem:</strong> (Localization and Quotient Commute) Let <span class="math inline">\(R\)</span> be a ring with multiplicatively closed set <span class="math inline">\(S\)</span> and ideal <span class="math inline">\(I\)</span> disjoint from <span class="math inline">\(S\)</span>. Let <span class="math inline">\(S^{-1}I\)</span> denote the extension of <span class="math inline">\(I\)</span> to <span class="math inline">\(S^{-1}R\)</span> and let <span class="math inline">\(S/I\)</span> denote <span class="math inline">\(\{s+I \,|\, s \in S\}\)</span>. Then 1. <span class="math inline">\(S^{-1}I\)</span> is an ideal of <span class="math inline">\(S^{-1}R\)</span> 2. <span class="math inline">\(S/I\)</span> is a multiplicatively closed set of <span class="math inline">\(R/I\)</span> 3. <span class="math inline">\((S/I)^{-1}(R/I) \cong (S^{-1}R) / (S^{-1}I)\)</span> via a homomorphism <span class="math inline">\(\frac{r+I}{s+I} \mapsto \frac{r}{s} + (S^{-1}I)\)</span></p>
+<p><strong>Theorem:</strong> (Localization and Quotient Commute) Let <span class="math inline">\(R\)</span> be a ring with multiplicatively closed set <span class="math inline">\(S\)</span> and ideal <span class="math inline">\(I\)</span> disjoint from <span class="math inline">\(S\)</span>. Let <span class="math inline">\(S^{-1}I\)</span> denote the extension of <span class="math inline">\(I\)</span> to <span class="math inline">\(S^{-1}R\)</span> and let <span class="math inline">\(S/I\)</span> denote <span class="math inline">\(\{s+I \,|\, s \in S\}\)</span>. Then</p>
+<ol type="1">
+<li><span class="math inline">\(S^{-1}I\)</span> is an ideal of <span class="math inline">\(S^{-1}R\)</span></li>
+<li><span class="math inline">\(S/I\)</span> is a multiplicatively closed set of <span class="math inline">\(R/I\)</span></li>
+<li><span class="math inline">\((S/I)^{-1}(R/I) \cong (S^{-1}R) / (S^{-1}I)\)</span> via a homomorphism <span class="math inline">\(\frac{r+I}{s+I} \mapsto \frac{r}{s} + (S^{-1}I)\)</span></li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    %% Accessibility tags
+    accTitle: Commutativity of Quotient and Localization
+    accDescr: A diagram showing that taking a quotient then localizing is isomorphic to localizing then taking a quotient.
+
+    %% Nodes
+    R["$R$"]
+    RI["$R / I$"]
+    RS["$R[S^{-1}]$"]
+%%    RIS["$$(S/I)^{-1}(R/I)$$"]
+%%    RSI["$$S^{-1}R / S^{-1}I$$"]
+
+    %% Arrows
+    R -- "p (Quotient)" --&gt; RI
+    R -- "i (Local)" --&gt; RS
+
+%%    RI -- "Localization" --&gt; RIS
+%%    RS -- "Quotient" --&gt; RSI
+
+    %%RIS &lt;--"Isomorphic"--&gt; RSI
+
+    %% Enforce alignments
+    RI ~~~ RS
+%%    RIS ~~~ RSI
+
+</pre>
+</div>
+<p></p><figcaption> Commutativity of localization and quotient</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>Proof:</strong> We’ve established that <span class="math inline">\(S^{-1}I = I^e\)</span> is an ideal, and it’s elementary that <span class="math inline">\(S/I\)</span> is multiplicatively closed.</p>
 <p>Consider two different compositions of canonical quotient and localization maps:</p>
 <p><span class="math display">\[\alpha: R \to R/I \to (S/I)^{-1}(R/I) \]</span></p>
